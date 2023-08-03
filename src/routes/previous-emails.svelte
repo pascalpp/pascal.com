@@ -1,9 +1,177 @@
+<!--!
+ From: Kevin &lt;kxxxxxxl@gmail.com&gt;
+ Subject: Pascal. com
+ Date: September 2, 2013 10:43:15am
+
+ Hi,
+
+ Still interested in picking up your domain if you're done with it.  Will pay you $100 for it.
+
+ Let me know!
+
+ Kevin
+
+ (sent from my mobile device)
+ -->
+
+<!--!
+ From: jj <bbooctaxxxxx@hotmail.com>
+ Subject: QQ
+ Date: February 7, 2012 5:11:59pm
+
+ Everytime I try to list multiple procedures it skins up
+
+ e.g
+
+ if code=20
+ then
+ begin
+
+    pro;
+ end;
+ pro
+ end;
+
+ if code=18 then
+ begin
+      the;
+ end;
+     cat;
+ end;
+
+ when I type 18 it lists the procedures in 20
+ -->
+
+<!--
+From:    mouli_xxxxx@yahoo.co.in
+Subject: Please help me how to create a program medical bill or student database and web desigining
+Date:    September 8, 2008 12:39:53pm EDT
+
+ hi!
+
+ Please help me how to create a program medical bill or student database and web desigining
+ . even the simpliest one. thanks!
+
+ -MOULI
+-->
+
+<!--
+From: 	  mpxloguez@yahoo.com.ph
+Subject: 	Need Help!
+Date: 	September 30, 2006 3:35:07am EDT
+
+	hi!
+ Please help me how to create a program payroll. even the simpliest one. thanks!
+             beth
+ -->
+
+<!--
+Date: Sat, 18 Mar 2006 08:07:08 -0800 (PST)<br />
+From: aashakkirrudeen@yahoo.com<br />
+Subject: i need support<br />
+<br />
+hi<br />
+ young in pascal assembling language,i've been able to do some rew things but the i go the more i either have syntax error.<br />
+ i need your support for proper understanding.<br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;thanks. ADEMOLA S<br />
+ -->
+
+<!--
+From: wizards_priestx1987@yahoo.com<br />
+Date: August 23, 2005 11:53:39pm EDT<br />
+Subject: asking!<br />
+<br />
+Diff. kinds of key in turbo pascal? Where can i find theturbo pascal? How can i get that to use in my pc?<br />
+ -->
+
+<!--
+From: Vdxias@aol.com<br />
+Date: Thu, 13 May 2004 14:06:14 EDT<br />
+Subject: freeruler<br />
+<br />
+What you mean the freeruler doesn't work on my stupid windows pc.<br />
+<br />
+You can stick the freeruler up your ass..........................<br />
+ -->
+
+<!--
+From: "webmaster" &lt;seven.seas@nxfty.com&gt;<br />
+Date: Wed Jul 23, 2003  9:02:47 am America/New_York<br />
+Subject: I'd like to purchase  PASCAL.COM<br />
+<br />
+To whom it may concerned,<br />
+<br />
+This is Akiyosi Karrat.I am trying to set up our<br />
+<br />
+several new homepages and we are trying to find<br />
+<br />
+the Good domain name.The domain name of you <br />
+<br />
+own looks really good to us and found that it is <br />
+<br />
+owned by you.Of course, it would be an important <br />
+<br />
+domain name to youbut we really appreciate it <br />
+<br />
+if we can get it forUS$4,000 with escrow.<br />
+<br />
+(I pay escrow fee etc.).I do appology take your time.<br />
+<br />
+Thank you,<br />
+<br />
+Akiyosi<br />
+ -->
+
+<!--
+From: reguig mohammed &lt;reguig_mohammed20022001@yahoo.fr&gt;<BR>
+Date: Thu, 8 Aug 2002 11:38:22 +0200 (CEST)<BR>
+<BR>
+give me the picture and;<BR>
+<BR>
+your country and your JOB<BR>
+ -->
+
+<!--
+From: "sleepwalkers society" &lt;contact@sleepwalkers.org&gt;<BR>
+Subject: about pascal.com...<BR>
+Date: Wed, 5 Jun 2002 16:07:42 +0200<BR>
+<BR>
+Hello, Mr. Pascal ?<BR>
+<BR>
+I am one of the masters of the sleepwalkers society, I believe one of our members has been in contact with you about your domain and you offered him 2000$ for letting the domain go. Well, I do have a suggestion for you. Instead of selling the domain to him for 2000$, he doesn't have that kind of money, let him use it and I will host it for him, he is a programmer and dedicated to his work. Currently he is using pascal.sleepwalkers.org.<BR>
+<BR>
+Why let him use the domain ? Well, I wee you have not really a use for this domain, so I was thinking let us put some programming site/sites in it instead, at least for a while, If any money earned from it, we will fairly share with you. I think it is a good suggestion, don't you think ? Instead of just having the domain online and have nothing in it.<BR>
+<BR>
+This suggestion will benefit both us and you I believe.<BR>
+<BR>
+/best regards SyntaxError<BR>
+\One of the masters of sleepwalkers society.<BR>
+( www.sleepwalkers.org )<BR>
+ -->
+
+<!--
+From: "ITV Productions" &lt;studio6@appletelevision.fsnet.co.uk&gt;<BR>
+Subject: web address<BR>
+Date: Mon, 3 Jun 2002 19:08:17 +0100<BR>
+Organization: Granada TV<BR>
+<BR>
+Hi, I notice that your domain name expiers in a few months, do you plan to re-register that name or may I please use it?<BR>
+-->
+
+<!--
+From: "ylenia" &lt;yle_m@hotmail.com&gt;<BR>
+Subject: look for a new name dear pascal....<BR>
+Date: Sat, 25 May 2002 14:30:08 -0400<BR>
+<BR>
+fucking ridiculous sometimes i ask to myself if people like you don't have anything else to do but putting to his/her (nag and really boring one!) popular names into the web that don't have any relations with anythign get outta here asshole<BR>
+-->
+
 <table border={0} cellpadding="0" cellspacing="0">
 	<tbody>
 		<tr><td align="left" valign="top" height="12" colspan="2" /> </tr>
 		<tr>
 			<td align="right" valign="top" colspan="2" height="30">
-				<!-- <img src="./images/ads/exxon_anim.gif" width="450" height="60" /> -->
+				<img src="./images/ads/exxon_anim.gif" width="450" height="60" />
 			</td>
 			<td width="20" />
 		</tr>
@@ -630,10 +798,32 @@ If you are willing to sell, what is the current ask price ?
 </table>
 
 <style>
-	:global(body) {
+	body {
 		background-color: #336633;
 		color: #000;
 		margin: 0;
 		padding: 0;
+	}
+
+	:link {
+		color: #000;
+	}
+	:link:active {
+		color: #404035;
+	}
+
+	TD {
+		font: 10px/14px Lucida Grande, Geneva, Helvetica, Arial, Sans-Serif;
+	}
+	tt {
+		font: 12px/14px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 </style>

@@ -1,0 +1,16 @@
+/* Variables and mixins declared here will be available in all other LESS files */
+@blue: #7b888e;
+
+@weight-light: 300;
+@weight-normal: 400;
+@weight-semibold: 500;
+@weight-bold: 600;
+
+@button-primary-fill: @blue;
+@button-secondary-fill: white;
+@button-danger-fill: hsla(0, 65%, 60%, 1);
+@button-success-fill: hsla(155, 80%, 35%, 1);
+
+@mobile-threshold: 640px;
+@mobile: ~'(max-width: @{mobile-threshold})';
+@not-mobile: ~'(min-width: @{mobile-threshold})';
