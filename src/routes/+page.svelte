@@ -2,6 +2,7 @@
 	import Column from '$lib/components/Column.svelte';
 	import Row from '$lib/components/Row.svelte';
 	import { Body } from 'svelte-body';
+	import Handstand from './images/handstand.svg?component';
 
 	function selectExperiment(event: Event) {
 		const target = event.target as HTMLSelectElement;
@@ -13,7 +14,10 @@
 
 <main>
 	<Row center>
-		<Column>
+		<Column right>
+			<div class="handstand">
+				<Handstand />
+			</div>
 			<div class="bubbles">
 				<div class="bubble header monospace bold">[ the minimalist home page of a person named pascal ]</div>
 				<div class="bubble-divider large" />
@@ -74,11 +78,18 @@
 		font-family: 'Lucida Grande', Geneva, Helvetica, Arial, Sans-Serif;
 		padding: 16px;
 		padding-top: 5vh;
+		padding-bottom: 15vh;
 		font-size: 14px;
+		color: @bubblecolor;
 
 		a {
 			color: @bubblecolor;
 		}
+	}
+
+	.handstand {
+		width: 200px;
+		margin-right: 3em;
 	}
 
 	.bold {
@@ -94,6 +105,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		color: @textcolor;
 
 		a {
 			color: @textcolor;
