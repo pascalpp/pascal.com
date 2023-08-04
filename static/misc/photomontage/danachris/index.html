@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Chocolate Bowl</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+i = 0;
+imgArray = new Array();
+
+imgArray[i++] = newImage('Capture_00034.jpg');
+imgArray[i++] = newImage('Capture_00035.jpg');
+imgArray[i++] = newImage('Capture_00036.jpg');
+imgArray[i++] = newImage('Capture_00037.jpg');
+imgArray[i++] = newImage('Capture_00038.jpg');
+imgArray[i++] = newImage('Capture_00039.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00041.jpg');
+imgArray[i++] = newImage('Capture_00042.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00044.jpg');
+imgArray[i++] = newImage('Capture_00045.jpg');
+imgArray[i++] = newImage('Capture_00046.jpg');
+imgArray[i++] = newImage('Capture_00047.jpg');
+imgArray[i++] = newImage('Capture_00034.jpg');
+imgArray[i++] = newImage('Capture_00035.jpg');
+imgArray[i++] = newImage('Capture_00036.jpg');
+imgArray[i++] = newImage('Capture_00037.jpg');
+imgArray[i++] = newImage('Capture_00038.jpg');
+imgArray[i++] = newImage('Capture_00039.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00041.jpg');
+imgArray[i++] = newImage('Capture_00042.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00044.jpg');
+imgArray[i++] = newImage('Capture_00045.jpg');
+imgArray[i++] = newImage('Capture_00046.jpg');
+imgArray[i++] = newImage('Capture_00047.jpg');
+imgArray[i++] = newImage('Capture_00034.jpg');
+imgArray[i++] = newImage('Capture_00035.jpg');
+imgArray[i++] = newImage('Capture_00036.jpg');
+imgArray[i++] = newImage('Capture_00037.jpg');
+imgArray[i++] = newImage('Capture_00038.jpg');
+imgArray[i++] = newImage('Capture_00039.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00041.jpg');
+imgArray[i++] = newImage('Capture_00042.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00044.jpg');
+imgArray[i++] = newImage('Capture_00045.jpg');
+imgArray[i++] = newImage('Capture_00046.jpg');
+imgArray[i++] = newImage('Capture_00047.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+imgArray[i++] = newImage('Capture_00040.jpg');
+imgArray[i++] = newImage('Capture_00043.jpg');
+
+var counter = 0;
+
+function animate() {
+	for (f=0; f<25; f++) {
+		theImg = counter + f;
+		if (theImg >= imgArray.length) theImg = theImg - imgArray.length;
+		document.images['frame' + f].src = imgArray[theImg].src;
+	}
+	counter++;
+	if (counter >= imgArray.length) counter = counter - imgArray.length;
+}
+
+
+function newImage(path) {
+	ImgRef = new Image();
+	ImgRef.src = path;
+	return ImgRef;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=000000 MARGINWIDTH=5 MARGINHEIGHT=5 TOPMARGIN=5 LEFTMARGIN=5 ONLOAD="setInterval('animate()',250)">
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame0"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame5"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame10"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame15"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame20"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame1"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame6"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame11"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame16"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame21"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame2"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame7"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame12"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame17"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame22"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame3"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame8"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame13"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame18"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame23"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame4"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame9"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame14"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame19"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame24"></TD>
+	</TR>
+</TABLE>
+
+<EMBED SRC="../chocolatebowl/Madonna-Music-DanceRemix.mp3" AUTOSTART=TRUE CONTROLLER=FALSE HIDDEN>
+
+</BODY>
+</HTML>

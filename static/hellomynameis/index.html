@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/frameset.dtd">
+<HTML>
+<HEAD>
+<TITLE>hello my name is pascal</TITLE>
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript">
+// this function allows us to set variables by passing them in as values in the query string
+// by default it looks for the query string after the occurrence of '.html?' in URL of the current document
+// but these values can be passed in as parameters
+function parseQuery(loc,key) {
+	if (loc == null) loc = document.location.href;
+	if (key == null) key = '?';
+	if (loc.indexOf(key) > -1) {
+		query = loc.substring(loc.indexOf(key)+key.length,loc.length);
+		args = query.split('\&');
+		for (i=0; i<args.length; i++) {
+			chunk = args[i];
+			eval(chunk.split('=')[0] + " = '" + chunk.split('=')[1] + "'");
+		}
+	}
+}
+
+parseQuery()
+
+function startup() {
+	if (typeof(page) != "undefined") {
+		frames['hellomynameis-left'].document.location = page
+	}
+}
+
+</SCRIPT>
+</HEAD>
+
+<FRAMESET COLS="440,*" FRAMEBORDER=NO BORDER=0 FRAMESPACING=0 ONLOAD="startup()">
+	<FRAME SRC="cover.html" NAME="hellomynameis-left" SCROLLING=AUTO NORESIZE MARGINHEIGHT=0 MARGINWIDTH=0>
+	<FRAME SRC="links.html" NAME="hellomynameis-right" SCROLLING=AUTO NORESIZE MARGINHEIGHT=0 MARGINWIDTH=0>
+</FRAMESET>
+
+</HTML>

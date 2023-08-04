@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Chocolate Bowl</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+imgArray = new Array();
+imgArray[0] = newImage('IMG_0027.jpg');
+imgArray[1] = newImage('IMG_0027.jpg');
+imgArray[2] = newImage('IMG_0027.jpg');
+imgArray[3] = newImage('IMG_0027.jpg');
+imgArray[4] = newImage('IMG_0027.jpg');
+imgArray[5] = newImage('IMG_0028.jpg');
+imgArray[6] = newImage('IMG_0029.jpg');
+imgArray[7] = newImage('IMG_0030.jpg');
+imgArray[8] = newImage('IMG_0031.jpg');
+imgArray[9] = newImage('IMG_0032.jpg');
+imgArray[10] = newImage('IMG_0033.jpg');
+imgArray[11] = newImage('IMG_0034.jpg');
+imgArray[12] = newImage('IMG_0036.jpg');
+imgArray[13] = newImage('IMG_0037.jpg');
+imgArray[14] = newImage('IMG_0038.jpg');
+imgArray[15] = newImage('IMG_0039.jpg');
+imgArray[16] = newImage('IMG_0040.jpg');
+imgArray[17] = newImage('IMG_0041.jpg');
+imgArray[18] = newImage('IMG_0042.jpg');
+imgArray[19] = newImage('IMG_0043.jpg');
+imgArray[20] = newImage('IMG_0044.jpg');
+imgArray[21] = newImage('IMG_0045.jpg');
+imgArray[22] = newImage('IMG_0046.jpg');
+imgArray[23] = newImage('IMG_0047.jpg');
+imgArray[24] = newImage('IMG_0048.jpg');
+imgArray[25] = newImage('IMG_0049.jpg');
+imgArray[26] = newImage('IMG_0050.jpg');
+imgArray[27] = newImage('IMG_0051.jpg');
+imgArray[28] = newImage('IMG_0051.jpg');
+imgArray[29] = newImage('IMG_0051.jpg');
+imgArray[30] = newImage('IMG_0051.jpg');
+imgArray[31] = newImage('IMG_0051.jpg');
+
+var counter = 0;
+
+function animate() {
+	for (f=0; f<25; f++) {
+		theImg = counter + f;
+		if (theImg >= imgArray.length) theImg = theImg - imgArray.length;
+		document.images['frame' + f].src = imgArray[theImg].src;
+	}
+	counter++;
+	if (counter >= imgArray.length) counter = counter - imgArray.length;
+}
+
+
+
+function newImage(path) {
+	ImgRef = new Image();
+	ImgRef.src = path;
+	return ImgRef;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=000000 MARGINWIDTH=5 MARGINHEIGHT=5 TOPMARGIN=5 LEFTMARGIN=5 ONLOAD="setInterval('animate()',200)">
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame0"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame5"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame10"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame15"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame20"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame1"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame6"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame11"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame16"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame21"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame2"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame7"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame12"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame17"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame22"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame3"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame8"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame13"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame18"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame23"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame4"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame9"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame14"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame19"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame24"></TD>
+	</TR>
+</TABLE>
+
+<EMBED SRC="Madonna-Music-DanceRemix.mp3" AUTOSTART=TRUE CONTROLLER=FALSE HIDDEN>
+
+</BODY>
+</HTML>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>navigator object properties</title>
+<style type="text/css">
+
+h1 { font-size: 14px; }
+
+body {
+	font-family: Lucida Grande, Helvetica, Arial, Sans-Serif;
+	font-size: 12px;
+}
+
+
+table { background-color: #cccccc; }
+th
+{
+	background-color: #ffffee;
+	text-align: right;
+}
+td { background-color: #ffffff; }
+
+</style>
+
+</head>
+<body>
+
+<h1>navigator object properties</h1>
+
+<table border="0" cellpadding="10" cellspacing="4">
+<script language="javascript" type="text/javascript">
+for (prop in navigator) {
+	document.write("<tr><th>navigator." + prop + ":</th><td>" + eval("navigator." + prop) + "</td></tr>");
+}
+</script>
+</table>
+
+</body>
+</html>

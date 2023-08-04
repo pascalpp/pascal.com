@@ -1,0 +1,29 @@
+TD {
+	font: 11px/17px Helvetica,Arial,Sans-Serif;
+}
+
+A {
+	text-decoration: none;
+}
+
+A:hover {
+	color: #A0ACE5;
+}
+
+.tracknumber {
+	color: #999999;
+}
+
+.trackname {
+	font: 14px/19px Helvetica,Arial,Sans-Serif;	
+	font-weight: bold;
+}
+
+.tracktime {
+	color: #999999;
+}
+
+.trackfilesize {
+	color: #777777;
+	
+}

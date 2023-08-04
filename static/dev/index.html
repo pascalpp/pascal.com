@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>pascal - web design and development</title>
+<link rel="stylesheet" href="styles.css" />
+<script language="javascript" type="text/javascript">
+
+sections = new Array("portfolio","capabilities","availability");
+
+function showSection(which) {
+	for (i=0; i<sections.length; i++) {
+		sectionobj = document.getElementById(sections[i]);
+		linkobj = document.getElementById(sections[i] + '-link');
+		nonlinkobj = document.getElementById(sections[i] + '-nonlink');
+		if (sections[i] == which) {
+			sectionobj.style.visibility = "visible";
+			linkobj.style.visibility = "hidden";
+			nonlinkobj.style.visibility = "visible";
+		} else {
+			sectionobj.style.visibility = "hidden";
+			linkobj.style.visibility = "visible";
+			nonlinkobj.style.visibility = "hidden";
+		}
+	}
+}
+
+function show(which) {
+	document.getElementById(which).style.visibility = "inherit";
+}
+
+function hide(which) {
+	document.getElementById(which).style.visibility = "hidden";
+}
+
+function display(which) {
+	document.getElementById(which).style.display = "inline";
+}
+
+function undisplay(which) {
+	document.getElementById(which).style.display = "none";
+}
+
+</script>
+
+</head>
+<body onload="showSection('portfolio')">
+
+<div id="portfolio">
+<h1>portfolio</h1>
+
+<div id="recentwork">
+<h2>recent work &#160; &#160; &#160; <span onclick="undisplay('recentwork');display('pastwork')" class="subsectionlink">notable past work</span></h2>
+
+<h4>An Inconvenient Truth</h4>
+<h3><a href="http://www.read-the-truth.com/">http://www.read-the-truth.com/</a></h3>
+<p>
+Website promoting Al Gore's new book, <i>An Inconvenient Truth</i>, from Rodale Publishing. The book is a companion to Al Gore's film of the same name.
+</p>
+
+<h4>Kids with Cameras</h4>
+<h3><a href="http://www.kids-with-cameras.org/">http://www.kids-with-cameras.org/</a></h3>
+<p>Kids with Cameras empowers children growing up in difficult circumstances and allows them to appreciate the beauty and dignity of their own expression. <i>Born Into Brothels</i> is a documentary film that tells the story of Zana Briski and her experiences teaching photography to the children of prostitutes in the red light district in Calcutta. The film recently won an Academy Award for best documentary feature and is now showing nationwide. This site was designed by my friends at Zago.</p>
+
+<h4>Hillary Rush</h4>
+<h3><a href="http://www.hillaryrush.com/">http://www.hillaryrush.com/</a></h3>
+<p>Website for a Los Angeles boutique.</p>
+
+<h4>Mel Kadel</h4>
+<h3><a href="http://www.melkadel.com/">http://www.melkadel.com/</a></h3>
+<p>Portfolio site for a Los Angeles-based artist.</p>
+<p>Subject-appropriate artist's sketchbook motif. Smart caching scheme preloads images just before they're needed to provide a more immediate user experience. Dynamically creates shadows behind images. Makes extensive use of artist's handwriting for navigation, image captions, and image numbering. Image numbers make use of 3 unique sets of images so numbers like 11 and 22 look truly handwritten.</p>
+
+<h4>Zago Design</h4>
+<h3><a href="http://www.zagodesign.com/">http://www.zagodesign.com/</a></h3>
+<p>
+Promotional site for a New York design firm
+</p>
+<ul>
+<li>Innovative site structure and navigation system</li>
+<li>Outstanding ease of use</li>
+<li>Instant access to all areas of the site</li>
+<li>Totally hilarious homepage content</li>
+</ul>
+
+<h4>R. Jerome Ferraro</h4>
+<h3><a href="http://www.jeromepix.com/">http://www.jeromepix.com/</a></h3>
+<p>
+Portfolio site for a NYC-based photographer<br />
+This website was awarded top honors in:</p>
+<ul>
+<li>PDN-Nikon Self-Promotion Awards</li>
+<li>PDN Digital Annual</li>
+<li>PDN-PIX Design Awards</li>
+</ul>
+
+<h4>Fringe Salon</h4>
+<h3><a href="http://www.fringeny.com/">http://www.fringeny.com/</a></h3>
+<p>Brochure site for a hair salon in Manhattan's Lower East Side.</p>
+<p>Combines salon information and portfolio viewer into one simple interface.</p>
+
+<h4>Danielle St. Laurent</h4>
+<h3><a href="http://www.daniellestlaurent.com/">http://www.daniellestlaurent.com/</a></h3>
+<p>Portfolio site for a NYC-based photographer</p>
+
+</div>
+
+<div id="pastwork" style="display:none">
+<h2><span onclick="undisplay('pastwork');display('recentwork')" class="subsectionlink">recent work</span> &#160; &#160; &#160; notable past work</h2>
+
+<h4>The Apple Store</h4>
+<h3><a href="http://www.apple.com/store/">http://www.apple.com/store/</a></h3>
+<p>
+I participated in the design and development of Apple's initial online store effort. I worked with an in-house team of Apple developers to build the site in WebObjects, ensuring that established design goals were met.</p>
+<p>This website won:</p>
+<ul>
+<li>The Gold Pencil, E-Commerce, One Show Interactive Awards, 1998</li>
+<li>The Gold Clio, Internet Category, Clio Awards, 1998</li>
+</ul>
+
+<h4>Adobe</h4>
+<h3><a href="http://www.adobe.com/store/">http://www.adobe.com/store/</a></h3>
+<p>
+I participated in the redesign and development of Adobe's online store. I worked with Adobe's in-house site development team to establish site standards and practices. I provided guidance and templates to ensure successful redevelopment of over 11,000 pages.<br />
+This website won:</p>
+<ul>
+<li>The Gold Pencil, E-Commerce, One Show Interactive Awards, 2000</li>
+<li>The Silver Pencil, Corporate Image, One Show Interactive Awards, 2000</li>
+</ul>
+
+<h4>Mohawk Paper</h4>
+<h3><a href="http://www.mohawkpaper.com/">http://www.mohawkpaper.com/</a></h3>
+<p>
+I served as the lead developer for this project, facing the somewhat difficult challenge of creating a website about paper.
+</p>
+<p>This website won:</p>
+<ul>
+<li>The Silver Pencil, E-Commerce, One Show Interactive Awards, 1999</li>
+</ul>
+
+<h4>Adjacency</h4>
+<h3><u>Creating Killer Interactive Websites</u>, Hayden Books, 1997</h3>
+<p>While working as a lead site-developer at Adjacency, I co-authored this book covering Adjacency's design and development process, featuring case studies of several Adjacency clients.</p>
+
+<h2>other past clients</h2>
+<p>
+http://www.rollerblade.com/<br />
+http://www.powerbar.com/<br />
+http://www.specialized.com/<br />
+http://www.patagonia.com/<br />
+http://www.harmankardon.com/<br />
+http://www.esprit.com/<br />
+http://www.landrover.com/<br />
+http://www.janus.com/<br />
+</p>
+</div>
+</div>
+
+<div id="capabilities">
+<h1>capabilities</h1>
+<p>I specialize in front-end design and development for web projects ranging from individual efforts to large-scale team deployments. I have extensive experience designing and developing sites entirely on my own, but I'm also quite comfortable working with teams of designers, information architects, and programmers.</p>
+
+<h2>design experience</h2>
+<p>My original field of study is Graphic Communication, and building on that I have developed an intuitive, user-oriented design sense. I have a knack for design that is appropriate to the needs and goals of the site, without pretension and without getting in the way. "Let the damn thing speak for itself."
+
+<h2>technology expertise</h2>
+<p>If it relates to front-end web development, I already know it or I can figure it out in short order. Specific technologies I deal with regularly: html, xhtml, xml, javascript, dhtml, css, php, perl, etc.</p>
+
+<h2>application and platform experience</h2>
+<p>I'm well-versed in Adobe Illustrator, Photoshop, ImageReady, and InDesign. I am also a former beta tester for Illustrator and Photoshop.</p>
+<p>My preferred development platform is Mac OS X, although of course I do extensive testing of my development on multiple Windows platforms and on multiple browsers. I'm also very accustomed to working on teams with hybrid development environments.</p>
+<p>My preferred deployment platform is Apache on Linux or BSD, although I can work with your existing deployment platform as required.</p>
+
+</div>
+
+<div id="availability">
+<h1>availability</h1>
+<p>I've taken a full-time job with <a href="http://about.me">about.me</a>, so I'm not currently avaiable for other projects.</p>
+<!-- p>I'm based in New York City, and I'm readily available for freelance projects and short-term consultancy work. Please contact me if you think I'm the right person for your job.</p -->
+</div>
+
+
+<div id="rightcontent">
+
+<div id="cardborder">
+<div id="card">
+<div id="cardbrackets">&lt;&gt;</div>
+<div id="cardinfo">
+pascal<br />
+web design and development<br />
+<a href="https://www.pascal.com/">https://www.pascal.com/</a><br />
+<script type="text/javascript">
+//<![CDATA[
+function enk(){var i,j,x,y,x=
+"x=\"783d227b40253235353a3a3a6835373a683938396739383a3639693937395f25323540" +
+"7b3639393839353a3b3933353439663635353b353839373a3c39363a3439333a6436693937" +
+"3a66393c393439673935356638673936396835663934393639363a3439333a333766393439" +
+"363935356638673638396639373a3c39373a3335353566386739693a3439333a3337663934" +
+"393639363a3439333a68363535663835356836343969356636673969393639683566393439" +
+"3639363f6c3e33406c2b7572693e2a2a407c3e5f2532356536333665363c35736466766871" +
+"78402e7c7e2c35402e6c3e6b776a71686f317b7c2532323e2c2c352f6c2b75777665787631" +
+"7b2e2a282a2b682532353e7c402a2a3e6972752b6c40333e6c3f7b316f68716a776b3e6c2e" +
+"4035382c7e6972752b6d405064776b31706c712b7b316f68716a776b2f6c2e35382c3e3030" +
+"6d41406c3e2c7e7c2e407b31666b647544772b6d2c3e2532322532327c3e223b793d27273b" +
+"783d756e6573636170652878293b666f7228693d303b693c782e6c656e6774683b692b2b29" +
+"7b6a3d782e63686172436f646541742869292d333b6966286a3c3332296a2b3d39343b792b" +
+"3d537472696e672e66726f6d43686172436f6465286a297d79\";y='';for(i=0;i<x.leng" +
+"th;i+=2){y+=unescape('%'+x.substr(i,2));}y";
+while(x=eval(x));}enk();
+//]]>
+</script><br />
+917-399-7566
+</div>
+</div>
+</div>
+
+<div id="portfolio-link" class="navigation"><a href="javascript:showSection('portfolio')">portfolio</a></div>
+<div id="capabilities-link" class="navigation"><a href="javascript:showSection('capabilities')">capabilities</a></div>
+<div id="availability-link" class="navigation"><a href="javascript:showSection('availability')">availability</a></div>
+<div id="portfolio-nonlink" class="navigation">portfolio</div>
+<div id="capabilities-nonlink" class="navigation">capabilities</div>
+<div id="availability-nonlink" class="navigation">availability</div>
+
+<div id="home-link" class="navigation"><a href="https://www.pascal.com/">more&#160;about&#160;me</a></div>
+
+</div>
+
+</body>
+</html>

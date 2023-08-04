@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+	<ModulePrefs 
+		title="About Me"
+		height="10"
+		scrolling="false"
+		> 
+		<Require feature="dynamic-height" />
+		<Require feature="skins" />
+		<Require feature="views"/>
+	</ModulePrefs>
+	<UserPref name="username" display_name="About.me Username" required="true" />
+	<UserPref name="show_image" display_name="Include Image" datatype="bool" default_value="true"/>
+	<UserPref name="show_name" display_name="Include Name" datatype="bool" default_value="true"/>
+	<UserPref name="show_headline" display_name="Include Headline" datatype="bool" default_value="true"/>
+	<UserPref name="show_bio" display_name="Include Bio" datatype="bool" default_value="true"/>
+	<UserPref name="show_apps" display_name="Include Apps" datatype="bool" default_value="true"/>
+	<UserPref name="style" display_name="Appearance" default_value="Default" datatype="enum" >
+		<EnumValue display_name="About.me" value="default" />
+		<EnumValue display_name="Your Site" value="site" />
+	</UserPref>
+	<Content type="html">
+	<![CDATA[
+	<style type="text/css">
+		body {
+			background: transparent;
+			overflow: hidden;
+		}
+		.aboutme-embed#aboutme-embed {
+			margin: 0 !important;
+			background-color: 
+		}
+	</style>
+	<script type="text/javascript">
+
+		function gadget_init() {
+			console.log('embed 32');
+	
+			if (! window.AboutMe) window.AboutMe = {};
+	
+			// define embed callback before creating embed
+			AboutMe.embed_callback = function() {
+				var obj = this;
+				obj.node.style.visibility = 'hidden';
+				setTimeout(function() {
+					console.log('obj.node.offsetHeight: '+obj.node.offsetHeight);
+					gadgets.window.adjustHeight(obj.node.offsetHeight+20);
+					obj.node.style.visibility = 'inherit';
+				},1000);
+			};
+	
+			// check for username before inserting script tag
+			var prefs = new gadgets.Prefs();
+			var username = prefs.getString('username');
+			if (username) {
+				var p = [];
+				p.push('image='+prefs.getBool('show_image'));
+				p.push('name='+prefs.getBool('show_name'));
+				p.push('headline='+prefs.getBool('show_headline'));
+				p.push('bio='+prefs.getBool('show_bio'));
+				p.push('apps='+prefs.getBool('show_apps'));
+				p.push('style='+prefs.getString('style'));
+				
+				var src = 'http://about.me/embed/'+username+'?id=aboutme-embed&amp;'+p.join('&amp;');
+		
+				document.write('<script src="'+src+'"></scr'+'ipt>');
+			}
+	
+		}
+		gadgets.util.registerOnLoadHandler(gadget_init);
+
+	</script> 
+	
+	]]>
+	</Content> 
+</Module>

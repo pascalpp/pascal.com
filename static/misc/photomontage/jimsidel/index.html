@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Jim Sidel</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+imgArray = new Array();
+imgArray[0] = newImage('IMG_0024.jpg');
+imgArray[1] = newImage('IMG_0025.jpg');
+imgArray[2] = newImage('IMG_0026.jpg');
+imgArray[3] = newImage('IMG_0027.jpg');
+imgArray[4] = newImage('IMG_0028.jpg');
+imgArray[5] = newImage('IMG_0029.jpg');
+imgArray[6] = newImage('IMG_0030.jpg');
+imgArray[7] = newImage('IMG_0031.jpg');
+imgArray[8] = newImage('IMG_0032.jpg');
+imgArray[9] = newImage('IMG_0033.jpg');
+imgArray[10] = newImage('IMG_0034.jpg');
+imgArray[11] = newImage('IMG_0035.jpg');
+imgArray[12] = newImage('IMG_0036.jpg');
+imgArray[13] = newImage('IMG_0037.jpg');
+imgArray[14] = newImage('IMG_0038.jpg');
+imgArray[15] = newImage('IMG_0039.jpg');
+imgArray[16] = newImage('IMG_0040.jpg');
+imgArray[17] = newImage('IMG_0041.jpg');
+imgArray[18] = newImage('IMG_0042.jpg');
+imgArray[19] = newImage('IMG_0043.jpg');
+imgArray[20] = newImage('IMG_0044.jpg');
+imgArray[21] = newImage('IMG_0045.jpg');
+imgArray[22] = newImage('IMG_0046.jpg');
+imgArray[23] = newImage('IMG_0047.jpg');
+imgArray[24] = newImage('IMG_0048.jpg');
+imgArray[25] = newImage('IMG_0049.jpg');
+imgArray[26] = newImage('IMG_0050.jpg');
+imgArray[27] = newImage('IMG_0051.jpg');
+imgArray[28] = newImage('IMG_0052.jpg');
+imgArray[29] = newImage('IMG_0053.jpg');
+imgArray[30] = newImage('IMG_0054.jpg');
+imgArray[31] = newImage('IMG_0055.jpg');
+imgArray[32] = newImage('IMG_0056.jpg');
+imgArray[33] = newImage('IMG_0057.jpg');
+imgArray[34] = newImage('IMG_0058.jpg');
+imgArray[35] = newImage('IMG_0059.jpg');
+imgArray[36] = newImage('IMG_0060.jpg');
+imgArray[37] = newImage('IMG_0061.jpg');
+imgArray[38] = newImage('IMG_0062.jpg');
+imgArray[39] = newImage('IMG_0063.jpg');
+imgArray[40] = newImage('IMG_0064.jpg');
+imgArray[41] = newImage('IMG_0065.jpg');
+imgArray[42] = newImage('IMG_0066.jpg');
+imgArray[43] = newImage('IMG_0067.jpg');
+imgArray[44] = newImage('IMG_0068.jpg');
+imgArray[45] = newImage('IMG_0069.jpg');
+imgArray[46] = newImage('IMG_0070.jpg');
+imgArray[47] = newImage('IMG_0071.jpg');
+imgArray[48] = newImage('IMG_0072.jpg');
+imgArray[49] = newImage('IMG_0073.jpg');
+imgArray[50] = newImage('IMG_0074.jpg');
+imgArray[51] = newImage('IMG_0075.jpg');
+imgArray[52] = newImage('IMG_0076.jpg');
+imgArray[53] = newImage('IMG_0077.jpg');
+imgArray[54] = newImage('IMG_0078.jpg');
+imgArray[55] = newImage('IMG_0079.jpg');
+imgArray[56] = newImage('IMG_0080.jpg');
+imgArray[57] = newImage('IMG_0081.jpg');
+imgArray[58] = newImage('IMG_0082.jpg');
+imgArray[59] = newImage('IMG_0083.jpg');
+imgArray[60] = newImage('IMG_0084.jpg');
+imgArray[61] = newImage('IMG_0085.jpg');
+imgArray[62] = newImage('IMG_0086.jpg');
+imgArray[63] = newImage('IMG_0087.jpg');
+imgArray[64] = newImage('IMG_0088.jpg');
+imgArray[65] = newImage('IMG_0089.jpg');
+imgArray[66] = newImage('IMG_0090.jpg');
+imgArray[67] = newImage('IMG_0091.jpg');
+imgArray[68] = newImage('IMG_0092.jpg');
+imgArray[69] = newImage('IMG_0093.jpg');
+imgArray[70] = newImage('IMG_0093.jpg');
+imgArray[71] = newImage('IMG_0093.jpg');
+imgArray[72] = newImage('IMG_0093.jpg');
+imgArray[73] = newImage('IMG_0093.jpg');
+imgArray[74] = newImage('IMG_0093.jpg');
+
+var counter = 0;
+
+function animate() {
+	for (f=0; f<25; f++) {
+		theImg = counter + f;
+		if (theImg >= imgArray.length) theImg = theImg - imgArray.length;
+		document.images['frame' + f].src = imgArray[theImg].src;
+	}
+	counter++;
+	if (counter >= imgArray.length) counter = counter - imgArray.length;
+}
+
+
+
+function newImage(path) {
+	ImgRef = new Image();
+	ImgRef.src = path;
+	return ImgRef;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=000000 MARGINWIDTH=5 MARGINHEIGHT=5 TOPMARGIN=5 LEFTMARGIN=5 ONLOAD="setInterval('animate()',200)">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame0"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame5"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame10"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame15"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame20"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame1"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame6"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame11"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame16"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame21"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame2"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame7"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame12"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame17"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame22"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame3"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame8"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame13"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame18"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame23"></TD>
+	</TR>
+<TR><TD HEIGHT=5></TD></TR>
+<TR><TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame4"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame9"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame14"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame19"></TD>
+	<TD WIDTH=5></TD>
+	<TD><IMG SRC="transparent.gif" WIDTH=200 HEIGHT=150 BORDER=0 NAME="frame24"></TD>
+	</TR>
+</TABLE>
+</BODY>
+</HTML>

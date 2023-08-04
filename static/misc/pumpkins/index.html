@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>3D ?</title>
+
+<style type="text/css">
+body
+{
+	font-family: Georgia, Serif;
+	font-size: 10pt;
+	line-height: 13pt;
+}
+
+#address
+{
+	float: right;
+	text-align: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	color: #666;
+	padding-right: 0px;
+}
+
+a {
+	color: #6C3D35;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+<script language="javascript" type="text/javascript">
+
+function newImage(arg) {
+	rslt = new Image();
+	rslt.src = arg;
+	return rslt;
+}
+
+function nextPic() {
+	current++;
+	if (current >= flyers.length) {
+		current = 0;
+	}
+	document.images['polaroid'].src = flyers[current].src;
+	setTimeout("nextPic()",150)
+}
+
+var current = 0;
+
+function startup() {
+	nextPic();
+}
+
+flyers = new Array();
+flyers[0] = newImage("pumpkins1.jpg");
+flyers[1] = newImage("pumpkins2.jpg");
+
+</script>
+</head>
+<body onload="startup()">
+
+<div align="center">
+<img src="pumpkins1.jpg" width="600" height="450" border="0" name="polaroid" />
+</div>
+
+</body>
+</html>

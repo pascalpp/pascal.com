@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>iPhone Multitasking Demo</title>
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+var Slides = {
+	current: 2,
+	examplewidth: 191,
+	leftorigin: 0,
+	slideMS: 300,
+	switching: false,
+
+	init: function() {
+		//console.log('Slides.init')
+		Slides.num = $('#apps-small .app-small').size();
+
+		// add click handlers
+		$('#button-left button').click(Slides.previous);
+		$('#button-right button').click(Slides.next);
+		$('#button-switcher button').click(Slides.zoomOut);
+		$('#app-click1').click(Slides.zoomIn);
+		$('#app-left').click(Slides.previous);
+		$('#app-right').click(Slides.next);
+		
+		// assign ID numbers - classnames are for CSS use only
+		// so examples can be reordered at will without renumbering the classnames
+		$('#apps-small .app-small').each(function(i) {
+			$(this).attr('id','app-small-'+i);
+		});
+		
+		// setup pager
+		var hh = '';
+		for (var i=0; i<Slides.num; i++) {
+			hh += '<span><\/span>';
+		}
+		$('#pager').html(hh);
+		$('#pager span').eq(Slides.current).addClass('current');
+		
+		Slides.load(Slides.current);
+		
+		if (Slides.switching) Slides.startSwitching();
+
+	},
+	
+	checkbounds: function() {
+		//console.log('Slides.checkbounds')
+		if (Slides.current >= Slides.num) {
+			Slides.current = Slides.num - 1;
+			return;
+		}
+		if (Slides.current < 0) {
+			Slides.current = 0;
+			return;
+		}
+	},
+	
+	startSwitching: function() {
+		Slides.switching = true;
+		$('body').addClass('switching');
+	},
+	
+	stopSwitching: function() {
+		Slides.switching = false;
+		$('body').removeClass('switching');
+	},
+
+	zoomIn: function() {
+		Slides.stopSwitching();
+		$('#apps-large .current img')
+			.css({
+				left: '28px',
+				top: '34px',
+				width: '175px',
+				height: '263px'
+			})
+			.animate({
+				left: '0',
+				top: '0',
+				width: '230px',
+				height: '345px'
+			}, Slides.slideMS/2, 'swing');
+
+	},
+	
+	zoomOut: function() {
+		$('#apps-small').show();
+		$('#apps-large .current img')
+			.css({
+				left: '0',
+				top: '0',
+				width: '230px',
+				height: '345px'
+			})
+			.animate({
+				left: '28px',
+				top: '34px',
+				width: '175px',
+				height: '263px'
+			}, Slides.slideMS/2,'swing',Slides.startSwitching);
+		
+	},
+	
+	load: function(n) {
+		Slides.current = n;
+		Slides.move();
+	},
+	
+	next: function() {
+		//console.log('Slides.next')
+		if (! Slides.switching) return;
+		Slides.last = Slides.current;
+		Slides.current++;
+		Slides.move();
+	},
+
+	previous: function() {
+		//console.log('Slides.previous')
+		if (! Slides.switching) return;
+		Slides.last = Slides.current;
+		Slides.current--;
+		Slides.move();
+	},
+	
+	move: function() {
+		//console.log('Slides.move')
+		Slides.checkbounds();
+		if (Slides.current == Slides.last) return;
+		
+		var ll = 0 - (Slides.current * Slides.examplewidth) + Slides.leftorigin;
+
+		// move to the current slide
+		$('#apps-small').animate({left: ll+'px'}, Slides.slideMS, 'swing');
+
+		// set 'current' classname on current app
+		$('#apps-small .app-small').removeClass('current').eq(Slides.current).addClass('current');
+		$('#apps-large .app-large').removeClass('current').eq(Slides.current).addClass('current');
+
+		// update pager numbers
+		$('#pager span').removeClass('current').eq(Slides.current).addClass('current');
+		
+		Slides.checkCases();
+		
+	},
+	
+	checkCases: function() {
+		//console.log('Slides.checkCases')
+		switch(Slides.current) {
+			case 0:
+				return;
+				
+			default:
+				return;
+		}
+	}
+	
+}
+$(document).ready(Slides.init);
+</script>
+
+<style type="text/css">
+
+body {
+	width: 800px;
+	font-family: Helvetica, Sans-Serif;
+	margin: auto;
+	margin-top: 40px;
+}
+
+#stage {
+	margin: auto;
+	position: relative;
+	width: 699px;
+	height: 590px;
+	overflow: hidden;
+}
+
+#apps-small {
+	position: absolute;
+	width: 1800px;
+	height: 345px;
+	top: 95px;
+	left: 0px;
+	padding: 0 20px; 
+	padding-left: 255px;
+	background-color: #AFA19E;
+	display: none;
+}
+
+#apps-small .app-small {
+	float: left;
+	margin: 20px 8px;
+	text-align: center;
+	position: relative;
+}
+
+#apps-small .app-small img {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+
+#apps-small .app-small .caption {
+	display: block;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#apps-small .app-small .caption span {
+	background-color: rgba(0,0,0,.5);
+	padding: 3px 12px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+#apps-small .app-small .close {
+	position: absolute;
+	left: -10px;
+	top: 17px;
+	width: 20px;
+	height: 20px;
+	background-image: url(close.png);
+	background-repeat: no-repeat;
+	display: none;
+	cursor: pointer;
+}
+#apps-small .current .close {
+	display: block;
+}
+
+#apps-large {
+	position: absolute;
+	width: 230px;
+	height: 345px;
+	left: 235px;
+	top: 95px;
+}
+
+#apps-large .app-large {
+	display: none;
+	position: absolute;
+}
+#apps-large .current {
+	display: block;
+}
+
+#apps-large .app-large img {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+
+#iphone {
+	background-image: url(iphone.png);
+	background-repeat: no-repeat;
+	width: 299px;
+	height: 590px;
+	position: absolute;
+	left: 200px;
+}
+
+.gradient {
+	background-repeat: no-repeat;
+	width: 220px;
+	height: 590px;
+	position: absolute;
+	background-color: #fff;
+}
+.gradient#gradient-left {
+	/* background-image: url(gradient-left.png); */
+	left: 0px;
+}
+.gradient#gradient-right {
+	/* background-image: url(gradient-right.png); */
+	left: 479px;
+}
+
+#app-click1 {
+	width: 175px;
+	height: 252px;
+	position: absolute;
+	left: 263px;
+	top: 140px;
+	cursor: pointer;
+	display: none;
+}
+
+#app-left {
+	width: 13px;
+	height: 252px;
+	position: absolute;
+	left: 235px;
+	top: 140px;
+	cursor: pointer;
+	display: none;
+}
+
+#app-right {
+	width: 13px;
+	height: 252px;
+	position: absolute;
+	left: 452px;
+	top: 140px;
+	cursor: pointer;
+	display: none;
+}
+
+#pager {
+	position: absolute;
+	width: 230px;
+	height: 20px;
+	left: 235px;
+	top: 412px;
+	text-align: center;
+	display: none;
+}
+
+#pager span {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	margin: 0 3px;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+#pager span.current {
+	background-color: rgba(255,255,255,0.8);
+}
+
+
+#buttons {
+	margin: auto;
+	margin-top: 20px;
+	width: 699px;
+	text-align: center;
+}
+
+#button-left {
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 450px;
+	width: 200px;
+	text-align: right;
+}
+#button-right {
+	display: none;
+	position: absolute;
+	left: 500px;
+	top: 450px;
+}
+#button-switcher {
+	position: absolute;
+	text-align: center;
+	left: 200px;
+	top: 555px;
+	width: 299px;
+}
+
+
+#exitnote {
+	display: none;
+	font-size: 12px;
+}
+
+
+.switching #apps-small,
+.switching #app-click1,
+.switching #app-left,
+.switching #app-right,
+.switching #pager {
+	display: block;
+}
+
+.switching #button-left,
+.switching #button-right,
+.switching #exitnote {
+	display: inline;
+}
+
+.switching #apps-large,
+.switching #button-switcher button {
+	display: none;
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<div id="stage">
+	<div id="apps-small">
+		<div class="app-small"><div class="caption"><span>Home</span></div><img src="./apps-small/home.png" alt="" border="0" /></div>
+		<div class="app-small"><div class="caption"><span>Mail</span></div><img src="./apps-small/mail.png" alt="" border="0" /><div class="close"></div></div>
+		<div class="app-small"><div class="caption"><span>Facebook</span></div><img src="./apps-small/facebook.png" alt="" border="0" /><div class="close"></div></div>
+		<div class="app-small"><div class="caption"><span>Safari</span></div><img src="./apps-small/nytimes.png" alt="" border="0" /><div class="close"></div></div>
+		<div class="app-small"><div class="caption"><span>Messages</span></div><img src="./apps-small/sms.png" alt="" border="0" /><div class="close"></div></div>
+		<div class="app-small"><div class="caption"><span>TouchTerm</span></div><img src="./apps-small/terminal.png" alt="" border="0" /><div class="close"></div></div>
+		<div class="app-small"><div class="caption"><span>Twitterific</span></div><img src="./apps-small/twitterific.png" alt="" border="0" /><div class="close"></div></div>
+	</div>
+	<div id="apps-large">
+		<div class="app-large"><img src="./apps-large/home.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/mail.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/facebook.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/nytimes.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/sms.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/terminal.png" alt="" border="0" /></div>
+		<div class="app-large"><img src="./apps-large/twitterific.png" alt="" border="0" /></div>
+	</div>
+	<div id="pager"></div>
+	<div class="gradient" id="gradient-left"></div>
+	<div class="gradient" id="gradient-right"></div>
+	<div id="iphone"></div>
+	<div id="app-click1"></div>
+	<div id="app-left"></div>
+	<div id="app-right"></div>
+	<div id="button-left"><button>Swipe Right</button></div>
+	<div id="button-right"><button>Swipe Left</button></div>
+	<div id="button-switcher"><button>App Switching Gesture</button><span id="exitnote">(Click app to enlarge and leave switcher)</span>
+</div>
+
+</div>
+
+<div id="buttons">
+</div>
+
+<div id="notes">
+
+</div>
+
+</body>
+</html>

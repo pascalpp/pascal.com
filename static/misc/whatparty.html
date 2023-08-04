@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>What party represents my beliefs?</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+body {
+	font-family: Helvetica, Sans-Serif;
+	text-align: center;
+	background-color: #ffe;
+}
+.wrap {
+	margin: 40px auto;
+}
+
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+	content: ".";
+	font-size: 0;
+}
+
+.buttons {
+	margin: 0 auto;
+	width: 340px;
+}
+button {
+	cursor: pointer;
+	font-family: inherit;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 60px;
+	border-radius: 10px;
+	min-width: 150px;
+	background-color: #eef;
+	border: 4px solid;
+	border-left: 2px solid;
+	border-top: 2px solid;
+	border-color: rgba(0,0,0,0.2);
+	float: left;
+	margin: 10px;
+	background-color: #eeeeff;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(238, 238, 255)), to(rgb(214, 214, 230)));
+	background-image: -webkit-linear-gradient(top, rgb(238, 238, 255), rgb(214, 214, 230));
+	background-image: -moz-linear-gradient(top, rgb(238, 238, 255), rgb(214, 214, 230));
+	background-image: -o-linear-gradient(top, rgb(238, 238, 255), rgb(214, 214, 230));
+	background-image: -ms-linear-gradient(top, rgb(238, 238, 255), rgb(214, 214, 230));
+	background-image: linear-gradient(top, rgb(238, 238, 255), rgb(214, 214, 230));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#eeeeff', EndColorStr='#d6d6e6');
+}
+button:hover {
+	border-color: rgba(0,0,0,0.3);
+} 
+button:active {
+	border: 4px solid;
+	border-right: 2px solid;
+	border-bottom: 2px solid;
+	border-color: rgba(0,0,0,0.2);
+	background-color: #d6d6e6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(214, 214, 230)), to(rgb(238, 238, 255)));
+	background-image: -webkit-linear-gradient(top, rgb(214, 214, 230), rgb(238, 238, 255));
+	background-image: -moz-linear-gradient(top, rgb(214, 214, 230), rgb(238, 238, 255));
+	background-image: -o-linear-gradient(top, rgb(214, 214, 230), rgb(238, 238, 255));
+	background-image: -ms-linear-gradient(top, rgb(214, 214, 230), rgb(238, 238, 255));
+	background-image: linear-gradient(top, rgb(214, 214, 230), rgb(238, 238, 255));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d6d6e6', EndColorStr='#eeeeff');
+}
+
+.container {
+	position: relative;
+	margin: 0px auto;
+	z-index: 1;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.card {
+	margin: 0 auto;
+	position: relative;
+	width: 650px;
+	height: 300px;
+}
+
+.card.over {
+	-webkit-transform: rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 0.5s linear;
+	-moz-transform-style: preserve-3d;
+	-moz-transition: all 0.5s linear;
+	-o-transform-style: preserve-3d;
+	-o-transition: all 0.5s linear;
+	transform-style: preserve-3d;
+	transition: all 0.5s linear;
+}
+
+
+.face {
+	background-color: #fff;
+	border: 4px solid rgba(0,0,0,0.2);
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.face.back {
+	display: block;
+	-webkit-transform: rotateY(180deg);
+	-webkit-box-sizing: border-box;
+	-moz-transform: rotateY(180deg);
+	-moz-box-sizing: border-box;
+	-o-transform: rotateY(180deg);
+	-o-box-sizing: border-box;
+	transform: rotateY(180deg);
+	box-sizing: border-box;
+}
+
+.facecontent {
+	padding: 10px 20px;
+}
+
+.answer {
+	display: none;
+}
+.answer-yes .yes {
+	display: block;
+}
+.answer-no .no {
+	display: block;
+}
+
+.answer {
+	margin-top: 100px;
+}
+
+</style>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+$('button').on('click',function() {
+	var answer = $(this).data('answer');
+	$('.card').addClass('over').addClass('answer-'+answer);
+});
+
+});
+
+</script>
+</head>
+<body>
+
+<div class="wrap">
+
+	<h3>In order to determine your party affiliation,<br />please answer the following question:</h3>
+	
+	<div class="container">
+		<div class="card">
+			<div class="face front question">
+				<div class="facecontent clearfix">
+					<h1>Should all U.S citizens aged 18 and higher be allowed to vote, provided they have never committed a felony?</h1>
+					<div class="buttons">
+						<button data-answer="yes">Yes</button>
+						<button data-answer="no">No</button>
+					</div>
+				</div>
+			</div>
+			<div class="face back">
+				<div class="facecontent clearfix">
+					<div class="answer yes">
+						<h1>You’re probably a Democrat.</h1>
+					</div>
+					<div class="answer no">
+						<h1>You’re probably a Republican.</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jerome Secret</title>
+
+<style type="text/css">
+body
+{
+	font-family: Georgia, Serif;
+	font-size: 10pt;
+	line-height: 13pt;
+}
+
+#address
+{
+	float: right;
+	text-align: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	color: #666;
+	padding-right: 0px;
+}
+
+a {
+	color: #6C3D35;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+<script language="javascript" type="text/javascript">
+
+function newImage(arg) {
+	rslt = new Image();
+	rslt.src = arg;
+	return rslt;
+}
+
+function randomNum(start,end) {
+	var range = end - start + 1;
+	var n = Math.floor(Math.random() * (range)) + start;
+	return n;
+}
+
+function randomPic() {
+	current = randomNum(0,flyers.length-1)
+	document.images['polaroid'].src = flyers[current].src;
+}
+
+function nextPic() {
+	current++;
+	if (current >= flyers.length) {
+		current = 0;
+	}
+	document.images['polaroid'].src = flyers[current].src;
+	setTimeout("nextPic()",150);
+}
+
+var current;
+
+function startup() {
+	randomPic();
+	nextPic()
+}
+
+flyers = new Array();
+flyers[0] = newImage("Lottery_winner3-1.jpg");
+flyers[1] = newImage("Lottery_winner2.jpg");
+flyers[2] = newImage("Lottery_winner4B.jpg");
+flyers[3] = newImage("Lottery_winner3.jpg");
+flyers[4] = newImage("Lottery_winner2-1.jpg");
+
+
+
+
+
+</script>
+</head>
+<body onload="startup()">
+
+<div align="center">
+<img src="pixel.gif" width="800" height="551" border="0" name="polaroid" />
+
+</div>
+
+</body>
+</html>

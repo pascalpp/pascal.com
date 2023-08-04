@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>Free Ruler for Mac OS X</TITLE>
+<STYLE TYPE="text/css">
+TD {
+	font: 11px/20px Lucida Grande,Geneva,Helvetica,Arial,Sans-Serif;
+}
+
+.header {
+	font-size: 16px;
+}
+</STYLE>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-162208-1";
+urchinTracker();
+</script>
+</HEAD>
+
+
+<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=000099 ALINK=000000 VLINK=000033>
+<FORM>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TR><TD WIDTH=80></TD>
+	<TD WIDTH=480 VALIGN=TOP>
+
+
+<P ALIGN=CENTER>
+<IMG SRC="freeruler.gif" WIDTH=429 HEIGHT=130 BORDER=0><BR>
+Free Ruler is a free screen ruler for Mac OS X.
+</P>
+
+<HR SIZE=1 WIDTH=480>
+<P>
+<B>Current Version:</B><BR>
+Free Ruler Version 1.6, released March 10, 2003.<BR>
+&copy;2003 by <A HREF="../../">Pascal</A>. Free Ruler is, uh, free.
+</P>
+
+<P>
+<B>Features:</B><BR>
+&#149; A horizontal and vertical ruler which can be used independently or simultaneously.<BR>
+&#149; Measurement in pixels, inches, picas, or centimeters.<BR>
+&#149; Automatic alignment of rulers.<BR>
+&#149; The ability to group rulers and move them around as a unit.<BR>
+&#149; Shadowless rulers with customizable transparency.<BR>
+&#149; Interactive tick marks which follow the mouse location for more precise measurement.<BR>
+&#149; Independent resizing of rulers, from 200 pixels to 5000 pixels in length.<BR>
+&#149; Single key shortcuts for most ruler functions.<BR>
+&#149; Conversion assistant to set ruler resolution based on screen size and resolution.<BR>
+&#149; Unit converter utility for converting numbers between different units of measure.<BR>
+&#149; Did I mention it's free?<BR>
+</P>
+
+<P>
+<B>Download:</B><BR>
+Download <A HREF="FreeRuler1.6.dmg.sit">Free Ruler for Mac OS X</A> &#160; (1.0 MB).<BR>
+Note: Free Ruler is only available for Mac OS X. It may work on Mac OS 9, but this has not been tested. It most definitely will not work on your stupid Windows PC.<BR>
+</P>
+
+<P>
+<B>Version History:</B><BR>
+- Version 1.6 - March 10, 2003<BR>
+Added customizable transparency, thanks to Alexander Cohen's excellent Window Alpha plugin. Modified grouping behaviour so that clicking a ruler brings both rulers forward, if grouped. Added a resolution assistant to set ruler conversion settings based on screen size. (This feature only works reliably on flat-panel LCD screens; it may not produce accurate results on CRT screens.) Various internal improvements.<BR>
+- Version 1.5 - February 11, 2003<BR>
+Finally figured out a way to make the rulers shadowless, thanks to a nice fellow named Fritz who pointed out <A HREF="http://www.tildesoft.com/">Tildesoft</A>'s excellent Carbon Declare library. 
+<!-- I've made the rulers shadowless by default, and I decided against adding a preference for turning shadows on and off, in order to keep the interface as simple as possible. -->
+Also added several other internal optimizations.<BR>
+- Version 1.1 - February 23, 2002<BR>
+Added lots of new features based on user feedback, including ruler alignment and 3 new units of measure. Added ability to modify rulers by pressing different keys on the keyboard. (See the Help menu in Free Ruler for a complete list of keyboard shortcuts.) Added lock icon to provide visual indication of group state. Added ability to copy ruler measurements to the clipboard. Reorganized menu bar. Implemented preference file so that Free Ruler remembers window locations and other settings.<BR>
+Also fixed a lot of bugs and optimized different parts of the application. Redraw is much faster when resizing a ruler. Crosshair cursor behaves correctly when entering the menu bar. Interactive ticks hide themselves when dragging rulers around.<BR>
+- Version 1.0 - February 13, 2002<BR>
+Initial release.
+</P>
+
+<P>
+<B>The Most Frequently Asked Question</B><BR>
+<B>&#149; Why don't you make it so the rulers can float above other applications?</B><BR>
+Unfortunately, floating windows don't receive events the same way regular windows do, at least in REALbasic. Making the rulers float would eliminate the ability for rulers to respond to keystrokes, which to me is more important than floating. The main problem with rulers not floating is that they can easily get obscured by other windows. To help address this problem, I've modififed the grouping behavior in Free Ruler 1.6 so that if rulers are grouped, clicking any visible portion of a ruler will bring both rulers forward. I'm investigating the possibility of toggling the floating state of the rulers for a future version of Free Ruler.
+</P>
+
+<P>
+<B>Other Known Problems:</B><BR>
+&#149; The unit conversion assistant (in the Help window) does not work reliably on CRT monitors. It works best on flat-panel LCD screens.<BR>
+&#149; Rulers don't care if you drag them offscreen. If you drag a ruler completely out of view (easy to do when rulers are grouped), try aligning the ruler origins to bring it back into view.<BR>
+&#149; The first time a unit of measure is chosen, there is a slight delay while the application creates the tick marks to be displayed.<BR>
+&#149; Rulers must be brought forward before they can be moved around the screen or closed.<BR>
+&#149; The crosshair cursor appears in the title bars of some windows.<BR>
+&#149; Free Ruler was made with <A HREF="http://www.realsoftware.com/">REALbasic</A>. REALbasic is an amazing development environment, but it has its limitations.
+</P>
+
+<P>
+<B>Possible Features for Possible Future Releases:</B><BR>
+&#149; The ability to draw tick marks on either edge of the ruler.<BR>
+&#149; The ability to flip ruler origins, so that you can measure from right to left on the horizontal ruler or bottom to top on the vertical ruler.<BR>
+&#149; Customizable rulers for reading data points from on-screen charts and graphs.<BR>
+&#149; A percentage ruler: this would have 0% at its origin and 100% at the opposite end, with the percentage range running along the ruler.<BR>
+&#149; The ability to change the view scale of the ruler to something other than 100%.<BR>
+&#149; Ability for rulers to float above other application windows (see FAQ above).<BR>
+&#149; A ground-up rewrite in Cocoa.<BR>
+</P>
+
+<P>
+<B>Feedback:</B><BR>
+Free Ruler is free software, which means I don't provide technical support for it. I make no promises about future releases. However, I welcome your feedback at <A HREF="mailto:&#112;&#97;&#115;&#99;&#97;&#108;&#64;&#112;&#97;&#115;&#99;&#97;&#108;&#46;&#99;&#111;&#109;?subject=Free%20Ruler">&#112;&#97;&#115;&#99;&#97;&#108;&#64;&#112;&#97;&#115;&#99;&#97;&#108;&#46;&#99;&#111;&#109;?subject=Free%20Ruler</A>.
+</P>
+
+<P>
+<B>If you really really want to give me some money</B><BR>
+Well of course I won't say no! Any amount you care to give for Free Ruler would be greatly appreciated and would encourage me to make Free Ruler even better.<BR>
+<BR>
+You can send a check payable to:<BR>
+Pascal Balthrop<BR>
+349 Union St #2<BR>
+Brooklyn, NY 11231<BR>
+<BR>
+-or-<BR>
+<BR>
+<!-- Begin PayPal Logo -->
+<A HREF="https://www.paypal.com/affil/pal=pascal%40pascal.com" target="_blank"><IMG SRC="http://images.paypal.com/images/lgo/logo3.gif" BORDER="0" ALT="Make payments with PayPal - it's fast, free and secure!"></A>
+<!-- End PayPal Logo -->
+<BR>
+you can send a donation via <A HREF="https://www.paypal.com/affil/pal=pascal%40pascal.com">PayPal</A> using the email address &#112;&#97;&#115;&#99;&#97;&#108;&#64;&#112;&#97;&#115;&#99;&#97;&#108;&#46;&#99;&#111;&#109;. If you sign up for PayPal using this link I'll get a $5 referral bonus. Rest assured I'll spend the money on more Cocoa programming books.
+	</FONT></TD>
+	</TR>
+<TR><TD HEIGHT=20></TD></TR>
+<TR><TD></TD>
+	<TD ALIGN=CENTER VALIGN=BOTTOM>
+
+<HR SIZE=1 WIDTH=480>
+
+<A HREF="../../index.html" TARGET="_top">pascal's home page</A>
+
+	</FONT></TD>
+	</TR>
+</TABLE>
+
+</FORM>
+</BODY> 
+</HTML>

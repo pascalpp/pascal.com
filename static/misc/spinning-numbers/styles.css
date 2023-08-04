@@ -1,0 +1,64 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+}
+
+.wrap div {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+}
+
+.red {
+    background-image: url(./red.png);
+    animation: rotateright 20s infinite linear;
+}
+.green {
+    background-image: url(./green.png);
+    animation: rotateleft 18s infinite linear;
+}
+.fan-left {
+    background-image: url(./fan-left.png);
+    animation: rotateright 6s infinite linear;
+    opacity: 0.3;
+}
+.fan-right {
+    background-image: url(./fan-right.png);
+    animation: rotateleft 4s infinite linear;
+    opacity: 0.3;
+}
+.even {
+    background-image: url(./even.png);
+    animation: rotateleft 12s infinite linear;
+}
+.odd {
+    background-image: url(./odd.png);
+    animation: rotateright 10s infinite linear;
+}
+
+@keyframes rotateright {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotateleft {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

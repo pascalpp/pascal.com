@@ -1,0 +1,167 @@
+body { background-color: #f2f2f2; }
+
+body, div, p, td
+{
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 11pt;
+	line-height: 15pt;
+}
+
+h1, h2, h3, h4, ul { margin: 0px; }
+
+#rightcontent {
+	position: absolute;
+	top: 0px;
+	left: 55%;
+}
+
+#cardborder
+{
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 304px;
+	height: 132px;
+	background-color: black;
+}
+
+#card
+{
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 302px;
+	height: 130px;
+	background-color: white;
+}
+
+#cardbrackets {
+	position: absolute;
+	top: 12px;
+	left: 32px;
+	width: 250px;
+	font-family: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+	font-size: 11pt;
+	line-height: 10pt;
+	font-weight: bold;
+	color: #dddddd;
+	letter-spacing: 2px;
+}
+
+#cardinfo
+{
+	position: absolute;
+	bottom: 10px;
+	left: 32px;
+	width: 250px;
+	font-family: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+	font-size: 8pt;
+	line-height: 10pt;
+	letter-spacing: .01em;
+}
+
+#cardinfo a
+{
+	text-decoration: none;
+	color: black;
+}
+
+#cardinfo a:hover { text-decoration: underline; }
+
+.navigation
+{
+	font-family: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+	font-size: 9pt;
+}
+
+#portfolio-link, #portfolio-nonlink {
+	position: absolute;
+	top: 190px;
+	left: 33px;
+}
+
+#capabilities-link, #capabilities-nonlink {
+	position: absolute;
+	top: 220px;
+	left: 33px;
+}
+
+#availability-link, #availability-nonlink {
+	position: absolute;
+	top: 250px;
+	left: 33px;
+}
+
+#home-link {
+	position: absolute;
+	top: 310px;
+	left: 33px;
+}
+
+#portfolio-link, #capabilities-link, #availability-link, #portfolio-nonlink, #capabilities-nonlink, #availability-nonlink { visibility: hidden; }
+
+#portfolio, #capabilities, #availability
+{
+	position: absolute;
+	top: 20px;
+	left: 35px;
+	width: 48%;
+	padding-bottom: 50px;
+}
+
+#capabilities, #availability { visibility: hidden; }
+
+#portfolio p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+}
+
+#portfolio ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 40px;
+	padding-left: 0px;
+}
+
+h1
+{
+	font-weight: normal;
+	font-size: 16pt;
+	font-family: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+	margin-left: 15px;
+}
+
+h2
+{
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: Helvetica, Arial, Sans-Serif;
+	margin-top: 20pt;
+	margin-left: 15px;
+}
+
+h3
+{ 
+	font-weight: normal;
+	font-size: 10pt;
+	margin-bottom: 2pt;
+}
+
+h4
+{ 
+	font-weight: bold;
+	font-size: 10.5pt;
+	margin-top: 12pt;
+	margin-left: 15px;
+}
+
+.subsectionlink {
+	color: #009;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:link { color: #0000cc; }
+a:hover { color: #0000ff; }
+a:visited { color: #000099; }

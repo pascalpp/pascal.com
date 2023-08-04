@@ -1,0 +1,57 @@
+.leftLabel li, .rightLabel li {
+	width: auto !important;
+}
+.leftLabel .desc {
+	width: 30%;
+}
+.xleftLabel #fo1li1 .desc,
+.xleftLabel #fo1li22 .desc {
+	padding-left: 15%;
+	width: 15%;
+}
+
+.leftLabel .buttons {
+	padding-left: 30%;
+}
+.leftLabel .buttons div {
+	margin-left: 15px;
+}
+
+.wufoo input.fn {
+	width: 120px;
+}
+.wufoo input.ln {
+	width: 170px;
+}
+
+
+li.notStacked div span {
+	margin-right: 30px;
+}
+
+.xwufoo label.desc,
+.xwufoo legend.desc {
+	font-size: 90%;
+}
+
+#xfo1li24 legend.desc {
+	float: none;
+	margin: 0;
+	margin-bottom: 10px;
+	width: auto;
+}
+
+form li.focused .instruct,
+form li:hover .instruct {
+	margin-top: 38px;
+	margin-left: -235px;
+	width: 190px;
+}
+
+.embed .confirm h2 {
+	font-family: Georgia, Serif;
+	font-size: 18px;
+	font-weight: normal;
+	padding: 40px 40px 0;
+}
+
