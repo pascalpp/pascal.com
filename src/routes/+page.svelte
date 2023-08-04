@@ -20,7 +20,7 @@
 					<div class="thought-bubble">
 						<div class="circles left" />
 						<div class="thought">
-							<p class="clamp-3">Well what have we here?</p>
+							<p class="clamp-3">Hi there!</p>
 						</div>
 						<div class="circles right" />
 					</div>
@@ -103,7 +103,11 @@
 		display: flex;
 		flex-direction: row;
 		align-items: flex-end;
+		margin-left: -3em;
 		padding-right: 3em;
+		@media @mobile {
+			padding-right: 1.5em;
+		}
 
 		.thinking {
 			display: flex;
@@ -202,6 +206,7 @@
 
 		.handstand {
 			width: 180px;
+			flex-shrink: 0;
 		}
 	}
 
@@ -300,18 +305,18 @@
 		}
 		&.medium {
 			width: 1.5em;
-			height: 0.3em;
+			height: 0.5em;
 		}
 		&.large {
-			width: 3.25em;
-			height: 1.25em;
+			width: 3em;
+			height: 1.5em;
 		}
 		&.tall {
-			width: 0.75em;
-			height: 2.5em;
+			width: 2em;
+			height: 3em;
 			&::before,
 			&::after {
-				width: 50%;
+				width: 75%;
 				border-radius: 1em;
 			}
 		}
