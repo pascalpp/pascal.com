@@ -88,7 +88,7 @@
 	}
 
 	.handstand {
-		width: 200px;
+		width: 180px;
 		margin-right: 3em;
 	}
 
