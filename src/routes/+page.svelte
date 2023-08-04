@@ -15,8 +15,20 @@
 <main>
 	<Row center>
 		<Column right>
-			<div class="handstand">
-				<Handstand />
+			<div class="thinking-handstand">
+				<div class="thinking">
+					<div class="thought-bubble">
+						<div class="circles left" />
+						<div class="thought">
+							<p class="clamp-3">Well what have we here?</p>
+						</div>
+						<div class="circles right" />
+					</div>
+					<div class="dots" />
+				</div>
+				<div class="handstand">
+					<Handstand />
+				</div>
 			</div>
 			<div class="bubbles">
 				<div class="bubble header monospace bold">[ the minimalist home page of a person named pascal ]</div>
@@ -87,9 +99,110 @@
 		}
 	}
 
-	.handstand {
-		width: 180px;
-		margin-right: 3em;
+	.thinking-handstand {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		padding-right: 3em;
+
+		.thinking {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			margin-bottom: 170px;
+			transform: translateX(3em);
+
+			.thought-bubble {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				position: relative;
+				font-size: 14px;
+				.circles {
+					width: 4em;
+					height: 2em;
+					background-color: @bubblecolor;
+					border-radius: 1em;
+					position: relative;
+					&::before,
+					&::after {
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						background-color: @bubblecolor;
+						border-radius: 1em;
+					}
+					&::before {
+						bottom: 100%;
+						left: 15%;
+					}
+					&::after {
+						top: 100%;
+						left: 22%;
+					}
+					&.left {
+						transform: translateX(50%);
+						z-index: -1;
+					}
+					&.right {
+						transform: translateX(-50%) rotateY(180deg) rotateX(180deg);
+						z-index: -1;
+					}
+				}
+
+				.thought {
+					max-width: 270px;
+					min-height: 6em;
+					background-color: @bubblecolor;
+					color: @textcolor;
+					padding: 0.5em 1em;
+					padding-bottom: 0.75em;
+					text-align: center;
+					display: flex;
+					align-items: center;
+					overflow: hidden;
+
+					p {
+						margin: 0;
+					}
+				}
+			}
+
+			.dots {
+				margin-top: 6px;
+				width: 1.75em;
+				margin-right: 4em;
+				aspect-ratio: 1 / 1;
+				background-color: @bubblecolor;
+				border-radius: 50%;
+				position: relative;
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					aspect-ratio: 1 / 1;
+					background-color: @bubblecolor;
+					border-radius: 50%;
+				}
+
+				&::before {
+					top: 110%;
+					right: -35%;
+					width: 70%;
+				}
+				&::after {
+					top: 185%;
+					right: -70%;
+					width: 40%;
+				}
+			}
+		}
+
+		.handstand {
+			width: 180px;
+		}
 	}
 
 	.bold {
