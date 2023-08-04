@@ -2,6 +2,11 @@
 	import Column from '$lib/components/Column.svelte';
 	import Row from '$lib/components/Row.svelte';
 	import { Body } from 'svelte-body';
+
+	function selectExperiment(event: Event) {
+		const target = event.target as HTMLSelectElement;
+		document.location = target.value;
+	}
 </script>
 
 <Body class="homepage" />
@@ -14,24 +19,26 @@
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">have a look around:</div>
 				<div class="bubble-divider medium" />
-				<div class="bubble small">feast your eyes on my resume</div>
+				<a data-sveltekit-reload href="./dev/index.html" class="bubble small">feast your eyes on my resume</a>
 				<div class="bubble-divider small" />
-				<div class="bubble small">read my diary</div>
+				<a data-sveltekit-reload href="./diary" class="bubble small">read my diary</a>
 				<div class="bubble-divider small" />
-				<div class="bubble small">listen to my solo record</div>
+				<a data-sveltekit-reload href="./hellomynameis/index.html" class="bubble small">listen to my solo record</a>
 				<div class="bubble-divider small" />
-				<div class="bubble small">watch some movies I made</div>
+				<a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
 				<div class="bubble-divider small" />
-				<a href="./software" class="bubble small">download some mac software I wrote</a>
+				<a data-sveltekit-reload href="./software/index.html" class="bubble small">
+					download some mac software I wrote
+				</a>
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">get outta here:</div>
 				<div class="bubble-divider medium" />
 				<a href="https://www.balthropalabama.com" class="bubble small">check out my small town band</a>
 				<div class="bubble-divider large" />
-				<div class="bubble small bold">random bits:</div>
+				<div class="bubble small bold">random experiments:</div>
 				<div class="bubble-divider medium" />
 				<div class="bubble small">
-					<select>
+					<select on:change={selectExperiment}>
 						<option disabled selected>select one ▾</option>
 						<option value="./tools/navigatorproperties.html">navigator properties</option>
 						<option value="./tools/keypress.html">keypress detector</option>
@@ -39,19 +46,6 @@
 						<option value="./disco/disco.html">disco!</option>
 						<option value="./tools/lorem_ipsum.txt">lorem ipsum</option>
 					</select>
-				</div>
-				<div class="bubble-groups">
-					<div class="bubble-group">
-						<a class="bubble small" href="./tools/navigatorproperties.html">navigator properties</a>
-						<a class="bubble small" href="./tools/keypress.html">keypress detector</a>
-					</div>
-					<div class="bubble-group">
-						<a class="bubble small" href="./misc/photomontage/index.html">photo montages</a>
-						<a class="bubble small" href="./disco/disco.html">disco!</a>
-					</div>
-					<div class="bubble-group">
-						<a class="bubble small" href="./tools/lorem_ipsum.txt">lorem ipsum</a>
-					</div>
 				</div>
 				<div class="bubble-divider tall" />
 				<div class="bubble small" style="margin-right:1em">
@@ -118,6 +112,10 @@
 		border-radius: 1.5em;
 		text-align: right;
 		margin-right: 5em;
+
+		@media @mobile {
+			margin-right: 1.25em;
+		}
 		&.header {
 			padding: 1em 2em;
 			border-radius: 2em;
@@ -148,6 +146,9 @@
 		position: relative;
 		transform: translateX(50%);
 		margin-right: 8em;
+		@media @mobile {
+			margin-right: 5em;
+		}
 
 		&::before,
 		&::after {
@@ -181,55 +182,13 @@
 			height: 1.25em;
 		}
 		&.tall {
-			width: 1.25em;
-			height: 3em;
+			width: 0.75em;
+			height: 2.5em;
 			&::before,
 			&::after {
-				width: 1em;
-				border-radius: 0.25em;
+				width: 50%;
+				border-radius: 1em;
 			}
 		}
-	}
-
-	.bubble-group {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		margin-right: 5em;
-
-		.bubble {
-			display: flex;
-			margin: 0em;
-			white-space: nowrap;
-		}
-
-		.bubble + .bubble {
-			margin-left: -0.25em;
-		}
-
-		&:xfirst-child {
-			.bubble {
-				&:first-child {
-					border-bottom-right-radius: 0;
-				}
-				&:last-child {
-					border-bottom-left-radius: 0;
-				}
-			}
-		}
-		&:xnot(:first-child):not(:last-child) {
-			.bubble {
-				&:first-child {
-					border-bottom-right-radius: 0;
-				}
-				&:last-child {
-					border-bottom-left-radius: 0;
-				}
-			}
-		}
-	}
-	.bubble-group + .bubble-group {
-		margin-top: -0.1em;
 	}
 </style>
