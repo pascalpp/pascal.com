@@ -2,8 +2,8 @@
 @import './reset.less';
 
 :root {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Helvetica Neue', sans-serif;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
 	font-size: 16px;
 	line-height: 1.42;
 	font-weight: normal;
@@ -36,9 +36,37 @@ strong {
 	font-weight: 600;
 }
 
-.small-gray-header {
-	font-size: 13px;
-	font-weight: 600;
-	color: #555;
-	margin-bottom: 2px;
+.truncate {
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+.clamp-1 {
+	-webkit-line-clamp: 1 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+	display: -webkit-box !important;
+}
+
+.clamp-2 {
+	-webkit-line-clamp: 2 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+	display: -webkit-box !important;
+}
+
+.clamp-3 {
+	-webkit-line-clamp: 3 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+	display: -webkit-box !important;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.break-word {
+	word-break: break-word;
 }
