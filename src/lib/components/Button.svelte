@@ -61,8 +61,7 @@
 	class:nowrap
 	class:active
 	disabled={loading || disabled || null}
-	on:click
->
+	on:click>
 	<span class="button-content">
 		<span class="button-label">
 			<slot>{label}</slot>
@@ -160,7 +159,7 @@
 			@shadow-distance: 1px;
 			font-weight: bold;
 			padding: 0.5em 1.5em;
-			border-radius: 4px;
+			border-radius: 0.5em;
 			box-sizing: border-box;
 			color: var(--text-color);
 			background-color: var(--background-color);

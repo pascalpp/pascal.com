@@ -30,36 +30,16 @@
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">random bits:</div>
 				<div class="bubble-divider medium" />
-				<div class="bubble small">
-					<select>
-						<option disabled selected>select one ▾</option>
-						<option value="./tools/navigatorproperties.html">navigator properties</option>
-						<option value="./tools/keypress.html">keypress detector</option>
-						<option value="./misc/photomontage/index.html">photo montages</option>
-						<option value="./disco/disco.html">disco!</option>
-						<option value="./tools/lorem_ipsum.txt">lorem ipsum</option>
-					</select>
+				<div class="bubble-party">
+					<a class="bubble small" href="./tools/navigatorproperties.html">navigator properties</a>
+					<a class="bubble small" href="./tools/lorem_ipsum.txt">lorem ipsum</a>
+					<a class="bubble small" href="./tools/keypress.html">keypress detector</a>
+					<a class="bubble small" href="./misc/photomontage/index.html">photo montages</a>
+					<a class="bubble small" href="./disco/disco.html">disco!</a>
 				</div>
-				<div class="bubble-groups">
-					<div class="bubble-group">
-						<a class="bubble small" href="./tools/navigatorproperties.html">navigator properties</a>
-						<a class="bubble small" href="./tools/keypress.html">keypress detector</a>
-					</div>
-					<div class="bubble-group">
-						<a class="bubble small" href="./misc/photomontage/index.html">photo montages</a>
-						<a class="bubble small" href="./disco/disco.html">disco!</a>
-					</div>
-					<div class="bubble-group">
-						<a class="bubble small" href="./tools/lorem_ipsum.txt">lorem ipsum</a>
-					</div>
-				</div>
-				<div class="bubble-divider tall" />
-				<div class="bubble small" style="margin-right:1em">
-					I don’t know anything about the computer language which shares my name, so don’t ask!
-				</div>
-				<div class="bubble-divider medium" />
-				<a href="mailto:pascal@pascal.com" class="bubble small">email me</a>
 			</div>
+
+			<a href="/">home</a>
 		</Column>
 	</Row>
 </main>
@@ -96,7 +76,6 @@
 	}
 
 	.bubbles {
-		font-size: 12px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
@@ -117,6 +96,7 @@
 		padding: 0.5em 1.5em;
 		border-radius: 1.5em;
 		text-align: right;
+		font-size: 12px;
 		margin-right: 5em;
 		&.header {
 			padding: 1em 2em;
@@ -124,31 +104,11 @@
 			margin-right: 0em;
 			font-size: 14px;
 		}
-
-		select {
-			appearance: none;
-			background-color: transparent;
-			border: none;
-			position: relative;
-			width: 6em;
-			&::after {
-				display: block;
-				content: '⌄';
-				position: absolute;
-				right: 0.5em;
-				top: 0.5em;
-				font-size: 0.75em;
-				pointer-events: none;
-			}
-		}
 	}
 
 	.bubble-divider {
 		background-color: @bubblecolor;
 		position: relative;
-		transform: translateX(50%);
-		margin-right: 8em;
-
 		&::before,
 		&::after {
 			content: '';
@@ -171,32 +131,29 @@
 		&.small {
 			width: 1em;
 			height: 0;
+			margin-right: 6.75em;
 		}
+
 		&.medium {
-			width: 1.5em;
-			height: 0.3em;
-		}
-		&.large {
-			width: 3.25em;
-			height: 1.25em;
-		}
-		&.tall {
 			width: 1.25em;
-			height: 3em;
-			&::before,
-			&::after {
-				width: 1em;
-				border-radius: 0.25em;
-			}
+			height: 0.2em;
+			margin-right: 6.675em;
+		}
+
+		&.large {
+			width: 2.75em;
+			height: 1em;
+			margin-right: 5.875em;
 		}
 	}
 
-	.bubble-group {
+	.bubble-party {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 		margin-right: 5em;
+		width: 450px;
 
 		.bubble {
 			display: flex;
@@ -207,29 +164,5 @@
 		.bubble + .bubble {
 			margin-left: -0.25em;
 		}
-
-		&:xfirst-child {
-			.bubble {
-				&:first-child {
-					border-bottom-right-radius: 0;
-				}
-				&:last-child {
-					border-bottom-left-radius: 0;
-				}
-			}
-		}
-		&:xnot(:first-child):not(:last-child) {
-			.bubble {
-				&:first-child {
-					border-bottom-right-radius: 0;
-				}
-				&:last-child {
-					border-bottom-left-radius: 0;
-				}
-			}
-		}
-	}
-	.bubble-group + .bubble-group {
-		margin-top: -0.1em;
 	}
 </style>
