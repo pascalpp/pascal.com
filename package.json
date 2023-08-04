@@ -38,6 +38,7 @@
 		"autoprefixer": "^10.4.14",
 		"classnames": "^2.3.2",
 		"focus-trap": "^7.5.2",
+		"svelte-body": "^1.4.0",
 		"svelte-preprocess-import-assets": "^1.0.1"
 	}
 }
