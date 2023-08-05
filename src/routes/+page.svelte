@@ -3,6 +3,9 @@
 	import Row from '$lib/components/Row.svelte';
 	import Handstand from './images/handstand.svg?component';
 
+	// import md from './emails/2017-09-14.md';
+	// console.log(md);
+
 	function selectExperiment(event: Event) {
 		const target = event.target as HTMLSelectElement;
 		document.location = target.value;
@@ -366,7 +369,7 @@
 		}
 
 		h3 {
-			box-shadow: inset 0 -40px 40px -40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.15);
+			box-shadow: inset 0 -60px 60px -60px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.15);
 			margin: 0;
 			padding: 1em 1.5em;
 		}
