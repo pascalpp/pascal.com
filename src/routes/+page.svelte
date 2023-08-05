@@ -11,6 +11,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>pascal.com</title>
+</svelte:head>
+
 <main>
 	<Row center>
 		<Column right>
@@ -49,11 +53,11 @@
 				<div class="bubble-divider small" />
 				<a href="https://album.link/i/7202482" class="bubble small">listen to my old record</a>
 				<div class="bubble-divider large" />
-				<div class="bubble small bold">random experiments:</div>
+				<div class="bubble small bold">random bits:</div>
 				<div class="bubble-divider medium" />
 				<div class="bubble small">
 					<select on:change={selectExperiment}>
-						<option disabled selected>select one ▾</option>
+						<option disabled selected>select an experiment ▾</option>
 						<option value="./tools/navigatorproperties.html">navigator properties</option>
 						<option value="./tools/keypress.html">keypress detector</option>
 						<option value="./misc/photomontage/index.html">photo montages</option>
@@ -75,6 +79,9 @@
 		</Column>
 	</Row>
 </main>
+
+<a rel="me" href="https://mastodon.social/@pascalpp" style="display: none;">Mastodon</a>
+<a rel="me" href="https://moth.social/@pascal" style="display: none;">Mastodon</a>
 
 <style lang="less">
 	@bgcolor: #336633;
@@ -250,20 +257,13 @@
 		}
 
 		select {
+			color: @textcolor;
 			appearance: none;
 			background-color: transparent;
 			border: none;
 			position: relative;
-			width: 6em;
-			&::after {
-				display: block;
-				content: '⌄';
-				position: absolute;
-				right: 0.5em;
-				top: 0.5em;
-				font-size: 0.75em;
-				pointer-events: none;
-			}
+			width: min-content;
+			text-align: right;
 		}
 	}
 

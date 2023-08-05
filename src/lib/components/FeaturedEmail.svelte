@@ -35,6 +35,7 @@
 		position: relative;
 
 		@media @mobile {
+			margin-left: 1em;
 			margin-right: 1em;
 		}
 
@@ -44,6 +45,10 @@
 			font-size: 12px;
 			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 			transform: skew(2deg, -2deg) rotateY(20deg);
+			@media @mobile {
+				transform: rotate(-3deg);
+			}
+			z-index: 1;
 		}
 
 		&::before {
@@ -54,8 +59,13 @@
 			right: 0;
 			width: 100%;
 			height: 100%;
-			box-shadow: 0 5px 50px rgba(0, 0, 0, 0.25);
+			color: rgba(0, 0, 0, 0.25);
+			// color: red;
+			box-shadow: inset 0 0 100px currentColor, 0 5px 50px currentColor;
 			transform: translateY(1em) skew(1deg, 1deg) rotateX(-30deg) rotate(-3deg) scaleX(90%);
+			@media @mobile {
+				transform: translateY(0.75em) rotate(-2deg) scaleY(95%);
+			}
 		}
 
 		h3 {
