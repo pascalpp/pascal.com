@@ -40,6 +40,7 @@
 		"focus-trap": "^7.5.2",
 		"svelte-body": "^1.4.0",
 		"svelte-preprocess-import-assets": "^1.0.1",
+		"vite-plugin-markdown": "^2.1.0",
 		"vite-plugin-svelte-svg": "^2.2.1"
 	}
 }
