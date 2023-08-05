@@ -58,11 +58,11 @@
 				<div class="bubble small">
 					<select on:change={selectExperiment}>
 						<option disabled selected>select an experiment ▾</option>
+						<option value="./tools/lorem_ipsum.txt">lorem ipsum</option>
 						<option value="./tools/navigatorproperties.html">navigator properties</option>
 						<option value="./tools/keypress.html">keypress detector</option>
 						<option value="./misc/photomontage/index.html">photo montages</option>
 						<option value="./disco/disco.html">disco!</option>
-						<option value="./tools/lorem_ipsum.txt">lorem ipsum</option>
 					</select>
 				</div>
 				<div class="bubble-divider tall" />

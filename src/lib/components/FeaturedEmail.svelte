@@ -32,7 +32,7 @@
 	.featured-email {
 		margin-top: 1em;
 		margin-left: 1em;
-		margin-right: 7em;
+		margin-right: 5em;
 		max-width: 400px;
 		position: relative;
 		@media @mobile {
@@ -60,7 +60,6 @@
 			width: 100%;
 			height: 100%;
 			color: rgba(0, 0, 0, 0.25);
-			// color: red;
 			box-shadow: inset 0 0 100px currentColor, 0 5px 50px currentColor;
 			transform: translateY(1em) skew(1deg, 1deg) rotateX(-30deg) rotate(-3deg) scaleX(90%);
 			@media @mobile {
