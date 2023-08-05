@@ -32,7 +32,7 @@
 	.featured-email {
 		margin-top: 1em;
 		margin-left: 1em;
-		margin-right: 2em;
+		margin-right: 7em;
 		max-width: 400px;
 		position: relative;
 		@media @mobile {

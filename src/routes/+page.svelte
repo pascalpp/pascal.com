@@ -109,7 +109,7 @@
 		margin-left: -3em;
 		padding-right: 3em;
 		@media @mobile {
-			padding-right: 1.5em;
+			padding-right: 1em;
 		}
 
 		.thinking {
@@ -117,7 +117,6 @@
 			flex-direction: column;
 			align-items: flex-end;
 			margin-bottom: 170px;
-			transform: translateX(3em);
 
 			.thought-bubble {
 				display: flex;
@@ -125,12 +124,14 @@
 				align-items: center;
 				position: relative;
 				font-size: 14px;
+				position: relative;
+				margin-right: 0.5em;
 				.circles {
-					width: 4em;
+					width: 5em;
 					height: 2em;
 					background-color: @bubblecolor;
 					border-radius: 1em;
-					position: relative;
+					position: absolute;
 					&::before,
 					&::after {
 						content: '';
@@ -138,6 +139,7 @@
 						width: 100%;
 						height: 100%;
 						background-color: @bubblecolor;
+						// background-color: red;
 						border-radius: 1em;
 					}
 					&::before {
@@ -149,26 +151,32 @@
 						left: 22%;
 					}
 					&.left {
-						transform: translateX(50%);
-						z-index: -1;
+						left: 0;
+						top: 50%;
+						transform: translate(-40%, -50%);
 					}
 					&.right {
-						transform: translateX(-50%) rotateY(180deg) rotateX(180deg);
-						z-index: -1;
+						right: 0;
+						top: 50%;
+						transform: translate(40%, -50%) rotate(180deg);
 					}
 				}
 
 				.thought {
+					border-radius: 1em;
 					max-width: 270px;
 					min-height: 6em;
 					background-color: @bubblecolor;
 					color: @textcolor;
-					padding: 0.5em 1em;
-					padding-bottom: 0.75em;
+					padding: 0 1em;
 					text-align: center;
 					display: flex;
 					align-items: center;
 					overflow: hidden;
+					z-index: 1;
+					@media @mobile {
+						max-width: 120px;
+					}
 
 					p {
 						margin: 0;
@@ -179,7 +187,7 @@
 			.dots {
 				margin-top: 6px;
 				width: 1.75em;
-				margin-right: 4em;
+				margin-right: 0.5em;
 				aspect-ratio: 1 / 1;
 				background-color: @bubblecolor;
 				border-radius: 50%;
