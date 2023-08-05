@@ -7,12 +7,17 @@
 		<h3>Featured email:</h3>
 		<div class="email-text">
 			<p>
-				From: {attributes.from}
-				<br />
-				Date: {attributes.date}
-				<br />
-				Subject: {attributes.subject}
-				<br />
+				{#if attributes.from}
+					From: {attributes.from}
+					<br />
+				{/if}
+				{#if attributes.date}
+					Date: {attributes.date}
+					<br />
+				{/if}
+				{#if attributes.subject}
+					Subject: {attributes.subject}
+				{/if}
 			</p>
 
 			<slot />
@@ -60,7 +65,8 @@
 		}
 		.email-text {
 			font-family: 'Lucida Console', Monaco, monospace;
-			padding: 0.5em 1.5em;
+			padding: 1.5em;
+			padding-top: 1em;
 		}
 	}
 </style>
