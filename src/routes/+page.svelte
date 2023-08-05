@@ -366,7 +366,7 @@
 		}
 
 		h3 {
-			box-shadow: inset 0 -40px 40px -40px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+			box-shadow: inset 0 -40px 40px -40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.15);
 			margin: 0;
 			padding: 1em 1.5em;
 		}
