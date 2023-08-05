@@ -1,8 +1,9 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import autoprefixer from 'autoprefixer';
-import preprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess';
 import { importAssets } from 'svelte-preprocess-import-assets';
+import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,7 +11,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		importAssets(),
-		preprocess({
+		sveltePreprocess({
 			postcss: {
 				plugins: [autoprefixer],
 			},
@@ -18,8 +19,13 @@ const config = {
 				prependData: '@import (reference) "src/variables.less";',
 			},
 		}),
+		mdsvex({
+			extensions: ['.md'],
+		}),
 		vitePreprocess(),
 	],
+
+	extensions: ['.svelte', '.md'],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
