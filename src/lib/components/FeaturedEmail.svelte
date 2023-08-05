@@ -31,12 +31,12 @@
 
 	.featured-email {
 		margin-top: 1em;
-		margin-right: 5em;
+		margin-left: 1em;
+		margin-right: 2em;
+		max-width: 400px;
 		position: relative;
-
 		@media @mobile {
-			margin-left: 1em;
-			margin-right: 1em;
+			margin: 1.5em;
 		}
 
 		.featured-email-content {
