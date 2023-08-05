@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Column from '$lib/components/Column.svelte';
 	import Row from '$lib/components/Row.svelte';
-	import { Body } from 'svelte-body';
 	import Handstand from './images/handstand.svg?component';
 
 	function selectExperiment(event: Event) {
@@ -9,8 +8,6 @@
 		document.location = target.value;
 	}
 </script>
-
-<Body class="homepage" />
 
 <main>
 	<Row center>
@@ -102,14 +99,8 @@
 	@textcolor: #000;
 	@bubblecolor: #ffffcc;
 
-	:global(body.homepage) {
-		background-color: @bgcolor;
-		color: @textcolor;
-		margin: 0;
-		padding: 0;
-	}
-
 	main {
+		background-color: @bgcolor;
 		font-family: 'Lucida Grande', Geneva, Helvetica, Arial, Sans-Serif;
 		padding: 16px;
 		padding-top: 5vh;
