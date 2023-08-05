@@ -1,10 +1,9 @@
 <script lang="ts">
 	import Column from '$lib/components/Column.svelte';
 	import Row from '$lib/components/Row.svelte';
+	import FeaturedEmail from '$lib/components/FeaturedEmail.svelte';
 	import Handstand from './images/handstand.svg?component';
-
-	// import md from './emails/2017-09-14.md';
-	// console.log(md);
+	import Email, { metadata } from './emails/2017-09-14.md';
 
 	function selectExperiment(event: Event) {
 		const target = event.target as HTMLSelectElement;
@@ -72,27 +71,9 @@
 				<a href="mailto:pascal@pascal.com" class="bubble small">email me</a>
 			</div>
 
-			<div class="featured-email">
-				<div class="featured-email-content">
-					<h3>Featured email:</h3>
-					<div class="email-text">
-						<p>
-							From: M ALLALI &lt;******@gmail.com&gt;
-							<br />
-							Date: Thu, 14 Sep 2017 12:42:43 -0400
-							<br />
-							Subject: Pascal.com
-							<br />
-						</p>
-
-						<p>would really love to purchase your domain name.</p>
-
-						<p>My name is not pascal but the founder of probability is.</p>
-
-						<p>If you are willing to sell, what is the current ask price?</p>
-					</div>
-				</div>
-			</div>
+			<FeaturedEmail attributes={metadata}>
+				<Email />
+			</FeaturedEmail>
 		</Column>
 	</Row>
 </main>
@@ -336,46 +317,6 @@
 				width: 75%;
 				border-radius: 1em;
 			}
-		}
-	}
-
-	.featured-email {
-		margin-top: 1em;
-		margin-right: 5em;
-		position: relative;
-
-		@media @mobile {
-			margin-right: 1em;
-		}
-
-		.featured-email-content {
-			background-color: @bubblecolor;
-			color: @textcolor;
-			font-size: 12px;
-			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-			transform: skew(2deg, -2deg) rotateY(20deg);
-		}
-
-		&::before {
-			display: block;
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			box-shadow: 0 5px 50px rgba(0, 0, 0, 0.25);
-			transform: translateY(1em) skew(1deg, 1deg) rotateX(-30deg) rotate(-3deg) scaleX(90%);
-		}
-
-		h3 {
-			box-shadow: inset 0 -60px 60px -60px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.15);
-			margin: 0;
-			padding: 1em 1.5em;
-		}
-		.email-text {
-			.monospace;
-			padding: 0.5em 1.5em;
 		}
 	}
 </style>
