@@ -37,10 +37,6 @@
 				<div class="bubble-divider medium" />
 				<a data-sveltekit-reload href="./dev/index.html" class="bubble small">feast your eyes on my resume</a>
 				<div class="bubble-divider small" />
-				<a data-sveltekit-reload href="./diary" class="bubble small">read my diary</a>
-				<div class="bubble-divider small" />
-				<a data-sveltekit-reload href="./hellomynameis/index.html" class="bubble small">listen to my solo record</a>
-				<div class="bubble-divider small" />
 				<a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
 				<div class="bubble-divider small" />
 				<a data-sveltekit-reload href="./software/index.html" class="bubble small">
@@ -50,6 +46,8 @@
 				<div class="bubble small bold">get outta here:</div>
 				<div class="bubble-divider medium" />
 				<a href="https://www.balthropalabama.com" class="bubble small">check out my small town band</a>
+				<div class="bubble-divider small" />
+				<a href="https://album.link/i/7202482" class="bubble small">listen to my old record</a>
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">random experiments:</div>
 				<div class="bubble-divider medium" />
