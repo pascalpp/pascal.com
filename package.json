@@ -12,7 +12,10 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"rsync:dry": "rsync -narzP --include='index.html' --include='_app' --include='_app/**' --exclude='*' --delete-after --chown=www-data:www-data ~/Projects/pascal.com.svelte/dist/ root@pascal.com:/srv/pascal.com/html",
+		"rsync": "rsync -arzP --include='index.html' --include='_app' --include='_app/**' --exclude='*' --delete-after --chown=www-data:www-data ~/Projects/pascal.com.svelte/dist/ root@pascal.com:/srv/pascal.com/html",
+		"publish": "npm run build && npm run rsync && open https://www.pascal.com"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
