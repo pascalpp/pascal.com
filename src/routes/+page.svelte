@@ -46,6 +46,8 @@
 				<a data-sveltekit-reload href="./software/index.html" class="bubble small">
 					download some mac software I wrote
 				</a>
+				<div class="bubble-divider small" />
+				<a data-sveltekit-reload href="./index.old.html" class="bubble small">look at the old version of this page</a>
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">get outta here:</div>
 				<div class="bubble-divider medium" />
@@ -230,7 +232,7 @@
 	}
 
 	.bubbles {
-		font-size: 12px;
+		font-size: 14px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
@@ -249,19 +251,20 @@
 	.bubble {
 		display: block;
 		background-color: @bubblecolor;
-		padding: 0.5em 1.5em;
-		border-radius: 1.5em;
+		padding: 0.75em 1.5em;
+		border-radius: 2em;
 		text-align: right;
 		margin-right: 5em;
 
 		@media @mobile {
 			margin-right: 1.25em;
+			padding: 1em 1.5em;
 		}
 		&.header {
 			padding: 1em 2em;
 			border-radius: 2em;
 			margin-right: 0em;
-			font-size: 14px;
+			font-size: 1.2em;
 		}
 
 		select {
@@ -306,10 +309,11 @@
 		&.small {
 			width: 1em;
 			height: 0;
+			height: 0.25em;
 		}
 		&.medium {
 			width: 1.5em;
-			height: 0.5em;
+			height: 0.75em;
 		}
 		&.large {
 			width: 3em;
