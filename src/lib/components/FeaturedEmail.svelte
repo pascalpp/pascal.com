@@ -44,10 +44,7 @@
 			color: @textcolor;
 			font-size: 12px;
 			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-			transform: skew(2deg, -2deg) rotateY(20deg);
-			@media @mobile {
-				transform: rotate(-3deg);
-			}
+			transform: rotate(-3deg);
 			z-index: 1;
 		}
 
@@ -59,12 +56,9 @@
 			right: 0;
 			width: 100%;
 			height: 100%;
-			color: rgba(0, 0, 0, 0.25);
-			box-shadow: inset 0 0 100px currentColor, 0 5px 50px currentColor;
-			transform: translateY(1em) skew(1deg, 1deg) rotateX(-30deg) rotate(-3deg) scaleX(90%);
-			@media @mobile {
-				transform: translateY(0.75em) rotate(-2deg) scaleY(95%);
-			}
+			box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2), 0 5px 50px rgba(0, 0, 0, 0.25);
+			transform: translateX(0.1em) translateY(1em) rotate(-2deg) scaleX(98%) scaleY(93%);
+			filter: blur(1px);
 		}
 
 		h3 {
