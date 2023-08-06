@@ -111,7 +111,7 @@
 		margin-left: -3em;
 		padding-right: 3em;
 		@media @mobile {
-			padding-right: 1em;
+			padding-right: 0em;
 		}
 
 		.thinking {
@@ -265,6 +265,9 @@
 			border-radius: 2em;
 			margin-right: 0em;
 			font-size: 1.2em;
+			@media @mobile {
+				font-size: 1.1em;
+			}
 		}
 
 		select {
