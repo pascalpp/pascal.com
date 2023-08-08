@@ -14,3 +14,30 @@
 @mobile-threshold: 640px;
 @mobile: ~'(max-width: @{mobile-threshold})';
 @not-mobile: ~'(min-width: @{mobile-threshold})';
+@desktop-threshold: 1024px;
+@desktop: ~'(min-width: @{desktop-threshold})';
+@not-desktop: ~'(max-width: @{desktop-threshold})';
+
+.rotated-shadow {
+	position: relative;
+
+	> :first-child {
+		transform: rotate(var(--deg, 0deg));
+	}
+	&::after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: fade(black, 50%);
+		box-shadow: 0 5px 50px rgba(0, 0, 0, 0.25);
+		transform: translateX(0.1em) translateY(var(--offest, 0.75em)) rotate(calc(var(--deg, 0deg) - 1deg)) scaleX(98%)
+			scaleY(93%);
+		filter: blur(5px);
+		z-index: -1;
+		opacity: 0.3;
+	}
+}
