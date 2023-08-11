@@ -39,7 +39,7 @@
 				<div class="bubble-divider large" />
 				<div class="bubble small bold">have a look around:</div>
 				<div class="bubble-divider medium" />
-				<a data-sveltekit-reload href="./dev/index.html" class="bubble small">feast your eyes on my resume</a>
+				<a href="./dev" class="bubble small">gimme a job</a>
 				<div class="bubble-divider small" />
 				<a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
 				<div class="bubble-divider small" />
