@@ -7,6 +7,7 @@
 	import SapientText, { metadata as Sapient } from './sapient.md';
 	import AdjacencyText, { metadata as Adjacency } from './adjacency.md';
 	import EducationText, { metadata as Education } from './education.md';
+	import Seeking from './seeking.md';
 
 	let zIndex = 100;
 	function bump(event: Event) {
@@ -106,6 +107,12 @@
 					<span class="company-dates">{Education.dates}</span>
 				</h2>
 				<EducationText />
+			</div>
+		</button>
+
+		<button class="seeking-page" on:focus={bump} on:click={bump}>
+			<div class="card text-card">
+				<Seeking />
 			</div>
 		</button>
 	</div>
@@ -242,7 +249,7 @@
 		.rotated-shadow;
 
 		img {
-			max-width: min(560px, 80vw);
+			max-width: min(565px, 80vw);
 		}
 	}
 
@@ -268,6 +275,15 @@
 		@media @desktop {
 			margin-right: 3em;
 		}
+	}
+
+	.seeking-page {
+		--deg: -1deg;
+		--offset: 20px;
+		.rotated-shadow;
+		align-self: center;
+		margin-top: 20px;
+		margin-right: 200px;
 	}
 
 	.company-dates {
