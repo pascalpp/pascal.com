@@ -1,12 +1,7 @@
 <script lang="ts">
 	import Capabilities from './capabilities.md';
-	import BroadlyText, { metadata as Broadly } from './broadly.md';
-	import AboutDotMeText, { metadata as AboutDotMe } from './aboutdotme.md';
-	import SphereText, { metadata as Sphere } from './sphere.md';
-	import FreelanceText, { metadata as Freelance } from './freelance.md';
-	import SapientText, { metadata as Sapient } from './sapient.md';
-	import AdjacencyText, { metadata as Adjacency } from './adjacency.md';
-	import EducationText, { metadata as Education } from './education.md';
+	import RecentExperience from './recent_experience.md';
+	import PastExperience from './past_experience.md';
 	import Seeking from './seeking.md';
 
 	let zIndex = 100;
@@ -54,63 +49,13 @@
 
 		<button class="recent-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
-				<h1>Recent experience</h1>
-
-				<h2 class="company">
-					<a href={Broadly.url}>{Broadly.company}</a>
-					·
-					<span class="company-dates">{Broadly.dates}</span>
-				</h2>
-
-				<BroadlyText />
+				<RecentExperience />
 			</div>
 		</button>
 
 		<button class="past-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
-				<h1>Past experience</h1>
-
-				<h2 class="company">
-					<a href={AboutDotMe.url}>{AboutDotMe.company}</a>
-					·
-					<span class="company-dates">{AboutDotMe.dates}</span>
-				</h2>
-				<AboutDotMeText />
-
-				<h2 class="company">
-					{Sphere.company}
-					·
-					<span class="company-dates">{Sphere.dates}</span>
-				</h2>
-				<SphereText />
-
-				<h2 class="company">
-					{Freelance.company}
-					·
-					<span class="company-dates">{Freelance.dates}</span>
-				</h2>
-				<FreelanceText />
-
-				<h2 class="company">
-					{Sapient.company}
-					·
-					<span class="company-dates">{Sapient.dates}</span>
-				</h2>
-				<SapientText />
-
-				<h2 class="company">
-					{Adjacency.company}
-					·
-					<span class="company-dates">{Adjacency.dates}</span>
-				</h2>
-				<AdjacencyText />
-
-				<h2 class="company">
-					{Education.company}
-					·
-					<span class="company-dates">{Education.dates}</span>
-				</h2>
-				<EducationText />
+				<PastExperience />
 			</div>
 		</button>
 
@@ -212,6 +157,7 @@
 
 		:global(h2) {
 			margin-top: 1.5em;
+			font-weight: normal;
 		}
 
 		:global(p) {
