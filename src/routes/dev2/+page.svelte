@@ -123,8 +123,10 @@
 </main>
 
 <style lang="less">
+	@blueish: #4f7192;
+
 	:global(body) {
-		background-color: color-mix(in srgb, teal 40%, lightgray);
+		background-color: color-mix(in srgb, @blueish 70%, white);
 	}
 
 	main {
