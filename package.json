@@ -13,7 +13,7 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"rsync": "rsync -azP --include='index.html' --include='dev' --include='dev/**'  --include='dev.old' --include='dev.old/**' --include='_app' --include='_app/**' --exclude='*' --delete-after --chown=www-data:www-data ~/Projects/pascal.com.svelte/dist/ root@pascal.com:/srv/pascal.com/html",
+		"rsync": "rsync -azP --include='index.html' --include='dev' --include='dev/**'  --include='dev.old' --include='dev.old/**' --include='_app' --include='_app/**' --include='files' --include='files/**' --exclude='*' --delete-after --chown=www-data:www-data ~/Projects/pascal.com.svelte/dist/ root@pascal.com:/srv/pascal.com/html",
 		"rsync:dry": "npm run rsync -- --dry-run -v",
 		"publish": "npm run build && npm run rsync"
 	},
