@@ -6,6 +6,6 @@ I have a strong eye for the details that make a great product: performance, ease
 
 I enjoy taking on larger problems and breaking them down into smaller ones, separating and simplifying responsibilities, and translating those ideas into a modular component architecture to build scalable and maintainable applications.
 
-## Skills
+## **Skills**
 
 Javascript, React, Redux, CSS, Sass/Less, SVG, SvelteKit, Node, UI testing, workflow automation, accessibility, responsive design, user interface design, copy-writing, typography, illustration

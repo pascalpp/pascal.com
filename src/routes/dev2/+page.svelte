@@ -291,8 +291,4 @@
 			margin-right: 200px;
 		}
 	}
-
-	.company-dates {
-		font-weight: normal;
-	}
 </style>
