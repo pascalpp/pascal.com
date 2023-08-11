@@ -29,7 +29,7 @@ Worked as a lead frontend developer on websites for several high-profile clients
 Worked on print and web materials for Kraft Foods and Oscar Mayer. Created an animated character called the World Wide Weiner. Never got to drive the Weinermobile, though.
 
 
-## **Kinkos** · 1994 to 1995
+## **Kinkos** · 1993 to 1995
 
 Making copies, designing resumes.<br/>Oh god, I’m right back where I started.
 
