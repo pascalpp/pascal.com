@@ -37,7 +37,7 @@
 
 		<button class="portrait-card" on:focusin={bump} on:click={bump}>
 			<div class="card">
-				<img src="./pascal-portrait.jpg" alt="Pascal Balthrop" />
+				<div class="portrait" />
 			</div>
 		</button>
 
@@ -218,7 +218,6 @@
 
 	.business-card {
 		z-index: 20;
-		transition: font-size 0.2s ease-in-out;
 		font-size: 16px;
 		@media @desktop {
 			margin-bottom: -8em;
@@ -244,14 +243,17 @@
 	}
 
 	.portrait-card {
-		width: max-content;
+		width: min(600px, 80vw);
 		z-index: 1;
 		--deg: -3deg;
 		--offset: 25px;
 		.rotated-shadow;
 
-		img {
-			max-width: min(565px, 80vw);
+		.portrait {
+			width: 100%;
+			aspect-ratio: 1.05;
+			background-image: url(./pascal-portrait.jpg);
+			background-size: cover;
 		}
 	}
 
