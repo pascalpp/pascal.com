@@ -25,6 +25,20 @@
 </svelte:head>
 
 <main>
+	<div class="resume-header">
+		<div class="my-info">
+			<h1>Pascal Balthrop</h1>
+			<h2>Web developer and designer</h2>
+			<p>81 Third Place · Brooklyn, NY, 11231</p>
+			<p>917-399-7566 · pascal@pascal.com</p>
+		</div>
+		<p class="links">
+			View this resume online: https://pascal.com/dev
+			<br />
+			LinkedIn: https://www.linkedin.com/in/pascalpp
+		</p>
+	</div>
+
 	<div class="column">
 		<button aria-label="Business Card" class="business-card not-print align-end" on:focusin={bump} on:click={bump}>
 			<div class="card">
@@ -50,16 +64,6 @@
 		</button>
 
 		<div class="print-column">
-			<div class="resume-header">
-				<h1>Pascal Balthrop</h1>
-				<h2>Web Developer and Designer</h2>
-				<p>Brooklyn, NY</p>
-				<p>917-399-7566 · pascal@pascal.com</p>
-				<p>
-					View this resume online: <a href="https://pascal.com/dev">https://pascal.com/dev</a>
-				</p>
-			</div>
-
 			<button aria-label="About me" class="capabilities-page align-end" on:focusin={bump} on:click={bump}>
 				<div class="card text-card">
 					<Capabilities />
@@ -91,9 +95,19 @@
 			</button>
 		</div>
 
-		<button aria-label="Print this page" class="print-card not-print" on:click={print}>
-			<div class="card">🖨️ Print this resume</div>
-		</button>
+		<div class="print-card not-print">
+			<div class="card">
+				<button aria-label="Print this resume" on:click={print}>🖨️ Print this resume</button>
+			</div>
+		</div>
+
+		<div class="download-card not-print">
+			<div class="card">
+				<a href="/files/pascal-resume.pdf" download="Pascal Balthrop Resume.pdf" aria-label="Download this resume">
+					💾 Download PDF
+				</a>
+			</div>
+		</div>
 	</div>
 </main>
 
@@ -347,7 +361,24 @@
 			.rotated-shadow;
 			margin-top: 1em;
 			margin-left: 4em;
-			cursor: pointer;
+			z-index: 1;
+
+			button {
+				cursor: pointer;
+			}
+		}
+
+		.download-card {
+			--deg: 2deg;
+			--offset: 20px;
+			.rotated-shadow;
+			margin-left: 12em;
+			margin-top: -4px;
+
+			a {
+				cursor: pointer;
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -357,17 +388,25 @@
 			display: none;
 		}
 
+		:global(body) {
+			background-color: white;
+			line-height: 1.4;
+		}
+
 		main {
-			margin: 40px;
+			margin-top: 40px;
+			margin-left: 20px;
 			font-size: 1.05em;
+			display: flex;
+			flex-direction: column;
+			width: 66em;
 		}
 
 		.column {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-auto-flow: row dense;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
 			gap: 5em;
-			width: 64em;
 		}
 
 		button {
@@ -380,7 +419,12 @@
 		}
 
 		.resume-header {
-			margin-bottom: 2em;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			font-size: 1.1em;
 
 			h1 {
 				margin: 0;
@@ -402,16 +446,17 @@
 			:global(h1) {
 				margin-top: 2em;
 			}
+			:global(h1 + p) {
+				margin-top: 0.5em;
+			}
+			:global(h2 + p) {
+				margin-top: 0.25em;
+			}
 		}
 
 		.capabilities-page {
 			:global(h2) {
 				font-size: 1.3em;
-			}
-		}
-		.past-experience-page {
-			:global(h1) {
-				margin-top: 0;
 			}
 		}
 		.seeking-page {

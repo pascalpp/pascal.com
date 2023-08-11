@@ -11,7 +11,7 @@ Worked on various javascript-based interfaces and delivery mechanisms for this r
 
 ## **Freelance** · 2001 to 2008
 
-Designed and developed websites and web application prototypes for various clients, including the companion website for Al Gore's book, <em>**An Inconvenient Truth**</em>, and various NYC-based photographers, artists, and design agencies.
+Designed and developed websites and web application prototypes for various freelance clients, including the companion website for Al Gore's book, <em>**An Inconvenient Truth**</em>, and several NYC-based photographers, artists, and design agencies.
 
 
 ## **Sapient** · 1999 to 2001
