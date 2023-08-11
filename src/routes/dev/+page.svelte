@@ -95,17 +95,27 @@
 			</button>
 		</div>
 
-		<div class="print-card not-print">
-			<div class="card">
-				<button aria-label="Print this resume" on:click={print}>🖨️ Print this resume</button>
+		<div class="tool-cards not-print">
+			<div class="print-card">
+				<div class="card tool-card">
+					<button aria-label="Print this resume" on:click={print}>🖨️ Print this resume</button>
+				</div>
 			</div>
-		</div>
 
-		<div class="download-card not-print">
-			<div class="card">
-				<a href="/files/pascal-resume.pdf" download="Pascal Balthrop Resume.pdf" aria-label="Download this resume">
-					💾 Download PDF
-				</a>
+			<div class="download-card">
+				<div class="card tool-card">
+					<a href="/files/pascal-resume.pdf" download="Pascal Balthrop Resume.pdf" aria-label="Download this resume">
+						💾 Download PDF
+					</a>
+				</div>
+			</div>
+
+			<div class="linkedin-card">
+				<div class="card tool-card">
+					<a href="https://www.linkedin.com/in/pascalpp/" aria-label="View my LinkedIn profile">
+						🔗 View my LinkedIn profile
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -355,30 +365,47 @@
 			}
 		}
 
-		.print-card {
-			--deg: -4deg;
-			--offset: 20px;
-			.rotated-shadow;
-			margin-top: 1em;
-			margin-left: 4em;
-			z-index: 1;
-
+		.tool-cards {
+			margin-top: 2em;
+			margin-right: 2em;
+			> * {
+				width: max-content;
+			}
+			a {
+				cursor: pointer;
+				text-decoration: none;
+			}
 			button {
 				cursor: pointer;
 			}
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.print-card {
+			--deg: -5deg;
+			--offset: 20px;
+			.rotated-shadow;
+			margin-right: 8em;
+			z-index: 2;
 		}
 
 		.download-card {
 			--deg: 2deg;
 			--offset: 20px;
 			.rotated-shadow;
-			margin-left: 12em;
 			margin-top: -4px;
+			z-index: 1;
+		}
 
-			a {
-				cursor: pointer;
-				text-decoration: none;
-			}
+		.linkedin-card {
+			--deg: -2deg;
+			--offset: 20px;
+			.rotated-shadow;
+			margin-top: -3px;
+			margin-left: 9em;
 		}
 	}
 
