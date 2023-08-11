@@ -120,7 +120,7 @@
 		padding-bottom: 20vh;
 	}
 
-	a {
+	:global(a) {
 		color: #000;
 		text-underline-offset: 4px;
 		text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);

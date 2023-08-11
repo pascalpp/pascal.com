@@ -6,6 +6,10 @@ I have a strong eye for detail and I tend to obsess over every aspect of a proje
 
 I enjoy taking on larger problems and breaking them down into smaller ones, separating and simplifying responsibilities, and translating those ideas into a modular component architecture to build scalable and maintainable applications.
 
-# Skills
+## Technical skills
 
-Javascript, React, Redux, CSS, Sass/Less, SvelteKit, Node
+Javascript, React, Redux, CSS, Sass/Less, SVG, SvelteKit, Node, UI testing, workflow automation, accessibility, responsive design
+
+## Soft skills
+
+User interface design, copy-writing, typography, illustration
