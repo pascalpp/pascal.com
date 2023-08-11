@@ -8,4 +8,4 @@ I enjoy taking on larger problems and breaking them down into smaller ones, sepa
 
 ## **Skills**
 
-Javascript, React, Redux, CSS, Sass/Less, SVG, SvelteKit, Node, UI testing, workflow automation, accessibility, responsive design, user interface design, copy-writing, typography, illustration
+Javascript, React, Redux, CSS, Sass/Less, SVG, SvelteKit, Node, Typescript, UI testing, workflow automation, accessibility, responsive design, user interface design, copy-writing, typography, illustration
