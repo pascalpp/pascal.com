@@ -75,6 +75,7 @@
 
 	:global(body) {
 		background-color: color-mix(in srgb, @blueish 70%, white);
+		overflow-x: hidden;
 	}
 
 	main {
