@@ -14,11 +14,14 @@
 
 <svelte:head>
 	<title>Pascal’s Resume</title>
+	<meta
+		name="description"
+		content="Pascal’s Resume - A Brooklyn-based web developer and designer with experience in React, Redux, Node, Sveltekit, HTML, CSS, Less, Sass, and other web technologies." />
 </svelte:head>
 
 <main>
 	<div class="column">
-		<button class="business-card" on:focusin={bump} on:click={bump}>
+		<button aria-label="Business Card" class="business-card" on:focusin={bump} on:click={bump}>
 			<div class="card">
 				<div class="card-content">
 					<div class="brackets">&lt;&gt;</div>
@@ -35,31 +38,31 @@
 			</div>
 		</button>
 
-		<button class="portrait-card" on:focusin={bump} on:click={bump}>
+		<button aria-label="My Portrait" class="portrait-card" on:focusin={bump} on:click={bump}>
 			<div class="card">
 				<div class="portrait" />
 			</div>
 		</button>
 
-		<button class="capabilities-page" on:focusin={bump} on:click={bump}>
+		<button aria-label="About me" class="capabilities-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<Capabilities />
 			</div>
 		</button>
 
-		<button class="recent-experience-page" on:focusin={bump} on:click={bump}>
+		<button aria-label="Recent experience" class="recent-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<RecentExperience />
 			</div>
 		</button>
 
-		<button class="past-experience-page" on:focusin={bump} on:click={bump}>
+		<button aria-label="Past experience" class="past-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<PastExperience />
 			</div>
 		</button>
 
-		<button class="seeking-page" on:focusin={bump} on:click={bump}>
+		<button aria-label="Hire me" class="seeking-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<Seeking />
 			</div>
@@ -217,7 +220,7 @@
 	}
 
 	.business-card {
-		z-index: 20;
+		z-index: 6;
 		font-size: 16px;
 		@media @desktop {
 			margin-bottom: -8em;
@@ -243,8 +246,8 @@
 	}
 
 	.portrait-card {
+		z-index: 5;
 		width: min(600px, 80vw);
-		z-index: 1;
 		--deg: -3deg;
 		--offset: 25px;
 		.rotated-shadow;
@@ -259,12 +262,14 @@
 	}
 
 	.capabilities-page {
+		z-index: 4;
 		--deg: 1deg;
 		--offset: 20px;
 		.rotated-shadow;
 	}
 
 	.recent-experience-page {
+		z-index: 3;
 		--deg: -2deg;
 		--offset: 20px;
 		.rotated-shadow;
@@ -274,6 +279,7 @@
 	}
 
 	.past-experience-page {
+		z-index: 2;
 		--deg: 2deg;
 		--offset: 20px;
 		.rotated-shadow;
@@ -283,6 +289,7 @@
 	}
 
 	.seeking-page {
+		z-index: 1;
 		--link-hint: 'email me';
 		--deg: -1deg;
 		--offset: 20px;
