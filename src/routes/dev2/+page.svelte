@@ -17,6 +17,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Pascal’s Resume</title>
+</svelte:head>
+
 <main>
 	<div class="column">
 		<button class="business-card" on:focusin={bump} on:click={bump}>
