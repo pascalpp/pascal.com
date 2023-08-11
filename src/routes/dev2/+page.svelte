@@ -119,6 +119,10 @@
 </main>
 
 <style lang="less">
+	:global(body) {
+		background-color: color-mix(in srgb, teal 40%, lightgray);
+	}
+
 	main {
 		padding: 2.5em 5em;
 		@media @mobile {
