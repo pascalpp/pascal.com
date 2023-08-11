@@ -136,7 +136,7 @@
 		outline: none;
 		&:focus-within {
 			.card {
-				outline: 2px solid color-mix(in srgb, blue 10%, transparent);
+				outline: 2px solid color-mix(in srgb, blue 25%, transparent);
 			}
 		}
 		&:focus {
@@ -147,6 +147,8 @@
 	}
 
 	.card {
+		user-select: text;
+
 		:global(h1) {
 			font-size: 1.3em;
 		}

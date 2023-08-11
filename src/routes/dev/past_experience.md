@@ -21,7 +21,7 @@ Worked with multidisciplinary teams to develop web applications for various Fort
 
 ## **Adjacency** · 1996 to 1999
 
-Worked as a lead frontend developer on websites for several high-profile clients, including Apple, Adobe, Land Rover, Motorola, Rollerblade, Specialized Bikes, Patagonia, and others. At Apple, I worked on-site to help develop the original [Apple Store](https://store.apple.com). Along with two of my Adjacency colleagues, I co-authored <em>**Creating Killer Interactive Websites**</em> (Hayden Books, 1997). I’m still riding the Specialized bike I got as part of our “cool stuff clause.”
+Worked as a lead frontend developer on websites for several high-profile clients, including Apple, Adobe, Land Rover, Motorola, Rollerblade, Specialized, Patagonia, and others. At Apple, I worked on-site to help develop the original [Apple Store](https://store.apple.com). Along with two of my Adjacency colleagues, I co-authored <em>**Creating Killer Interactive Websites**</em> (Hayden Books, 1997). I’m still riding the Specialized bike I got as part of our “cool stuff clause.”
 
 
 ## **Woodland Marketing** · 1995 to 1996
