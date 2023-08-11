@@ -252,6 +252,7 @@
 		.portrait {
 			width: 100%;
 			aspect-ratio: 1.05;
+			background-color: #723253;
 			background-image: url(./pascal-portrait.jpg);
 			background-size: cover;
 		}
