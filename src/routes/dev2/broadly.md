@@ -12,4 +12,4 @@ title: 'Senior Frontend Developer'
 - Conducted unit and integration testing to ensure code quality and prevent visual and functional regressions.
 - Provided mentorship and pair programming opportunities for junior developers, helping to develop their skills and guide them to more efficient workflows.
 
-Broadly was acquired by [Vendasta](https://www.vendasta.com) in April 2023.
+<!-- Broadly was acquired by [Vendasta](https://www.vendasta.com) in April 2023. -->
