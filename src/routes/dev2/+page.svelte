@@ -19,7 +19,7 @@
 
 <main>
 	<div class="column">
-		<button class="business-card" on:focus={bump} on:click={bump}>
+		<button class="business-card" on:focusin={bump} on:click={bump}>
 			<div class="card">
 				<div class="card-content">
 					<div class="brackets">&lt;&gt;</div>
@@ -28,7 +28,7 @@
 						<br />
 						web design and development
 						<br />
-						<a href="/">https://www.pascal.com/</a>
+						<a href="/" data-hint="visit my website">https://www.pascal.com/</a>
 						<br />
 						<a href="mailto:pascal@pascal.com">pascal@pascal.com</a>
 					</div>
@@ -36,19 +36,19 @@
 			</div>
 		</button>
 
-		<button class="portrait-card" on:focus={bump} on:click={bump}>
+		<button class="portrait-card" on:focusin={bump} on:click={bump}>
 			<div class="card">
 				<img src="./pascal-portrait.jpg" alt="Pascal Balthrop" />
 			</div>
 		</button>
 
-		<button class="capabilities-page" on:focus={bump} on:click={bump}>
+		<button class="capabilities-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<Capabilities />
 			</div>
 		</button>
 
-		<button class="recent-experience-page" on:focus={bump} on:click={bump}>
+		<button class="recent-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<h1>Recent experience</h1>
 
@@ -62,7 +62,7 @@
 			</div>
 		</button>
 
-		<button class="past-experience-page" on:focus={bump} on:click={bump}>
+		<button class="past-experience-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<h1>Past experience</h1>
 
@@ -110,7 +110,7 @@
 			</div>
 		</button>
 
-		<button class="seeking-page" on:focus={bump} on:click={bump}>
+		<button class="seeking-page" on:focusin={bump} on:click={bump}>
 			<div class="card text-card">
 				<Seeking />
 			</div>
@@ -132,9 +132,48 @@
 		text-underline-offset: 4px;
 		text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
 		outline: none;
+		position: relative;
+
 		&:hover,
 		&:focus {
-			text-decoration-color: currentColor;
+			text-decoration-color: color-mix(in srgb, blue 70%, transparent);
+			text-decoration-thickness: 1.5px;
+			position: relative;
+		}
+
+		&[href*='mailto'] {
+			--link-hint: 'email me';
+		}
+		&[data-hint] {
+			--link-hint: attr(data-hint);
+		}
+
+		&:focus-visible {
+			&::before {
+				// css triangle
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				border: 6px solid transparent;
+				border-bottom-color: black;
+			}
+			&::after {
+				content: var(--link-hint, 'visit this link');
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%) translateY(11.5px);
+				padding: 4px 8px;
+				background-color: black;
+				color: white;
+				border-radius: 4px;
+				font-family: @sans-font;
+				font-size: 13px;
+				white-space: nowrap;
+				z-index: 1;
+			}
 		}
 	}
 
@@ -142,7 +181,12 @@
 		outline: none;
 		&:focus-within {
 			.card {
-				outline: 2px solid fade(@blue, 50%);
+				outline: 2px solid color-mix(in srgb, blue 10%, transparent);
+			}
+		}
+		&:focus {
+			.card {
+				outline: 2px solid color-mix(in srgb, blue 50%, transparent);
 			}
 		}
 	}
@@ -231,7 +275,7 @@
 
 		.card {
 			padding: 1em 6em 1em 2.5em;
-			font-family: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+			font-family: @mono-font;
 		}
 
 		.brackets {
@@ -278,12 +322,18 @@
 	}
 
 	.seeking-page {
+		--link-hint: 'email me';
 		--deg: -1deg;
 		--offset: 20px;
 		.rotated-shadow;
 		align-self: center;
-		margin-top: 20px;
-		margin-right: 200px;
+		@media @not-desktop {
+			margin-top: 50px;
+		}
+		@media @desktop {
+			margin-top: 20px;
+			margin-right: 200px;
+		}
 	}
 
 	.company-dates {
