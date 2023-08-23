@@ -49,7 +49,7 @@
 						<br />
 						web design and development
 						<br />
-						<a href="/" data-hint="visit my website">https://www.pascal.com/</a>
+						<a href="/" aria-label="visit my website">https://www.pascal.com/</a>
 						<br />
 						<a href="mailto:pascal@pascal.com">pascal@pascal.com</a>
 					</div>
@@ -170,54 +170,54 @@
 				padding: 2em 1em;
 			}
 			padding-bottom: 20vh;
-		}
 
-		:global(a) {
-			color: #000;
-			text-underline-offset: 4px;
-			text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
-			outline: none;
-			position: relative;
-
-			&:hover,
-			&:focus {
-				text-decoration-color: color-mix(in srgb, blue 70%, transparent);
-				text-decoration-thickness: 1.5px;
+			:global(a) {
+				color: #000;
+				text-underline-offset: 4px;
+				text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+				outline: none;
 				position: relative;
-			}
 
-			&[href*='mailto'] {
-				--link-hint: 'email me';
-			}
-			&[data-hint] {
-				--link-hint: attr(data-hint);
-			}
-
-			&:focus-visible {
-				&::before {
-					// css triangle
-					content: '';
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%);
-					border: 6px solid transparent;
-					border-bottom-color: black;
+				&:hover,
+				&:focus {
+					text-decoration-color: color-mix(in srgb, blue 70%, transparent);
+					text-decoration-thickness: 1.5px;
+					position: relative;
 				}
-				&::after {
-					content: var(--link-hint, 'visit this link');
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%) translateY(11.5px);
-					padding: 4px 8px;
-					background-color: black;
-					color: white;
-					border-radius: 4px;
-					font-family: @sans-font;
-					font-size: 13px;
-					white-space: nowrap;
-					z-index: 1;
+
+				&[href*='mailto'] {
+					--link-hint: 'email me';
+				}
+				&[aria-label] {
+					--link-hint: attr(aria-label);
+				}
+
+				&:focus-visible {
+					&::before {
+						// css triangle
+						content: '';
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						transform: translateX(-50%);
+						border: 6px solid transparent;
+						border-bottom-color: black;
+					}
+					&::after {
+						content: var(--link-hint, 'visit this link');
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						transform: translateX(-50%) translateY(11.5px);
+						padding: 4px 8px;
+						background-color: black;
+						color: white;
+						border-radius: 4px;
+						font-family: @sans-font;
+						font-size: 13px;
+						white-space: nowrap;
+						z-index: 1;
+					}
 				}
 			}
 		}
