@@ -6,7 +6,7 @@
 		</div>
 	</header>
 
-	<article>
+	<article class="blog-article">
 		<div class="structure">
 			<slot />
 		</div>
@@ -20,12 +20,9 @@
 <style lang="less">
 	@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap');
 
-	:global(body) {
-		background-color: #f0f0f0;
-		overflow-x: hidden;
-	}
-
 	main {
+		overflow-x: hidden;
+		background-color: #f0f0f0;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -41,15 +38,23 @@
 
 	header {
 		background-color: rgb(255 255 255 / 0.5);
+		position: sticky;
+		.structure {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 
 	footer {
-		background-image: linear-gradient(to 180deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.5));
+		padding-top: 8vh;
+		padding-bottom: 2vh;
 	}
 
-	article {
+	.blog-article {
 		flex-grow: 1;
 		font-family: 'Crimson Pro', serif;
+		font-display: swap;
 		font-weight: 200;
 		font-size: 20px;
 
@@ -57,18 +62,26 @@
 		:global(h2),
 		:global(h3),
 		:global(h4),
-		:global(h4),
-		:global(h4) {
+		:global(h5),
+		:global(h6) {
 			font-weight: 500;
+		}
+		:global(h1) {
+			font-size: 36px;
 		}
 
 		:global(.polaroid) {
+			margin-left: 1em;
 			width: max-content;
-			z-index: 1;
+			.rotated-shadow;
+		}
+
+		:global(.polaroid img) {
 			padding: 1em;
 			background-color: white;
-			--deg: 2deg;
-			.rotated-shadow;
+			z-index: 1;
+			border-radius: 2px;
+			border: 1px solid rgb(0 0 0 / 0.1);
 		}
 	}
 </style>
