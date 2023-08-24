@@ -1,5 +1,5 @@
 // import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+// import { vitePreprocess } from '@sveltejs/kit/vite';
 import autoprefixer from 'autoprefixer';
 import sveltePreprocess from 'svelte-preprocess';
 import { importAssets } from 'svelte-preprocess-import-assets';
@@ -23,7 +23,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 		}),
-		vitePreprocess(),
+		// vitePreprocess(),
 	],
 
 	extensions: ['.svelte', '.md'],
