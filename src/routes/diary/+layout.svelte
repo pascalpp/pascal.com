@@ -139,7 +139,7 @@
 		:global(.polaroid) {
 			width: max-content;
 			.rotated-shadow;
-			translate: 0 -0.25em;
+			translate: -0.25em -0.25em;
 		}
 
 		:global(.polaroid img) {
