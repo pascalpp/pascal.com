@@ -1,6 +1,6 @@
 <script>
-	export let title;
-	export let date;
+	export let data;
+	const { title, date, Content } = data;
 </script>
 
 <svelte:head>
@@ -13,7 +13,7 @@
 </header>
 
 <article>
-	<slot />
+	<Content />
 </article>
 
 <style lang="less">
@@ -47,6 +47,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+
+		:global(> *) {
+			margin: 0;
+		}
 
 		:global(h1),
 		:global(h2),
