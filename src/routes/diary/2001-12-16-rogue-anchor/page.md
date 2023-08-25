@@ -1,6 +1,6 @@
 ---
 title: A bit of a scare as we bring up a rogue anchor
-date: Sunday, December 16, 2001 · 10:23am
+date: 2001-12-16T15:23:00.000Z
 ---
 
 Well, today we had a pretty harrowing experience.

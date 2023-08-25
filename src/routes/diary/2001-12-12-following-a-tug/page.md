@@ -1,6 +1,6 @@
 ---
 title: Following a tug and barge down river
-date: Wednesday, December 12, 2001 · 11:15am
+date: 2001-12-12T16:15:00.000Z
 ---
 
 ### “C’mon, Willow. Let’s go to Florida.”
