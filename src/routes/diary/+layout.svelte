@@ -1,5 +1,7 @@
 <svelte:head>
-	<style>
+	<title>Pascal’s Diary</title>
+
+	<style lang="less">
 		body {
 			background-color: #f0f0f0;
 			overflow-x: hidden;
@@ -15,14 +17,12 @@
 		</div>
 	</nav>
 
-	<article class="blog-article">
-		<div class="structure column">
-			<slot />
-		</div>
-	</article>
+	<div class="structure">
+		<slot />
+	</div>
 
 	<footer>
-		<div class="structure">pascal’s diary · copyright now</div>
+		<div class="structure">pascal’s diary · copyright about now</div>
 	</footer>
 </main>
 
@@ -35,8 +35,10 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: stretch;
-		animation: zoom-fade 1.5s ease-out 0ms forwards;
-		transform-origin: top left;
+		font-family: 'Crimson Pro', serif;
+		font-display: block;
+		// animation: zoom-fade 1.5s ease-out 0ms forwards;
+		// transform-origin: top left;
 	}
 
 	:global(a) {
@@ -48,17 +50,7 @@
 	.structure {
 		padding: 1em;
 		width: min(95vw, 600px);
-		// margin: 0 auto;
-		margin-left: 240px;
-	}
-
-	.column {
-		:global(> *) {
-			margin: 0;
-		}
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
+		margin-left: 250px;
 	}
 
 	nav {
@@ -66,14 +58,14 @@
 		.rotated-shadow;
 		width: max-content;
 		position: fixed;
-		left: -1vw;
-		top: -1vw;
+		left: -1.75vw;
+		top: 5vh;
 
 		.card {
 			background-color: rgb(255 255 255);
 			padding: 1em;
 			padding-top: 2vw;
-			padding-left: 2vw;
+			padding-left: 3vw;
 			border-radius: 4px;
 			min-height: 200px;
 			display: flex;
@@ -86,10 +78,12 @@
 			color: @blue;
 		}
 		a[href='/diary'] {
-			font-family: 'Crimson Pro', serif;
 			font-weight: 500;
 			font-size: 24px;
 			color: black;
+		}
+		a[href='/'] {
+			font-family: @sans-font;
 		}
 	}
 
@@ -105,49 +99,8 @@
 	}
 
 	footer {
-		font-family: 'Crimson Pro', serif;
 		padding-top: 8vh;
 		padding-bottom: 2vh;
 		color: rgb(0 0 0 / 0.3);
-	}
-
-	.blog-article {
-		flex-grow: 1;
-		font-family: 'Crimson Pro', serif;
-		font-display: swap;
-		font-weight: 200;
-		font-size: 20px;
-
-		:global(h1),
-		:global(h2),
-		:global(h3),
-		:global(h4),
-		:global(h5),
-		:global(h6) {
-			font-weight: 500;
-		}
-		:global(h1) {
-			font-size: 36px;
-		}
-		:global(h2) {
-			font-size: 28px;
-		}
-		:global(h3) {
-			font-size: 20px;
-		}
-
-		:global(.polaroid) {
-			width: max-content;
-			.rotated-shadow;
-			translate: -0.25em -0.25em;
-		}
-
-		:global(.polaroid img) {
-			padding: 1em;
-			background-color: white;
-			z-index: 1;
-			border-radius: 2px;
-			border: 1px solid rgb(0 0 0 / 0.1);
-		}
 	}
 </style>

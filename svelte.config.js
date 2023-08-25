@@ -13,6 +13,9 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.md'],
+			layout: {
+				diary: 'src/routes/diary/post.svelte',
+			},
 		}),
 		sveltePreprocess({
 			postcss: {
