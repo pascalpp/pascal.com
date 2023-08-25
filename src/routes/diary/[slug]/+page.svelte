@@ -146,20 +146,19 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 1em;
 
 		&.top {
 			margin-top: 2em;
 			margin-bottom: 2em;
 
 			.next {
-				margin-top: -1em;
 				justify-self: flex-end;
 				align-self: flex-end;
 			}
 		}
 
 		&.bottom {
+			gap: 1.5em;
 			margin-top: 5em;
 		}
 
