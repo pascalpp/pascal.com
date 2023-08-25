@@ -37,6 +37,7 @@
 		align-items: stretch;
 		font-family: 'Crimson Pro', serif;
 		font-display: block;
+		font-weight: 200;
 		// animation: zoom-fade 1.5s ease-out 0ms forwards;
 		// transform-origin: top left;
 	}
