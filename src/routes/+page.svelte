@@ -13,6 +13,11 @@
 
 <svelte:head>
 	<title>pascal.com</title>
+	<style>
+		body {
+			background-color: #336633;
+		}
+	</style>
 </svelte:head>
 
 <main>
@@ -40,6 +45,8 @@
 				<div class="bubble small bold">have a look around:</div>
 				<div class="bubble-divider medium" />
 				<a href="./dev" class="bubble small">gimme a job</a>
+				<div class="bubble-divider small" />
+				<a href="./diary" class="bubble small">read my diary</a>
 				<div class="bubble-divider small" />
 				<a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
 				<div class="bubble-divider small" />
@@ -91,7 +98,6 @@
 	@bubblecolor: #ffffcc;
 
 	main {
-		background-color: @bgcolor;
 		font-family: 'Lucida Grande', Geneva, Helvetica, Arial, Sans-Serif;
 		padding: 16px;
 		padding-top: 5vh;

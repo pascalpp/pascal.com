@@ -22,6 +22,14 @@
 	<meta
 		name="description"
 		content="Pascal’s Resume - A Brooklyn-based web developer and designer with experience in React, Redux, Node, Sveltekit, HTML, CSS, Less, Sass, and other web technologies." />
+	<style>
+		@media screen {
+			body {
+				background-color: color-mix(in srgb, #4f7192 70%, white);
+				overflow-x: hidden;
+			}
+		}
+	</style>
 </svelte:head>
 
 <main>
@@ -159,11 +167,6 @@
 
 	// screen rules
 	@media screen {
-		:global(body) {
-			background-color: color-mix(in srgb, @blueish 70%, white);
-			overflow-x: hidden;
-		}
-
 		main {
 			padding: 2.5em 5em;
 			@media @mobile {
