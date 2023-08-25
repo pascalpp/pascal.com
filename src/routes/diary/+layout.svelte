@@ -1,3 +1,9 @@
+<script>
+	import { fade } from 'svelte/transition';
+
+	export let data;
+</script>
+
 <svelte:head>
 	<title>Pascal’s Diary</title>
 
@@ -17,8 +23,12 @@
 		</div>
 	</nav>
 
-	<div class="structure">
-		<slot />
+	<div class="transition-container">
+		{#key data.currentRoute}
+			<div class="structure" in:fade={{ duration: 250, delay: 150 }} out:fade={{ duration: 250 }}>
+				<slot />
+			</div>
+		{/key}
 	</div>
 
 	<footer>
@@ -28,6 +38,18 @@
 
 <style lang="less">
 	@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap');
+
+	.transition-container {
+		width: 100%;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.transition-container > * {
+		grid-row: 1;
+		grid-column: 1;
+	}
 
 	main {
 		min-height: 100vh;
