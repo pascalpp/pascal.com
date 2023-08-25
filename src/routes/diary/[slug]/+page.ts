@@ -1,5 +1,8 @@
 // src/routes/diary/[slug]/+page.js
-export async function load({ params }) {
+
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async ({ params }) => {
 	const post = await import(`../${params.slug}/page.md`);
 	const { title, date } = post.metadata;
 	const Content = post.default;
@@ -9,4 +12,4 @@ export async function load({ params }) {
 		date,
 		Content,
 	};
-}
+};
