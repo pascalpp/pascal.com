@@ -24,7 +24,7 @@
 .rotated-shadow {
 	position: relative;
 	isolation: isolate;
-	transform: rotate(var(--deg, 0deg));
+	transform: rotate(var(--deg, 0deg)) translateY(var(--offsetY, 0));
 
 	&::before {
 		display: block;
