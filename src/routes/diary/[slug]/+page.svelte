@@ -1,7 +1,8 @@
 <script>
 	export let data;
-	const { post, next, prev } = data;
-	const { title, date, Content } = post;
+
+	$: ({ post, next, prev } = data);
+	$: ({ title, date, content } = post);
 </script>
 
 <svelte:head>
@@ -16,28 +17,28 @@
 <nav class="post-navigation top">
 	{#if prev}
 		<div class="prev">
-			<a data-sveltekit-reload href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+			<a href="/diary/{prev.slug}">← {prev.metadata.title}</a>
 		</div>
 	{/if}
 	{#if next}
 		<div class="next">
-			<a data-sveltekit-reload href="/diary/{next.slug}">{next.metadata.title} →</a>
+			<a href="/diary/{next.slug}">{next.metadata.title} →</a>
 		</div>
 	{/if}
 </nav>
 
 <article>
-	<Content />
+	<svelte:component this={content} />
 
 	<nav class="post-navigation bottom">
 		{#if prev}
 			<div class="prev">
-				<a data-sveltekit-reload href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+				<a href="/diary/{prev.slug}">← {prev.metadata.title}</a>
 			</div>
 		{/if}
 		{#if next}
 			<div class="next">
-				<a data-sveltekit-reload href="/diary/{next.slug}">{next.metadata.title} →</a>
+				<a href="/diary/{next.slug}">{next.metadata.title} →</a>
 			</div>
 		{/if}
 	</nav>

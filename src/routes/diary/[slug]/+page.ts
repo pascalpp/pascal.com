@@ -10,7 +10,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 	const { slug } = params;
 	const post = await import(`../${slug}/page.md`);
 	const { title, date } = post.metadata;
-	const Content = post.default;
+	const content = post.default;
 
 	const index = posts.findIndex((item) => item.slug === slug);
 	const next = posts[index + 1];
@@ -23,7 +23,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 			slug,
 			title,
 			date,
-			Content,
+			content,
 		},
 	};
 };
