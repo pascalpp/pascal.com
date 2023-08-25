@@ -6,8 +6,6 @@
 	import { fade } from 'svelte/transition';
 
 	export let data;
-
-	console.log({ data });
 </script>
 
 <Layer>
