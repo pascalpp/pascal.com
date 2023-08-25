@@ -35,8 +35,8 @@
 		left: 0;
 		height: 100%;
 		background-color: black;
-		box-shadow: 0 1em 50px rgba(0, 0, 0, 0.5);
-		transform: translateX(0.1em) translateY(0.5em) rotate(calc(var(--deg, 0deg) / 2));
+		box-shadow: 0 1em var(--shadow-size, 50px) rgba(0, 0, 0, 0.5);
+		transform: translateX(0.1em) translateY(var(--shadow-offset, 0.5em)) rotate(calc(var(--deg, 0deg) / 2));
 		filter: blur(5px);
 		z-index: -1;
 		opacity: 0.2;
