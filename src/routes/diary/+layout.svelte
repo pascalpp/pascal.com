@@ -2,6 +2,7 @@
 	<style>
 		body {
 			background-color: #f0f0f0;
+			overflow-x: hidden;
 		}
 	</style>
 </svelte:head>
@@ -29,12 +30,13 @@
 	@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap');
 
 	main {
-		overflow-x: hidden;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: stretch;
+		animation: zoom-fade 1.5s ease-out 0ms forwards;
+		transform-origin: top left;
 	}
 
 	:global(a) {
@@ -88,6 +90,17 @@
 			font-weight: 500;
 			font-size: 24px;
 			color: black;
+		}
+	}
+
+	@keyframes zoom-fade {
+		0% {
+			opacity: 0;
+			scale: 10;
+		}
+		100% {
+			opacity: 1;
+			scale: 1;
 		}
 	}
 
