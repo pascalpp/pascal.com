@@ -1,5 +1,5 @@
 title: Birthday ruminationseses
-data: Sunday, December  9, 2001 · 9:30am
+date: Sunday, December  9, 2001 · 9:30am
 ---
 
 Well, today is my birthday, making me thirty-one. I guess actually it’s almost over. I am in a boat called Willow, which belongs to my good friends Nick and Valerie. We are anchored in the Herb river, a little feeder to the Savannah River. Tomorrow we are going to get the fridge fixed and then we’re going shopping.
