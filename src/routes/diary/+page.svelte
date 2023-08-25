@@ -2,7 +2,22 @@
 	export let data;
 	const { posts } = data;
 	const sorted = posts.reverse();
-	console.log(data);
+
+	const dateFormatter = new Intl.DateTimeFormat('en', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+
+	function formatDate(d) {
+		try {
+			const date = new Date(d);
+			return dateFormatter.format(date);
+		} catch (e) {
+			console.log(d);
+			return d;
+		}
+	}
 </script>
 
 <header>
@@ -17,7 +32,7 @@
 			<li>
 				<a href="/diary/{post.slug}">
 					<span class="title">{post.metadata.title} →</span>
-					<span class="date">{post.metadata.date}</span>
+					<span class="date">{formatDate(post.metadata.date)}</span>
 				</a>
 			</li>
 		{/each}
@@ -85,7 +100,7 @@
 				font-family: @sans-font;
 				opacity: 0.5;
 				font-size: 12px;
-				padding-left: 0.5em;
+				padding-left: 2em;
 			}
 		}
 	}

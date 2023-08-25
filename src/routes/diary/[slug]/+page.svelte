@@ -3,6 +3,35 @@
 
 	$: ({ post, next, prev } = data);
 	$: ({ title, date, content } = post);
+
+	if (data.post.date.includes('·')) {
+		console.log(new Date(data.post.date.replace(' ·', ',').replace(/am$/, ' AM').replace(/pm$/, ' PM')).toISOString());
+	}
+
+	const dateFormatter = new Intl.DateTimeFormat('en', {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+
+	const timeFormatter = new Intl.DateTimeFormat('en', {
+		hour: 'numeric',
+		minute: 'numeric',
+		hour12: true,
+	});
+
+	function formatDate(d) {
+		if (date.includes('·')) {
+			console.log(
+				new Date(data.post.date.replace(' ·', ',').replace(/am$/, ' AM').replace(/pm$/, ' PM')).toISOString()
+			);
+			return date;
+		} else {
+			const date = new Date(d);
+			return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
+		}
+	}
 </script>
 
 <svelte:head>
@@ -11,7 +40,7 @@
 
 <header>
 	<h1>{title}</h1>
-	<p class="date">{date}</p>
+	<p class="date">{formatDate(date)}</p>
 </header>
 
 <nav class="post-navigation top">
@@ -152,7 +181,7 @@
 		a {
 			background-color: rgb(255 255 255);
 			text-decoration: none;
-			padding: 0.25em 0.75em;
+			padding: 0.5em 0.75em;
 		}
 	}
 </style>
