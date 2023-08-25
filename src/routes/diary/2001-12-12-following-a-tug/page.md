@@ -3,7 +3,7 @@ title: Following a tug and barge down river
 date: Wednesday, December 12, 2001 · 11:15am
 ---
 
-### “C’mon, Willow. let’s go to Florida.”
+### “C’mon, Willow. Let’s go to Florida.”
 
 <div class="polaroid" style="--deg: -1.5deg"><img src="./willow-portbow.jpg"></div>
 
