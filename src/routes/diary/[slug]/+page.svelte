@@ -1,6 +1,7 @@
 <script>
 	export let data;
-	const { title, date, Content } = data;
+	const { post, next, prev } = data;
+	const { title, date, Content } = post;
 </script>
 
 <svelte:head>
@@ -12,18 +13,44 @@
 	<p class="date">{date}</p>
 </header>
 
+<nav class="post-navigation top">
+	{#if prev}
+		<div class="prev">
+			<a data-sveltekit-reload href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+		</div>
+	{/if}
+	{#if next}
+		<div class="next">
+			<a data-sveltekit-reload href="/diary/{next.slug}">{next.metadata.title} →</a>
+		</div>
+	{/if}
+</nav>
+
 <article>
 	<Content />
+
+	<nav class="post-navigation bottom">
+		{#if prev}
+			<div class="prev">
+				<a data-sveltekit-reload href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+			</div>
+		{/if}
+		{#if next}
+			<div class="next">
+				<a data-sveltekit-reload href="/diary/{next.slug}">{next.metadata.title} →</a>
+			</div>
+		{/if}
+	</nav>
 </article>
 
 <style lang="less">
 	header {
 		margin-top: 2em;
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 
 		h1 {
 			margin: 0;
-			line-height: 1.2;
+			line-height: 1.1;
 			font-size: 36px;
 			font-weight: 500;
 		}
@@ -82,6 +109,49 @@
 			z-index: 1;
 			border-radius: 2px;
 			border: 1px solid rgb(0 0 0 / 0.1);
+		}
+	}
+
+	.post-navigation {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1em;
+
+		&.top {
+			margin-top: 2em;
+			margin-bottom: 2em;
+
+			.next {
+				margin-top: -1em;
+				justify-self: flex-end;
+				align-self: flex-end;
+			}
+		}
+
+		&.bottom {
+			margin-top: 5em;
+		}
+
+		--shadow-offset: 2px;
+
+		.prev {
+			--deg: 1deg;
+			.rotated-shadow;
+			margin-left: -1em;
+		}
+
+		.next {
+			--deg: -1deg;
+			.rotated-shadow;
+			align-self: flex-end;
+			margin-right: -1em;
+		}
+
+		a {
+			background-color: rgb(255 255 255);
+			text-decoration: none;
+			padding: 0.25em 0.75em;
 		}
 	}
 </style>
