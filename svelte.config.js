@@ -11,7 +11,9 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [
-		importAssets(),
+		mdsvex({
+			extensions: ['.md'],
+		}),
 		sveltePreprocess({
 			postcss: {
 				plugins: [autoprefixer],
@@ -20,9 +22,7 @@ const config = {
 				prependData: '@import (reference) "src/variables.less";',
 			},
 		}),
-		mdsvex({
-			extensions: ['.md'],
-		}),
+		importAssets(),
 		// vitePreprocess(),
 	],
 
