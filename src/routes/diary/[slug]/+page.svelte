@@ -106,7 +106,7 @@
 		flex-direction: column;
 		gap: 1em;
 		@media @not-mobile {
-			min-height: 50vh;
+			min-height: 70vh;
 		}
 
 		:global(> *) {
