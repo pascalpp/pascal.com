@@ -39,26 +39,28 @@
 </svelte:head>
 
 <header>
+	<nav class="post-navigation top">
+		{#if prev}
+			<div class="prev">
+				<a accesskey="[" href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+			</div>
+		{/if}
+		{#if next}
+			<div class="next">
+				<a accesskey="]" href="/diary/{next.slug}">{next.metadata.title} →</a>
+			</div>
+		{/if}
+	</nav>
+
 	<h1>{title}</h1>
 	<p class="date">{formatDate(date)}</p>
 </header>
 
-<nav class="post-navigation top">
-	{#if prev}
-		<div class="prev">
-			<a href="/diary/{prev.slug}">← {prev.metadata.title}</a>
-		</div>
-	{/if}
-	{#if next}
-		<div class="next">
-			<a href="/diary/{next.slug}">{next.metadata.title} →</a>
-		</div>
-	{/if}
-</nav>
-
 <article>
 	<svelte:component this={content} />
+</article>
 
+<footer>
 	<nav class="post-navigation bottom">
 		{#if prev}
 			<div class="prev">
@@ -71,7 +73,7 @@
 			</div>
 		{/if}
 	</nav>
-</article>
+</footer>
 
 <style lang="less">
 	header {
@@ -98,6 +100,7 @@
 	}
 
 	article {
+		min-height: 70vh;
 		flex-grow: 1;
 		font-weight: 200;
 		font-size: 20px;
@@ -149,7 +152,7 @@
 
 		&.top {
 			margin-top: 2em;
-			margin-bottom: 2em;
+			margin-bottom: 1em;
 
 			.next {
 				justify-self: flex-end;
@@ -158,8 +161,9 @@
 		}
 
 		&.bottom {
-			gap: 1.5em;
-			margin-top: 5em;
+			font-size: 20px;
+			gap: 1em;
+			margin-top: 2em;
 		}
 
 		--shadow-offset: 2px;
@@ -168,6 +172,7 @@
 			--deg: 1deg;
 			.rotated-shadow;
 			margin-left: -1em;
+			max-width: 60%;
 		}
 
 		.next {
@@ -175,9 +180,11 @@
 			.rotated-shadow;
 			align-self: flex-end;
 			margin-right: -1em;
+			max-width: 60%;
 		}
 
 		a {
+			display: block;
 			background-color: rgb(255 255 255);
 			text-decoration: none;
 			padding: 0.5em 0.75em;
