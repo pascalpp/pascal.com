@@ -4,7 +4,7 @@ date: 2006-05-04T04:22:00.000Z
 original: 000258.php
 ---
 
-While reading <a href="http://www.house.gov/paul/congrec/congrec2006/cr040506.htm">this essay on Iran</a> by Republican Congressman Ron Paul of Texas, I was struck by his mention of “those who don�t understand how a free market can develop substitutes to replace diminishing resources.”
+While reading <a href="http://www.house.gov/paul/congrec/congrec2006/cr040506.htm">this essay on Iran</a> by Republican Congressman Ron Paul of Texas, I was struck by his mention of “those who don’t understand how a free market can develop substitutes to replace diminishing resources.”
 
 Thinking over what he might have meant by that phrase, it occurred to me that in fact we do not have a true free market with regard to energy. It might be argued that we have a relatively free oil market. I’m sure there are many that might argue otherwise, but for the sake of this post let’s assume that oil is a commodity that is traded freely and openly on the market and free market forces are allowed to operate directly on this trade.
 
