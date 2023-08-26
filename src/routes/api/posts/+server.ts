@@ -4,8 +4,8 @@ export const GET = async () => {
 	const posts = await fetchAllPosts();
 
 	const sorted = posts.sort((a, b) => {
-		if (b.slug > a.slug) return -1;
-		if (b.slug < a.slug) return 1;
+		if (b.metadata.date > a.metadata.date) return -1;
+		if (b.metadata.date < a.metadata.date) return 1;
 		return 0;
 	});
 
