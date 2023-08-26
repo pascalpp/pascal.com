@@ -87,10 +87,10 @@
 		.card {
 			background-color: rgb(255 255 255);
 			padding: 1em;
-			padding-top: 2vw;
+			padding-top: 1em;
 			padding-left: 3vw;
 			border-radius: 4px;
-			min-height: 200px;
+			min-height: 150px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;

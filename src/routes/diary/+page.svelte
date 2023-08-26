@@ -21,17 +21,19 @@
 </script>
 
 <header>
-	<h1>Pascal’s Diary</h1>
+	<p>
+		I've had a few different blogs over the years, but they’ve all suffered various databse catastrophes. The posts
+		below have been resurrected from an old Movable Type blog I wrote in the early 2000s. Soon I'll resurrect the posts
+		from my more recent Wordpress blog (which also died), and maybe I’ll write some new posts from time to time.
+	</p>
 </header>
 
 <article>
-	<p>Hi, I’m Pascal. I’m a musician and web developer.</p>
-	<p>Here are some of my latest posts:</p>
 	<ul>
 		{#each sorted as post}
 			<li>
 				<a href="/diary/{post.slug}">
-					<span class="title">{post.metadata.title} →</span>
+					<span class="title">{post.metadata.title}</span>
 					<span class="date">{formatDate(post.metadata.date)}</span>
 				</a>
 			</li>
@@ -43,13 +45,8 @@
 	header {
 		margin-top: 2em;
 		margin-bottom: 1em;
-	}
-
-	h1 {
-		margin: 0;
-		line-height: 1.1;
-		font-size: 36px;
-		font-weight: 500;
+		font-size: 20px;
+		font-weight: 200;
 	}
 
 	article {
@@ -69,6 +66,7 @@
 		width: max-content;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 1.5em;
 	}
 
@@ -88,12 +86,21 @@
 		.rotated-shadow;
 
 		a {
+			max-width: 500px;
 			padding: 0.5em 1em;
 			background-color: white;
 			border-radius: 2px;
 			text-decoration: none;
 			display: flex;
 			flex-direction: column;
+			gap: 0.25em;
+			line-height: 1.2;
+
+			.title {
+				&::after {
+					content: ' →';
+				}
+			}
 
 			.date {
 				color: black;
