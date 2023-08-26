@@ -45,9 +45,7 @@ I been working on a couple new songs here on the boat. Here’s one called Satel
 
 <figure>
   <figcaption>Satellite</figcaption>
-  <audio controls src="./satellite.mp3">
-    <a href="./satellite.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./satellite.mp3" />
 </figure>
 
 <div class="commentdivider"></div><span class="commentheader">13 Comments</span>

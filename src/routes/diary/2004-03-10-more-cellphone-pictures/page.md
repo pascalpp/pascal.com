@@ -26,7 +26,5 @@ Here listen:
 
 <figure>
   <figcaption>Anna Oxygen - Baby Blue</figcaption>
-  <audio controls src="./annaoxygen-babyblue.mp3">
-    <a href="./annaoxygen-babyblue.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./annaoxygen-babyblue.mp3" />
 </figure>

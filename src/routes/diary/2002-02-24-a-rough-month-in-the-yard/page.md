@@ -10,9 +10,7 @@ tags: [mp3, willow, sailing]
   “If I ever feel better, remind me to spend some good time with you.”<br/>
   —Phoenix
   </figcaption>
-  <audio controls src="./Phoenix-IfIEverFeelBetter.mp3">
-    <a href="./Phoenix-IfIEverFeelBetter.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./Phoenix-IfIEverFeelBetter.mp3" />
 </figure>
 
 Oh my god, it’s been a long time since I did this.

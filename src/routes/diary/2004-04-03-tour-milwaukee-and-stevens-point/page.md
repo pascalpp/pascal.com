@@ -4,7 +4,7 @@ date: 2004-04-03T17:51:00.000Z
 original: 000152.php
 ---
 
-So I’m on <a href="/tour">tour</a> with <a href="http://www.stephanierearick.com/">Stephanie Rearick</a> and <a href="http://www.milkbaby.net">MiLkBabY</a>.
+So I’m on <a href="https://www.pascal.com/tour">tour</a> with <a href="http://www.stephanierearick.com/">Stephanie Rearick</a> and <a href="http://www.milkbaby.net">MiLkBabY</a>.
 
 We kicked off the tour at Linneman’s in Milwaukee on Thursday night. Jim Linneman recently renovated the place, and the sound system is awesome. Unfortunately we didn’t get much of a crowd, despite getting pretty good preshow press. I hung out with Lisa at the bar and talked to this woman who used to date a Fabio look-a-like. But he was too dumb, so she advised him to pursue a career in the military. Now she handles fish at an upscale grocery story.
 

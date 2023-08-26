@@ -38,16 +38,12 @@ Have a listen:
 
 <figure>
   <figcaption>Do What Ory Say by Doreen’s Jazz Band</figcaption>
-  <audio controls src="./doreensjazzband-dowhatorysay.mp3">
-    <a href="./doreensjazzband-dowhatorysay.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./doreensjazzband-dowhatorysay.mp3" />
 </figure>
 
 <figure>
   <figcaption>Johnson City by The Kitchen Syncopators</figcaption>
-  <audio controls src="./kitchensyncopators-johnsoncity.mp3">
-    <a href="./kitchensyncopators-johnsoncity.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./kitchensyncopators-johnsoncity.mp3" />
 </figure>
 
 Later that night we hit the town and knocked a few back.
@@ -103,9 +99,7 @@ Aight, that’s all for now. Here, listen to some Rufus.
 
 <figure>
   <figcaption>Grey Gardens by Rufus Wainwright</figcaption>
-  <audio controls src="./rufuswainwright-greygardens.mp3">
-    <a href="./rufuswainwright-greygardens.mp3"> Download audio </a>
-  </audio>
+  <audio controls src="./rufuswainwright-greygardens.mp3" />
 </figure>
 
 <div class="commentdivider"></div><span class="commentheader">12 Comments</span>
