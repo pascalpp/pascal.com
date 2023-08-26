@@ -16,12 +16,14 @@
 </svelte:head>
 
 <main>
-	<nav>
-		<div class="card">
-			<a href="/diary">Pascal’s Diary</a>
-			<a href="/">⬅ Home</a>
-		</div>
-	</nav>
+	<div class="structure">
+		<nav>
+			<div class="card">
+				<a href="/diary">Pascal’s Diary</a>
+				<a href="/">⬅ Home</a>
+			</div>
+		</nav>
+	</div>
 
 	<div class="transition-container">
 		{#key data.currentRoute}
@@ -72,28 +74,46 @@
 
 	.structure {
 		padding: 1em;
-		width: min(95vw, 600px);
-		margin-left: 250px;
+		width: min(95vw, 850px);
+		@media @not-mobile {
+			padding-left: 250px;
+		}
 	}
 
 	nav {
 		--deg: -2deg;
 		.rotated-shadow;
-		width: max-content;
-		position: fixed;
-		left: -1.75vw;
-		top: 5vh;
+		margin: 0 auto;
+		@media @not-mobile {
+			width: max-content;
+			position: fixed;
+			left: -1.75vw;
+			top: 5vh;
+		}
 
 		.card {
 			background-color: rgb(255 255 255);
 			padding: 1em;
-			padding-top: 1em;
-			padding-left: 3vw;
 			border-radius: 4px;
-			min-height: 150px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+
+			@media @not-mobile {
+				padding-top: 1em;
+				padding-left: 3vw;
+				min-height: 150px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			@media @mobile {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				gap: 3em;
+				padding-top: 3em;
+				padding-left: 2em;
+				margin-left: -2em;
+				margin-top: -2em;
+			}
 		}
 
 		a {
@@ -122,6 +142,7 @@
 	}
 
 	footer {
+		text-align: center;
 		padding-top: 8vh;
 		padding-bottom: 2vh;
 		color: rgb(0 0 0 / 0.3);

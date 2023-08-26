@@ -77,7 +77,6 @@
 
 <style lang="less">
 	header {
-		margin-top: 2em;
 		margin-bottom: 1em;
 
 		h1 {
@@ -100,13 +99,15 @@
 	}
 
 	article {
-		min-height: 70vh;
 		flex-grow: 1;
 		font-weight: 200;
 		font-size: 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+		@media @not-mobile {
+			min-height: 50vh;
+		}
 
 		:global(> *) {
 			margin: 0;
@@ -137,11 +138,15 @@
 		}
 
 		:global(.polaroid img) {
-			padding: 1em;
+			padding: 0.75em;
 			background-color: white;
 			z-index: 1;
 			border-radius: 2px;
 			border: 1px solid rgb(0 0 0 / 0.1);
+			@media @mobile {
+				padding: 0.5em;
+				max-width: 90vw;
+			}
 		}
 	}
 
@@ -151,7 +156,6 @@
 		align-items: flex-start;
 
 		&.top {
-			margin-top: 2em;
 			margin-bottom: 1em;
 
 			.next {
@@ -163,7 +167,7 @@
 		&.bottom {
 			font-size: 20px;
 			gap: 1em;
-			margin-top: 2em;
+			margin-top: 4em;
 		}
 
 		--shadow-offset: 2px;
@@ -171,16 +175,37 @@
 		.prev {
 			--deg: 1deg;
 			.rotated-shadow;
-			margin-left: -1em;
-			max-width: 60%;
 		}
 
 		.next {
 			--deg: -1deg;
 			.rotated-shadow;
 			align-self: flex-end;
-			margin-right: -1em;
-			max-width: 60%;
+		}
+
+		@media @not-mobile {
+			.prev {
+				margin-left: -1em;
+				max-width: 60%;
+			}
+			.next {
+				margin-right: -1em;
+				max-width: 60%;
+			}
+		}
+		@media @mobile {
+			gap: 2em;
+
+			&.top {
+				display: none;
+			}
+
+			.prev {
+				margin-right: 1em;
+			}
+			.next {
+				margin-left: 1em;
+			}
 		}
 
 		a {
