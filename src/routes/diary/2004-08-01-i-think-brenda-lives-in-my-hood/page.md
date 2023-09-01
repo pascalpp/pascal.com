@@ -10,7 +10,10 @@ Anyway, it made me wonder if Brenda lives in my hood. That would make Carroll Ga
 
 Maybe she was just hood-shopping with her hubby/boyfriend/brother and her baby/lovechild/nephew. Maybe she’ll move in next door and invite me in for a joint and some anonymous sex. Maybe I’ll have to go to the hospital and get my head shaved in preparation for invasive cranial surgery. God, anything could happen. Stay tuned.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">6 Comments</span>
+<span class="commentheader">6 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">b a m a</a></span>

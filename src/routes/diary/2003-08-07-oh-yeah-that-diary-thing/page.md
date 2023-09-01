@@ -14,7 +14,7 @@ I played my first New York show the other night, at the Knitting Factory. That w
 
 Okay, so that’s all you need to know for now.
 
-<div class="commentdivider"></div><span class="commentheader">9 Comments</span>
+<span class="commentheader">9 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Art</span>

@@ -6,7 +6,10 @@ original: 000201.php
 
 How can you trust a man who smirks like that? He’s like the grinch or something. But without the happy ending.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;delia888&#64;hotmail&#46;com">Darpalarpia</a></span>

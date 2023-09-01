@@ -14,11 +14,9 @@ Here’s one with his lil dog Peedee. He bites Peedee. Peedee bites back. Click 
 
 <p class="polaroid" style="--deg: -2deg"><img src="./ryanpeedee-0.jpg" /></p>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by an anonymous coward</span>
 <span class="commentdatebox">Monday, May 17, 2004</span>
 <span class="commenttimebox"> 3:30 PM</span>
@@ -44,6 +42,7 @@ Here’s one with his lil dog Peedee. He bites Peedee. Peedee bites back. Click 
 <div class="commentbody">vb=12
 
 kl</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by Asiel</span>
 <span class="commentdatebox">Wednesday, May 19, 2004</span>
@@ -51,8 +50,4 @@ kl</div>
 </div>
 <div class="commentbody">how ‘bout some favors?
 
-</div>
-
-
-
- -->
+</div> -->

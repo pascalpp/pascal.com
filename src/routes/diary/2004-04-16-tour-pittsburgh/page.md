@@ -16,7 +16,7 @@ After the show we packed up our stuff and left it on stage and headed to Sharon�
 
 Now it’s 11 in the morning. Everyone’s up and about and putting on thrift store clothes. We’re wondering if one should wash thrift store clothes before wearing them. The consensus seems to be that most thrift stores probably wash their clothes before putting them on the rack, but that washing them again before wearing them probly wouldn’t be bad idea. Even so, none of us ever do. Do you?
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by margaret</span>
@@ -29,4 +29,4 @@ Now it’s 11 in the morning. Everyone’s up and about and putting on thrift st
 <span class="commentdatebox">Monday, April 26, 2004</span>
 <span class="commenttimebox">10:06 AM</span>
 </div>
-<div class="commentbody">i found a skirt on the street in williamsburg last summer and have worn it approximately 20 times now. I have never washed it. I wear it with tights though so I feel like it’s not so gross. </div> -->
+<div class="commentbody">i found a skirt on the street in williamsburg last summer and have worn it approximately 20 times now. I have never washed it. I wear it with tights though so I feel like it’s not so gross. </div>

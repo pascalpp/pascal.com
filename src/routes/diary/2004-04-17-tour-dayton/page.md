@@ -20,9 +20,9 @@ This morning we said our goodbyes and hit the road. While we were packing up I d
 
 We’re on the way back to Chicago now. We just stopped outside of Lafayette, Indiana for breakfast at the Country Cafe, which I think used to be a Waffle House. There was a young waitress there, probly only 16 or 17, who looked just like the fat princess from Shrek. I mean that in a nice way.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
+<span class="commentheader">4 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;balthrop&#46;com">Bama</a></span>
 <span class="commentdatebox">Saturday, April 17, 2004</span>
 <span class="commenttimebox"> 6:32 PM</span>

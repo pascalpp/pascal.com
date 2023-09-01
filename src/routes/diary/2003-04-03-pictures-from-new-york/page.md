@@ -43,9 +43,9 @@ Here’s Rachel and B at work. They are getting ready to take a picture of Super
 <p class="polaroid" style="--deg: -2deg"><img src="./13-b.jpg" /></p>
 This is the last thing I saw before I left New York. No, that’s not a moustache.
 
-<div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;eladha28&#64;hotmail&#46;com">Someone...</a></span>
 <span class="commentdatebox">Tuesday, May 20, 2003</span>
 <span class="commenttimebox"> 5:50 AM</span>
@@ -74,4 +74,4 @@ This is the last thing I saw before I left New York. No, that’s not a moustach
 <span class="commentdatebox">Wednesday, December 24, 2003</span>
 <span class="commenttimebox"> 3:27 AM</span>
 </div>
-<div class="commentbody">tebrik ederim manyak fotolard� cok eglend�m.had� eywallah</div>
+<div class="commentbody">tebrik ederim manyak fotolard� cok eglend�m.had� eywallah</div> -->

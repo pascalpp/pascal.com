@@ -12,7 +12,10 @@ While Lauren was here we also ate at most of our favorite restaurants: Zaytoons,
 
 Then Lauren left, and that feeling snuck up on me again. I used to wonder how people could miss other people. It didn’t happen to me that often. But now it happens every time she leaves. It makes me miss everyone, all at once. How ya’ll doin?
 
-<!-- <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
+<span class="commentheader">4 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">bama</a></span>

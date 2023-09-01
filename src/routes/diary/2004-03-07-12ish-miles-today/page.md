@@ -22,9 +22,9 @@ I saw this three times today. Sorry, I’m still high. And cellphones still take
 <p class="polaroid" style="--deg: -2deg"><img src="./nipple-bleed.jpg" /></p>
 Today I got my first nipple bleed. Bitchen. Gonna have to tape them suckers down next time.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=611">Raba</a></span>
 <span class="commentdatebox">Saturday, March  6, 2004</span>
 <span class="commenttimebox"> 9:07 PM</span>

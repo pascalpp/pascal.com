@@ -10,9 +10,9 @@ Woohoo! Another caption contest!
 
 Enter your best caption for this image in the comments below. And try to come up with something besides ‘Curious George’…
 
-<!-- <div class="commentdivider"></div><span class="commentheader">6 Comments</span>
+<span class="commentheader">6 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;jskates&#64;gmail&#46;com">Jack</a></span>
 <span class="commentdatebox">Thursday, July  8, 2004</span>
 <span class="commenttimebox"> 7:24 PM</span>

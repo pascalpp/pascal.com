@@ -14,9 +14,9 @@ PS. I had a cigarette last night. Man it was GOOD. My knees and my brain got all
 
 Don’t worry, I’m done with it. I have to run 20 fuckin miles on Saturday.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;crismarie143&#64;hotmail&#46;com">cristen</a></span>
 <span class="commentdatebox">Monday, April 26, 2004</span>
 <span class="commenttimebox"> 7:21 PM</span>

@@ -10,7 +10,7 @@ Funny thing is, as I was zooming in on this picture, I noticed that it started t
 
 <p class="polaroid" style="--deg: -2deg"><img src="./belly-0.jpg" /></p>
 
-<div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by noraa</span>

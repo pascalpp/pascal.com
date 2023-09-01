@@ -18,9 +18,9 @@ After a couple hours of all this hard work we packed up our stuff and headed bac
 
 Today we’re pulling out and heading to Isla Contoy, a nature preserve a short distance north from here. There we’ll anchor out and do some more snorkeling. Then we’ll head out into the Gulf of Mexico and sail home to Mobile.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">bama</a></span>
 <span class="commentdatebox">Tuesday, June  8, 2004</span>
 <span class="commenttimebox"> 2:19 PM</span>

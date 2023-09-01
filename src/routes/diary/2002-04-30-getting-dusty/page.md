@@ -14,9 +14,9 @@ Unfortunately I don’t think I’ll be joining them, at least not anytime soon.
 
 Instead, I’ve decided to move to Birmingham and work on music full time. I’ll be posting some recent photos sometime soon.
 
-<div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;steph&#64;tomorrowneverknows&#46;com">steph (a friend of Ryan's on St. John)</a></span>
 <span class="commentdatebox">Tuesday, April 30, 2002</span>
 <span class="commenttimebox">10:28 AM</span>
@@ -45,4 +45,4 @@ Instead, I’ve decided to move to Birmingham and work on music full time. I’l
 <span class="commentdatebox">Tuesday, October 22, 2002</span>
 <span class="commenttimebox"> 8:01 AM</span>
 </div>
-<div class="commentbody">GEEZUS F*** CHRIST WHAT IS UP WITH YOUR OBSESSION WITH PORTER????!!!!!!</div>
+<div class="commentbody">GEEZUS F*** CHRIST WHAT IS UP WITH YOUR OBSESSION WITH PORTER????!!!!!!</div> -->

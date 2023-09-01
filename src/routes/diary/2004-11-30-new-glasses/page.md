@@ -12,7 +12,10 @@ This picture was taken from an oncoming train.
 
 My friend Kevin says he likes them cuz “they’re not me”. Me too.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">7 Comments</span>
+<span class="commentheader">7 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">bama</a></span>

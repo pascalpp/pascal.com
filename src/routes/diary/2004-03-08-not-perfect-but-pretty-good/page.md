@@ -48,12 +48,9 @@ Me and Nikola.
 
 I guess it’s not really a game, is it? Well, whatever, we played it. And everybody won. The End.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;bill_haite&#64;yahoo&#46;com">andy or bill or susan?</a></span>
 <span class="commentdatebox">Thursday, October 28, 2004</span>
 <span class="commenttimebox"> 2:12 AM</span>
@@ -66,8 +63,4 @@ i think there needs to be more yodeling
 
 andy
 
-im not a feeakin spambot</div>
-
-
-
- -->
+im not a feeakin spambot</div> -->

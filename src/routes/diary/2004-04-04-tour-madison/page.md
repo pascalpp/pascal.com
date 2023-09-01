@@ -18,20 +18,13 @@ While I was sleeping, a piano fell through the ceiling and landed not-so-squarel
 
 Today is bright and sunny and beautiful, and just a little cold. In a bit we’re driving to Chicago (Evanston, actually) where hopefully I’ll get to hang out with Laura again.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=654">J-roam</a></span>
 <span class="commentdatebox">Monday, April  5, 2004</span>
 <span class="commenttimebox"> 6:35 PM</span>
 </div>
 <div class="commentbody">really? seriously? a near-perfect E minor sixth?
 
-is the piano story true? </div>
-
-
-
- -->
+is the piano story true? </div> -->

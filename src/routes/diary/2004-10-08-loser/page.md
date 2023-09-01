@@ -10,7 +10,10 @@ Having inherited a record budget surplus from the prior administration, he’s m
 
 Let’s ditch this fuckin LOSER.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">bama</a></span>

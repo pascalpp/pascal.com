@@ -54,9 +54,9 @@ As we pulled into Marathon, we received a friendly escort from the local Coast G
 
 PS. Happy Birthday, Ryan!
 
-<div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Nevahearditcalled Thatbefore</span>
 <span class="commentdatebox">Thursday, March 21, 2002</span>
 <span class="commenttimebox"> 6:37 AM</span>
@@ -73,4 +73,4 @@ PS. Happy Birthday, Ryan!
 <span class="commentdatebox">Wednesday, May  1, 2002</span>
 <span class="commenttimebox">10:02 AM</span>
 </div>
-<div class="commentbody">it is a very impressive for me. i like the kind of adventure in the sea like yours.</div>
+<div class="commentbody">it is a very impressive for me. i like the kind of adventure in the sea like yours.</div> -->

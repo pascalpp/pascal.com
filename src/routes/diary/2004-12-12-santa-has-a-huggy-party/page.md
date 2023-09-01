@@ -12,7 +12,10 @@ Then last night we had the <a href="https://www.pascal.com/party/old/huggyparty/
 
 Now my landlord is coming over to discuss the noise complaint that our neighbors registered last night. Fun.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by kmley</span>

@@ -10,7 +10,10 @@ Today we should take a moment to honor our veterans.
 
 Some veterans and their families have also erected a memorial for those soldiers who have died in Iraq at <a href="http://www.veteransforpeace.org/Arlington_west_121003.htm">Arlington West</a>.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by John F</span>

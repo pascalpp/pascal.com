@@ -49,7 +49,7 @@ When everyone left I noticed that they all seemed to have left their beer bottle
 <p class="polaroid" style="--deg: -2deg"><img src="./diner-0.jpg" /></p>
 Then we went to the diner. Matt and Liz each ordered a hand sandwich. Lauren picked her nose. I fell asleep on Kyle’s shoulder. And then Lauren and Liz threw up. Click it.
 
-<div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;balthrop&#46;com">Bama</a></span>
@@ -62,8 +62,4 @@ Then we went to the diner. Matt and Liz each ordered a hand sandwich. Lauren pic
 <span class="commentdatebox">Wednesday, March 17, 2004</span>
 <span class="commenttimebox">12:32 PM</span>
 </div>
-<div class="commentbody">Everybody knows Donald doesn’t point. He uses that quick jab of four fingers… palms down. YOU’RE FIRED.</div>
-
-
-
- -->
+<div class="commentbody">Everybody knows Donald doesn’t point. He uses that quick jab of four fingers… palms down. YOU’RE FIRED.</div> -->

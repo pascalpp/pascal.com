@@ -8,7 +8,10 @@ Sara is coming to visit me in San Francisco in a couple days. We’re gonna head
 
 I love Sara. She’s the awesome.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;megan&#64;charterinternet&#46;com">megan</a></span>

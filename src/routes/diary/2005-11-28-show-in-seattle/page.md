@@ -16,7 +16,10 @@ I was a little taken aback at first, but then I just started laughing. Day job.
 
 I walked back to the bar, still laughing. The show went great.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">bama</a></span>

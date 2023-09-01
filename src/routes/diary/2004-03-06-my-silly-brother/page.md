@@ -8,7 +8,7 @@ Here’s some funny old pics of my brother Ryan I been meaning to post. Click it
 
 <p class="polaroid" style="--deg: -2deg"><img src="./ryan-0.jpg" /></p>
 
-<div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=610">Raba</a></span>

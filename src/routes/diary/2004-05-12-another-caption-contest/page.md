@@ -8,9 +8,9 @@ Watch the video below and then leave your best caption for it in the comments be
 
 <!-- <OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="320" height="264" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"><PARAM name="SRC" VALUE="./opaline-dance.avi"><PARAM name="AUTOPLAY" VALUE="true"><PARAM name="CONTROLLER" VALUE="true"><embed src="./opaline-dance.avi" width="320" height="264" volume="50" autostart="true" controller="true" scale="tofit""></OBJECT> -->
 
-<!-- <div class="commentdivider"></div><span class="commentheader">14 Comments</span>
+<span class="commentheader">14 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">Bama</a></span>
 <span class="commentdatebox">Wednesday, May 12, 2004</span>
 <span class="commenttimebox"> 4:29 PM</span>

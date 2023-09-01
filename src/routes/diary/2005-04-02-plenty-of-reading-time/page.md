@@ -12,7 +12,10 @@ Seriously.
 
 Agh, here I go again. Wish me well.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">10 Comments</span>
+<span class="commentheader">10 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">bama</a></span>

@@ -8,7 +8,10 @@ Dudes. I fuckin overdid it last night. Jim Anchower would be proud. I went to a 
 
 Before all that I spent some time in Leah’s bathroom, raiding her makeup. This morning Kyle thought someone had beat the shit out of me. Anyway, go have a look at <a href="http://pictures.pascal.com/gallery/leahbday2005">the pics</a>. Don’t miss the two movies at the end! Full on retarded.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">18 Comments</span>
+<span class="commentheader">18 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by Jonathan</span>

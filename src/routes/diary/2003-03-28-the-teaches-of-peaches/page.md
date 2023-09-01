@@ -16,9 +16,9 @@ Then a band called Elefant came out and sucked.
 
 Finally, after some more messages from Camel, Peaches came out and rocked. Her show would be difficult to describe and still do it justice. She looks like a cross between Julia-Louis Dreyfuss and Sandra Bernhardt, but mostly she acts like Sandra Bernhardt. Very energetic, semi-angry, sex-positive rap to eighties-esque music coming from somewhere offstage. Dressing in a pink leather vest and a pink leather skirt over pink fishnets and often-visible pink underwear, she climbed across the balcony, causing the whole audience to turn slowly around as she circled behind us, kicking a beer over on one of us, that one of us being me. Then she returned to the stage in different clothes and proceeded to have a (staged but sufficiently convincing) menstrual accident on stage. Rubbing her crotching mock ignorance, she finally looked at her hand in mock shock and then ran off stage in mock horror. A few mock-awkward moments passed as the audience played along, and the saxxy emcee lady came out and asked for a tampon, garnering only a beer bottle. After a few funny moments of listening to them try to insert the beer bottle backstage, Peaches emerged in a hotpants and a tight semi-translucent titty-shirt and the beats kicked up again. Someone handed forward an actual tampon, and she stood behind a strobe light and proceeded to stuff it in her pants. Then she did the rest of the show with a tampon string hanging out of her crotch.
 
-<div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by margaret</span>
 <span class="commentdatebox">Thursday, April  3, 2003</span>
 <span class="commenttimebox">12:39 PM</span>
@@ -35,4 +35,4 @@ Finally, after some more messages from Camel, Peaches came out and rocked. Her s
 <span class="commentdatebox">Thursday, March 10, 2005</span>
 <span class="commenttimebox">11:39 PM</span>
 </div>
-<div class="commentbody">Peaches is such a fatherfucker!</div>
+<div class="commentbody">Peaches is such a fatherfucker!</div> -->

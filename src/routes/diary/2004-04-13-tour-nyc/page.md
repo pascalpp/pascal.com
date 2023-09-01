@@ -18,9 +18,9 @@ After that Stephanie’s friend Sabrina convinced me to give them a ride to her 
 
 Today I been chillin in the hood, goin to the Fall and the Bagel Cafe for breakfast. Then I went to see my funny chiropractor Dr. Frank Morgera. He showed me some xrays of my shin which looks fine, and then he gave me the beatdown and straightened me out. Now I’m goin to the Soul Spot and then we’re goin to see Cat Power and Patti Smith. Tomorrow we leave for Boston. Whee.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by aa</span>
 <span class="commentdatebox">Thursday, April 15, 2004</span>
 <span class="commenttimebox">11:09 AM</span>

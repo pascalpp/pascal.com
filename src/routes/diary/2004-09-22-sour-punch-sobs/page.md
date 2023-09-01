@@ -8,7 +8,10 @@ Last night I lay in bed, eating <a href="http://store1.yimg.com/I/candyandstuff_
 
 Okay I made some of that up.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=786">benek</a></span>

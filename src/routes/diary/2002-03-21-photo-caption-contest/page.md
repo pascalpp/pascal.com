@@ -11,9 +11,9 @@ Aight, people, gimme a good caption for this photo:
 
 Enter your caption in the comments area below.
 
-<div class="commentdivider"></div><span class="commentheader">29 Comments</span>
+<span class="commentheader">29 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Pascal</span>
 <span class="commentdatebox">Thursday, March 21, 2002</span>
 <span class="commenttimebox"> 6:03 AM</span>
@@ -186,4 +186,4 @@ Enter your caption in the comments area below.
 <span class="commentdatebox">Thursday, September 18, 2003</span>
 <span class="commenttimebox"> 5:25 AM</span>
 </div>
-<div class="commentbody">Sunkist? More like Never Seen The Light of Day. Perhaps also better that way. Ashay.</div>
+<div class="commentbody">Sunkist? More like Never Seen The Light of Day. Perhaps also better that way. Ashay.</div> -->

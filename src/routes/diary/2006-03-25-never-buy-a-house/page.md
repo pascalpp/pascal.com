@@ -6,7 +6,10 @@ original: 000256.php
 
 Okay, of course you should buy a house, if you can. But man is fixing up and selling a house a pain in the ass. Especially when you don’t know shit about fixin or sellin. I hate pains in the asses.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;diiorio2&#64;hotmail&#46;com">tonia</a></span>

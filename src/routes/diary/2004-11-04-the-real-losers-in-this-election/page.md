@@ -18,7 +18,10 @@ I wanted my (few) readers to see what 1097 names look like, as a way to illustra
 
 I remain hopeful that the war in Iraq will soon come to an end so that our soldiers there can come home.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">53 Comments</span>
+<span class="commentheader">53 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;Lauren&#64;Balthrop&#46;com">bama</a></span>

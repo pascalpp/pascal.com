@@ -16,9 +16,9 @@ Oh a few days ago I shaved off all my hair in a fit. Spring cleaning or somethin
 
 Okay I have to go back out in the sunshine.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Charlie Murphy</span>
 <span class="commentdatebox">Sunday, April 25, 2004</span>
 <span class="commenttimebox">11:39 PM</span>

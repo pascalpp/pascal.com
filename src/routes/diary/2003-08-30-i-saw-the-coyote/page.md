@@ -9,9 +9,9 @@ As I was coming down last night, I turned my computer on to see if my eyes were 
 <p class="polaroid" style="--deg: -2deg"><img src="./ichat.jpg" /></p>
 Away, away, out of the office…. oh my god all my friends are away and my little sister is a ROBOT!
 
-<div class="commentdivider"></div><span class="commentheader">25 Comments</span>
+<span class="commentheader">25 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by ryan</span>
 <span class="commentdatebox">Monday, September  1, 2003</span>
 <span class="commenttimebox">10:06 AM</span>
@@ -160,4 +160,4 @@ Away, away, out of the office…. oh my god all my friends are away and my littl
 <span class="commentdatebox">Wednesday, December 24, 2003</span>
 <span class="commenttimebox"> 7:09 AM</span>
 </div>
-<div class="commentbody">hi my name is pascale.  that is all.</div>
+<div class="commentbody">hi my name is pascale.  that is all.</div> -->

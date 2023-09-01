@@ -24,7 +24,10 @@ To be clear, I’m not declaring the election null and void, nor am I declaring 
 
 I’ll be writing more on this in the coming days.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=855">jon</a></span>

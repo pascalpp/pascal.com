@@ -102,9 +102,9 @@ Aight, that’s all for now. Here, listen to some Rufus.
   <audio controls src="./rufuswainwright-greygardens.mp3" />
 </figure>
 
-<div class="commentdivider"></div><span class="commentheader">12 Comments</span>
+<span class="commentheader">12 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=491">mah</a></span>
 <span class="commentdatebox">Thursday, May 16, 2002</span>
 <span class="commenttimebox"> 7:01 AM</span>
@@ -175,4 +175,4 @@ Aight, that’s all for now. Here, listen to some Rufus.
 <span class="commentdatebox">Saturday, December 13, 2003</span>
 <span class="commenttimebox"> 5:32 AM</span>
 </div>
-<div class="commentbody">this site sux</div>
+<div class="commentbody">this site sux</div> -->

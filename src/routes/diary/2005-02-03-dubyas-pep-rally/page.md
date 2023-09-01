@@ -24,7 +24,10 @@ We are living in a high school world, and the dumb quarterback is running the st
 
 Fuck this shit. I’ll be out behind the fieldhouse, smoking the whole fucking pack.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">9 Comments</span>
+<span class="commentheader">9 Comments</span>
+
+<!--
+
 
 
 

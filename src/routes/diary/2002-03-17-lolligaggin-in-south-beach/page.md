@@ -48,9 +48,9 @@ I been working on a couple new songs here on the boat. Here’s one called Satel
   <audio controls src="./satellite.mp3" />
 </figure>
 
-<div class="commentdivider"></div><span class="commentheader">13 Comments</span>
+<span class="commentheader">13 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;jamesbal&#64;aol&#46;com">James P Balthrop Jr</a></span>
 <span class="commentdatebox">Sunday, March 17, 2002</span>
 <span class="commenttimebox">11:48 AM</span>
@@ -127,4 +127,4 @@ I been working on a couple new songs here on the boat. Here’s one called Satel
 <span class="commentdatebox">Saturday, December  7, 2002</span>
 <span class="commenttimebox"> 2:52 AM</span>
 </div>
-<div class="commentbody">I am really enjoying your song Satellite.  Its simple and yet complete.  Thank you! Frank</div>
+<div class="commentbody">I am really enjoying your song Satellite.  Its simple and yet complete.  Thank you! Frank</div> -->

@@ -38,9 +38,9 @@ I wonder what happens if the red light goes on and nobody calls?
 
 This sign wasn’t pointing at a yard sale. It was kind of pointing at the water. I wonder if it was a trick to try and get little old ladies who like yard sales to fall in.
 
-<div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=406">david balk</a></span>
 <span class="commentdatebox">Wednesday, July 23, 2003</span>
 <span class="commenttimebox"> 8:47 AM</span>
@@ -51,4 +51,4 @@ This sign wasn’t pointing at a yard sale. It was kind of pointing at the water
 <span class="commentdatebox">Wednesday, July 23, 2003</span>
 <span class="commenttimebox"> 8:55 AM</span>
 </div>
-<div class="commentbody">The views and opinions expressed in this broadcast are not in any way endorsed by Major League Baseball.</div>
+<div class="commentbody">The views and opinions expressed in this broadcast are not in any way endorsed by Major League Baseball.</div> -->

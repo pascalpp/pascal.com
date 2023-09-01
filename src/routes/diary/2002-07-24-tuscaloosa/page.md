@@ -64,7 +64,7 @@ Then Emily got on the train and Cookie waved goodbye.
 
 The End.
 
-<div class="commentdivider"></div><span class="commentheader">13 Comments</span>
+<span class="commentheader">13 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=506">ilovedub</a></span>

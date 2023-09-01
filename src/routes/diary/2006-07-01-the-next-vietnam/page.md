@@ -10,7 +10,10 @@ Such a scenario brings to mind the politcal fallout for the Vietnam war. That wa
 
 I’m wondering if Bush and his framers are ultimately hoping to hang such an albatross around the neck of the next president, whomever that may be. So the war in Iraq will ultimately serve to damage the Democratic party along with the unspeakable damage to the lives of the Iraqi people and the soldiers who were sent there.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">8 Comments</span>
+<span class="commentheader">8 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=1046">Lauren Di Vito</a></span>

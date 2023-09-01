@@ -12,9 +12,9 @@ Iâ€™ll run tomorrow and it will hurt different and that will feel good. Then Iâ€
 
 Ah, I feel better already.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
+<span class="commentheader">4 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">Bama</a></span>
 <span class="commentdatebox">Monday, April 19, 2004</span>
 <span class="commenttimebox">11:56 PM</span>

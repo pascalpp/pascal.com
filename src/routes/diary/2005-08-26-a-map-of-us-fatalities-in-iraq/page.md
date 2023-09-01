@@ -10,7 +10,10 @@ Who’s fighting this war?
 
 This was created by superimposing <a href="http://icasualties.org/oif/US_CITY.aspx">this map</a> on top of <a href="http://www.usatoday.com/news/politicselections/vote2004/countymap.htm">this map</a>.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">10 Comments</span>
+<span class="commentheader">10 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;mk05949&#64;students&#46;salisbury&#46;edu">Melissa</a></span>

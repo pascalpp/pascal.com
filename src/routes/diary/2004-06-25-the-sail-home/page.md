@@ -26,9 +26,9 @@ Eventually we motored into Mobile Bay and were greeted by a nice rain shower. I 
 
 At some point I’ll post some pictures here, I swear. There’s a ton of em.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by This Guy</span>
 <span class="commentdatebox">Wednesday, June 30, 2004</span>
 <span class="commenttimebox"> 4:20 PM</span>

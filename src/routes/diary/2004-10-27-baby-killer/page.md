@@ -16,7 +16,10 @@ The Chronicle concludes:
 
 <blockquote>Economic policy and abortion are not separate issues; they form one moral imperative. Rhetoric is hollow, mere tinkling brass, without health care, insurance, jobs, child care and a living wage. Pro-life in deed, not merely in word, means we need a president who will do something about jobs, health insurance and support for mothers.</blockquote>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=799">raba</a></span>

@@ -14,9 +14,9 @@ The headstay fitting is not going to be so easy, though. It’s set into the dec
 
 I swear we’ll get out of here eventually!
 
-<div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;AnnieEstel&#64;webtv&#46;net">Estel Kraus</a></span>
 <span class="commentdatebox">Thursday, March  7, 2002</span>
 <span class="commenttimebox"> 4:01 AM</span>
@@ -45,4 +45,4 @@ I swear we’ll get out of here eventually!
 <span class="commentdatebox">Wednesday, March 27, 2002</span>
 <span class="commenttimebox"> 4:31 AM</span>
 </div>
-<div class="commentbody">· ��� ���ʓ �� ���à��</div>
+<div class="commentbody">· ��� ���ʓ �� ���à��</div> -->

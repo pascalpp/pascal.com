@@ -8,7 +8,10 @@ I’m back in SF to work on my house (with some hired help) in preparation for s
 
 Also, I saw Ron today, wearing a huge black fur cap in the middle of the sunny street. It covered his whole head and ears, a big Russian bear of a thing. He jabbered at me for a while in his sweet gossipy way, and then shook his hand at me in that weird wave of his, and said “Nice to see you, nice to see you,” as he tottered back down the street to his house.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">bama</a></span>

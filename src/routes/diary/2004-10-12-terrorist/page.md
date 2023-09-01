@@ -6,7 +6,10 @@ original: 000207.php
 
 George W. Bush has single-handedly brought more terror to Iraq than anyone ever has.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by kmley</span>

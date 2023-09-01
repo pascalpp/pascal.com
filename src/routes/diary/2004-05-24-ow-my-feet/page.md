@@ -10,7 +10,7 @@ I woke up around 4am and went for a walk around the city in the early morning li
 
 PS: Here’s my <a href="http://www.online-ranking.it/races/502/certificate.asp?id=502&bib=4840&locale=2057">race diploma</a>. Fancy.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">10 Comments</span>
+<span class="commentheader">10 Comments</span>
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by mOm</span>
@@ -81,4 +81,4 @@ yay for me!</div>
 </div>
 <div class="commentbody">very nice job!  especially since you took 2 weeks off to ride around in a van, eat chips, and listen to bill hicks.
 
-and THATS the story of jesus…</div> -->
+and THATS the story of jesus…</div>

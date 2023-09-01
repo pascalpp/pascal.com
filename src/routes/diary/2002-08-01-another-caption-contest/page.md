@@ -10,9 +10,9 @@ Please submit your best caption for the following:
 
 Now play nice!
 
-<div class="commentdivider"></div><span class="commentheader">31 Comments</span>
+<span class="commentheader">31 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;rarp&#64;mac&#46;com">rarpacharp</a></span>
 <span class="commentdatebox">Thursday, August  1, 2002</span>
 <span class="commenttimebox"> 7:29 AM</span>
@@ -197,4 +197,4 @@ Now play nice!
 <span class="commentdatebox">Saturday, March 27, 2004</span>
 <span class="commenttimebox"> 8:23 PM</span>
 </div>
-<div class="commentbody">Boy I just look graaayt today…I think this vest is graaaaayt too….I think I’ll take a picture of myself in this graaayt vest and oooo I have just the panties to wear with it. They’re graaayt too. Boy, it’ll all be just so graaayt!</div>
+<div class="commentbody">Boy I just look graaayt today…I think this vest is graaaaayt too….I think I’ll take a picture of myself in this graaayt vest and oooo I have just the panties to wear with it. They’re graaayt too. Boy, it’ll all be just so graaayt!</div> -->

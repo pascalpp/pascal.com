@@ -43,11 +43,11 @@ The night was really great for me because I had been feeling really socially ine
 
 After the show I was super-pumped and happy with life and myself. It was 1:30, so I hopped in the truck and drove until 4 am, listening to music and thinking over things I wanna do on my next album and in my live shows. Then I got tired and pulled over in a Drury Inn parking lot and went to sleep on the futon I had put in the back of my truck. I happened to have my compass with me so like a dork I parked with the rear of the truck facing east so the sun would wake me in the morning. I wanted to get to Madison in time to have dinner with my friend Anne (Emily Lundin’s mom) and I wasn’t sure how much more driving I had to do. I woke up at 8:30 and I was in Madison by 2:30. So of couse I went to Vientiane with my friend Ed. Nummers. 32A: Curry Squash, two stars, tofu.
 
-<div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by e fro</span>
 <span class="commentdatebox">Thursday, April 24, 2003</span>
 <span class="commenttimebox">11:06 AM</span>
 </div>
-<div class="commentbody">Man, 29 A  (curry dishes) with two stars and tofu all the way!  mmm…love curry.  just watch out for the string of rotten potatoes at Vientiane.</div>
+<div class="commentbody">Man, 29 A  (curry dishes) with two stars and tofu all the way!  mmm…love curry.  just watch out for the string of rotten potatoes at Vientiane.</div> -->

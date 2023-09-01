@@ -8,9 +8,9 @@ Last night we played at the Rabbit Hill Music Company in a cozy little town call
 
 After we tore everything down, we went over to Cafe Lafitte for a late snack and some beers. They had a piano so we all took turns playing a few bars for each other. After that we went back to Rabbit Hill and played guitars for a while with Glen and Taylor, and then I fell asleep in my jeans.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;suefallenangel07&#64;aol&#46;com">Sue</a></span>
 <span class="commentdatebox">Saturday, April 10, 2004</span>
 <span class="commenttimebox"> 3:05 PM</span>

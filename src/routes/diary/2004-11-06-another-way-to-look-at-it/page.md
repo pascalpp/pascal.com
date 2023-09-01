@@ -16,7 +16,10 @@ Here’s another, smaller version, without the textual info, and with all the re
 
 I suppose I could expound some more about how these charts show the ideological divide in our country. But mostly I just think they’re pretty. Pretty colors make Pascal forget about President Booch.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
+<span class="commentheader">3 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by an anonymous coward</span>

@@ -8,7 +8,10 @@ The Bush campaign has repeatedly chided the Kerry campaign for trying to scare p
 
 Bush claims to be fighting a War on Terror. But in fact, Terror is Bush’s primary weapon. He’s used it well. On us.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=798">raba</a></span>

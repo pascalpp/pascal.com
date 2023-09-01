@@ -8,7 +8,10 @@ Lookit! The Republican Party’s new mascot:
 
 <p class="polaroid" style="--deg: -2deg"><img src="./bush-dumbo.jpg" /></p>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by u.m.</span>

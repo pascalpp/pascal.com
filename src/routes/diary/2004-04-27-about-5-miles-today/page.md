@@ -12,9 +12,9 @@ Then Scout Niblett played. She’s English I think, and just the cutest thing th
 
 I need to eat something. Then I’m going to get my back squished by Dr. Frank Morgera.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;pfunk&#46;pkm&#64;verizon&#46;net">Patricia</a></span>
 <span class="commentdatebox">Wednesday, April 28, 2004</span>
 <span class="commenttimebox"> 2:06 PM</span>

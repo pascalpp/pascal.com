@@ -16,12 +16,9 @@ Jordan and Silas at the Mission Coffeehouse are doing awesome things. I really l
 
 After I played I hung out with some of the local kids, Vlad the Russian and Kellen and Britney and Dominique. We played Gin Rummy and shot the shit. Goin on tour is a good way to break yourself of the fear of talking to strangers. If you have that problem. Which I do. Did!
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;opto&#64;gglbbs&#46;com">ed seefelt</a></span>
 <span class="commentdatebox">Tuesday, April 13, 2004</span>
 <span class="commenttimebox"> 5:18 PM</span>
@@ -32,5 +29,4 @@ they are two great guys as well as most of the others who hang out there. What i
 
 ed
 
-</div>
- -->
+</div> -->

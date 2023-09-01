@@ -38,9 +38,9 @@ Once we tidied up the boat a bit, we had another quick shower on deck and hailed
 
 My cousin Chuck (locally known as Chas) lives here so I’m finally getting to hang out with him on his turf. We’ll be here for a few days, enjoying all that Key West has to offer. More later…
 
-<div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=452">Phil Sidney</a></span>
 <span class="commentdatebox">Saturday, March 23, 2002</span>
 <span class="commenttimebox">10:12 AM</span>
@@ -69,4 +69,4 @@ My cousin Chuck (locally known as Chas) lives here so I’m finally getting to h
 <span class="commentdatebox">Monday, November 25, 2002</span>
 <span class="commenttimebox"> 8:59 AM</span>
 </div>
-<div class="commentbody">lol nice pix, and thans for your song (You’ll Pick My Name)</div>
+<div class="commentbody">lol nice pix, and thans for your song (You’ll Pick My Name)</div> -->

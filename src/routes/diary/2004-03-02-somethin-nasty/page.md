@@ -12,7 +12,7 @@ People told me when I started this that nasty things would start happening to my
 
 Ew!
 
-<div class="commentdivider"></div><span class="commentheader">10 Comments</span>
+<span class="commentheader">10 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;crismarie143&#64;hotmail&#46;com">cristen</a></span>

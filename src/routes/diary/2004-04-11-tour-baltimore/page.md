@@ -20,9 +20,9 @@ Then we met up with Barry and Darren and Stephanie, and we tried to go to this a
 
 The next morning I made a big egg scramble for the gang and a small tofu scramble for Stephanie. Several of the eggs had two yolks in them, which freaked me out a little. But I’m not one for omens so I didn’t think too much of it. After breakfast we said our goodbyes and got on the road to D.C.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Eric</span>
 <span class="commentdatebox">Wednesday, April 14, 2004</span>
 <span class="commenttimebox"> 9:54 AM</span>

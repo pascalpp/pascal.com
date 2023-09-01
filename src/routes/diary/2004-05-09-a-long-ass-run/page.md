@@ -10,9 +10,9 @@ Then I went out with some friends from <a href="http://www.suicidegirls.com">Sui
 
 Today I’m in recovery.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
 
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=688">colten</a></span>
 <span class="commentdatebox">Monday, May 10, 2004</span>
 <span class="commenttimebox"> 3:13 PM</span>

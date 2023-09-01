@@ -6,7 +6,10 @@ original: 000230.php
 
 <p class="polaroid" style="--deg: -2deg"><img src="./distress.gif" /></p>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;james&#46;ginch&#64;cox&#46;net">Mathmn</a></span>

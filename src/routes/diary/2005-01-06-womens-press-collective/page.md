@@ -10,7 +10,10 @@ The WPC is a grassroots volunteer-driven organization which aims to make publish
 
 Anyway, it was a good time. They have this awesome old press, a Chief 15. It looks like a one-person tank. Looking forward to learning how to run that thing. I’m heading back on Saturday to help with a magazine distribution and then next Wednesday for who knows what.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">11 Comments</span>
+<span class="commentheader">11 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;lauren&#64;balthrop&#46;com">bama</a></span>

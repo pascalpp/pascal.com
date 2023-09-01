@@ -8,7 +8,10 @@ From the photo booth at the Lakeside Lounge:
 
 <p class="polaroid" style="--deg: -2deg"><img src="./molly-jay-lakeside.jpg" /></p>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">5 Comments</span>
+<span class="commentheader">5 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by bama</span>

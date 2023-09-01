@@ -24,7 +24,7 @@ Some parts were quite laughable. A woman tries to help Jesus as he is struggling
 
 Finally, the movie ends showing Jesus’ garments laid out in his tomb, empty, and then Jesus himself, clean and unbloodied, resurrected, looking into the light coming in from the opening of the tomb. He rises and walks toward the light, and we see he still has the holes in his hands from the crucifixion. I would have kept those, too, if I were Jesus. Those holes are badass.
 
-<div class="commentdivider"></div><span class="commentheader">2 Comments</span>
+<span class="commentheader">2 Comments</span>
 
 <!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by u.m.</span>

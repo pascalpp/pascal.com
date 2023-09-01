@@ -27,7 +27,10 @@ To be very clear, I am <b>not saying</b> that New York’s blue voters are more 
 
 So please don’t be fooled by all the red on that map that Hannity and others are waving around. Mr. President, please don’t ignore all the blue staters in those red states. And don’t make us start putting stars on our bellies.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">103 Comments</span>
+<span class="commentheader">103 Comments</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=808">jon</a></span>

@@ -6,7 +6,10 @@ original: 000242.php
 
 The other night I walked home from the gym with a wet head and when I got home I had icicles in my hair. I was glad.
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;cuteangel7993&#64;aol&#46;com">alyson</a></span>

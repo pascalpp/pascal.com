@@ -46,7 +46,10 @@ Christmas! So stay tuned…
 
 And tell your friends to <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?playlistId=7202482">buy my record</a>!
 
-<!-- <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
+<span class="commentheader">1 Comment</span>
+
+<!--
+
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by pascal</span>
