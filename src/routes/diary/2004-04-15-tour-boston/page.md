@@ -20,11 +20,3 @@ While I’m writing I should mention the day off we spent in New York after play
 
 When Conor took the stage, me and Stephanie and Darren snuck up to the $500 seats, many of which were empty, and we watched the rest of the show from there. It was awesome. The End.
 
-<span class="commentheader">1 Comment</span>
-
-<!-- <div class="commentdivider">
-<span class="commentauthorbox">Posted by margaret</span>
-<span class="commentdatebox">Tuesday, April 20, 2004</span>
-<span class="commenttimebox"> 3:17 PM</span>
-</div>
-<div class="commentbody">re: connecticut  check out cute song by gilberto gil, “pela internet”, about connect and cut experiences.  </div> -->

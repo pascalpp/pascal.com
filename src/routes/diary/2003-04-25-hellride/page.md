@@ -34,11 +34,3 @@ The next day we drove to Columbus, home of Ohio State University and the 2002 Na
 
 Then we crashed at last and eventually woke up and had barbecue for lunch with Geoff before heading out of town. Then we drove to Dayton and played at the Canal Street Tavern and it was awesome like I mentioned above. After the show we had drunk food at Mom’s Diner with folks from the Tavern and then we slept in the van again. This morning we went to Mendelson’s Liquidation Outlet, this huge warehouse building with three floors and a whole nother building full of the most bizarre collection of crap you could imagine. Then we stopped in the Oregon Emporium coffeehouse which has some great music on, a particularly hilarious person behind the counter, and high-speed internet access. I ordered a large regular and then I typed all this in and now I’m gonna click ‘Add This Entry’.
 
-<span class="commentheader">1 Comment</span>
-
-<!-- <div class="commentdivider">
-<span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=585">Jon Hain</a></span>
-<span class="commentdatebox">Thursday, May 15, 2003</span>
-<span class="commenttimebox"> 9:34 AM</span>
-</div>
-<div class="commentbody">Hi Pascal,  I really liked reading this entry. Parts of it really reminded me of something.  Two minor corrections:  1. My mom’s name is Kathleen. My Dad, Tom, and his current wife, Debbie, attended your show.  2. When we left the Crystal, it was my understanding that we were going to our house to ‘hang out’ and then crash.   I enjoyed the writing a lot in this entry. It felt ‘circular’ as if it was a story I had heard over and over from my grandpa.   See you soon!</div> -->

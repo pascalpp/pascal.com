@@ -24,11 +24,3 @@ The macho poltergeist in me somehow neglected to tell his new-found macho weight
 
 As I headed for the showers a bit later on, I passed one of the guys on the stairs, and he said to me, “Take it easy, buddy. Have a good weekend.” Some part of me, the geist perhaps, soaked up this small bit of buddyness and reveled in it.
 
-<span class="commentheader">1 Comment</span>
-
-<!-- <div class="commentdivider">
-<span class="commentauthorbox">Posted by mOm</span>
-<span class="commentdatebox">Monday, May 24, 2004</span>
-<span class="commenttimebox"> 7:03 AM</span>
-</div>
-<div class="commentbody">You gonna publish this diary at some point???</div> -->
