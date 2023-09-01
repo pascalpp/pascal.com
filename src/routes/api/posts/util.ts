@@ -14,7 +14,7 @@ export type Post = {
 };
 
 export async function fetchAllPosts(): Promise<PostSummary[]> {
-	const files = import.meta.glob('/src/routes/diary/**/*.md');
+	const files = import.meta.glob('/src/routes/diary/**/page.md');
 	const iterableFiles = Object.entries(files) as [string, PostResolver][];
 
 	const posts = await Promise.all(
