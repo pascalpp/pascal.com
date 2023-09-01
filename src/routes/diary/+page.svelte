@@ -1,44 +1,48 @@
-<script>
+<script lang="ts">
+	import Button from '$lib/components/Button.svelte';
+	import ButtonBar from '$lib/components/ButtonBar.svelte';
+	import PostList from './PostList.svelte';
+	import Tag from './Tag.svelte';
+
 	export let data;
-	const { posts } = data;
-	const sorted = posts.reverse();
+	$: ({ posts, tag } = data);
 
-	const dateFormatter = new Intl.DateTimeFormat('en', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
+	let sortOrder = 'newest';
 
-	function formatDate(d) {
-		try {
-			const date = new Date(d);
-			return dateFormatter.format(date);
-		} catch (e) {
-			console.log(d);
-			return d;
-		}
+	const sortOptions = [
+		{ value: 'oldest', label: 'Oldest' },
+		{ value: 'newest', label: 'Newest' },
+	];
+
+	function onClickSortOrder(event: MouseEvent) {
+		const target = event.target as HTMLButtonElement;
+		sortOrder = target.value;
 	}
 </script>
 
-<header>
-	<p>
-		I've had a few different blogs over the years, but they’ve all suffered various database catastrophes. The posts
-		below have been resurrected from an old Movable Type blog I wrote in the early 2000s. Soon I'll resurrect the posts
-		from my more recent Wordpress blog (which also died), and maybe I’ll write some new posts from time to time.
-	</p>
-</header>
+{#if !tag}
+	<header>
+		<p>
+			I've had a few different blogs over the years, but they’ve all suffered various database catastrophes. The posts
+			below have been resurrected from an old Movable Type blog I wrote in the early 2000s. Soon I'll resurrect the
+			posts from my more recent Wordpress blog (which also died), and maybe I’ll write some new posts from time to time.
+		</p>
+	</header>
+{/if}
 
 <article>
-	<ul>
-		{#each sorted as post}
-			<li>
-				<a href="/diary/{post.slug}">
-					<span class="title">{post.metadata.title}</span>
-					<span class="date">{formatDate(post.metadata.date)}</span>
-				</a>
-			</li>
-		{/each}
-	</ul>
+	<h2>
+		<span>
+			{#if tag}
+				Posts tagged with &nbsp;<Tag {tag} />
+			{:else}
+				All Posts
+			{/if}
+		</span>
+
+		<ButtonBar tiny options={sortOptions} selected={sortOrder} on:click={onClickSortOrder} />
+	</h2>
+	<PostList {posts} {sortOrder} />
 </article>
 
 <style lang="less">
@@ -49,66 +53,21 @@
 	}
 
 	article {
+		h2 {
+			font-size: 16px;
+			font-family: @sans-font;
+			font-weight: normal;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 2em;
+		}
+
 		font-size: 20px;
 		font-weight: 200;
-	}
-
-	ul,
-	li {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	ul {
-		margin-top: 2em;
-		width: max-content;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: 1.5em;
-	}
-
-	li {
-		width: max-content;
-		max-width: 95w;
-		&:nth-child(odd) {
-			--deg: 1deg;
-			margin-left: -1em;
-		}
-		&:nth-child(even) {
-			--deg: -1deg;
-			margin-left: 1em;
-		}
-
-		--shadow-offset: 0.1em;
-		--shadow-size: -1px;
-		.rotated-shadow;
-
-		a {
-			max-width: min(85vw, 500px);
-			padding: 0.5em 1em;
-			background-color: white;
-			border-radius: 2px;
-			text-decoration: none;
-			display: flex;
-			flex-direction: column;
-			gap: 0.25em;
-			line-height: 1.2;
-
-			.title {
-				&::after {
-					content: ' →';
-				}
-			}
-
-			.date {
-				color: black;
-				font-family: @sans-font;
-				opacity: 0.5;
-				font-size: 12px;
-				padding-left: 2em;
-			}
-		}
+		justify-content: center;
 	}
 </style>
