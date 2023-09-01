@@ -4,7 +4,7 @@
 </script>
 
 {#if link}
-	<a href="/diary?tag={tag}">
+	<a href="/diary/tag/{tag}">
 		<span class="tag">{tag}</span>
 	</a>
 {:else}

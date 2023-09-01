@@ -1,8 +1,22 @@
 <script lang="ts">
+	import ButtonBar from '$lib/components/ButtonBar.svelte';
+	import Tag from './Tag.svelte';
 	import type { PostSummary } from '../api/posts/util';
 
 	export let posts: PostSummary[] = [];
-	export let sortOrder: string;
+	export let tag = '';
+
+	let sortOrder = 'newest';
+
+	const sortOptions = [
+		{ value: 'oldest', label: 'Oldest' },
+		{ value: 'newest', label: 'Newest' },
+	];
+
+	function onClickSortOrder(event: MouseEvent) {
+		const target = event.target as HTMLButtonElement;
+		sortOrder = target.value;
+	}
 
 	$: sorted = posts.slice().sort((a, b) => {
 		const reverse = sortOrder === 'newest';
@@ -29,6 +43,18 @@
 	}
 </script>
 
+<header>
+	<span>
+		{#if tag}
+			Posts tagged with &nbsp;<Tag {tag} />
+		{:else}
+			All Posts
+		{/if}
+	</span>
+
+	<ButtonBar tiny options={sortOptions} selected={sortOrder} on:click={onClickSortOrder} />
+</header>
+
 <ul>
 	{#each sorted as post}
 		<li>
@@ -41,6 +67,17 @@
 </ul>
 
 <style lang="less">
+	header {
+		font-size: 16px;
+		font-family: @sans-font;
+		font-weight: normal;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+	}
+
 	ul,
 	li {
 		list-style: none;

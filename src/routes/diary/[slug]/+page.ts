@@ -4,7 +4,7 @@ import type { PostSummary } from '../../api/posts/util';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch, params }) => {
-	const response = await fetch(`/api/posts`);
+	const response = await fetch(`/api/posts/all`);
 	const posts = (await response.json()) as PostSummary[];
 
 	const { slug } = params;

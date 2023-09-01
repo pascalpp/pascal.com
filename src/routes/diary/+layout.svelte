@@ -2,9 +2,8 @@
 	import './layout.less';
 
 	export let data;
-	$: ({ pathname, search } = data);
-	$: isIndex = /^\/diary\/?$/.test(pathname) && !search;
-	$: console.log(data, isIndex);
+	$: ({ pathname } = data);
+	$: isIndex = /^\/diary\/?$/.test(pathname);
 </script>
 
 <svelte:head>
