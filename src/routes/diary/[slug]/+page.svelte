@@ -156,6 +156,7 @@
 
 		&.top {
 			margin-bottom: 1em;
+			min-height: 80px;
 
 			.next {
 				justify-self: flex-end;
@@ -185,11 +186,11 @@
 		@media @not-mobile {
 			.prev {
 				margin-left: -1em;
-				max-width: 60%;
+				max-width: 75%;
 			}
 			.next {
 				margin-right: -1em;
-				max-width: 60%;
+				max-width: 75%;
 			}
 		}
 		@media @mobile {
