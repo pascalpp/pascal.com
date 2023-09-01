@@ -36,3 +36,11 @@ export async function fetchPost(slug: string): Promise<Post> {
 	const post = (await import(`../../diary/${slug}/page.md`)) as Post;
 	return post;
 }
+
+export async function fetchAllPostsByTag(tag: string): Promise<PostSummary[]> {
+	const posts = await fetchAllPosts();
+	const filteredPosts = posts.filter((post) => {
+		return post.metadata.tags?.includes(tag);
+	});
+	return filteredPosts;
+}
