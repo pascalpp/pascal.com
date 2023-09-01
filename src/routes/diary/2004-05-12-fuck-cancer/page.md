@@ -2,6 +2,7 @@
 title: Fuck Cancer
 date: 2004-05-12T07:03:00.000Z
 original: 000180.php
+tags: [nyc, running, live music]
 ---
 
 Today I ran 4 miles at the gym, and then I went to the <a href="http://www.jackiefarry.com/raffle">Jackie Farry Fuck Cancer benefit</a> at the Bowery. I got there late, so I missed J. Mascis which was a bummer. But the bonus was that David Cross was co-hosting, and I’m a huge fan of him. (Who isn’t? Raise your hand, I’ll kill you.)

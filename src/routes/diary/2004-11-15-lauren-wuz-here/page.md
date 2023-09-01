@@ -2,6 +2,7 @@
 title: Lauren wuz here
 date: 2004-11-15T04:09:00.000Z
 original: 000237.php
+tags: [nyc]
 ---
 
 My sister came to visit for the weekend. I didn’t realize it, but she’s been here four times this year alone, and she was here for Thanksgiving last year, too.

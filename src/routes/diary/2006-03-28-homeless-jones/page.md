@@ -2,6 +2,7 @@
 title: Homeless Jones
 date: 2006-03-28T15:00:00.000Z
 original: 000257.php
+tags: [san francisco]
 ---
 
 Yesterday I was walking home from the hardware store when I noticed a dude sitting on the path in the public garden behind the library next to my house. He was clearly homeless (or at least down on his luck) and seemed to be intently working on something with his hands. Then I saw him tie a rubber strap around his arm.

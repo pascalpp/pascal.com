@@ -2,6 +2,7 @@
 title: The sail home
 date: 2004-06-25T14:33:00.000Z
 original: 000188.php
+tags: [sailing, mexico]
 ---
 
 Okay so the sail home from Mexico was awesome. A couple days out from Mobile I wrote a big long note, talking about all the great things that had happened while we were on the boat, and then I stuffed it into a wine bottle and tossed it overboard. Subsequently, I haven’t really felt like writing about the trip in my diary. So if you really wanna know what happened you’ll have to find that bottle.

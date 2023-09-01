@@ -2,6 +2,7 @@
 title: One of the boys
 date: 2004-05-08T00:37:00.000Z
 original: 000177.php
+tags: [nyc, gym]
 ---
 
 Today I went walking around my neighborhood. I bought an Ali book and I ran into my friend H.R. on the street. Then I was gonna head home, but I decided to go to the gym and do some weights, even though today is an off-day on my running regimen.

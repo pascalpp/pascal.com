@@ -2,6 +2,7 @@
 title: New Do
 date: 2004-03-19T04:58:00.000Z
 original: 000146.php
+tags: [nyc, running]
 ---
 
 Today I got a new haircut courtesy of my friend Amy at <a href="http://www.laicale.com">Laicale</a>.

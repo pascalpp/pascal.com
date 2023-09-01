@@ -2,6 +2,7 @@
 title: The real losers in this election
 date: 2004-11-04T23:36:00.000Z
 original: 000231.php
+tags: [politics]
 ---
 
 <b>…are the brave soldiers who could not vote because they died in Iraq:</b>

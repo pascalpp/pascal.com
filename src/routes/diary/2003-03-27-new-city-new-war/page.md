@@ -2,6 +2,7 @@
 title: A new city and a new war..
 date: 2003-03-27T12:42:00.000Z
 original: 000121.php
+tags: [nyc, live music]
 ---
 
 Right now I’m in New York City, looking for a place to live. If you haven’t heard/give a damn, my lease in Birmingham expires this June so I decided to move to New York to work on music and return to the work force as a freelance web developer.

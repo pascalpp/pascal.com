@@ -2,6 +2,7 @@
 title: Women’s Press Collective
 date: 2005-01-06T04:54:00.000Z
 original: 000241.php
+tags: [nyc]
 ---
 
 Tonight I volunteered for a couple hours at the Women’s Press Collective. We inventoried all the ink and paper stock and made jokes about miniature envelopes for business cards. Yep, they got some.

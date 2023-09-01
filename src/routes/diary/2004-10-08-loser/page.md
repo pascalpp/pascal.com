@@ -2,6 +2,7 @@
 title: LOSER
 date: 2004-10-08T05:16:00.000Z
 original: 000203.php
+tags: [gwb]
 ---
 
 George W. Bush bankrupted two Texas oil companies and as governor, he even bankrupted the Treasury of the great state of Texas. As owner of the Texas Rangers he made the brilliant move of trading away Sammy Sosa. Now he’s running our <b>country</b> into the ground.

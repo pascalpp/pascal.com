@@ -2,6 +2,7 @@
 title: Snap Crackly Pop
 date: 2004-03-30T04:48:00.000Z
 original: 000149.php
+tags: [running, nyc, tour]
 ---
 
 Well I still haven’t been able to run. Tomorrow I’m leaving for <a href="https://www.pascal.com/tour">tour</a> for 3 weeks and I’m gonna try to maintain my running schedule even though we’ll be driving all over the midwest and northeast. I just hope my leg starts to feel better soon. I ran to catch a train today and paid for it dearly in leg smarts.

@@ -2,6 +2,7 @@
 title: 'Tour: Milwaukee and Stevens Point'
 date: 2004-04-03T17:51:00.000Z
 original: 000152.php
+tags: [tour]
 ---
 
 So I’m on <a href="https://www.pascal.com/tour">tour</a> with <a href="http://www.stephanierearick.com/">Stephanie Rearick</a> and <a href="http://www.milkbaby.net">MiLkBabY</a>.

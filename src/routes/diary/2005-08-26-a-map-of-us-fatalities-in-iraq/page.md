@@ -2,6 +2,7 @@
 title: A map of US fatalities in Iraq
 date: 2005-08-26T09:02:00.000Z
 original: 000252.php
+tags: [politics]
 ---
 
 Who’s fighting this war?

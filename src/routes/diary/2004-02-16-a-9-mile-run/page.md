@@ -2,6 +2,7 @@
 title: A 9 Mile Run
 date: 2004-02-16T01:43:00.000Z
 original: 000138.php
+tags: [running]
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./9milerun.jpg" /></p>

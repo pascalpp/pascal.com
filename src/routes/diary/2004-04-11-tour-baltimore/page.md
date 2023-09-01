@@ -2,6 +2,7 @@
 title: 'Tour: Baltimore'
 date: 2004-04-11T19:44:00.000Z
 original: 000161.php
+tags: [tour]
 ---
 
 We woke up in the Rabbit Hill Music Store in Easton and went around the corner to a little coffee shop and dilly-dallied for a while, checking email and checking out the cute girl who ran the place. I’m a fiend, I know. Not sure what’s wrong with me. Maybe nothing.

@@ -2,6 +2,7 @@
 title: Another Caption Contest! Call for Entries!
 date: 2004-05-12T20:09:00.000Z
 original: 000181.php
+tags: [caption contest]
 ---
 
 Watch the video below and then leave your best caption for it in the comments below. There’s only one rule: You can only use the word ‘gaywad’ up to three times per entry.

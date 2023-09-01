@@ -2,6 +2,7 @@
 title: Snow Globe
 date: 2005-01-22T22:16:00.000Z
 original: 000243.php
+tags: [nyc]
 ---
 
 Look Ma! A snow globe! Right out my window!

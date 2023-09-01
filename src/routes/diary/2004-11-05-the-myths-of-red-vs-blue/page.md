@@ -2,6 +2,7 @@
 title: The myths of Red vs. Blue
 date: 2004-11-05T07:39:00.000Z
 original: 000232.php
+tags: [politics]
 ---
 
 Sean Hannity on the Fox “News” Channel recently held up a map of the United States showing all the red and blue states. He said something to the effect of “Look at all that red!” Clearly an attempt to show that the vast majority of Americans support President Bush.

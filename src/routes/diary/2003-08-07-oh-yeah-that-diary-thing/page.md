@@ -2,6 +2,7 @@
 title: oh yeah, that diary thing
 date: 2003-08-07T08:15:00.000Z
 original: 000128.php
+tags: [tour, nyc, live music]
 ---
 
 Okay so we finished the tour and we all went home.

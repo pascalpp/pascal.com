@@ -2,6 +2,7 @@
 title: 'Tour: Charleston'
 date: 2004-04-09T07:18:00.000Z
 original: 000159.php
+tags: [tour]
 ---
 
 Tonight we played in Charleston, West Virginia at the Empty Glass. We got a nice write-up in the Charleston Daily Mail, but nonetheless there was little turnout for the show. Someone actually said “Okay, I’m outta here” in the middle of my second or third song. That was particularly delightful. I get off on that kinda shit.

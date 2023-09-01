@@ -2,6 +2,7 @@
 title: Leaving for London and Prague
 date: 2004-05-19T20:40:00.000Z
 original: 000184.php
+tags: [running, prague]
 ---
 
 I’m leaving in about 3 hours for London and Prague. Here’s a page with some info about the <a href="http://www.pim.cz/index.php?action=main_article&id=29859">marathon</a>.

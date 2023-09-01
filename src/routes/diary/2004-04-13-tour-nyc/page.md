@@ -2,6 +2,7 @@
 title: 'Tour: NYC'
 date: 2004-04-13T21:19:00.000Z
 original: 000163.php
+tags: [tour, nyc, live music]
 ---
 
 Man I fuckin love this town.

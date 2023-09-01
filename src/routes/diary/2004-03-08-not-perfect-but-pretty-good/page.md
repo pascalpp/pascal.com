@@ -2,6 +2,7 @@
 title: Not perfect, but pretty good
 date: 2004-03-08T08:28:00.000Z
 original: 000137.php
+tags: [nyc]
 ---
 
 Today we were pretty lazy, having come home pretty late and pretty drunk the night before. We slept in.

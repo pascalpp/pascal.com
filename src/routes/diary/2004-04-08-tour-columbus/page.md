@@ -2,6 +2,7 @@
 title: 'Tour: Columbus'
 date: 2004-04-08T21:48:00.000Z
 original: 000158.php
+tags: [tour, running]
 ---
 
 Last night we played at Bernie’s in Columbus, Ohio. God I hate that place. I never wanna play there again.

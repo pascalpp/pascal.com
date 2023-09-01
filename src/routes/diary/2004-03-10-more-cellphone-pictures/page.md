@@ -2,7 +2,7 @@
 title: More Cellphone Pictures
 date: 2004-03-10T04:59:00.000Z
 original: 000140.php
-tags: [mp3]
+tags: [mp3, running, nyc]
 ---
 
 Here’s some more ugly cellphone pictures.

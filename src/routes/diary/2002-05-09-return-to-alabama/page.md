@@ -2,7 +2,7 @@
 title: Some photos taken since my return to Alabama
 date: 2002-05-09T11:29:00.000Z
 original: 000114.php
-tags: [mp3]
+tags: [mp3, alabama]
 ---
 
 At long last, here’s some of the photos I’ve taken since departing Willow.

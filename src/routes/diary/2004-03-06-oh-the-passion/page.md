@@ -2,6 +2,7 @@
 title: Oh, The Passion
 date: 2004-03-06T03:01:00.000Z
 original: 000133.php
+tags: [movies]
 ---
 
 Tonight I went to see the Passion of the Christ by myself.

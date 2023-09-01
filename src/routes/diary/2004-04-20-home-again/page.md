@@ -2,6 +2,7 @@
 title: Home again
 date: 2004-04-20T03:51:00.000Z
 original: 000169.php
+tags: [nyc, running]
 ---
 
 Now I’m home again, listening to the Kinks.

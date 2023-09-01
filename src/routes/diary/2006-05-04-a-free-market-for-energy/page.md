@@ -2,6 +2,7 @@
 title: A Free Market for Energy
 date: 2006-05-04T04:22:00.000Z
 original: 000258.php
+tags: [politics]
 ---
 
 While reading <a href="http://www.house.gov/paul/congrec/congrec2006/cr040506.htm">this essay on Iran</a> by Republican Congressman Ron Paul of Texas, I was struck by his mention of “those who don’t understand how a free market can develop substitutes to replace diminishing resources.”

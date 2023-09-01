@@ -2,6 +2,7 @@
 title: Voting Problems
 date: 2004-11-09T04:01:00.000Z
 original: 000235.php
+tags: [politics]
 ---
 
 Okay, here we go.

@@ -2,6 +2,7 @@
 title: Me on iTunes
 date: 2004-08-16T04:40:00.000Z
 original: 000194.php
+tags: [nyc, music]
 ---
 
 (Apologies if you’re on my music mailing list and you already read this…)

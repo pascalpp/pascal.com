@@ -2,6 +2,7 @@
 title: OW
 date: 2004-03-25T18:30:00.000Z
 original: 000148.php
+tags: [running, nyc]
 ---
 
 I was supposed to run 7 miles yesterday but I just couldn’t do it. I have major shin splints going on right now, and for the first time since the initial “I dunno” I’m wondering if I’m gonna be able to run a whole marathon. I walk like an old man. Oddly enough, my knees feel fine. But my left shin hurts like hell. Annoying.

@@ -2,6 +2,7 @@
 title: FAMILY MAN
 date: 2004-10-15T07:17:00.000Z
 original: 000210.php
+tags: [gwb]
 ---
 
 Dubya’s grandfather made a fortune doing business with Nazi Germany. Dubya’s Dad got him into Yale and Harvard. Dubya also used his family’s influence to skip the waiting list for the Texas Air National Guard. Daddy Bush helped George W. start an oil company. When he bankrupted it, Daddy’s buddies in the Bin Laden family helped fund a new one for him to run. He bankrupted that one too. Then daddy helped him buy the Texas Rangers.

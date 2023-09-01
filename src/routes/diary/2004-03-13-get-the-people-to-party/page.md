@@ -2,6 +2,7 @@
 title: Get the people to party!
 date: 2004-03-13T10:04:00.000Z
 original: 000144.php
+tags: [nyc, party]
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./getthepeople.jpg" /></p>

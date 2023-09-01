@@ -2,6 +2,7 @@
 title: Curious George’s Caption Contest!
 date: 2004-07-08T22:50:00.000Z
 original: 000189.php
+tags: [caption contest, gwb]
 ---
 
 Woohoo! Another caption contest!

@@ -2,7 +2,7 @@
 title: A rough month in the yard and three new diary pages to show for it
 date: 2002-02-24T17:43:00.000Z
 original: 000101.php
-tags: [mp3, willow, sailing]
+tags: [willow, sailing, mp3]
 ---
 
 <figure>

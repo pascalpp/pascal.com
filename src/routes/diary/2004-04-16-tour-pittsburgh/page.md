@@ -2,6 +2,7 @@
 title: 'Tour: Pittsburgh'
 date: 2004-04-16T15:01:00.000Z
 original: 000165.php
+tags: [tour]
 ---
 
 Well we drove all night and we drove all day and we finally ended up in Pittsburgh. The drive was kind of harrowing at first, all rainy and dark. Then it got really pretty as we got west of the rain and the sun came up. I took over driving around 9:30 in the morning and it was really beautiful driving, through the hills and trees of rural Pennsylvania. Along the way we stopped at a truck stop and I made some duct tape patches for my jeans, which were getting a little too ripped up for my liking.

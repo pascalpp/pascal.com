@@ -2,6 +2,7 @@
 title: Dubya’s Pep Rally
 date: 2005-02-03T03:17:00.000Z
 original: 000244.php
+tags: [gwb]
 ---
 
 We are living in a high school world, and the dumb quarterback is running the student council. Here are some of the things I overheard at the pep rally today:

@@ -2,6 +2,7 @@
 title: And then we had a wreck
 date: 2003-05-01T14:02:00.000Z
 original: 000127.php
+tags: [tour]
 ---
 
 And then we had a wreck.

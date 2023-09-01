@@ -2,6 +2,7 @@
 title: 'Tour: A stopover in West Lafayette to visit my old friend Hilary'
 date: 2004-04-07T15:17:00.000Z
 original: 000157.php
+tags: [tour]
 ---
 
 We had the night off last night, so we left Chicago and drove a couple hours to West Lafayette, Indiana where my friend Hilary lives with his wife Ann and their son Haley and daughter Linnea. Haley is 5 and Linnea is 3, and they’re both really beautiful and sweet.

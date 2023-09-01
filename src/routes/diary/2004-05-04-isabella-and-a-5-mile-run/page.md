@@ -2,6 +2,7 @@
 title: Isabella and a 5 mile run
 date: 2004-05-04T18:16:00.000Z
 original: 000175.php
+tags: [nyc, running]
 ---
 
 Today I did a loop over the Manhattan and Brooklyn bridges and back to the gym. Then I did another mile on the treadmill, to be sure I was over 5 miles for the day.

@@ -2,6 +2,7 @@
 title: MY PREDICTION
 date: 2004-11-02T19:26:00.000Z
 original: 000229.php
+tags: [politics]
 ---
 
 KERRY: 311-227

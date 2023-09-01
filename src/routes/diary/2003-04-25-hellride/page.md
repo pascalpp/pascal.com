@@ -2,6 +2,7 @@
 title: A not-so-short synopsis of the Hellride thus far
 date: 2003-04-25T16:19:00.000Z
 original: 000126.php
+tags: [tour]
 ---
 
 So I been on the road with Tight Ass Willie’s Folk-Punk Hellride for over a week now. Last night we played the Canal Street Tavern here in Dayton, Ohio and it was really awesome. The crowd was super warm and friendly and into the show. It’s always fun playing for a crowd like that. The owner, Mick Montgomery, was super nice and has a really great thing goin on there. Shout outs to Pat and Matt and Sara and Doug and Kim and Amy while I’m at it. All very nice people.

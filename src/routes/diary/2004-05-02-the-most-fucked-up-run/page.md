@@ -2,6 +2,7 @@
 title: The most fucked up run
 date: 2004-05-02T01:30:00.000Z
 original: 000174.php
+tags: [nyc, running]
 ---
 
 Today I was supposed to run 20 miles. Yeah right.

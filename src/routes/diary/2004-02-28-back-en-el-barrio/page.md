@@ -2,6 +2,7 @@
 title: El Diario esto back en el barrio
 date: 2004-02-28T06:15:00.000Z
 original: 000129.php
+tags: [nyc]
 ---
 
 Obviously I don’t speak Spanish. Anyway I’ve at long last updated my diary. I migrated the whole thing from GreyMatter to MovableType, but you probly don’t give a damn about that. Anyway, I’m back. Gonna try to update this thing more regularly now that I’ve done this update. Hopefully all my old buddies will return and leave more comments about how gay I am.

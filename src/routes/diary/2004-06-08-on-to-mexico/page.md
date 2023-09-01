@@ -2,6 +2,7 @@
 title: And on to Mexico
 date: 2004-06-08T13:14:00.000Z
 original: 000187.php
+tags: [sailing, mexico]
 ---
 
 So to catch you up, I’m on Isla Mujeres, an island off the eastern coast of Mexico, near Cancun. Isla Mujeres is, like Prague, another beautiful place crawling with tourists, including me.

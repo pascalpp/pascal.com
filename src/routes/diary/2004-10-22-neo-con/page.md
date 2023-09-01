@@ -2,6 +2,7 @@
 title: NEO-CON
 date: 2004-10-22T08:35:00.000Z
 original: 000217.php
+tags: [gwb]
 ---
 
 Bush is not a conservative by any real definition of the word. He’s wasteful and reckless.

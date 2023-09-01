@@ -2,6 +2,7 @@
 title: About 5 miles today
 date: 2004-04-27T19:22:00.000Z
 original: 000172.php
+tags: [nyc, running, live music]
 ---
 
 Today I ran a mile at the gym and then ran over the Brooklyn Bridge into Manhattan, north to the Manhattan Bridge, across to Brooklyn, and then south back to the gym. My left shin aches a little but it’s nowhere near the debilitating pain I was feeling a month or so ago. Ten miles tomorrow, we’ll see how that goes.

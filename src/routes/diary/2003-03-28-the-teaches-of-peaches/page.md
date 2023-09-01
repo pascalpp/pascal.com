@@ -2,6 +2,7 @@
 title: The teaches of Peaches
 date: 2003-03-28T15:46:00.000Z
 original: 000122.php
+tags: [nyc, live music]
 ---
 
 Last night I went to the Knitting Factory again, to see Peaches. Damn she was hot.

@@ -2,6 +2,7 @@
 title: BABY-KILLER
 date: 2004-10-27T04:08:00.000Z
 original: 000222.php
+tags: [gwb]
 ---
 
 George W. Bush is a baby-killer. And I’m not talking about the uncounted thousands of Iraqi babies. I’m talking about those most precious of creatures, AMERICAN babies.

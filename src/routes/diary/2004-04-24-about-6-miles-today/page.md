@@ -2,6 +2,7 @@
 title: About 6 miles today
 date: 2004-04-24T20:34:00.000Z
 original: 000170.php
+tags: [running, nyc, live music]
 ---
 
 I did a lap over the Manhattan and Brooklyn bridges and then ran to the gym and did another mile on the treadmill. Makin my way back to you, babe.

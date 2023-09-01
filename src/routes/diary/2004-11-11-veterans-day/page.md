@@ -2,6 +2,7 @@
 title: Veteran’s Day
 date: 2004-11-11T05:39:00.000Z
 original: 000236.php
+tags: [politics]
 ---
 
 Today we should take a moment to honor our veterans.

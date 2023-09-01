@@ -2,6 +2,7 @@
 title: 'Tour: Chicago'
 date: 2004-04-05T17:23:00.000Z
 original: 000154.php
+tags: [tour, chicago]
 ---
 
 Last night we played at Nevin’s Live in Evanston, in North Chicago. My friend Laura&nbsp;B took 13 trains and two buses to come see the show, which was real nice of her. So I got her a present.

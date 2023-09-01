@@ -2,6 +2,7 @@
 title: 'Tour: Dayton'
 date: 2004-04-17T18:06:00.000Z
 original: 000166.php
+tags: [tour]
 ---
 
 Well we’re all done.

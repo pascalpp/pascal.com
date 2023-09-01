@@ -2,6 +2,7 @@
 title: And then I went to Tuscaloosa
 date: 2002-07-24T07:59:00.000Z
 original: 000118.php
+tags: [alabama]
 ---
 
 After I got back from New York, I drove to Tuscaloosa to visit my old friend Emily Lundin and her mom Anne. Here’s some pics I took while I was there.

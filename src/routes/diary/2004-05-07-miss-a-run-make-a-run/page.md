@@ -2,6 +2,7 @@
 title: Miss a run, make a run, go see a man about a horse
 date: 2004-05-07T00:44:00.000Z
 original: 000176.php
+tags: [nyc, running]
 ---
 
 Yesterday I was supposed to run 8 miles. I woke up pretty early and it was really sunny so I thought I would just hang out at home and in the hood. I went to the Fall again and chatted up the regulars. Then it was noon. Then I came home and goofed around a while. Then it was three. Then I looked outsite and it was all grey and cold looking. And then it was five. And then I didn’t run 8 miles.

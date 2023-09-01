@@ -2,6 +2,7 @@
 title: Pictures from New York
 date: 2003-04-03T10:44:00.000Z
 original: 000123.php
+tags: [nyc, cookie monster, live music]
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./01-rachel-raba.jpg" /></p>

@@ -2,6 +2,7 @@
 title: Another way to look at it
 date: 2004-11-06T07:37:00.000Z
 original: 000233.php
+tags: [politics]
 ---
 
 <!-- <link rel="stylesheet" href="/diary/images/2004-11-06/redblue-evs.css"> -->

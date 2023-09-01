@@ -2,6 +2,7 @@
 title: 12ish Miles Today
 date: 2004-03-07T00:44:00.000Z
 original: 000135.php
+tags: [running, nyc]
 ---
 
 Today I ran over the Manhattan Bridge to Manhattan then south to the Brooklyn Bridge and back over to Brooklyn. Then I did it again. And then I did it again!

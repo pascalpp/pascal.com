@@ -2,7 +2,7 @@
 title: Photo Caption Contest! Call for entries!
 date: 2002-03-21T22:42:00.000Z
 original: 000112.php
-tags: [willow, sailing]
+tags: [willow, sailing, caption contest]
 ---
 
 Aight, people, gimme a good caption for this photo:

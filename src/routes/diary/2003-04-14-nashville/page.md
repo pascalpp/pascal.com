@@ -2,6 +2,7 @@
 title: A stopover in Nashville
 date: 2003-04-14T05:08:00.000Z
 original: 000125.php
+tags: [live music]
 ---
 
 On my way to Madison to meet up with the rest of the Hellriders, I decided to stop in Nashville to catch a show that I just found out was happening on Friday night at the Slow Bar. A band that I’ve like for a while, the Mountain Goats, was playing, and I’ve never got to see them live before. Actually the Mountain Goats are pretty much just one guy who sings and writes all the songs, although he seems to be working pretty steadily with this other guy plays bass and sings backup. The show was being headlined by the Postal Service, a new band that is the side project of a guy from Death Cab For Cutie, whom I also like, and some guy from band called Dentl that I’ve never heard of. Opening the show was Cex, never heard of.

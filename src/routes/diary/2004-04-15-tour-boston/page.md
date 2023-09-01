@@ -2,6 +2,7 @@
 title: 'Tour: Boston'
 date: 2004-04-15T09:46:00.000Z
 original: 000164.php
+tags: [tour, live music]
 ---
 
 Now it’s 5:46 in the morning. We’re driving overnight to Pittsburgh from Boston. Right now we’re on 84 West, somewhere in western Connecticut. I keep wondering what the word for people who live in Connecticut is. Connecticutians?

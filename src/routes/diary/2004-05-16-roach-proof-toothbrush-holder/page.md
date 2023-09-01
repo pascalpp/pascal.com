@@ -2,6 +2,7 @@
 title: Roach-Proof Toothbrush Holder
 date: 2004-05-16T10:50:00.000Z
 original: 000182.php
+tags: [nyc]
 ---
 
 Tonight I saw a tiny little roach on my bathroom floor. I grew up in Alabama, where the 2-inch tree roaches make regular forays into your house and throw parties. So I wasn’t grossed out. I was a little annoyed, but mostly I was reminded of this factoid I once heard about cockroaches, that being that they like to munch on toothbrush bristles. This may just be some sort of old wives’ tale, but nonetheless I found myself looking at the ceramic toothbrush holder, wondering if the little guy on the floor, or one of his buddies, could scale the wall, climb on to the toothbrush holder, and from there ascend to the apex of my toothbrush and start munching. Pretty quickly I decided it would be a piece of cake for a roach to do that, if he or she so desired.

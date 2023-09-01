@@ -2,6 +2,7 @@
 title: 'Tour: Madison'
 date: 2004-04-04T16:54:00.000Z
 original: 000153.php
+tags: [tour, madison]
 ---
 
 Last night we played in Madison, at Uvulittle Home Base, also known as Mother Fool’s. The show was great, except me and Darren got out of time with the loopy loops on Mud cuz they weren’t loud enough, so that song kinda fell apart. Better luck next time. Meh.

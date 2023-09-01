@@ -2,6 +2,7 @@
 title: Bellywatch
 date: 2004-03-04T21:37:00.000Z
 original: 000132.php
+tags: [running]
 ---
 
 In the interest of getting those ugly blisters off the front page of my diary, I thought I would post some pictures of my belly. I been losing weight, so I thought I’d document it here. I don’t care if you don’t care.

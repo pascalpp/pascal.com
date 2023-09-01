@@ -2,6 +2,7 @@
 title: Show in Seattle
 date: 2005-11-28T21:46:00.000Z
 original: 000253.php
+tags: [tour]
 ---
 
 Lauren and I went to Seattle to visit Aaron and Melissa and Isabelle. We had a great time. Aaron’s friend Rob set up a show for us to play with his band, the Department of Energy. He and his friend Cass also sat in with me and Lauren and played bass and drums. We practiced a few times in the garage of their keyboardist, Ty. I was feeling sick all week and my voice was crackin up during both practices, but mostly it was sounding good.

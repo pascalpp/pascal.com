@@ -2,6 +2,7 @@
 title: Santa has a Huggy Party
 date: 2004-12-12T22:35:00.000Z
 original: 000239.php
+tags: [nyc, santacon]
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./santas.jpg" /></p>

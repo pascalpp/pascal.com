@@ -2,6 +2,7 @@
 title: 'Tour: D.C.'
 date: 2004-04-12T03:48:00.000Z
 original: 000162.php
+tags: [tour]
 ---
 
 When we got to D.C. we met up with Stephanie’s old greenpeace friend Matt and his boyfriend Paul. They were really sweet and they have this huge cat who was even sweeter. We went walking around the Adams-Morgan neighborhood and I checked email and stuff at this monster crowded coffee shop called Tryst. Then we had really excellent Ethiopian food at Bezkerem or Mezkemel or something like that, with Cristen from Madison and her friend from Virginia Beach, both of whom just happened to be in town. And I found a beer that hadn’t been opened. And I drank the beer. No dead wildcat though. Actually I didn’t so much find the beer. It was more like I ordered it.

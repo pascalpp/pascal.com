@@ -2,6 +2,7 @@
 title: Lauren comes to town
 date: 2004-03-07T19:07:00.000Z
 original: 000136.php
+tags: [nyc]
 ---
 
 My sister Lauren got to town last nite. I guess now she calls herself Bama. She goes to school in Florida. She came with her two friends Matt, who now calls himself Levi, and Liz, who now calls herself Liz.

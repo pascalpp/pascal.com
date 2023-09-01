@@ -2,6 +2,7 @@
 title: Praha
 date: 2004-05-22T12:32:00.000Z
 original: 000185.php
+tags: [running, prague]
 ---
 
 Prague is beautiful and crawling with tourists. Like me.
