@@ -17,4 +17,3 @@ We’ve also discovered the most wonderful little scam. Isla Mujeres is dotted w
 After a couple hours of all this hard work we packed up our stuff and headed back to the boat.
 
 Today we’re pulling out and heading to Isla Contoy, a nature preserve a short distance north from here. There we’ll anchor out and do some more snorkeling. Then we’ll head out into the Gulf of Mexico and sail home to Mobile.
-

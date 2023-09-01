@@ -2,7 +2,7 @@
 title: Birthday ruminationseses
 date: 2001-12-09T14:30:00.000Z
 original: 000089.php
-tags: ['willow']
+tags: [willow, sailing]
 ---
 
 Well, today is my birthday, making me thirty-one. I guess actually it’s almost over. I am in a boat called Willow, which belongs to my good friends Nick and Valerie. We are anchored in the Herb river, a little feeder to the Savannah River. Tomorrow we are going to get the fridge fixed and then we’re going shopping.
@@ -18,4 +18,3 @@ When I realized I was thirty-one, when I mouthed the words this morning, I felt 
 <p class="polaroid" style="--deg: -2deg"><img src="./pascal-is-31.jpg" /></p>
 
 Now I’m going to sleep, and tomorrow I will be thirty-one and a day.
-
