@@ -1,8 +1,11 @@
 <script>
+	import Tag from '../Tag.svelte';
+
 	export let data;
 
 	$: ({ post, next, prev } = data);
 	$: ({ title, date, content, metadata } = post);
+	$: ({ tags } = metadata);
 
 	const dateFormatter = new Intl.DateTimeFormat('en', {
 		weekday: 'long',
@@ -42,7 +45,16 @@
 	</nav>
 
 	<h1>{title}</h1>
-	<p class="date">{formatDate(date)}</p>
+	<div class="subheader">
+		<p class="date">{formatDate(date)}</p>
+		{#if tags?.length}
+			<p class="tags">
+				{#each tags as tag}
+					<Tag {tag} />
+				{/each}
+			</p>
+		{/if}
+	</div>
 </header>
 
 <article>
@@ -75,7 +87,7 @@
 			font-weight: 500;
 		}
 
-		.date {
+		.subheader {
 			font-family: @sans-font;
 			border-bottom: 1px solid rgb(0 0 0 / 0.1);
 			margin: 0.5em 0;
@@ -84,6 +96,13 @@
 			padding-right: 3em;
 			padding-top: 0;
 			width: max-content;
+		}
+
+		.tags {
+			font-size: 14px;
+			:global(> * + *) {
+				margin-left: 0.5em;
+			}
 		}
 	}
 
