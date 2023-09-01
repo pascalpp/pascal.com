@@ -8,15 +8,14 @@
 
 	async function showTagPrompt() {
 		const promptTags = prompt('Edit tags', tags.join(', '));
-		const updatedTags = Array.from(
-			new Set(
-				promptTags
-					?.split(',')
-					.map((tag) => tag.trim())
-					.filter(Boolean)
-			)
-		);
-		await patchTags(updatedTags);
+		if (typeof promptTags === 'string') {
+			const filteredTags = promptTags
+				.split(',')
+				.map((tag) => tag.trim())
+				.filter(Boolean);
+			const updatedTags = Array.from(new Set(filteredTags));
+			await patchTags(updatedTags);
+		}
 	}
 
 	async function patchTags(updatedTags: string[]) {
