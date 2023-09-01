@@ -2,6 +2,7 @@
 title: Birthday ruminationseses
 date: 2001-12-09T14:30:00.000Z
 original: 000089.php
+tags: ['willow']
 ---
 
 Well, today is my birthday, making me thirty-one. I guess actually it’s almost over. I am in a boat called Willow, which belongs to my good friends Nick and Valerie. We are anchored in the Herb river, a little feeder to the Savannah River. Tomorrow we are going to get the fridge fixed and then we’re going shopping.
@@ -20,16 +21,9 @@ Now I’m going to sleep, and tomorrow I will be thirty-one and a day.
 
 <div class="commentdivider"></div><span class="commentheader">1 Comment</span>
 
-
-
-
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;samygalal&#64;hotmail&#46;com">samygalal</a></span>
 <span class="commentdatebox">Wednesday, September 25, 2002</span>
 <span class="commenttimebox"> 3:45 AM</span>
 </div>
 <div class="commentbody">«� ������ �ջ ����� ����� ʫ�̦ �ʋ� ����</div>
-
-
-
-
