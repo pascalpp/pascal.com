@@ -15,4 +15,3 @@ I stopped singing and said, “Oh, hey.”
 I was a little taken aback at first, but then I just started laughing. Day job.
 
 I walked back to the bar, still laughing. The show went great.
-

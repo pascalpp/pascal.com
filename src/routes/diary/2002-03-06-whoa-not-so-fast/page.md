@@ -13,4 +13,3 @@ As the day came to a close, Valerie decided to do a routine check of the rigging
 The headstay fitting is not going to be so easy, though. It’s set into the deck underneath the two bow rollers where the anchors are housed, so to fix it we’ll have to remove at least one of the bow rollers. Since the weather’s not looking too hospitable for a Gulf Stream crossing, we decided to stay here at Summerfield and make sure the headstay fitting is fixed properly.
 
 I swear we’ll get out of here eventually!
-

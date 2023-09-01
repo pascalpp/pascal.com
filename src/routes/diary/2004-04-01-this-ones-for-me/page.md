@@ -9,4 +9,3 @@ I got into Chicago yesterday, excited to kick off the <a href="https://www.pasca
 Tonight I went out on the town with Laura, a coworker of Barry’s from the Saucer. She was kind enough to show me around town, taking me to all the hipster bars and coaching me on proper hipster technique. I could talk a lot about Laura, but I won’t right here, right now. Short version: SO awesome.
 
 After we went out, I sat on the sidewalk under Laura’s window, across the street from the Clipper, and I ate tamales and watched the three-quarter moon going in and out of the clouds. I half-hoped Laura would throw open her window and call my name, and then maybe I could have recited what little Shakespeare I remember by heart, moving my arms through the air in bizarre, unnatural ways. But that didn’t happen. So once I finished my tamales I walked home in the cold, warm and sighing and smiling.
-

@@ -23,4 +23,3 @@ Somehow the conversation turned to purgatory. Old Guy confessed that his favorit
 The macho poltergeist in me somehow neglected to tell his new-found macho weight room buddies that I had never been to Vegas, nor I had I ever been married, much less committed adultery.
 
 As I headed for the showers a bit later on, I passed one of the guys on the stairs, and he said to me, “Take it easy, buddy. Have a good weekend.” Some part of me, the geist perhaps, soaked up this small bit of buddyness and reveled in it.
-

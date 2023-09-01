@@ -11,4 +11,3 @@ My friend Bernie gave me his old glasses. I just got em back from the place with
 This picture was taken from an oncoming train.
 
 My friend Kevin says he likes them cuz “they’re not me”. Me too.
-

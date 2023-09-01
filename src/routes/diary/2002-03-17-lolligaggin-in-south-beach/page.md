@@ -47,4 +47,3 @@ I been working on a couple new songs here on the boat. Here’s one called Satel
   <figcaption>Satellite</figcaption>
   <audio controls src="./satellite.mp3" />
 </figure>
-

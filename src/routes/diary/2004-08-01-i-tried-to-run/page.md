@@ -5,4 +5,3 @@ original: 000193.php
 ---
 
 Tonight I tried to run over the Brooklyn Bridge. Mostly I walked. It was beautiful. The End.
-

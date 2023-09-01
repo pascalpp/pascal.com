@@ -23,4 +23,3 @@ I started to leave, and then I remembered. There is a large carousel horse in my
 I shrugged. George has a way of making people shrug. Or at least me. “Sure,” I said.
 
 So now there’s a large, colorful, teeth-gnashing carousel horse in my living room. Anyone wanna ride it?
-

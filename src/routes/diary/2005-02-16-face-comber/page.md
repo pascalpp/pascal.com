@@ -7,4 +7,3 @@ original: 000246.php
 <p class="polaroid" style="--deg: -2deg"><img src="./face-comber.jpg" /></p>
 
 Today I am obsessively combing my face.
-

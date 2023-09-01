@@ -52,4 +52,3 @@ One day we went to the laundry and I saw this empty laundry basket, all lonesome
 <p class="polaroid" style="--deg: -2deg"><img src="./cold-beers.jpg" /></p>
 
 Here’s some of them cold beers I was telling you about. Mmm, makes me wanna drop the sanding block and grab a bottle opener!
-

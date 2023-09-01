@@ -13,4 +13,3 @@ Click it.
 Here’s one with his lil dog Peedee. He bites Peedee. Peedee bites back. Click it.
 
 <p class="polaroid" style="--deg: -2deg"><img src="./ryanpeedee-0.jpg" /></p>
-

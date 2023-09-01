@@ -23,4 +23,3 @@ And then David Cross said, “I’m gonna raffle off this towel.” And he pulle
 Finally, the Blues Explosion came out and did their Bizarro World version of the Rolling Stones. I’d never seen them before, though, so I enjoyed it. Then I was tired and I went home.
 
 And lo, here I am. Good night.
-

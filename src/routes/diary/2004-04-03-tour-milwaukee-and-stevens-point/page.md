@@ -15,4 +15,3 @@ Last night we played in Stevens Point at the Mission. We drove up early and did 
 Jordan and Silas at the Mission Coffeehouse are doing awesome things. I really love that place. Also on the bill was Shara Worden from a band called <a href="http://www.awrysense.com">Awry</a>. She lives in Brooklyn, in Park Slope, and I really liked her stuff, so I’m gonna see about playing some shows with her out eastish.
 
 After I played I hung out with some of the local kids, Vlad the Russian and Kellen and Britney and Dominique. We played Gin Rummy and shot the shit. Goin on tour is a good way to break yourself of the fear of talking to strangers. If you have that problem. Which I do. Did!
-

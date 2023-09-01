@@ -9,4 +9,3 @@ I ran the marathon. 42 kilometers. 26 miles. Finished in 4 hours and 40 minutes.
 I woke up around 4am and went for a walk around the city in the early morning light. A very cute Bulgarian girl propositioned me for “sex blow-job” in some alleyway. She was very persistent, but somehow I found myself saying “No, no, no thank you.” Then I did some more baby steps back to the hotel.
 
 PS: Here’s my <a href="http://www.online-ranking.it/races/502/certificate.asp?id=502&bib=4840&locale=2057">race diploma</a>. Fancy.
-

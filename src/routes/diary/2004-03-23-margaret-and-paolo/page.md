@@ -20,4 +20,3 @@ Marg and Paolo in some bubble chair thingy.
 
 <p class="polaroid" style="--deg: -2deg"><img src="./pascal.jpg" /></p>
 Me, from the bubble chair.
-

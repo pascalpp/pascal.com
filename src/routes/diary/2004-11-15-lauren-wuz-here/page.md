@@ -11,4 +11,3 @@ We got lame and watched almost the whole fourth season of Six Feet Under, but we
 While Lauren was here we also ate at most of our favorite restaurants: Zaytoons, Cafe Luluc, and of course the SOOOOUULLL SPOT! Then we watched some more Six Feet Under.
 
 Then Lauren left, and that feeling snuck up on me again. I used to wonder how people could miss other people. It didn’t happen to me that often. But now it happens every time she leaves. It makes me miss everyone, all at once. How ya’ll doin?
-

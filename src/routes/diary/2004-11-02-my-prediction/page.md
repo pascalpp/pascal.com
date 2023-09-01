@@ -9,4 +9,3 @@ KERRY: 311-227
 Visit <a href="http://www.nytimes.com/packages/html/politics/2004_ELECTIONGUIDE_GRAPHIC/">The New York Times Election Guide</a> and click on Presidential Calculator (3rd item down in the left column).
 
 Make your own predictions below.
-

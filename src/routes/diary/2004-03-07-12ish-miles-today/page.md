@@ -21,4 +21,3 @@ I saw this three times today. Sorry, I’m still high. And cellphones still take
 
 <p class="polaroid" style="--deg: -2deg"><img src="./nipple-bleed.jpg" /></p>
 Today I got my first nipple bleed. Bitchen. Gonna have to tape them suckers down next time.
-

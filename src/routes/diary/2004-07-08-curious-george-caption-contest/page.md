@@ -9,4 +9,3 @@ Woohoo! Another caption contest!
 <p class="polaroid" style="--deg: -2deg"><img src="./bushmonkey.jpg" /></p>
 
 Enter your best caption for this image in the comments below. And try to come up with something besides ‘Curious George’…
-

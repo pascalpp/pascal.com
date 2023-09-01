@@ -23,4 +23,3 @@ Also, here is a lengthy compendium of voting irregularities nationwide.
 To be clear, I’m not declaring the election null and void, nor am I declaring that something nefarious is afoot. But I think there are enough anomalies in this election to warrant some basic questioning and verification. As citizens we deserve a fully audited and verified vote count in every election. The rush to replace antiquated voting systems with electronic alternatives has put us in the position of using machines that have not been properly tested and secured, and it has left us without a path of recourse should a recount be needed. This must be rectified.
 
 I’ll be writing more on this in the coming days.
-

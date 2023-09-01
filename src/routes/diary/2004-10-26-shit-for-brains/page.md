@@ -5,4 +5,3 @@ original: 000220.php
 ---
 
 He has poopoo on the inside of his head.
-

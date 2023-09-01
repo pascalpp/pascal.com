@@ -31,4 +31,3 @@ That is, until you see the bottom of the picture.
 <p class="polaroid" style="--deg: -2deg"><img src="./newbuilding.jpg" /></p>
 
 I swear the folks of Miami Beach seem to have really taken a liking to us. It’s been less than 24 hours since we settled into this new anchorage, and they’re already putting up another building in our honor. Just plain kooky!
-

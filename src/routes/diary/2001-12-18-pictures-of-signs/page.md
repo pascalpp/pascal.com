@@ -37,4 +37,3 @@ I wonder what happens if the red light goes on and nobody calls?
 <p class="polaroid" style="--deg: -2deg"><img src="./yardsale.jpg" /></p>
 
 This sign wasn’t pointing at a yard sale. It was kind of pointing at the water. I wonder if it was a trick to try and get little old ladies who like yard sales to fall in.
-

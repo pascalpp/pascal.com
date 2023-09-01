@@ -5,4 +5,3 @@ original: 000196.php
 ---
 
 Our president is a blithering idiot.
-

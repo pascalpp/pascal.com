@@ -7,4 +7,3 @@ original: 000215.php
 George W. Bush thinks God is on his side. He’s wrong. God is dead.
 
 But you knew that, right?
-

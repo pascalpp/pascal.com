@@ -13,4 +13,3 @@ It occurred to me that the most elegant solution would be to suspend the toothbr
 MAGNETS.
 
 I haven’t completely figured it out yet, but right now I’ll have to sleep on it. If I make any more progress on solving this ridiculously non-problematic problem, I’ll let you know.
-

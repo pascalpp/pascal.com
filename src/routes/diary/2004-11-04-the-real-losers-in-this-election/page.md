@@ -17,4 +17,3 @@ My intention was not to call these soldiers losers or to disparage their service
 I wanted my (few) readers to see what 1097 names look like, as a way to illustrate the cost of the war in Iraq, and also to preserve the names of those who lost their lives for posterity. Obviously, this blog is not a place for such a memorial, and I made the unfortunate mistake of juxtaposing that list with the word ‘loser’ which was understandably misinterpreted as a slur against those brave soldiers whose names were listed. I meant no disrespect and I’m deeply sorry for the upset I have caused.
 
 I remain hopeful that the war in Iraq will soon come to an end so that our soldiers there can come home.
-

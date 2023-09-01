@@ -45,4 +45,3 @@ have the whole thing done by the end of September and in stores by
 Christmas! So stay tuned…
 
 And tell your friends to <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?playlistId=7202482">buy my record</a>!
-

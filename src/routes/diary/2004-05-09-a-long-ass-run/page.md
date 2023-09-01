@@ -9,4 +9,3 @@ Yesterday I piddled around for most of the day and then finally got off my duff 
 Then I went out with some friends from <a href="http://www.suicidegirls.com">SuicideGirls</a> for a long night of stupidity. Good stupidity. Ended up walking home from a diner in the rainy dawn light with two strange boys who crashed in my living room.
 
 Today I’m in recovery.
-

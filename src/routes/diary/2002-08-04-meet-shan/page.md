@@ -11,4 +11,3 @@ I made a new friend tonight. I can’t quite figure out if it’s a boy or a gir
 <p class="polaroid" style="--deg: -2deg"><img src="./shan-01.jpg" /></p>
 
 <p class="polaroid" style="--deg: -2deg"><img src="./shan-03.jpg" /></p>
-

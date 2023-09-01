@@ -9,4 +9,3 @@ Please submit your best caption for the following:
 <p class="polaroid" style="--deg: -2deg"><img src="./vest.jpg" /></p>
 
 Now play nice!
-

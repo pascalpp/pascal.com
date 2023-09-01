@@ -39,4 +39,3 @@ Along the way we received a brief visit from a little bird who seemed to be taki
 Before long we reached Miami, and were glad of it. The people of Miami were kind enough to erect these tall buildings along the waterfront in honor of our arrival.
 
 We’ll be here for a few days, awaiting a weather window for the Gulf Stream crossing, which hopefully will come sometime in the next week.
-

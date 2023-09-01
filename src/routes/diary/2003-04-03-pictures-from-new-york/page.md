@@ -42,4 +42,3 @@ Here’s Rachel and B at work. They are getting ready to take a picture of Super
 
 <p class="polaroid" style="--deg: -2deg"><img src="./13-b.jpg" /></p>
 This is the last thing I saw before I left New York. No, that’s not a moustache.
-

@@ -5,4 +5,3 @@ original: 000230.php
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./distress.gif" /></p>
-

@@ -19,4 +19,3 @@ After the show we went back to Steph’s sister’s house and hung out on the po
 This morning we said our goodbyes and hit the road. While we were packing up I decided that Abbey Road was the greatest album of all time. Right now I still can’t think of one I’d put over that. Barry was less willing to commit, but he said Ozzy’s Diary of a Madman would be up there. So I have to check out that record, I guess.
 
 We’re on the way back to Chicago now. We just stopped outside of Lafayette, Indiana for breakfast at the Country Cafe, which I think used to be a Waffle House. There was a young waitress there, probly only 16 or 17, who looked just like the fat princess from Shrek. I mean that in a nice way.
-

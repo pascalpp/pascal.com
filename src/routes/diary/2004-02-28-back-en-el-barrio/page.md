@@ -27,4 +27,3 @@ Here’s my friend Charlie who came over to have tuna steaks with me. That’s h
 <p class="polaroid" style="--deg: -2deg"><img src="./peter-pascal.jpg" /></p>
 
 Later on my friend Peter showed up and we got some dance on. And some beers on.
-

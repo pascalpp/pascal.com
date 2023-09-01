@@ -48,4 +48,3 @@ When everyone left I noticed that they all seemed to have left their beer bottle
 
 <p class="polaroid" style="--deg: -2deg"><img src="./diner-0.jpg" /></p>
 Then we went to the diner. Matt and Liz each ordered a hand sandwich. Lauren picked her nose. I fell asleep on Kyle’s shoulder. And then Lauren and Liz threw up. Click it.
-

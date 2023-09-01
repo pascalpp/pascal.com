@@ -47,4 +47,3 @@ Here’s Larry welding some braces onto a pole that Nick is putting on the stern
 Here’s Nick and our buddy Rich, winding some thread onto a pencil using a drill. Rich is a retired Sacramento fireman on a 28-foot Shannon. Probably the prettiest boat that size I’ve ever seen. I think if I was to get a boat, that would be the one.
 
 But hell no, I ain’t getting no goddamn boat, are you crazy?!
-

@@ -15,4 +15,3 @@ We played with a local three-piece called Americonski, whom Darren describes as 
 After the show we packed up our stuff and left it on stage and headed to Sharon’s for some wine and nachos. Then I fell asleep on the couch. In my jeans. Again.
 
 Now it’s 11 in the morning. Everyone’s up and about and putting on thrift store clothes. We’re wondering if one should wash thrift store clothes before wearing them. The consensus seems to be that most thrift stores probably wash their clothes before putting them on the rack, but that washing them again before wearing them probly wouldn’t be bad idea. Even so, none of us ever do. Do you?
-

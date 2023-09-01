@@ -11,4 +11,3 @@ First we’re heading down to Miami, where we’ll probably hole up in No Name H
 Since our internet access is going to be sporadic from here on out, I’ve changed the format of my diary a little. The new format (you’re looking at it) will be mostly text-only, just to keep you up to date on where I am and where we’re heading. Whenever possible, I’ll try to add some pictures as well just to keep it interesting.
 
 Stay tuned!
-

@@ -11,4 +11,3 @@ I feel kinda sad but I don’t really wanna go into it.
 I’ll run tomorrow and it will hurt different and that will feel good. Then I’ll go to the Excellent Dumpling House and drown my sorrows in a big ass bowl of cold peanut noodles.
 
 Ah, I feel better already.
-

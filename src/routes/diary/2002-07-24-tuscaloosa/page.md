@@ -63,4 +63,3 @@ Emily and Cookie share a special moment together.
 Then Emily got on the train and Cookie waved goodbye.
 
 The End.
-

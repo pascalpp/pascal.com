@@ -5,4 +5,3 @@ original: 000207.php
 ---
 
 George W. Bush has single-handedly brought more terror to Iraq than anyone ever has.
-

@@ -7,4 +7,3 @@ original: 000250.php
 From the photo booth at the Lakeside Lounge:
 
 <p class="polaroid" style="--deg: -2deg"><img src="./molly-jay-lakeside.jpg" /></p>
-

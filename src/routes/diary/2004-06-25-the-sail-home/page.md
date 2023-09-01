@@ -25,4 +25,3 @@ That night about 7 or 8 porpoises swam directly in front of and between the two 
 Eventually we motored into Mobile Bay and were greeted by a nice rain shower. I needed it.
 
 At some point I’ll post some pictures here, I swear. There’s a ton of em.
-

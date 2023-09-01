@@ -5,4 +5,3 @@ original: 000242.php
 ---
 
 The other night I walked home from the gym with a wet head and when I got home I had icicles in my hair. I was glad.
-

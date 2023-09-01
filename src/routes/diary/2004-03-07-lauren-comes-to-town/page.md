@@ -31,4 +31,3 @@ Someone and Mauro and Someone and Manuel.
 
 <p class="polaroid" style="--deg: -2deg"><img src="./pascalbird-0.jpg" /></p>
 Several pics of me and the bird. Click it.
-

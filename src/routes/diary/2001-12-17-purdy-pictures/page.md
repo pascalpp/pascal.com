@@ -29,4 +29,3 @@ Passing through one of the many drawbridges on the ICW.
 <p class="polaroid" style="--deg: -2deg"><img src="./scrubbing-topsides.jpg" /></p>
 
 Nick holds me out of the drink while i give the topsides a scrub.
-

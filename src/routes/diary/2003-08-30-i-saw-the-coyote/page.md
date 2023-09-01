@@ -8,4 +8,3 @@ As I was coming down last night, I turned my computer on to see if my eyes were 
 
 <p class="polaroid" style="--deg: -2deg"><img src="./ichat.jpg" /></p>
 Away, away, out of the office…. oh my god all my friends are away and my little sister is a ROBOT!
-

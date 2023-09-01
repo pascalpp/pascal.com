@@ -47,4 +47,3 @@ Lauren and Me.
 Me and Nikola.
 
 I guess it’s not really a game, is it? Well, whatever, we played it. And everybody won. The End.
-

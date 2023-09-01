@@ -9,4 +9,3 @@ I just heard a re-broadcast of a statement George W. Bush made at a press confer
 Such a scenario brings to mind the politcal fallout for the Vietnam war. That war was largely a creation of the Democratic administrations of Kennedy and Johnson, but it was left to Nixon to finish the job and he ultimately bore the brunt of the blame for the inevitable failure there.
 
 I’m wondering if Bush and his framers are ultimately hoping to hang such an albatross around the neck of the next president, whomever that may be. So the war in Iraq will ultimately serve to damage the Democratic party along with the unspeakable damage to the lives of the Iraqi people and the soldiers who were sent there.
-

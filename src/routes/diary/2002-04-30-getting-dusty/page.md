@@ -13,4 +13,3 @@ Well, some time in late March I took my leave of Willow for the time being and h
 Unfortunately I don’t think I’ll be joining them, at least not anytime soon.
 
 Instead, I’ve decided to move to Birmingham and work on music full time. I’ll be posting some recent photos sometime soon.
-

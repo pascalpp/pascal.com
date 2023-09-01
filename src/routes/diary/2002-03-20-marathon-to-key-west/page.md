@@ -37,4 +37,3 @@ We reached Key West at around 3:30 in the afternoon and anchored near Fleming Is
 Once we tidied up the boat a bit, we had another quick shower on deck and hailed the water taxi to take us ashore for dinner. It’s Spring Break here in Key West, so the mood on shore was festive and light and collegiate. Nick quickly showed he could party with the best of em.
 
 My cousin Chuck (locally known as Chas) lives here so I’m finally getting to hang out with him on his turf. We’ll be here for a few days, enjoying all that Key West has to offer. More later…
-

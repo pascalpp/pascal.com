@@ -17,4 +17,3 @@ My friend Jonny from <a href="http://www.aquadora.com">Aquadora</a> told me abou
 While I was sleeping, a piano fell through the ceiling and landed not-so-squarely on top of me. Fortunately, the legs of the piano didn’t collapse entirely, so the bulk of the piano was suspended above me. As I reached around to try and pull myself out from under it, my fingers struck a near-perfect E minor sixth. The tonal vibrations coming from the body of the piano ran the length of mine and I started crying involuntarily, uncontrollably.
 
 Today is bright and sunny and beautiful, and just a little cold. In a bit we’re driving to Chicago (Evanston, actually) where hopefully I’ll get to hang out with Laura again.
-

@@ -23,4 +23,3 @@ We are living in a high school world, and the dumb quarterback is running the st
 “The Crawford High Tigers of Freedom are on the march! Next week we face The Fighting Towelheads of Syria Central in the big homecoming game and we are gonna WHOOP THEIR IRAQI-LOOKIN’ BUTTS!”
 
 Fuck this shit. I’ll be out behind the fieldhouse, smoking the whole fucking pack.
-

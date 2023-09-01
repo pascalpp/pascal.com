@@ -11,4 +11,3 @@ Last night I went to Pete’s Candy Store with Kyle and my new friend Patricia M
 Then Scout Niblett played. She’s English I think, and just the cutest thing that ever wore a blonde wig. She sang over an electric guitar for a while, then she switched up and sang while playing drums. Her songs were also really simple but so beautiful.
 
 I need to eat something. Then I’m going to get my back squished by Dr. Frank Morgera.
-

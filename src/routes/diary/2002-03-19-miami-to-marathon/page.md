@@ -53,4 +53,3 @@ When I wasn’t at the helm, I would practice levitating up on the foredeck.
 As we pulled into Marathon, we received a friendly escort from the local Coast Guard, Marine Mammal Division.
 
 PS. Happy Birthday, Ryan!
-

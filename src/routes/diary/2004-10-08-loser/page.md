@@ -9,4 +9,3 @@ George W. Bush bankrupted two Texas oil companies and as governor, he even bankr
 Having inherited a record budget surplus from the prior administration, he’s miraculously parlayed that into a record deficit by giving huge tax cuts to his rich friends (and $300 to suckers like you and me) and spending billions of dollars destroying the infrastructure in Iraq so he could divert more billions of dollars into no-bid contracts for his buddies’ companies to rebuild that same infrastructure.
 
 Let’s ditch this fuckin LOSER.
-

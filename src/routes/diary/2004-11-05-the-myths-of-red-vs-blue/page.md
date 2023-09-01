@@ -26,4 +26,3 @@ The District of Columbia makes for an interesting example of another failing of 
 To be very clear, I am <b>not saying</b> that New York’s blue voters are more important (or smarter, or better, or richer, or anything) than all the red voters in Montana, Idaho, North Dakota, South Dakota, Nebraska, Nevada, Utah, Arizona, and New Mexico. I’m simply saying that there are <b>more</b> of them, and that the maps do not accurately reflect this.
 
 So please don’t be fooled by all the red on that map that Hannity and others are waving around. Mr. President, please don’t ignore all the blue staters in those red states. And don’t make us start putting stars on our bellies.
-

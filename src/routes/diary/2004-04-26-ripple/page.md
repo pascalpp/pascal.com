@@ -13,4 +13,3 @@ Now we sleep.
 PS. I had a cigarette last night. Man it was GOOD. My knees and my brain got all fuzzy. I think those things are addictive or something.
 
 Don’t worry, I’m done with it. I have to run 20 fuckin miles on Saturday.
-

@@ -11,4 +11,3 @@ People told me when I started this that nasty things would start happening to my
 <p class="polaroid" style="--deg: -2deg"><img src="./monster-blisters.jpg" /></p>
 
 Ew!
-

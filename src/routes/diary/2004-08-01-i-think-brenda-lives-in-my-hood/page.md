@@ -9,4 +9,3 @@ Today I was standing outside the Fall Cafe on Smith Street talking on my cell ph
 Anyway, it made me wonder if Brenda lives in my hood. That would make Carroll Gardens even more awesome. That probably sounds stupid. Whatever.
 
 Maybe she was just hood-shopping with her hubby/boyfriend/brother and her baby/lovechild/nephew. Maybe she’ll move in next door and invite me in for a joint and some anonymous sex. Maybe I’ll have to go to the hospital and get my head shaved in preparation for invasive cranial surgery. God, anything could happen. Stay tuned.
-
