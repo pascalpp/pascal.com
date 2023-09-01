@@ -1,7 +1,10 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import './layout.less';
 
 	export let data;
+	$: ({ pathname, search } = data);
+	$: isIndex = /^\/diary\/?$/.test(pathname) && !search;
+	$: console.log(data, isIndex);
 </script>
 
 <svelte:head>
@@ -15,45 +18,35 @@
 	</style>
 </svelte:head>
 
-<main>
+<div class="blog">
 	<div class="structure">
 		<nav>
 			<div class="card">
-				<a href="/diary">Pascal’s Diary</a>
+				<h1>
+					{#if isIndex}
+						<span class="title">Pascal’s Diary</span>
+					{:else}
+						<a href="/diary">Pascal’s Diary</a>
+					{/if}
+				</h1>
 				<a href="/">⬅ Home</a>
 			</div>
 		</nav>
 	</div>
 
-	<div class="transition-container">
-		{#key data.currentRoute}
-			<div class="structure" in:fade={{ duration: 250, delay: 150 }} out:fade={{ duration: 250 }}>
-				<slot />
-			</div>
-		{/key}
-	</div>
+	<main>
+		<div class="structure">
+			<slot />
+		</div>
+	</main>
 
 	<footer>
 		<div class="structure">pascal’s diary · copyright about now</div>
 	</footer>
-</main>
+</div>
 
 <style lang="less">
-	@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap');
-
-	.transition-container {
-		width: 100%;
-		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: 1fr;
-	}
-
-	.transition-container > * {
-		grid-row: 1;
-		grid-column: 1;
-	}
-
-	main {
+	.blog {
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -64,6 +57,10 @@
 		font-weight: 200;
 		// animation: zoom-fade 1.5s ease-out 0ms forwards;
 		// transform-origin: top left;
+	}
+
+	main {
+		flex-grow: 1;
 	}
 
 	:global(a) {
@@ -120,7 +117,7 @@
 			text-decoration: none;
 			color: @blue;
 		}
-		a[href='/diary'] {
+		h1 {
 			font-weight: 500;
 			font-size: 24px;
 			color: black;
