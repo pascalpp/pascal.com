@@ -1,3 +1,4 @@
+import { dev } from '$app/environment';
 import type { SvelteComponent } from 'svelte';
 
 type PostResolver = () => Promise<{ metadata: Record<string, string> }>;
@@ -29,7 +30,11 @@ export async function fetchAllPosts(): Promise<PostSummary[]> {
 		})
 	);
 
-	return posts;
+	if (dev) {
+		return posts;
+	} else {
+		return posts.filter((post) => post.metadata.status !== 'draft');
+	}
 }
 
 export async function fetchPost(slug: string): Promise<Post> {
