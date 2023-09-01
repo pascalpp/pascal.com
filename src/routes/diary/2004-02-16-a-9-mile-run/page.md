@@ -8,13 +8,3 @@ original: 000138.php
 Today I ran 9 miles on a stupid treadmill and here’s the proof.
 
 [This entry was actually written on Monday, March 8, 2004. You know, posterity and all that.]
-
-
-
-
-
-
-
-
-
-

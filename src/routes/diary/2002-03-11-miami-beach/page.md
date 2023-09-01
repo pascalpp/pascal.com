@@ -32,10 +32,7 @@ That is, until you see the bottom of the picture.
 
 I swear the folks of Miami Beach seem to have really taken a liking to us. It’s been less than 24 hours since we settled into this new anchorage, and they’re already putting up another building in our honor. Just plain kooky!
 
-
 <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by marsha and mario</span>
@@ -61,7 +58,3 @@ I swear the folks of Miami Beach seem to have really taken a liking to us. It’
 <span class="commenttimebox">12:37 PM</span>
 </div>
 <div class="commentbody">Do you need another crew member to help wrangle your “dingy?”  If so I am availble.</div>
-
-
-
-

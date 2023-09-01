@@ -64,12 +64,9 @@ Then Emily got on the train and Cookie waved goodbye.
 
 The End.
 
+<div class="commentdivider"></div><span class="commentheader">13 Comments</span>
 
-
-<!-- <div class="commentdivider"></div><span class="commentheader">13 Comments</span>
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=506">ilovedub</a></span>
 <span class="commentdatebox">Wednesday, July 24, 2002</span>
 <span class="commenttimebox">11:02 AM</span>
@@ -137,6 +134,7 @@ The End.
 <div class="commentbody">hi my name is travis, your site was very weird, i peed myself. although i relly injoid elmo. does he vibrate. well im gonna go back to doin my work…since im in shcool and all. i liked your wife….she can call me at     1 870 793 2460
 
 travis</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;stiffler2301&#64;yahoo&#46;com">travis</a></span>
 <span class="commentdatebox">Thursday, October 21, 2004</span>
@@ -144,16 +142,11 @@ travis</div>
 </div>
 <div class="commentbody">my bad cookie monster.
 
-
-
 hail hitler</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by Ian Rice</span>
 <span class="commentdatebox">Monday, October 25, 2004</span>
 <span class="commenttimebox"> 4:52 AM</span>
 </div>
-<div class="commentbody">This is so pointless it make the WTC 9/11 incident look like a Christopher Lowell rerun.</div>
-
-
-
- -->
+<div class="commentbody">This is so pointless it make the WTC 9/11 incident look like a Christopher Lowell rerun.</div> -->

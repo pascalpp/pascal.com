@@ -8,14 +8,10 @@ tags: ['willow']
 Aight, people, gimme a good caption for this photo:
 
 <p class="polaroid" style="--deg: -2deg"><img src="./sunkist-navel.jpg" /></p>
- 
 
 Enter your caption in the comments area below.
 
-
-
 <div class="commentdivider"></div><span class="commentheader">29 Comments</span>
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by Pascal</span>
@@ -191,7 +187,3 @@ Enter your caption in the comments area below.
 <span class="commenttimebox"> 5:25 AM</span>
 </div>
 <div class="commentbody">Sunkist? More like Never Seen The Light of Day. Perhaps also better that way. Ashay.</div>
-
-
-
-

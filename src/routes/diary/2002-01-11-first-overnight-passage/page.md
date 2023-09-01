@@ -69,13 +69,3 @@ Nick silhouetted against the sunset.
 
 <p class="polaroid" style="--deg: -2deg"><img src="./sunset-lifelines.jpg" /></p>
 The sunset through the lifelines. Mmm mmm nummy.
-
-
-
-
-
-
-
-
-
-

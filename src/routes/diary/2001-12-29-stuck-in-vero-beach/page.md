@@ -23,13 +23,3 @@ And we finally saw a manatee! Unfortunately this poor dumb fellow tried to escap
 Nick got a new pair of sunglasses, too. He thinks he looks like a badass. And he’s right, of course.
 
 So we’re just chilling in Vero Beach, working on the boat. Today we rebedded the aft hatch cover, which had a small leak. Tomorrow we’re gonna finish that up and put a new handrail on the deck. And i guess eventually we’ll go to Fort Lauderdale and do some more work on the boat. Then sometime in January or February we’re gonna cross the Gulf Stream and head for the Bahamas. At least that’s the current plan. It changes a lot. Stay tuned.
-
-
-
-
-
-
-
-
-
-

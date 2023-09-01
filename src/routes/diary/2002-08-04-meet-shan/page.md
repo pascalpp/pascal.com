@@ -12,10 +12,7 @@ I made a new friend tonight. I can’t quite figure out if it’s a boy or a gir
 
 <p class="polaroid" style="--deg: -2deg"><img src="./shan-03.jpg" /></p>
 
-
-
 <div class="commentdivider"></div><span class="commentheader">28 Comments</span>
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by cristen</span>
@@ -185,7 +182,3 @@ I made a new friend tonight. I can’t quite figure out if it’s a boy or a gir
 <span class="commenttimebox"> 2:09 AM</span>
 </div>
 <div class="commentbody">very sexy i love it wow pascal where did u find him mmmmmmmmm</div>
-
-
-
-

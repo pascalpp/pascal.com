@@ -19,13 +19,3 @@ Being here has helped my general outlook on the war, because I feel like I at le
 Now I am just hoping that the war ends quickly. Of course if it does, that will only embolden the current administration in their not-so-covert desire to carry democracy and capitalism to other countries by any means necessary. Ah there is just too much to say about this and too much research to do in order to say it properly. Anyway, end the war and bring on the 2004 elections so we can get that cowboy out of office.
 
 Next month I’m goin on tour with my buddies Ed, Todd, and Wendy. Yeehaw. That will be fun.
-
-
-
-
-
-
-
-
-
-

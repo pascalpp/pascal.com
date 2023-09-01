@@ -39,13 +39,3 @@ Our little tender, parked on the beach while we went to lunch.
 <p class="polaroid" style="--deg: -2deg"><img src="./pascalface.jpg" /></p>
 
 Hey there, Lauren. Thanks for giving me your hat. I love you. And you, too.
-
-
-
-
-
-
-
-
-
-

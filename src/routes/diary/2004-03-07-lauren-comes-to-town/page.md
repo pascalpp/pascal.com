@@ -32,10 +32,7 @@ Someone and Mauro and Someone and Manuel.
 <p class="polaroid" style="--deg: -2deg"><img src="./pascalbird-0.jpg" /></p>
 Several pics of me and the bird. Click it.
 
-
 <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by sara</span>
@@ -49,7 +46,3 @@ Several pics of me and the bird. Click it.
 <span class="commenttimebox"> 1:42 PM</span>
 </div>
 <div class="commentbody">Lauren is cute. And pretty. And attractive. And has nice eyes. Grey eyes. Mmmm. And good skin, too.</div>
-
-
-
-

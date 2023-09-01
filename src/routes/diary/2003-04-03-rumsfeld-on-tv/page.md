@@ -8,10 +8,7 @@ I just saw Donald Rumsfeld on the evening news. He said, “Our forces are now c
 
 Does he have no sense of irony?
 
-
 <div class="commentdivider"></div><span class="commentheader">3 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;BCrews&#64;swca&#46;com">Bill Crews</a></span>
@@ -31,7 +28,3 @@ Does he have no sense of irony?
 <span class="commenttimebox"> 7:20 AM</span>
 </div>
 <div class="commentbody">bonjour  je ne le 20.08.1982 en cote ivoire je suis burkinabe je vis au burkina faso depuis le 29 aout 2003.  je veux continue mes etudies mais des moyens financier me manque beaucoup donc cher parents je compte sur vous un demain meilleur dans ce monde …..</div>
-
-
-
-

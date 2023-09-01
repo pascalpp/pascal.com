@@ -14,12 +14,9 @@ I played my first New York show the other night, at the Knitting Factory. That w
 
 Okay, so that’s all you need to know for now.
 
+<div class="commentdivider"></div><span class="commentheader">9 Comments</span>
 
-<!-- <div class="commentdivider"></div><span class="commentheader">9 Comments</span>
-
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by Art</span>
 <span class="commentdatebox">Monday, August 11, 2003</span>
 <span class="commenttimebox"> 3:19 AM</span>
@@ -69,13 +66,10 @@ Okay, so that’s all you need to know for now.
 <div class="commentbody">I have to write PASCAL programs at work with embedded SQL….  I don’t like PASCAL.  I think it is gay.
 
 PASCAL := F_ING_GAY;</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=939">HOMO_PASCAL</a></span>
 <span class="commentdatebox">Thursday, January 13, 2005</span>
 <span class="commenttimebox"> 2:23 PM</span>
 </div>
-<div class="commentbody">It’s very super fun fuckin gay page. no doubt. here is a gay video for you. <a href="http://stout.hampshire.edu/~pmc02/pizazz/pizazz.mp4">http://stout.hampshire.edu/~pmc02/pizazz/pizazz.mp4</a></div>
-
-
-
- -->
+<div class="commentbody">It’s very super fun fuckin gay page. no doubt. here is a gay video for you. <a href="http://stout.hampshire.edu/~pmc02/pizazz/pizazz.mp4">http://stout.hampshire.edu/~pmc02/pizazz/pizazz.mp4</a></div> -->

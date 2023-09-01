@@ -67,13 +67,3 @@ We’ve also been hanging out a lot with our good friends John and Amanda who ha
 <p class="polaroid" style="--deg: -2deg"><img src="./nickval-sweeties.jpg" /></p>
 
 Here’s what Nick and Val look like when they aren’t working on the boat or arguing over something or fretting about money. Awww.
-
-
-
-
-
-
-
-
-
-

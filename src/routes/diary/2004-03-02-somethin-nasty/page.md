@@ -12,12 +12,9 @@ People told me when I started this that nasty things would start happening to my
 
 Ew!
 
+<div class="commentdivider"></div><span class="commentheader">10 Comments</span>
 
-
-<!-- <div class="commentdivider"></div><span class="commentheader">10 Comments</span>
-
-
-<div class="commentdivider">
+<!-- <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;crismarie143&#64;hotmail&#46;com">cristen</a></span>
 <span class="commentdatebox">Wednesday, March  3, 2004</span>
 <span class="commenttimebox"> 2:28 AM</span>
@@ -30,9 +27,8 @@ Ew!
 </div>
 <div class="commentbody">look like my feet after a pointe class.
 
-
-
 sooooo good</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by ana</span>
 <span class="commentdatebox">Wednesday, March  3, 2004</span>
@@ -53,6 +49,7 @@ sooooo good</div>
 <div class="commentbody">late stages of mad foot disease–
 
 I’ll guarantee you that that foot is pissed off about SOMETHIN’.</div>
+
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by Jonas</span>
 <span class="commentdatebox">Saturday, May 21, 2005</span>
@@ -82,8 +79,4 @@ I’ll guarantee you that that foot is pissed off about SOMETHIN’.</div>
 <span class="commentdatebox">Thursday, March 30, 2006</span>
 <span class="commenttimebox"> 9:32 PM</span>
 </div>
-<div class="commentbody">Actually a chickens hairy scrotum probably would smell them!</div>
-
-
-
- -->
+<div class="commentbody">Actually a chickens hairy scrotum probably would smell them!</div> -->

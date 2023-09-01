@@ -8,13 +8,3 @@ original: 000141.php
 Six miles today. Man this is getting boring. For you guys, I mean.
 
 Maybe tomorrow I’ll run naked and then post a copy of my arrest record.
-
-
-
-
-
-
-
-
-
-

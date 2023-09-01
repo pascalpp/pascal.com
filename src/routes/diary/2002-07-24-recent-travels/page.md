@@ -10,10 +10,7 @@ My brother is home in Mobile now, visiting with family and taking it easy. He’
 
 From the Virgin Islands I flew to New York to visit my friends Jerome and Emily (Wester). Sarah on St. John invited me to go scuba diving and told me I would regret it if I didn’t postpone my flight. But I’m something of a stickler for plans and I went anyway, and of course there was some regret. But I had a good time in New York overall. I’ll post some pictures from there as well at some point.
 
-
 <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=503">bryan eick</a></span>
@@ -27,7 +24,3 @@ From the Virgin Islands I flew to New York to visit my friends Jerome and Emily 
 <span class="commenttimebox">12:12 PM</span>
 </div>
 <div class="commentbody">Next time come play in St. Croix</div>
-
-
-
-

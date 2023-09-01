@@ -6,8 +6,6 @@ original: 000097.php
 
 “Everything in its right place.”
 
-
-
 So it’s New Year’s Eve here in Vero Beach, and I’ve got a bad case of the sniffles. Here’s some more pictures.
 
 <p class="polaroid" style="--deg: -2deg"><img src="./reflection.jpg" /></p>
@@ -33,13 +31,3 @@ Here’s the newly-threaded bolt compared with the original. Man, check out them
 So, like I said, I’m a little ill. Nick and Valerie went over to Mandalay for a little New Year’s Eve party. I wanted to go but I’m sick so I guess it’s best that I don’t. Hopefully they will save me a piece of pie.
 
 Happy New Year!
-
-
-
-
-
-
-
-
-
-

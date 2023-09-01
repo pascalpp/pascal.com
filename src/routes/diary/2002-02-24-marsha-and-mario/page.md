@@ -45,13 +45,3 @@ Mario was the personal photographer to David Rockefeller, and he also took many 
 <p class="polaroid" style="--deg: -2deg"><img src="./pascal-marsha.jpg" /></p>
 
 Marsha was delighted to find that I could keep pace with her in red wine consumption, even when she was constantly putting some kind of food in my mouth. She seemed so happy to have someone in the house who could eat so much, and I was happy to oblige.
-
-
-
-
-
-
-
-
-
-

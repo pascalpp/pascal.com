@@ -10,15 +10,11 @@ Merry Christmas!
 
 Santa gave me a shave and a haircut.
 
-
-
 We were about to go on a morning walk when we noticed that some secret santa had tied stockings to one of our lifelines and stuffed them with all kinds of goodies! At first, we didn’t know where they’d come from but then with some basic deductive reasoning we figured out that it was colin and colleen.
 
 I ate my foil-wrapped orange and my box of chocolates and my jelly beans all in one sitting. I also got some miscellaneous bits of boat hardware but that was less edible than the other stuff.
 
 After our little walk, I wrapped a bunch of bacon around a bunch of string beans into cute little bundles like my mommy taught me how to do. We’re also making mashed potatoes and candied sweet potatoes and homemade cranberry sauce. We’re gonna go eat with Colin and Colleen on their boat Mandalay. They’re making a turkey and gravy and trifle for dessert. Nummy.
-
-
 
 Later…
 
@@ -31,13 +27,3 @@ It’s strange, though. About 48 hours ago I didn’t know colin and colleen fro
 <p class="polaroid" style="--deg: -2deg"><img src="./aroundthetable.jpg" /></p>
 
 Oh, but you know, we did knock back a bit of alcomohol. Hot buttered rums, some white wine, and a little after dinner liqueur, Nassau Royale. So maybe it’s no wonder our tongues got a little loose.
-
-
-
-
-
-
-
-
-
-

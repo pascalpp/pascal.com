@@ -28,17 +28,7 @@ Here’s my friend Charlie who came over to have tuna steaks with me. That’s h
 
 Later on my friend Peter showed up and we got some dance on. And some beers on.
 
-
-<!-- </div>
-
-
-<div id="comments">
-
-<a name="comments"></a>
-
 <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="http://www.pascal.com/cgi-bin/mt/mt-comments.cgi?__mode=red&id=597">Raba</a></span>
@@ -64,7 +54,3 @@ Later on my friend Peter showed up and we got some dance on. And some beers on.
 <span class="commenttimebox">12:41 PM</span>
 </div>
 <div class="commentbody">pascal - so is this 1:15 in the morning before the karaoke festivities or is there a computer malfunction since bill & i dropped you and kyle off around 3:00am sat. nite!  hahaha….heck, i think I’M gay -  definitely not straight with the obvious rules of time.</div>
-
-
-
- -->

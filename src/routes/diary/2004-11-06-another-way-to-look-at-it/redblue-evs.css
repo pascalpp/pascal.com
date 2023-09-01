@@ -1,4 +1,6 @@
-div.Bush, div.Kerry, div.stateheader {
+div.Bush,
+div.Kerry,
+div.stateheader {
 	font-family: Sans-Serif;
 	font-size: 11px;
 	line-height: 12px;
@@ -9,7 +11,9 @@ div.Bush, div.Kerry, div.stateheader {
 	margin-bottom: 1px;
 }
 
-.noinfo div.Bush, .noinfo div.Kerry, .noinfo div.stateheader {
+.noinfo div.Bush,
+.noinfo div.Kerry,
+.noinfo div.stateheader {
 	margin-bottom: 0px;
 }
 
@@ -33,14 +37,24 @@ div.fill {
 	padding-right: 5px;
 }
 
-div.winner, div.loser {
+div.winner,
+div.loser {
 }
 
-div.winner { float: left; text-align: right; }
-div.loser { float: right; }
+div.winner {
+	float: left;
+	text-align: right;
+}
+div.loser {
+	float: right;
+}
 
-.noinfo .Kerry .winner { float: right; }
-.noinfo .Kerry .loser { float: left; }
+.noinfo .Kerry .winner {
+	float: right;
+}
+.noinfo .Kerry .loser {
+	float: left;
+}
 
 div.stateinfo {
 	position: absolute;
@@ -62,14 +76,27 @@ div.ev {
 	font-weight: bold;
 }
 
-div.Bush div.winner { background-color: #c00;}
-div.Bush div.loser { background-color: #00f; color: #fff;}
-div.Kerry div.winner { background-color: #00f; color: #fff;}
-div.Kerry div.loser { background-color: #c00;}
-div.Kerry div.statename { color: #fff;}
-div.Bush div.ev { color: #fff;}
+div.Bush div.winner {
+	background-color: #c00;
+}
+div.Bush div.loser {
+	background-color: #00f;
+	color: #fff;
+}
+div.Kerry div.winner {
+	background-color: #00f;
+	color: #fff;
+}
+div.Kerry div.loser {
+	background-color: #c00;
+}
+div.Kerry div.statename {
+	color: #fff;
+}
+div.Bush div.ev {
+	color: #fff;
+}
 
 div.noinfo {
 	line-height: 1px;
 }
-

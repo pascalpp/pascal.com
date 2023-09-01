@@ -40,10 +40,7 @@ Before long we reached Miami, and were glad of it. The people of Miami were kind
 
 We’ll be here for a few days, awaiting a weather window for the Gulf Stream crossing, which hopefully will come sometime in the next week.
 
-
 <div class="commentdivider"></div><span class="commentheader">2 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;boz316&#64;bellsouth&#46;net">george</a></span>
@@ -57,7 +54,3 @@ We’ll be here for a few days, awaiting a weather window for the Gulf Stream cr
 <span class="commenttimebox"> 6:11 AM</span>
 </div>
 <div class="commentbody">i love miami, i never been their,but one day when i have money…. i be there</div>
-
-
-
-

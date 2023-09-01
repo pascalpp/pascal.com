@@ -12,8 +12,6 @@ Today, I was at the helm all alone for a few hours while Nick and Valerie tended
 
 Then of course Nick came up to relieve me at the helm and all that went away.
 
-
-
 Some more pictures, some rambling thoughts:
 
 <p class="polaroid" style="--deg: -2deg"><img src="./sailsup.jpg" /></p>
@@ -58,13 +56,3 @@ Nick and Pascal
 Pascal and Colin
 
 It looks like we’ll be having a little Christmas potluck with Colin and Colleen. Look for another entry sometime shortly after Christmas.
-
-
-
-
-
-
-
-
-
-

@@ -20,10 +20,7 @@ We went inside to pay up. The nice folks at Pep Boys presented us with a bill fo
 
 Right before the wreck happened I met this cool person named Jill at the coffeehouse where I posted the last entry. She was super animated and entertaining and hilarious and I thought she would be a cool person to have as a pen pal. I gave her a copy of my CD and told her to email me if she liked it. Turns out she doesn’t do email, so I gave her my address. Hopefully she’ll actually write me; it’s been so long since I had a real live pen-and-paper pen pal.
 
-
 <div class="commentdivider"></div><span class="commentheader">4 Comments</span>
-
-
 
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="mailto&#58;sabbat22&#64;yahoo&#46;com">Michael</a></span>
@@ -49,7 +46,3 @@ Right before the wreck happened I met this cool person named Jill at the coffeeh
 <span class="commenttimebox"> 7:24 AM</span>
 </div>
 <div class="commentbody">neogravity thinks he’s clever cuz he’s heard of The Burg.</div>
-
-
-
-
