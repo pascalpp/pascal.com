@@ -14,6 +14,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 	const content = post.default;
 
 	const index = posts.findIndex((item) => item.slug === slug);
+	const current = posts[index];
 	const next = posts[index + 1];
 	const prev = posts[index - 1];
 
@@ -21,6 +22,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 		next,
 		prev,
 		post: {
+			...current,
 			slug,
 			title,
 			date,
