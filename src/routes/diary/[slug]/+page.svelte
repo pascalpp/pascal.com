@@ -1,11 +1,13 @@
 <script>
 	import Tag from '../Tag.svelte';
+	import TagList from './TagList.svelte';
 
 	export let data;
 
 	$: ({ post, next, prev } = data);
-	$: ({ title, date, content, metadata } = post);
-	$: ({ tags } = metadata);
+	$: ({ title, date, content, slug, metadata } = post);
+	$: ({ tags, status } = metadata);
+	$: draft = status === 'draft';
 
 	const dateFormatter = new Intl.DateTimeFormat('en', {
 		weekday: 'long',
@@ -44,16 +46,12 @@
 		{/if}
 	</nav>
 
-	<h1>{title}</h1>
+	<h1>
+		{title}{#if draft}&nbsp;(draft){/if}
+	</h1>
 	<div class="subheader">
 		<p class="date">{formatDate(date)}</p>
-		{#if tags?.length}
-			<p class="tags">
-				{#each tags as tag}
-					<Tag {tag} />
-				{/each}
-			</p>
-		{/if}
+		<TagList {tags} {slug} />
 	</div>
 </header>
 
@@ -96,13 +94,6 @@
 			padding-right: 3em;
 			padding-top: 0;
 			width: max-content;
-		}
-
-		.tags {
-			font-size: 14px;
-			:global(> * + *) {
-				margin-left: 0.5em;
-			}
 		}
 	}
 

@@ -1,0 +1,39 @@
+<script lang="ts">
+	import { dev } from '$app/environment';
+	import Tag from '../Tag.svelte';
+	import Button from '$lib/components/Button.svelte';
+
+	export let tags: string[] = [];
+	export let slug: string;
+
+	async function showTagPrompt() {
+		const promptTags = prompt('Edit tags', tags.join(', '));
+		const updatedTags = Array.from(
+			new Set(
+				promptTags
+					?.split(',')
+					.map((tag) => tag.trim())
+					.filter(Boolean)
+			)
+		);
+		await patchTags(updatedTags);
+	}
+
+	async function patchTags(updatedTags: string[]) {
+		const response = await fetch(`/api/posts/${slug}/tags`, {
+			method: 'PATCH',
+			body: JSON.stringify({ tags: updatedTags }),
+			headers: {
+				'content-type': 'application/json; charset=utf-8',
+			},
+		});
+
+		if (!response.ok) {
+			throw new Error('Invalid response');
+		}
+	}
+</script>
+
+{#if dev}
+	<Button label="Edit tags" on:click={showTagPrompt}><Tag tag="edit tags" link={false} /></Button>
+{/if}
