@@ -7,7 +7,7 @@
 	export let slug: string;
 
 	async function showTagPrompt() {
-		const promptTags = prompt('Edit tags', tags.join(', '));
+		const promptTags = prompt('Edit tags', tags?.join(', '));
 		if (typeof promptTags === 'string') {
 			const filteredTags = promptTags
 				.split(',')
@@ -34,5 +34,5 @@
 </script>
 
 {#if dev}
-	<Button label="Edit tags" on:click={showTagPrompt}><Tag tag="edit tags" link={false} /></Button>
+	<Button accesskey="e" label="Edit tags" on:click={showTagPrompt}><Tag tag="edit tags" link={false} /></Button>
 {/if}
