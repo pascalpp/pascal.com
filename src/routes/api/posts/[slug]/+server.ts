@@ -1,6 +1,6 @@
 import { fetchPost } from '../util';
 
-export const GET = async ({ params }) => {
+export async function GET({ params }) {
 	try {
 		const post = await fetchPost(params.slug);
 		return Response.json(post, { headers: { 'content-type': 'application/json; charset=utf-8' } });
@@ -8,4 +8,4 @@ export const GET = async ({ params }) => {
 		const error = e as Error;
 		return Response.json({ error: error.message }, { status: 404 });
 	}
-};
+}
