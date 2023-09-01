@@ -2,6 +2,7 @@
 title: From Miami to Marathon..
 date: 2002-03-19T20:53:00.000Z
 original: 000110.php
+tags: [willow, sailing]
 ---
 
 On Sunday we decided to pull up anchor and head south for the Florida Keys and get some real sailing in. We gassed up and headed south for Biscayne Bay again, where we anchored Sunday night near No Name Harbor, in preparation for an early departure Monday.

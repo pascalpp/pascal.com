@@ -2,6 +2,7 @@
 title: Contemplating new plans and getting my head in the toilet
 date: 2002-01-04T15:54:00.000Z
 original: 000098.php
+tags: [willow, sailing]
 ---
 
 So it’s a new year already, and of course our plans have changed again. It’s a fun ride.

@@ -2,6 +2,7 @@
 title: ...and from Marathon to Key West!
 date: 2002-03-20T20:54:00.000Z
 original: 000111.php
+tags: [willow, sailing]
 ---
 
 The sail from Marathon to Key West was also great, with steady winds on the beam and 6 knots of average speed. I spent much of the day at the helm, enjoying the feeling of gliding through the water, rolling slightly from side to side. I also I enjoyed the sheer megalomaniacal power of it all. But aren’t we all megalomaniacs at heart?

@@ -2,6 +2,7 @@
 title: Happily stuck in Vero Beach, Florida
 date: 2001-12-29T15:39:00.000Z
 original: 000096.php
+tags: [willow, sailing]
 ---
 
 So we’re still in Vero Beach, Florida.

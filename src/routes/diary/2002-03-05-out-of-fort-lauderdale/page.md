@@ -2,6 +2,7 @@
 title: We’re finally getting out of Fort Lauderdale!
 date: 2002-03-05T16:45:00.000Z
 original: 000104.php
+tags: [willow, sailing]
 ---
 
 After almost 2 months here in Fort Lauderdale, we’re finally leaving!

@@ -2,7 +2,7 @@
 title: Lolligaggin about in South Beach, Miami..
 date: 2002-03-17T04:24:00.000Z
 original: 000109.php
-tags: [mp3, willow, sailing]
+tags: [willow, sailing, mp3]
 ---
 
 Well, we’ve been anchored here in Miami for about a week now. Not much has happened, really. Just been hanging out, reading books, swimming around the boat, showering on deck, going to movies, eating out, and eating in.

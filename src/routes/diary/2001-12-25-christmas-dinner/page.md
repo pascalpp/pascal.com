@@ -2,6 +2,7 @@
 title: A new look and a wonderful Christmas dinner with Colin and Colleen
 date: 2001-12-25T16:19:00.000Z
 original: 000095.php
+tags: [willow, sailing]
 ---
 
 Merry Christmas!

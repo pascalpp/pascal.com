@@ -2,6 +2,7 @@
 title: I never thought I would find so much relaxation in the middle of Miami Beach!
 date: 2002-03-11T21:28:00.000Z
 original: 000108.php
+tags: [willow, sailing]
 ---
 
 Well we’ve been in Miami for a couple days now, enjoying the sunshine and relaxing at anchor. The first night we anchored in the southern part of Biscayne Bay, just north of No Name Harbor. The following day we expected a front to be moving through, so we decided to head north a bit to find an achorage with more protection from the weather.

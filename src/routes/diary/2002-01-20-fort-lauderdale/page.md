@@ -2,6 +2,7 @@
 title: In Fort Lauderdale for a week or so, working on the boat and hanging out with other boatees
 date: 2002-01-20T06:49:00.000Z
 original: 000100.php
+tags: [willow, sailing]
 ---
 
 “Suddenly I’m Miss Midwest Midnight Checkout Queen until I wake up and turn back to myself.” —Hedwig

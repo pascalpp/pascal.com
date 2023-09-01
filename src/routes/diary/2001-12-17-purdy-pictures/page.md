@@ -2,6 +2,7 @@
 title: Just a few purdy pictures
 date: 2001-12-17T14:33:00.000Z
 original: 000092.php
+tags: [willow, sailing]
 ---
 
 I think today we’ll just look at some pictures.

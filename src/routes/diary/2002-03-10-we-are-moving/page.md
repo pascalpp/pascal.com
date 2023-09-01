@@ -2,6 +2,7 @@
 title: We are moving! We are moving!
 date: 2002-03-10T02:50:00.000Z
 original: 000107.php
+tags: [willow, sailing]
 ---
 
 At long last we are no longer in Fort Lauderdale!

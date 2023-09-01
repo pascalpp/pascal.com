@@ -2,6 +2,7 @@
 title: Marsha and Mario, our beloved adopted parents
 date: 2002-02-24T17:44:00.000Z
 original: 000102.php
+tags: [willow, sailing]
 ---
 
 This entry is dedicated to Marsha and Mario, our beloved adopted parents.

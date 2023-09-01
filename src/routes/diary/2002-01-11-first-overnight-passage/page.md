@@ -2,6 +2,7 @@
 title: We finally worked up the momentum to leave the Vero Beach Tarpits and headed south, experiencing our first overnight passage at sea
 date: 2002-01-11T17:54:00.000Z
 original: 000099.php
+tags: [willow, sailing]
 ---
 
 “Friggin in the riggin, cuz there’s fuck all else to do.”

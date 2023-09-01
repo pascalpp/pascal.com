@@ -2,6 +2,7 @@
 title: The last day of the year and I’ve got the sniffles
 date: 2001-12-31T16:24:00.000Z
 original: 000097.php
+tags: [willow, sailing]
 ---
 
 “Everything in its right place.”

@@ -2,6 +2,7 @@
 title: After a well-deserved break, it’s back to the yard
 date: 2002-02-24T17:45:00.000Z
 original: 000103.php
+tags: [willow, sailing]
 ---
 
 Eventually, we’d have to leave Marsha and Mario’s and return to the boat yard.

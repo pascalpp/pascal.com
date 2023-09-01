@@ -2,6 +2,7 @@
 title: We went for a long walk and I took pictures of signs along the way
 date: 2001-12-18T13:12:00.000Z
 original: 000093.php
+tags: [willow, sailing]
 ---
 
 Today we took a walk through St. Augustine to Florida Route 1.

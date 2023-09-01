@@ -2,6 +2,7 @@
 title: A bit of a scare as we bring up a rogue anchor
 date: 2001-12-16T15:23:00.000Z
 original: 000091.php
+tags: [willow, sailing]
 ---
 
 Well, today we had a pretty harrowing experience.

@@ -2,6 +2,7 @@
 title: Whoa! Not so fast..
 date: 2002-03-06T11:37:00.000Z
 original: 000105.php
+tags: [willow, sailing]
 ---
 
 Instead of rushing off today, we decided to stay another day here at Summerfield, getting the boat ready for an early departure tomorrow. Now it looks like it’ll be more than a day, though.

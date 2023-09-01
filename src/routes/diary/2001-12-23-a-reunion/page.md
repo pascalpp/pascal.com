@@ -2,6 +2,7 @@
 title: Some self-important ramblings and a reunion with some new-old friends
 date: 2001-12-23T12:35:00.000Z
 original: 000094.php
+tags: [willow, sailing]
 ---
 
 <p class="polaroid" style="--deg: -2deg"><img src="./salty.jpg" /></p>
