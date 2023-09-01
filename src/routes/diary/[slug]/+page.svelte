@@ -2,11 +2,7 @@
 	export let data;
 
 	$: ({ post, next, prev } = data);
-	$: ({ title, date, content } = post);
-
-	if (data.post.date.includes('·')) {
-		console.log(new Date(data.post.date.replace(' ·', ',').replace(/am$/, ' AM').replace(/pm$/, ' PM')).toISOString());
-	}
+	$: ({ title, date, content, metadata } = post);
 
 	const dateFormatter = new Intl.DateTimeFormat('en', {
 		weekday: 'long',
@@ -22,15 +18,8 @@
 	});
 
 	function formatDate(d) {
-		if (date.includes('·')) {
-			console.log(
-				new Date(data.post.date.replace(' ·', ',').replace(/am$/, ' AM').replace(/pm$/, ' PM')).toISOString()
-			);
-			return date;
-		} else {
-			const date = new Date(d);
-			return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
-		}
+		const date = new Date(d);
+		return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
 	}
 </script>
 
