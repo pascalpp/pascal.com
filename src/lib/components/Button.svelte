@@ -23,6 +23,7 @@
 	export let target = external ? '_blank' : undefined;
 	export let rel = external ? 'noopener noreferrer' : undefined;
 	export let value: string | undefined = undefined;
+	export let accesskey: string | undefined = undefined;
 
 	const roundrect = primary || secondary;
 
@@ -44,6 +45,7 @@
 	{rel}
 	{target}
 	{value}
+	{accesskey}
 	aria-label={label}
 	class="button"
 	class:roundrect
