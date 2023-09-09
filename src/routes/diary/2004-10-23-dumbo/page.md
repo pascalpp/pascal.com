@@ -7,4 +7,4 @@ tags: [gwb]
 
 Lookit! The Republican Party’s new mascot:
 
-<p class="polaroid" style="--deg: -2deg"><img src="./bush-dumbo.jpg" /></p>
+<p class="polaroid"><img src="./bush-dumbo.jpg" /></p>

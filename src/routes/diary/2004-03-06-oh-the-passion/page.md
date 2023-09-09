@@ -9,7 +9,7 @@ Tonight I went to see the Passion of the Christ by myself.
 
 (Opinion follows. Quit reading now.)
 
-<p class="polaroid" style="--deg: -2deg"><img src="./passionposter.jpg" /></p>
+<p class="polaroid"><img src="./passionposter.jpg" /></p>
 
 Meh.
 

@@ -5,4 +5,4 @@ original: 000228.php
 tags: [politics]
 ---
 
-<p class="polaroid" style="--deg: -2deg"><img src="./vote-shirt-large.jpg" /></p>
+<p class="polaroid"><img src="./vote-shirt-large.jpg" /></p>

@@ -33,40 +33,40 @@ We’ll be tied up here for a couple weeks, doing some work on the aft deck, reb
 
 Here’s some more pictures from the last week or so:
 
-<p class="polaroid" style="--deg: -2deg"><img src="./nick-dingy-clouds.jpg" /></p>
+<p class="polaroid"><img src="./nick-dingy-clouds.jpg" /></p>
 Nick hops out of the dingy in front of an ominous sky.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./prettysky-01.jpg" /></p>
+<p class="polaroid"><img src="./prettysky-01.jpg" /></p>
 
-<p class="polaroid" style="--deg: -2deg"><img src="./prettysky-02.jpg" /></p>
+<p class="polaroid"><img src="./prettysky-02.jpg" /></p>
 A couple of pretty sky pictures.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./val-intherigging.jpg" /></p>
+<p class="polaroid"><img src="./val-intherigging.jpg" /></p>
 Valerie went up the mast to sew a leather chafe patch on to one of the spreaders.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./viewfromuphere.jpg" /></p>
+<p class="polaroid"><img src="./viewfromuphere.jpg" /></p>
 We hauled the camera up to her so she could get a few shots from up above. Scary.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./thejig.jpg" /></p>
+<p class="polaroid"><img src="./thejig.jpg" /></p>
 Here’s the jig I set up to route some insets into this board I was using to make a frame against which the jerry cans of spare diesel could be lashed. I also treated myself to a coke that day.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./diesel-board.jpg" /></p>
+<p class="polaroid"><img src="./diesel-board.jpg" /></p>
 Here’s the finished product, mounted on the stanchions on the starboard aft deck.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./dingy-ripples.jpg" /></p>
+<p class="polaroid"><img src="./dingy-ripples.jpg" /></p>
 On our last night in Vero Beach, we took a dingy ride to shore at sunset and the water looked like oil. And the sky was pretty cool too.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./certificateofachievement.jpg" /></p>
+<p class="polaroid"><img src="./certificateofachievement.jpg" /></p>
 Then we went out to a fancy restaurant where Willow received a Certificate of Achievement from the Tristan Jones Foundation.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./val-tallship.jpg" /></p>
+<p class="polaroid"><img src="./val-tallship.jpg" /></p>
 Valerie plays on the bow as we follow a tallship out to sea.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./nick-tallship.jpg" /></p>
+<p class="polaroid"><img src="./nick-tallship.jpg" /></p>
 Nick looks over the charts with the tallship in the background.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./nick-sunset.jpg" /></p>
+<p class="polaroid"><img src="./nick-sunset.jpg" /></p>
 Nick silhouetted against the sunset.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./sunset-lifelines.jpg" /></p>
+<p class="polaroid"><img src="./sunset-lifelines.jpg" /></p>
 The sunset through the lifelines. Mmm mmm nummy.

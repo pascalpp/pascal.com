@@ -7,7 +7,7 @@ tags: [willow, sailing]
 
 Merry Christmas!
 
-<p class="polaroid" style="--deg: -2deg"><img src="./xmaspascal.jpg" /></p>
+<p class="polaroid"><img src="./xmaspascal.jpg" /></p>
 
 Santa gave me a shave and a haircut.
 
@@ -19,12 +19,12 @@ After our little walk, I wrapped a bunch of bacon around a bunch of string beans
 
 Later…
 
-<p class="polaroid" style="--deg: -2deg"><img src="./heapingplate.jpg" /></p>
+<p class="polaroid"><img src="./heapingplate.jpg" /></p>
 
 Oh man. Dinner’s done and i’m stuffed. Everything was so wonderful, the food, the conversation, the anchoring stories. I didn’t miss my family at all. Well, maybe a little.
 
 It’s strange, though. About 48 hours ago I didn’t know colin and colleen from adam and eve, but now I feel so close to them. I’m not sure what it is, it just seems that when a small group of strangers who are miles from anyone they know are thrust together, you rapidly overcome the barriers to intimacy that most people (myself included) put up when dealing with new aquaintances. By the end of the evening we were freely conversing about KY Jelly and enemas and other such holiday fare.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./aroundthetable.jpg" /></p>
+<p class="polaroid"><img src="./aroundthetable.jpg" /></p>
 
 Oh, but you know, we did knock back a bit of alcomohol. Hot buttered rums, some white wine, and a little after dinner liqueur, Nassau Royale. So maybe it’s no wonder our tongues got a little loose.

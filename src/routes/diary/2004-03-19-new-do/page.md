@@ -7,7 +7,7 @@ tags: [nyc, running]
 
 Today I got a new haircut courtesy of my friend Amy at <a href="http://www.laicale.com">Laicale</a>.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./newdo.jpg" /></p>
+<p class="polaroid"><img src="./newdo.jpg" /></p>
 
 I also got my mouth replaced with a newer, dorkier one.
 

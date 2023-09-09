@@ -7,6 +7,6 @@ tags: [willow, sailing, caption contest]
 
 Aight, people, gimme a good caption for this photo:
 
-<p class="polaroid" style="--deg: -2deg"><img src="./sunkist-navel.jpg" /></p>
+<p class="polaroid"><img src="./sunkist-navel.jpg" /></p>
 
 Enter your caption in the comments area below.

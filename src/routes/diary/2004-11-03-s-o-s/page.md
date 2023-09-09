@@ -5,4 +5,4 @@ original: 000230.php
 tags: [politics]
 ---
 
-<p class="polaroid" style="--deg: -2deg"><img src="./distress.gif" /></p>
+<p class="polaroid"><img src="./distress.gif" /></p>

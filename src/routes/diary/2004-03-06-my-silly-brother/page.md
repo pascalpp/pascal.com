@@ -6,4 +6,4 @@ original: 000134.php
 
 Here’s some funny old pics of my brother Ryan I been meaning to post. Click it.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./ryan-0.jpg" /></p>
+<p class="polaroid"><img src="./ryan-0.jpg" /></p>
