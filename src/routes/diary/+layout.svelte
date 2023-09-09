@@ -76,6 +76,10 @@
 		}
 	}
 
+	main .structure {
+		width: 95vw;
+	}
+
 	nav {
 		--deg: -2deg;
 		.rotated-shadow;
