@@ -38,9 +38,9 @@ const config = {
 		adapter: adapter({
 			pages: 'dist',
 			assets: 'dist',
-			fallback: 'index.html',
+			fallback: false,
 			precompress: false,
-			strict: true,
+			strict: false,
 		}),
 	},
 };
