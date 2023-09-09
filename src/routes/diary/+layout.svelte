@@ -1,5 +1,5 @@
 <script>
-	import './layout.less';
+	import './diary.less';
 
 	export let data;
 	$: ({ pathname } = data);
