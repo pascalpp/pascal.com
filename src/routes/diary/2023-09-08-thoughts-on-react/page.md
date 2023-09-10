@@ -288,8 +288,8 @@ Here's the above example rewritten in Svelte:
 							</div>
 						{/if}
 						<div class="actions">
-							<button onClick={() => editContact(contact.id)}>Edit</button>
-							<button onClick={() => deleteContact(contact.id)}>Delete</button>
+							<button on:click={() => editContact(contact.id)}>Edit</button>
+							<button on:click={() => deleteContact(contact.id)}>Delete</button>
 						</div>
 					</li>
 				{/each}
