@@ -2,9 +2,11 @@
 	import { dev } from '$app/environment';
 	import Tag from '../Tag.svelte';
 	import TagEditor from './TagEditor.svelte';
+	import Status from './Status.svelte';
 
 	export let tags: string[] = [];
 	export let slug: string;
+	export let status: 'draft' | 'published' = 'published';
 </script>
 
 {#if tags?.length || dev}
@@ -16,6 +18,7 @@
 		{/if}
 		{#if dev}
 			<TagEditor {tags} {slug} />
+			<Status {status} {slug} />
 		{/if}
 	</p>
 {/if}
