@@ -2,6 +2,7 @@
 title: How Apple should treat the new Safari 4 reload button
 date: 2009-06-09T16:42:28.000Z
 wordpress_id: 216
+status: draft
 ---
 
 Here's how the reload button looks in the new (final) Safari 4\. It no longer appears as a proper button, and is instead just a reload icon embedded inside the address field. The look of this icon and its placement is borrowed directly from Mobile Safari on the iPhone.

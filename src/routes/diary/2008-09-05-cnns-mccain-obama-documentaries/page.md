@@ -2,6 +2,7 @@
 title: CNN's McCain & Obama Documentaries
 date: 2008-09-05T21:21:04.000Z
 wordpress_id: 202
+status: draft
 ---
 
 ![](http://posterous.com/getfile/files.posterous.com/pascalpp/zSrTgx6u59cPEAj21FNRVW9hBuaFj0uWE7zy3aGx8bUfnscA66r9lQM0i0F1/mccain-obama-cnndocumentaries.jpg)

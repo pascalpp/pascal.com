@@ -2,6 +2,7 @@
 title: Why a shrinking middle class is bad for the airline industry
 date: 2008-04-23T15:47:56.000Z
 wordpress_id: 196
+status: draft
 ---
 
 It's kind of obvious, isn't it?

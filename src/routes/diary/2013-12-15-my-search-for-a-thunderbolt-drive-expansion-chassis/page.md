@@ -2,6 +2,7 @@
 title: My search for a Thunderbolt drive expansion chassis
 date: 2013-12-15T14:45:32.000Z
 wordpress_id: 286
+status: draft
 ---
 
 I've finally retired my aging Mac Pro tower. I bought the 8-core model in April 2007, and managed to keep it feeling quite snappy with a few upgrades along the way: 17gb of RAM, a 500mb SSD drive, and a new video card. I also retired my 30-inch cinema display from 2004.

@@ -2,6 +2,7 @@
 title: Is the iPad a PC? Does it matter?
 date: 2012-02-07T07:18:21.000Z
 wordpress_id: 282
+status: draft
 ---
 
 A lot of people, particularly those concerned with sales figures and market share, are discussing whether the iPad is a PC. In my view, it obviously is, in which case Apple is now the leading PC vendor after decades of below-5% market share. Bully for them.

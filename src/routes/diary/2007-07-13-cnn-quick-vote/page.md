@@ -2,6 +2,7 @@
 title: CNN Quick Vote
 date: 2007-07-13T11:17:02.000Z
 wordpress_id: 167
+status: draft
 ---
 
 So for some reason I'm a pretty regular reader of CNN.com. It's one of the few sites I actually visit in a browser directly -- everything else I read is via RSS in NetNewsWire. (If you haven't tried RSS, you should.)
