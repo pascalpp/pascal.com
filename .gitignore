@@ -11,3 +11,5 @@ vite.config.ts.timestamp-*
 /diary-archive
 /srcx
 *.log
+test*.sh
+*.sitemap
