@@ -1,5 +1,5 @@
 <script>
-	import './layout.less';
+	import './diary.less';
 
 	export let data;
 	$: ({ pathname } = data);
@@ -74,6 +74,10 @@
 		@media @not-mobile {
 			padding-left: 250px;
 		}
+	}
+
+	main .structure {
+		width: 95vw;
 	}
 
 	nav {

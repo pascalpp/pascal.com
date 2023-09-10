@@ -99,53 +99,8 @@
 
 	article {
 		flex-grow: 1;
-		font-weight: 200;
-		font-size: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
 		@media @not-mobile {
 			min-height: 70vh;
-		}
-
-		:global(> *) {
-			margin: 0;
-		}
-
-		:global(h1),
-		:global(h2),
-		:global(h3),
-		:global(h4),
-		:global(h5),
-		:global(h6) {
-			font-weight: 500;
-		}
-		:global(h1) {
-			font-size: 36px;
-		}
-		:global(h2) {
-			font-size: 28px;
-		}
-		:global(h3) {
-			font-size: 20px;
-		}
-
-		:global(.polaroid) {
-			width: max-content;
-			.rotated-shadow;
-			translate: -0.25em -0.25em;
-		}
-
-		:global(.polaroid img) {
-			padding: 0.75em;
-			background-color: white;
-			z-index: 1;
-			border-radius: 2px;
-			border: 1px solid rgb(0 0 0 / 0.1);
-			@media @mobile {
-				padding: 0.5em;
-				max-width: 90vw;
-			}
 		}
 	}
 

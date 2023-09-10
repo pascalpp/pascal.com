@@ -5,7 +5,7 @@ original: 000239.php
 tags: [nyc, santacon]
 ---
 
-<p class="polaroid" style="--deg: -2deg"><img src="./santas.jpg" /></p>
+<p class="polaroid"><img src="./santas.jpg" /></p>
 
 Yesterday I dressed up as Santa and roamed all over the streets of Manhattan with <a href="http://www.santacon.com/">hundreds of other Santas</a>. I think my favorite part was riding the subway.
 

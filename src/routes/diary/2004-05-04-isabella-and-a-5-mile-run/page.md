@@ -9,7 +9,7 @@ Today I did a loop over the Manhattan and Brooklyn bridges and back to the gym. 
 
 For the map-happy:
 
-<p class="polaroid" style="--deg: -2deg"><img src="./manhattan-brooklyn-bridgeloop.gif" /></p>
+<p class="polaroid"><img src="./manhattan-brooklyn-bridgeloop.gif" /></p>
 
 Before that I went to the Fall Cafe for a little while and ate an almond croissant. While I was there I met this really cool girl named Isabella. She wasn’t shy at all, just came up and introduced herself. She told me about her plans for the day, she said she was going to pick up the laundry and fold it and then she was gonna ride her scooter to the park. She also told me she’s having a birthday party in Central Park in June. Sounds awesome. Then she’ll be 4 years old and next year she goes to school. I remember when school was exciting.
 

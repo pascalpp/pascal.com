@@ -9,26 +9,26 @@ My sister Lauren got to town last nite. I guess now she calls herself Bama. She 
 
 We went to a party at the <a href="http://www.zagodesign.com">Zago</a> office, my friends’ design firm. Here’s some pics.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./lauren-liz.jpg" /></p>
+<p class="polaroid"><img src="./lauren-liz.jpg" /></p>
 Lauren and Liz.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./lauren-pascal.jpg" /></p>
+<p class="polaroid"><img src="./lauren-pascal.jpg" /></p>
 Me and Lauren.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./levi-lauren.jpg" /></p>
+<p class="polaroid"><img src="./levi-lauren.jpg" /></p>
 Levi and Lauren.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./levi-three.jpg" /></p>
+<p class="polaroid"><img src="./levi-three.jpg" /></p>
 Levi has three fingers. At least.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./lucio-kevin.jpg" /></p>
+<p class="polaroid"><img src="./lucio-kevin.jpg" /></p>
 Lucio and Kevin.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./lauren-eileen.jpg" /></p>
+<p class="polaroid"><img src="./lauren-eileen.jpg" /></p>
 Lauren and Eileen, Kevin’s girlfriend.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./mauro-manuel.jpg" /></p>
+<p class="polaroid"><img src="./mauro-manuel.jpg" /></p>
 Someone and Mauro and Someone and Manuel.
 
-<p class="polaroid" style="--deg: -2deg"><img src="./pascalbird-0.jpg" /></p>
+<p class="polaroid"><img src="./pascalbird-0.jpg" /></p>
 Several pics of me and the bird. Click it.
