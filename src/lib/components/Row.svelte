@@ -7,6 +7,7 @@
 	export let bottom = false;
 	export let wrap = false;
 	export let reverse = false;
+	export let fill = false;
 	export let gap = '1em';
 </script>
 
@@ -20,6 +21,7 @@
 	class:bottom
 	class:wrap
 	class:reverse
+	class:fill
 	style="gap: {gap}">
 	<slot />
 </section>
@@ -56,6 +58,10 @@
 		}
 		&.reverse {
 			flex-direction: row-reverse;
+		}
+		&.fill {
+			width: 100%;
+			height: 100%;
 		}
 	}
 </style>
