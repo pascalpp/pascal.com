@@ -1,4 +1,4 @@
-type PageId = string;
+export type PageId = string;
 
 export interface PageInfo {
 	title?: string;

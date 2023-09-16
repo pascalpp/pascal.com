@@ -1,30 +1,35 @@
 <script lang="ts">
-	import type { Page } from './Page.model';
+	import type { Page, PageId } from './Page.model';
 	import './PageCard.less';
 	import { updatePage, addConnection, pageStore } from './store';
 
-	let pages = $pageStore;
-	export let id = $pageStore[0].id;
+	export let pageId: PageId;
+	let page: Page;
 
-	$: page = pages.find((p) => p.id === id) as Page;
-	$: active = page?.active;
-	$: connections = page?.connections;
+	pageStore.subscribe((pages) => {
+		page = pages.find((p) => p.id === pageId) as Page;
+	});
 
-	$: console.log('PageCard pages:', pages.length);
-	$: console.log('PageCard connections:', connections.length);
-
-	function setPageToActive() {
+	function onClickPage(event: MouseEvent) {
 		updatePage({ ...page, active: true });
 		deactivateChildPages(page);
 	}
 
+	function getAllConnectedPages(pages: Page[], p: Page): Page[] {
+		const connections = p.connections.map((id) => pages.find((p) => p.id === id) as Page);
+		return connections.reduce((acc, item) => [...acc, ...getAllConnectedPages(pages, item)], connections);
+	}
+
 	function deactivateChildPages(p: Page) {
-		pages
-			.filter((item) => item.id && p.connections.includes(item.id))
-			.forEach((c) => {
-				updatePage({ ...c, active: false });
-				deactivateChildPages(c);
+		pageStore.update((pages) => {
+			const connectedPageIds = getAllConnectedPages(pages, p).map((item) => item.id);
+			pages.forEach((page) => {
+				if (connectedPageIds.includes(page.id)) {
+					page.active = false;
+				}
 			});
+			return pages;
+		});
 	}
 
 	function updateTitle(event: KeyboardEvent) {
@@ -48,17 +53,17 @@
 	}
 </script>
 
-{#key page.id}
+{#key page?.id}
 	{#if page}
-		<div class="page" class:active>
-			<div class="page-card" on:click={setPageToActive}>
-				<h1 contenteditable={active} on:keydown={updateTitle}>{page.title}</h1>
+		<div class="page" class:active={page.active}>
+			<div class="page-card" on:click={onClickPage}>
+				<h1 class="title" contenteditable={page.active} on:keydown={updateTitle}>{page.title}</h1>
 			</div>
 			<div class="connections">
-				{#each connections as connectionId}
-					<svelte:self id={connectionId} />
+				{#each page.connections as connectionId}
+					<svelte:self pageId={connectionId} />
 				{/each}
-				<div contenteditable="true" class="add-connection" on:keydown={onAddPage} />
+				<div autofocus={true} contenteditable="true" class="add-connection" on:keydown={onAddPage} />
 			</div>
 		</div>
 	{/if}

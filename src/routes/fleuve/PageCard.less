@@ -2,7 +2,6 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 2em;
 
 	.page-card {
 		flex: 1;
@@ -11,14 +10,57 @@
 		box-sizing: border-box;
 		border: 1px solid fade(black, 30%);
 		border-radius: 4px;
-		width: 150px;
+		width: fit-content;
 		height: fit-content;
 		min-height: 40px;
-		transition: all 0.2s ease-in-out;
+		transition: all 0.1s ease-in-out;
+		position: relative;
+	}
+
+	&:not(.active) {
+		.page-card {
+			margin-right: 24px;
+			&::after {
+				position: absolute;
+				display: block;
+				content: '';
+				height: 1px;
+				width: 24px;
+				background-color: black;
+				top: 50%;
+				left: 100%;
+			}
+		}
+		.connections {
+			border-left: 1px solid black;
+		}
+	}
+
+	.page-card {
+		margin-left: 24px;
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			height: 1px;
+			width: 24px;
+			background-color: black;
+			top: 50%;
+			right: 100%;
+		}
 	}
 
 	.connections {
-		display: none;
+		opacity: 0.7;
+		pointer-events: none;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1em;
+
+		&:has(.page.active) {
+			border-left: none;
+		}
 	}
 
 	.add-connection {
@@ -30,6 +72,7 @@
 		border: 1px solid fade(black, 30%);
 		border-radius: 4px;
 		margin: 0;
+		margin-left: 24px;
 		width: auto;
 		appearance: none;
 		font-weight: bold;
@@ -48,13 +91,22 @@
 		}
 
 		> .connections {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 1em;
+			opacity: 1;
+			pointer-events: all;
 		}
 		> .connections > .add-connection {
 			display: inline-block;
+		}
+	}
+
+	&:not(.active) {
+		> .page-card {
+			cursor: pointer;
+		}
+		.title {
+			white-space: nowrap !important;
+			overflow: hidden !important;
+			text-overflow: ellipsis !important;
 		}
 	}
 
