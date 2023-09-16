@@ -2,6 +2,7 @@
 	import type { Page, PageId } from './Page.model';
 	import './PageCard.less';
 	import PageConnections from './PageConnections.svelte';
+	import PageTitle from './PageTitle.svelte';
 	import { updatePage, addConnection, pageStore } from './store';
 
 	export let pageId: PageId;
@@ -148,14 +149,7 @@
 	{#if page}
 		<div class="page" class:active={page.active} bind:this={node}>
 			<button class="page-card" on:click={onClickPage} {tabindex} on:keydown={onKeyDownPage}>
-				<h1
-					class="title"
-					contenteditable={page.active}
-					tabindex={page.active ? tabindex : -1}
-					on:blur={updateTitle}
-					on:keydown={onKeyDownTitle}>
-					{page.title || 'Untitled'}
-				</h1>
+				<PageTitle {page} {tabindex} />
 				<p
 					class="description"
 					contenteditable={page.active}
