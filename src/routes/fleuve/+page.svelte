@@ -20,6 +20,7 @@
 	}
 
 	.pages {
+		flex: 1;
 		padding: 2vw;
 		display: flex;
 		overflow-x: scroll;
