@@ -32,7 +32,7 @@
 		top: 0;
 		left: 0;
 		flex: 1;
-		padding: 2vw;
+		padding: 10vw;
 		display: flex;
 		box-sizing: border-box;
 		flex-shrink: 0;
