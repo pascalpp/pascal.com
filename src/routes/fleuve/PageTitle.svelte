@@ -3,15 +3,17 @@
 	import { updatePage } from './store';
 
 	export let page: Page;
-	export let tabindex = 1;
+	export let tabindex: number;
 
 	function onBlurTitle(event: FocusEvent) {
 		const target = event.target as HTMLDivElement;
-		updatePage({ ...page, title: target.innerText });
+		const title = target.innerText;
+		updatePage({ ...page, title });
 	}
 
 	function onKeyDownTitle(event: KeyboardEvent) {
 		const target = event.target as HTMLDivElement;
+
 		if (event.key !== 'Tab') {
 			event.stopPropagation();
 		}
