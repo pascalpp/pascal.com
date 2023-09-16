@@ -4,7 +4,7 @@
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import { addConnection, pageStore } from './store';
+	import { pageStore } from './store';
 
 	export let pageId: PageId;
 	export let parentPageId: PageId | null;
@@ -49,25 +49,11 @@
 		return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
 	}
 
-	function onAddPage(event: KeyboardEvent) {
-		if (event.key === 'ArrowLeft') {
-			event.preventDefault();
-			const parentCard = node?.querySelector('.page-card') as HTMLElement;
-			parentCard?.focus();
-			parentCard?.click();
-		}
-
-		const target = event.target as HTMLElement;
-		const title = target.innerText;
-		if (event.key === 'Enter' && title) {
-			event.preventDefault();
-			addConnection(page, { title });
-			target.innerText = '';
-		}
-	}
-
 	function onKeyDownPage(event: KeyboardEvent) {
-		console.log(event.key, node);
+		const previousNode = node.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
+		const nextNode = node.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
+		const addConnection = node.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
+
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
 			if (node.classList.contains('active')) {
@@ -84,16 +70,11 @@
 
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			const previousNode = node.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
 			previousNode?.focus();
 		}
 
 		if (event.key === 'ArrowDown') {
 			event.preventDefault();
-			const nextNode = node.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
-			const addConnection = node.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
-			console.log(nextNode || addConnection);
-			(<any>window).node = node;
 			(nextNode || addConnection)?.focus();
 		}
 
@@ -119,6 +100,7 @@
 					});
 					return pages;
 				});
+				(nextNode || previousNode || addConnection)?.focus();
 			}
 		}
 	}
@@ -131,7 +113,7 @@
 				<PageTitle {page} {tabindex} />
 				<PageDescription {page} {tabindex} />
 			</button>
-			<PageConnections {page} {onAddPage} tabindex={tabindex + 1} />
+			<PageConnections {page} tabindex={tabindex + 1} />
 		</div>
 	{/if}
 {/key}
