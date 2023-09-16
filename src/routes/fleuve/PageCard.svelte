@@ -131,7 +131,7 @@
 				<PageTitle {page} {tabindex} />
 				<PageDescription {page} {tabindex} />
 			</button>
-			<PageConnections connections={page.connections} {onAddPage} tabindex={tabindex + 1} {pageId} />
+			<PageConnections {page} {onAddPage} tabindex={tabindex + 1} />
 		</div>
 	{/if}
 {/key}
