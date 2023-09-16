@@ -47,7 +47,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/uuid": "^9.0.4",
 		"focus-trap": "^7.5.2",
-		"svelte-icons": "^2.1.0"
+		"svelte-icons": "^2.1.0",
+		"uuid": "^9.0.1"
 	}
 }

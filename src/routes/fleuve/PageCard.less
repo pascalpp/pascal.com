@@ -4,7 +4,7 @@
 	align-items: center;
 	gap: 2em;
 
-	.page-content {
+	.page-card {
 		flex: 1;
 		background-color: white;
 		padding: 1em;
@@ -25,6 +25,7 @@
 		display: none;
 		background-color: white;
 		padding: 1em;
+		padding-right: 1.25em;
 		box-sizing: border-box;
 		border: 1px solid fade(black, 30%);
 		border-radius: 4px;
@@ -40,7 +41,7 @@
 	}
 
 	&.active {
-		> .page-content {
+		> .page-card {
 			min-height: 80vh;
 			width: calc(80vh * 0.75);
 			box-shadow: 0 4px 4px fade(black, 10%);
