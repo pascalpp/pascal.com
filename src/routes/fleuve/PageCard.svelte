@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { Page, PageId } from './Page.model';
 	import './PageCard.less';
+	import type { Page, PageId } from './Page.model';
 	import PageConnections from './PageConnections.svelte';
+	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import { updatePage, addConnection, pageStore } from './store';
+	import { addConnection, pageStore } from './store';
 
 	export let pageId: PageId;
 	export let parentPageId: PageId | null;
@@ -46,28 +47,6 @@
 		const parentPage = pages.find((item) => item.id === id);
 		const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
 		return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
-	}
-
-	function updateTitle(event: FocusEvent) {
-		const target = event.target as HTMLElement;
-		const title = target.innerText;
-		updatePage({ ...page, title });
-	}
-	function onKeyDownTitle(event: KeyboardEvent) {
-		if (event.key !== 'Tab') {
-			event.stopPropagation();
-		}
-	}
-
-	function updateDescription(event: FocusEvent) {
-		const target = event.target as HTMLElement;
-		const description = target.innerText;
-		updatePage({ ...page, description });
-	}
-	function onKeyDownDescription(event: KeyboardEvent) {
-		if (event.key !== 'Tab') {
-			event.stopPropagation();
-		}
 	}
 
 	function onAddPage(event: KeyboardEvent) {
@@ -150,14 +129,7 @@
 		<div class="page" class:active={page.active} bind:this={node}>
 			<button class="page-card" on:click={onClickPage} {tabindex} on:keydown={onKeyDownPage}>
 				<PageTitle {page} {tabindex} />
-				<p
-					class="description"
-					contenteditable={page.active}
-					tabindex={page.active ? tabindex : -1}
-					on:blur={updateDescription}
-					on:keydown={onKeyDownDescription}>
-					{page.description || ''}
-				</p>
+				<PageDescription {page} {tabindex} />
 			</button>
 			<PageConnections connections={page.connections} {onAddPage} tabindex={tabindex + 1} {pageId} />
 		</div>
