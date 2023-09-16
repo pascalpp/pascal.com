@@ -59,12 +59,7 @@
 			<div class="page-card" on:click={onClickPage}>
 				<h1 class="title" contenteditable={page.active} on:keydown={updateTitle}>{page.title}</h1>
 			</div>
-			<div class="connections">
-				{#each page.connections as connectionId}
-					<svelte:self pageId={connectionId} />
-				{/each}
-				<div autofocus={true} contenteditable="true" class="add-connection" on:keydown={onAddPage} />
-			</div>
+			<PageConnections connections={page.connections} {onAddPage} />
 		</div>
 	{/if}
 {/key}
