@@ -1,17 +1,31 @@
 <script lang="ts">
 	import PageCard from './PageCard.svelte';
 	import { browser } from '$app/environment';
-	import { pageStore } from './store.js';
+	import { pageStore, reset } from './store.js';
 
 	if (browser) (<any>window).pageStore = pageStore;
+
+	let firstPageId: string;
+
+	function onClickReset() {
+		if (confirm('Are you sure you want to start over?')) {
+			reset();
+			window.location.reload();
+		}
+	}
+
+	pageStore.subscribe((pages) => {
+		firstPageId = pages[0].id;
+	});
 </script>
 
 <main>
 	<div class="pages">
-		{#if browser}
-			<PageCard pageId={$pageStore[0].id} />
+		{#if browser && firstPageId}
+			<PageCard pageId={firstPageId} parentPageId={null} />
 		{/if}
 	</div>
+	<button class="reset-button" on:click={onClickReset}>Start over</button>
 </main>
 
 <style lang="less">
@@ -25,6 +39,12 @@
 		flex-direction: column;
 		justify-content: center;
 		overflow: scroll;
+	}
+
+	.reset-button {
+		position: fixed;
+		bottom: 20px;
+		left: 20px;
 	}
 
 	.pages {

@@ -5,7 +5,18 @@ import { v4 as uuidv4 } from 'uuid';
 
 const storageKey = 'pages';
 
-const defaultState = [{ id: uuidv4(), title: 'Untitled page', active: true, connections: [] }];
+const description = `Create flows by connecting pages together.
+
+Enter a new page title and press return.
+
+Tap or press enter to activate a page.
+
+Keep adding pages to map out the hierarchy of your flow.
+
+Press backspace to delete a page and all of its connections.
+`;
+
+const defaultState = [{ id: uuidv4(), title: '', description, active: true, connections: [] }];
 
 function getStoredState(): Page[] | undefined {
 	if (browser) {
@@ -57,4 +68,8 @@ export function removePage(id: string) {
 		pages.splice(index, 1);
 		return pages;
 	});
+}
+
+export function reset() {
+	pageStore.set(defaultState);
 }

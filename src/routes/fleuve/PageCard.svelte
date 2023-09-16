@@ -1,9 +1,13 @@
 <script lang="ts">
 	import type { Page, PageId } from './Page.model';
 	import './PageCard.less';
+	import PageConnections from './PageConnections.svelte';
 	import { updatePage, addConnection, pageStore } from './store';
 
 	export let pageId: PageId;
+	export let parentPageId: PageId | null;
+	export let tabindex = 1;
+
 	let page: Page;
 
 	pageStore.subscribe((pages) => {
@@ -32,13 +36,25 @@
 		});
 	}
 
-	function updateTitle(event: KeyboardEvent) {
+	function updateTitle(event: FocusEvent) {
 		const target = event.target as HTMLElement;
 		const title = target.innerText;
-		if (event.key === 'Enter' && title) {
-			event.preventDefault();
-			updatePage({ ...page, title });
-			target.blur();
+		updatePage({ ...page, title });
+	}
+	function onKeyDownTitle(event: KeyboardEvent) {
+		if (event.key !== 'Tab') {
+			event.stopPropagation();
+		}
+	}
+
+	function updateDescription(event: FocusEvent) {
+		const target = event.target as HTMLElement;
+		const description = target.innerText;
+		updatePage({ ...page, description });
+	}
+	function onKeyDownDescription(event: KeyboardEvent) {
+		if (event.key !== 'Tab') {
+			event.stopPropagation();
 		}
 	}
 
@@ -51,15 +67,50 @@
 			target.innerText = '';
 		}
 	}
+
+	function onKeyDownPage(event: KeyboardEvent) {
+		if (event.key === 'Backspace') {
+			event.preventDefault();
+			const confirmed = confirm('Are you sure you want to remove this page and all of its connections?');
+			if (confirmed) {
+				pageStore.update((pages) => {
+					const connectedPageIds = getAllConnectedPages(pages, page).map((item) => item.id);
+					const ids = [page.id, ...connectedPageIds];
+					pages.filter((item) => {
+						if (item.id === parentPageId) {
+							item.connections = item.connections.filter((id) => id !== pageId);
+						}
+						return !ids.includes(item.id);
+					});
+					return pages;
+				});
+			}
+		}
+	}
 </script>
 
 {#key page?.id}
 	{#if page}
 		<div class="page" class:active={page.active}>
-			<div class="page-card" on:click={onClickPage}>
-				<h1 class="title" contenteditable={page.active} on:keydown={updateTitle}>{page.title}</h1>
-			</div>
-			<PageConnections connections={page.connections} {onAddPage} />
+			<button class="page-card" on:click={onClickPage} {tabindex} on:keydown={onKeyDownPage}>
+				<h1
+					class="title"
+					contenteditable={page.active}
+					tabindex={page.active ? tabindex : -1}
+					on:blur={updateTitle}
+					on:keydown={onKeyDownTitle}>
+					{page.title || 'Untitled'}
+				</h1>
+				<p
+					class="description"
+					contenteditable={page.active}
+					tabindex={page.active ? tabindex : -1}
+					on:blur={updateDescription}
+					on:keydown={onKeyDownDescription}>
+					{page.description || ''}
+				</p>
+			</button>
+			<PageConnections connections={page.connections} {onAddPage} tabindex={tabindex + 1} {pageId} />
 		</div>
 	{/if}
 {/key}
