@@ -9,31 +9,42 @@
 	export let tabindex = 1;
 
 	let page: Page;
+	let node: HTMLDivElement;
 
 	pageStore.subscribe((pages) => {
 		page = pages.find((p) => p.id === pageId) as Page;
 	});
 
 	function onClickPage(event: MouseEvent) {
-		updatePage({ ...page, active: true });
-		deactivateChildPages(page);
+		activatePage(pageId);
 	}
 
-	function getAllConnectedPages(pages: Page[], p: Page): Page[] {
-		const connections = p.connections.map((id) => pages.find((p) => p.id === id) as Page);
-		return connections.reduce((acc, item) => [...acc, ...getAllConnectedPages(pages, item)], connections);
-	}
-
-	function deactivateChildPages(p: Page) {
+	function activatePage(id: PageId) {
 		pageStore.update((pages) => {
-			const connectedPageIds = getAllConnectedPages(pages, p).map((item) => item.id);
-			pages.forEach((page) => {
-				if (connectedPageIds.includes(page.id)) {
-					page.active = false;
+			const parentPageIds = getAllParentPages(pages, id).map((item) => item.id);
+			const activePageIds = [id, ...parentPageIds];
+			const childPageIds = getAllChildPages(pages, id).map((item) => item.id);
+			pages.forEach((item) => {
+				if (childPageIds.includes(item.id)) {
+					item.active = false;
+				}
+				if (activePageIds.includes(item.id)) {
+					item.active = true;
 				}
 			});
 			return pages;
 		});
+	}
+
+	function getAllParentPages(pages: Page[], id: PageId): Page[] {
+		const parentPage = pages.find((item) => item.connections.includes(id));
+		return parentPage ? [parentPage, ...getAllParentPages(pages, parentPage.id)] : [];
+	}
+
+	function getAllChildPages(pages: Page[], id: PageId): Page[] {
+		const parentPage = pages.find((item) => item.id === id);
+		const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
+		return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
 	}
 
 	function updateTitle(event: FocusEvent) {
@@ -59,6 +70,13 @@
 	}
 
 	function onAddPage(event: KeyboardEvent) {
+		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			const parentCard = node?.querySelector('.page-card') as HTMLElement;
+			parentCard?.focus();
+			parentCard?.click();
+		}
+
 		const target = event.target as HTMLElement;
 		const title = target.innerText;
 		if (event.key === 'Enter' && title) {
@@ -69,12 +87,49 @@
 	}
 
 	function onKeyDownPage(event: KeyboardEvent) {
+		console.log(event.key, node);
+		if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			if (node.classList.contains('active')) {
+				const nextNode = node
+					.querySelector('.connections')
+					?.querySelector('.page-card, .add-connection') as HTMLElement;
+				console.log(nextNode);
+				nextNode?.focus();
+			} else {
+				const card = node.querySelector('.page-card') as HTMLElement;
+				card?.click();
+			}
+		}
+
+		if (event.key === 'ArrowUp') {
+			event.preventDefault();
+			const previousNode = node.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
+			previousNode?.focus();
+		}
+
+		if (event.key === 'ArrowDown') {
+			event.preventDefault();
+			const nextNode = node.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
+			const addConnection = node.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
+			console.log(nextNode || addConnection);
+			(<any>window).node = node;
+			(nextNode || addConnection)?.focus();
+		}
+
+		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			const parentCard = node.closest('.connections')?.closest('.page')?.querySelector('.page-card') as HTMLElement;
+			parentCard?.focus();
+			parentCard?.click();
+		}
+
 		if (event.key === 'Backspace') {
 			event.preventDefault();
 			const confirmed = confirm('Are you sure you want to remove this page and all of its connections?');
 			if (confirmed) {
 				pageStore.update((pages) => {
-					const connectedPageIds = getAllConnectedPages(pages, page).map((item) => item.id);
+					const connectedPageIds = getAllChildPages(pages, pageId).map((item) => item.id);
 					const ids = [page.id, ...connectedPageIds];
 					pages.filter((item) => {
 						if (item.id === parentPageId) {
@@ -91,7 +146,7 @@
 
 {#key page?.id}
 	{#if page}
-		<div class="page" class:active={page.active}>
+		<div class="page" class:active={page.active} bind:this={node}>
 			<button class="page-card" on:click={onClickPage} {tabindex} on:keydown={onKeyDownPage}>
 				<h1
 					class="title"
