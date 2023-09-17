@@ -54,11 +54,41 @@
 
 		.description {
 			margin: 0;
-			padding: 4px;
 			width: 100%;
-			white-space: pre-wrap;
-			overflow-y: scroll;
 			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+
+			.editor,
+			.content {
+				overflow-y: scroll;
+				padding: 4px;
+				flex: 1;
+			}
+			.editor {
+				display: block;
+				white-space: pre-wrap;
+				overflow-wrap: break-word;
+				min-height: 100%;
+			}
+
+			.content {
+				:is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
+					margin: 0;
+					+ * {
+						margin-top: 4px;
+					}
+				}
+				ul,
+				ol {
+					margin-bottom: 16px;
+					padding: 0;
+					li {
+						padding: 0;
+						margin-left: 24px;
+					}
+				}
+			}
 		}
 
 		&:focus-within {
@@ -169,6 +199,10 @@
 			margin-left: 0;
 			&::before {
 				display: none;
+			}
+
+			.title {
+				font-size: 20px;
 			}
 		}
 
