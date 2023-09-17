@@ -1,8 +1,13 @@
 ---
-latest: 0.1.5
+latest: 0.1.6
 ---
 
 # Changelog
+
+### Version 0.1.6
+
+- Got markdown working in description editor
+- Layout improvements
 
 ### Version 0.1.5
 
@@ -42,7 +47,6 @@ latest: 0.1.5
 - Some storage mechanism besides localstorage
 - Drag and drop reordering of siblings
 - Drag and drop move of pages between parents
-- Markdown support in page description
 
 <style>
 	h1 {
