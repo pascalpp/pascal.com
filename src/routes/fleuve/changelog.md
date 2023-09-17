@@ -1,8 +1,12 @@
 ---
-latest: 0.1.2
+latest: 0.1.3
 ---
 
 # Changelog
+
+### Version 0.1.3
+
+- Add slider for child page opacity
 
 ### Version 0.1.2
 
