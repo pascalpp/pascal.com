@@ -5,6 +5,17 @@
 	export let page: Page;
 	export let tabindex: number;
 
+	function onFocus(event: FocusEvent) {
+		const target = event.target as HTMLHeadingElement;
+		if (window.getSelection && document.createRange) {
+			const range = document.createRange();
+			range.selectNodeContents(target);
+			const selection = window.getSelection();
+			selection?.removeAllRanges();
+			selection?.addRange(range);
+		}
+	}
+
 	function onKeyDown(event: KeyboardEvent) {
 		const target = event.target as HTMLElement;
 		const title = target.innerText.trim();
@@ -28,6 +39,26 @@
 			target.innerText = '';
 		}
 	}
+
+	function onKeyUp(event: KeyboardEvent) {
+		const target = event.target as HTMLElement;
+		const title = target.innerText.trim();
+		if (!title) target.innerText = title;
+	}
+
+	function onBlur(event: FocusEvent) {
+		const target = event.target as HTMLElement;
+		target.innerText = target.innerText.trim();
+	}
 </script>
 
-<div {tabindex} autofocus={true} contenteditable="true" class="add-connection" on:keydown={onKeyDown} />
+<div
+	{tabindex}
+	autofocus={true}
+	contenteditable="true"
+	class="add-connection"
+	on:focus={onFocus}
+	on:blur={onBlur}
+	on:keydown={onKeyDown}
+	on:keyup={onKeyUp}
+/>
