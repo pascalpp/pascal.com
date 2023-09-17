@@ -7,6 +7,7 @@
 
 	function onFocus(event: FocusEvent) {
 		const target = event.target as HTMLHeadingElement;
+		target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		if (window.getSelection && document.createRange) {
 			const range = document.createRange();
 			range.selectNodeContents(target);
