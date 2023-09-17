@@ -2,6 +2,7 @@
 	import PageCard from './PageCard.svelte';
 	import { browser } from '$app/environment';
 	import { pageStore, reset } from './store.js';
+	import Changelog from './changelog.md';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
@@ -28,7 +29,12 @@
 	</div>
 	<div class="tools">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
-		<span class="version">Version 0.1.0</span>
+		<div class="version">
+			Version 0.1.0
+			<div class="popover">
+				<Changelog />
+			</div>
+		</div>
 	</div>
 </main>
 
@@ -69,6 +75,32 @@
 		border-radius: 2em;
 		padding: 8px 20px;
 		border: 1px solid #ccc;
+	}
+
+	.version {
+		position: relative;
+		pointer-events: all;
+
+		.popover {
+			position: absolute;
+			bottom: 100%;
+			right: 0;
+			width: fit-content;
+			min-width: 400px;
+			background-color: white;
+			border-radius: 8px;
+			border: 1px solid fade(black, 10%);
+			margin-bottom: 12px;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.2s ease-in-out;
+		}
+
+		&:hover {
+			.popover {
+				opacity: 1;
+			}
+		}
 	}
 
 	.pages {
