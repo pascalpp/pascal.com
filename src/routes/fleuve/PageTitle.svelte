@@ -5,8 +5,20 @@
 	export let page: Page;
 	export let tabindex: number;
 
+	function onClick(event: MouseEvent) {
+		if (!page.active) return;
+		const target = event.target as HTMLElement;
+		target.focus();
+		requestAnimationFrame(() => selectTarget(target));
+	}
+
 	function onFocus(event: FocusEvent) {
+		if (!page.active) return;
 		const target = event.target as HTMLHeadingElement;
+		selectTarget(target);
+	}
+
+	function selectTarget(target: HTMLElement) {
 		if (window.getSelection && document.createRange) {
 			const range = document.createRange();
 			range.selectNodeContents(target);
@@ -20,6 +32,8 @@
 		const target = event.target as HTMLHeadingElement;
 		const title = target.innerText;
 		updatePage({ ...page, title });
+		const selection = window.getSelection();
+		selection?.removeAllRanges();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
@@ -40,8 +54,10 @@
 	class="title"
 	contenteditable={page.active}
 	tabindex={page.active ? tabindex : -1}
+	on:click={onClick}
 	on:focus={onFocus}
 	on:blur={onBlur}
-	on:keydown={onKeyDown}>
+	on:keydown={onKeyDown}
+>
 	{page.title || 'Untitled page'}
 </h1>
