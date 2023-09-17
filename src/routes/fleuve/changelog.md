@@ -1,6 +1,12 @@
 ---
-latest: 0.1.1
+latest: 0.1.2
 ---
+
+### Version 0.1.2
+
+- Activate new page after creation
+- Better focus outlines
+- Removed some extraneous connection wiring
 
 ### Version 0.1.1
 
