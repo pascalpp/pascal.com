@@ -7,6 +7,7 @@
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
+	let showChangelog = false;
 
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
@@ -29,11 +30,9 @@
 	</div>
 	<div class="tools">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
-		<div class="version">
-			Version 0.1.0
-			<div class="popover">
-				<Changelog />
-			</div>
+		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version 0.1.0</button>
+		<div class="changelog" class:show={showChangelog}>
+			<Changelog />
 		</div>
 	</div>
 </main>
@@ -80,26 +79,24 @@
 	.version {
 		position: relative;
 		pointer-events: all;
+		cursor: pointer;
+	}
 
-		.popover {
-			position: absolute;
-			bottom: 100%;
-			right: 0;
-			width: fit-content;
-			min-width: 400px;
-			background-color: white;
-			border-radius: 8px;
-			border: 1px solid fade(black, 10%);
-			margin-bottom: 12px;
-			opacity: 0;
-			pointer-events: none;
-			transition: opacity 0.2s ease-in-out;
-		}
-
-		&:hover {
-			.popover {
-				opacity: 1;
-			}
+	.changelog {
+		position: absolute;
+		bottom: 100%;
+		right: 20px;
+		width: fit-content;
+		min-width: 400px;
+		background-color: white;
+		border-radius: 8px;
+		border: 1px solid fade(black, 20%);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease-in-out;
+		box-shadow: 0 4p 4px 0 rgba(black, 0.1);
+		&.show {
+			opacity: 1;
 		}
 	}
 
