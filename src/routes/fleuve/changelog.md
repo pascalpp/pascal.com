@@ -31,6 +31,7 @@ latest: 0.1.4
 
 # Todo
 
+- Figure out how to prevent keystrokes (spaces, backspace) in description from triggering button keydown events
 - Multiple document support
 - Some storage mechanism besides localstorage
 - Drag and drop reordering of siblings
