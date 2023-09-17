@@ -19,6 +19,11 @@
 
 	function onClickPage(event: MouseEvent) {
 		activatePage(pageId);
+		const card = event.target as HTMLElement;
+		setTimeout(() => {
+			const connections = card.closest('.page')?.querySelector('.connections');
+			connections?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}, 150);
 	}
 
 	function activatePage(id: PageId) {
@@ -57,11 +62,10 @@
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
 			if (node.classList.contains('active')) {
-				const nextNode = node
+				const firstChild = node
 					.querySelector('.connections')
 					?.querySelector('.page-card, .add-connection') as HTMLElement;
-				console.log(nextNode);
-				nextNode?.focus();
+				firstChild?.focus();
 			} else {
 				const card = node.querySelector('.page-card') as HTMLElement;
 				card?.click();
