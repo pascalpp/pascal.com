@@ -65,8 +65,10 @@
 			title="Change the opacity for childen of the active page"
 		/>
 	</div>
-	<div class="tools bottom right">
+	<div class="tools bottom left">
 		<button class="reset-button" on:click={onClickReset}>Reset</button>
+	</div>
+	<div class="tools bottom right">
 		<button class="version" on:click={toggleChangelog}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
 			<div class="changelog-content">
@@ -115,6 +117,9 @@
 
 		&.top {
 			top: 0px;
+		}
+		&.left {
+			left: 0px;
 		}
 		&.right {
 			right: 0px;
