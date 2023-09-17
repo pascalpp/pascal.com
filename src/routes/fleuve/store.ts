@@ -6,10 +6,13 @@ import { v4 as uuidv4 } from 'uuid';
 const storageKey = 'pages';
 
 const description = `
-• Create flows by connecting pages.
-• Use arrow keys to navigate between pages.
-• Tap or press enter to activate a page.
-• Press backspace to delete a page and all of its connections.
+Create flows by connecting pages.
+
+- Use arrow keys to navigate between pages.
+- Tap or press enter to activate a page.
+- Press backspace to delete a page and all of its connections.
+- Use markdown to format your page description.
+
 `;
 
 function getStoredState(): Page[] | undefined {
