@@ -5,14 +5,25 @@
 	export let page: Page;
 	export let tabindex: number;
 
-	function onBlurTitle(event: FocusEvent) {
-		const target = event.target as HTMLDivElement;
+	function onFocus(event: FocusEvent) {
+		const target = event.target as HTMLHeadingElement;
+		if (window.getSelection && document.createRange) {
+			const range = document.createRange();
+			range.selectNodeContents(target);
+			const selection = window.getSelection();
+			selection?.removeAllRanges();
+			selection?.addRange(range);
+		}
+	}
+
+	function onBlur(event: FocusEvent) {
+		const target = event.target as HTMLHeadingElement;
 		const title = target.innerText;
 		updatePage({ ...page, title });
 	}
 
-	function onKeyDownTitle(event: KeyboardEvent) {
-		const target = event.target as HTMLDivElement;
+	function onKeyDown(event: KeyboardEvent) {
+		const target = event.target as HTMLHeadingElement;
 
 		if (event.key !== 'Tab') {
 			event.stopPropagation();
@@ -29,7 +40,8 @@
 	class="title"
 	contenteditable={page.active}
 	tabindex={page.active ? tabindex : -1}
-	on:blur={onBlurTitle}
-	on:keydown={onKeyDownTitle}>
-	{page.title}
+	on:focus={onFocus}
+	on:blur={onBlur}
+	on:keydown={onKeyDown}>
+	{page.title || 'Untitled page'}
 </h1>
