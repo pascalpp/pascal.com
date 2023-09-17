@@ -24,7 +24,7 @@
 	<button class="reset-button" on:click={onClickReset}>Start over</button>
 	<div class="pages">
 		{#if browser && firstPageId}
-			<PageCard pageId={firstPageId} parentPageId={null} />
+			<PageCard pageId={firstPageId} />
 		{/if}
 	</div>
 </main>

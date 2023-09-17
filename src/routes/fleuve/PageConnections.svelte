@@ -9,7 +9,7 @@
 
 <div class="connections">
 	{#each page.connections as connectionId (connectionId)}
-		<PageCard pageId={connectionId} {tabindex} parentPageId={page.id} />
+		<PageCard pageId={connectionId} {tabindex} />
 	{/each}
 	<AddPageCard {page} {tabindex} />
 </div>

@@ -4,10 +4,9 @@
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import { pageStore } from './store';
+	import { pageStore, activatePage, removePage } from './store';
 
 	export let pageId: PageId;
-	export let parentPageId: PageId | null;
 	export let tabindex = 1;
 
 	let page: Page;
@@ -17,44 +16,16 @@
 		page = pages.find((p) => p.id === pageId) as Page;
 	});
 
-	function onClickPage(event: MouseEvent) {
+	function onClick(event: MouseEvent) {
 		activatePage(pageId);
 		const card = event.target as HTMLElement;
-		setTimeout(() => {
-			const connections = card.closest('.page')?.querySelector('.connections');
-			connections?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		}, 150);
-	}
-
-	function activatePage(id: PageId) {
-		pageStore.update((pages) => {
-			const parentPageIds = getAllParentPages(pages, id).map((item) => item.id);
-			const activePageIds = [id, ...parentPageIds];
-			const childPageIds = getAllChildPages(pages, id).map((item) => item.id);
-			pages.forEach((item) => {
-				if (childPageIds.includes(item.id)) {
-					item.active = false;
-				}
-				if (activePageIds.includes(item.id)) {
-					item.active = true;
-				}
-			});
-			return pages;
+		requestAnimationFrame(() => {
+			card?.focus();
+			card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		});
 	}
 
-	function getAllParentPages(pages: Page[], id: PageId): Page[] {
-		const parentPage = pages.find((item) => item.connections.includes(id));
-		return parentPage ? [parentPage, ...getAllParentPages(pages, parentPage.id)] : [];
-	}
-
-	function getAllChildPages(pages: Page[], id: PageId): Page[] {
-		const parentPage = pages.find((item) => item.id === id);
-		const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
-		return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
-	}
-
-	function onKeyDownPage(event: KeyboardEvent) {
+	function onKeyDown(event: KeyboardEvent) {
 		const previousNode = node.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
 		const nextNode = node.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
 		const addConnection = node.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
@@ -93,17 +64,7 @@
 			event.preventDefault();
 			const confirmed = confirm('Are you sure you want to remove this page and all of its connections?');
 			if (confirmed) {
-				pageStore.update((pages) => {
-					const connectedPageIds = getAllChildPages(pages, pageId).map((item) => item.id);
-					const ids = [page.id, ...connectedPageIds];
-					pages.filter((item) => {
-						if (item.id === parentPageId) {
-							item.connections = item.connections.filter((id) => id !== pageId);
-						}
-						return !ids.includes(item.id);
-					});
-					return pages;
-				});
+				removePage(page.id);
 				(nextNode || previousNode || addConnection)?.focus();
 			}
 		}
@@ -113,7 +74,7 @@
 {#key page?.id}
 	{#if page}
 		<div class="page" class:active={page.active} bind:this={node}>
-			<button class="page-card" on:click={onClickPage} {tabindex} on:keydown={onKeyDownPage}>
+			<button class="page-card" on:click={onClick} {tabindex} on:keydown={onKeyDown}>
 				<PageTitle {page} {tabindex} />
 				<PageDescription {page} {tabindex} />
 			</button>
