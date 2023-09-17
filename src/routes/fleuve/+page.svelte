@@ -19,11 +19,22 @@
 	}
 
 	function onClickReset() {
-		if (confirm('Are you sure you want to start over?')) {
+		if (confirm('Are you sure you want to start over with an empty document?')) {
 			reset();
 			// TODO: why isn't the page refreshing when we reset the store?
 			window.location.reload();
 		}
+	}
+
+	function toggleChangelog() {
+		showChangelog = !showChangelog;
+		requestAnimationFrame(() => {
+			if (showChangelog) {
+				document.body.addEventListener('click', toggleChangelog);
+			} else {
+				document.body.removeEventListener('click', toggleChangelog);
+			}
+		});
 	}
 
 	pageStore.subscribe((pages) => {
@@ -40,8 +51,7 @@
 			<PageCard pageId={firstPageId} />
 		{/if}
 	</div>
-	<div class="tools left">
-		<button class="reset-button" on:click={onClickReset}>Start over</button>
+	<div class="tools top right">
 		<Slider
 			id="active-page-scale"
 			label="Scale"
@@ -55,8 +65,9 @@
 			title="Change the opacity for childen of the active page"
 		/>
 	</div>
-	<div class="tools right">
-		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version {metadata.latest}</button>
+	<div class="tools bottom right">
+		<button class="reset-button" on:click={onClickReset}>Reset</button>
+		<button class="version" on:click={toggleChangelog}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
 			<div class="changelog-content">
 				<Changelog />
@@ -87,7 +98,6 @@
 		font-size: 13px;
 		z-index: 1;
 		position: fixed;
-		bottom: 0px;
 		padding: 12px;
 		padding-right: 20px;
 		display: flex;
@@ -96,29 +106,25 @@
 		justify-content: space-between;
 		gap: 2em;
 		opacity: 0.3;
+		&:active,
 		&:hover,
-		&:focus-within {
+		&:focus-within,
+		&:has(.changelog.show) {
 			opacity: 1;
 		}
 
-		&.left {
-			left: 0px;
+		&.top {
+			top: 0px;
 		}
 		&.right {
 			right: 0px;
 		}
+		&.bottom {
+			bottom: 0px;
+		}
 	}
 
-	.reset-button {
-		cursor: pointer;
-		border-radius: 2em;
-		padding: 8px 20px;
-		border: 1px solid black;
-		user-select: none;
-	}
-
-	.version {
-		position: relative;
+	button {
 		cursor: pointer;
 		user-select: none;
 	}
