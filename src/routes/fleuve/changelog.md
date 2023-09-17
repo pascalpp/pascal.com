@@ -1,8 +1,15 @@
 ---
-latest: 0.1.4
+latest: 0.1.5
 ---
 
 # Changelog
+
+### Version 0.1.5
+
+- Prevent keystrokes in description from bubbling up to page card
+- Keep page outlines when focus is within page
+- Fixed reset button so it doesn't require a reload
+- Rearranged tools
 
 ### Version 0.1.4
 
@@ -31,7 +38,6 @@ latest: 0.1.4
 
 # Todo
 
-- Figure out how to prevent keystrokes (spaces, backspace) in description from triggering button keydown events
 - Multiple document support
 - Some storage mechanism besides localstorage
 - Drag and drop reordering of siblings
@@ -42,14 +48,12 @@ latest: 0.1.4
 	h1 {
 		font-size: 20px;
 		padding: 8px 12px;
-		border-top: 1px solid #ddd;
 		border-bottom: 1px solid #ddd;
 		margin-bottom: 8px;
 		margin-top: 24px;
 	}
 
 	h1:first-child {
-		border-top: none;
 		margin-top: 0px;
 	}
 
@@ -59,7 +63,13 @@ latest: 0.1.4
 	}
 
 	ul {
+		margin: 0;
 		margin-top: 0.5em;
 		margin-bottom: 1em;
+		padding: 0px 12px;
+	}
+	li {
+		margin-left: 24px;
+		margin-top: 2px;
 	}
 </style>
