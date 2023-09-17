@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './PageCard.less';
 	import PageCard from './PageCard.svelte';
 	import { browser } from '$app/environment';
 	import { pageStore, reset } from './store.js';

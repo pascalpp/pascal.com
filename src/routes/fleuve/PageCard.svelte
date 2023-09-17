@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './PageCard.less';
 	import type { Page, PageId } from './Page.model';
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
