@@ -1,17 +1,22 @@
 <script lang="ts">
 	import './PageCard.less';
-	import PageCard from './PageCard.svelte';
 	import { browser } from '$app/environment';
+	import PageCard from './PageCard.svelte';
+	import Slider from './Slider.svelte';
 	import { pageStore, reset } from './store.js';
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
-	import Column from '$lib/components/Column.svelte';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
 	let showChangelog = false;
 	let childOpacity = 0.5;
+	let activePageScale = 0.5;
+
+	function scale(number: number, inMin: number, inMax: number, outMin: number, outMax: number) {
+		return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+	}
 
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
@@ -27,17 +32,28 @@
 </script>
 
 <main>
-	<div class="pages" style="--child-opacity: {childOpacity}">
+	<div
+		class="pages"
+		style="--child-opacity: {childOpacity}; --active-page-scale: {scale(activePageScale, 0, 1, 0.3, 1)}"
+	>
 		{#if browser && firstPageId}
 			<PageCard pageId={firstPageId} />
 		{/if}
 	</div>
 	<div class="tools left">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
-		<Column center gap="4px" title="Change the opacity for childen of the active page">
-			<label for="child-opacity">Opacity {childOpacity.toFixed(1)}</label>
-			<input id="child-opacity" type="range" min="0" max="1" step="0.1" bind:value={childOpacity} />
-		</Column>
+		<Slider
+			id="active-page-scale"
+			label="Scale"
+			bind:value={activePageScale}
+			title="Change the scale of active pages"
+		/>
+		<Slider
+			id="child-opacity"
+			label="Opacity"
+			bind:value={childOpacity}
+			title="Change the opacity for childen of the active page"
+		/>
 	</div>
 	<div class="tools right">
 		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version {metadata.latest}</button>
