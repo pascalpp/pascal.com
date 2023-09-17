@@ -10,6 +10,7 @@
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
 			reset();
+			// TODO: why isn't the page refreshing when we reset the store?
 			window.location.reload();
 		}
 	}
@@ -20,12 +21,12 @@
 </script>
 
 <main>
+	<button class="reset-button" on:click={onClickReset}>Start over</button>
 	<div class="pages">
 		{#if browser && firstPageId}
 			<PageCard pageId={firstPageId} parentPageId={null} />
 		{/if}
 	</div>
-	<button class="reset-button" on:click={onClickReset}>Start over</button>
 </main>
 
 <style lang="less">
@@ -45,6 +46,13 @@
 		position: fixed;
 		bottom: 20px;
 		left: 20px;
+		cursor: pointer;
+		color: gray;
+		font-size: 14px;
+		border-radius: 2em;
+		padding: 8px 20px;
+		border: 1px solid #ccc;
+		z-index: 1;
 	}
 
 	.pages {
