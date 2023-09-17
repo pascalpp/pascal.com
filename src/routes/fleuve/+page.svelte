@@ -34,7 +34,7 @@
 	</div>
 	<div class="tools left">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
-		<Column center gap="4px">
+		<Column center gap="4px" title="Change the opacity for childen of the active page">
 			<label for="child-opacity">Opacity {childOpacity.toFixed(1)}</label>
 			<input id="child-opacity" type="range" min="0" max="1" step="0.1" bind:value={childOpacity} />
 		</Column>
