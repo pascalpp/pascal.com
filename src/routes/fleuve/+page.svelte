@@ -5,11 +5,13 @@
 	import { pageStore, reset } from './store.js';
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
+	import Column from '$lib/components/Column.svelte';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
 	let showChangelog = false;
+	let childOpacity = 0.5;
 
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
@@ -25,13 +27,19 @@
 </script>
 
 <main>
-	<div class="pages">
+	<div class="pages" style="--child-opacity: {childOpacity}">
 		{#if browser && firstPageId}
 			<PageCard pageId={firstPageId} />
 		{/if}
 	</div>
-	<div class="tools">
+	<div class="tools left">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
+		<Column center gap="4px">
+			<label for="child-opacity">Opacity {childOpacity.toFixed(1)}</label>
+			<input id="child-opacity" type="range" min="0" max="1" step="0.1" bind:value={childOpacity} />
+		</Column>
+	</div>
+	<div class="tools right">
 		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
 			<div class="changelog-content">
@@ -48,10 +56,15 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		overflow: scroll;
+	}
+
+	.pages {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10vw;
+		box-sizing: border-box;
 	}
 
 	.tools {
@@ -59,31 +72,37 @@
 		z-index: 1;
 		position: fixed;
 		bottom: 0px;
-		left: 0px;
 		padding: 12px;
 		padding-right: 20px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		width: 100%;
-		pointer-events: none;
 		gap: 2em;
+		opacity: 0.3;
+		&:hover,
+		&:focus-within {
+			opacity: 1;
+		}
+
+		&.left {
+			left: 0px;
+		}
+		&.right {
+			right: 0px;
+		}
 	}
 
 	.reset-button {
 		cursor: pointer;
-		pointer-events: all;
-		color: gray;
 		border-radius: 2em;
 		padding: 8px 20px;
-		border: 1px solid #ccc;
+		border: 1px solid black;
 		user-select: none;
 	}
 
 	.version {
 		position: relative;
-		pointer-events: all;
 		cursor: pointer;
 		user-select: none;
 	}
@@ -101,7 +120,6 @@
 		max-height: 0;
 		overflow: hidden;
 		overflow-y: scroll;
-		pointer-events: all;
 
 		.changelog-content {
 			height: fit-content;
@@ -113,16 +131,5 @@
 			max-height: 90vh;
 			opacity: 1;
 		}
-	}
-
-	.pages {
-		position: absolute;
-		top: 0;
-		left: 0;
-		flex: 1;
-		padding: 10vw;
-		display: flex;
-		box-sizing: border-box;
-		flex-shrink: 0;
 	}
 </style>
