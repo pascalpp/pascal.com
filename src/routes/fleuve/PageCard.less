@@ -2,29 +2,9 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	position: relative;
 
-	.page-card {
-		flex: 1;
-		background-color: white;
-		padding: 1em;
-		box-sizing: border-box;
-		border: 1px solid fade(black, 30%);
-		border-radius: 4px;
-		width: fit-content;
-		height: fit-content;
-		min-height: 40px;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		transform: translateX(-1px);
-		transition: min-height 0.2s ease-in-out;
-
-		&:focus,
-		&:active {
-			outline-width: 2px;
-		}
-
+	.connections .page {
 		margin-left: 24px;
 		&::before {
 			position: absolute;
@@ -36,17 +16,29 @@
 			top: 50%;
 			right: 100%;
 		}
+	}
 
-		margin-right: 24px;
-		&::after {
-			position: absolute;
-			display: block;
-			content: '';
-			height: 1px;
-			width: 24px;
-			background-color: black;
-			top: 50%;
-			left: 100%;
+	.page-card {
+		flex: 1;
+		background-color: white;
+		padding: 1em;
+		box-sizing: border-box;
+		border: 1px solid fade(black, 30%);
+		border-radius: 4px;
+		width: fit-content;
+		height: fit-content;
+		min-height: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		transform: translateX(-1px);
+		transition: min-height 0.2s ease-in-out;
+
+		&:focus,
+		&:active {
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: black;
 		}
 
 		.description {
@@ -65,18 +57,34 @@
 	}
 
 	.connections {
+		transform: translateX(-2px);
 		opacity: 0.5;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 1em;
-		border-left: 1px solid black;
 
 		&:has(.page.active) {
 			// 	border-left: none;
 			> .add-connection:empty::after {
 				content: 'Add sibilng';
 			}
+		}
+	}
+
+	&.active > .connections:has(:first-child:not(:last-child)),
+	.connections:has(.page + .page) {
+		margin-left: 24px;
+		border-left: 1px solid black;
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			height: 1px;
+			width: 24px;
+			background-color: black;
+			top: 50%;
+			right: 100%;
 		}
 	}
 
@@ -109,6 +117,12 @@
 			font-weight: normal;
 			content: 'Add page';
 			opacity: 0.5;
+		}
+		&:focus,
+		&:active {
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: black;
 		}
 	}
 
