@@ -8,7 +8,7 @@
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
-	let showChangelog = true;
+	let showChangelog = false;
 
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
