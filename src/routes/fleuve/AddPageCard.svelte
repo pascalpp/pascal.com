@@ -38,6 +38,10 @@
 			event.preventDefault();
 			addConnection(page, { title });
 			target.innerText = '';
+			requestAnimationFrame(() => {
+				const previousNode = target.previousElementSibling?.querySelector('.page-card') as HTMLElement;
+				previousNode?.click();
+			});
 		}
 	}
 
