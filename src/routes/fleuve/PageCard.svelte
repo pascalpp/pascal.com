@@ -87,12 +87,12 @@
 {#key page?.id}
 	{#if page}
 		<div class="page" class:active={page.active}>
-			<button class="page-card" on:click={onClick} {tabindex} on:keydown={onKeyDown}>
+			<div class="page-card" {tabindex} on:click={onClick} on:keydown={onKeyDown}>
 				<div class="page-card-content">
 					<PageTitle {page} {tabindex} />
 					<PageDescription {page} {tabindex} />
 				</div>
-			</button>
+			</div>
 			<PageConnections {page} tabindex={tabindex + 1} />
 		</div>
 	{/if}
