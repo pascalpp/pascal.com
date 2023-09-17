@@ -72,9 +72,12 @@
 		gap: 1em;
 		border-left: 1px solid black;
 
-		// &:has(.page.active) {
-		// 	border-left: none;
-		// }
+		&:has(.page.active) {
+			// 	border-left: none;
+			> .add-connection:empty::after {
+				content: 'Add sibilng';
+			}
+		}
 	}
 
 	.add-connection {
