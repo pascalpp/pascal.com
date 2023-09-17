@@ -5,15 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 const storageKey = 'pages';
 
-const description = `Create flows by connecting pages together.
-
-Enter a new page title and press return.
-
-Tap or press enter to activate a page.
-
-Keep adding pages to map out the hierarchy of your flow.
-
-Press backspace to delete a page and all of its connections.
+const description = `
+• Create flows by connecting pages.
+• Use arrow keys to navigate between pages.
+• Tap or press enter to activate a page.
+• Press backspace to delete a page and all of its connections.
 `;
 
 function getStoredState(): Page[] | undefined {
@@ -28,7 +24,7 @@ function getStoredState(): Page[] | undefined {
 }
 
 function getDefaultState() {
-	return [{ id: uuidv4(), title: '', description, active: true, connections: [] }];
+	return [{ id: uuidv4(), title: '', description: description.trim(), active: true, connections: [] }];
 }
 
 const storedState = getStoredState();
