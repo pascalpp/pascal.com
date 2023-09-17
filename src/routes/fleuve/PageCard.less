@@ -17,6 +17,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		transform: translateX(-1px);
 
 		&:focus,
 		&:active {
@@ -53,7 +54,6 @@
 			overflow-y: scroll;
 		}
 
-		&:hover,
 		&:focus-within {
 			.description:empty::before {
 				font-weight: normal;
@@ -71,9 +71,9 @@
 		gap: 1em;
 		border-left: 1px solid black;
 
-		&:has(.page.active) {
-			border-left: none;
-		}
+		// &:has(.page.active) {
+		// 	border-left: none;
+		// }
 	}
 
 	.add-connection {
@@ -90,7 +90,18 @@
 		appearance: none;
 		font-weight: bold;
 		white-space: nowrap;
-		&:empty::before {
+		position: relative;
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			height: 1px;
+			width: 24px;
+			background-color: black;
+			top: 50%;
+			right: 100%;
+		}
+		&:empty::after {
 			font-weight: normal;
 			content: 'Add page';
 			opacity: 0.5;
@@ -102,7 +113,7 @@
 			height: 50vh;
 			aspect-ratio: 3 / 4;
 			box-shadow: 0 4px 4px fade(black, 10%);
-			transition: all 0.1s ease-in-out;
+			transition: all 0.2s ease-in-out;
 
 			margin-left: 0;
 			&::before {
@@ -122,22 +133,47 @@
 		> .page-card {
 			cursor: pointer;
 			.title {
+				pointer-events: none;
 				white-space: nowrap !important;
 				overflow: hidden !important;
 				text-overflow: ellipsis !important;
 			}
 			.description {
 				display: none;
+				pointer-events: none;
 			}
 		}
 	}
 
 	.connections:has(.page.active) {
-		> .page:not(.active) {
-			display: none;
-		}
+		// > .page:not(.active) {
+		// 	display: none;
+		// }
 		> .add-connection {
 			display: none;
+		}
+	}
+
+	// stacked page idea
+	// &.active:has(.page.active) {
+	// 	> .page-card {
+	// 		position: absolute;
+	// 		&::after {
+	// 			display: none;
+	// 		}
+	// 	}
+
+	// 	.page.active {
+	// 		padding-left: 1em;
+	// 		padding-top: 6em;
+	// 	}
+	// }
+
+	&:not(.active):has(> .connections > .add-connection:first-child) {
+		> .page-card {
+			&::after {
+				display: none;
+			}
 		}
 	}
 }
