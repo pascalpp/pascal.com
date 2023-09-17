@@ -3,11 +3,12 @@
 	import { browser } from '$app/environment';
 	import { pageStore, reset } from './store.js';
 	import Changelog from './changelog.md';
+	import { metadata } from './changelog.md';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
-	let showChangelog = false;
+	let showChangelog = true;
 
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
@@ -30,8 +31,9 @@
 	</div>
 	<div class="tools">
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
-		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version 0.1.0</button>
+		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
+			<h1>Changelog</h1>
 			<Changelog />
 		</div>
 	</div>
@@ -91,12 +93,24 @@
 		background-color: white;
 		border-radius: 8px;
 		border: 1px solid fade(black, 20%);
-		opacity: 0;
-		pointer-events: none;
-		transition: opacity 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 		box-shadow: 0 4p 4px 0 rgba(black, 0.1);
+		max-height: 0;
+		overflow: hidden;
+		overflow-y: scroll;
+		pointer-events: all;
+
+		opacity: 0;
 		&.show {
+			max-height: 400px;
 			opacity: 1;
+		}
+
+		h1 {
+			font-size: 20px;
+			padding: 8px 12px;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 8px;
 		}
 	}
 
