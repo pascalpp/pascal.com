@@ -1,6 +1,6 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
-import type { Page, PageInfo } from './Page.model';
+import type { Page, PageInfo, PageId } from './Page.model';
 import { v4 as uuidv4 } from 'uuid';
 
 const storageKey = 'pages';
@@ -64,10 +64,48 @@ export function addConnection(page: Page, pageInfo: PageInfo) {
 	updatePage({ ...page, connections: [...page.connections, connection.id] });
 }
 
+export function activatePage(id: PageId) {
+	pageStore.update((pages) => {
+		const parentPages = getAllParentPages(pages, id);
+		const siblings = parentPages.reduce((acc, item) => [...acc, ...item.connections], [] as PageId[]);
+		const parentPageIds = parentPages.map((item) => item.id);
+		const activePageIds = [id, ...parentPageIds];
+		const childPageIds = getAllChildPages(pages, id).map((item) => item.id);
+		const inactivePageIds = [...siblings, ...childPageIds];
+		pages.forEach((item) => {
+			if (inactivePageIds.includes(item.id)) {
+				item.active = false;
+			}
+			if (activePageIds.includes(item.id)) {
+				item.active = true;
+			}
+		});
+		return pages;
+	});
+}
+
+function getAllParentPages(pages: Page[], id: PageId): Page[] {
+	const parentPage = pages.find((item) => item.connections.includes(id));
+	return parentPage ? [parentPage, ...getAllParentPages(pages, parentPage.id)] : [];
+}
+
+function getAllChildPages(pages: Page[], id: PageId): Page[] {
+	const parentPage = pages.find((item) => item.id === id);
+	const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
+	return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
+}
+
 export function removePage(id: string) {
 	pageStore.update((pages) => {
-		const index = pages.findIndex((page) => page.id === id);
-		pages.splice(index, 1);
+		const parentPages = getAllParentPages(pages, id).map((item) => item.id);
+		const connectedPageIds = getAllChildPages(pages, id).map((item) => item.id);
+		const ids = [id, ...connectedPageIds];
+		pages.filter((item) => {
+			if (parentPages.includes(item.id)) {
+				item.connections = item.connections.filter((itemId) => itemId != id);
+			}
+			return !ids.includes(item.id);
+		});
 		return pages;
 	});
 }
