@@ -21,11 +21,14 @@
 </script>
 
 <main>
-	<button class="reset-button" on:click={onClickReset}>Start over</button>
 	<div class="pages">
 		{#if browser && firstPageId}
 			<PageCard pageId={firstPageId} />
 		{/if}
+	</div>
+	<div class="tools">
+		<button class="reset-button" on:click={onClickReset}>Start over</button>
+		<span class="version">Version 0.1.0</span>
 	</div>
 </main>
 
@@ -42,17 +45,30 @@
 		overflow: scroll;
 	}
 
-	.reset-button {
+	.tools {
+		font-size: 13px;
+		z-index: 1;
 		position: fixed;
-		bottom: 20px;
-		left: 20px;
+		bottom: 0px;
+		left: 0px;
+		padding: 12px;
+		padding-right: 20px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		pointer-events: none;
+		gap: 2em;
+	}
+
+	.reset-button {
 		cursor: pointer;
+		pointer-events: all;
 		color: gray;
-		font-size: 14px;
 		border-radius: 2em;
 		padding: 8px 20px;
 		border: 1px solid #ccc;
-		z-index: 1;
 	}
 
 	.pages {
