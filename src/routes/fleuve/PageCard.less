@@ -51,6 +51,10 @@
 			padding: 12px 16px;
 			margin: 4px;
 			flex-shrink: 0;
+			&:empty::before {
+				content: 'Untitled page';
+				opacity: 0.3;
+			}
 		}
 
 		.description {

@@ -30,7 +30,7 @@
 
 	function onBlur(event: FocusEvent) {
 		const target = event.target as HTMLHeadingElement;
-		const title = target.innerText;
+		const title = target.innerText.trim();
 		updatePage({ ...page, title });
 		const selection = window.getSelection();
 		selection?.removeAllRanges();
@@ -59,5 +59,5 @@
 	on:blur={onBlur}
 	on:keydown={onKeyDown}
 >
-	{page.title || 'Untitled page'}
+	{page.title}
 </h1>
