@@ -1,8 +1,13 @@
 ---
-latest: 0.1.3
+latest: 0.1.4
 ---
 
 # Changelog
+
+### Version 0.1.4
+
+- Add slider for active page scale
+- Better transitions when activating a page
 
 ### Version 0.1.3
 
@@ -16,18 +21,21 @@ latest: 0.1.3
 
 ### Version 0.1.1
 
-- Better transitions when activating a page.
-- Added 'Add sibling' placeholder below active page.
+- Better transitions when activating a page
+- Added 'Add sibling' placeholder below active page
 
 ### Version 0.1.0
 
-- Keep siblings visible when activating a page.
-- Cleaned up store helpers.
+- Keep siblings visible when activating a page
+- Cleaned up store helpers
 
 # Todo
 
 - Multiple document support
 - Some storage mechanism besides localstorage
+- Drag and drop reordering of siblings
+- Drag and drop move of pages between parents
+- Markdown support in page description
 
 <style>
 	h1 {
