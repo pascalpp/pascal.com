@@ -33,8 +33,9 @@
 		<button class="reset-button" on:click={onClickReset}>Start over</button>
 		<button class="version" on:click={() => (showChangelog = !showChangelog)}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
-			<h1>Changelog</h1>
-			<Changelog />
+			<div class="changelog-content">
+				<Changelog />
+			</div>
 		</div>
 	</div>
 </main>
@@ -76,19 +77,20 @@
 		border-radius: 2em;
 		padding: 8px 20px;
 		border: 1px solid #ccc;
+		user-select: none;
 	}
 
 	.version {
 		position: relative;
 		pointer-events: all;
 		cursor: pointer;
+		user-select: none;
 	}
 
 	.changelog {
 		position: absolute;
 		bottom: 100%;
 		right: 20px;
-		width: fit-content;
 		min-width: 400px;
 		background-color: white;
 		border-radius: 8px;
@@ -100,17 +102,15 @@
 		overflow-y: scroll;
 		pointer-events: all;
 
-		opacity: 0;
-		&.show {
-			max-height: 400px;
-			opacity: 1;
+		.changelog-content {
+			height: fit-content;
+			padding-bottom: 12px;
 		}
 
-		h1 {
-			font-size: 20px;
-			padding: 8px 12px;
-			border-bottom: 1px solid #ddd;
-			margin-bottom: 8px;
+		opacity: 0;
+		&.show {
+			max-height: 90vh;
+			opacity: 1;
 		}
 	}
 
