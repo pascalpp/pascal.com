@@ -12,7 +12,7 @@
 	let firstPageId: string;
 	let showChangelog = false;
 	let childOpacity = 0.5;
-	let activePageScale = 0.5;
+	let activePageScale = 0.4;
 
 	function scale(number: number, inMin: number, inMax: number, outMin: number, outMax: number) {
 		return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
