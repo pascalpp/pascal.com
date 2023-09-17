@@ -67,9 +67,11 @@
 		}
 
 		if (event.key === 'Enter') {
+			event.preventDefault();
 			if (page.active) {
-				event.preventDefault();
 				updatePage({ ...page, active: false });
+			} else {
+				target.click();
 			}
 		}
 
