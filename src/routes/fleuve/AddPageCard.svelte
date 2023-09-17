@@ -59,7 +59,6 @@
 
 <div
 	{tabindex}
-	autofocus={true}
 	contenteditable="true"
 	class="add-connection"
 	on:focus={onFocus}
