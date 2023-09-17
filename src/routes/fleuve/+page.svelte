@@ -21,8 +21,6 @@
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over with an empty document?')) {
 			reset();
-			// TODO: why isn't the page refreshing when we reset the store?
-			window.location.reload();
 		}
 	}
 
@@ -48,7 +46,9 @@
 		style="--child-opacity: {childOpacity}; --active-page-scale: {scale(activePageScale, 0, 1, 0.3, 1)}"
 	>
 		{#if browser && firstPageId}
-			<PageCard pageId={firstPageId} />
+			{#key firstPageId}
+				<PageCard pageId={firstPageId} />
+			{/key}
 		{/if}
 	</div>
 	<div class="tools top right">
