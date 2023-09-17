@@ -16,8 +16,6 @@ Keep adding pages to map out the hierarchy of your flow.
 Press backspace to delete a page and all of its connections.
 `;
 
-const defaultState = [{ id: uuidv4(), title: '', description, active: true, connections: [] }];
-
 function getStoredState(): Page[] | undefined {
 	if (browser) {
 		try {
@@ -29,9 +27,13 @@ function getStoredState(): Page[] | undefined {
 	}
 }
 
+function getDefaultState() {
+	return [{ id: uuidv4(), title: '', description, active: true, connections: [] }];
+}
+
 const storedState = getStoredState();
 
-export const pageStore = writable<Page[]>(storedState || defaultState);
+export const pageStore = writable<Page[]>(storedState || getDefaultState());
 
 if (browser) {
 	pageStore.subscribe((pages) => {
@@ -71,5 +73,5 @@ export function removePage(id: string) {
 }
 
 export function reset() {
-	pageStore.set(defaultState);
+	pageStore.update(() => getDefaultState());
 }
