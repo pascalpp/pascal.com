@@ -18,6 +18,7 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		transform: translateX(-1px);
+		transition: min-height 0.2s ease-in-out;
 
 		&:focus,
 		&:active {
@@ -110,10 +111,10 @@
 
 	&.active {
 		> .page-card {
-			height: 50vh;
-			aspect-ratio: 3 / 4;
+			min-height: 50vh;
+			max-height: 50vh;
+			width: calc(50vh * 0.75);
 			box-shadow: 0 4px 4px fade(black, 10%);
-			transition: all 0.2s ease-in-out;
 
 			margin-left: 0;
 			&::before {
@@ -145,14 +146,15 @@
 		}
 	}
 
-	.connections:has(.page.active) {
-		// > .page:not(.active) {
-		// 	display: none;
-		// }
-		> .add-connection {
-			display: none;
-		}
-	}
+	//  hide siblings idea
+	// .connections:has(.page.active) {
+	// 	> .page:not(.active) {
+	// 		display: none;
+	// 	}
+	// 	> .add-connection {
+	// 		display: none;
+	// 	}
+	// }
 
 	// stacked page idea
 	// &.active:has(.page.active) {
