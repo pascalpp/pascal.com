@@ -22,3 +22,12 @@
 		</div>
 	{/if}
 {/key}
+
+<style lang="less">
+	.page {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+	}
+</style>
