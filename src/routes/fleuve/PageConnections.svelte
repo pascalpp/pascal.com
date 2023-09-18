@@ -51,7 +51,7 @@
 		}
 
 		// show connection line on left side of each child
-		:global(> *:not(.page.active)) {
+		:global(> *) {
 			margin-left: 24px;
 			&::before {
 				position: absolute;
@@ -65,16 +65,9 @@
 			}
 		}
 		:global(> .page.active) {
-			margin-left: 12px;
+			margin-left: 16px;
 			&::before {
-				position: absolute;
-				display: block;
-				content: '';
-				height: 1px;
-				width: 12px;
-				background-color: black;
-				top: 50%;
-				right: 100%;
+				width: 16px;
 			}
 		}
 
