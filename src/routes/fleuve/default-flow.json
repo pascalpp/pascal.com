@@ -97,7 +97,7 @@
 	{
 		"id": "1616add0-e9c3-4e49-a55d-c7ce3bfa6ec9",
 		"title": "Add a level",
-		"description": "- Press Option/Alt ➡️ to move a card to the right.\n- The card will be connected to a new untitled page.\n- Press Option/Alt ⬅️ to move a card back, replacing its parent. This only works if the parent card is empty.",
+		"description": "- Press Option/Alt ➡️ to move a card to the right.\n- The card will be connected to a new untitled card.\n- Press Option/Alt ⬅️ to move a card left, replacing its parent. This only works if the parent card is empty.",
 		"connections": [],
 		"active": false
 	},
