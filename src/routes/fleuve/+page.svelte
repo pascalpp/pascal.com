@@ -7,6 +7,7 @@
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
 	import File from './file.svg?component';
+	import { onMount } from 'svelte';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
@@ -19,7 +20,7 @@
 	}
 
 	function onClickReset() {
-		if (confirm('Are you sure you want to start over with an empty document?')) {
+		if (confirm('Are you sure you want to start over?')) {
 			reset();
 		}
 	}
@@ -42,6 +43,11 @@
 
 	pageStore.subscribe((pages) => {
 		firstPageId = pages[0].id;
+	});
+
+	onMount(() => {
+		const firstPage = document.querySelector('.page-card') as HTMLElement;
+		firstPage?.click();
 	});
 </script>
 
