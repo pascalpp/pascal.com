@@ -83,22 +83,11 @@
 		margin: 0 4px;
 		border-radius: 4px;
 		margin: 0;
-		margin-left: 24px;
 		width: auto;
 		appearance: none;
 		font-weight: bold;
 		white-space: nowrap;
-		position: relative;
-		&::before {
-			position: absolute;
-			display: block;
-			content: '';
-			height: 1px;
-			width: 24px;
-			background-color: black;
-			top: 50%;
-			right: 100%;
-		}
+
 		&:empty::after {
 			font-weight: normal;
 			content: var(--add-placeholder);
