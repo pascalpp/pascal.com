@@ -106,7 +106,6 @@
 		flex-grow: 1;
 		flex-direction: column;
 		overflow: hidden;
-		overflow-y: scroll;
 		&:focus-within {
 			outline-style: auto;
 			outline-width: 2px;
@@ -120,6 +119,7 @@
 			flex: 1;
 			padding-bottom: 48px;
 			outline: none;
+			overflow-y: scroll;
 		}
 		.editor {
 			display: block;
