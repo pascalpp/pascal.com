@@ -1,12 +1,20 @@
 // external stylesheet for markdown content so we don't have to deal with css
 // scoping
 .markdown {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+
 	:is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
 		margin: 0;
 		+ * {
-			margin-top: 8px;
+			margin-top: 12px;
 		}
 	}
+
+	:is(h1, h2, h3, h4, h5, h6):not(:first-child) {
+		font-weight: 600;
+		margin-top: 24px;
+	}
+
 	ul,
 	ol {
 		margin-bottom: 16px;
