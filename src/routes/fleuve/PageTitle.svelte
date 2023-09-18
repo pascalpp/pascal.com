@@ -43,9 +43,16 @@
 			event.stopPropagation();
 		}
 
+		if (event.key === 'Escape') {
+			const card = target?.closest('.page-card') as HTMLElement;
+			target?.blur();
+			card?.focus();
+		}
+
 		if (event.key === 'Enter') {
-			event.preventDefault();
-			(target.nextElementSibling as HTMLElement)?.focus();
+			const card = target?.closest('.page-card') as HTMLElement;
+			target?.blur();
+			card?.focus();
 		}
 	}
 </script>

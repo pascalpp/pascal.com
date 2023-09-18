@@ -34,7 +34,7 @@
 		}
 
 		if (event.key === 'Escape') {
-			const card = target?.closest('.page')?.querySelector('.page-card') as HTMLElement;
+			const card = target?.closest('.page-card') as HTMLElement;
 			target?.blur();
 			card?.focus();
 		}
