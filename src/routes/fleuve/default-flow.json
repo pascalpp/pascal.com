@@ -2,7 +2,7 @@
 	{
 		"id": "8c51b786-c593-48b0-b105-9bda2b09f78a",
 		"title": "Fleuve",
-		"description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Try it out!\n\n- Press the right arrow twice to activate the next page.",
+		"description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Try it out!\n\n- Press the right arrow twice to activate the next card.",
 		"active": true,
 		"connections": [
 			"b280f8f8-f320-4752-bf82-17437f8cc476",
@@ -10,19 +10,20 @@
 			"67588553-5255-44db-a38c-fbb56ed8e589",
 			"3d3c2738-4566-4a11-a75a-806d837eefe7",
 			"77f43da1-4f27-4c5b-b522-750daacabf86",
+			"7542953c-9d90-4241-aebe-426fbc37d75d",
 			"7c98d9f0-9200-4f1f-a373-5dac57a37aae"
 		]
 	},
 	{
 		"id": "b280f8f8-f320-4752-bf82-17437f8cc476",
-		"title": "Another page",
+		"title": "Another card",
 		"connections": [],
 		"active": false,
-		"description": "## Nice!\n\n- Press the down arrow to select the page below this one.\n- Press space, enter, or right arrow to activate it."
+		"description": "## Nice!\n\n- Press the down arrow to select the card below this one.\n- Press space, enter, or right arrow to activate it."
 	},
 	{
 		"id": "33300122-07f3-4057-b7fb-d6cb58fc4052",
-		"title": "A sibling page",
+		"title": "A sibling card",
 		"connections": [],
 		"active": false,
 		"description": "## Well done!\n\n- Now activate the next card below and edit its title."
@@ -39,7 +40,7 @@
 		"title": "Delete me",
 		"connections": [],
 		"active": false,
-		"description": "## It's okay, I don't mind.\n\nPress backspace to delete this card. You’ll be asked to confirm before the card is removed."
+		"description": "## It’s okay, I don’t mind.\n\nPress backspace to delete this card. You’ll be asked to confirm before the card is removed."
 	},
 	{
 		"id": "77f43da1-4f27-4c5b-b522-750daacabf86",
@@ -67,5 +68,12 @@
 		"connections": [],
 		"active": false,
 		"description": "## Add more cards\n\n- Press the right arrow to connect a card to this one.\n- Press the down arrow to add a card at the same level as this one."
+	},
+	{
+		"id": "7542953c-9d90-4241-aebe-426fbc37d75d",
+		"title": "Reorder cards",
+		"connections": [],
+		"active": false,
+		"description": "## Up is up, down is down\n\n- Press shift up arrow to move a card up.\n- Press shift down arrow to move it down.\n\n_Drag and drop? Stay tuned._"
 	}
 ]
