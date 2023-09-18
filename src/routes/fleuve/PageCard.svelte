@@ -3,7 +3,7 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page } from './pages.store';
-	import { activatePage, removePage, updatePage, movePage } from './pages.store';
+	import { activatePage, removePage, updatePage, reorderPage } from './pages.store';
 
 	export let page: Page;
 	export let tabindex = 1;
@@ -49,7 +49,7 @@
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
 			if (event.shiftKey) {
-				movePage(page.id, 'up');
+				reorderPage(page.id, 'up');
 				requestAnimationFrame(() => {
 					target?.focus();
 				});
@@ -61,7 +61,7 @@
 		if (event.key === 'ArrowDown') {
 			event.preventDefault();
 			if (event.shiftKey) {
-				movePage(page.id, 'down');
+				reorderPage(page.id, 'down');
 				requestAnimationFrame(() => {
 					target?.focus();
 				});

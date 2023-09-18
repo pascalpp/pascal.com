@@ -96,7 +96,7 @@ export function removePage(id: PageId) {
 	});
 }
 
-export function movePage(id: PageId, direction: 'up' | 'down') {
+export function reorderPage(id: PageId, direction: 'up' | 'down') {
 	pageStore.update((pages) => {
 		const parentPage = pages.find((item) => item.connections.includes(id));
 		if (parentPage) {
