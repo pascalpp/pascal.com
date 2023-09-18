@@ -127,7 +127,15 @@
 	});
 </script>
 
-<div class="page-card" class:active={page.active} {tabindex} on:click={onClick} on:keydown={onKeyDown} bind:this={card}>
+<div
+	class="page-card"
+	class:active={page.active}
+	{tabindex}
+	on:click={onClick}
+	on:keydown={onKeyDown}
+	bind:this={card}
+	data-page-id={page.id}
+>
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<PageDescription {page} {tabindex} {expanded} />
