@@ -58,6 +58,12 @@
 				content: 'Untitled page';
 				opacity: 0.3;
 			}
+			&:focus-within {
+				outline-style: auto;
+				outline-width: 2px;
+				outline-color: blue;
+				outline-offset: -2px;
+			}
 		}
 
 		.description {
@@ -73,7 +79,7 @@
 				outline-style: auto;
 				outline-width: 2px;
 				outline-color: blue;
-				outline-offset: 1px;
+				outline-offset: -2px;
 			}
 
 			.editor,
