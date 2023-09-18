@@ -2,10 +2,20 @@
 	import { onMount } from 'svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import type { Page } from './pages.store';
-	import { activatePage, removePage, updatePage, reorderPage, movePageUp, movePageDown } from './pages.store';
+	import type { Page, PageId } from './pages.store';
+	import {
+		activatePage,
+		removePage,
+		updatePage,
+		reorderPage,
+		movePageUp,
+		movePageDown,
+		addParentAbovePage,
+		replaceEmptyParent,
+	} from './pages.store';
 
 	export let page: Page;
+	export let parentId: PageId;
 	export let tabindex = 1;
 
 	let card: HTMLDivElement;
@@ -25,6 +35,7 @@
 		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
 		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
 		const nextNode = nextCard || addConnection;
+		const active = page.active;
 
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
 			if (page.active) {
@@ -38,12 +49,29 @@
 			if (event.shiftKey) {
 				const newParent = movePageDown(page.id);
 				requestAnimationFrame(() => {
-					const newParentTitle = document.querySelector(`[data-page-id="${newParent.id}"] .title`) as HTMLElement;
-					newParentTitle?.focus();
-					newParentTitle?.click();
+					const newParentCard = document.querySelector(`[data-page-id="${newParent?.id}"]`) as HTMLElement;
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newParentCard?.focus();
+					newParentCard?.click();
+					requestAnimationFrame(() => {
+						newCard?.focus();
+						if (active) newCard?.click();
+					});
+				});
+			} else if (event.altKey) {
+				const newParent = addParentAbovePage(page.id);
+				requestAnimationFrame(() => {
+					const newParentCard = document.querySelector(`[data-page-id="${newParent?.id}"]`) as HTMLElement;
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newParentCard?.focus();
+					newParentCard?.click();
+					requestAnimationFrame(() => {
+						newCard?.focus();
+						if (active) newCard?.click();
+					});
 				});
 			} else {
-				if (page.active) {
+				if (active) {
 					const firstChild = target
 						.closest('.page')
 						?.querySelector('.connections')
@@ -86,14 +114,18 @@
 				requestAnimationFrame(() => {
 					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
 					newCard?.focus();
+					if (active) newCard?.click();
+				});
+			} else if (event.altKey) {
+				replaceEmptyParent(page.id);
+				requestAnimationFrame(() => {
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newCard?.focus();
+					if (active) newCard?.click();
 				});
 			} else {
-				const parentCard = target
-					.closest('.page')
-					?.closest('.connections')
-					?.closest('.page')
-					?.querySelector('.page-card') as HTMLElement;
-				if (page.active) {
+				const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
+				if (active) {
 					updatePage({ ...page, active: false });
 				} else {
 					parentCard?.click();
@@ -103,7 +135,7 @@
 
 		if (event.key === 'Enter') {
 			event.preventDefault();
-			if (page.active) {
+			if (active) {
 				updatePage({ ...page, active: false });
 			} else {
 				target.click();
@@ -113,7 +145,7 @@
 		// Space key
 		if (event.key === ' ') {
 			event.preventDefault();
-			if (!page.active) {
+			if (!active) {
 				target.click();
 			}
 		}
