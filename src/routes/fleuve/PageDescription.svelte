@@ -7,6 +7,7 @@
 
 	export let page: Page;
 	export let tabindex: number;
+	export let expanded = false;
 
 	let editing = false;
 	let editor: HTMLElement;
@@ -57,7 +58,7 @@
 	}
 </script>
 
-<div class="description" class:active={page.active}>
+<div class="description" class:active={page.active} class:expanded>
 	{#if editing}
 		<div
 			class="editor"
@@ -90,6 +91,11 @@
 			border-top: 1px solid fade(black, 10%);
 			display: flex;
 			pointer-events: auto;
+			opacity: 0;
+			transition: opacity 0.1s ease-in-out;
+			&.expanded {
+				opacity: 1;
+			}
 		}
 
 		padding: 12px;

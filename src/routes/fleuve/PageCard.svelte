@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page } from './pages.store';
@@ -6,6 +7,8 @@
 
 	export let page: Page;
 	export let tabindex = 1;
+
+	let card: HTMLDivElement;
 
 	function onClick(event: MouseEvent) {
 		activatePage(page.id);
@@ -107,12 +110,27 @@
 			}
 		}
 	}
+
+	let expanded = !!page.active;
+
+	function onTransitionEnd(event: TransitionEvent) {
+		if (event.propertyName === 'height') {
+			expanded = !!page.active;
+		}
+	}
+
+	onMount(() => {
+		card.addEventListener('transitionend', onTransitionEnd);
+		return () => {
+			card.removeEventListener('transitionend', onTransitionEnd);
+		};
+	});
 </script>
 
-<div class="page-card" class:active={page.active} {tabindex} on:click={onClick} on:keydown={onKeyDown}>
+<div class="page-card" class:active={page.active} {tabindex} on:click={onClick} on:keydown={onKeyDown} bind:this={card}>
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
-		<PageDescription {page} {tabindex} />
+		<PageDescription {page} {tabindex} {expanded} />
 	</div>
 </div>
 
@@ -143,22 +161,22 @@
 		}
 
 		// active page animation
-		@transition-time: 0.1s;
+		@transition-time: 0.2s;
 		@transition-delay: 0.1s;
-		width: fit-content;
-		min-width: 40px;
-		min-height: 40px;
-		max-height: 56px;
-		transition: min-height @transition-time ease-in-out, max-height @transition-time ease-in-out,
-			min-width @transition-time ease-in-out @transition-delay;
+		width: 80px;
+		height: 40px;
+		min-width: fit-content;
+		min-height: fit-content;
+		transition: height @transition-time ease-in-out, width @transition-time ease-in-out @transition-delay;
 		&.active {
 			--height: calc(var(--active-page-scale, 0.5) * 75vh);
-			min-height: var(--height);
+			min-width: unset;
+			min-height: 60px;
+			height: var(--height);
 			max-height: var(--height);
-			min-width: calc(var(--height) * var(--aspect-ratio));
+			width: calc(var(--height) * var(--aspect-ratio));
 			max-width: calc(var(--height) * var(--aspect-ratio));
-			transition: min-height @transition-time ease-in-out @transition-delay,
-				max-height @transition-time ease-in-out @transition-delay, min-width @transition-time ease-in-out;
+			transition: height @transition-time ease-in-out @transition-delay, width @transition-time ease-in-out;
 		}
 
 		.page-card-content {

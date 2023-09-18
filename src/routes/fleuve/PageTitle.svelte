@@ -81,6 +81,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		pointer-events: none;
+		font-size: 16px;
 
 		&:empty::before {
 			content: 'Untitled page';

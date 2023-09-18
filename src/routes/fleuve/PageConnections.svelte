@@ -53,12 +53,14 @@
 		// show connection line on left side of each child
 		:global(> *) {
 			margin-left: 24px;
+			transition: margin-left 0.2s ease-in-out;
 			&::before {
 				position: absolute;
 				display: block;
 				content: '';
 				height: 1px;
 				width: 24px;
+				transition: width 0.2s ease-in-out;
 				background-color: black;
 				top: 50%;
 				right: 100%;
