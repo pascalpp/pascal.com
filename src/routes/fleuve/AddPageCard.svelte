@@ -61,8 +61,53 @@
 	{tabindex}
 	contenteditable="true"
 	class="add-connection"
+	class:show={page.active}
 	on:focus={onFocus}
 	on:blur={onBlur}
 	on:keydown={onKeyDown}
 	on:keyup={onKeyUp}
 />
+
+<style lang="less">
+	.add-connection {
+		display: none;
+		&.show {
+			display: block;
+		}
+
+		background-color: white;
+		padding: 1em;
+		padding-right: 1.25em;
+		box-sizing: border-box;
+		border: 1px solid fade(black, 30%);
+		border-radius: 4px;
+		margin: 0;
+		margin-left: 24px;
+		width: auto;
+		appearance: none;
+		font-weight: bold;
+		white-space: nowrap;
+		position: relative;
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			height: 1px;
+			width: 24px;
+			background-color: black;
+			top: 50%;
+			right: 100%;
+		}
+		&:empty::after {
+			font-weight: normal;
+			content: 'Add page';
+			opacity: 0.5;
+		}
+		&:focus,
+		&:active {
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: black;
+		}
+	}
+</style>

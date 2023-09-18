@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './PageCard.less';
+	import './page.less';
 	import { browser } from '$app/environment';
 	import PageCard from './PageCard.svelte';
 	import Slider from './Slider.svelte';
