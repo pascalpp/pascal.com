@@ -31,6 +31,7 @@
 	function onBlur(event: FocusEvent) {
 		const target = event.target as HTMLHeadingElement;
 		const title = target.innerText.trim();
+		target.innerText = title;
 		updatePage({ ...page, title });
 		const selection = window.getSelection();
 		selection?.removeAllRanges();
