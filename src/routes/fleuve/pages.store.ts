@@ -35,9 +35,9 @@ export function updatePage(page: Page) {
 	});
 }
 
-export function addPage(pageInfo: PageInfo) {
+export function addPage(pageInfo: PageInfo = {}): Page {
 	const id = uuidv4();
-	const page = { id, ...pageInfo, connections: [] };
+	const page = { id, title: '', description: '', connections: [], ...pageInfo };
 	pageStore.update((pages) => {
 		pages.push(page);
 		return pages;
@@ -116,6 +116,37 @@ export function reorderPage(id: PageId, direction: 'up' | 'down') {
 		}
 		return pages;
 	});
+}
+
+export function movePageUp(id: PageId) {
+	pageStore.update((pages) => {
+		const parent = pages.find((item) => item.connections.includes(id));
+		const grandparent = parent && pages.find((item) => item.connections.includes(parent.id));
+		if (grandparent) {
+			const parentIndex = grandparent.connections.indexOf(parent.id);
+			grandparent.connections.splice(parentIndex + 1, 0, id);
+			parent.connections = parent.connections.filter((itemId) => itemId != id);
+		}
+		return pages;
+	});
+}
+
+export function movePageDown(id: PageId): Page {
+	console.log('movePageDown', id);
+	const newParent = addPage();
+	pageStore.update((pages) => {
+		const parent = pages.find((item) => item.connections.includes(id));
+		if (parent) {
+			const index = parent.connections.indexOf(id) ?? 0;
+			parent.connections.splice(index, 1, newParent.id);
+		} else {
+			// the page being moved down is the top-most page, so put the new parent first
+			pages = [newParent, ...pages.filter((item) => item.id !== newParent.id)];
+		}
+		newParent.connections.push(id);
+		return pages;
+	});
+	return newParent;
 }
 
 function changeItemIndex(array: PageId[], from: number, to: number) {
