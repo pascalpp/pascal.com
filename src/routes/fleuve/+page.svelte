@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment';
 	import PageView from './PageView.svelte';
 	import Slider from './Slider.svelte';
-	import { pageStore, reset, addRootPage } from './pages.store';
+	import { pageStore, reset, addRootPage, loadTutorial } from './pages.store';
 	import type { Page } from './pages.store';
 	import { settings } from './settings.store';
 	import Changelog from './changelog.md';
@@ -25,6 +25,14 @@
 			reset();
 			activateFirstPage();
 		}
+	}
+
+	function onClickTutorial() {
+		const tutorialStartPageId = loadTutorial();
+		requestAnimationFrame(() => {
+			const tutorialStartPage = document.querySelector(`[data-page-id="${tutorialStartPageId}"]`) as HTMLElement;
+			tutorialStartPage?.click();
+		});
 	}
 
 	function toggleChangelog() {
@@ -111,6 +119,7 @@
 
 	<div class="tools row bottom left">
 		<button class="reset-button" on:click={onClickReset}>Reset</button>
+		<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
 	</div>
 
 	<div class="tools row bottom right">
