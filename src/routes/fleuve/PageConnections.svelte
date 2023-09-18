@@ -27,12 +27,17 @@
 			opacity: 1;
 		}
 
-		// set placeholder text for the add page card
-		--add-placeholder: 'Add new flow'; // root-level
+		// conditional placeholder vars
+		// root-level
+		--title-placeholder: 'Untitled flow';
+		--add-card-placeholder: 'Add new flow';
 		&:not(:first-child) {
-			--add-placeholder: 'Add card'; // child-level with no active siblings
+			// child-level with no active siblings
+			--title-placeholder: 'Untitled card';
+			--add-card-placeholder: 'Add card';
 			&:has(.page.active) {
-				--add-placeholder: 'Add sibilng'; // child-level with active siblings
+				// child-level with active siblings
+				--add-card-placeholder: 'Add sibilng';
 			}
 		}
 

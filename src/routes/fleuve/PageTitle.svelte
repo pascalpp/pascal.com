@@ -81,7 +81,7 @@
 		font-size: 16px;
 
 		&:empty::before {
-			content: 'Untitled page';
+			content: var(--title-placeholder);
 			opacity: 0.3;
 		}
 

@@ -90,7 +90,7 @@
 
 		&:empty::after {
 			font-weight: normal;
-			content: var(--add-placeholder);
+			content: var(--add-card-placeholder);
 			opacity: 0.5;
 		}
 		&:focus,
