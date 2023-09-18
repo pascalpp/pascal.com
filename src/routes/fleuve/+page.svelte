@@ -45,6 +45,15 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Fleuve</title>
+	<meta name="description" content="A tool for visualizing and organizing your thoughts" />
+	<meta property="og:title" content="Fleuve" />
+	<meta property="og:description" content="A tool for visualizing and organizing your thoughts" />
+	<meta property="og:url" content="https://pascal.com/fleuve" />
+	<meta property="og:site_name" content="Fleuve" />
+</svelte:head>
+
 <main>
 	<div
 		class="pages"
