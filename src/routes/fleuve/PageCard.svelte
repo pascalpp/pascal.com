@@ -170,7 +170,7 @@
 		transition: height @transition-time ease-in-out, width @transition-time ease-in-out @transition-delay;
 		&.active {
 			--height: calc(var(--active-page-scale, 0.5) * 75vh);
-			min-width: unset;
+			min-width: 150px;
 			min-height: 60px;
 			height: var(--height);
 			max-height: var(--height);
