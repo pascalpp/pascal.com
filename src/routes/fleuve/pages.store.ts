@@ -196,11 +196,19 @@ function getStoredState(): Page[] | undefined {
 	if (browser) {
 		try {
 			const state = window?.localStorage.getItem(storageKey);
-			return state && JSON.parse(state);
+			const parsed = state && JSON.parse(state);
+			return removeOrphanedPages(parsed);
 		} catch {
 			// don't care
 		}
 	}
+}
+
+function removeOrphanedPages(pages: Page[]) {
+	return pages.map((page) => {
+		page.connections = page.connections.filter((id) => pages.some((item) => item.id === id));
+		return page;
+	});
 }
 
 function getDefaultState() {
