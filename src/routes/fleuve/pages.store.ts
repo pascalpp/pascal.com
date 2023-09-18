@@ -1,7 +1,7 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 import { v4 as uuidv4 } from 'uuid';
-import defaultFlow from './default-flow.json';
+import tutorialFlow from './tutorial-flow.json';
 
 const storageKey = 'pages';
 
@@ -10,18 +10,31 @@ export type PageId = string;
 export interface PageInfo {
 	title?: string;
 	description?: string;
-	image?: string;
+	connections?: PageId[];
 	active?: boolean;
 }
 
-export interface Page extends PageInfo {
+export interface Page {
 	id: PageId;
+	title: string;
+	description: string;
 	connections: PageId[];
+	active?: boolean;
 }
 
-export const pageStore = writable<Page[]>(getStoredState() || getDefaultState());
+const pageDefaults = {
+	title: '',
+	description: '',
+	connections: [],
+};
+
+export const pageStore = writable<Page[]>([]);
 
 if (browser) {
+	const state = getStoredState() || getTutorialState();
+	const sanitized = sanitizePages(state);
+	pageStore.set(sanitized);
+
 	pageStore.subscribe((pages) => {
 		window?.localStorage.setItem(storageKey, JSON.stringify(pages));
 	});
@@ -37,7 +50,7 @@ export function updatePage(page: Page) {
 
 export function addPage(pageInfo: PageInfo = {}): Page {
 	const id = uuidv4();
-	const page = { id, title: '', description: '', connections: [], ...pageInfo };
+	const page = { id, ...pageDefaults, ...pageInfo };
 	pageStore.update((pages) => {
 		pages.push(page);
 		return pages;
@@ -49,7 +62,7 @@ export function addRootPage() {
 	pageStore.update((pages) => {
 		const rootChildren = pages.filter((page) => !pages.some((item) => item.connections.includes(page.id)));
 		const rootChildrenIds = rootChildren.map((item) => item.id);
-		const rootPage = { id: 'root', title: 'Root Card', connections: rootChildrenIds };
+		const rootPage = { id: 'root', title: 'Root Card', description: '', connections: rootChildrenIds };
 		return [rootPage, ...pages];
 	});
 }
@@ -206,25 +219,66 @@ export function reset() {
 	pageStore.update(() => getDefaultState());
 }
 
+export function loadTutorial(): PageId | undefined {
+	let tutorialStartPageId;
+
+	pageStore.update((pages) => {
+		const tutorial = getTutorialState();
+		const tutorialRoot = tutorial.find((item) => item.id === 'root');
+		const tutorialPages = tutorial.filter((item) => item.id !== 'root');
+		tutorialStartPageId = tutorialRoot?.connections[0];
+		if (!tutorialStartPageId) throw new Error('Error loading tutorial. Root page not found.');
+
+		const root = pages.find((item) => item.id === 'root');
+		root?.connections.unshift(tutorialStartPageId);
+		return sanitizePages([...pages, ...tutorialPages]);
+	});
+
+	return tutorialStartPageId;
+}
+
 function getStoredState(): Page[] | undefined {
 	if (browser) {
 		try {
 			const state = window?.localStorage.getItem(storageKey);
 			const parsed = state && JSON.parse(state);
-			return removeOrphanedPages(parsed);
+			return parsed;
 		} catch {
 			// don't care
 		}
 	}
 }
 
-function removeOrphanedPages(pages: Page[]) {
-	return pages.map((page) => {
-		page.connections = page.connections.filter((id) => pages.some((item) => item.id === id));
+function sanitizePages(pages: Page[]): Page[] {
+	const filtered = pages.map((page) => {
+		page.title = page.title ?? '';
+		page.description = page.description ?? '';
+		page.connections = Array.from(new Set(page.connections.filter((id) => pages.some((item) => item.id === id))));
+		page.active = page.active ?? false;
 		return page;
 	});
+
+	const ids = new Set();
+	const deduped = filtered.filter((page) => {
+		if (ids.has(page.id)) {
+			return false;
+		} else {
+			ids.add(page.id);
+			return true;
+		}
+	});
+
+	return deduped;
 }
 
-function getDefaultState() {
-	return defaultFlow;
+function getTutorialState(): Page[] {
+	return tutorialFlow;
+}
+
+function getDefaultState(): Page[] {
+	const firstPageId = uuidv4();
+	return [
+		{ id: 'root', title: 'Root Card', description: '', connections: [firstPageId], active: true },
+		{ id: firstPageId, title: '', description: '', connections: [], active: true },
+	];
 }
