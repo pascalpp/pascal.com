@@ -1,8 +1,13 @@
 ---
-latest: 0.1.8
+latest: 0.1.9
 ---
 
 # Changelog
+
+### Version 0.1.9
+
+- Improved hotkeys for activating cards and editing descriptions
+- Added tutorial flow as default document
 
 ### Version 0.1.8
 
