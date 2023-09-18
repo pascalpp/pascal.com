@@ -56,9 +56,9 @@
 	<meta name="description" content="A tool for visualizing and organizing your thoughts" />
 	<meta property="og:title" content="Fleuve" />
 	<meta property="og:description" content="A tool for visualizing and organizing your thoughts" />
-	<meta property="og:url" content="https://pascal.com/fleuve" />
+	<meta property="og:url" content="https://www.pascal.com/fleuve" />
 	<meta property="og:site_name" content="Fleuve" />
-	<meta property="og:image" content="https://pascal.com/files/fleuve-og-preview.png" />
+	<meta property="og:image" content="https://www.pascal.com/files/fleuve-og-preview.png" />
 </svelte:head>
 
 <main>
