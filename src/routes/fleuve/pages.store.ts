@@ -92,16 +92,12 @@ function getAllChildPages(pages: Page[], id: PageId): Page[] {
 
 export function removePage(id: PageId) {
 	pageStore.update((pages) => {
-		const parentPages = getAllParentPages(pages, id).map((item) => item.id);
 		const connectedPageIds = getAllChildPages(pages, id).map((item) => item.id);
-		const ids = [id, ...connectedPageIds];
-		pages.filter((item) => {
-			if (parentPages.includes(item.id)) {
-				item.connections = item.connections.filter((itemId) => itemId != id);
-			}
-			return !ids.includes(item.id);
+		const idsToRemove = [id, ...connectedPageIds];
+		return pages.filter((item) => {
+			item.connections = item.connections.filter((itemId) => !idsToRemove.includes(itemId));
+			return !idsToRemove.includes(item.id);
 		});
-		return pages;
 	});
 }
 
