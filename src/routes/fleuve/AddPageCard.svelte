@@ -100,7 +100,7 @@
 		}
 		&:empty::after {
 			font-weight: normal;
-			content: 'Add page';
+			content: var(--add-placeholder);
 			opacity: 0.5;
 		}
 		&:focus,
