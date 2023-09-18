@@ -8,10 +8,10 @@
 </script>
 
 <div class="connections" class:active={page.active}>
-	{#each page.connections as connectionId (connectionId)}
-		<PageView pageId={connectionId} {tabindex} />
+	{#each page.connections as connectionId, index (connectionId)}
+		<PageView pageId={connectionId} tabindex={tabindex * 10 + index} />
 	{/each}
-	<AddPageCard {page} {tabindex} />
+	<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
 </div>
 
 <style lang="less">
@@ -28,7 +28,7 @@
 		}
 
 		// set placeholder text for the add page card
-		--add-placeholder: 'Add page';
+		--add-placeholder: 'Add card';
 		&:has(.page.active) {
 			--add-placeholder: 'Add sibilng';
 		}
