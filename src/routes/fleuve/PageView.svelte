@@ -5,6 +5,7 @@
 	import { pageStore } from './pages.store';
 
 	export let pageId: PageId;
+	export let parentId: PageId | undefined = undefined;
 	export let tabindex = 1;
 
 	let page: Page;
@@ -17,7 +18,9 @@
 {#key page?.id}
 	{#if page}
 		<div class="page" class:active={page.active}>
-			<PageCard {page} {tabindex} />
+			{#if parentId}
+				<PageCard {page} {tabindex} {parentId} />
+			{/if}
 			<PageConnections {page} tabindex={tabindex + 1} />
 		</div>
 	{/if}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import PageConnections from './PageConnections.svelte';
+	import PageView from './PageView.svelte';
 	import Slider from './Slider.svelte';
 	import { pageStore, reset, addRootPage } from './pages.store';
 	import type { Page } from './pages.store';
@@ -43,17 +43,20 @@
 		$settings.aspectRatioType = target.value as 'portrait' | 'landscape';
 	}
 
-	pageStore.subscribe((pages) => {
-		root = pages.find((item) => item.id === 'root') as Page;
-		if (!root) addRootPage();
-	});
-
 	function activateFirstPage() {
 		const firstPage = document.querySelector('.page-card') as HTMLElement;
 		firstPage?.click();
 	}
 
-	onMount(activateFirstPage);
+	pageStore.subscribe((pages) => {
+		if (browser) (<any>window).pages = pages;
+		root = pages.find((item) => item.id === 'root') as Page;
+		if (!root) addRootPage();
+	});
+
+	onMount(() => {
+		activateFirstPage();
+	});
 </script>
 
 <svelte:head>
@@ -74,7 +77,7 @@
 		style:--aspect-ratio={aspectRatio}
 	>
 		{#if browser && root}
-			<PageConnections page={root} tabindex={1} />
+			<PageView pageId="root" tabindex={1} />
 		{/if}
 	</div>
 
