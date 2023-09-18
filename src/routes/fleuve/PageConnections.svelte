@@ -9,7 +9,7 @@
 
 <div class="connections" class:active={page.active}>
 	{#each page.connections as connectionId, index (connectionId)}
-		<PageView pageId={connectionId} tabindex={tabindex * 10 + index} />
+		<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
 	{/each}
 	<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
 </div>
@@ -28,7 +28,7 @@
 		}
 
 		// set placeholder text for the add page card
-		--add-placeholder: 'Add flow'; // root-level
+		--add-placeholder: 'Add new flow'; // root-level
 		&:not(:first-child) {
 			--add-placeholder: 'Add card'; // child-level with no active siblings
 			&:has(.page.active) {
