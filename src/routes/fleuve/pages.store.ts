@@ -127,8 +127,25 @@ export function movePageUp(id: PageId) {
 	});
 }
 
-export function movePageDown(id: PageId): Page {
-	console.log('movePageDown', id);
+export function replaceEmptyParent(id: PageId) {
+	pageStore.update((pages) => {
+		const parent = pages.find((item) => item.connections.includes(id));
+		const grandparent = parent && pages.find((item) => item.connections.includes(parent.id));
+		if (grandparent) {
+			const parentIndex = grandparent.connections.indexOf(parent.id);
+			grandparent.connections.splice(parentIndex + 1, 0, id);
+			parent.connections = parent.connections.filter((itemId) => itemId != id);
+		}
+
+		if (parent && !parent.title && !parent.description) {
+			pages = pages.filter((item) => item.id !== parent.id);
+		}
+
+		return pages;
+	});
+}
+
+export function addParentAbovePage(id: PageId): Page {
 	const newParent = addPage();
 	pageStore.update((pages) => {
 		const parent = pages.find((item) => item.connections.includes(id));
@@ -140,6 +157,24 @@ export function movePageDown(id: PageId): Page {
 			pages = [newParent, ...pages.filter((item) => item.id !== newParent.id)];
 		}
 		newParent.connections.push(id);
+		return pages;
+	});
+	return newParent;
+}
+
+export function movePageDown(id: PageId): Page | undefined {
+	let newParent;
+	pageStore.update((pages) => {
+		const parent = pages.find((item) => item.connections.includes(id));
+		if (parent) {
+			const index = parent.connections.indexOf(id) ?? 0;
+			const newParentId = index > 0 ? parent?.connections[index - 1] : parent?.connections[index + 1];
+			newParent = pages.find((item) => item.id === newParentId);
+			if (newParent) {
+				newParent.connections.push(id);
+				parent.connections = parent.connections.filter((itemId) => itemId != id);
+			}
+		}
 		return pages;
 	});
 	return newParent;
