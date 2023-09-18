@@ -76,10 +76,11 @@
 		}
 
 		background-color: white;
-		padding: 1em;
-		padding-right: 1.25em;
 		box-sizing: border-box;
 		border: 1px solid fade(black, 30%);
+		padding: 1px 20px;
+		line-height: 2.25em;
+		margin: 0 4px;
 		border-radius: 4px;
 		margin: 0;
 		margin-left: 24px;
