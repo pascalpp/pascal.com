@@ -78,9 +78,6 @@
 		margin: 0 4px;
 		flex-shrink: 0;
 		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		pointer-events: none;
 		font-size: 16px;
 
 		&:empty::before {
@@ -93,6 +90,12 @@
 			outline-width: 2px;
 			outline-color: blue;
 			outline-offset: -2px;
+		}
+
+		&:not(.active) {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			pointer-events: none;
 		}
 
 		&.active {
