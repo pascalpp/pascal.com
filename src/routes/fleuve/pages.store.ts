@@ -45,6 +45,15 @@ export function addPage(pageInfo: PageInfo) {
 	return page;
 }
 
+export function addRootPage() {
+	pageStore.update((pages) => {
+		const rootChildren = pages.filter((page) => !pages.some((item) => item.connections.includes(page.id)));
+		const rootChildrenIds = rootChildren.map((item) => item.id);
+		const rootPage = { id: 'root', title: 'Root Card', connections: rootChildrenIds };
+		return [rootPage, ...pages];
+	});
+}
+
 export function addConnection(page: Page, pageInfo: PageInfo) {
 	const connection = addPage(pageInfo);
 	updatePage({ ...page, connections: [...page.connections, connection.id] });
