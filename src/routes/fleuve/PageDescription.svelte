@@ -87,6 +87,8 @@
 	.description {
 		display: none;
 		pointer-events: none;
+		position: relative;
+
 		&.active {
 			border-top: 1px solid fade(black, 10%);
 			display: flex;
