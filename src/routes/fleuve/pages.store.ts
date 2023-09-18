@@ -1,6 +1,7 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 import { v4 as uuidv4 } from 'uuid';
+import defaultFlow from './default-flow.json';
 
 const storageKey = 'pages';
 
@@ -17,15 +18,6 @@ export interface Page extends PageInfo {
 	id: PageId;
 	connections: PageId[];
 }
-
-const description = `
-Create flows by connecting pages.
-
-- Use arrow keys to navigate between pages.
-- Tap or press enter to activate a page.
-- Press backspace to delete a page and all of its connections.
-- Use markdown to format your page description.
-`;
 
 export const pageStore = writable<Page[]>(getStoredState() || getDefaultState());
 
@@ -120,13 +112,5 @@ function getStoredState(): Page[] | undefined {
 }
 
 function getDefaultState() {
-	return [
-		{
-			id: uuidv4(),
-			title: '',
-			description: description.trim(),
-			active: true,
-			connections: [],
-		},
-	];
+	return defaultFlow;
 }

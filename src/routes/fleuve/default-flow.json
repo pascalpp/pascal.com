@@ -1,0 +1,71 @@
+[
+	{
+		"id": "8c51b786-c593-48b0-b105-9bda2b09f78a",
+		"title": "Fleuve",
+		"description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Try it out!\n\n- Press the right arrow twice to activate the next page.",
+		"active": true,
+		"connections": [
+			"b280f8f8-f320-4752-bf82-17437f8cc476",
+			"33300122-07f3-4057-b7fb-d6cb58fc4052",
+			"67588553-5255-44db-a38c-fbb56ed8e589",
+			"3d3c2738-4566-4a11-a75a-806d837eefe7",
+			"77f43da1-4f27-4c5b-b522-750daacabf86",
+			"7c98d9f0-9200-4f1f-a373-5dac57a37aae"
+		]
+	},
+	{
+		"id": "b280f8f8-f320-4752-bf82-17437f8cc476",
+		"title": "Another page",
+		"connections": [],
+		"active": false,
+		"description": "## Nice!\n\n- Press the down arrow to select the page below this one.\n- Press space, enter, or right arrow to activate it."
+	},
+	{
+		"id": "33300122-07f3-4057-b7fb-d6cb58fc4052",
+		"title": "A sibling page",
+		"connections": [],
+		"active": false,
+		"description": "## Well done!\n\n- Now activate the next card below and edit its title."
+	},
+	{
+		"id": "67588553-5255-44db-a38c-fbb56ed8e589",
+		"title": "Edit me",
+		"connections": [],
+		"active": false,
+		"description": "## Editing cards\n\n- Press tab to focus the title and edit it. \n- Press enter or escape when done.\n- Press D or E to edit the description, or double-click it.\n\n_Use markdown to format descriptions._"
+	},
+	{
+		"id": "3d3c2738-4566-4a11-a75a-806d837eefe7",
+		"title": "Delete me",
+		"connections": [],
+		"active": false,
+		"description": "## It's okay, I don't mind.\n\nPress backspace to delete this card. You’ll be asked to confirm before the card is removed."
+	},
+	{
+		"id": "77f43da1-4f27-4c5b-b522-750daacabf86",
+		"title": "Infinite levels",
+		"connections": ["881783c4-7061-4637-82e4-9c775e89b761"],
+		"active": false,
+		"description": "## Drill, drill drill\n\n- Press the right arrow to drill down through the hierarchy.\n- Press the left arrow to drill back up."
+	},
+	{
+		"id": "881783c4-7061-4637-82e4-9c775e89b761",
+		"title": "Next level",
+		"connections": ["a9f768c9-41d8-4726-894a-81c014501d20"],
+		"active": false
+	},
+	{
+		"id": "a9f768c9-41d8-4726-894a-81c014501d20",
+		"title": "Another level",
+		"connections": ["c5dfc82a-c443-4d67-967f-0032387be582"],
+		"active": false
+	},
+	{ "id": "c5dfc82a-c443-4d67-967f-0032387be582", "title": "Deeper still", "connections": [], "active": false },
+	{
+		"id": "7c98d9f0-9200-4f1f-a373-5dac57a37aae",
+		"title": "Keep going!",
+		"connections": [],
+		"active": false,
+		"description": "## Add more cards\n\n- Press the right arrow to connect a card to this one.\n- Press the down arrow to add a card at the same level as this one."
+	}
+]
