@@ -81,7 +81,7 @@ function getAllChildPages(pages: Page[], id: PageId): Page[] {
 	return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
 }
 
-export function removePage(id: string) {
+export function removePage(id: PageId) {
 	pageStore.update((pages) => {
 		const parentPages = getAllParentPages(pages, id).map((item) => item.id);
 		const connectedPageIds = getAllChildPages(pages, id).map((item) => item.id);
@@ -94,6 +94,27 @@ export function removePage(id: string) {
 		});
 		return pages;
 	});
+}
+
+export function movePage(id: PageId, direction: 'up' | 'down') {
+	pageStore.update((pages) => {
+		const parentPage = pages.find((item) => item.connections.includes(id));
+		if (parentPage) {
+			const index = parentPage.connections.indexOf(id);
+			const directionIndex = direction === 'up' ? index - 1 : index + 1;
+			const normalizedIndex = Math.min(Math.max(directionIndex, 0), parentPage.connections.length - 1);
+			parentPage.connections = changeItemIndex(parentPage.connections, index, normalizedIndex);
+		}
+		return pages;
+	});
+}
+
+function changeItemIndex(array: PageId[], from: number, to: number) {
+	// remove `from` item and store it
+	const item = array.splice(from, 1)[0];
+	// insert stored item into position `to`
+	array.splice(to, 0, item);
+	return array;
 }
 
 export function reset() {
