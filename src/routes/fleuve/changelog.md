@@ -7,6 +7,7 @@ latest: 0.1.8
 ### Version 0.1.8
 
 - Save settings in localstorage
+- Moved global styles to components
 
 ### Version 0.1.7
 

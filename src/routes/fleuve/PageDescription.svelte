@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './description_markdown.less';
+	import './markdown.less';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
@@ -67,7 +67,7 @@
 			{page.description || ''}
 		</div>
 	{:else}
-		<div class="content">
+		<div class="content markdown">
 			{@html marked.parse(page.description || '')}
 		</div>
 	{/if}
