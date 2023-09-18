@@ -1,8 +1,16 @@
 ---
-latest: 0.1.10
+latest: 0.1.11
 ---
 
 # Changelog
+
+### Version 0.1.11
+
+- Added shift+left/right to move cards left and right in the flow.
+- Added option+right to move a card down with a new empty parent.
+- Added option+left to move a card left, replacing its parent, if empty.
+- Added new root page to support multiple flows in the same document.
+- Bug fixes for orphaned pages.
 
 ### Version 0.1.10
 
