@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './page.less';
 	import { browser } from '$app/environment';
-	import PageCard from './PageCard.svelte';
+	import Page from './PageView.svelte';
 	import Slider from './Slider.svelte';
 	import { pageStore, reset } from './pages.store';
 	import { settings } from './settings.store';
@@ -55,7 +55,7 @@
 	>
 		{#if browser && firstPageId}
 			{#key firstPageId}
-				<PageCard pageId={firstPageId} />
+				<Page pageId={firstPageId} />
 			{/key}
 		{/if}
 	</div>

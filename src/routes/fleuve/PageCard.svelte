@@ -2,20 +2,14 @@
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import type { Page, PageId } from './pages.store';
+	import type { Page } from './pages.store';
 	import { pageStore, activatePage, removePage, updatePage } from './pages.store';
 
-	export let pageId: PageId;
+	export let page: Page;
 	export let tabindex = 1;
 
-	let page: Page;
-
-	pageStore.subscribe((pages) => {
-		page = pages.find((p) => p.id === pageId) as Page;
-	});
-
 	function onClick(event: MouseEvent) {
-		activatePage(pageId);
+		activatePage(page.id);
 		const card = event.target as HTMLElement;
 		requestAnimationFrame(() => {
 			card?.focus();
@@ -86,16 +80,9 @@
 	}
 </script>
 
-{#key page?.id}
-	{#if page}
-		<div class="page" class:active={page.active}>
-			<div class="page-card" {tabindex} on:click={onClick} on:keydown={onKeyDown}>
-				<div class="page-card-content">
-					<PageTitle {page} {tabindex} />
-					<PageDescription {page} {tabindex} />
-				</div>
-			</div>
-			<PageConnections {page} tabindex={tabindex + 1} />
-		</div>
-	{/if}
-{/key}
+<div class="page-card" {tabindex} on:click={onClick} on:keydown={onKeyDown}>
+	<div class="page-card-content">
+		<PageTitle {page} {tabindex} />
+		<PageDescription {page} {tabindex} />
+	</div>
+</div>

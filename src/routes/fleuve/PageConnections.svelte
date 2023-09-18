@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AddPageCard from './AddPageCard.svelte';
 	import type { Page } from './pages.store';
-	import PageCard from './PageCard.svelte';
+	import PageView from './PageView.svelte';
 
 	export let page: Page;
 	export let tabindex: number;
@@ -9,7 +9,7 @@
 
 <div class="connections" class:active={page.active}>
 	{#each page.connections as connectionId (connectionId)}
-		<PageCard pageId={connectionId} {tabindex} />
+		<PageView pageId={connectionId} {tabindex} />
 	{/each}
 	<AddPageCard {page} {tabindex} />
 </div>
@@ -59,6 +59,19 @@
 				content: '';
 				height: 1px;
 				width: 24px;
+				background-color: black;
+				top: 50%;
+				right: 100%;
+			}
+		}
+		:global(> .page.active) {
+			margin-left: 12px;
+			&::before {
+				position: absolute;
+				display: block;
+				content: '';
+				height: 1px;
+				width: 12px;
 				background-color: black;
 				top: 50%;
 				right: 100%;
