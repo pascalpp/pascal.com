@@ -138,7 +138,10 @@ export function replaceEmptyParent(id: PageId) {
 		}
 
 		if (parent && !parent.title && !parent.description) {
-			pages = pages.filter((item) => item.id !== parent.id);
+			pages = pages.filter((item) => {
+				item.connections = item.connections.filter((itemId) => itemId !== parent.id);
+				return item.id !== parent.id;
+			});
 		}
 
 		return pages;
