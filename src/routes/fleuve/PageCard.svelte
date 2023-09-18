@@ -3,7 +3,7 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page } from './pages.store';
-	import { activatePage, removePage, updatePage, reorderPage } from './pages.store';
+	import { activatePage, removePage, updatePage, reorderPage, movePageUp, movePageDown } from './pages.store';
 
 	export let page: Page;
 	export let tabindex = 1;
@@ -35,14 +35,23 @@
 
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
-			if (page.active) {
-				const firstChild = target
-					.closest('.page')
-					?.querySelector('.connections')
-					?.querySelector('.page-card, .add-connection') as HTMLElement;
-				firstChild?.focus();
+			if (event.shiftKey) {
+				const newParent = movePageDown(page.id);
+				requestAnimationFrame(() => {
+					const newParentTitle = document.querySelector(`[data-page-id="${newParent.id}"] .title`) as HTMLElement;
+					newParentTitle?.focus();
+					newParentTitle?.click();
+				});
 			} else {
-				target.click();
+				if (page.active) {
+					const firstChild = target
+						.closest('.page')
+						?.querySelector('.connections')
+						?.querySelector('.page-card, .add-connection') as HTMLElement;
+					firstChild?.focus();
+				} else {
+					target.click();
+				}
 			}
 		}
 
@@ -72,15 +81,23 @@
 
 		if (event.key === 'ArrowLeft') {
 			event.preventDefault();
-			const parentCard = target
-				.closest('.page')
-				?.closest('.connections')
-				?.closest('.page')
-				?.querySelector('.page-card') as HTMLElement;
-			if (page.active) {
-				updatePage({ ...page, active: false });
+			if (event.shiftKey) {
+				movePageUp(page.id);
+				requestAnimationFrame(() => {
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newCard?.focus();
+				});
 			} else {
-				parentCard?.click();
+				const parentCard = target
+					.closest('.page')
+					?.closest('.connections')
+					?.closest('.page')
+					?.querySelector('.page-card') as HTMLElement;
+				if (page.active) {
+					updatePage({ ...page, active: false });
+				} else {
+					parentCard?.click();
+				}
 			}
 		}
 
