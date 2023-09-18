@@ -127,14 +127,21 @@ export function movePageUp(id: PageId) {
 	});
 }
 
-export function replaceEmptyParent(id: PageId) {
+export function replaceEmptyParent(childId: PageId) {
 	pageStore.update((pages) => {
-		const parent = pages.find((item) => item.connections.includes(id));
+		const parent = pages.find((item) => item.connections.includes(childId));
 		const grandparent = parent && pages.find((item) => item.connections.includes(parent.id));
 		if (grandparent) {
 			const parentIndex = grandparent.connections.indexOf(parent.id);
-			grandparent.connections.splice(parentIndex + 1, 0, id);
-			parent.connections = parent.connections.filter((itemId) => itemId != id);
+			console.log('grandparent before', grandparent.connections);
+			grandparent.connections = [
+				...grandparent.connections.slice(0, parentIndex),
+				childId,
+				...grandparent.connections.slice(parentIndex + 1),
+			];
+			console.log('grandparent after', grandparent.connections);
+
+			parent.connections = parent.connections.filter((itemId) => itemId != childId);
 		}
 
 		if (parent && !parent.title && !parent.description) {
@@ -148,18 +155,22 @@ export function replaceEmptyParent(id: PageId) {
 	});
 }
 
-export function addParentAbovePage(id: PageId): Page {
+export function addParentAbovePage(childId: PageId): Page {
 	const newParent = addPage();
 	pageStore.update((pages) => {
-		const parent = pages.find((item) => item.connections.includes(id));
-		if (parent) {
-			const index = parent.connections.indexOf(id) ?? 0;
-			parent.connections.splice(index, 1, newParent.id);
+		const oldParent = pages.find((item) => item.connections.includes(childId));
+		if (oldParent) {
+			const index = oldParent.connections.indexOf(childId) ?? 0;
+			oldParent.connections = [
+				...oldParent.connections.slice(0, index),
+				newParent.id,
+				...oldParent.connections.slice(index + 1),
+			];
 		} else {
 			// the page being moved down is the top-most page, so put the new parent first
 			pages = [newParent, ...pages.filter((item) => item.id !== newParent.id)];
 		}
-		newParent.connections.push(id);
+		newParent.connections = [childId];
 		return pages;
 	});
 	return newParent;
