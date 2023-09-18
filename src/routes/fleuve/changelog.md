@@ -1,8 +1,13 @@
 ---
-latest: 0.1.6
+latest: 0.1.7
 ---
 
 # Changelog
+
+### Version 0.1.7
+
+- Added aspect ratio toggle
+- Better focus outlines on title and description
 
 ### Version 0.1.6
 
@@ -47,6 +52,8 @@ latest: 0.1.6
 - Some storage mechanism besides localstorage
 - Drag and drop reordering of siblings
 - Drag and drop move of pages between parents
+- Scale font size with page scale
+- Better mobile UX
 
 <style>
 	h1 {
