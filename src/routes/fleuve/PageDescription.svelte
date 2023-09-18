@@ -3,17 +3,18 @@
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
+	import Pencil from './pencil.svg?component';
 
 	export let page: Page;
 	export let tabindex: number;
 
 	let editing = false;
+	let editor: HTMLElement;
 
-	function onFocus(event: FocusEvent) {
-		const target = event.target as HTMLElement;
+	function onClickEdit(event: MouseEvent) {
+		event.stopPropagation();
 		editing = true;
 		requestAnimationFrame(() => {
-			const editor = target?.querySelector('.editor') as HTMLElement;
 			editor?.focus();
 		});
 	}
@@ -30,6 +31,12 @@
 		const description = target.innerText.trim();
 		if (event.key !== 'Tab') {
 			event.stopPropagation();
+		}
+
+		if (event.key === 'Escape') {
+			const card = target?.closest('.page')?.querySelector('.page-card') as HTMLElement;
+			target?.blur();
+			card?.focus();
 		}
 
 		if (event.key === 'ArrowLeft' && !description) {
@@ -50,15 +57,11 @@
 	}
 </script>
 
-<div
-	class="description"
-	class:active={page.active}
-	tabindex={page.active && !editing ? tabindex : -1}
-	on:focus={onFocus}
->
+<div class="description" class:active={page.active}>
 	{#if editing}
 		<div
 			class="editor"
+			bind:this={editor}
 			tabindex={page.active ? tabindex : -1}
 			contenteditable={page.active}
 			on:blur={onBlur}
@@ -67,9 +70,15 @@
 			{page.description || ''}
 		</div>
 	{:else}
-		<div class="content markdown">
+		<div class="content markdown" on:dblclick={onClickEdit}>
 			{@html marked.parse(page.description || '')}
 		</div>
+	{/if}
+
+	{#if page.active && !editing}
+		<button class="edit-button" on:click={onClickEdit}>
+			<Pencil />
+		</button>
 	{/if}
 </div>
 
@@ -117,6 +126,31 @@
 				font-weight: normal;
 				content: var(--description-placeholder);
 				opacity: 0.5;
+			}
+		}
+
+		.edit-button {
+			opacity: 0;
+			position: absolute;
+			cursor: pointer;
+			right: 12px;
+			bottom: 12px;
+			:global(svg) {
+				width: auto;
+				height: 16px;
+			}
+			color: fade(black, 30%);
+			border: 1px solid currentColor;
+			&:hover {
+				color: black;
+			}
+			padding: 4px 12px;
+			border-radius: 4px;
+		}
+
+		&:hover {
+			.edit-button {
+				opacity: 1;
 			}
 		}
 	}
