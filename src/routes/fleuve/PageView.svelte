@@ -1,0 +1,33 @@
+<script lang="ts">
+	import PageCard from './PageCard.svelte';
+	import PageConnections from './PageConnections.svelte';
+	import type { Page, PageId } from './pages.store';
+	import { pageStore } from './pages.store';
+
+	export let pageId: PageId;
+	export let tabindex = 1;
+
+	let page: Page;
+
+	pageStore.subscribe((pages) => {
+		page = pages.find((p) => p.id === pageId) as Page;
+	});
+</script>
+
+{#key page?.id}
+	{#if page}
+		<div class="page" class:active={page.active}>
+			<PageCard {page} {tabindex} />
+			<PageConnections {page} tabindex={tabindex + 1} />
+		</div>
+	{/if}
+{/key}
+
+<style lang="less">
+	.page {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+	}
+</style>

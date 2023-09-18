@@ -1,10 +1,11 @@
 <script lang="ts">
 	export let modal = false;
 	export let shadow = true;
+	export let fill = false;
 	export let style = '';
 </script>
 
-<section class="card" class:modal class:shadow {style}>
+<section class="card" class:modal class:shadow class:fill {style}>
 	<slot />
 </section>
 
@@ -19,6 +20,11 @@
 
 		&.shadow {
 			box-shadow: 0 1px 4px fade(black, 10%);
+		}
+
+		&.fill {
+			width: 100%;
+			height: 100%;
 		}
 
 		&.modal {
