@@ -12,7 +12,6 @@ Create flows by connecting pages.
 - Tap or press enter to activate a page.
 - Press backspace to delete a page and all of its connections.
 - Use markdown to format your page description.
-
 `;
 
 function getStoredState(): Page[] | undefined {

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Page } from './Page.model';
-	import { addConnection } from './store';
+	import { addConnection } from './pages.store';
 
 	export let page: Page;
 	export let tabindex: number;

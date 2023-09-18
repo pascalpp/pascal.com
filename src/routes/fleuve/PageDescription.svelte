@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Page } from './Page.model';
-	import { updatePage } from './store';
+	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
 
 	export let page: Page;

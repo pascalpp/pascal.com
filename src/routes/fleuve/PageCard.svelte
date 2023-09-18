@@ -3,7 +3,7 @@
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
-	import { pageStore, activatePage, removePage, updatePage } from './store';
+	import { pageStore, activatePage, removePage, updatePage } from './pages.store';
 
 	export let pageId: PageId;
 	export let tabindex = 1;

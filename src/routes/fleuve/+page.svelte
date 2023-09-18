@@ -3,11 +3,10 @@
 	import { browser } from '$app/environment';
 	import PageCard from './PageCard.svelte';
 	import Slider from './Slider.svelte';
-	import { pageStore, reset } from './store.js';
+	import { pageStore, reset } from './pages.store';
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
 	import File from './file.svg?component';
-	import Button from '$lib/components/Button.svelte';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
