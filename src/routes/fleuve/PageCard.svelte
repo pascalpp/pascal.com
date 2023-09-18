@@ -1,9 +1,8 @@
 <script lang="ts">
-	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page } from './pages.store';
-	import { pageStore, activatePage, removePage, updatePage } from './pages.store';
+	import { activatePage, removePage, updatePage } from './pages.store';
 
 	export let page: Page;
 	export let tabindex = 1;
@@ -22,6 +21,13 @@
 		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
 		const nextNode = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
 		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
+
+		if (['d', 'e'].includes(event.key.toLowerCase())) {
+			if (page.active) {
+				const editButton = target?.querySelector('.description .edit-button') as HTMLButtonElement;
+				editButton?.click();
+			}
+		}
 
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
@@ -65,6 +71,14 @@
 			if (page.active) {
 				updatePage({ ...page, active: false });
 			} else {
+				target.click();
+			}
+		}
+
+		// Space key
+		if (event.key === ' ') {
+			event.preventDefault();
+			if (!page.active) {
 				target.click();
 			}
 		}
