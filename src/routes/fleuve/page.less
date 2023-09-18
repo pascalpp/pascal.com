@@ -28,25 +28,6 @@
 			flex-direction: column;
 		}
 
-		.title {
-			padding: 12px 16px;
-			margin: 4px;
-			flex-shrink: 0;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			&:empty::before {
-				content: 'Untitled page';
-				opacity: 0.3;
-			}
-			&:focus-within {
-				outline-style: auto;
-				outline-width: 2px;
-				outline-color: blue;
-				outline-offset: -2px;
-			}
-		}
-
 		&:focus-within {
 			--description-placeholder: 'Add description';
 		}
@@ -78,23 +59,12 @@
 			&::before {
 				display: none;
 			}
-
-			.title {
-				font-size: 20px;
-				border-bottom: 1px solid fade(black, 10%);
-			}
 		}
 	}
 
 	&:not(.active) {
 		> .page-card {
 			cursor: pointer;
-			.title {
-				pointer-events: none;
-				white-space: nowrap !important;
-				overflow: hidden !important;
-				text-overflow: ellipsis !important;
-			}
 		}
 	}
 

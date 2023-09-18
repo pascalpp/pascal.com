@@ -52,6 +52,7 @@
 
 <h1
 	class="title"
+	class:active={page.active}
 	contenteditable={page.active}
 	tabindex={page.active ? tabindex : -1}
 	on:click={onClick}
@@ -61,3 +62,33 @@
 >
 	{page.title}
 </h1>
+
+<style lang="less">
+	.title {
+		padding: 12px 16px;
+		margin: 4px;
+		flex-shrink: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		pointer-events: none;
+
+		&:empty::before {
+			content: 'Untitled page';
+			opacity: 0.3;
+		}
+
+		&:focus-within {
+			outline-style: auto;
+			outline-width: 2px;
+			outline-color: blue;
+			outline-offset: -2px;
+		}
+
+		&.active {
+			pointer-events: auto;
+			font-size: 20px;
+			border-bottom: 1px solid fade(black, 10%);
+		}
+	}
+</style>
