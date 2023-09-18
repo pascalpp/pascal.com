@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './page.less';
 	import { browser } from '$app/environment';
 	import Page from './PageView.svelte';
 	import Slider from './Slider.svelte';

@@ -80,9 +80,86 @@
 	}
 </script>
 
-<div class="page-card" {tabindex} on:click={onClick} on:keydown={onKeyDown}>
+<div class="page-card" class:active={page.active} {tabindex} on:click={onClick} on:keydown={onKeyDown}>
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<PageDescription {page} {tabindex} />
 	</div>
 </div>
+
+<style lang="less">
+	.page-card {
+		flex: 1;
+		background-color: white;
+		box-sizing: border-box;
+		border: 1px solid fade(black, 30%);
+		border-radius: 4px;
+		display: flex;
+		flex-direction: column;
+		transform: translateX(-1px);
+		cursor: pointer;
+
+		&.active {
+			box-shadow: 0 2px 4px 2px fade(black, 10%);
+			padding-top: 4px;
+		}
+
+		&:focus,
+		&:focus-within,
+		&:active {
+			border-color: transparent;
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: black;
+		}
+
+		// active page animation
+		@transition-time: 0.1s;
+		@transition-delay: 0.25s;
+		width: fit-content;
+		min-width: 40px;
+		min-height: 40px;
+		max-height: 56px;
+		transition: min-height @transition-time ease-in-out, max-height @transition-time ease-in-out,
+			min-width @transition-time ease-in-out @transition-delay;
+		&.active {
+			--height: calc(var(--active-page-scale, 0.5) * 75vh);
+			min-height: var(--height);
+			max-height: var(--height);
+			min-width: calc(var(--height) * var(--aspect-ratio));
+			max-width: calc(var(--height) * var(--aspect-ratio));
+			transition: min-height @transition-time ease-in-out @transition-delay,
+				max-height @transition-time ease-in-out @transition-delay, min-width @transition-time ease-in-out;
+		}
+
+		.page-card-content {
+			overflow: hidden;
+			width: 100%;
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&:focus-within {
+			--description-placeholder: 'Add description';
+		}
+
+		// stacked page idea
+		// &.active:has(.page.active) {
+		// 	> .page-card {
+		// 		position: absolute;
+		// 		&::after {
+		// 			display: none;
+		// 		}
+		// 	}
+
+		// 	.page.active {
+		// 		padding-left: 1em;
+		// 		padding-top: 6em;
+		// 	}
+		// }
+	}
+</style>
