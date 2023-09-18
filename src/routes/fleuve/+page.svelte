@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import Page from './PageView.svelte';
+	import PageConnections from './PageConnections.svelte';
 	import Slider from './Slider.svelte';
-	import { pageStore, reset } from './pages.store';
+	import { pageStore, reset, addRootPage } from './pages.store';
+	import type { Page } from './pages.store';
 	import { settings } from './settings.store';
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
@@ -11,7 +12,7 @@
 
 	if (browser) (<any>window).pageStore = pageStore;
 
-	let firstPageId: string;
+	let root: Page;
 	let showChangelog = false;
 	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
@@ -22,6 +23,7 @@
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
 			reset();
+			activateFirstPage();
 		}
 	}
 
@@ -42,13 +44,16 @@
 	}
 
 	pageStore.subscribe((pages) => {
-		firstPageId = pages[0].id;
+		root = pages.find((item) => item.id === 'root') as Page;
+		if (!root) addRootPage();
 	});
 
-	onMount(() => {
+	function activateFirstPage() {
 		const firstPage = document.querySelector('.page-card') as HTMLElement;
 		firstPage?.click();
-	});
+	}
+
+	onMount(activateFirstPage);
 </script>
 
 <svelte:head>
@@ -68,10 +73,8 @@
 		style:--active-page-scale={scale($settings.activePageScale, 0, 1, 0.2, 1)}
 		style:--aspect-ratio={aspectRatio}
 	>
-		{#if browser && firstPageId}
-			{#key firstPageId}
-				<Page pageId={firstPageId} />
-			{/key}
+		{#if browser && root}
+			<PageConnections page={root} tabindex={1} />
 		{/if}
 	</div>
 
