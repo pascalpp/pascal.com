@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Page, PageId } from './Page.model';
 	import PageConnections from './PageConnections.svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
+	import type { Page, PageId } from './pages.store';
 	import { pageStore, activatePage, removePage, updatePage } from './pages.store';
 
 	export let pageId: PageId;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AddPageCard from './AddPageCard.svelte';
-	import type { Page } from './Page.model';
+	import type { Page } from './pages.store';
 	import PageCard from './PageCard.svelte';
 
 	export let page: Page;

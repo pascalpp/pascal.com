@@ -1,9 +1,22 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
-import type { Page, PageInfo, PageId } from './Page.model';
 import { v4 as uuidv4 } from 'uuid';
 
 const storageKey = 'pages';
+
+export type PageId = string;
+
+export interface PageInfo {
+	title?: string;
+	description?: string;
+	image?: string;
+	active?: boolean;
+}
+
+export interface Page extends PageInfo {
+	id: PageId;
+	connections: PageId[];
+}
 
 const description = `
 Create flows by connecting pages.
@@ -14,24 +27,7 @@ Create flows by connecting pages.
 - Use markdown to format your page description.
 `;
 
-function getStoredState(): Page[] | undefined {
-	if (browser) {
-		try {
-			const state = window?.localStorage.getItem(storageKey);
-			return state && JSON.parse(state);
-		} catch {
-			// don't care
-		}
-	}
-}
-
-function getDefaultState() {
-	return [{ id: uuidv4(), title: '', description: description.trim(), active: true, connections: [] }];
-}
-
-const storedState = getStoredState();
-
-export const pageStore = writable<Page[]>(storedState || getDefaultState());
+export const pageStore = writable<Page[]>(getStoredState() || getDefaultState());
 
 if (browser) {
 	pageStore.subscribe((pages) => {
@@ -110,4 +106,27 @@ export function removePage(id: string) {
 
 export function reset() {
 	pageStore.update(() => getDefaultState());
+}
+
+function getStoredState(): Page[] | undefined {
+	if (browser) {
+		try {
+			const state = window?.localStorage.getItem(storageKey);
+			return state && JSON.parse(state);
+		} catch {
+			// don't care
+		}
+	}
+}
+
+function getDefaultState() {
+	return [
+		{
+			id: uuidv4(),
+			title: '',
+			description: description.trim(),
+			active: true,
+			connections: [],
+		},
+	];
 }

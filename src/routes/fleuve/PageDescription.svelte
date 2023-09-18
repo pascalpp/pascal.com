@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Page } from './Page.model';
+	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
 

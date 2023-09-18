@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Page } from './Page.model';
+	import type { Page } from './pages.store';
 	import { addConnection } from './pages.store';
 
 	export let page: Page;
