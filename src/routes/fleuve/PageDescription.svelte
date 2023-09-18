@@ -78,13 +78,14 @@
 		display: none;
 		pointer-events: none;
 		&.active {
+			border-top: 1px solid fade(black, 10%);
 			display: flex;
 			pointer-events: auto;
 		}
 
 		padding: 12px;
-		padding-top: 0;
 		margin: 4px;
+		margin-bottom: 4px;
 		flex-grow: 1;
 		flex-direction: column;
 		overflow: hidden;

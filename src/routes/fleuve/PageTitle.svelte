@@ -65,8 +65,9 @@
 
 <style lang="less">
 	.title {
-		padding: 12px 16px;
-		margin: 4px;
+		padding: 0 16px;
+		line-height: 2.25em;
+		margin: 0 4px;
 		flex-shrink: 0;
 		white-space: nowrap;
 		overflow: hidden;
@@ -88,7 +89,6 @@
 		&.active {
 			pointer-events: auto;
 			font-size: 20px;
-			border-bottom: 1px solid fade(black, 10%);
 		}
 	}
 </style>
