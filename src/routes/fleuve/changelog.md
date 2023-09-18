@@ -1,8 +1,12 @@
 ---
-latest: 0.1.7
+latest: 0.1.8
 ---
 
 # Changelog
+
+### Version 0.1.8
+
+- Save settings in localstorage
 
 ### Version 0.1.7
 
