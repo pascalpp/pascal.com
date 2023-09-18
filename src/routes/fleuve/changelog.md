@@ -1,8 +1,12 @@
 ---
-latest: 0.1.9
+latest: 0.1.10
 ---
 
 # Changelog
+
+### Version 0.1.10
+
+- Added shift+up/down arrow keys to reorder cards.
 
 ### Version 0.1.9
 
