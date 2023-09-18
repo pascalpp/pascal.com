@@ -6,13 +6,18 @@
 	import { pageStore, reset } from './store.js';
 	import Changelog from './changelog.md';
 	import { metadata } from './changelog.md';
+	import File from './file.svg?component';
+	import Button from '$lib/components/Button.svelte';
 
 	if (browser) (<any>window).pageStore = pageStore;
 
 	let firstPageId: string;
 	let showChangelog = false;
 	let childOpacity = 0.5;
-	let activePageScale = 0.4;
+	let activePageScale = 0.2;
+	let aspectRatioType: 'portrait' | 'landscape' = 'landscape';
+
+	$: aspectRatio = aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
 	function scale(number: number, inMin: number, inMax: number, outMin: number, outMax: number) {
 		return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
@@ -35,6 +40,11 @@
 		});
 	}
 
+	function setAspectRatio(event: MouseEvent) {
+		const target = event.currentTarget as HTMLButtonElement;
+		aspectRatioType = target.value as 'portrait' | 'landscape';
+	}
+
 	pageStore.subscribe((pages) => {
 		firstPageId = pages[0].id;
 	});
@@ -43,7 +53,9 @@
 <main>
 	<div
 		class="pages"
-		style="--child-opacity: {childOpacity}; --active-page-scale: {scale(activePageScale, 0, 1, 0.3, 1)}"
+		style:--child-opacity={childOpacity}
+		style:--active-page-scale={scale(activePageScale, 0, 1, 0.2, 1)}
+		style:--aspect-ratio={aspectRatio}
 	>
 		{#if browser && firstPageId}
 			{#key firstPageId}
@@ -51,7 +63,8 @@
 			{/key}
 		{/if}
 	</div>
-	<div class="tools top right">
+
+	<div class="tools column top right">
 		<Slider
 			id="active-page-scale"
 			label="Scale"
@@ -64,11 +77,24 @@
 			bind:value={childOpacity}
 			title="Change the opacity for childen of the active page"
 		/>
+		<div class="aspect-ratio">
+			<label for="foo">Aspect Ratio</label>
+			<fieldset>
+				<button value="portrait" class:active={aspectRatioType === 'portrait'} on:click={setAspectRatio}>
+					<File />
+				</button>
+				<button value="landscape" class:active={aspectRatioType === 'landscape'} on:click={setAspectRatio}>
+					<File />
+				</button>
+			</fieldset>
+		</div>
 	</div>
-	<div class="tools bottom left">
+
+	<div class="tools row bottom left">
 		<button class="reset-button" on:click={onClickReset}>Reset</button>
 	</div>
-	<div class="tools bottom right">
+
+	<div class="tools row bottom right">
 		<button class="version" on:click={toggleChangelog}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
 			<div class="changelog-content">
@@ -103,7 +129,6 @@
 		padding: 12px;
 		padding-right: 20px;
 		display: flex;
-		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 		gap: 2em;
@@ -113,6 +138,13 @@
 		&:focus-within,
 		&:has(.changelog.show) {
 			opacity: 1;
+		}
+
+		&.row {
+			flex-direction: row;
+		}
+		&.column {
+			flex-direction: column;
 		}
 
 		&.top {
@@ -132,6 +164,55 @@
 	button {
 		cursor: pointer;
 		user-select: none;
+	}
+
+	.aspect-ratio {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 6px;
+
+		fieldset {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: stretch;
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		button {
+			:global(svg) {
+				width: auto;
+				height: 16px;
+			}
+			border: 1px solid black;
+			padding: 4px 12px;
+			+ button {
+				margin-left: -1px;
+			}
+
+			&:first-child {
+				border-top-left-radius: 4px;
+				border-bottom-left-radius: 4px;
+			}
+			&:last-child {
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+			}
+
+			&.active {
+				background-color: black;
+				color: white;
+			}
+
+			&[value='landscape'] {
+				:global(svg) {
+					transform: rotate(90deg) scaleX(-1);
+				}
+			}
+		}
 	}
 
 	.changelog {

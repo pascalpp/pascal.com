@@ -122,7 +122,6 @@
 
 	// active page animation
 	.page-card {
-		--ratio: 0.85;
 		width: fit-content;
 		min-width: 40px;
 		min-height: 40px;
@@ -134,8 +133,8 @@
 			--height: calc(var(--active-page-scale, 0.5) * 75vh);
 			min-height: var(--height);
 			max-height: var(--height);
-			min-width: calc(var(--height) * var(--ratio));
-			max-width: calc(var(--height) * var(--ratio));
+			min-width: calc(var(--height) * var(--aspect-ratio));
+			max-width: calc(var(--height) * var(--aspect-ratio));
 			transition: min-height 0.2s ease-in-out 0.2s, max-height 0.2s ease-in-out 0.2s, min-width 0.2s ease-in-out;
 		}
 	}
