@@ -2,7 +2,7 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page } from './pages.store';
-	import { activatePage, removePage, updatePage } from './pages.store';
+	import { activatePage, removePage, updatePage, movePage } from './pages.store';
 
 	export let page: Page;
 	export let tabindex = 1;
@@ -19,8 +19,9 @@
 	function onKeyDown(event: KeyboardEvent) {
 		const target = event.target as HTMLElement;
 		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
-		const nextNode = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
+		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
 		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
+		const nextNode = nextCard || addConnection;
 
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
 			if (page.active) {
@@ -44,12 +45,26 @@
 
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			previousNode?.focus();
+			if (event.shiftKey) {
+				movePage(page.id, 'up');
+				requestAnimationFrame(() => {
+					target?.focus();
+				});
+			} else {
+				previousNode?.focus();
+			}
 		}
 
 		if (event.key === 'ArrowDown') {
 			event.preventDefault();
-			(nextNode || addConnection)?.focus();
+			if (event.shiftKey) {
+				movePage(page.id, 'down');
+				requestAnimationFrame(() => {
+					target?.focus();
+				});
+			} else {
+				nextNode?.focus();
+			}
 		}
 
 		if (event.key === 'ArrowLeft') {
@@ -129,7 +144,7 @@
 
 		// active page animation
 		@transition-time: 0.1s;
-		@transition-delay: 0.25s;
+		@transition-delay: 0.1s;
 		width: fit-content;
 		min-width: 40px;
 		min-height: 40px;
