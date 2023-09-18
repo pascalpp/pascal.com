@@ -28,48 +28,54 @@
 		}
 
 		// set placeholder text for the add page card
-		--add-placeholder: 'Add card';
-		&:has(.page.active) {
-			--add-placeholder: 'Add sibilng';
+		--add-placeholder: 'Add flow'; // root-level
+		&:not(:first-child) {
+			--add-placeholder: 'Add card'; // child-level with no active siblings
+			&:has(.page.active) {
+				--add-placeholder: 'Add sibilng'; // child-level with active siblings
+			}
 		}
 
 		// show left border on connections block if there are multiple items in it
-		&.active:has(:first-child:not(:last-child)),
-		&:has(.page + .page) {
-			margin-left: 24px;
-			border-left: 1px solid black;
-			&::before {
-				position: absolute;
-				display: block;
-				content: '';
-				height: 1px;
-				width: 24px;
-				background-color: black;
-				top: 50%;
-				right: 100%;
+		&:not(:first-child) {
+			&.active:has(:first-child:not(:last-child)),
+			&:has(.page + .page) {
+				margin-left: 24px;
+				border-left: 1px solid black;
+				&::before {
+					position: absolute;
+					display: block;
+					content: '';
+					height: 1px;
+					width: 24px;
+					background-color: black;
+					top: 50%;
+					right: 100%;
+				}
 			}
-		}
 
-		// show connection line on left side of each child
-		:global(> *) {
-			margin-left: 24px;
-			transition: margin-left 0.2s ease-in-out;
-			&::before {
-				position: absolute;
-				display: block;
-				content: '';
-				height: 1px;
-				width: 24px;
-				transition: width 0.2s ease-in-out;
-				background-color: black;
-				top: 50%;
-				right: 100%;
+			// show connection line on left side of each child
+			:global(> *) {
+				margin-left: 24px;
+				transition: margin-left 0.2s ease-in-out;
+				position: relative;
+				&::before {
+					position: absolute;
+					display: block;
+					content: '';
+					height: 1px;
+					width: 24px;
+					transition: width 0.2s ease-in-out;
+					background-color: black;
+					top: 50%;
+					right: 100%;
+				}
 			}
-		}
-		:global(> .page.active) {
-			margin-left: 16px;
-			&::before {
-				width: 16px;
+			:global(> .page.active) {
+				margin-left: 16px;
+				&::before {
+					width: 16px;
+				}
 			}
 		}
 
