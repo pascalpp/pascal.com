@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './description_markdown.less';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
@@ -49,7 +50,12 @@
 	}
 </script>
 
-<div class="description" tabindex={page.active && !editing ? tabindex : -1} on:focus={onFocus}>
+<div
+	class="description"
+	class:active={page.active}
+	tabindex={page.active && !editing ? tabindex : -1}
+	on:focus={onFocus}
+>
 	{#if editing}
 		<div
 			class="editor"
@@ -66,3 +72,51 @@
 		</div>
 	{/if}
 </div>
+
+<style lang="less">
+	.description {
+		display: none;
+		pointer-events: none;
+		&.active {
+			display: flex;
+			pointer-events: auto;
+		}
+
+		padding: 12px;
+		padding-top: 0;
+		margin: 4px;
+		flex-grow: 1;
+		flex-direction: column;
+		overflow: hidden;
+		overflow-y: scroll;
+		&:focus-within {
+			outline-style: auto;
+			outline-width: 2px;
+			outline-color: blue;
+			outline-offset: -2px;
+		}
+
+		.editor,
+		.content {
+			padding: 4px;
+			flex: 1;
+			padding-bottom: 48px;
+			outline: none;
+		}
+		.editor {
+			display: block;
+			white-space: pre-wrap;
+			overflow-wrap: break-word;
+			min-height: 100%;
+			padding-bottom: 48px;
+		}
+
+		.content {
+			&:empty::before {
+				font-weight: normal;
+				content: var(--description-placeholder);
+				opacity: 0.5;
+			}
+		}
+	}
+</style>
