@@ -84,14 +84,15 @@
 					});
 				});
 			} else {
-				if (active) {
-					const firstChild = target
-						.closest('.page')
-						?.querySelector('.connections')
-						?.querySelector('.page-card, .add-connection') as HTMLElement;
-					firstChild?.focus();
+				const connections = target.closest('.page')?.querySelector('.connections') as HTMLElement;
+				const activeCard = connections?.querySelector('.page-card.active') as HTMLElement;
+				const firstCard = connections?.querySelector('.page-card') as HTMLElement;
+				const addCard = connections?.querySelector('.add-connection') as HTMLElement;
+				const nextChild = activeCard || firstCard || addCard;
+				if (nextChild) {
+					nextChild?.focus();
 				} else {
-					target.click();
+					activatePage(page.id);
 				}
 			}
 		}
