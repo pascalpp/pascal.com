@@ -8,6 +8,7 @@
 	import ChangelogButton from './ChangelogButton.svelte';
 	import { onMount } from 'svelte';
 	import AspectRatio from './AspectRatio.svelte';
+	import SettingsToolbar from './SettingsToolbar.svelte';
 
 	let root: Page;
 	let isShowingTutorial = false;
@@ -83,21 +84,7 @@
 	</div>
 
 	{#if browser}
-		<div class="tools column top right">
-			<Slider
-				id="active-page-scale"
-				label="Scale"
-				bind:value={$settings.activePageScale}
-				title="Change the scale of active pages"
-			/>
-			<Slider
-				id="child-opacity"
-				label="Visibility"
-				bind:value={$settings.childOpacity}
-				title="Change the opacity for childen of the active page"
-			/>
-			<AspectRatio />
-		</div>
+		<SettingsToolbar />
 	{/if}
 
 	<div class="tools row bottom left">
