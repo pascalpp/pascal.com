@@ -70,6 +70,9 @@
 				const newParent = addParentAbovePage(page.id);
 				requestAnimationFrame(() => {
 					activatePage(newParent.id);
+					if (active) {
+						activatePage(page.id);
+					}
 					requestAnimationFrame(() => {
 						const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
 						newCard?.focus();
