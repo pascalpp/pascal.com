@@ -153,7 +153,9 @@
 		// Space key
 		if (event.key === ' ') {
 			event.preventDefault();
-			if (!active) {
+			if (active) {
+				deactivatePage(page.id);
+			} else {
 				target.click();
 			}
 		}
