@@ -126,7 +126,7 @@
 	{
 		"id": "77c277ca-61fc-42d4-be0f-8d229e900815",
 		"title": "Edit description",
-		"description": "- Press D or E to edit the description.\n- You can also double-click to edit, or click the pencil button.\n- Press Enter or Tab when done.\n\n_Use markdown to format descriptions._",
+		"description": "- Press D or E to edit the description.\n- You can also double-click to edit, or click the pencil button.\n- Press Tab or Escape when done.\n\n_Use markdown to format descriptions._",
 		"connections": ["095ee315-4604-4730-82a7-1956c98faebd"],
 		"active": false,
 		"focus": false
