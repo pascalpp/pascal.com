@@ -12,6 +12,8 @@
 		movePageDown,
 		addParentAbovePage,
 		replaceEmptyParent,
+		focusPage,
+		deactivatePage,
 	} from './pages.store';
 
 	export let page: Page;
@@ -29,7 +31,12 @@
 		});
 	}
 
+	function onFocus() {
+		focusPage(page.id);
+	}
+
 	function onKeyDown(event: KeyboardEvent) {
+		event.stopPropagation();
 		const target = event.target as HTMLElement;
 		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
 		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
@@ -125,18 +132,14 @@
 				});
 			} else {
 				const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
-				if (active) {
-					updatePage({ ...page, active: false });
-				} else {
-					parentCard?.click();
-				}
+				parentCard?.focus();
 			}
 		}
 
 		if (event.key === 'Enter') {
 			event.preventDefault();
 			if (active) {
-				updatePage({ ...page, active: false });
+				deactivatePage(page.id);
 			} else {
 				target.click();
 			}
@@ -179,9 +182,11 @@
 <div
 	class="page-card"
 	class:active={page.active}
+	class:focus={page.focus}
 	{tabindex}
 	on:click={onClick}
 	on:keydown={onKeyDown}
+	on:focus={onFocus}
 	bind:this={card}
 	data-page-id={page.id}
 >
@@ -208,6 +213,7 @@
 			padding-top: 4px;
 		}
 
+		&.focus,
 		&:focus,
 		&:focus-within,
 		&:active {
