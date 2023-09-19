@@ -79,6 +79,7 @@ latest: 0.1.12
 # Todo
 
 - Multiple document support
+- Undo support
 - Some storage mechanism besides localstorage
 - Drag and drop to rearrange cards
 - Scale font size with page scale
