@@ -232,7 +232,7 @@
 
 		// active page animation
 		@transition-time: 0.2s;
-		@transition-delay: 0.1s;
+		@transition-delay: 0s; // was 0.1s
 		width: 80px;
 		height: 40px;
 		min-width: fit-content;
