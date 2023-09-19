@@ -1,8 +1,16 @@
 ---
-latest: 0.1.11
+latest: 0.1.12
 ---
 
 # Changelog
+
+### Version 0.1.12
+
+- Align cards to top, with better wire connections.
+- Hide deep children when opacity is 0.
+- Improved keyboard navigation and focus handling.
+- Fixed some data issues.
+- Improved tutorial flow.
 
 ### Version 0.1.11
 
