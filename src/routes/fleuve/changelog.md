@@ -1,8 +1,14 @@
 ---
-latest: 0.1.12
+latest: 0.1.13
 ---
 
 # Changelog
+
+### Version 0.1.13
+
+- Renamed Opacity setting to Visibility.
+- Hide connections and show connection summary when Visibility is 0.
+- Improved UX when adding an empty page above the current page.
 
 ### Version 0.1.12
 
@@ -88,9 +94,6 @@ latest: 0.1.12
 
 # Random ideas to try
 
-- Hide children of inactive pages when opacity is 0?
-- Levels slider to hide children below a certain level?
-- Don't tab to title unless the card is already active
 - CSS to auto-show parents of active page (instead of clicking to make them active)
 - Shift-click to activate multiple pages?
 - Use transform: scale on whole flow instead of page height?
