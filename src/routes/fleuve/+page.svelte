@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import PageView from './PageView.svelte';
-	import Slider from './Slider.svelte';
 	import { pageStore, reset, addRootPage, loadTutorial } from './pages.store';
 	import type { Page } from './pages.store';
 	import { settings } from './settings.store';
 	import ChangelogButton from './ChangelogButton.svelte';
-	import { onMount } from 'svelte';
-	import AspectRatio from './AspectRatio.svelte';
 	import SettingsToolbar from './SettingsToolbar.svelte';
+	import { onMount } from 'svelte';
 
 	let root: Page;
 	let isShowingTutorial = false;
@@ -84,7 +82,6 @@
 	{/if}
 
 	<div class="tools row bottom left">
-		<button class="reset-button" on:click={onClickReset}>Reset</button>
 		{#if browser && !isShowingTutorial}
 			<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
 		{/if}
