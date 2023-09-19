@@ -47,6 +47,16 @@
 			}
 		}
 
+		if (event.key === 'Tab') {
+			event.preventDefault();
+			if (page.active) {
+				const title = target?.querySelector('.title') as HTMLButtonElement;
+				title?.click();
+			} else {
+				activatePage(page.id);
+			}
+		}
+
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
 			if (event.shiftKey) {
