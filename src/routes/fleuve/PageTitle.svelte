@@ -35,25 +35,17 @@
 		updatePage({ ...page, title });
 		const selection = window.getSelection();
 		selection?.removeAllRanges();
+		const parentCard = target.closest('.page-card') as HTMLElement;
+		parentCard?.focus();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
+		event.stopPropagation();
 		const target = event.target as HTMLHeadingElement;
 
-		if (event.key !== 'Tab') {
-			event.stopPropagation();
-		}
-
-		if (event.key === 'Escape') {
-			const card = target?.closest('.page-card') as HTMLElement;
+		if (['Escape', 'Enter', 'Tab'].includes(event.key)) {
+			event.preventDefault();
 			target?.blur();
-			card?.focus();
-		}
-
-		if (event.key === 'Enter') {
-			const card = target?.closest('.page-card') as HTMLElement;
-			target?.blur();
-			card?.focus();
 		}
 	}
 </script>
