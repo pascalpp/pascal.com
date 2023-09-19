@@ -2,19 +2,46 @@
 	import { settings, type AspectRatio } from './settings.store';
 	import File from './file.svg?component';
 
+	let portraitButton: HTMLButtonElement;
+	let landscapeButton: HTMLButtonElement;
+
 	function setAspectRatio(event: MouseEvent) {
 		const target = event.currentTarget as HTMLButtonElement;
 		$settings.aspectRatioType = target.value as AspectRatio;
+	}
+
+	function onKeydown(event: KeyboardEvent) {
+		console.log(event.key);
+		if (event.key === 'ArrowRight') {
+			landscapeButton.click();
+			landscapeButton.focus();
+		}
+		if (event.key === 'ArrowLeft') {
+			portraitButton.click();
+			portraitButton.focus();
+		}
 	}
 </script>
 
 <div class="aspect-ratio">
 	<label for="foo">Aspect Ratio</label>
 	<fieldset>
-		<button value="portrait" class:active={$settings.aspectRatioType === 'portrait'} on:click={setAspectRatio}>
+		<button
+			value="portrait"
+			class:active={$settings.aspectRatioType === 'portrait'}
+			on:click={setAspectRatio}
+			on:keydown={onKeydown}
+			bind:this={portraitButton}
+		>
 			<File />
 		</button>
-		<button value="landscape" class:active={$settings.aspectRatioType === 'landscape'} on:click={setAspectRatio}>
+		<button
+			value="landscape"
+			class:active={$settings.aspectRatioType === 'landscape'}
+			on:click={setAspectRatio}
+			on:keydown={onKeydown}
+			bind:this={landscapeButton}
+		>
 			<File />
 		</button>
 	</fieldset>
@@ -35,32 +62,35 @@
 			border: none;
 			padding: 0;
 			margin: 0;
+			border-radius: 4px;
+			border: 1px solid black;
+			background-color: #666;
+			overflow: hidden;
+			&:focus-within {
+				outline: 1px solid black;
+			}
 		}
 
 		button {
+			background-color: white;
+			outline: none;
 			cursor: pointer;
 			user-select: none;
 			:global(svg) {
 				width: auto;
-				height: 16px;
+				height: 20px;
+				stroke-width: 1.5;
 			}
-			border: 1px solid black;
-			padding: 4px 12px;
+			padding: 8px 12px;
 			+ button {
 				margin-left: -1px;
 			}
 
-			&:first-child {
-				border-top-left-radius: 4px;
-				border-bottom-left-radius: 4px;
+			&:focus {
+				background-color: #f8f8f8;
 			}
-			&:last-child {
-				border-top-right-radius: 4px;
-				border-bottom-right-radius: 4px;
-			}
-
 			&.active {
-				background-color: black;
+				background-color: #666;
 				color: white;
 			}
 
