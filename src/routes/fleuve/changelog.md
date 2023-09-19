@@ -110,8 +110,10 @@ latest: 0.1.14
 - Thicker wires for active connections?
 - Svelte transitions?
 - scroll mask at bottom of description
+- Delete to remove a page; option-delete to remove a page and its children
+- Hotkey cheat sheet
 
-<style>
+<style lang="less">
 	h1 {
 		font-size: 20px;
 		padding: 8px 12px;
@@ -148,6 +150,4 @@ latest: 0.1.14
 	summary + * {
 		margin-top: 1em;
 	}
-
-
 </style>
