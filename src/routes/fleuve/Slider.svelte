@@ -24,7 +24,12 @@
 		align-items: center;
 		gap: 4px;
 
+		label {
+			margin: 0;
+		}
+
 		input {
+			width: 100%;
 			&::-webkit-slider-thumb {
 				outline: 1px solid black;
 				border-radius: 50%;
