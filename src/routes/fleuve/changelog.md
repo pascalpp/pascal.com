@@ -72,10 +72,20 @@ latest: 0.1.11
 
 - Multiple document support
 - Some storage mechanism besides localstorage
-- Drag and drop reordering of siblings
-- Drag and drop move of pages between parents
+- Drag and drop to rearrange cards
 - Scale font size with page scale
 - Better mobile UX
+- Thicker wires for active connections
+
+# Random ideas to try
+
+- Top-align pages?
+- Levels slider to hide children below a certain level?
+- Don't tab to title unless the card is already active
+- CSS to auto-show parents of active page (instead of clicking to make them active)
+- Shift-click to activate multiple pages?
+- Use transform: scale on whole flow instead of page height?
+- Remove extra spikes on connection wiring?
 
 <style>
 	h1 {
