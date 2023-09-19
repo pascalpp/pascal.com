@@ -75,20 +75,12 @@ export function addConnection(page: Page, pageInfo: PageInfo) {
 export function activatePage(id: PageId) {
 	pageStore.update((pages) => {
 		const parentPages = getAllParentPages(pages, id);
-		const siblings = parentPages.reduce((acc, item) => [...acc, ...item.connections], [] as PageId[]);
 		const parentPageIds = parentPages.map((item) => item.id);
 		const activePageIds = [id, ...parentPageIds];
-		const childPageIds = getAllChildPages(pages, id).map((item) => item.id);
-		const inactivePageIds = [...siblings, ...childPageIds];
-		pages.forEach((item) => {
-			if (inactivePageIds.includes(item.id)) {
-				item.active = false;
-			}
-			if (activePageIds.includes(item.id)) {
-				item.active = true;
-			}
+		return pages.map((item) => {
+			item.active = activePageIds.includes(item.id);
+			return item;
 		});
-		return pages;
 	});
 }
 
