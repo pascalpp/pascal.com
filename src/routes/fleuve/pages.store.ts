@@ -1,3 +1,4 @@
+import assert from 'assert';
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 import { v4 as uuidv4 } from 'uuid';
@@ -106,15 +107,17 @@ export function removePage(id: PageId) {
 	});
 }
 
-export function reorderPage(id: PageId, direction: 'up' | 'down') {
+export function reorderPage(childId: PageId, direction: 'up' | 'down') {
 	pageStore.update((pages) => {
-		const parentPage = pages.find((item) => item.connections.includes(id));
-		if (parentPage) {
-			const index = parentPage.connections.indexOf(id);
-			const directionIndex = direction === 'up' ? index - 1 : index + 1;
-			const normalizedIndex = Math.min(Math.max(directionIndex, 0), parentPage.connections.length - 1);
-			parentPage.connections = changeItemIndex(parentPage.connections, index, normalizedIndex);
-		}
+		const parent = pages.find((item) => item.connections.includes(childId));
+		assert(parent, 'Parent not found');
+
+		const currentIndex = parent.connections.indexOf(childId);
+		const vector = direction === 'up' ? -1 : +1;
+		const maxIndex = parent.connections.length - 1;
+		const newIndex = Math.min(Math.max(currentIndex + vector, 0), maxIndex);
+		parent.connections = changeItemIndex(parent.connections, currentIndex, newIndex);
+
 		return pages;
 	});
 }
@@ -122,12 +125,24 @@ export function reorderPage(id: PageId, direction: 'up' | 'down') {
 export function movePageUp(id: PageId) {
 	pageStore.update((pages) => {
 		const parent = pages.find((item) => item.connections.includes(id));
-		const grandparent = parent && pages.find((item) => item.connections.includes(parent.id));
-		if (grandparent) {
-			const parentIndex = grandparent.connections.indexOf(parent.id);
-			grandparent.connections.splice(parentIndex + 1, 0, id);
-			parent.connections = parent.connections.filter((itemId) => itemId != id);
-		}
+		assert(parent, 'Parent not found');
+
+		const grandparent = pages.find((item) => item.connections.includes(parent.id));
+		assert(grandparent, 'Grandparent not found');
+
+		const parentIndex = grandparent.connections.indexOf(parent.id);
+		// grandparent.connections.splice(parentIndex + 1, 0, id);
+
+		// put child in grandparent's connections, after parent
+		grandparent.connections = [
+			...grandparent.connections.slice(0, parentIndex + 1),
+			id,
+			...grandparent.connections.slice(parentIndex + 1),
+		];
+
+		// remove child from parent's connections
+		parent.connections = parent.connections.filter((itemId) => itemId != id);
+
 		return pages;
 	});
 }
@@ -135,26 +150,29 @@ export function movePageUp(id: PageId) {
 export function replaceEmptyParent(childId: PageId) {
 	pageStore.update((pages) => {
 		const parent = pages.find((item) => item.connections.includes(childId));
-		const grandparent = parent && pages.find((item) => item.connections.includes(parent.id));
-		if (grandparent) {
-			const parentIndex = grandparent.connections.indexOf(parent.id);
-			console.log('grandparent before', grandparent.connections);
-			grandparent.connections = [
-				...grandparent.connections.slice(0, parentIndex),
-				childId,
-				...grandparent.connections.slice(parentIndex + 1),
-			];
-			console.log('grandparent after', grandparent.connections);
+		assert(parent, 'Parent not found');
 
-			parent.connections = parent.connections.filter((itemId) => itemId != childId);
-		}
+		const grandparent = pages.find((item) => item.connections.includes(parent.id));
+		assert(grandparent, 'Grandparent not found');
 
-		if (parent && !parent.title && !parent.description) {
-			pages = pages.filter((item) => {
-				item.connections = item.connections.filter((itemId) => itemId !== parent.id);
-				return item.id !== parent.id;
-			});
-		}
+		const emptyParent = !parent.title && !parent.description;
+		if (!emptyParent) return pages;
+
+		// put child in grandparent's connections where parent was
+		const parentIndex = grandparent.connections.indexOf(parent.id);
+		grandparent.connections = [
+			...grandparent.connections.slice(0, parentIndex),
+			childId,
+			...grandparent.connections.slice(parentIndex + 1),
+		];
+		const childIndex = grandparent.connections.indexOf(childId);
+		assert(childIndex === parentIndex, 'Child not in expected position');
+
+		// remove parent
+		pages = pages.filter((item) => {
+			return item.id !== parent.id;
+		});
+		assert(!pages.some((item) => item.connections.includes(parent.id)), 'Parent still exists in pages');
 
 		return pages;
 	});
@@ -181,19 +199,28 @@ export function addParentAbovePage(childId: PageId): Page {
 	return newParent;
 }
 
-export function movePageDown(id: PageId): Page | undefined {
+export function movePageDown(childId: PageId): Page | undefined {
 	let newParent;
 	pageStore.update((pages) => {
-		const parent = pages.find((item) => item.connections.includes(id));
-		if (parent) {
-			const index = parent.connections.indexOf(id) ?? 0;
-			const newParentId = index > 0 ? parent?.connections[index - 1] : parent?.connections[index + 1];
-			newParent = pages.find((item) => item.id === newParentId);
-			if (newParent) {
-				newParent.connections.push(id);
-				parent.connections = parent.connections.filter((itemId) => itemId != id);
-			}
-		}
+		const parent = pages.find((item) => item.connections.includes(childId));
+		assert(parent, 'Parent not found');
+
+		// find nearest sibling in parent connections
+		const index = parent.connections.indexOf(childId);
+		const nearestSiblingId = index > 0 ? parent.connections[index - 1] : parent.connections[index + 1];
+		assert(nearestSiblingId, 'Nearest sibling not found');
+		assert(nearestSiblingId !== childId, 'Nearest sibling is same as child');
+
+		// find nearest sibling page and use as new parent
+		newParent = pages.find((item) => item.id === nearestSiblingId);
+		assert(newParent, 'New parent not found');
+
+		// add child to new parent connections
+		newParent.connections = [...newParent.connections, childId];
+
+		// remove child from old parent connections
+		parent.connections = parent.connections.filter((itemId) => itemId != childId);
+
 		return pages;
 	});
 	return newParent;
