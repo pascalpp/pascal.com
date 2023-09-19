@@ -10,6 +10,9 @@ latest: 0.1.13
 - Hide connections and show connection summary when Visibility is 0.
 - Improved UX when adding an empty page above the current page.
 
+<details>
+	<summary>Older versions</summary>
+
 ### Version 0.1.12
 
 - Align cards to top, with better wire connections.
@@ -82,6 +85,8 @@ latest: 0.1.13
 - Keep siblings visible when activating a page
 - Cleaned up store helpers
 
+</details>
+
 # Todo
 
 - Multiple document support
@@ -130,4 +135,15 @@ latest: 0.1.13
 		margin-left: 24px;
 		margin-top: 2px;
 	}
+
+	details {
+		margin-top: 8px;
+	}
+
+	summary {
+		padding: 12px;
+		font-weight: bold;
+	}
+
+
 </style>
