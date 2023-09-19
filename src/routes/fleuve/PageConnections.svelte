@@ -11,7 +11,9 @@
 	{#each page.connections as connectionId, index (connectionId)}
 		<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
 	{/each}
-	<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+	{#if page.active}
+		<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+	{/if}
 </div>
 
 <style lang="less">
@@ -61,10 +63,12 @@
 					display: block;
 					content: '';
 					height: calc(100% - 38px);
-					width: 1px;
-					background-color: black;
+					width: 24px;
+					border-left: 1px solid black;
+					border-bottom: 1px solid black;
+					border-bottom-left-radius: 4px;
 					top: 21px;
-					right: 100%;
+					right: calc(100% - 24px);
 				}
 			}
 
@@ -89,6 +93,11 @@
 				margin-left: 16px;
 				&::before {
 					width: 16px;
+				}
+			}
+			:global(> * + :last-child) {
+				&::before {
+					display: none;
 				}
 			}
 		}

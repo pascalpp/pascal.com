@@ -70,11 +70,7 @@
 
 <style lang="less">
 	.add-connection {
-		display: none;
-		&.show {
-			display: block;
-		}
-
+		display: block;
 		background-color: white;
 		box-sizing: border-box;
 		border: 1px solid fade(black, 30%);
