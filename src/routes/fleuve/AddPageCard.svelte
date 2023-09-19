@@ -50,6 +50,10 @@
 				});
 			}
 		}
+
+		if (event.key === 'Tab') {
+			event.preventDefault();
+		}
 	}
 
 	function onKeyUp(event: KeyboardEvent) {
