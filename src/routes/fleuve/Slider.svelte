@@ -14,7 +14,7 @@
 
 <Column center gap="4px" {title}>
 	<label for={id}>{label} {labelValue}</label>
-	<input id="child-opacity" type="range" {min} {max} {step} bind:value />
+	<input {id} type="range" {min} {max} {step} bind:value />
 </Column>
 
 <style lang="less">
