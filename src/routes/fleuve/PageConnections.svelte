@@ -57,6 +57,7 @@
 					background-color: black;
 					top: 21px;
 					right: 100%;
+					// opacity: 0.3;
 				}
 				&::after {
 					position: absolute;
@@ -69,7 +70,17 @@
 					border-bottom-left-radius: 4px;
 					top: 21px;
 					right: calc(100% - 24px);
+					// opacity: 0.3;
 				}
+				// idea for darker lines leading to active cards
+				// &:has(.page.active) {
+				// 	&::before {
+				// 		opacity: 1;
+				// 	}
+				// 	&::after {
+				// 		opacity: 1;
+				// 	}
+				// }
 			}
 
 			// show connection line on left side of each child
@@ -87,12 +98,14 @@
 					background-color: black;
 					top: 21px;
 					right: 100%;
+					// opacity: 0.3;
 				}
 			}
 			:global(> .page.active) {
 				margin-left: 16px;
 				&::before {
 					width: 16px;
+					// opacity: 1;
 				}
 			}
 			:global(> * + :last-child) {
