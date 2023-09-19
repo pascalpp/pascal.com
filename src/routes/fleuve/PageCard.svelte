@@ -201,11 +201,11 @@
 		display: flex;
 		flex-direction: column;
 		cursor: pointer;
+		margin-right: 2px;
 
 		&.active {
 			box-shadow: 0 2px 4px 2px fade(black, 10%);
 			padding-top: 4px;
-			margin-right: 1px;
 		}
 
 		&:focus,

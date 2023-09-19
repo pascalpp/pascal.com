@@ -46,7 +46,6 @@
 			&.active:has(:first-child:not(:last-child)),
 			&:has(.page + .page) {
 				margin-left: 24px;
-				border-left: 1px solid black;
 				&::before {
 					position: absolute;
 					display: block;
@@ -54,7 +53,17 @@
 					height: 1px;
 					width: 24px;
 					background-color: black;
-					top: 50%;
+					top: 21px;
+					right: 100%;
+				}
+				&::after {
+					position: absolute;
+					display: block;
+					content: '';
+					height: calc(100% - 38px);
+					width: 1px;
+					background-color: black;
+					top: 21px;
 					right: 100%;
 				}
 			}
@@ -72,7 +81,7 @@
 					width: 24px;
 					transition: width 0.2s ease-in-out;
 					background-color: black;
-					top: 50%;
+					top: 21px;
 					right: 100%;
 				}
 			}

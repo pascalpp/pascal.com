@@ -30,7 +30,7 @@
 	.page {
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+		align-items: flex-start;
 		position: relative;
 	}
 </style>
