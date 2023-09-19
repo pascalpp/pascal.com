@@ -73,13 +73,30 @@ export function addConnection(page: Page, pageInfo: PageInfo) {
 	updatePage({ ...page, connections: [...page.connections, connection.id] });
 }
 
-export function activatePage(id: PageId) {
+export function activatePage(pageId: PageId) {
 	pageStore.update((pages) => {
-		const parentPages = getAllParentPages(pages, id);
+		const parentPages = getAllParentPages(pages, pageId);
 		const parentPageIds = parentPages.map((item) => item.id);
-		const activePageIds = [id, ...parentPageIds];
+		const activePageIds = [pageId, ...parentPageIds];
 		return pages.map((item) => {
 			item.active = activePageIds.includes(item.id);
+			return item;
+		});
+	});
+}
+
+export function deactivatePage(pageId: PageId) {
+	pageStore.update((pages) => {
+		const page = pages.find((item) => item.id === pageId);
+		assert(page, 'Page not found');
+
+		const childPages = getAllChildPages(pages, pageId);
+		const childPageIds = childPages.map((item) => item.id);
+		const idsToDeactivate = [pageId, ...childPageIds];
+		return pages.map((item) => {
+			if (idsToDeactivate.includes(item.id)) {
+				item.active = false;
+			}
 			return item;
 		});
 	});
