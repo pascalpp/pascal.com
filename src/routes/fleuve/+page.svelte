@@ -6,7 +6,6 @@
 	import SettingsContext from './SettingsContext.svelte';
 	import { pageStore, addRootPage } from './pages.store';
 	import type { Page } from './pages.store';
-	import { onMount } from 'svelte';
 
 	let root: Page;
 
@@ -20,7 +19,7 @@
 		}
 	}
 
-	onMount(() => {
+	if (browser) {
 		(<any>window).pageStore = pageStore;
 
 		pageStore.subscribe((pages) => {
@@ -35,7 +34,7 @@
 		requestAnimationFrame(() => {
 			activateFirstPage();
 		});
-	});
+	}
 </script>
 
 <svelte:head>
@@ -51,7 +50,7 @@
 <SettingsContext>
 	<main>
 		<div class="pages">
-			{#if browser && root}
+			{#if root}
 				<PageView pageId="root" tabindex={1} />
 			{/if}
 		</div>
