@@ -52,8 +52,6 @@
 			if (page.active) {
 				const title = target?.querySelector('.title') as HTMLButtonElement;
 				title?.click();
-			} else {
-				activatePage(page.id);
 			}
 		}
 
