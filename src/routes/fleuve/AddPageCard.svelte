@@ -1,13 +1,12 @@
 <script lang="ts">
 	import type { Page } from './pages.store';
-	import { addConnection } from './pages.store';
+	import { addConnection, focusPage } from './pages.store';
 
 	export let page: Page;
 	export let tabindex: number;
 
 	function onFocus(event: FocusEvent) {
 		const target = event.target as HTMLHeadingElement;
-		target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		if (window.getSelection && document.createRange) {
 			const range = document.createRange();
 			range.selectNodeContents(target);
@@ -15,11 +14,15 @@
 			selection?.removeAllRanges();
 			selection?.addRange(range);
 		}
+		// call with undefined to unfocus the previous page
+		focusPage();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
+		event.stopPropagation();
 		const target = event.target as HTMLElement;
 		const title = target.innerText.trim();
+		if (!title) target.innerText = title;
 
 		if (event.key === 'ArrowLeft' && !title) {
 			event.preventDefault();
@@ -34,14 +37,18 @@
 			previousNode?.focus();
 		}
 
-		if (event.key === 'Enter' && title) {
+		if (event.key === 'Enter') {
 			event.preventDefault();
-			addConnection(page, { title });
-			target.innerText = '';
-			requestAnimationFrame(() => {
-				const previousNode = target.previousElementSibling?.querySelector('.page-card') as HTMLElement;
-				previousNode?.click();
-			});
+			if (title) {
+				const newPage = addConnection(page, { title });
+				target.innerText = '';
+				target.blur();
+				requestAnimationFrame(() => {
+					const newCard = document.querySelector(`[data-page-id="${newPage.id}"]`) as HTMLElement;
+					newCard?.click();
+					newCard?.focus();
+				});
+			}
 		}
 	}
 
