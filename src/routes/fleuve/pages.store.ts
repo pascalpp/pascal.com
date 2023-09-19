@@ -328,6 +328,6 @@ function getDefaultState(): Page[] {
 	const firstPageId = uuidv4();
 	return [
 		{ id: 'root', title: 'Root Card', description: '', connections: [firstPageId], active: true },
-		{ id: firstPageId, title: '', description: '', connections: [], active: true },
+		{ id: firstPageId, title: '', description: '', connections: [], active: true, focus: true },
 	];
 }
