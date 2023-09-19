@@ -37,9 +37,12 @@
 			(<any>window).pages = pages;
 
 			root = pages.find((item) => item.id === 'root') as Page;
-			if (!root) addRootPage();
 
-			isShowingTutorial = root?.connections.some((pageId) => pageId === 'tutorial-start-page');
+			if (root) {
+				isShowingTutorial = root?.connections.some((pageId) => pageId === 'tutorial-start-page');
+			} else {
+				addRootPage();
+			}
 		});
 
 		requestAnimationFrame(() => {
