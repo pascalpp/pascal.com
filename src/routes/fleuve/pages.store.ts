@@ -227,7 +227,7 @@ export function addParentAbovePage(childId: PageId): Page {
 	return newParent;
 }
 
-export function movePageDown(childId: PageId): Page | undefined {
+export function movePageDown(childId: PageId): Page {
 	let newParent;
 	pageStore.update((pages) => {
 		const parent = pages.find((item) => item.connections.includes(childId));
@@ -251,6 +251,8 @@ export function movePageDown(childId: PageId): Page | undefined {
 
 		return pages;
 	});
+
+	assert(newParent, 'New parent not found');
 	return newParent;
 }
 

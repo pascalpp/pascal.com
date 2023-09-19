@@ -58,15 +58,13 @@
 			event.preventDefault();
 			if (event.shiftKey) {
 				const newParent = movePageDown(page.id);
+				if (active) {
+					activatePage(newParent.id);
+					activatePage(page.id);
+				}
 				requestAnimationFrame(() => {
-					const newParentCard = document.querySelector(`[data-page-id="${newParent?.id}"]`) as HTMLElement;
 					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newParentCard?.focus();
-					newParentCard?.click();
-					requestAnimationFrame(() => {
-						newCard?.focus();
-						if (active) newCard?.click();
-					});
+					newCard?.focus();
 				});
 			} else if (event.altKey) {
 				const newParent = addParentAbovePage(page.id);
