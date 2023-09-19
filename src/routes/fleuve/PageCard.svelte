@@ -24,11 +24,7 @@
 
 	function onClick(event: MouseEvent) {
 		activatePage(page.id);
-		const card = event.target as HTMLElement;
-		requestAnimationFrame(() => {
-			card?.focus();
-			card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		});
+		focusPage(page.id);
 	}
 
 	function onFocus() {
