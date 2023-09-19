@@ -36,10 +36,8 @@
 			event.stopPropagation();
 		}
 
-		if (event.key === 'Escape') {
-			const card = target?.closest('.page-card') as HTMLElement;
+		if (event.key === 'Escape' || event.key === 'Tab') {
 			target?.blur();
-			card?.focus();
 		}
 
 		if (event.key === 'ArrowLeft' && !description) {
