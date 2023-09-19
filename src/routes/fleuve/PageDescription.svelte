@@ -25,6 +25,8 @@
 		const description = target.innerText.trim();
 		updatePage({ ...page, description });
 		editing = false;
+		const parentCard = target.closest('.page-card') as HTMLElement;
+		parentCard?.focus();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
