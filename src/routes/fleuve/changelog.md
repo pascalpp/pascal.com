@@ -1,8 +1,12 @@
 ---
-latest: 0.1.13
+latest: 0.1.14
 ---
 
 # Changelog
+
+### Version 0.1.14
+
+- Settings UI improvements.
 
 ### Version 0.1.13
 
