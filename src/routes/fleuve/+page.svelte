@@ -5,8 +5,7 @@
 	import { pageStore, reset, addRootPage, loadTutorial } from './pages.store';
 	import type { Page } from './pages.store';
 	import { settings } from './settings.store';
-	import Changelog from './changelog.md';
-	import { metadata } from './changelog.md';
+	import ChangelogButton from './ChangelogButton.svelte';
 	import File from './file.svg?component';
 	import { onMount } from 'svelte';
 
@@ -51,8 +50,8 @@
 	}
 
 	function activateFirstPage() {
-		const firstPage = document.querySelector('.page-card') as HTMLElement;
 		const focusedPage = document.querySelector('.page-card.focus') as HTMLElement;
+		const firstPage = document.querySelector('.page-card') as HTMLElement;
 		if (focusedPage) {
 			focusedPage?.focus();
 		} else {
@@ -138,12 +137,7 @@
 
 	<div class="tools row bottom right">
 		<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Feedback</a>
-		<button class="version" on:click={toggleChangelog}>Version {metadata.latest}</button>
-		<div class="changelog" class:show={showChangelog}>
-			<div class="changelog-content">
-				<Changelog />
-			</div>
-		</div>
+		<ChangelogButton />
 	</div>
 </main>
 
@@ -158,6 +152,7 @@
 	}
 
 	.pages {
+		background-color: tint(gold, 50%);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -177,11 +172,11 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 2em;
+
 		opacity: 0.3;
 		&:active,
 		&:hover,
-		&:focus-within,
-		&:has(.changelog.show) {
+		&:focus-within {
 			opacity: 1;
 		}
 
@@ -262,32 +257,6 @@
 					transform: rotate(90deg) scaleX(-1);
 				}
 			}
-		}
-	}
-
-	.changelog {
-		position: absolute;
-		bottom: 100%;
-		right: 20px;
-		min-width: 400px;
-		background-color: white;
-		border-radius: 8px;
-		border: 1px solid fade(black, 20%);
-		transition: all 0.2s ease-in-out;
-		box-shadow: 0 4p 4px 0 rgba(black, 0.1);
-		max-height: 0;
-		overflow: hidden;
-		overflow-y: scroll;
-
-		.changelog-content {
-			height: fit-content;
-			padding-bottom: 12px;
-		}
-
-		opacity: 0;
-		&.show {
-			max-height: 90vh;
-			opacity: 1;
 		}
 	}
 </style>
