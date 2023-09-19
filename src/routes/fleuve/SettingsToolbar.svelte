@@ -4,15 +4,20 @@
 	import { settings } from './settings.store';
 	import AspectRatio from './AspectRatio.svelte';
 	import SettingsIcon from './settings.svg?component';
-
-	function focus(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.focus();
-	}
+	import ResetButton from './ResetButton.svelte';
 </script>
 
 <Toolbar top right show>
-	<button slot="button" let:show let:toggle on:click={toggle} aria-label="Settings" title="Settings" class:show>
+	<button
+		class="settings-button"
+		slot="button"
+		let:show
+		let:toggle
+		on:click={toggle}
+		aria-label="Settings"
+		title="Settings"
+		class:show
+	>
 		<SettingsIcon />
 	</button>
 	<div class="settings-panel" slot="panel">
@@ -36,11 +41,19 @@
 		<section>
 			<AspectRatio />
 		</section>
+		<section class="miscellany">
+			<p>
+				<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Send feedback 💌</a>
+			</p>
+			<p>
+				<ResetButton />
+			</p>
+		</section>
 	</div>
 </Toolbar>
 
 <style lang="less">
-	button {
+	.settings-button {
 		padding: 8px;
 		border-radius: 4px;
 		:global(svg) {
