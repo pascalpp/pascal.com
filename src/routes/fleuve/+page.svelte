@@ -94,10 +94,7 @@
 		{/if}
 	</div>
 
-	<div class="tools row bottom right">
-		<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Feedback</a>
-		<ChangelogButton />
-	</div>
+	<ChangelogButton />
 </main>
 
 <style lang="less">
