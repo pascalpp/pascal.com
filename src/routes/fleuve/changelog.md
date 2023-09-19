@@ -75,7 +75,7 @@ latest: 0.1.11
 - Drag and drop to rearrange cards
 - Scale font size with page scale
 - Better mobile UX
-- Thicker wires for active connections
+- Checklists in Markdown
 
 # Random ideas to try
 
@@ -86,7 +86,9 @@ latest: 0.1.11
 - Shift-click to activate multiple pages?
 - Use transform: scale on whole flow instead of page height?
 - Remove extra spikes on connection wiring?
+- Thicker wires for active connections?
 - Svelte transitions?
+- scroll mask at bottom of description
 
 <style>
 	h1 {
