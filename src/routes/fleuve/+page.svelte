@@ -110,7 +110,7 @@
 			/>
 			<Slider
 				id="child-opacity"
-				label="Opacity"
+				label="Visibility"
 				bind:value={$settings.childOpacity}
 				title="Change the opacity for childen of the active page"
 			/>
