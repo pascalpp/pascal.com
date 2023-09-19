@@ -118,7 +118,7 @@ function getAllParentPages(pages: Page[], id: PageId): Page[] {
 	return parentPage ? [parentPage, ...getAllParentPages(pages, parentPage.id)] : [];
 }
 
-function getAllChildPages(pages: Page[], id: PageId): Page[] {
+export function getAllChildPages(pages: Page[], id: PageId): Page[] {
 	const parentPage = pages.find((item) => item.id === id);
 	const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
 	return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
