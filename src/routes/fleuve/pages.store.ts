@@ -21,6 +21,7 @@ export interface Page {
 	description: string;
 	connections: PageId[];
 	active?: boolean;
+	focus?: boolean;
 }
 
 const pageDefaults = {
@@ -97,6 +98,15 @@ export function deactivatePage(pageId: PageId) {
 			if (idsToDeactivate.includes(item.id)) {
 				item.active = false;
 			}
+			return item;
+		});
+	});
+}
+
+export function focusPage(pageId?: PageId) {
+	pageStore.update((pages) => {
+		return pages.map((item) => {
+			item.focus = item.id === pageId;
 			return item;
 		});
 	});
