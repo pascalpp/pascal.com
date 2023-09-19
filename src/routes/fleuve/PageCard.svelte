@@ -6,7 +6,6 @@
 	import {
 		activatePage,
 		removePage,
-		updatePage,
 		reorderPage,
 		movePageUp,
 		movePageDown,
