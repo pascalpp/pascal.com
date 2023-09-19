@@ -11,26 +11,32 @@
 	}
 </script>
 
-<Toolbar top right column>
+<Toolbar top right show>
 	<button slot="button" let:show let:toggle on:click={toggle} aria-label="Settings" title="Settings" class:show>
 		<SettingsIcon />
 	</button>
-	<svelte:fragment slot="panel">
-		<Slider
-			id="active-page-scale"
-			label="Scale"
-			min={0.1}
-			bind:value={$settings.activePageScale}
-			title="Change the scale of active pages"
-		/>
-		<Slider
-			id="child-opacity"
-			label="Visibility"
-			bind:value={$settings.childOpacity}
-			title="Change the opacity for childen of the active page"
-		/>
-		<AspectRatio />
-	</svelte:fragment>
+	<div class="settings-panel" slot="panel">
+		<section>
+			<Slider
+				id="active-page-scale"
+				label="Scale"
+				min={0.1}
+				bind:value={$settings.activePageScale}
+				title="Change the scale of active pages"
+			/>
+		</section>
+		<section>
+			<Slider
+				id="child-opacity"
+				label="Visibility"
+				bind:value={$settings.childOpacity}
+				title="Change the opacity for childen of the active page"
+			/>
+		</section>
+		<section>
+			<AspectRatio />
+		</section>
+	</div>
 </Toolbar>
 
 <style lang="less">
@@ -48,6 +54,24 @@
 		&:hover {
 			outline: 1px solid fade(black, 50%);
 			background-color: white;
+		}
+	}
+
+	.settings-panel {
+		padding: 0 4px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 170px;
+
+		section {
+			padding: 12px 8px;
+			padding-bottom: 16px;
+			width: 100%;
+
+			+ section {
+				border-top: 1px solid fade(black, 10%);
+			}
 		}
 	}
 </style>
