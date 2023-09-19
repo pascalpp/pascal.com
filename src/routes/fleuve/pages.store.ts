@@ -69,9 +69,10 @@ export function addRootPage() {
 	});
 }
 
-export function addConnection(page: Page, pageInfo: PageInfo) {
+export function addConnection(page: Page, pageInfo: PageInfo): Page {
 	const connection = addPage(pageInfo);
 	updatePage({ ...page, connections: [...page.connections, connection.id] });
+	return connection;
 }
 
 export function activatePage(pageId: PageId) {
