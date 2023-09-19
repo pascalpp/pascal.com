@@ -52,7 +52,12 @@
 
 	function activateFirstPage() {
 		const firstPage = document.querySelector('.page-card') as HTMLElement;
-		firstPage?.click();
+		const focusedPage = document.querySelector('.page-card.focus') as HTMLElement;
+		if (focusedPage) {
+			focusedPage?.focus();
+		} else {
+			firstPage?.click();
+		}
 	}
 
 	onMount(() => {
@@ -67,7 +72,9 @@
 			isShowingTutorial = root?.connections.some((pageId) => pageId === 'tutorial-start-page');
 		});
 
-		activateFirstPage();
+		requestAnimationFrame(() => {
+			activateFirstPage();
+		});
 	});
 </script>
 
