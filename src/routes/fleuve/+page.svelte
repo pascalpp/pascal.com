@@ -152,7 +152,6 @@
 	}
 
 	.pages {
-		background-color: tint(gold, 50%);
 		position: absolute;
 		top: 0;
 		left: 0;
