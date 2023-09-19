@@ -147,18 +147,19 @@
 				width: auto;
 				height: 16px;
 			}
-			color: fade(black, 30%);
-			border: 1px solid currentColor;
-			&:hover {
-				color: black;
-			}
+			background-color: white;
+			color: black;
+			border: 1px solid black;
 			padding: 4px 12px;
 			border-radius: 4px;
 		}
 
 		&:hover {
 			.edit-button {
-				opacity: 1;
+				opacity: 0.3;
+				&:hover {
+					opacity: 1;
+				}
 			}
 		}
 	}
