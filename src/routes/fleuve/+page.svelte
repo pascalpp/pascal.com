@@ -14,10 +14,6 @@
 	let isShowingTutorial = false;
 	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
-	function scale(number: number, inMin: number, inMax: number, outMin: number, outMax: number) {
-		return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-	}
-
 	function onClickReset() {
 		if (confirm('Are you sure you want to start over?')) {
 			reset();
@@ -75,7 +71,7 @@
 	<div
 		class="pages"
 		style:--child-opacity={$settings.childOpacity}
-		style:--active-page-scale={scale($settings.activePageScale, 0, 1, 0.2, 1)}
+		style:--active-page-scale={$settings.activePageScale}
 		style:--aspect-ratio={aspectRatio}
 	>
 		{#if browser && root}
