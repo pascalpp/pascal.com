@@ -76,7 +76,6 @@
 		style:--child-opacity={$settings.childOpacity}
 		style:--active-page-scale={scale($settings.activePageScale, 0, 1, 0.2, 1)}
 		style:--aspect-ratio={aspectRatio}
-		on:click={activateFirstPage}
 	>
 		{#if browser && root}
 			<PageView pageId="root" tabindex={1} />
