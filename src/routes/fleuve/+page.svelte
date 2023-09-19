@@ -12,13 +12,6 @@
 	let isShowingTutorial = false;
 	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
-	function onClickReset() {
-		if (confirm('Are you sure you want to start over?')) {
-			reset();
-			activateFirstPage();
-		}
-	}
-
 	function onClickTutorial() {
 		const tutorialStartPageId = loadTutorial();
 		requestAnimationFrame(() => {
