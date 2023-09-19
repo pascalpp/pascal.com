@@ -68,10 +68,11 @@
 	}
 </script>
 
+<!-- TODO nest this to fix margins, but need to check down arrow in page card -->
 <div
+	class="add-connection"
 	{tabindex}
 	contenteditable="true"
-	class="add-connection"
 	class:show={page.active}
 	on:focus={onFocus}
 	on:blur={onBlur}
