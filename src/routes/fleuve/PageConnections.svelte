@@ -2,17 +2,26 @@
 	import AddPageCard from './AddPageCard.svelte';
 	import type { Page } from './pages.store';
 	import PageView from './PageView.svelte';
+	import PageConnectionSummary from './PageConnectionSummary.svelte';
+	import { pageStore } from './pages.store';
+	import { settings } from './settings.store';
 
 	export let page: Page;
 	export let tabindex: number;
+
+	$: opacity = $settings.childOpacity;
 </script>
 
-<div class="connections" class:active={page.active}>
-	{#each page.connections as connectionId, index (connectionId)}
-		<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
-	{/each}
-	{#if page.active}
-		<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+<div class="connections" class:active={page.active || opacity === 0}>
+	{#if page.active || opacity > 0}
+		{#each page.connections as connectionId, index (connectionId)}
+			<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
+		{/each}
+		{#if page.active}
+			<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+		{/if}
+	{:else}
+		<PageConnectionSummary {page} />
 	{/if}
 </div>
 

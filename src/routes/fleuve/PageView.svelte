@@ -3,14 +3,12 @@
 	import PageConnections from './PageConnections.svelte';
 	import type { Page, PageId } from './pages.store';
 	import { pageStore } from './pages.store';
-	import { settings } from './settings.store';
 
 	export let pageId: PageId;
 	export let parentId: PageId | undefined = undefined;
 	export let tabindex = 1;
 
 	let page: Page;
-	$: opacity = $settings.childOpacity;
 
 	pageStore.subscribe((pages) => {
 		page = pages.find((p) => p.id === pageId) as Page;
@@ -23,9 +21,7 @@
 			{#if parentId}
 				<PageCard {page} {tabindex} {parentId} />
 			{/if}
-			{#if page.active || opacity > 0}
-				<PageConnections {page} tabindex={tabindex + 1} />
-			{/if}
+			<PageConnections {page} tabindex={tabindex + 1} />
 		</div>
 	{/if}
 {/key}
