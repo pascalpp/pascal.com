@@ -10,7 +10,6 @@
 	import { onMount } from 'svelte';
 
 	let root: Page;
-	let showChangelog = false;
 	let isShowingTutorial = false;
 	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
@@ -30,17 +29,6 @@
 		requestAnimationFrame(() => {
 			const tutorialStartPage = document.querySelector(`[data-page-id="${tutorialStartPageId}"]`) as HTMLElement;
 			tutorialStartPage?.click();
-		});
-	}
-
-	function toggleChangelog() {
-		showChangelog = !showChangelog;
-		requestAnimationFrame(() => {
-			if (showChangelog) {
-				document.body.addEventListener('click', toggleChangelog);
-			} else {
-				document.body.removeEventListener('click', toggleChangelog);
-			}
 		});
 	}
 
