@@ -86,6 +86,7 @@ latest: 0.1.11
 - Shift-click to activate multiple pages?
 - Use transform: scale on whole flow instead of page height?
 - Remove extra spikes on connection wiring?
+- Svelte transitions?
 
 <style>
 	h1 {
