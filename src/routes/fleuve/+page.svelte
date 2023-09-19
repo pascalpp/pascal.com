@@ -129,6 +129,7 @@
 	</div>
 
 	<div class="tools row bottom right">
+		<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Feedback</a>
 		<button class="version" on:click={toggleChangelog}>Version {metadata.latest}</button>
 		<div class="changelog" class:show={showChangelog}>
 			<div class="changelog-content">
@@ -192,6 +193,11 @@
 		}
 		&.bottom {
 			bottom: 0px;
+		}
+
+		a {
+			color: black;
+			text-decoration: none;
 		}
 	}
 
