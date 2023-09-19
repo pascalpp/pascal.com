@@ -5,6 +5,7 @@
 	import AspectRatio from './AspectRatio.svelte';
 	import SettingsIcon from './settings.svg?component';
 	import ResetButton from './ResetButton.svelte';
+	import ShowTutorialButton from './ShowTutorialButton.svelte';
 </script>
 
 <Toolbar top right show>
@@ -45,9 +46,8 @@
 			<p>
 				<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Send feedback 💌</a>
 			</p>
-			<p>
-				<ResetButton />
-			</p>
+			<ShowTutorialButton />
+			<ResetButton />
 		</section>
 	</div>
 </Toolbar>
@@ -85,6 +85,15 @@
 			+ section {
 				border-top: 1px solid fade(black, 10%);
 			}
+		}
+	}
+
+	.miscellany {
+		:global(:is(a, button)) {
+			opacity: 0.7;
+		}
+		:global(:is(a, button):hover) {
+			opacity: 1;
 		}
 	}
 </style>

@@ -8,6 +8,6 @@
 	}
 </script>
 
-<button class="reset-button" on:click={onClickReset}>Reset data…</button>
-
-<style lang="less"></style>
+<p>
+	<button class="reset-button" on:click={onClickReset}>Reset data…</button>
+</p>
