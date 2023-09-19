@@ -8,7 +8,7 @@
 	import ShowTutorialButton from './ShowTutorialButton.svelte';
 </script>
 
-<Toolbar top right show>
+<Toolbar top right>
 	<button
 		class="settings-button"
 		slot="button"
