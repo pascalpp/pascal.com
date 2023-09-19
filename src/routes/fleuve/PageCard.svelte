@@ -208,6 +208,7 @@
 		flex-direction: column;
 		cursor: pointer;
 		margin-right: 2px;
+		pointer-events: auto;
 
 		&.active {
 			box-shadow: 0 2px 4px 2px fade(black, 10%);

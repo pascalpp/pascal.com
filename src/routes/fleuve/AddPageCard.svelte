@@ -95,6 +95,7 @@
 		appearance: none;
 		font-weight: bold;
 		white-space: nowrap;
+		pointer-events: auto;
 
 		&:empty::after {
 			font-weight: normal;
