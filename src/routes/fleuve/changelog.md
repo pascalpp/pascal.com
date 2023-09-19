@@ -136,13 +136,13 @@ latest: 0.1.13
 		margin-top: 2px;
 	}
 
-	details {
-		margin-top: 8px;
-	}
-
 	summary {
-		padding: 12px;
+		padding: 0 12px;
 		font-weight: bold;
+		cursor: pointer;
+	}
+	summary + * {
+		margin-top: 1em;
 	}
 
 
