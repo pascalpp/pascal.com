@@ -1,24 +1,14 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import PageView from './PageView.svelte';
-	import { pageStore, reset, addRootPage, loadTutorial } from './pages.store';
-	import type { Page } from './pages.store';
-	import { settings } from './settings.store';
 	import ChangelogButton from './ChangelogButton.svelte';
 	import SettingsToolbar from './SettingsToolbar.svelte';
+	import SettingsContext from './SettingsContext.svelte';
+	import { pageStore, addRootPage } from './pages.store';
+	import type { Page } from './pages.store';
 	import { onMount } from 'svelte';
 
 	let root: Page;
-	let isShowingTutorial = false;
-	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
-
-	function onClickTutorial() {
-		const tutorialStartPageId = loadTutorial();
-		requestAnimationFrame(() => {
-			const tutorialStartPage = document.querySelector(`[data-page-id="${tutorialStartPageId}"]`) as HTMLElement;
-			tutorialStartPage?.click();
-		});
-	}
 
 	function activateFirstPage() {
 		const focusedPage = document.querySelector('.page-card.focus') as HTMLElement;
@@ -37,10 +27,7 @@
 			(<any>window).pages = pages;
 
 			root = pages.find((item) => item.id === 'root') as Page;
-
-			if (root) {
-				isShowingTutorial = root?.connections.some((pageId) => pageId === 'tutorial-start-page');
-			} else {
+			if (!root) {
 				addRootPage();
 			}
 		});
@@ -61,30 +48,18 @@
 	<meta property="og:image" content="https://www.pascal.com/files/fleuve-og-preview.png" />
 </svelte:head>
 
-<main>
-	<div
-		class="pages"
-		style:--child-opacity={$settings.childOpacity}
-		style:--active-page-scale={$settings.activePageScale}
-		style:--aspect-ratio={aspectRatio}
-	>
-		{#if browser && root}
-			<PageView pageId="root" tabindex={1} />
-		{/if}
-	</div>
+<SettingsContext>
+	<main>
+		<div class="pages">
+			{#if browser && root}
+				<PageView pageId="root" tabindex={1} />
+			{/if}
+		</div>
 
-	{#if browser}
 		<SettingsToolbar />
-	{/if}
-
-	<div class="tools row bottom left">
-		{#if browser && !isShowingTutorial}
-			<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
-		{/if}
-	</div>
-
-	<ChangelogButton />
-</main>
+		<ChangelogButton />
+	</main>
+</SettingsContext>
 
 <style lang="less">
 	main {
@@ -104,54 +79,5 @@
 		box-sizing: border-box;
 		min-width: 100%;
 		min-height: 100%;
-	}
-
-	.tools {
-		font-size: 13px;
-		z-index: 1;
-		position: fixed;
-		padding: 12px;
-		padding-right: 20px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 2em;
-
-		opacity: 0.3;
-		&:active,
-		&:hover,
-		&:focus-within {
-			opacity: 1;
-		}
-
-		&.row {
-			flex-direction: row;
-		}
-		&.column {
-			flex-direction: column;
-		}
-
-		&.top {
-			top: 0px;
-		}
-		&.left {
-			left: 0px;
-		}
-		&.right {
-			right: 0px;
-		}
-		&.bottom {
-			bottom: 0px;
-		}
-
-		a {
-			color: black;
-			text-decoration: none;
-		}
-	}
-
-	button {
-		cursor: pointer;
-		user-select: none;
 	}
 </style>
