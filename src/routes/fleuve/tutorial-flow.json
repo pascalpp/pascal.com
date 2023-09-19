@@ -2,12 +2,12 @@
 	{
 		"id": "root",
 		"title": "Root Card",
-		"connections": ["8c51b786-c593-48b0-b105-9bda2b09f78a"],
+		"connections": ["tutorial-start-page"],
 		"active": true,
 		"description": ""
 	},
 	{
-		"id": "8c51b786-c593-48b0-b105-9bda2b09f78a",
+		"id": "tutorial-start-page",
 		"title": "Fleuve",
 		"description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Try it out!\n\n- Press ➡️ ➡️ to activate the next card.\n\n_When you’re ready, delete this card and create a new flow below._",
 		"active": true,

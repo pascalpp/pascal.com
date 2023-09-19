@@ -10,10 +10,9 @@
 	import File from './file.svg?component';
 	import { onMount } from 'svelte';
 
-	if (browser) (<any>window).pageStore = pageStore;
-
 	let root: Page;
 	let showChangelog = false;
+	let isShowingTutorial = false;
 	$: aspectRatio = $settings.aspectRatioType === 'portrait' ? 0.85 : 1.2;
 
 	function scale(number: number, inMin: number, inMax: number, outMin: number, outMax: number) {
@@ -56,13 +55,18 @@
 		firstPage?.click();
 	}
 
-	pageStore.subscribe((pages) => {
-		if (browser) (<any>window).pages = pages;
-		root = pages.find((item) => item.id === 'root') as Page;
-		if (!root) addRootPage();
-	});
-
 	onMount(() => {
+		(<any>window).pageStore = pageStore;
+
+		pageStore.subscribe((pages) => {
+			(<any>window).pages = pages;
+
+			root = pages.find((item) => item.id === 'root') as Page;
+			if (!root) addRootPage();
+
+			isShowingTutorial = root?.connections.some((pageId) => pageId === 'tutorial-start-page');
+		});
+
 		activateFirstPage();
 	});
 </script>
@@ -119,7 +123,9 @@
 
 	<div class="tools row bottom left">
 		<button class="reset-button" on:click={onClickReset}>Reset</button>
-		<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
+		{#if browser && !isShowingTutorial}
+			<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
+		{/if}
 	</div>
 
 	<div class="tools row bottom right">
