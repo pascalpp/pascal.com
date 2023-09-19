@@ -1,11 +1,5 @@
 [
-	{
-		"id": "root",
-		"title": "Root Card",
-		"connections": ["tutorial-start-page"],
-		"active": true,
-		"description": ""
-	},
+	{ "id": "root", "title": "Root Card", "description": "", "connections": ["tutorial-start-page"], "active": true },
 	{
 		"id": "tutorial-start-page",
 		"title": "Fleuve",
@@ -126,7 +120,7 @@
 	{
 		"id": "cd1df0b8-06ba-4a30-a26d-39f7a2afd076",
 		"title": "Add more cards",
-		"description": "- Press the right arrow to connect a card to this one.\n- Press the down arrow to add a card at the same level as this one.\n\n_You’re on your own!_",
+		"description": "- Press the right arrow to connect a card to this one.\n- Press the down arrow to add a card at the same level as this one.\n\n_Get in the flow!_",
 		"connections": [],
 		"active": false
 	},
