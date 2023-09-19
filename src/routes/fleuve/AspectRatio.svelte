@@ -2,12 +2,12 @@
 	import { settings, type AspectRatio } from './settings.store';
 	import File from './file.svg?component';
 
-	let portraitButton: HTMLButtonElement;
-	let landscapeButton: HTMLButtonElement;
+	let portraitButton: HTMLElement;
+	let landscapeButton: HTMLElement;
 
 	function setAspectRatio(event: MouseEvent) {
-		const target = event.currentTarget as HTMLButtonElement;
-		$settings.aspectRatioType = target.value as AspectRatio;
+		const target = event.currentTarget as HTMLElement;
+		$settings.aspectRatioType = target.dataset.value as AspectRatio;
 	}
 
 	function onKeydown(event: KeyboardEvent) {
@@ -25,26 +25,24 @@
 
 <div class="aspect-ratio">
 	<label for="foo">Aspect Ratio</label>
-	<fieldset>
-		<button
-			value="portrait"
+	<button on:keydown={onKeydown}>
+		<span
+			data-value="portrait"
 			class:active={$settings.aspectRatioType === 'portrait'}
 			on:click={setAspectRatio}
-			on:keydown={onKeydown}
 			bind:this={portraitButton}
 		>
 			<File />
-		</button>
-		<button
-			value="landscape"
+		</span>
+		<span
+			data-value="landscape"
 			class:active={$settings.aspectRatioType === 'landscape'}
 			on:click={setAspectRatio}
-			on:keydown={onKeydown}
 			bind:this={landscapeButton}
 		>
 			<File />
-		</button>
-	</fieldset>
+		</span>
+	</button>
 </div>
 
 <style lang="less">
@@ -54,7 +52,7 @@
 		align-items: center;
 		gap: 6px;
 
-		fieldset {
+		button {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
@@ -66,37 +64,35 @@
 			border: 1px solid black;
 			background-color: #666;
 			overflow: hidden;
+			&:focus,
 			&:focus-within {
 				outline: 1px solid black;
 			}
-		}
 
-		button {
-			background-color: white;
-			outline: none;
-			cursor: pointer;
-			user-select: none;
-			:global(svg) {
-				width: auto;
-				height: 20px;
-				stroke-width: 1.5;
-			}
-			padding: 8px 12px;
-			+ button {
-				margin-left: -1px;
-			}
-
-			&:focus {
-				background-color: #f8f8f8;
-			}
-			&.active {
-				background-color: #666;
-				color: white;
-			}
-
-			&[value='landscape'] {
+			span {
+				background-color: white;
+				outline: none;
+				cursor: pointer;
+				user-select: none;
 				:global(svg) {
-					transform: rotate(90deg) scaleX(-1);
+					width: auto;
+					height: 20px;
+					stroke-width: 1.5;
+				}
+				padding: 8px 12px;
+
+				&:focus {
+					background-color: #f8f8f8;
+				}
+				&.active {
+					background-color: #666;
+					color: white;
+				}
+
+				&[data-value='landscape'] {
+					:global(svg) {
+						transform: rotate(90deg) scaleX(-1);
+					}
 				}
 			}
 		}
