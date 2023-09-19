@@ -79,7 +79,7 @@ latest: 0.1.11
 
 # Random ideas to try
 
-- Top-align pages?
+- Hide children of inactive pages when opacity is 0?
 - Levels slider to hide children below a certain level?
 - Don't tab to title unless the card is already active
 - CSS to auto-show parents of active page (instead of clicking to make them active)
