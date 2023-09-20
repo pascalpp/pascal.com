@@ -159,7 +159,7 @@
 
 		if (event.key === 'Backspace') {
 			event.preventDefault();
-			const confirmed = confirm('Are you sure you want to remove this page and all of its connections?');
+			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
 			if (confirmed) {
 				removePage(page.id);
 				(nextNode || previousNode || addConnection)?.focus();
