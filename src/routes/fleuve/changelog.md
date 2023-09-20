@@ -2,6 +2,10 @@
 latest: 0.1.14
 ---
 
+<script>
+	import './changelog.less';
+</script>
+
 # Changelog
 
 ### Version 0.1.14
@@ -93,61 +97,41 @@ latest: 0.1.14
 
 # Todo
 
-- Multiple document support
-- Undo support
-- Some storage mechanism besides localstorage
-- Drag and drop to rearrange cards
-- Scale font size with page scale
-- Better mobile UX
-- Checklists in Markdown
+- [ ] Multiple document support
+- [ ] Undo support
+- [ ] Some storage mechanism besides localstorage
+- [ ] Drag and drop to rearrange cards
+- [ ] Scale font size with page scale
+- [ ] Better mobile UX
+- [ ] Checklists in Markdown
+- [ ] Escape key in title: revert changes
+- [ ] Escape key in description: if changes, show confirm dialog before reverting
 
-# Random ideas to try
+# Random ideas I might try
 
-- CSS to auto-show parents of active page (instead of clicking to make them active)
-- Shift-click to activate multiple pages?
-- Use transform: scale on whole flow instead of page height?
-- Remove extra spikes on connection wiring?
-- Thicker wires for active connections?
-- Svelte transitions?
-- scroll mask at bottom of description
-- Delete to remove a page; option-delete to remove a page and its children
-- Hotkey cheat sheet
+- [ ] CSS to auto-show parents of active page (instead of clicking to make them active)
+- [ ] Shift-click to activate multiple pages?
+- [ ] Use transform: scale on whole flow instead of page height?
+- [ ] Remove extra spikes on connection wiring?
+- [ ] Thicker wires for active connections?
+- [ ] Svelte transitions?
+- [ ] scroll mask at bottom of description
+- [ ] fix scrollbar inset on description field (should hug the edge of the card)
+- [ ] Delete to remove a page; option-delete to remove a page and its children
+- [ ] Hotkey cheat sheet
 
-<style lang="less">
-	h1 {
-		font-size: 20px;
-		padding: 8px 12px;
-		border-bottom: 1px solid #ddd;
-		margin-bottom: 8px;
-		margin-top: 24px;
-	}
+<details>
+	<summary>Feedback from a guy I know.</summary>
 
-	h1:first-child {
-		margin-top: 0px;
-	}
+- [x] Triangular bullets communicate possible accordion element. I had to click to make sure.
+- [x] Firefox bug: Child cards show as some attached to the parent card, while others float detached. (:has bug)
+- [ ] When I saw "When you're ready, delete this card and create a new flow below." I thought "I'm ready to start, but I don't know how to delete yet!" Only after I started carding through did I realize that that instruction was intended to be followed after all the others.
+- [ ] Often when editing I want to undo so I hit Esc rather than Enter. I'm used to that behavior. But Esc and Enter both save.
+- [ ] Related: It is pretty neat that Cmd-Z does undo even after you've left the text field and returned to it!
+- [ ] But it is sad I can't undo a card/branch deletion.
+- [ ] I would expect to be able to Tab an unexpanded card, but that has no effect
+- [x] "Are you sure you want to remove this page and all of its connections?" shouldn't that be "card"?
+- [ ] Backspace works, but not Delete (Firefox?)
+- [x] Overall I think the keyboard shortcuts are pretty intuitive.
 
- 	h3 {
-		padding: 0px 12px;
-		margin: 0;
-	}
-
-	ul {
-		margin: 0;
-		margin-top: 0.5em;
-		margin-bottom: 1em;
-		padding: 0px 12px;
-	}
-	li {
-		margin-left: 24px;
-		margin-top: 2px;
-	}
-
-	summary {
-		padding: 0 12px;
-		font-weight: bold;
-		cursor: pointer;
-	}
-	summary + * {
-		margin-top: 1em;
-	}
-</style>
+</details>
