@@ -44,7 +44,9 @@
 		</section>
 		<section class="miscellany">
 			<p>
-				<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">Send feedback 💌</a>
+				<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">
+					Send feedback <span class="email-icon" />
+				</a>
 			</p>
 			<ShowTutorialButton />
 			<ResetButton />
@@ -94,6 +96,38 @@
 		}
 		:global(:is(a, button):hover) {
 			opacity: 1;
+		}
+
+		.email-icon {
+			display: inline-block;
+			width: 16px;
+			height: 12px;
+			border: 1px solid currentColor;
+			margin-left: 4px;
+			vertical-align: baseline;
+			transform: translateY(1px);
+			position: relative;
+			border-radius: 2px;
+			&::before,
+			&::after {
+				content: '';
+				width: 10px;
+				height: 1px;
+				background-color: currentColor;
+				position: absolute;
+			}
+			&::before {
+				left: 0;
+				top: 0;
+				transform: rotate(40deg);
+				transform-origin: top left;
+			}
+			&::after {
+				right: 0;
+				top: 0;
+				transform: rotate(-40deg);
+				transform-origin: top right;
+			}
 		}
 	}
 </style>
