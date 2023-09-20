@@ -1,11 +1,25 @@
+<script lang="ts" context="module">
+	import type { Writable } from 'svelte/store';
+	import type { Page } from './pages.store';
+
+	declare global {
+		interface Window {
+			pageStore: Writable<Page[]>;
+			pages: Page[];
+		}
+		interface Document {
+			lastActiveElement: HTMLElement | undefined;
+		}
+	}
+</script>
+
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import PageView from './PageView.svelte';
 	import ChangelogButton from './ChangelogButton.svelte';
 	import SettingsToolbar from './SettingsToolbar.svelte';
 	import SettingsContext from './SettingsContext.svelte';
 	import { pageStore, addRootPage } from './pages.store';
-	import type { Page } from './pages.store';
+	import { onMount } from 'svelte';
 
 	let root: Page;
 
@@ -19,11 +33,20 @@
 		}
 	}
 
-	if (browser) {
-		(<any>window).pageStore = pageStore;
+	function onFocusOut(event: FocusEvent) {
+		var target = event.target as HTMLElement;
+		document.lastActiveElement = target;
+		requestAnimationFrame(() => {
+			console.log('last active', document.lastActiveElement);
+			console.log('new active', document.activeElement);
+		});
+	}
+
+	onMount(() => {
+		window.pageStore = pageStore;
 
 		pageStore.subscribe((pages) => {
-			(<any>window).pages = pages;
+			window.pages = pages;
 
 			root = pages.find((item) => item.id === 'root') as Page;
 			if (!root) {
@@ -34,7 +57,12 @@
 		requestAnimationFrame(() => {
 			activateFirstPage();
 		});
-	}
+
+		document.addEventListener('focusout', onFocusOut);
+		return () => {
+			document.removeEventListener('focusout', onFocusOut);
+		};
+	});
 </script>
 
 <svelte:head>
