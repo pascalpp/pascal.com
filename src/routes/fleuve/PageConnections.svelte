@@ -3,16 +3,17 @@
 	import type { Page } from './pages.store';
 	import PageView from './PageView.svelte';
 	import PageConnectionSummary from './PageConnectionSummary.svelte';
-	import { pageStore } from './pages.store';
 	import { settings } from './settings.store';
 
 	export let page: Page;
 	export let tabindex: number;
 
+	$: showLeftBorder = (page.active && page.connections.length > 0) || page.connections.length > 1;
+
 	$: opacity = $settings.childOpacity;
 </script>
 
-<div class="connections" class:active={page.active || opacity === 0}>
+<div class="connections" class:active={page.active || opacity === 0} class:show-left-border={showLeftBorder}>
 	{#if page.active || opacity > 0}
 		{#each page.connections as connectionId, index (connectionId)}
 			<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
@@ -54,33 +55,16 @@
 
 		// show left border on connections block if there are multiple items in it
 		&:not(:first-child) {
+			&.show-left-border {
+				.left-border-rules; // moved to variables.less until Firefox :has()
+			}
+		}
+
+		&:not(:first-child) {
 			&.active:has(:first-child:not(:last-child)),
 			&:has(.page + .page) {
-				margin-left: 24px;
-				&::before {
-					position: absolute;
-					display: block;
-					content: '';
-					height: 1px;
-					width: 24px;
-					background-color: black;
-					top: 21px;
-					right: 100%;
-					// opacity: 0.3;
-				}
-				&::after {
-					position: absolute;
-					display: block;
-					content: '';
-					height: calc(100% - 38px);
-					width: 24px;
-					border-left: 1px solid black;
-					border-bottom: 1px solid black;
-					border-bottom-left-radius: 4px;
-					top: 21px;
-					right: calc(100% - 24px);
-					// opacity: 0.3;
-				}
+				.left-border-rules;
+
 				// idea for darker lines leading to active cards
 				// &:has(.page.active) {
 				// 	&::before {
