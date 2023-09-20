@@ -67,8 +67,12 @@
 		&.show,
 		&:focus,
 		&:hover {
-			outline: 1px solid fade(black, 50%);
+			border: 1px solid fade(black, 30%);
 			background-color: white;
+		}
+
+		&.show {
+			outline: 1px solid fade(black, 50%);
 		}
 	}
 
