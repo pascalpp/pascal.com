@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	export let top = false;
 	export let bottom = false;
 	export let left = false;
@@ -11,8 +13,10 @@
 		show = !show;
 		if (show) {
 			document.body.addEventListener('click', onClickOutside);
+			document.body.addEventListener('keydown', onKeyDown);
 		} else {
 			document.body.removeEventListener('click', onClickOutside);
+			document.body.removeEventListener('keydown', onKeyDown);
 		}
 	}
 
@@ -23,9 +27,23 @@
 		}
 	}
 
+	function onKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			event.stopPropagation();
+			show = false;
+		}
+	}
+
 	function onClick(event: MouseEvent) {
 		if (!show) event.stopPropagation();
 	}
+
+	onMount(() => {
+		return () => {
+			document.body.removeEventListener('click', onClickOutside);
+			document.body.removeEventListener('keydown', onKeyDown);
+		};
+	});
 </script>
 
 <div class="toolbar" class:top class:bottom class:left class:right class:show on:click={onClick} bind:this={toolbar}>
