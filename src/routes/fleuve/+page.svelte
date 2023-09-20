@@ -24,12 +24,16 @@
 	let root: Page;
 
 	function activateFirstPage() {
+		const focusedActivePage = document.querySelector('.page-card.focus.active') as HTMLElement;
 		const focusedPage = document.querySelector('.page-card.focus') as HTMLElement;
 		const firstPage = document.querySelector('.page-card') as HTMLElement;
-		if (focusedPage) {
+		if (focusedActivePage) {
+			focusedActivePage?.click();
+			focusedActivePage?.focus();
+		} else if (focusedPage) {
 			focusedPage?.focus();
 		} else {
-			firstPage?.click();
+			firstPage?.focus();
 		}
 	}
 
