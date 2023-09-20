@@ -2,6 +2,7 @@
 	import { settings, type AspectRatio } from './settings.store';
 	import File from './file.svg?component';
 
+	let button: HTMLButtonElement;
 	let portraitButton: HTMLElement;
 	let landscapeButton: HTMLElement;
 
@@ -32,12 +33,13 @@
 		} else {
 			toggleAspectRatio();
 		}
+		button.focus();
 	}
 </script>
 
 <div class="aspect-ratio">
 	<label for="foo">Aspect Ratio</label>
-	<button on:keydown={onKeydown} on:click={onClick}>
+	<button on:keydown={onKeydown} on:click={onClick} bind:this={button}>
 		<span data-value="portrait" class:active={$settings.aspectRatioType === 'portrait'} bind:this={portraitButton}>
 			<File />
 		</span>
