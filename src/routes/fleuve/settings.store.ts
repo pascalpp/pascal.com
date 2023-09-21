@@ -10,7 +10,9 @@ export type Settings = {
 	version: string;
 	childOpacity: number;
 	activePageScale: number;
+	aspectRatio: number;
 	aspectRatioType: AspectRatio;
+	showDescription: boolean;
 };
 
 export const settings = writable<Settings>(getStoredState() || getDefaultState());
@@ -25,7 +27,12 @@ function getStoredState(): Settings | undefined {
 	if (browser) {
 		try {
 			const state = window?.localStorage.getItem(storageKey);
-			return state && JSON.parse(state);
+			const parsed = state && JSON.parse(state);
+			const defaults = getDefaultState();
+			return {
+				...defaults,
+				...parsed,
+			};
 		} catch {
 			// don't care
 		}
@@ -37,6 +44,8 @@ function getDefaultState(): Settings {
 		version: metadata.latest,
 		childOpacity: 0.5,
 		activePageScale: 0.3,
+		aspectRatio: 1.2,
 		aspectRatioType: 'landscape' as AspectRatio,
+		showDescription: false,
 	};
 }
