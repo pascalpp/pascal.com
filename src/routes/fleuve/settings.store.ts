@@ -29,9 +29,12 @@ function getStoredState(): Settings | undefined {
 			const state = window?.localStorage.getItem(storageKey);
 			const parsed = state && JSON.parse(state);
 			const defaults = getDefaultState();
+			const merged = { ...defaults, ...parsed };
 			return {
-				...defaults,
-				...parsed,
+				...merged,
+				activePageScale: Math.max(1, Math.min(3, merged.activePageScale)),
+				aspectRatio: Math.max(0.75, Math.min(2, merged.aspectRatio)),
+				childOpacity: Math.max(0, Math.min(1, merged.childOpacity)),
 			};
 		} catch {
 			// don't care
