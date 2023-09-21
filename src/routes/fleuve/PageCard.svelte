@@ -3,6 +3,8 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page, PageId } from './pages.store';
+	import focusNextElement from './focusNextElement';
+	import focusElement from './focusElement';
 	import {
 		activatePage,
 		removePage,
@@ -12,31 +14,39 @@
 		addParentAbovePage,
 		replaceEmptyParent,
 		focusPage,
+		blurPage,
 		deactivatePage,
 	} from './pages.store';
 
 	export let page: Page;
 	export let parentId: PageId;
+	export let previousSiblingId: PageId | undefined = undefined;
+	export let nextSiblingId: PageId | undefined = undefined;
 	export let tabindex = 1;
+
+	const firstChildId = page.connections[0];
+	const addSiblingConnectionId = `add-connection-${parentId}`;
+	const addChildConnectionId = `add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
 	function onClick() {
 		activatePage(page.id);
-		focusPage(page.id);
+		const firstTabbable = card.querySelector('[tabindex]') as HTMLElement;
+		firstTabbable?.focus();
 	}
 
-	function onFocus() {
+	function onFocusIn() {
+		// console.log('onFocusIn');
 		focusPage(page.id);
+	}
+	function onFocusOut() {
+		// console.log('onFocusOut');
+		blurPage(page.id);
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
 		const target = event.target as HTMLElement;
-		const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
-		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
-		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
-		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
-		const nextNode = nextCard || addConnection;
 		const active = page.active;
 
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
@@ -62,8 +72,7 @@
 					activatePage(page.id);
 				}
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
+					focusElement(page.id);
 				});
 			} else if (event.altKey) {
 				const newParent = addParentAbovePage(page.id);
@@ -73,21 +82,11 @@
 						activatePage(page.id);
 					}
 					requestAnimationFrame(() => {
-						const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-						newCard?.focus();
+						focusElement(page.id);
 					});
 				});
 			} else {
-				const connections = target.closest('.page')?.querySelector('.connections') as HTMLElement;
-				const activeCard = connections?.querySelector('.page-card.active') as HTMLElement;
-				const firstCard = connections?.querySelector('.page-card') as HTMLElement;
-				const addCard = connections?.querySelector('.add-connection') as HTMLElement;
-				const nextChild = activeCard || firstCard || addCard;
-				if (nextChild) {
-					nextChild?.focus();
-				} else {
-					activatePage(page.id);
-				}
+				focusElement(firstChildId) || focusElement(addChildConnectionId) || activatePage(page.id);
 			}
 		}
 
@@ -96,11 +95,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'up');
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
+					focusElement(page.id);
 				});
 			} else {
-				previousNode?.focus();
+				focusElement(previousSiblingId);
 			}
 		}
 
@@ -109,11 +107,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'down');
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
+					focusElement(page.id);
 				});
 			} else {
-				nextNode?.focus();
+				focusElement(nextSiblingId) || focusElement(addSiblingConnectionId);
 			}
 		}
 
@@ -122,19 +119,17 @@
 			if (event.shiftKey) {
 				movePageUp(page.id);
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
-					if (active) newCard?.click();
+					const el = focusElement(page.id);
+					if (active) el?.click();
 				});
 			} else if (event.altKey) {
 				replaceEmptyParent(page.id);
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
-					if (active) newCard?.click();
+					const el = focusElement(page.id);
+					if (active) el?.click();
 				});
 			} else {
-				parentCard?.focus();
+				focusElement(parentId);
 			}
 		}
 
@@ -162,7 +157,7 @@
 				event.preventDefault();
 				deactivatePage(page.id);
 			} else {
-				parentCard?.focus();
+				focusElement(parentId);
 			}
 		}
 
@@ -171,7 +166,7 @@
 			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
 			if (confirmed) {
 				removePage(page.id);
-				(nextNode || previousNode || addConnection)?.focus();
+				focusElement(nextSiblingId) || focusElement(previousSiblingId) || focusNextElement();
 			}
 		}
 	}
@@ -197,10 +192,12 @@
 	class:active={page.active}
 	class:focus={page.focus}
 	on:click={onClick}
+	on:focusin={onFocusIn}
+	on:focusout={onFocusOut}
 	bind:this={card}
 	data-page-id={page.id}
 >
-	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} on:focusin={onFocus} />
+	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<!-- <PageDescription {page} {tabindex} {expanded} /> -->
@@ -220,12 +217,12 @@
 		cursor: pointer;
 		margin-right: 2px;
 		pointer-events: auto;
+		overflow: hidden;
 
 		&.active {
 			box-shadow: 0 2px 4px 2px fade(black, 10%);
 		}
 
-		&.focus,
 		&:focus,
 		&:focus-within,
 		&:active {
