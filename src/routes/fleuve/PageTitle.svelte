@@ -2,6 +2,7 @@
 	import { focusNextElement } from './focusHelpers';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
+	import { settings } from './settings.store';
 
 	export let page: Page;
 	export let tabindex: number;
@@ -51,7 +52,7 @@
 	}
 </script>
 
-<div class="title" class:active={page.active}>
+<div class="title" class:active={page.active} class:fill={!$settings.showDescription}>
 	<h1
 		class:active={page.active}
 		contenteditable={true}
@@ -75,6 +76,9 @@
 		overflow: hidden;
 		pointer-events: none;
 		flex-shrink: 0;
+		&.fill {
+			flex-grow: 1;
+		}
 
 		&.active {
 			pointer-events: auto;
@@ -91,20 +95,33 @@
 			font-size: inherit;
 			outline: none;
 
+			// limit title to 6 lines
 			&:not(:focus) {
 				overflow: hidden;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
-				display: -webkit-box;
+				.line-clamp(6);
 			}
 			&:focus {
 				overflow-y: scroll;
-				max-height: 4.5em;
+				max-height: 1.5em * 6;
 			}
 
 			&:empty::before {
 				content: var(--title-placeholder);
 				opacity: 0.3;
+			}
+		}
+
+		&:not(.fill) {
+			// limit title to 3 lines
+			h1 {
+				&:not(:focus) {
+					overflow: hidden;
+					.line-clamp(3);
+				}
+				&:focus {
+					overflow-y: scroll;
+					max-height: 1.5em * 3;
+				}
 			}
 		}
 	}

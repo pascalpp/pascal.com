@@ -4,12 +4,16 @@
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
 	import Pencil from './pencil.svg?component';
+	import { settings } from './settings.store';
 
 	export let page: Page;
 	export let tabindex: number;
 
 	let editing = false;
 	let editor: HTMLElement;
+
+	$: active = page.active && $settings.showDescription;
+	$: focus = page.focus && $settings.showDescription;
 
 	function onClickEdit(event: MouseEvent) {
 		event.stopPropagation();
@@ -28,12 +32,12 @@
 	}
 </script>
 
-<div class="description" class:active={page.active} class:focus={page.focus}>
-	{#if page.active && !editing}
+<div class="description" class:active class:focus>
+	{#if active && !editing}
 		<button
 			class="edit-button"
 			on:click={onClickEdit}
-			tabindex={page.active && page.focus ? tabindex : -1}
+			tabindex={active && focus ? tabindex : -1}
 			title={page.description ? 'Edit description' : 'Add description'}
 		>
 			<Pencil />
@@ -44,8 +48,8 @@
 		<div
 			class="editor"
 			bind:this={editor}
-			tabindex={page.active ? tabindex : -1}
-			contenteditable={page.active}
+			tabindex={active && focus ? tabindex : -1}
+			contenteditable={active}
 			on:blur={onBlur}
 		>
 			{page.description || ''}
