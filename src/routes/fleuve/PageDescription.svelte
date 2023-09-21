@@ -58,9 +58,9 @@
 	}
 </script>
 
-<div class="description" class:active={page.active}>
+<div class="description" class:active={page.active} class:focus={page.focus}>
 	{#if page.active && !editing}
-		<button class="edit-button" on:click={onClickEdit}>
+		<button class="edit-button" on:click={onClickEdit} tabindex={page.active && page.focus ? tabindex : -1}>
 			<Pencil />
 		</button>
 	{/if}
@@ -108,13 +108,6 @@
 			max-height: var(--height);
 		}
 
-		&:focus-within {
-			outline-style: auto;
-			outline-width: 2px;
-			outline-color: blue;
-			outline-offset: -10px;
-		}
-
 		.editor,
 		.content {
 			padding: 18px;
@@ -123,6 +116,13 @@
 			outline: none;
 			overflow-y: scroll;
 			mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 40px);
+
+			&:focus-within {
+				outline-style: auto;
+				outline-width: 2px;
+				outline-color: blue;
+				outline-offset: -10px;
+			}
 		}
 		.editor {
 			display: block;
@@ -155,12 +155,21 @@
 			border: 1px solid black;
 			padding: 4px 12px;
 			border-radius: 4px;
+
+			&:focus {
+				opacity: 1;
+				outline-style: solid;
+				outline-width: 1px;
+				outline-color: black;
+			}
 		}
 
-		&:hover {
+		&:hover,
+		&.focus {
 			.edit-button {
 				opacity: 0.3;
-				&:hover {
+				&:hover,
+				&:focus {
 					opacity: 1;
 				}
 			}
