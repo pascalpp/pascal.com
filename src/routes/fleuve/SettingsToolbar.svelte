@@ -25,9 +25,22 @@
 		<section>
 			<Slider
 				id="active-page-scale"
-				label="Scale"
-				min={0.1}
+				label={`Large Card Size: ${$settings.activePageScale}x`}
+				min={1}
+				max={3}
+				step={0.5}
 				bind:value={$settings.activePageScale}
+				title="Change the scale of active pages"
+			/>
+		</section>
+		<section>
+			<Slider
+				id="active-page-scale"
+				label={`Aspect Ratio: ${$settings.aspectRatio}`}
+				min={0.75}
+				max={2}
+				step={0.05}
+				bind:value={$settings.aspectRatio}
 				title="Change the scale of active pages"
 			/>
 		</section>
@@ -39,9 +52,9 @@
 				title="Change the opacity for childen of the active page"
 			/>
 		</section>
-		<section>
+		<!-- <section>
 			<AspectRatio />
-		</section>
+		</section> -->
 		<section class="miscellany">
 			<p>
 				<a rel="feedback" href="mailto:pascal+fleuve@pascal.com?subject=Fleuve Feedback">
