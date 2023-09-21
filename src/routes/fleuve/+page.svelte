@@ -24,26 +24,15 @@
 	let root: Page;
 
 	function activateFirstPage() {
-		const focusedActivePage = document.querySelector('.page-card.focus.active') as HTMLElement;
-		const focusedPage = document.querySelector('.page-card.focus') as HTMLElement;
-		const firstPage = document.querySelector('.page-card') as HTMLElement;
-		if (focusedActivePage) {
-			focusedActivePage?.click();
-			focusedActivePage?.focus();
-		} else if (focusedPage) {
-			focusedPage?.focus();
-		} else {
-			firstPage?.focus();
-		}
+		const focusedActivePage = document.querySelector('.page-card.focus.active [tabindex]') as HTMLElement;
+		const focusedPage = document.querySelector('.page-card.focus [tabindex]') as HTMLElement;
+		const firstPage = document.querySelector('.page-card [tabindex]') as HTMLElement;
+		(focusedActivePage || focusedPage || firstPage)?.focus();
 	}
 
 	function onFocusOut(event: FocusEvent) {
 		var target = event.target as HTMLElement;
 		document.lastActiveElement = target;
-		requestAnimationFrame(() => {
-			console.log('last active', document.lastActiveElement);
-			console.log('new active', document.activeElement);
-		});
 	}
 
 	onMount(() => {

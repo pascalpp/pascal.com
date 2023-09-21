@@ -1,5 +1,5 @@
 ---
-latest: 0.1.14
+latest: 0.2.0
 ---
 
 <script>
@@ -7,6 +7,13 @@ latest: 0.1.14
 </script>
 
 # Changelog
+
+### Version 0.2.0
+
+- Major refactor of card layout, sizing, and connections.
+- Improved keyboard navigation, with natural tab order.
+- Titles can be up to 3 lines long, with truncation.
+- Better transitions when activating a card.
 
 ### Version 0.1.14
 

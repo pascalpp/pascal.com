@@ -8,12 +8,10 @@
 	export let title: string | undefined = undefined;
 
 	let input: HTMLInputElement;
-
-	$: labelValue = value.toFixed(step.toString().split('.')[1]?.length ?? 0);
 </script>
 
 <fieldet class="slider" {title} on:click={() => input.focus()}>
-	<label for={id}>{label} {labelValue}</label>
+	<label for={id}>{label}</label>
 	<input {id} type="range" {min} {max} {step} bind:value bind:this={input} />
 </fieldet>
 

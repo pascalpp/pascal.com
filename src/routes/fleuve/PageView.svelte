@@ -6,6 +6,8 @@
 
 	export let pageId: PageId;
 	export let parentId: PageId | undefined = undefined;
+	export let previousSiblingId: PageId | undefined = undefined;
+	export let nextSiblingId: PageId | undefined = undefined;
 	export let tabindex = 1;
 
 	let page: Page;
@@ -19,9 +21,9 @@
 	{#if page}
 		<div class="page" class:active={page.active}>
 			{#if parentId}
-				<PageCard {page} {tabindex} {parentId} />
+				<PageCard {page} {tabindex} {parentId} {previousSiblingId} {nextSiblingId} />
 			{/if}
-			<PageConnections {page} tabindex={tabindex + 1} />
+			<PageConnections {page} {tabindex} {parentId} />
 		</div>
 	{/if}
 {/key}
@@ -33,5 +35,23 @@
 		align-items: flex-start;
 		position: relative;
 		pointer-events: none;
+
+		// &.nested {
+		// 	.card-container {
+		// 		margin-left: 24px;
+		// 		position: relative;
+		// 		&::before {
+		// 			position: absolute;
+		// 			// display: block;
+		// 			content: '';
+		// 			height: 1px;
+		// 			width: 24px;
+		// 			transition: width 0.2s ease-in-out;
+		// 			background-color: black;
+		// 			top: 25px;
+		// 			right: 100%;
+		// 		}
+		// 	}
+		// }
 	}
 </style>

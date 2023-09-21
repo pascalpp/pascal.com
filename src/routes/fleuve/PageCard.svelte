@@ -3,6 +3,8 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page, PageId } from './pages.store';
+	import focusNextElement from './focusNextElement';
+	import focusElement from './focusElement';
 	import {
 		activatePage,
 		removePage,
@@ -12,45 +14,45 @@
 		addParentAbovePage,
 		replaceEmptyParent,
 		focusPage,
+		blurPage,
 		deactivatePage,
 	} from './pages.store';
 
 	export let page: Page;
 	export let parentId: PageId;
+	export let previousSiblingId: PageId | undefined = undefined;
+	export let nextSiblingId: PageId | undefined = undefined;
 	export let tabindex = 1;
+
+	const firstChildId = page.connections[0];
+	const addSiblingConnectionId = `add-connection-${parentId}`;
+	const addChildConnectionId = `add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
-	function onClick(event: MouseEvent) {
+	function onClick() {
 		activatePage(page.id);
-		focusPage(page.id);
+		const firstTabbable = card.querySelector('[tabindex]') as HTMLElement;
+		firstTabbable?.focus();
 	}
 
-	function onFocus() {
+	function onFocusIn() {
+		// console.log('onFocusIn');
 		focusPage(page.id);
+	}
+	function onFocusOut() {
+		// console.log('onFocusOut');
+		blurPage(page.id);
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
-		event.stopPropagation();
 		const target = event.target as HTMLElement;
-		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
-		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
-		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
-		const nextNode = nextCard || addConnection;
 		const active = page.active;
 
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
 			if (page.active) {
-				const editButton = target?.querySelector('.description .edit-button') as HTMLButtonElement;
+				const editButton = card?.querySelector('.description .edit-button') as HTMLButtonElement;
 				editButton?.click();
-			}
-		}
-
-		if (event.key === 'Tab') {
-			event.preventDefault();
-			if (page.active) {
-				const title = target?.querySelector('.title') as HTMLButtonElement;
-				title?.click();
 			}
 		}
 
@@ -63,8 +65,7 @@
 					activatePage(page.id);
 				}
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
+					focusElement(page.id);
 				});
 			} else if (event.altKey) {
 				const newParent = addParentAbovePage(page.id);
@@ -74,21 +75,11 @@
 						activatePage(page.id);
 					}
 					requestAnimationFrame(() => {
-						const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-						newCard?.focus();
+						focusElement(page.id);
 					});
 				});
 			} else {
-				const connections = target.closest('.page')?.querySelector('.connections') as HTMLElement;
-				const activeCard = connections?.querySelector('.page-card.active') as HTMLElement;
-				const firstCard = connections?.querySelector('.page-card') as HTMLElement;
-				const addCard = connections?.querySelector('.add-connection') as HTMLElement;
-				const nextChild = activeCard || firstCard || addCard;
-				if (nextChild) {
-					nextChild?.focus();
-				} else {
-					activatePage(page.id);
-				}
+				focusElement(firstChildId) || focusElement(addChildConnectionId) || activatePage(page.id);
 			}
 		}
 
@@ -97,10 +88,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'up');
 				requestAnimationFrame(() => {
-					target?.focus();
+					focusElement(page.id);
 				});
 			} else {
-				previousNode?.focus();
+				focusElement(previousSiblingId);
 			}
 		}
 
@@ -109,10 +100,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'down');
 				requestAnimationFrame(() => {
-					target?.focus();
+					focusElement(page.id);
 				});
 			} else {
-				nextNode?.focus();
+				focusElement(nextSiblingId) || focusElement(addSiblingConnectionId);
 			}
 		}
 
@@ -121,20 +112,17 @@
 			if (event.shiftKey) {
 				movePageUp(page.id);
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
-					if (active) newCard?.click();
+					const el = focusElement(page.id);
+					if (active) el?.click();
 				});
 			} else if (event.altKey) {
 				replaceEmptyParent(page.id);
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
-					newCard?.focus();
-					if (active) newCard?.click();
+					const el = focusElement(page.id);
+					if (active) el?.click();
 				});
 			} else {
-				const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
-				parentCard?.focus();
+				focusElement(parentId);
 			}
 		}
 
@@ -157,47 +145,42 @@
 			}
 		}
 
+		if (event.key === 'Escape') {
+			if (active) {
+				event.preventDefault();
+				deactivatePage(page.id);
+			} else {
+				focusElement(parentId);
+			}
+		}
+
 		if (event.key === 'Backspace') {
 			event.preventDefault();
 			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
 			if (confirmed) {
 				removePage(page.id);
-				(nextNode || previousNode || addConnection)?.focus();
+				focusElement(nextSiblingId) || focusElement(previousSiblingId) || focusNextElement();
 			}
 		}
 	}
-
-	let expanded = !!page.active;
-
-	function onTransitionEnd(event: TransitionEvent) {
-		if (event.propertyName === 'height') {
-			expanded = !!page.active;
-		}
-	}
-
-	onMount(() => {
-		card.addEventListener('transitionend', onTransitionEnd);
-		return () => {
-			card.removeEventListener('transitionend', onTransitionEnd);
-		};
-	});
 </script>
 
 <div
 	class="page-card"
 	class:active={page.active}
 	class:focus={page.focus}
-	{tabindex}
 	on:click={onClick}
-	on:keydown={onKeyDown}
-	on:focus={onFocus}
+	on:focusin={onFocusIn}
+	on:focusout={onFocusOut}
 	bind:this={card}
 	data-page-id={page.id}
 >
+	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
-		<PageDescription {page} {tabindex} {expanded} />
+		<PageDescription {page} {tabindex} />
 	</div>
+	<button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} />
 </div>
 
 <style lang="less">
@@ -212,39 +195,42 @@
 		cursor: pointer;
 		margin-right: 2px;
 		pointer-events: auto;
+		overflow: hidden;
 
 		&.active {
 			box-shadow: 0 2px 4px 2px fade(black, 10%);
-			padding-top: 4px;
 		}
 
-		&.focus,
 		&:focus,
 		&:focus-within,
 		&:active {
-			border-color: transparent;
+			border-color: var(--card-title-bgcolor);
 			outline-style: solid;
 			outline-width: 2px;
 			outline-color: black;
 		}
 
 		// active page animation
-		@transition-time: 0.2s;
-		@transition-delay: 0s; // was 0.1s
-		width: 80px;
-		height: 40px;
-		min-width: fit-content;
-		min-height: fit-content;
-		transition: height @transition-time ease-in-out, width @transition-time ease-in-out @transition-delay;
+		@width-transition-time: 0.1s;
+		@width-transition-delay: 0.2s;
+		@height-transition-time: 0.2s;
+		@height-transition-delay: 0.1s;
+		min-width: var(--card-min-width);
+		max-width: var(--card-max-width);
+		min-height: var(--card-min-height);
+		transition: min-width @width-transition-time ease-in-out @width-transition-delay,
+			max-width @width-transition-time ease-in-out @width-transition-delay,
+			min-height @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out;
 		&.active {
-			--height: calc(var(--active-page-scale, 0.5) * 75vh);
-			min-width: 150px;
-			min-height: 60px;
-			height: var(--height);
+			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));
+			--height: calc(var(--width) / var(--aspect-ratio));
+			min-height: var(--height);
 			max-height: var(--height);
-			width: calc(var(--height) * var(--aspect-ratio));
-			max-width: calc(var(--height) * var(--aspect-ratio));
-			transition: height @transition-time ease-in-out @transition-delay, width @transition-time ease-in-out;
+			min-width: var(--width);
+			max-width: var(--width);
+			transition: min-width @width-transition-time ease-in-out, max-width @width-transition-time ease-in-out,
+				min-height @height-transition-time ease-in-out @height-transition-delay,
+				max-height @height-transition-time ease-in-out @height-transition-delay;
 		}
 
 		.page-card-content {

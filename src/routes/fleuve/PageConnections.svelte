@@ -1,28 +1,40 @@
 <script lang="ts">
-	import AddPageCard from './AddPageCard.svelte';
-	import type { Page } from './pages.store';
+	import type { Page, PageId } from './pages.store';
 	import PageView from './PageView.svelte';
+	import AddPageCard from './AddPageCard.svelte';
 	import PageConnectionSummary from './PageConnectionSummary.svelte';
 	import { settings } from './settings.store';
 
 	export let page: Page;
+	export let parentId: PageId | undefined = undefined;
 	export let tabindex: number;
 
-	$: showLeftBorder = (page.active && page.connections.length > 0) || page.connections.length > 1;
-
+	$: connections = page.connections;
 	$: opacity = $settings.childOpacity;
+	$: showLeftBorder = (page.active && page.connections.length > 0) || (opacity > 0 && page.connections.length > 1);
 </script>
 
-<div class="connections" class:active={page.active || opacity === 0} class:show-left-border={showLeftBorder}>
+<div
+	class="connections"
+	class:active={page.active || opacity === 0}
+	class:show-left-border={showLeftBorder}
+	class:nested={parentId}
+>
 	{#if page.active || opacity > 0}
-		{#each page.connections as connectionId, index (connectionId)}
-			<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
+		{#each connections as connectionId, index (connectionId)}
+			<PageView
+				pageId={connectionId}
+				{tabindex}
+				parentId={page.id}
+				previousSiblingId={connections[index - 1]}
+				nextSiblingId={connections[index + 1]}
+			/>
 		{/each}
 		{#if page.active}
-			<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+			<AddPageCard {page} {tabindex} parentId={page.id} siblingId={connections[connections.length - 1]} />
 		{/if}
 	{:else}
-		<PageConnectionSummary {page} />
+		<PageConnectionSummary {page} {tabindex} />
 	{/if}
 </div>
 
@@ -53,69 +65,89 @@
 			}
 		}
 
-		// show left border on connections block if there are multiple items in it
-		&:not(:first-child) {
+		&.nested {
+			@top-offset: 22px;
+			@left-offset: 24px;
+			@active-left-offset: 12px;
+			width: max-content;
+
+			// rules on the connections box
 			&.show-left-border {
-				.left-border-rules; // moved to variables.less until Firefox :has()
+				// background-color: fade(red, 10%);
+				margin-left: @left-offset;
+				position: relative;
+				// left stem
+				&::before {
+					position: absolute;
+					display: block;
+					content: '';
+					height: 1px;
+					width: @left-offset;
+					border-bottom: 1px solid black;
+					top: @top-offset;
+					right: 100%;
+				}
+				// left border
+				&::after {
+					position: absolute;
+					display: block;
+					content: '';
+					width: 1px;
+					border-left: 1px solid black;
+					top: @top-offset;
+					bottom: 0;
+				}
 			}
-		}
 
-		&:not(:first-child) {
-			&.active:has(:first-child:not(:last-child)),
-			&:has(.page + .page) {
-				.left-border-rules;
-
-				// idea for darker lines leading to active cards
-				// &:has(.page.active) {
-				// 	&::before {
-				// 		opacity: 1;
-				// 	}
-				// 	&::after {
-				// 		opacity: 1;
-				// 	}
-				// }
-			}
-
-			// show connection line on left side of each child
+			// left stem on each child
 			:global(> *) {
-				margin-left: 24px;
-				transition: margin-left 0.2s ease-in-out;
+				margin-left: @left-offset;
 				position: relative;
 				&::before {
 					position: absolute;
 					display: block;
 					content: '';
 					height: 1px;
-					width: 24px;
-					transition: width 0.2s ease-in-out;
-					background-color: black;
-					top: 21px;
+					width: @left-offset;
+					border-bottom: 1px solid black;
+					top: @top-offset;
 					right: 100%;
-					// opacity: 0.3;
 				}
 			}
-			:global(> .page.active) {
-				margin-left: 16px;
+
+			// special rounded stem on the last child
+			// but only if there are children above it
+			:global(> :last-child:not(:first-child)) {
 				&::before {
-					width: 16px;
-					// opacity: 1;
+					position: absolute;
+					display: block;
+					content: '';
+					width: @left-offset;
+					border: none;
+					background-color: transparent;
+					border-left: 1px solid black;
+					border-bottom: 1px solid black;
+					border-bottom-left-radius: 4px;
+					top: unset;
+					height: 50%;
+					bottom: 50%;
+					right: 100%;
+					z-index: 2;
 				}
-			}
-			:global(> * + :last-child) {
-				&::before {
-					display: none;
+				// box to paint over bottom of .connections left border
+				&::after {
+					z-index: 1;
+					background-color: #f3f3f3; // needs to match background color
+					position: absolute;
+					display: block;
+					content: '';
+					width: calc(@left-offset / 2);
+					border: none;
+					height: 100%;
+					bottom: 0;
+					right: calc(100% + (@left-offset / 2));
 				}
 			}
 		}
-
-		//  hide siblings idea
-		// .connections:has(.page.active) {
-		// 	> .page:not(.active) {
-		// 		display: none;
-		// 	}
-		// 	> .add-connection {
-		// 		display: none;
-		// 	}
-		// }
 	}
 </style>
