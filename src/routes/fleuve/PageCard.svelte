@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page, PageId } from './pages.store';
-	import focusNextElement from './focusNextElement';
-	import focusElement from './focusElement';
+	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
+
 	import {
 		activatePage,
 		removePage,
@@ -13,8 +12,8 @@
 		movePageDown,
 		addParentAbovePage,
 		replaceEmptyParent,
-		focusPage,
-		blurPage,
+		setPageFocus,
+		unsetPageFocus,
 		deactivatePage,
 	} from './pages.store';
 
@@ -25,8 +24,8 @@
 	export let tabindex = 1;
 
 	const firstChildId = page.connections[0];
-	const addSiblingConnectionId = `add-connection-${parentId}`;
-	const addChildConnectionId = `add-connection-${page.id}`;
+	const addSiblingConnection = `#add-connection-${parentId}`;
+	const addChildConnection = `#add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
@@ -38,11 +37,11 @@
 
 	function onFocusIn() {
 		// console.log('onFocusIn');
-		focusPage(page.id);
+		setPageFocus(page.id);
 	}
 	function onFocusOut() {
 		// console.log('onFocusOut');
-		blurPage(page.id);
+		unsetPageFocus(page.id);
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
@@ -65,7 +64,7 @@
 					activatePage(page.id);
 				}
 				requestAnimationFrame(() => {
-					focusElement(page.id);
+					focusPageId(page.id);
 				});
 			} else if (event.altKey) {
 				const newParent = addParentAbovePage(page.id);
@@ -75,11 +74,11 @@
 						activatePage(page.id);
 					}
 					requestAnimationFrame(() => {
-						focusElement(page.id);
+						focusPageId(page.id);
 					});
 				});
 			} else {
-				focusElement(firstChildId) || focusElement(addChildConnectionId) || activatePage(page.id);
+				focusPageId(firstChildId) || focusSelector(addChildConnection) || activatePage(page.id);
 			}
 		}
 
@@ -88,10 +87,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'up');
 				requestAnimationFrame(() => {
-					focusElement(page.id);
+					focusPageId(page.id);
 				});
 			} else {
-				focusElement(previousSiblingId);
+				focusPageId(previousSiblingId);
 			}
 		}
 
@@ -100,10 +99,10 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'down');
 				requestAnimationFrame(() => {
-					focusElement(page.id);
+					focusPageId(page.id);
 				});
 			} else {
-				focusElement(nextSiblingId) || focusElement(addSiblingConnectionId);
+				focusPageId(nextSiblingId) || focusSelector(addSiblingConnection);
 			}
 		}
 
@@ -112,17 +111,17 @@
 			if (event.shiftKey) {
 				movePageUp(page.id);
 				requestAnimationFrame(() => {
-					const el = focusElement(page.id);
+					const el = focusPageId(page.id);
 					if (active) el?.click();
 				});
 			} else if (event.altKey) {
 				replaceEmptyParent(page.id);
 				requestAnimationFrame(() => {
-					const el = focusElement(page.id);
+					const el = focusPageId(page.id);
 					if (active) el?.click();
 				});
 			} else {
-				focusElement(parentId);
+				focusPageId(parentId);
 			}
 		}
 
@@ -150,7 +149,7 @@
 				event.preventDefault();
 				deactivatePage(page.id);
 			} else {
-				focusElement(parentId);
+				focusPageId(parentId);
 			}
 		}
 
@@ -159,7 +158,7 @@
 			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
 			if (confirmed) {
 				removePage(page.id);
-				focusElement(nextSiblingId) || focusElement(previousSiblingId) || focusNextElement();
+				focusPageId(nextSiblingId) || focusPageId(previousSiblingId) || focusNextElement();
 			}
 		}
 	}
@@ -173,14 +172,13 @@
 	on:focusin={onFocusIn}
 	on:focusout={onFocusOut}
 	bind:this={card}
-	data-page-id={page.id}
 >
-	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} />
+	<button class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<PageDescription {page} {tabindex} />
 	</div>
-	<button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} />
+	<!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>
 
 <style lang="less">
