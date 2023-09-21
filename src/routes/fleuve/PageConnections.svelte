@@ -18,7 +18,7 @@
 	class="connections"
 	class:active={page.active || opacity === 0}
 	class:show-left-border={showLeftBorder}
-	class:nested={parentId}
+	class:root={!parentId}
 >
 	{#if page.active || opacity > 0}
 		{#each connections as connectionId, index (connectionId)}
@@ -45,6 +45,9 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 1em;
+		&.root {
+			gap: 5em;
+		}
 
 		opacity: var(--child-opacity, 0.5);
 		&.active {
@@ -65,7 +68,7 @@
 			}
 		}
 
-		&.nested {
+		&:not(.root) {
 			@top-offset: 22px;
 			@left-offset: 24px;
 			@active-left-offset: 12px;
