@@ -83,7 +83,7 @@
 			outline-style: auto;
 			outline-width: 2px;
 			outline-color: blue;
-			outline-offset: -12px;
+			outline-offset: -8px;
 		}
 
 		h1 {
