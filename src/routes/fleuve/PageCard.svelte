@@ -56,13 +56,6 @@
 			}
 		}
 
-		// if (event.key === 'Tab') {
-		// 	if (!active) {
-		// 		event.preventDefault();
-		// 		activatePage(page.id);
-		// 	}
-		// }
-
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
 			if (event.shiftKey) {
@@ -170,21 +163,6 @@
 			}
 		}
 	}
-
-	let expanded = !!page.active;
-
-	function onTransitionEnd(event: TransitionEvent) {
-		if (event.propertyName === 'height') {
-			expanded = !!page.active;
-		}
-	}
-
-	onMount(() => {
-		card.addEventListener('transitionend', onTransitionEnd);
-		return () => {
-			card.removeEventListener('transitionend', onTransitionEnd);
-		};
-	});
 </script>
 
 <div
@@ -200,7 +178,7 @@
 	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
-		<!-- <PageDescription {page} {tabindex} {expanded} /> -->
+		<PageDescription {page} {tabindex} />
 	</div>
 	<button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} />
 </div>
