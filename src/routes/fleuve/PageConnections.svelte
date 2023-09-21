@@ -129,8 +129,8 @@
 					border-bottom: 1px solid black;
 					border-bottom-left-radius: 4px;
 					top: unset;
-					height: 50%;
-					bottom: 50%;
+					height: @top-offset;
+					bottom: calc(100% - @top-offset);
 					right: 100%;
 					z-index: 2;
 				}
