@@ -2,6 +2,8 @@
 	import { pageStore, type Page, getAllChildPages, activatePage } from './pages.store';
 
 	export let page: Page;
+	export let tabindex: number;
+
 	let childCount = 0;
 
 	pageStore.subscribe((pages) => {
@@ -14,7 +16,7 @@
 </script>
 
 {#if childCount > 0}
-	<button class="connection-summary" class:active={page.active} on:click={onClick}>
+	<button class="connection-summary" class:active={page.active} on:click={onClick} {tabindex}>
 		<div class="count-card">
 			+{childCount} more
 		</div>
@@ -23,6 +25,9 @@
 
 <style lang="less">
 	.connection-summary {
+		pointer-events: all;
+		outline: none;
+
 		.count-card {
 			display: block;
 			cursor: pointer;
@@ -33,12 +38,22 @@
 			font-size: 12px;
 			line-height: 2em;
 			border-radius: 4px;
-			margin-top: 8px;
+			margin-top: 12px;
 			width: auto;
 			white-space: nowrap;
 			opacity: 0.5;
 			&:hover {
 				opacity: 1;
+			}
+		}
+
+		&:focus,
+		&:active {
+			.count-card {
+				opacity: 1;
+				outline-style: solid;
+				outline-width: 1px;
+				outline-color: black;
 			}
 		}
 	}
