@@ -20,14 +20,15 @@
 	import SettingsContext from './SettingsContext.svelte';
 	import { pageStore, addRootPage } from './pages.store';
 	import { onMount } from 'svelte';
+	import { focusSelector } from './focusHelpers';
 
 	let root: Page;
 
 	function activateFirstPage() {
-		const focusedActivePage = document.querySelector('.page-card.focus.active [tabindex]') as HTMLElement;
-		const focusedPage = document.querySelector('.page-card.focus [tabindex]') as HTMLElement;
-		const firstPage = document.querySelector('.page-card [tabindex]') as HTMLElement;
-		(focusedActivePage || focusedPage || firstPage)?.focus();
+		const focusedActivePage = '.page-card.focus.active [tabindex]';
+		const focusedPage = '.page-card.focus [tabindex]';
+		const firstPage = '.page-card [tabindex]';
+		focusSelector(focusedActivePage || focusedPage || firstPage);
 	}
 
 	function onFocusOut(event: FocusEvent) {
