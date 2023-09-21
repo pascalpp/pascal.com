@@ -7,7 +7,6 @@
 
 	export let page: Page;
 	export let tabindex: number;
-	export let expanded = false;
 
 	let editing = false;
 	let editor: HTMLElement;
@@ -30,15 +29,16 @@
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
+		return;
 		const target = event.target as HTMLElement;
 		const description = target.innerText.trim();
-		if (event.key !== 'Tab') {
-			event.stopPropagation();
-		}
+		// if (event.key !== 'Tab') {
+		// 	event.stopPropagation();
+		// }
 
-		if (event.key === 'Escape' || event.key === 'Tab') {
-			target?.blur();
-		}
+		// if (event.key === 'Escape' || event.key === 'Tab') {
+		// 	target?.blur();
+		// }
 
 		if (event.key === 'ArrowLeft' && !description) {
 			const parentCard = target.closest('.connections')?.closest('.page')?.querySelector('.page-card') as HTMLElement;
@@ -58,7 +58,13 @@
 	}
 </script>
 
-<div class="description" class:active={page.active} class:expanded>
+<div class="description" class:active={page.active}>
+	{#if page.active && !editing}
+		<button class="edit-button" on:click={onClickEdit}>
+			<Pencil />
+		</button>
+	{/if}
+
 	{#if editing}
 		<div
 			class="editor"
@@ -75,51 +81,48 @@
 			{@html marked.parse(page.description || '')}
 		</div>
 	{/if}
-
-	{#if page.active && !editing}
-		<button class="edit-button" on:click={onClickEdit}>
-			<Pencil />
-		</button>
-	{/if}
 </div>
 
 <style lang="less">
 	.description {
-		display: none;
+		display: flex;
+		flex-direction: column;
 		pointer-events: none;
 		position: relative;
+		flex-grow: 1;
+		overflow: hidden;
+		max-width: 0;
+		max-height: 0;
+		opacity: 0;
+		border-top: 0px solid transparent;
 
 		&.active {
-			border-top: 1px solid fade(black, 10%);
-			display: flex;
 			pointer-events: auto;
-			opacity: 0;
-			transition: opacity 0.1s ease-in-out;
-			&.expanded {
-				opacity: 1;
-			}
+			transition: opacity 0.2s ease-in-out, max-height 0.2s ease-in-out, border-color 0.2s ease-in-out;
+			transition-delay: 0.2s;
+			border-top: 1px solid fade(black, 30%);
+			opacity: 1;
+			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));
+			--height: calc(var(--width) / var(--aspect-ratio));
+			max-width: var(--width);
+			max-height: var(--height);
 		}
 
-		padding: 12px;
-		margin: 4px;
-		margin-bottom: 4px;
-		flex-grow: 1;
-		flex-direction: column;
-		overflow: hidden;
 		&:focus-within {
 			outline-style: auto;
 			outline-width: 2px;
 			outline-color: blue;
-			outline-offset: -2px;
+			outline-offset: -10px;
 		}
 
 		.editor,
 		.content {
-			padding: 4px;
+			padding: 18px;
 			flex: 1;
 			padding-bottom: 48px;
 			outline: none;
 			overflow-y: scroll;
+			mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 40px);
 		}
 		.editor {
 			display: block;
