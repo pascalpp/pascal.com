@@ -28,7 +28,7 @@
 				label={`Large Card Size: ${$settings.activePageScale}x`}
 				min={1}
 				max={3}
-				step={0.5}
+				step={0.25}
 				bind:value={$settings.activePageScale}
 				title="Change the scale of active pages"
 			/>
