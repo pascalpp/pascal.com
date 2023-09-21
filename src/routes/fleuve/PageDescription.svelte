@@ -15,12 +15,16 @@
 	$: active = page.active && $settings.showDescription;
 	$: focus = page.focus && $settings.showDescription;
 
-	function onClickEdit(event: MouseEvent) {
-		event.stopPropagation();
+	function startEditing() {
 		editing = true;
 		requestAnimationFrame(() => {
 			editor?.focus();
 		});
+	}
+
+	function onClickEdit(event: MouseEvent) {
+		event.stopPropagation();
+		startEditing();
 	}
 
 	function onBlur(event: FocusEvent) {
@@ -30,6 +34,12 @@
 		updatePage({ ...page, description });
 		editing = false;
 	}
+
+	function onKeyDownEditButton(event: KeyboardEvent) {
+		if (['d', 'e'].includes(event.key.toLowerCase())) {
+			startEditing();
+		}
+	}
 </script>
 
 <div class="description" class:active class:focus>
@@ -37,6 +47,7 @@
 		<button
 			class="edit-button"
 			on:click={onClickEdit}
+			on:keydown={onKeyDownEditButton}
 			tabindex={active && focus ? tabindex : -1}
 			title={page.description ? 'Edit description' : 'Add description'}
 		>
