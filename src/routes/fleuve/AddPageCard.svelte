@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Page, PageId } from './pages.store';
-	import { addConnection, focusPage } from './pages.store';
-	import focusElement from './focusElement';
+	import { addConnection, setPageFocus } from './pages.store';
+	import { focusPageId } from './focusHelpers';
 
 	export let page: Page;
 	export let tabindex: number;
@@ -18,7 +18,7 @@
 			selection?.addRange(range);
 		}
 		// call with undefined to unfocus the previous page
-		focusPage();
+		setPageFocus();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
@@ -29,12 +29,12 @@
 
 		if (event.key === 'ArrowLeft' && !title) {
 			event.preventDefault();
-			focusElement(parentId);
+			focusPageId(parentId);
 		}
 
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			focusElement(siblingId);
+			focusPageId(siblingId);
 		}
 
 		if (event.key === 'Enter') {
@@ -44,7 +44,7 @@
 				target.innerText = '';
 				target.blur();
 				requestAnimationFrame(() => {
-					const el = focusElement(newPage.id);
+					const el = focusPageId(newPage.id);
 					el?.click();
 				});
 			}
@@ -63,8 +63,9 @@
 	}
 </script>
 
-<div class="add-connection" data-page-id={`add-connection-${page.id}`}>
+<div class="add-connection">
 	<h1
+		id={`add-connection-${page.id}`}
 		{tabindex}
 		contenteditable="true"
 		class:show={page.active}
