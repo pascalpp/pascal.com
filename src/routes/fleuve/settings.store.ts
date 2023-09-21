@@ -35,6 +35,7 @@ function getStoredState(): Settings | undefined {
 				activePageScale: Math.max(1, Math.min(3, merged.activePageScale)),
 				aspectRatio: Math.max(0.75, Math.min(2, merged.aspectRatio)),
 				childOpacity: Math.max(0, Math.min(1, merged.childOpacity)),
+				showDescription: true,
 			};
 		} catch {
 			// don't care
