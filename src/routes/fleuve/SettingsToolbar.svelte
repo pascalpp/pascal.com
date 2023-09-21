@@ -8,7 +8,7 @@
 	import ShowTutorialButton from './ShowTutorialButton.svelte';
 </script>
 
-<Toolbar top right>
+<Toolbar top right tabindex={1}>
 	<button
 		class="settings-button"
 		slot="button"
@@ -18,10 +18,11 @@
 		aria-label="Settings"
 		title="Settings"
 		class:show
+		tabindex={1}
 	>
 		<SettingsIcon />
 	</button>
-	<div class="settings-panel" slot="panel">
+	<div class="settings-panel" slot="panel" let:tabindex>
 		<section>
 			<Slider
 				id="active-page-scale"
@@ -31,6 +32,7 @@
 				step={0.25}
 				bind:value={$settings.activePageScale}
 				title="Change the scale of active pages"
+				{tabindex}
 			/>
 		</section>
 		<section>
@@ -42,6 +44,7 @@
 				step={0.05}
 				bind:value={$settings.aspectRatio}
 				title="Change the scale of active pages"
+				{tabindex}
 			/>
 		</section>
 		<section>
@@ -50,6 +53,7 @@
 				label="Visibility"
 				bind:value={$settings.childOpacity}
 				title="Change the opacity for childen of the active page"
+				{tabindex}
 			/>
 		</section>
 		<!-- <section>
@@ -82,9 +86,6 @@
 		&:hover {
 			border: 1px solid fade(black, 30%);
 			background-color: white;
-		}
-
-		&.show {
 			outline: 1px solid fade(black, 50%);
 		}
 	}

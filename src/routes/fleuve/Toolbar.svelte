@@ -6,6 +6,7 @@
 	export let left = false;
 	export let right = false;
 	export let show = false;
+	export let tabindex = 1;
 
 	let toolbar: HTMLDivElement;
 
@@ -48,20 +49,22 @@
 
 <div class="toolbar" class:top class:bottom class:left class:right class:show on:click={onClick} bind:this={toolbar}>
 	<slot>
-		<slot name="button" {show} {toggle} />
+		<slot name="button" {show} {toggle} {tabindex} />
 		<div class="toolbar-panel">
-			<slot name="panel" {toggle} />
+			<slot name="panel" {toggle} tabindex={show ? tabindex : -1} />
 		</div>
 	</slot>
 </div>
 
 <style lang="less">
 	.toolbar {
+		position: fixed;
 		margin: 16px;
 		font-size: 13px;
 		z-index: 1;
-		position: fixed;
+		isolation: isolate;
 		opacity: 0.3;
+		outline: none;
 		&:hover,
 		&:active,
 		&:focus-within,

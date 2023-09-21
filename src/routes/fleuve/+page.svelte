@@ -71,14 +71,14 @@
 
 <SettingsContext>
 	<main>
+		<SettingsToolbar />
+		<ChangelogButton />
+
 		<div class="pages">
 			{#if root}
 				<PageView pageId="root" tabindex={1} />
 			{/if}
 		</div>
-
-		<SettingsToolbar />
-		<ChangelogButton />
 	</main>
 </SettingsContext>
 
@@ -100,5 +100,6 @@
 		box-sizing: border-box;
 		min-width: 100%;
 		min-height: 100%;
+		isolation: isolate;
 	}
 </style>
