@@ -55,6 +55,10 @@
 
 		// show left border on connections block if there are multiple items in it
 		&:not(:first-child) {
+			position: absolute;
+			width: max-content;
+			left: 100%;
+			top: 0;
 			&.show-left-border {
 				.left-border-rules; // moved to variables.less until Firefox :has()
 			}
