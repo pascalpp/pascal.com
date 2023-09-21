@@ -28,6 +28,9 @@
 
 <style lang="less">
 	.page {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
 		position: relative;
 		pointer-events: none;
 	}
