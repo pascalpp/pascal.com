@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { createFocusTrap } from 'focus-trap';
+	import type { FocusTrap } from 'focus-trap';
 	import { onMount } from 'svelte';
 
 	export let top = false;
@@ -7,8 +9,21 @@
 	export let right = false;
 	export let show = false;
 	export let tabindex = 1;
+	export let trapFocus = true;
 
 	let toolbar: HTMLDivElement;
+	let trap: FocusTrap | undefined;
+
+	$: if (show && trapFocus) {
+		trap = createFocusTrap(toolbar, {
+			escapeDeactivates: true,
+			clickOutsideDeactivates: true,
+		});
+		trap.activate();
+	} else {
+		trap?.deactivate({ returnFocus: true });
+		trap = undefined;
+	}
 
 	function toggle() {
 		show = !show;

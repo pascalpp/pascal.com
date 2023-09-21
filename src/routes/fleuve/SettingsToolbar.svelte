@@ -88,6 +88,9 @@
 			background-color: white;
 			outline: 1px solid fade(black, 50%);
 		}
+		&:focus {
+			outline: 2px solid fade(black, 50%);
+		}
 	}
 
 	.settings-panel {
