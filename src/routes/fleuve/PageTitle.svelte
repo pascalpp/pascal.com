@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { focusNextElement } from './focusHelpers';
+	import { focusNextElement, focusPreviousElement } from './focusHelpers';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { settings } from './settings.store';
@@ -43,8 +43,12 @@
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
-		const target = event.target as HTMLHeadingElement;
-		if (['Escape', 'Enter'].includes(event.key)) {
+		if (['Escape'].includes(event.key)) {
+			event.stopPropagation();
+			event.preventDefault();
+			focusPreviousElement();
+		}
+		if (['Enter'].includes(event.key)) {
 			event.stopPropagation();
 			event.preventDefault();
 			focusNextElement();
