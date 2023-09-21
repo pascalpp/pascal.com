@@ -28,14 +28,13 @@ function getFocusableElements(): HTMLElement[] {
 
 export function focusPageId(id?: string): HTMLElement | undefined {
 	if (!id) return undefined;
-	const selector = `[data-page-id="${id}"] [tabindex]`;
+	const selector = `[data-page-id="${id}"]`;
 	return focusSelector(selector);
 }
 
 export function focusSelector(selector?: string): HTMLElement | undefined {
 	if (!selector) return undefined;
 	const element = document.querySelector(selector) as HTMLElement;
-	console.log('focusSelector', selector, element);
 	element?.focus();
 	return element;
 }
