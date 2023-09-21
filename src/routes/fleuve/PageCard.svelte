@@ -215,14 +215,13 @@
 
 		&.active {
 			box-shadow: 0 2px 4px 2px fade(black, 10%);
-			padding-top: 4px;
 		}
 
 		&.focus,
 		&:focus,
 		&:focus-within,
 		&:active {
-			border-color: transparent;
+			border-color: var(--card-title-bgcolor);
 			outline-style: solid;
 			outline-width: 2px;
 			outline-color: black;
