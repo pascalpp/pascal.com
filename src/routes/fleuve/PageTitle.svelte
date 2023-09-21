@@ -68,12 +68,13 @@
 <style lang="less">
 	.title {
 		background-color: var(--card-title-bgcolor);
-		padding: 12px 16px;
 		font-size: 16px;
+		padding: 8px 16px;
 		line-height: 1.5;
 		transition: font-size 0.2s ease-in-out;
 		overflow: hidden;
 		pointer-events: none;
+		flex-shrink: 0;
 
 		&.active {
 			pointer-events: auto;
