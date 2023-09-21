@@ -79,7 +79,7 @@
 <style lang="less">
 	.add-connection {
 		&:first-child {
-			padding-top: 4px;
+			padding-top: 3px;
 		}
 
 		h1 {
