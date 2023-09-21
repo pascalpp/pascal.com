@@ -66,52 +66,63 @@
 		}
 
 		&.nested {
+			@top-offset: 22px;
+			@left-offset: 24px;
+			@active-left-offset: 12px;
 			width: max-content;
+
+			// rules on the connections box
 			&.show-left-border {
-				margin-left: 24px;
 				// background-color: fade(red, 10%);
+				margin-left: @left-offset;
 				position: relative;
+				// left stem
 				&::before {
 					position: absolute;
 					display: block;
 					content: '';
 					height: 1px;
-					width: 24px;
+					width: @left-offset;
 					border-bottom: 1px solid black;
-					top: 25px;
+					top: @top-offset;
 					right: 100%;
 				}
+				// left border
 				&::after {
 					position: absolute;
 					display: block;
 					content: '';
 					width: 1px;
 					border-left: 1px solid black;
-					top: 25px;
+					top: @top-offset;
 					bottom: 0;
 				}
 			}
+
+			// left stem on each child
 			:global(> *) {
-				margin-left: 24px;
+				margin-left: @left-offset;
 				position: relative;
 				&::before {
 					position: absolute;
 					display: block;
 					content: '';
 					height: 1px;
-					width: 24px;
+					width: @left-offset;
 					border-bottom: 1px solid black;
-					top: 25px;
+					top: @top-offset;
 					right: 100%;
 				}
 			}
 
+			// special rounded stem on the last child
+			// but only if there are children above it
 			:global(> :last-child:not(:first-child)) {
 				&::before {
 					position: absolute;
 					display: block;
 					content: '';
-					width: 24px;
+					width: @left-offset;
 					border: none;
 					background-color: transparent;
 					border-left: 1px solid black;
@@ -123,17 +134,18 @@
 					right: 100%;
 					z-index: 2;
 				}
+				// box to paint over bottom of .connections left border
 				&::after {
 					z-index: 1;
 					background-color: #f3f3f3; // needs to match background color
 					position: absolute;
 					display: block;
 					content: '';
-					width: 12px;
+					width: calc(@left-offset / 2);
 					border: none;
 					height: 100%;
 					bottom: 0;
-					right: calc(100% + 12px);
+					right: calc(100% + (@left-offset / 2));
 				}
 			}
 		}

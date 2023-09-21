@@ -38,7 +38,7 @@
 			font-size: 12px;
 			line-height: 2em;
 			border-radius: 4px;
-			margin-top: 12px;
+			transform: translateY(8.5px);
 			width: auto;
 			white-space: nowrap;
 			opacity: 0.5;
