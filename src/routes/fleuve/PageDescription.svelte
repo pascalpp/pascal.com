@@ -22,45 +22,20 @@
 	function onBlur(event: FocusEvent) {
 		const target = event.target as HTMLElement;
 		const description = target.innerText.trim();
+		if (!description) target.innerText = description;
 		updatePage({ ...page, description });
 		editing = false;
-		const parentCard = target.closest('.page-card') as HTMLElement;
-		parentCard?.focus();
-	}
-
-	function onKeyDown(event: KeyboardEvent) {
-		return;
-		const target = event.target as HTMLElement;
-		const description = target.innerText.trim();
-		// if (event.key !== 'Tab') {
-		// 	event.stopPropagation();
-		// }
-
-		// if (event.key === 'Escape' || event.key === 'Tab') {
-		// 	target?.blur();
-		// }
-
-		if (event.key === 'ArrowLeft' && !description) {
-			const parentCard = target.closest('.connections')?.closest('.page')?.querySelector('.page-card') as HTMLElement;
-			target.innerText = description;
-			parentCard?.focus();
-			parentCard?.click();
-		}
-
-		if (event.key === 'ArrowRight' && !description) {
-			target.innerText = description;
-			const firstChild = target
-				.closest('.page')
-				?.querySelector('.connections')
-				?.querySelector('.page-card, .add-connection') as HTMLElement;
-			firstChild?.focus();
-		}
 	}
 </script>
 
 <div class="description" class:active={page.active} class:focus={page.focus}>
 	{#if page.active && !editing}
-		<button class="edit-button" on:click={onClickEdit} tabindex={page.active && page.focus ? tabindex : -1}>
+		<button
+			class="edit-button"
+			on:click={onClickEdit}
+			tabindex={page.active && page.focus ? tabindex : -1}
+			title={page.description ? 'Edit description' : 'Add description'}
+		>
 			<Pencil />
 		</button>
 	{/if}
@@ -72,7 +47,6 @@
 			tabindex={page.active ? tabindex : -1}
 			contenteditable={page.active}
 			on:blur={onBlur}
-			on:keydown={onKeyDown}
 		>
 			{page.description || ''}
 		</div>
@@ -95,6 +69,7 @@
 		max-height: 0;
 		opacity: 0;
 		border-top: 0px solid transparent;
+		isolation: isolate;
 
 		&.active {
 			pointer-events: auto;
@@ -144,8 +119,9 @@
 			opacity: 0;
 			position: absolute;
 			cursor: pointer;
-			right: 12px;
-			bottom: 12px;
+			right: 16px;
+			top: 16px;
+			z-index: 1;
 			:global(svg) {
 				width: auto;
 				height: 16px;
