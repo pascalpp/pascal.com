@@ -104,18 +104,18 @@ export function deactivatePage(pageId: PageId) {
 	});
 }
 
-export function focusPage(pageId?: PageId) {
+// focus is mutually exclusive, so setting focus modifies all pages
+export function setPageFocus(pageId?: PageId) {
 	pageStore.update((pages) => {
 		return pages.map((item) => {
-			if (item.id === pageId) {
-				item.focus = true;
-			}
+			item.focus = item.id === pageId;
 			return item;
 		});
 	});
 }
 
-export function blurPage(pageId?: PageId) {
+// unsetting focus only modifies the page id given
+export function unsetPageFocus(pageId?: PageId) {
 	pageStore.update((pages) => {
 		return pages.map((item) => {
 			if (item.id === pageId) {
