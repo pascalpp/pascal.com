@@ -26,7 +26,6 @@
 			<PageView
 				pageId={connectionId}
 				{tabindex}
-				grandparentId={parentId}
 				parentId={page.id}
 				previousSiblingId={connections[index - 1]}
 				nextSiblingId={connections[index + 1]}

@@ -5,7 +5,6 @@
 	import { pageStore } from './pages.store';
 
 	export let pageId: PageId;
-	export let grandparentId: PageId | undefined = undefined;
 	export let parentId: PageId | undefined = undefined;
 	export let previousSiblingId: PageId | undefined = undefined;
 	export let nextSiblingId: PageId | undefined = undefined;
