@@ -25,15 +25,22 @@
 		// event.stopPropagation();
 		const target = event.target as HTMLElement;
 		const title = target.innerText.trim();
-		if (!title) target.innerText = title;
+
+		if (event.key === 'Escape' && !title) {
+			event.preventDefault();
+			target.innerText = '';
+			focusPageId(siblingId || parentId);
+		}
 
 		if (event.key === 'ArrowLeft' && !title) {
 			event.preventDefault();
+			target.innerText = '';
 			focusPageId(parentId);
 		}
 
-		if (event.key === 'ArrowUp') {
+		if (event.key === 'ArrowUp' && !title) {
 			event.preventDefault();
+			target.innerText = '';
 			focusPageId(siblingId);
 		}
 
@@ -90,17 +97,23 @@
 			padding: 8px 16px;
 			border-radius: 4px;
 			margin: 0;
-			width: auto;
+			min-width: 100px;
+			max-width: 200px;
 			appearance: none;
 			font-weight: bold;
 			white-space: nowrap;
 			pointer-events: auto;
 			outline: none;
+			overflow: auto;
 
-			&:empty::after {
+			&::after {
+				display: block;
 				font-weight: normal;
 				content: var(--add-card-placeholder);
 				opacity: 0.5;
+			}
+			&:not(:empty)::after {
+				display: none;
 			}
 
 			&:focus,
