@@ -8,9 +8,8 @@
 	export let page: Page;
 	export let tabindex: number;
 
-	$: showLeftBorder = (page.active && page.connections.length > 0) || page.connections.length > 1;
-
 	$: opacity = $settings.childOpacity;
+	$: showLeftBorder = (page.active && page.connections.length > 0) || (opacity > 0 && page.connections.length > 1);
 </script>
 
 <div class="connections" class:active={page.active || opacity === 0} class:show-left-border={showLeftBorder}>
