@@ -229,22 +229,26 @@
 		}
 
 		// active page animation
-		@transition-time: 0.2s;
-		@transition-delay: 0s; // was 0.1s
-		width: 80px;
-		height: 40px;
-		min-width: fit-content;
-		min-height: fit-content;
-		transition: height @transition-time ease-in-out, width @transition-time ease-in-out @transition-delay;
+		@width-transition-time: 0.1s;
+		@width-transition-delay: 0.2s;
+		@height-transition-time: 0.2s;
+		@height-transition-delay: 0.1s;
+		min-width: var(--card-min-width);
+		max-width: var(--card-max-width);
+		min-height: var(--card-min-height);
+		transition: min-width @width-transition-time ease-in-out @width-transition-delay,
+			max-width @width-transition-time ease-in-out @width-transition-delay,
+			min-height @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out;
 		&.active {
-			--height: calc(var(--active-page-scale, 0.5) * 75vh);
-			min-width: 150px;
-			min-height: 60px;
-			height: var(--height);
+			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));
+			--height: calc(var(--width) / var(--aspect-ratio));
+			min-height: var(--height);
 			max-height: var(--height);
-			width: calc(var(--height) * var(--aspect-ratio));
-			max-width: calc(var(--height) * var(--aspect-ratio));
-			transition: height @transition-time ease-in-out @transition-delay, width @transition-time ease-in-out;
+			min-width: var(--width);
+			max-width: var(--width);
+			transition: min-width @width-transition-time ease-in-out, max-width @width-transition-time ease-in-out,
+				min-height @height-transition-time ease-in-out @height-transition-delay,
+				max-height @height-transition-time ease-in-out @height-transition-delay;
 		}
 
 		.page-card-content {
