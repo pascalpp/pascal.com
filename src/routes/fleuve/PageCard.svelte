@@ -33,6 +33,7 @@
 	function onKeyDown(event: KeyboardEvent) {
 		event.stopPropagation();
 		const target = event.target as HTMLElement;
+		const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
 		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
 		const nextCard = target.closest('.page')?.nextElementSibling?.querySelector('.page-card') as HTMLElement;
 		const addConnection = target.closest('.connections')?.querySelector(':scope > .add-connection') as HTMLElement;
@@ -47,10 +48,9 @@
 		}
 
 		if (event.key === 'Tab') {
-			event.preventDefault();
-			if (page.active) {
-				const title = target?.querySelector('.title') as HTMLButtonElement;
-				title?.click();
+			if (!active) {
+				event.preventDefault();
+				activatePage(page.id);
 			}
 		}
 
@@ -133,7 +133,6 @@
 					if (active) newCard?.click();
 				});
 			} else {
-				const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
 				parentCard?.focus();
 			}
 		}
@@ -154,6 +153,15 @@
 				deactivatePage(page.id);
 			} else {
 				target.click();
+			}
+		}
+
+		if (event.key === 'Escape') {
+			if (active) {
+				event.preventDefault();
+				deactivatePage(page.id);
+			} else {
+				parentCard?.focus();
 			}
 		}
 
