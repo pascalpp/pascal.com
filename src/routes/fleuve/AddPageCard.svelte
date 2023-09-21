@@ -19,7 +19,7 @@
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
-		event.stopPropagation();
+		// event.stopPropagation();
 		const target = event.target as HTMLElement;
 		const title = target.innerText.trim();
 		if (!title) target.innerText = title;
@@ -51,9 +51,9 @@
 			}
 		}
 
-		if (event.key === 'Tab') {
-			event.preventDefault();
-		}
+		// if (event.key === 'Tab') {
+		// 	event.preventDefault();
+		// }
 	}
 
 	function onKeyUp(event: KeyboardEvent) {

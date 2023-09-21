@@ -15,10 +15,10 @@
 <div class="connections" class:active={page.active || opacity === 0} class:show-left-border={showLeftBorder}>
 	{#if page.active || opacity > 0}
 		{#each page.connections as connectionId, index (connectionId)}
-			<PageView pageId={connectionId} tabindex={tabindex * 10 + index} parentId={page.id} />
+			<PageView pageId={connectionId} {tabindex} parentId={page.id} />
 		{/each}
 		{#if page.active}
-			<AddPageCard {page} tabindex={tabindex * 10 + page.connections.length} />
+			<AddPageCard {page} {tabindex} />
 		{/if}
 	{:else}
 		<PageConnectionSummary {page} />

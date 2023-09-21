@@ -1,4 +1,5 @@
 <script lang="ts">
+	import focusNextElement from './focusNextElement';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 
@@ -36,17 +37,16 @@
 		updatePage({ ...page, title });
 		const selection = window.getSelection();
 		selection?.removeAllRanges();
-		const parentCard = target.closest('.page-card') as HTMLElement;
-		parentCard?.focus();
+		// const parentCard = target.closest('.page-card') as HTMLElement;
+		// parentCard?.focus();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
-		event.stopPropagation();
 		const target = event.target as HTMLHeadingElement;
-
-		if (['Escape', 'Enter', 'Tab'].includes(event.key)) {
+		if (['Escape', 'Enter'].includes(event.key)) {
+			event.stopPropagation();
 			event.preventDefault();
-			target?.blur();
+			focusNextElement();
 		}
 	}
 </script>
@@ -55,7 +55,7 @@
 	<h1
 		class:active={page.active}
 		contenteditable={true}
-		tabindex={page.active ? tabindex : -1}
+		tabindex={page.active && page.focus ? tabindex : -1}
 		on:click={onClick}
 		on:focus={onFocus}
 		on:blur={onBlur}

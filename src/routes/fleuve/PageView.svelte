@@ -21,7 +21,7 @@
 			{#if parentId}
 				<PageCard {page} {tabindex} {parentId} />
 			{/if}
-			<PageConnections {page} tabindex={tabindex + 1} />
+			<PageConnections {page} {tabindex} />
 		</div>
 	{/if}
 {/key}

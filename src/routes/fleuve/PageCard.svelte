@@ -21,7 +21,7 @@
 
 	let card: HTMLDivElement;
 
-	function onClick(event: MouseEvent) {
+	function onClick() {
 		activatePage(page.id);
 		focusPage(page.id);
 	}
@@ -31,7 +31,6 @@
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
-		event.stopPropagation();
 		const target = event.target as HTMLElement;
 		const parentCard = document.querySelector(`[data-page-id="${parentId}"]`) as HTMLElement;
 		const previousNode = target.closest('.page')?.previousElementSibling?.querySelector('.page-card') as HTMLElement;
@@ -42,17 +41,17 @@
 
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
 			if (page.active) {
-				const editButton = target?.querySelector('.description .edit-button') as HTMLButtonElement;
+				const editButton = card?.querySelector('.description .edit-button') as HTMLButtonElement;
 				editButton?.click();
 			}
 		}
 
-		if (event.key === 'Tab') {
-			if (!active) {
-				event.preventDefault();
-				activatePage(page.id);
-			}
-		}
+		// if (event.key === 'Tab') {
+		// 	if (!active) {
+		// 		event.preventDefault();
+		// 		activatePage(page.id);
+		// 	}
+		// }
 
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
@@ -97,7 +96,8 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'up');
 				requestAnimationFrame(() => {
-					target?.focus();
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newCard?.focus();
 				});
 			} else {
 				previousNode?.focus();
@@ -109,7 +109,8 @@
 			if (event.shiftKey) {
 				reorderPage(page.id, 'down');
 				requestAnimationFrame(() => {
-					target?.focus();
+					const newCard = document.querySelector(`[data-page-id="${page.id}"]`) as HTMLElement;
+					newCard?.focus();
 				});
 			} else {
 				nextNode?.focus();
@@ -195,17 +196,16 @@
 	class="page-card"
 	class:active={page.active}
 	class:focus={page.focus}
-	{tabindex}
 	on:click={onClick}
-	on:keydown={onKeyDown}
-	on:focus={onFocus}
 	bind:this={card}
 	data-page-id={page.id}
 >
+	<button class="focus-top-target" {tabindex} on:keydown={onKeyDown} on:focusin={onFocus} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
-		<PageDescription {page} {tabindex} {expanded} />
+		<!-- <PageDescription {page} {tabindex} {expanded} /> -->
 	</div>
+	<button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} />
 </div>
 
 <style lang="less">
