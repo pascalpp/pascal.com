@@ -29,7 +29,15 @@
 
 		input {
 			width: 100%;
-			&::-webkit-slider-thumb {
+			&::-webkit-slider-track,
+			&::-moz-range-track {
+				background-color: steelblue;
+				height: 4px;
+				border-radius: 2px;
+			}
+
+			&::-webkit-slider-thumb,
+			&::-moz-range-thumb {
 				outline: 1px solid black;
 				border-radius: 50%;
 			}
@@ -37,7 +45,8 @@
 			&:active,
 			&:focus {
 				outline: none;
-				&::-webkit-slider-thumb {
+				&::-webkit-slider-thumb,
+				&::-moz-range-thumb {
 					outline: 2px solid black;
 				}
 			}
