@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { createFocusTrap } from 'focus-trap';
 	import type { FocusTrap } from 'focus-trap';
 	import { onMount } from 'svelte';
@@ -14,7 +15,7 @@
 	let toolbar: HTMLDivElement;
 	let trap: FocusTrap | undefined;
 
-	$: if (show && trapFocus) {
+	$: if (show && trapFocus && browser) {
 		trap = createFocusTrap(toolbar, {
 			escapeDeactivates: true,
 			clickOutsideDeactivates: true,
