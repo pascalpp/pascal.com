@@ -1,5 +1,5 @@
 <script lang="ts">
-	import focusNextElement from './focusNextElement';
+	import { focusNextElement } from './focusHelpers';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 
