@@ -44,9 +44,9 @@ function getDefaultState(): Settings {
 	return {
 		version: metadata.latest,
 		childOpacity: 0.5,
-		activePageScale: 0.3,
-		aspectRatio: 1.2,
+		activePageScale: 2,
+		aspectRatio: 1.5,
 		aspectRatioType: 'landscape' as AspectRatio,
-		showDescription: false,
+		showDescription: true,
 	};
 }

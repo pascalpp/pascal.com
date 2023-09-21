@@ -1,5 +1,5 @@
 ---
-latest: 0.2.0
+latest: 0.2.1
 ---
 
 <script>
@@ -7,6 +7,11 @@ latest: 0.2.0
 </script>
 
 # Changelog
+
+### Version 0.2.1
+
+- Focus trap inside toolbars.
+- Settings tweaks.
 
 ### Version 0.2.0
 
