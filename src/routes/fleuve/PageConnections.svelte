@@ -1,8 +1,7 @@
 <script lang="ts">
-	import PageCard from './PageCard.svelte';
-	import AddPageCard from './AddPageCard.svelte';
 	import type { Page, PageId } from './pages.store';
 	import PageView from './PageView.svelte';
+	import AddPageCard from './AddPageCard.svelte';
 	import PageConnectionSummary from './PageConnectionSummary.svelte';
 	import { settings } from './settings.store';
 
@@ -138,84 +137,5 @@
 				}
 			}
 		}
-
-		// show left border on connections block if there are multiple items in it
-		// &:not(:first-child) {
-		// 	width: max-content;
-		// 	left: 100%;
-		// 	top: 0;
-		// 	// &.show-left-border {
-		// 	// 	.left-border-rules; // moved to variables.less until Firefox :has()
-		// 	// }
-		// }
-
-		// &:not(:first-child) {
-		// 	&.active:has(:first-child:not(:last-child)),
-		// 	&:has(.page + .page) {
-		// 		.left-border-rules;
-
-		// idea for darker lines leading to active cards
-		// &:has(.page.active) {
-		// 	&::before {
-		// 		opacity: 1;
-		// 	}
-		// 	&::after {
-		// 		opacity: 1;
-		// 	}
-		// }
-		// }
-
-		// show connection line on left side of each child
-		// :global(> .page > .page-card) {
-		// 	margin-left: 24px;
-		// 	transition: margin-left 0.2s ease-in-out;
-		// 	position: relative;
-		// 	&::before {
-		// 		position: absolute;
-		// 		display: block;
-		// 		content: '';
-		// 		height: 1px;
-		// 		width: 24px;
-		// 		transition: width 0.2s ease-in-out;
-		// 		background-color: black;
-		// 		top: 25px;
-		// 		right: 100%;
-		// 		// opacity: 0.3;
-		// 	}
-		// }
-		// :global(> .page.active > .page-card) {
-		// 	margin-left: 16px;
-		// 	&::before {
-		// 		width: 16px;
-		// 		// opacity: 1;
-		// 	}
-		// }
-		// :global(> .page + .page:last-child > .page-card) {
-		// 	&::before {
-		// 		position: absolute;
-		// 		display: block;
-		// 		content: '';
-		// 		width: 24px;
-		// 		border: none;
-		// 		border-left: 1px solid black;
-		// 		border-bottom: 1px solid black;
-		// 		border-bottom-left-radius: 4px;
-		// 		top: unset;
-		// 		bottom: var(--wire-bottom, 24px);
-		// 		height: var(--wire-height, 100%);
-		// 		right: 100%;
-		// 	}
-		// }
-		// }
-
-		//  hide siblings idea
-		// .connections:has(.page.active) {
-		// 	> .page:not(.active) {
-		// 		display: none;
-		// 	}
-		// 	> .add-connection {
-		// 		display: none;
-		// 	}
-		// }
 	}
 </style>
