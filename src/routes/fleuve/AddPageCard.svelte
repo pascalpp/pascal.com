@@ -1,9 +1,12 @@
 <script lang="ts">
-	import type { Page } from './pages.store';
+	import type { Page, PageId } from './pages.store';
 	import { addConnection, focusPage } from './pages.store';
+	import focusElement from './focusElement';
 
 	export let page: Page;
 	export let tabindex: number;
+	export let parentId: PageId | undefined = undefined;
+	export let siblingId: PageId | undefined = undefined;
 
 	function onFocus(event: FocusEvent) {
 		const target = event.target as HTMLHeadingElement;
@@ -26,15 +29,12 @@
 
 		if (event.key === 'ArrowLeft' && !title) {
 			event.preventDefault();
-			const parentCard = target.closest('.page')?.querySelector('.page-card') as HTMLElement;
-			parentCard?.focus();
-			parentCard?.click();
+			focusElement(parentId);
 		}
 
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			const previousNode = target.previousElementSibling?.querySelector('.page-card') as HTMLElement;
-			previousNode?.focus();
+			focusElement(siblingId);
 		}
 
 		if (event.key === 'Enter') {
@@ -44,16 +44,11 @@
 				target.innerText = '';
 				target.blur();
 				requestAnimationFrame(() => {
-					const newCard = document.querySelector(`[data-page-id="${newPage.id}"]`) as HTMLElement;
-					newCard?.click();
-					newCard?.focus();
+					const el = focusElement(newPage.id);
+					el?.click();
 				});
 			}
 		}
-
-		// if (event.key === 'Tab') {
-		// 	event.preventDefault();
-		// }
 	}
 
 	function onKeyUp(event: KeyboardEvent) {
@@ -68,45 +63,51 @@
 	}
 </script>
 
-<!-- TODO nest this to fix margins, but need to check down arrow in page card -->
-<div
-	class="add-connection"
-	{tabindex}
-	contenteditable="true"
-	class:show={page.active}
-	on:focus={onFocus}
-	on:blur={onBlur}
-	on:keydown={onKeyDown}
-	on:keyup={onKeyUp}
-/>
+<div class="add-connection" data-page-id={`add-connection-${page.id}`}>
+	<h1
+		{tabindex}
+		contenteditable="true"
+		class:show={page.active}
+		on:focus={onFocus}
+		on:blur={onBlur}
+		on:keydown={onKeyDown}
+		on:keyup={onKeyUp}
+	/>
+</div>
 
 <style lang="less">
 	.add-connection {
-		display: block;
-		background-color: white;
-		box-sizing: border-box;
-		border: 1px solid fade(black, 30%);
-		padding: 1px 20px;
-		line-height: 2.25em;
-		margin: 0 4px;
-		border-radius: 4px;
-		margin: 0;
-		width: auto;
-		appearance: none;
-		font-weight: bold;
-		white-space: nowrap;
-		pointer-events: auto;
-
-		&:empty::after {
-			font-weight: normal;
-			content: var(--add-card-placeholder);
-			opacity: 0.5;
+		&:first-child {
+			padding-top: 4px;
 		}
-		&:focus,
-		&:active {
-			outline-style: solid;
-			outline-width: 2px;
-			outline-color: black;
+
+		h1 {
+			display: block;
+			background-color: white;
+			box-sizing: border-box;
+			border: 1px solid fade(black, 30%);
+			padding: 8px 16px;
+			border-radius: 4px;
+			margin: 0;
+			width: auto;
+			appearance: none;
+			font-weight: bold;
+			white-space: nowrap;
+			pointer-events: auto;
+			outline: none;
+
+			&:empty::after {
+				font-weight: normal;
+				content: var(--add-card-placeholder);
+				opacity: 0.5;
+			}
+
+			&:focus,
+			&:active {
+				outline-style: solid;
+				outline-width: 2px;
+				outline-color: black;
+			}
 		}
 	}
 </style>
