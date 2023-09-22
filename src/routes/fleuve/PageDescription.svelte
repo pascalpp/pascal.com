@@ -5,6 +5,7 @@
 	import { marked } from 'marked';
 	import Pencil from './pencil.svg?component';
 	import { settings } from './settings.store';
+	import { focusPageId } from './focusHelpers';
 
 	export let page: Page;
 	export let tabindex: number;
@@ -40,6 +41,18 @@
 			startEditing();
 		}
 	}
+
+	function onKeyDownEditor(event: KeyboardEvent) {
+		if (['Escape'].includes(event.key)) {
+			event.stopPropagation();
+			event.preventDefault();
+			focusPageId(page.id);
+		}
+	}
+
+	function onClickEditor(event: MouseEvent) {
+		event.stopPropagation();
+	}
 </script>
 
 <div class="description" class:active class:focus>
@@ -62,6 +75,8 @@
 			bind:this={editor}
 			tabindex={active && focus ? tabindex : -1}
 			contenteditable={active}
+			on:keydown={onKeyDownEditor}
+			on:click={onClickEditor}
 			on:blur={onBlur}
 		>
 			{page.description || ''}
