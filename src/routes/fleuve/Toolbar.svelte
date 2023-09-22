@@ -78,7 +78,7 @@
 		margin: 16px;
 		z-index: 1;
 		isolation: isolate;
-		opacity: 0.3;
+		opacity: 0.5;
 		outline: none;
 		&:hover,
 		&:active,
@@ -111,7 +111,7 @@
 			top: 0px;
 			.toolbar-panel {
 				top: 100%;
-				margin-top: 8px;
+				margin-top: 4px;
 			}
 		}
 		&.left {
@@ -120,7 +120,7 @@
 		&.right {
 			right: 0px;
 			.toolbar-panel {
-				right: -8px;
+				right: -4px;
 			}
 		}
 		&.bottom {
