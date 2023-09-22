@@ -23,6 +23,7 @@
 	<button
 		type="button"
 		class="settings-button"
+		id="settings-button"
 		slot="button"
 		let:show
 		let:toggle
