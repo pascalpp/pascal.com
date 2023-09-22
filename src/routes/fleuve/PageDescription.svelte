@@ -1,14 +1,28 @@
 <script lang="ts">
 	import './markdown.less';
-	import type { Page } from './pages.store';
+	import type { Page, PageId } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { marked } from 'marked';
 	import Pencil from './pencil.svg?component';
 	import { settings } from './settings.store';
-	import { focusPageId } from './focusHelpers';
+	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
+	import {
+		activatePage,
+		reorderPage,
+		movePageUp,
+		movePageDown,
+		addParentAbovePage,
+		replaceEmptyParent,
+	} from './pages.store';
 
 	export let page: Page;
 	export let tabindex: number;
+	export let parentId: PageId;
+	export let previousSiblingId: PageId | undefined = undefined;
+	export let nextSiblingId: PageId | undefined = undefined;
+	export let firstChildId: PageId | undefined = undefined;
+	export let addSiblingConnection: string | undefined = undefined;
+	export let addChildConnection: string | undefined = undefined;
 
 	let editing = false;
 	let editor: HTMLElement;
@@ -39,6 +53,76 @@
 	function onKeyDownEditButton(event: KeyboardEvent) {
 		if (['d', 'e'].includes(event.key.toLowerCase())) {
 			startEditing();
+		}
+
+		if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			if (event.shiftKey) {
+				const newParent = movePageDown(page.id);
+				if (active) {
+					activatePage(newParent.id);
+					activatePage(page.id);
+				}
+				requestAnimationFrame(() => {
+					focusPageId(page.id);
+				});
+			} else if (event.altKey) {
+				const newParent = addParentAbovePage(page.id);
+				requestAnimationFrame(() => {
+					activatePage(newParent.id);
+					if (active) {
+						activatePage(page.id);
+					}
+					requestAnimationFrame(() => {
+						focusPageId(page.id);
+					});
+				});
+			} else {
+				focusPageId(firstChildId) || focusSelector(addChildConnection) || activatePage(page.id);
+			}
+		}
+
+		if (event.key === 'ArrowUp') {
+			event.preventDefault();
+			if (event.shiftKey) {
+				reorderPage(page.id, 'up');
+				requestAnimationFrame(() => {
+					focusPageId(page.id);
+				});
+			} else {
+				focusPageId(previousSiblingId);
+			}
+		}
+
+		if (event.key === 'ArrowDown') {
+			event.preventDefault();
+			if (event.shiftKey) {
+				reorderPage(page.id, 'down');
+				requestAnimationFrame(() => {
+					focusPageId(page.id);
+				});
+			} else {
+				focusPageId(nextSiblingId) || focusSelector(addSiblingConnection);
+			}
+		}
+
+		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			if (event.shiftKey) {
+				movePageUp(page.id);
+				requestAnimationFrame(() => {
+					const el = focusPageId(page.id);
+					if (active) el?.click();
+				});
+			} else if (event.altKey) {
+				replaceEmptyParent(page.id);
+				requestAnimationFrame(() => {
+					const el = focusPageId(page.id);
+					if (active) el?.click();
+				});
+			} else {
+				focusPageId(parentId);
+			}
 		}
 	}
 

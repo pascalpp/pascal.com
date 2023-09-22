@@ -3,7 +3,6 @@
 	import PageTitle from './PageTitle.svelte';
 	import type { Page, PageId } from './pages.store';
 	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
-
 	import {
 		activatePage,
 		removePage,
@@ -23,9 +22,9 @@
 	export let nextSiblingId: PageId | undefined = undefined;
 	export let tabindex = 1;
 
-	const firstChildId = page.connections[0];
-	const addSiblingConnection = `#add-connection-${parentId}`;
-	const addChildConnection = `#add-connection-${page.id}`;
+	$: firstChildId = page.connections[0];
+	$: addSiblingConnection = `#add-connection-${parentId}`;
+	$: addChildConnection = `#add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
@@ -189,7 +188,16 @@
 	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
-		<PageDescription {page} {tabindex} />
+		<PageDescription
+			{page}
+			{tabindex}
+			{parentId}
+			{previousSiblingId}
+			{nextSiblingId}
+			{firstChildId}
+			{addSiblingConnection}
+			{addChildConnection}
+		/>
 	</div>
 	<!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>
