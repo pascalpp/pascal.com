@@ -27,7 +27,7 @@ function getDefaultState(): Settings {
 		aspectRatio: 1.2,
 		aspectRatioType: 'landscape' as AspectRatio,
 		showDescription: true,
-		cardAnimationSpeed: 0.2,
+		cardAnimationSpeed: 0.05,
 		flowAlignment: 'top',
 	};
 }
