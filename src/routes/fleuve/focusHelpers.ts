@@ -34,7 +34,11 @@ export function focusPageId(id?: string): HTMLElement | undefined {
 
 export function focusSelector(selector?: string): HTMLElement | undefined {
 	if (!selector) return undefined;
+
 	const element = document.querySelector(selector) as HTMLElement;
-	element?.focus();
+	if (!element) return undefined;
+
+	element.focus();
+	element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
 	return element;
 }

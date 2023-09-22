@@ -83,23 +83,16 @@
 </SettingsContext>
 
 <style lang="less">
-	main {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		overflow: scroll;
-	}
-
 	.pages {
-		position: absolute;
-		top: 0;
-		left: 0;
 		padding: 10vw;
 		box-sizing: border-box;
 		min-width: 100%;
 		min-height: 100%;
 		isolation: isolate;
+		@media screen and (max-width: 800px) {
+			padding: 5vw;
+			padding-top: 20vw;
+			padding-bottom: 20vw;
+		}
 	}
 </style>

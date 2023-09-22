@@ -162,6 +162,12 @@
 			}
 		}
 	}
+
+	function onTransitionEnd(event: TransitionEvent) {
+		if (event.propertyName === 'min-width' && page.active) {
+			focusPageId(page.id);
+		}
+	}
 </script>
 
 <div
@@ -171,6 +177,7 @@
 	on:click={onClick}
 	on:focusin={onFocusIn}
 	on:focusout={onFocusOut}
+	on:transitionend={onTransitionEnd}
 	bind:this={card}
 >
 	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
@@ -220,6 +227,7 @@
 		transition: min-width @width-transition-time ease-in-out @width-transition-delay,
 			max-width @width-transition-time ease-in-out @width-transition-delay,
 			min-height @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out;
+
 		&.active {
 			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));
 			--height: calc(var(--width) / var(--aspect-ratio));
