@@ -6,6 +6,7 @@
 	import SettingsIcon from './settings.svg?component';
 	import ResetButton from './ResetButton.svelte';
 	import ShowTutorialButton from './ShowTutorialButton.svelte';
+	import AnimationButtonBar from './AnimationButtonBar.svelte';
 	// import { onMount } from 'svelte';
 
 	// let show = false;
@@ -68,7 +69,7 @@
 				{tabindex}
 			/>
 		</section>
-		<section class="control">
+		<!-- <section class="control">
 			<Slider
 				id="card-animation-speed"
 				label={`Animation speeed: ${$settings.cardAnimationSpeed}s`}
@@ -79,6 +80,9 @@
 				title="Change the speed of card expanstion"
 				{tabindex}
 			/>
+		</section> -->
+		<section class="control">
+			<AnimationButtonBar />
 		</section>
 		<section class="control">
 			<FlowAlignmentToggle />

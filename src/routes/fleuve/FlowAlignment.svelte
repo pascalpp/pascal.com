@@ -15,10 +15,12 @@
 
 	function onKeydown(event: KeyboardEvent) {
 		if (event.key === 'ArrowRight') {
+			event.preventDefault();
 			centerButton.click();
 			centerButton.focus();
 		}
 		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
 			topButton.click();
 			topButton.focus();
 		}
