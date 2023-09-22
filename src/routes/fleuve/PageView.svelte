@@ -35,23 +35,5 @@
 		align-items: flex-start;
 		position: relative;
 		pointer-events: none;
-
-		// &.nested {
-		// 	.card-container {
-		// 		margin-left: 24px;
-		// 		position: relative;
-		// 		&::before {
-		// 			position: absolute;
-		// 			// display: block;
-		// 			content: '';
-		// 			height: 1px;
-		// 			width: 24px;
-		// 			transition: width 0.2s ease-in-out;
-		// 			background-color: black;
-		// 			top: 25px;
-		// 			right: 100%;
-		// 		}
-		// 	}
-		// }
 	}
 </style>

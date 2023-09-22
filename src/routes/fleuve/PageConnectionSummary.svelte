@@ -16,7 +16,7 @@
 </script>
 
 {#if childCount > 0}
-	<button class="connection-summary" class:active={page.active} on:click={onClick} {tabindex}>
+	<button type="button" class="connection-summary" class:active={page.active} on:click={onClick} {tabindex}>
 		<div class="count-card">
 			+{childCount} more
 		</div>

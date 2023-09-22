@@ -22,6 +22,6 @@
 
 {#if !isShowingTutorial}
 	<p>
-		<button class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
+		<button type="button" class="tutorial-button" on:click={onClickTutorial}>Show Tutorial</button>
 	</p>
 {/if}

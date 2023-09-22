@@ -9,5 +9,5 @@
 </script>
 
 <p>
-	<button class="reset-button" on:click={onClickReset}>Reset data…</button>
+	<button type="button" class="reset-button" on:click={onClickReset}>Reset data…</button>
 </p>

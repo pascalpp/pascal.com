@@ -45,6 +45,7 @@
 <div class="description" class:active class:focus>
 	{#if active && !editing}
 		<button
+			type="button"
 			class="edit-button"
 			on:click={onClickEdit}
 			on:keydown={onKeyDownEditButton}

@@ -39,7 +39,7 @@
 
 <div class="aspect-ratio">
 	<label for="foo">Aspect Ratio</label>
-	<button on:keydown={onKeydown} on:click={onClick} bind:this={button}>
+	<button type="button" on:keydown={onKeydown} on:click={onClick} bind:this={button}>
 		<span data-value="portrait" class:active={$settings.aspectRatioType === 'portrait'} bind:this={portraitButton}>
 			<File />
 		</span>

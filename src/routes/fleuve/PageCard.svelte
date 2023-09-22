@@ -173,7 +173,7 @@
 	on:focusout={onFocusOut}
 	bind:this={card}
 >
-	<button class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
+	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<PageDescription {page} {tabindex} />
