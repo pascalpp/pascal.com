@@ -34,7 +34,7 @@
 	function onClick(event: MouseEvent) {
 		const target = event.target as HTMLElement;
 		const value = Number(target.dataset.value);
-		$settings.cardAnimationSpeed = value;
+		if (speeds.includes(value)) $settings.cardAnimationSpeed = value;
 		button.focus();
 	}
 </script>

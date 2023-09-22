@@ -145,6 +145,7 @@
 				opacity: 1;
 				&.control {
 					background-color: fade(steelblue, 5%);
+					box-shadow: inset 0 0 0 1px fade(black, 10%);
 				}
 			}
 
