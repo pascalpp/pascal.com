@@ -38,8 +38,6 @@
 		updatePage({ ...page, title });
 		const selection = window.getSelection();
 		selection?.removeAllRanges();
-		// const parentCard = target.closest('.page-card') as HTMLElement;
-		// parentCard?.focus();
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
