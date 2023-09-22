@@ -15,10 +15,12 @@
 
 	function onKeydown(event: KeyboardEvent) {
 		if (event.key === 'ArrowRight') {
+			event.preventDefault();
 			centerButton.click();
 			centerButton.focus();
 		}
 		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
 			topButton.click();
 			topButton.focus();
 		}
@@ -79,6 +81,10 @@
 				padding: 0 16px;
 				padding: 4px 12px;
 				width: 50%;
+
+				+ span {
+					border-left: 1px solid black;
+				}
 
 				&:focus {
 					background-color: #f8f8f8;
