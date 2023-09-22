@@ -113,11 +113,11 @@ latest: 0.2.1
 - [ ] Undo support
 - [ ] Some storage mechanism besides localstorage
 - [ ] Drag and drop to rearrange cards
-- [ ] Scale font size with page scale
+- [x] Scale font size with page scale
 - [ ] Better mobile UX
 - [ ] Checklists in Markdown
-- [ ] Escape key in title: revert changes
-- [ ] Escape key in description: if changes, show confirm dialog before reverting
+- [ ] Escape key in title: revert changes?
+- [ ] Escape key in description: if changes, show confirm dialog before reverting?
 
 # Random ideas I might try
 
