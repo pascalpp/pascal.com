@@ -1,5 +1,5 @@
 ---
-latest: 0.2.1
+latest: 0.2.2
 ---
 
 <script>
@@ -7,6 +7,11 @@ latest: 0.2.1
 </script>
 
 # Changelog
+
+### Version 0.2.2
+
+- Can now toggle the alignment of flows between top-aligned and center-aligned.
+- Improved description editor and scrolling.
 
 ### Version 0.2.1
 
@@ -132,7 +137,7 @@ latest: 0.2.1
 - [ ] Delete to remove a page; option-delete to remove a page and its children?
 - [ ] Hotkey cheat sheet
 - [ ] Address a11y issues
-- [ ] Make alignment a setting: top-aligned or center-aligned
+- [x] Make alignment a setting: top-aligned or center-aligned
 
 <details>
 	<summary>Feedback from a guy I know.</summary>
