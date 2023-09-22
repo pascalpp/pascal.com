@@ -132,6 +132,7 @@
 			width: 100%;
 			opacity: 0.8;
 
+			&:active,
 			&:focus-within {
 				opacity: 1;
 				&.control {
