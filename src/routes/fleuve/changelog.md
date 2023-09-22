@@ -1,5 +1,5 @@
 ---
-latest: 0.2.2
+latest: 0.2.3
 ---
 
 <script>
@@ -7,6 +7,11 @@ latest: 0.2.2
 </script>
 
 # Changelog
+
+### Version 0.2.3
+
+- Much improved behavior when navigation from card to card, keeping the current card in view.
+- Allow drilling down deep flows even when opacity is low.
 
 ### Version 0.2.2
 
@@ -25,6 +30,9 @@ latest: 0.2.2
 - Titles can be up to 3 lines long, with truncation.
 - Better transitions when activating a card.
 
+<details>
+	<summary>Older versions</summary>
+
 ### Version 0.1.14
 
 - Settings UI improvements.
@@ -34,9 +42,6 @@ latest: 0.2.2
 - Renamed Opacity setting to Visibility.
 - Hide connections and show connection summary when Visibility is 0.
 - Improved UX when adding an empty page above the current page.
-
-<details>
-	<summary>Older versions</summary>
 
 ### Version 0.1.12
 
