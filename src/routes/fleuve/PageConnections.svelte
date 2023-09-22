@@ -52,7 +52,8 @@
 
 		opacity: var(--child-opacity, 0.5);
 		transition: opacity var(--card-animation-speed) ease-in-out;
-		&.active {
+		&.active,
+		&:focus-within {
 			opacity: 1;
 		}
 
