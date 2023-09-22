@@ -84,6 +84,7 @@
 
 <style lang="less">
 	.pages {
+		width: max-content;
 		padding: 10vw;
 		box-sizing: border-box;
 		min-width: 100%;
