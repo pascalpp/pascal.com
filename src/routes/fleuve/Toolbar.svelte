@@ -76,7 +76,6 @@
 	.toolbar {
 		position: fixed;
 		margin: 16px;
-		font-size: 13px;
 		z-index: 1;
 		isolation: isolate;
 		opacity: 0.3;
@@ -99,7 +98,7 @@
 			opacity: 0;
 			max-height: 0;
 			pointer-events: none;
-			transition: all 0.2s ease-in-out;
+			transition: all 0.15s ease-in-out;
 		}
 
 		&.show .toolbar-panel {

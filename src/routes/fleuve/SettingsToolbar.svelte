@@ -6,10 +6,22 @@
 	import SettingsIcon from './settings.svg?component';
 	import ResetButton from './ResetButton.svelte';
 	import ShowTutorialButton from './ShowTutorialButton.svelte';
+	// import { onMount } from 'svelte';
+
+	// let show = false;
+	// onMount(() => (show = true));
+
+	function getVisbleLabel(opacity: number): string {
+		if (opacity === 1) return 'All';
+		return String(opacity * 10 + 1);
+	}
+
+	$: visibleLabel = getVisbleLabel($settings.childOpacity);
 </script>
 
 <Toolbar top right tabindex={1}>
 	<button
+		type="button"
 		class="settings-button"
 		slot="button"
 		let:show
@@ -23,36 +35,48 @@
 		<SettingsIcon />
 	</button>
 	<div class="settings-panel" slot="panel" let:tabindex>
-		<section>
+		<section class="control">
 			<Slider
 				id="active-page-scale"
-				label={`Large Card Size: ${$settings.activePageScale}x`}
+				label={`Large card size: ${$settings.activePageScale}x`}
 				min={1}
 				max={3}
 				step={0.25}
 				bind:value={$settings.activePageScale}
-				title="Change the scale of active pages"
+				title="Change the scale of active cards"
 				{tabindex}
 			/>
 		</section>
-		<section>
+		<section class="control">
 			<Slider
-				id="active-page-scale"
-				label={`Aspect Ratio: ${$settings.aspectRatio}`}
+				id="aspect-ratio"
+				label={`Aspect ratio: ${$settings.aspectRatio}`}
 				min={0.75}
 				max={2}
 				step={0.05}
 				bind:value={$settings.aspectRatio}
-				title="Change the scale of active pages"
+				title="Change the shape of active cards"
 				{tabindex}
 			/>
 		</section>
-		<section>
+		<section class="control">
 			<Slider
 				id="child-opacity"
-				label="Visibility"
+				label={`Visible layers: ${visibleLabel}`}
 				bind:value={$settings.childOpacity}
-				title="Change the opacity for childen of the active page"
+				title="How many levels to show below the active card"
+				{tabindex}
+			/>
+		</section>
+		<section class="control">
+			<Slider
+				id="card-animation-speed"
+				label={`Animation speeed: ${$settings.cardAnimationSpeed}s`}
+				min={0}
+				max={0.5}
+				step={0.05}
+				bind:value={$settings.cardAnimationSpeed}
+				title="Change the speed of card expanstion"
 				{tabindex}
 			/>
 		</section>
@@ -75,6 +99,7 @@
 	.settings-button {
 		padding: 8px;
 		border-radius: 4px;
+		border: 1px solid transparent;
 		:global(svg) {
 			width: 24px;
 			height: 24px;
@@ -82,28 +107,37 @@
 		}
 
 		&.show,
-		&:focus,
 		&:hover {
 			border: 1px solid fade(black, 30%);
 			background-color: white;
-			outline: 1px solid fade(black, 50%);
 		}
 		&:focus {
-			outline: 2px solid fade(black, 50%);
+			border: 1px solid fade(black, 30%);
+			background-color: white;
+			outline: 1px solid black;
 		}
 	}
 
 	.settings-panel {
-		padding: 0 4px;
+		color: black;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 170px;
+		width: 240px;
 
 		section {
-			padding: 12px 8px;
+			padding: 12px 16px;
 			padding-bottom: 16px;
 			width: 100%;
+			opacity: 0.8;
+
+			&:focus-within {
+				opacity: 1;
+				&.control {
+					background-color: fade(steelblue, 5%);
+				}
+			}
 
 			+ section {
 				border-top: 1px solid fade(black, 10%);

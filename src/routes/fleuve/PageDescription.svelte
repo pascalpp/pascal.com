@@ -87,9 +87,11 @@
 		isolation: isolate;
 
 		&.active {
+			@height-transition-time: calc(var(--card-animation-speed) * 2);
+			transition: opacity @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out,
+				border-color @height-transition-time ease-in-out;
+			transition-delay: @height-transition-time;
 			pointer-events: auto;
-			transition: opacity 0.2s ease-in-out, max-height 0.2s ease-in-out, border-color 0.2s ease-in-out;
-			transition-delay: 0.2s;
 			border-top: 1px solid fade(black, 30%);
 			opacity: 1;
 			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));

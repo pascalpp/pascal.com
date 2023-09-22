@@ -13,7 +13,20 @@ export type Settings = {
 	aspectRatio: number;
 	aspectRatioType: AspectRatio;
 	showDescription: boolean;
+	cardAnimationSpeed: number;
 };
+
+function getDefaultState(): Settings {
+	return {
+		version: metadata.latest,
+		childOpacity: 0.5,
+		activePageScale: 1.75,
+		aspectRatio: 1.2,
+		aspectRatioType: 'landscape' as AspectRatio,
+		showDescription: true,
+		cardAnimationSpeed: 0.2,
+	};
+}
 
 export const settings = writable<Settings>(getStoredState() || getDefaultState());
 
@@ -29,24 +42,9 @@ function getStoredState(): Settings | undefined {
 			const state = window?.localStorage.getItem(storageKey);
 			const parsed = state && JSON.parse(state);
 			const defaults = getDefaultState();
-			if (parsed?.version !== metadata.latest) {
-				return defaults;
-			} else {
-				return { ...defaults, ...parsed };
-			}
+			return { ...defaults, ...parsed };
 		} catch {
 			// don't care
 		}
 	}
-}
-
-function getDefaultState(): Settings {
-	return {
-		version: metadata.latest,
-		childOpacity: 0.5,
-		activePageScale: 1.75,
-		aspectRatio: 1.2,
-		aspectRatioType: 'landscape' as AspectRatio,
-		showDescription: true,
-	};
 }

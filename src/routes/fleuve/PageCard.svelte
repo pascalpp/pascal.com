@@ -209,10 +209,11 @@
 		}
 
 		// active page animation
-		@width-transition-time: 0.1s;
-		@width-transition-delay: 0.2s;
-		@height-transition-time: 0.2s;
-		@height-transition-delay: 0.1s;
+		@width-transition-time: calc(var(--card-animation-speed) * 2);
+		@width-transition-delay: var(--card-animation-speed);
+		@height-transition-time: var(--card-animation-speed);
+		@height-transition-delay: calc(var(--card-animation-speed) * 2);
+
 		min-width: var(--card-min-width);
 		max-width: var(--card-max-width);
 		min-height: var(--card-min-height);

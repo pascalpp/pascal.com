@@ -76,7 +76,7 @@
 		font-size: 16px;
 		padding: 8px 16px;
 		line-height: 1.5;
-		transition: font-size 0.2s ease-in-out;
+		transition: font-size var(--card-animation-speed) ease-in-out;
 		overflow: hidden;
 		pointer-events: none;
 		flex-shrink: 0;
