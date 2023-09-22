@@ -27,17 +27,19 @@ function getFocusableElements(): HTMLElement[] {
 }
 
 export function focusPageId(id?: string): HTMLElement | undefined {
-	if (!id) return undefined;
-	const selector = `[data-page-id="${id}"]`;
-	return focusSelector(selector);
+	if (!id) return;
+	const element = document.getElementById(id);
+	return focusElement(element);
 }
 
 export function focusSelector(selector?: string): HTMLElement | undefined {
-	if (!selector) return undefined;
-
+	if (!selector) return;
 	const element = document.querySelector(selector) as HTMLElement;
-	if (!element) return undefined;
+	return focusElement(element);
+}
 
+export function focusElement(element: HTMLElement | undefined | null): HTMLElement | undefined {
+	if (!element) return;
 	element.focus();
 	element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
 	return element;
