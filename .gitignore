@@ -12,4 +12,5 @@ vite.config.ts.timestamp-*
 /srcx
 *.log
 test*.sh
+test-results
 *.sitemap
