@@ -241,6 +241,7 @@
 			align-items: stretch;
 			display: flex;
 			flex-direction: column;
+			max-height: var(--height);
 		}
 
 		&:focus-within {
