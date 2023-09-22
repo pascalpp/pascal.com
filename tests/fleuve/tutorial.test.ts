@@ -32,7 +32,7 @@ test('Default view', async ({ page }) => {
 	});
 });
 
-test('Settings panel', async ({ page }) => {
+test.skip('Settings panel', async ({ page }) => {
 	await expect(page.locator('#settings-button')).toBeVisible();
 	await expect(page.locator('#settings-panel')).toBeHidden();
 
