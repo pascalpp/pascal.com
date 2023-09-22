@@ -29,6 +29,10 @@
 
 	let card: HTMLDivElement;
 
+	const tutorialId = 'tutorial-start-page';
+	const deleteConfirmation = 'Are you sure you want to remove this card and all of its connections?';
+	const deleteTutorialConfimation = 'You’re about to delete this tutorial. You can restore it in the settings menu.';
+
 	function onClick() {
 		activatePage(page.id);
 		const firstTabbable = card.querySelector('[tabindex]') as HTMLElement;
@@ -155,7 +159,9 @@
 
 		if (['Backspace', 'Delete'].includes(event.key)) {
 			event.preventDefault();
-			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
+			const isTutorial = page.id === tutorialId;
+			const message = isTutorial ? deleteTutorialConfimation : deleteConfirmation;
+			const confirmed = confirm(message);
 			if (confirmed) {
 				removePage(page.id);
 				focusPageId(nextSiblingId) || focusPageId(previousSiblingId) || focusNextElement();
