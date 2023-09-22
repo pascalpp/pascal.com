@@ -87,8 +87,6 @@
 		width: max-content;
 		padding: 10vw;
 		box-sizing: border-box;
-		min-width: 100%;
-		min-height: 100%;
 		isolation: isolate;
 		@media screen and (max-width: 800px) {
 			padding: 5vw;
