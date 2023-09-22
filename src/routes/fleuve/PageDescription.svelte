@@ -55,7 +55,7 @@
 	}
 </script>
 
-<div class="description" class:active class:focus>
+<div class="description" class:active class:focus class:editing>
 	{#if active && !editing}
 		<button
 			type="button"
@@ -69,23 +69,25 @@
 		</button>
 	{/if}
 
-	{#if editing}
-		<div
-			class="editor"
-			bind:this={editor}
-			tabindex={active && focus ? tabindex : -1}
-			contenteditable={active}
-			on:keydown={onKeyDownEditor}
-			on:click={onClickEditor}
-			on:blur={onBlur}
-		>
-			{page.description || ''}
-		</div>
-	{:else}
-		<div class="content markdown" on:dblclick={onClickEdit}>
-			{@html marked.parse(page.description || '')}
-		</div>
-	{/if}
+	<div class="scrollable">
+		{#if editing}
+			<div
+				class="editor"
+				bind:this={editor}
+				tabindex={active && focus ? tabindex : -1}
+				contenteditable={active}
+				on:keydown={onKeyDownEditor}
+				on:click={onClickEditor}
+				on:blur={onBlur}
+			>
+				{page.description || ''}
+			</div>
+		{:else}
+			<div class="content markdown" on:dblclick={onClickEdit}>
+				{@html marked.parse(page.description || '')}
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style lang="less">
@@ -107,8 +109,8 @@
 			transition: opacity @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out,
 				border-color @height-transition-time ease-in-out;
 			transition-delay: @height-transition-time;
-			pointer-events: auto;
 			border-top: 1px solid fade(black, 30%);
+			pointer-events: auto;
 			opacity: 1;
 			--width: calc(var(--card-max-width) * var(--active-page-scale, 1));
 			--height: calc(var(--width) / var(--aspect-ratio));
@@ -116,28 +118,34 @@
 			max-height: var(--height);
 		}
 
-		.editor,
-		.content {
+		.scrollable {
+			overflow: auto;
+			flex-grow: 1;
 			padding: 18px;
-			flex: 1;
-			padding-bottom: 48px;
-			outline: none;
-			overflow-y: scroll;
-			mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 40px);
-
+		}
+		&:not(.editing) .scrollable {
+			mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 20px);
+		}
+		&.editing .scrollable {
 			&:focus-within {
 				outline-style: auto;
 				outline-width: 2px;
 				outline-color: blue;
-				outline-offset: -10px;
+				outline-offset: -4px;
 			}
 		}
-		.editor {
+
+		.editor,
+		.content {
 			display: block;
+			padding-bottom: 48px;
+			outline: none;
+		}
+		.editor {
 			white-space: pre-wrap;
 			overflow-wrap: break-word;
 			min-height: 100%;
-			padding-bottom: 48px;
+			padding-bottom: 36px;
 		}
 
 		.content {
@@ -153,7 +161,7 @@
 			position: absolute;
 			cursor: pointer;
 			right: 16px;
-			top: 16px;
+			bottom: 16px;
 			z-index: 1;
 			:global(svg) {
 				width: auto;
@@ -176,7 +184,7 @@
 		&:hover,
 		&.focus {
 			.edit-button {
-				opacity: 0.3;
+				opacity: 0.5;
 				&:hover,
 				&:focus {
 					opacity: 1;
