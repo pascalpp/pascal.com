@@ -21,6 +21,7 @@
 	import { pageStore, addRootPage } from './pages.store';
 	import { onMount } from 'svelte';
 	import { focusSelector } from './focusHelpers';
+	import getKeySummary from './getKeySummary';
 
 	let root: Page;
 
@@ -34,6 +35,17 @@
 	function onFocusOut(event: FocusEvent) {
 		var target = event.target as HTMLElement;
 		document.lastActiveElement = target;
+	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		const summary = getKeySummary(event);
+		if (!summary) return;
+
+		console.log(summary);
+		if (summary === 'Cmd K') {
+			const settingsButton = document.getElementById('settings-button');
+			settingsButton?.click();
+		}
 	}
 
 	onMount(() => {
@@ -52,9 +64,11 @@
 			activateFirstPage();
 		});
 
-		document.addEventListener('focusout', onFocusOut);
+		document.body.addEventListener('keydown', onKeyDown);
+		document.body.addEventListener('focusout', onFocusOut);
 		return () => {
-			document.removeEventListener('focusout', onFocusOut);
+			document.body.removeEventListener('keydown', onKeyDown);
+			document.body.removeEventListener('focusout', onFocusOut);
 		};
 	});
 </script>

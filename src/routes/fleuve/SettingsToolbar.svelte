@@ -36,7 +36,7 @@
 	>
 		<SettingsIcon />
 	</button>
-	<div class="settings-panel" slot="panel" let:tabindex>
+	<div class="settings-panel" id="settings-panel" slot="panel" let:tabindex let:show>
 		<section class="control">
 			<Slider
 				id="active-page-scale"

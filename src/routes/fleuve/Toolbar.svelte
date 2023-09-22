@@ -67,7 +67,7 @@
 	<slot>
 		<slot name="button" {show} {toggle} {tabindex} />
 		<div class="toolbar-panel">
-			<slot name="panel" {toggle} tabindex={show ? tabindex : -1} />
+			<slot name="panel" {show} {toggle} tabindex={show ? tabindex : -1} />
 		</div>
 	</slot>
 </div>
