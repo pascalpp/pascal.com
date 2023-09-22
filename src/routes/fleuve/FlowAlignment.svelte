@@ -82,6 +82,10 @@
 				padding: 4px 12px;
 				width: 50%;
 
+				+ span {
+					border-left: 1px solid black;
+				}
+
 				&:focus {
 					background-color: #f8f8f8;
 				}
