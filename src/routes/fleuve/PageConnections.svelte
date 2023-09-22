@@ -19,6 +19,7 @@
 	class:active={page.active || opacity === 0}
 	class:show-left-border={showLeftBorder}
 	class:root={!parentId}
+	data-flow-alignment={$settings.flowAlignment}
 >
 	{#if page.active || opacity > 0}
 		{#each connections as connectionId, index (connectionId)}
@@ -91,6 +92,9 @@
 					top: @top-offset;
 					right: 100%;
 				}
+				&[data-flow-alignment='center']::before {
+					top: 50%;
+				}
 				// left border
 				&::after {
 					position: absolute;
@@ -100,6 +104,9 @@
 					border-left: 1px solid black;
 					top: @top-offset;
 					bottom: 0;
+				}
+				&[data-flow-alignment='center']::after {
+					top: 0;
 				}
 			}
 
@@ -117,6 +124,9 @@
 					top: @top-offset;
 					right: 100%;
 				}
+			}
+			&[data-flow-alignment='center'] :global(> *)::before {
+				top: 50%;
 			}
 
 			// special rounded stem on the last child
@@ -150,6 +160,41 @@
 					height: 100%;
 					bottom: 0;
 					right: calc(100% + (@left-offset / 2));
+				}
+			}
+
+			&[data-flow-alignment='center'] {
+				// special rounded stem on the first child in the center-aligned layout,
+				// but only if there are children below it
+				:global(> :first-child:not(:last-child)) {
+					&::before {
+						position: absolute;
+						display: block;
+						content: '';
+						width: @left-offset;
+						border: none;
+						background-color: transparent;
+						border-left: 1px solid black;
+						border-top: 1px solid black;
+						border-top-left-radius: 4px;
+						height: 50%;
+						top: 50%;
+						right: 100%;
+						z-index: 2;
+					}
+					// box to paint over bottom of .connections left border
+					&::after {
+						z-index: 1;
+						background-color: #f3f3f3; // needs to match background color
+						position: absolute;
+						display: block;
+						content: '';
+						width: calc(@left-offset / 2);
+						border: none;
+						height: 100%;
+						bottom: 0;
+						right: calc(100% + (@left-offset / 2));
+					}
 				}
 			}
 		}

@@ -6,6 +6,8 @@ const storageKey = 'settings';
 
 export type AspectRatio = 'landscape' | 'portrait' | 'square';
 
+export type FlowAlignment = 'top' | 'center';
+
 export type Settings = {
 	version: string;
 	childOpacity: number;
@@ -14,6 +16,7 @@ export type Settings = {
 	aspectRatioType: AspectRatio;
 	showDescription: boolean;
 	cardAnimationSpeed: number;
+	flowAlignment: 'top' | 'center';
 };
 
 function getDefaultState(): Settings {
@@ -25,6 +28,7 @@ function getDefaultState(): Settings {
 		aspectRatioType: 'landscape' as AspectRatio,
 		showDescription: true,
 		cardAnimationSpeed: 0.2,
+		flowAlignment: 'top',
 	};
 }
 

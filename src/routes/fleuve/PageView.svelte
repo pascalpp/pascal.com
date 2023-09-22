@@ -3,6 +3,7 @@
 	import PageConnections from './PageConnections.svelte';
 	import type { Page, PageId } from './pages.store';
 	import { pageStore } from './pages.store';
+	import { settings } from './settings.store';
 
 	export let pageId: PageId;
 	export let parentId: PageId | undefined = undefined;
@@ -19,7 +20,7 @@
 
 {#key page?.id}
 	{#if page}
-		<div class="page" class:active={page.active}>
+		<div class="page" class:active={page.active} data-flow-alignment={$settings.flowAlignment}>
 			{#if parentId}
 				<PageCard {page} {tabindex} {parentId} {previousSiblingId} {nextSiblingId} />
 			{/if}
@@ -32,8 +33,14 @@
 	.page {
 		display: flex;
 		flex-direction: row;
-		align-items: flex-start;
 		position: relative;
 		pointer-events: none;
+
+		&[data-flow-alignment='top'] {
+			align-items: flex-start;
+		}
+		&[data-flow-alignment='center'] {
+			align-items: center;
+		}
 	}
 </style>

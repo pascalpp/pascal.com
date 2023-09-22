@@ -27,6 +27,7 @@
 	.connection-summary {
 		pointer-events: all;
 		outline: none;
+		padding: 8.5px 0;
 
 		.count-card {
 			display: block;
@@ -38,7 +39,6 @@
 			font-size: 12px;
 			line-height: 2em;
 			border-radius: 4px;
-			transform: translateY(8.5px);
 			width: auto;
 			white-space: nowrap;
 			opacity: 0.5;

@@ -2,7 +2,7 @@
 	import Toolbar from './Toolbar.svelte';
 	import Slider from './Slider.svelte';
 	import { settings } from './settings.store';
-	import AspectRatio from './AspectRatio.svelte';
+	import FlowAlignmentToggle from './FlowAlignment.svelte';
 	import SettingsIcon from './settings.svg?component';
 	import ResetButton from './ResetButton.svelte';
 	import ShowTutorialButton from './ShowTutorialButton.svelte';
@@ -79,6 +79,9 @@
 				title="Change the speed of card expanstion"
 				{tabindex}
 			/>
+		</section>
+		<section class="control">
+			<FlowAlignmentToggle />
 		</section>
 		<!-- <section>
 			<AspectRatio />
