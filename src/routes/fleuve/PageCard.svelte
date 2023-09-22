@@ -164,7 +164,7 @@
 	}
 
 	function onTransitionEnd(event: TransitionEvent) {
-		if (event.propertyName === 'min-width' && page.active) {
+		if (event.propertyName === 'min-width' && page.focus) {
 			focusPageId(page.id);
 		}
 	}
