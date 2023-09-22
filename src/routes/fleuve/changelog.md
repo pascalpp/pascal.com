@@ -124,14 +124,15 @@ latest: 0.2.1
 - [ ] CSS to auto-show parents of active page (instead of clicking to make them active)
 - [ ] Shift-click to activate multiple pages?
 - [ ] Use transform: scale on whole flow instead of page height?
-- [ ] Remove extra spikes on connection wiring?
+- [x] Remove extra spikes on connection wiring?
 - [ ] Thicker wires for active connections?
 - [ ] Svelte transitions?
-- [ ] scroll mask at bottom of description
-- [ ] fix scrollbar inset on description field (should hug the edge of the card)
-- [ ] Delete to remove a page; option-delete to remove a page and its children
+- [x] scroll mask at bottom of description
+- [x] fix scrollbar inset on description field (should hug the edge of the card)
+- [ ] Delete to remove a page; option-delete to remove a page and its children?
 - [ ] Hotkey cheat sheet
 - [ ] Address a11y issues
+- [ ] Make alignment a setting: top-aligned or center-aligned
 
 <details>
 	<summary>Feedback from a guy I know.</summary>
