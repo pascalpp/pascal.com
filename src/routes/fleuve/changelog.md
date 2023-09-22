@@ -131,6 +131,7 @@ latest: 0.2.1
 - [ ] fix scrollbar inset on description field (should hug the edge of the card)
 - [ ] Delete to remove a page; option-delete to remove a page and its children
 - [ ] Hotkey cheat sheet
+- [ ] Address a11y issues
 
 <details>
 	<summary>Feedback from a guy I know.</summary>
