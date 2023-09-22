@@ -4,7 +4,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 // set custom viewport for all desktop browsers.
 // mobile devices will use their own default viewport.
 const desktopOptions = {
-	viewport: { width: 1024, height: 720 },
+	viewport: { width: 1024, height: 800 },
 };
 
 const config: PlaywrightTestConfig = {
@@ -41,7 +41,7 @@ const config: PlaywrightTestConfig = {
 		},
 
 		{
-			name: 'mobile-safari',
+			name: 'iphone',
 			use: {
 				...devices['iPhone 12'],
 			},
