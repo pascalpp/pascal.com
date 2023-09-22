@@ -144,6 +144,7 @@
 		<button
 			type="button"
 			class="edit-button"
+			id={`edit-description-${page.id}`}
 			on:click={onClickEdit}
 			on:keydown={onKeyDownEditButton}
 			tabindex={active && focus ? tabindex : -1}

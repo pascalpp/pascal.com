@@ -185,7 +185,7 @@
 	on:transitionend={onTransitionEnd}
 	bind:this={card}
 >
-	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
+	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} id={page.id} />
 	<div class="page-card-content">
 		<PageTitle {page} {tabindex} />
 		<PageDescription
