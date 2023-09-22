@@ -153,7 +153,7 @@
 			}
 		}
 
-		if (event.key === 'Backspace') {
+		if (['Backspace', 'Delete'].includes(event.key)) {
 			event.preventDefault();
 			const confirmed = confirm('Are you sure you want to remove this card and all of its connections?');
 			if (confirmed) {
