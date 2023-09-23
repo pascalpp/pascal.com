@@ -20,7 +20,7 @@
 	$: visibleLabel = getVisbleLabel($settings.childOpacity);
 </script>
 
-<Toolbar top right taborder={0} id="settings-toolbar">
+<Toolbar top right taborder={0} id="settings-menu" label="Settings menu">
 	<button
 		type="button"
 		class="settings-button"
@@ -29,14 +29,16 @@
 		let:toggle
 		let:taborder
 		on:click={toggle}
-		aria-label="Settings"
-		title="Settings"
+		aria-label="Settings button"
+		title="Open settings panel"
 		class:show
 		tabindex={taborder}
+		aria-controls="settings-menu"
+		aria-expanded={show}
 	>
 		<SettingsIcon />
 	</button>
-	<div class="settings-panel" id="settings-panel" slot="panel" let:taborder let:show>
+	<div class="settings-panel" slot="panel" let:taborder>
 		<section class="control">
 			<Slider
 				id="active-page-scale"

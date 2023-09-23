@@ -4,8 +4,18 @@
 	import { metadata } from './changelog.md';
 </script>
 
-<Toolbar bottom right>
-	<button type="button" slot="button" let:toggle on:click={toggle} aria-label="View changelog" title="View changelog">
+<Toolbar bottom right taborder={0} id="changelog" label="Changelog">
+	<button
+		type="button"
+		slot="button"
+		let:show
+		let:toggle
+		on:click={toggle}
+		aria-label="Version button"
+		title="View changelog"
+		aria-controls="changelog"
+		aria-expanded={show}
+	>
 		Version {metadata.latest}
 	</button>
 	<div class="changelog-panel" slot="panel">
