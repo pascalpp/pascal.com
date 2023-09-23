@@ -33,19 +33,19 @@ test('Default view', async ({ page }) => {
 });
 
 test('Settings menu', async ({ page }) => {
-	await expect(page.getByRole('button', { name: 'Settings button' })).toBeAttached();
-	await expect(page.getByRole('button', { name: 'Settings button' })).toBeVisible();
-	await expect(page.getByRole('menu', { name: 'Settings menu' })).toBeAttached();
-	await expect(page.getByRole('menu', { name: 'Settings menu' })).not.toBeVisible();
+	await expect(page.getByLabel('Settings button')).toBeAttached();
+	await expect(page.getByLabel('Settings button')).toBeVisible();
+	await expect(page.getByLabel('Settings menu')).toBeAttached();
+	await expect(page.getByLabel('Settings menu')).not.toBeVisible();
 
-	await page.getByRole('button', { name: 'Settings button' }).click();
-	await expect(page.getByRole('menu', { name: 'Settings menu' })).toBeVisible();
+	await page.getByLabel('Settings button').click();
+	await expect(page.getByLabel('Settings menu')).toBeVisible();
 
-	await expect(page.getByRole('menu', { name: 'Settings menu' })).toHaveScreenshot('settings-panel.png', {
+	await expect(page.getByLabel('Settings menu')).toHaveScreenshot('settings-panel.png', {
 		maxDiffPixelRatio,
 		threshold,
 	});
 
-	await page.getByRole('button', { name: 'Settings button' }).click();
+	await page.getByLabel('Settings button').click();
 	await expect(page.getByRole('menu', { name: 'Settings menu' })).not.toBeVisible();
 });
