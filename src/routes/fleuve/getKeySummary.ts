@@ -15,7 +15,8 @@ export default function getKeySummary(event: KeyboardEvent): string | undefined 
 	return [modifiers, key].filter(Boolean).join(' ');
 }
 
-function getKeyName(key: string): string {
+function getKeyName(key: string): string | undefined {
+	if (!key) return;
 	if (key === ' ') return 'Space';
 	if (key.length === 1) return key.toUpperCase();
 	return key;
