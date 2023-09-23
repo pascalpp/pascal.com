@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
-// const maxDiffPixelRatio = 0.01;
-// const threshold = 0.3;
+const maxDiffPixelRatio = 0.1;
+const threshold = 0.3;
 // const fullPage = true;
 
 test.beforeEach(async ({ page }) => {
@@ -32,19 +32,20 @@ test('Default view', async ({ page }) => {
 	// });
 });
 
-test.skip('Settings panel', async ({ page }) => {
-	await expect(page.locator('#settings-button')).toBeVisible();
-	await expect(page.locator('#settings-panel')).toBeHidden();
+test('Settings menu', async ({ page }) => {
+	await expect(page.getByRole('button', { name: 'Settings button' })).toBeAttached();
+	await expect(page.getByRole('button', { name: 'Settings button' })).toBeVisible();
+	await expect(page.getByRole('menu', { name: 'Settings menu' })).toBeAttached();
+	await expect(page.getByRole('menu', { name: 'Settings menu' })).not.toBeVisible();
 
-	// expect(page.locator('#settings-panel')).toBeVisible();
+	await page.getByRole('button', { name: 'Settings button' }).click();
+	await expect(page.getByRole('menu', { name: 'Settings menu' })).toBeVisible();
 
-	// await expect(page.locator('#settings-panel')).toHaveScreenshot('settings-panel.png', {
-	// 	maxDiffPixelRatio,
-	// 	threshold,
-	// });
+	await expect(page.getByRole('menu', { name: 'Settings menu' })).toHaveScreenshot('settings-panel.png', {
+		maxDiffPixelRatio,
+		threshold,
+	});
 
-	// expect(await page.locator('#settings-panel').screenshot()).toMatchSnapshot('settings-panel.png', {
-	// 	maxDiffPixelRatio,
-	// 	threshold,
-	// });
+	await page.getByRole('button', { name: 'Settings button' }).click();
+	await expect(page.getByRole('menu', { name: 'Settings menu' })).not.toBeVisible();
 });
