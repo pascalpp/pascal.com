@@ -42,7 +42,7 @@
 		const summary = getKeySummary(event);
 		if (!summary) return;
 
-		console.log(summary);
+		// console.log(summary);
 		if (summary === 'Cmd K') {
 			const settingsButton = document.getElementById('settings-button');
 			settingsButton?.click();
