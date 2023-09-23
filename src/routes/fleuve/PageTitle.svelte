@@ -58,7 +58,7 @@
 	}
 </script>
 
-<div class="title" class:active={page.active} class:fill={!$settings.showDescription}>
+<div class="title" class:active={page.active} class:fill={!$settings.showDescription} data-testid="Title">
 	<div
 		class="editor"
 		role="textbox"
@@ -70,7 +70,6 @@
 		on:focus={onFocus}
 		on:blur={onBlur}
 		on:keydown={onKeyDown}
-		data-testid="Title Editor"
 	>
 		{page.title}
 	</div>

@@ -145,7 +145,7 @@
 	}
 </script>
 
-<div class="description" class:active class:focus class:editing>
+<div class="description" class:active class:focus class:editing data-testid="Description">
 	{#if active && !editing}
 		<button
 			type="button"
@@ -172,7 +172,6 @@
 				role="textbox"
 				aria-multiline="true"
 				tabindex={taborder}
-				data-testid="Description Editor"
 			>
 				{page.description || ''}
 			</div>
