@@ -91,7 +91,7 @@
 
 		<div class="pages">
 			{#if root}
-				<PageView pageId="root" tabindex={1} />
+				<PageView pageId="root" taborder={0} />
 			{/if}
 		</div>
 	</main>
