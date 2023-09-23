@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Tutorial flow', async ({ page }) => {
-	await expect(page.getByTestId('Fleuve')).toHaveScreenshot('fleuve.png');
+	await expect(page.getByTestId('Fleuve')).toHaveScreenshot('fleuve.png', { scale: 'device' });
 
 	// focus the first card
 	await page.getByTestId('Fleuve').press('ArrowRight');
@@ -31,7 +31,7 @@ test('Tutorial flow', async ({ page }) => {
 	await page.getByTestId('This is a card').press('ArrowRight');
 	expect(page.getByTestId('This is a card')).toHaveClass(/active/);
 	expect(page.getByTestId('Fleuve')).toHaveClass(/active/);
-	await expect(page.getByTestId('This is a card')).toHaveScreenshot('card-1.png');
+	await expect(page.getByTestId('This is a card')).toHaveScreenshot('card-1.png', { scale: 'device' });
 
 	// activate the second card
 	await page.getByTestId('This is a card').press('ArrowDown');
@@ -100,15 +100,15 @@ test('Tutorial flow', async ({ page }) => {
 	await page.keyboard.press('ArrowRight');
 	await page.keyboard.press('Enter');
 	await page.keyboard.press('Shift+ArrowDown');
-	await expect(page).toHaveScreenshot('reorder-1.png');
+	await expect(page).toHaveScreenshot('reorder-1.png', { scale: 'device' });
 	await page.keyboard.press('Shift+ArrowRight');
 	await expect(page.getByTestId('Insert cards')).toHaveClass(/active/);
-	await expect(page).toHaveScreenshot('reorder-2.png');
+	await expect(page).toHaveScreenshot('reorder-2.png', { scale: 'device' });
 	await page.keyboard.press('Shift+ArrowLeft');
 	await expect(page.getByTestId('Insert cards')).not.toHaveClass(/active/);
-	await expect(page).toHaveScreenshot('reorder-3.png');
+	await expect(page).toHaveScreenshot('reorder-3.png', { scale: 'device' });
 	await page.keyboard.press('Shift+ArrowUp');
-	await expect(page).toHaveScreenshot('reorder-4.png');
+	await expect(page).toHaveScreenshot('reorder-4.png', { scale: 'device' });
 
 	// insert cards
 	await page.keyboard.press('ArrowDown');
@@ -151,5 +151,5 @@ test('Tutorial flow', async ({ page }) => {
 	page.once('dialog', (dialog) => dialog.accept());
 	await page.keyboard.press('Backspace');
 	await expect(page.getByTestId('Fleuve')).not.toBeAttached();
-	await expect(page).toHaveScreenshot('deleted-tutorial.png');
+	await expect(page).toHaveScreenshot('deleted-tutorial.png', { scale: 'device' });
 });

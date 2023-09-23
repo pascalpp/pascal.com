@@ -27,13 +27,13 @@ test('Settings', async ({ page }) => {
 	await page.getByLabel('Settings button').click();
 	await expect(page.getByLabel('Settings menu')).toBeVisible();
 
-	await expect(page.getByLabel('Settings menu')).toHaveScreenshot('settings-panel.png');
+	await expect(page.getByLabel('Settings menu')).toHaveScreenshot('settings-panel.png', { scale: 'device' });
 
 	await page.getByLabel('Flow alignment: center').click();
-	await expect(page).toHaveScreenshot('flow-alignment-center.png');
+	await expect(page).toHaveScreenshot('flow-alignment-center.png', { scale: 'device' });
 
 	await page.getByLabel('Flow alignment: top').click();
-	await expect(page).toHaveScreenshot('flow-alignment-top.png');
+	await expect(page).toHaveScreenshot('flow-alignment-top.png', { scale: 'device' });
 
 	await page.getByLabel('Settings button').click();
 	await expect(page.getByLabel('Settings menu')).not.toBeVisible();
