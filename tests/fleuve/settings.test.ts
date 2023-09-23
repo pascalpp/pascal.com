@@ -9,16 +9,13 @@ import { expect, test } from '@playwright/test';
 // };
 
 test.beforeEach(async ({ page }) => {
-	await page.route('/_vercel/insights/script.js', (route) => {
-		route.fulfill({
-			body: '',
-		});
-	});
-
 	await page.goto('/fleuve');
 });
 
 test('Settings', async ({ page }) => {
+	const fleuveCard = page.getByTestId('Fleuve');
+	await expect(fleuveCard).toBeFocused();
+
 	const settingsButton = page.getByLabel('Settings button');
 	const settingsMenu = page.getByLabel('Settings menu');
 	await expect(settingsButton).toBeAttached();

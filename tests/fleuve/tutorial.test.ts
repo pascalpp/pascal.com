@@ -9,17 +9,12 @@ import { test, expect } from '@playwright/test';
 // }
 
 test.beforeEach(async ({ page }) => {
-	await page.route('/_vercel/insights/script.js', (route) => {
-		route.fulfill({
-			body: '',
-		});
-	});
-
 	await page.goto('/fleuve');
 });
 
 test('Tutorial flow', async ({ page }) => {
 	const fleuveCard = page.getByTestId('Fleuve');
+	await fleuveCard.click();
 	expect(fleuveCard).toBeFocused();
 	await expect(fleuveCard).toHaveScreenshot('fleuve.png', { scale: 'device' });
 

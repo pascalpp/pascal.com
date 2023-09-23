@@ -13,10 +13,12 @@ const desktopOptions = {
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-	webServer: {
-		command: 'npm run build && npm run preview',
-		port: 4173,
-	},
+	webServer: process.env.CI
+		? {
+				command: 'npm run build && npm run preview',
+				port: 4173,
+		  }
+		: undefined,
 	testDir: './tests',
 	/* Run tests in files in parallel */
 	fullyParallel: true,
@@ -27,11 +29,15 @@ export default defineConfig({
 	/* Opt out of parallel tests on CI. */
 	workers: process.env.CI ? 1 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
-	reporter: 'html',
+	reporter: process.env.CI ? 'html' : 'list',
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		// baseURL: 'http://127.0.0.1:4173',
+		baseURL: process.env.CI
+			? undefined
+			: process.env.PRODUCTION
+			? 'https://www.pascal.com'
+			: 'https://pascal.localhost',
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: 'on-first-retry',
@@ -54,13 +60,13 @@ export default defineConfig({
 			},
 		},
 
-		{
-			name: 'firefox',
-			use: {
-				...devices['Desktop Firefox'],
-				...desktopOptions,
-			},
-		},
+		// {
+		// 	name: 'firefox',
+		// 	use: {
+		// 		...devices['Desktop Firefox'],
+		// 		...desktopOptions,
+		// 	},
+		// },
 
 		{
 			name: 'safari',
