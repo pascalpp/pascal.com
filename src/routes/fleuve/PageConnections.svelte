@@ -153,10 +153,11 @@
 				&::after {
 					z-index: 1;
 					background-color: #f3f3f3; // needs to match background color
+					// background-color: red; // for testing
 					position: absolute;
 					display: block;
 					content: '';
-					width: calc(@left-offset / 2);
+					width: @left-offset;
 					border: none;
 					height: 100%;
 					bottom: 0;
@@ -187,10 +188,11 @@
 					&::after {
 						z-index: 1;
 						background-color: #f3f3f3; // needs to match background color
+						// background-color: red; // needs to match background color
 						position: absolute;
 						display: block;
 						content: '';
-						width: calc(@left-offset / 2);
+						width: @left-offset;
 						border: none;
 						height: 100%;
 						bottom: 0;
