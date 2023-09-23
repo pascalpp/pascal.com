@@ -41,7 +41,14 @@
 
 <div class="animation-speed">
 	<label for="animation-speed">Animation speed</label>
-	<button type="button" on:keydown={onKeydown} on:click={onClick} bind:this={button} id="animation-speed">
+	<button
+		type="button"
+		aria-label="Animation speed"
+		on:keydown={onKeydown}
+		on:click={onClick}
+		bind:this={button}
+		id="animation-speed"
+	>
 		<span data-value={slowSpeed} class:active={$settings.cardAnimationSpeed === slowSpeed} bind:this={slowButton}>
 			Slow
 		</span>

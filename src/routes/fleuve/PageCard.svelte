@@ -183,6 +183,7 @@
 	role="button"
 	tabindex={taborder}
 	id={`page-${page.id}`}
+	data-testid={page.title || 'Untitled card'}
 >
 	<div class="page-card-content">
 		<PageTitle {page} {taborder} />

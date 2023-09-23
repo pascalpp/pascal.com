@@ -11,9 +11,8 @@
 	export let show = false;
 	export let taborder = 0;
 	export let trapFocus = true;
-	export let id = '';
-	export let label = '';
-	export let orientation: 'horizontal' | 'vertical' = 'vertical';
+	export let id: string;
+	export let label: string;
 
 	let toolbar: HTMLDivElement;
 	let trap: FocusTrap | undefined;
@@ -48,6 +47,7 @@
 	function onClick(event: MouseEvent) {
 		if (!show) event.stopPropagation();
 	}
+
 	function onKeyDownToolbar(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
 			event.stopPropagation();
@@ -62,25 +62,18 @@
 	});
 </script>
 
-<div
-	class="toolbar"
-	class:top
-	class:bottom
-	class:left
-	class:right
-	class:show
-	on:click={onClick}
-	on:keydown={onKeyDownToolbar}
-	bind:this={toolbar}
-	role="toolbar"
-	tabindex={taborder}
-	{id}
-	aria-label={label}
-	aria-orientation={orientation}
->
+<div class="toolbar" class:top class:bottom class:left class:right class:show bind:this={toolbar}>
 	<slot>
 		<slot name="button" {show} {toggle} {taborder} />
-		<div class="toolbar-panel" aria-expanded={show}>
+		<div
+			{id}
+			class="toolbar-panel"
+			on:click={onClick}
+			on:keydown={onKeyDownToolbar}
+			role="menu"
+			aria-label={label}
+			tabindex={taborder}
+		>
 			<slot name="panel" {show} {toggle} taborder={show ? taborder : -1} />
 		</div>
 	</slot>
@@ -113,9 +106,11 @@
 			max-height: 0;
 			pointer-events: none;
 			transition: all 0.15s ease-in-out;
+			visibility: hidden;
 		}
 
 		&.show .toolbar-panel {
+			visibility: inherit;
 			opacity: 1;
 			max-height: 80vh;
 			pointer-events: auto;

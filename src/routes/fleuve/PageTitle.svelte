@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { focusNextElement, focusPreviousElement } from './focusHelpers';
+	import { focusPreviousElement } from './focusHelpers';
 	import type { Page } from './pages.store';
 	import { updatePage } from './pages.store';
 	import { settings } from './settings.store';
@@ -53,39 +53,38 @@
 		if (['Enter'].includes(event.key)) {
 			event.stopPropagation();
 			event.preventDefault();
-			focusNextElement();
+			focusPreviousElement();
 		}
 	}
 </script>
 
-<div class="title" class:active={page.active} class:fill={!$settings.showDescription}>
-	<h1>
-		<span
-			class:active={page.active}
-			contenteditable={page.active && page.focus}
-			role="textbox"
-			aria-multiline="true"
-			tabindex={page.active && page.focus ? taborder : -1}
-			on:click={onClick}
-			on:focus={onFocus}
-			on:blur={onBlur}
-			on:keydown={onKeyDown}
-		>
-			{page.title}
-		</span>
-	</h1>
+<div class="title" class:active={page.active} class:fill={!$settings.showDescription} data-testid="Title">
+	<div
+		class="editor"
+		role="textbox"
+		aria-multiline="true"
+		class:active={page.active}
+		contenteditable={page.active && page.focus}
+		tabindex={page.active && page.focus ? taborder : -1}
+		on:click={onClick}
+		on:focus={onFocus}
+		on:blur={onBlur}
+		on:keydown={onKeyDown}
+	>
+		{page.title}
+	</div>
 </div>
 
 <style lang="less">
 	.title {
 		background-color: var(--card-title-bgcolor);
 		font-size: 16px;
-		padding: 8px 16px;
 		line-height: 1.5;
+		font-weight: bold;
 		transition: font-size var(--card-animation-speed) ease-in-out;
-		overflow: hidden;
 		pointer-events: none;
 		flex-shrink: 0;
+		padding: 4px;
 		&.fill {
 			flex-grow: 1;
 		}
@@ -94,14 +93,25 @@
 			pointer-events: auto;
 			font-size: 20px;
 		}
-		&:focus-within {
-			outline-style: auto;
-			outline-width: 2px;
-			outline-color: blue;
-			outline-offset: -4px;
-		}
 
-		h1 span {
+		.editor {
+			width: 100%;
+			display: block;
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			resize: none;
+			padding: 0;
+			margin: 0;
+			text-align: left;
+			padding: 4px 12px;
+
+			&:focus {
+				outline-style: auto;
+				outline-width: 2px;
+				outline-color: blue;
+				outline-offset: -3px;
+			}
 			font-size: inherit;
 			outline: none;
 
@@ -123,7 +133,7 @@
 
 		&:not(.fill) {
 			// limit title to 3 lines
-			h1 {
+			.editor {
 				&:not(:focus) {
 					overflow: hidden;
 					.line-clamp(3);
