@@ -9,8 +9,11 @@
 	export let left = false;
 	export let right = false;
 	export let show = false;
-	export let tabindex = 1;
+	export let taborder = 0;
 	export let trapFocus = true;
+	export let id = '';
+	export let label = '';
+	export let orientation: 'horizontal' | 'vertical' = 'vertical';
 
 	let toolbar: HTMLDivElement;
 	let trap: FocusTrap | undefined;
@@ -30,10 +33,8 @@
 		show = !show;
 		if (show) {
 			document.body.addEventListener('click', onClickOutside);
-			document.body.addEventListener('keydown', onKeyDown);
 		} else {
 			document.body.removeEventListener('click', onClickOutside);
-			document.body.removeEventListener('keydown', onKeyDown);
 		}
 	}
 
@@ -44,30 +45,43 @@
 		}
 	}
 
-	function onKeyDown(event: KeyboardEvent) {
+	function onClick(event: MouseEvent) {
+		if (!show) event.stopPropagation();
+	}
+	function onKeyDownToolbar(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
 			event.stopPropagation();
 			show = false;
 		}
 	}
 
-	function onClick(event: MouseEvent) {
-		if (!show) event.stopPropagation();
-	}
-
 	onMount(() => {
 		return () => {
 			document.body.removeEventListener('click', onClickOutside);
-			document.body.removeEventListener('keydown', onKeyDown);
 		};
 	});
 </script>
 
-<div class="toolbar" class:top class:bottom class:left class:right class:show on:click={onClick} bind:this={toolbar}>
+<div
+	class="toolbar"
+	class:top
+	class:bottom
+	class:left
+	class:right
+	class:show
+	on:click={onClick}
+	on:keydown={onKeyDownToolbar}
+	bind:this={toolbar}
+	role="toolbar"
+	tabindex={taborder}
+	{id}
+	aria-label={label}
+	aria-orientation={orientation}
+>
 	<slot>
-		<slot name="button" {show} {toggle} {tabindex} />
-		<div class="toolbar-panel">
-			<slot name="panel" {show} {toggle} tabindex={show ? tabindex : -1} />
+		<slot name="button" {show} {toggle} {taborder} />
+		<div class="toolbar-panel" aria-expanded={show}>
+			<slot name="panel" {show} {toggle} taborder={show ? taborder : -1} />
 		</div>
 	</slot>
 </div>

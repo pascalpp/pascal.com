@@ -5,7 +5,7 @@
 	import { settings } from './settings.store';
 
 	export let page: Page;
-	export let tabindex: number;
+	export let taborder: number;
 
 	function onClick(event: MouseEvent) {
 		if (!page.active) return;
@@ -41,6 +41,10 @@
 	}
 
 	function onKeyDown(event: KeyboardEvent) {
+		if (event.key !== 'Tab') {
+			event.stopPropagation();
+		}
+
 		if (['Escape'].includes(event.key)) {
 			event.stopPropagation();
 			event.preventDefault();
@@ -55,16 +59,20 @@
 </script>
 
 <div class="title" class:active={page.active} class:fill={!$settings.showDescription}>
-	<h1
-		class:active={page.active}
-		contenteditable={true}
-		tabindex={page.active && page.focus ? tabindex : -1}
-		on:click={onClick}
-		on:focus={onFocus}
-		on:blur={onBlur}
-		on:keydown={onKeyDown}
-	>
-		{page.title}
+	<h1>
+		<span
+			class:active={page.active}
+			contenteditable={page.active && page.focus}
+			role="textbox"
+			aria-multiline="true"
+			tabindex={page.active && page.focus ? taborder : -1}
+			on:click={onClick}
+			on:focus={onFocus}
+			on:blur={onBlur}
+			on:keydown={onKeyDown}
+		>
+			{page.title}
+		</span>
 	</h1>
 </div>
 
@@ -90,10 +98,10 @@
 			outline-style: auto;
 			outline-width: 2px;
 			outline-color: blue;
-			outline-offset: -8px;
+			outline-offset: -4px;
 		}
 
-		h1 {
+		h1 span {
 			font-size: inherit;
 			outline: none;
 

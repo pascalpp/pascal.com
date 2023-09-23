@@ -7,7 +7,7 @@
 
 	export let page: Page;
 	export let parentId: PageId | undefined = undefined;
-	export let tabindex: number;
+	export let taborder: number;
 
 	$: connections = page.connections;
 	$: opacity = $settings.childOpacity;
@@ -25,17 +25,17 @@
 		{#each connections as connectionId, index (connectionId)}
 			<PageView
 				pageId={connectionId}
-				{tabindex}
+				{taborder}
 				parentId={page.id}
 				previousSiblingId={connections[index - 1]}
 				nextSiblingId={connections[index + 1]}
 			/>
 		{/each}
 		{#if page.active}
-			<AddPageCard {page} {tabindex} parentId={page.id} siblingId={connections[connections.length - 1]} />
+			<AddPageCard {page} {taborder} parentId={page.id} siblingId={connections[connections.length - 1]} />
 		{/if}
 	{:else}
-		<PageConnectionSummary {page} {tabindex} />
+		<PageConnectionSummary {page} {taborder} />
 	{/if}
 </div>
 

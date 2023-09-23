@@ -20,23 +20,23 @@
 	$: visibleLabel = getVisbleLabel($settings.childOpacity);
 </script>
 
-<Toolbar top right tabindex={1}>
+<Toolbar top right taborder={0} id="settings-toolbar">
 	<button
 		type="button"
 		class="settings-button"
-		id="settings-button"
 		slot="button"
 		let:show
 		let:toggle
+		let:taborder
 		on:click={toggle}
 		aria-label="Settings"
 		title="Settings"
 		class:show
-		tabindex={1}
+		tabindex={taborder}
 	>
 		<SettingsIcon />
 	</button>
-	<div class="settings-panel" id="settings-panel" slot="panel" let:tabindex let:show>
+	<div class="settings-panel" id="settings-panel" slot="panel" let:taborder let:show>
 		<section class="control">
 			<Slider
 				id="active-page-scale"
@@ -46,7 +46,7 @@
 				step={0.25}
 				bind:value={$settings.activePageScale}
 				title="Change the scale of active cards"
-				{tabindex}
+				{taborder}
 			/>
 		</section>
 		<section class="control">
@@ -58,7 +58,7 @@
 				step={0.05}
 				bind:value={$settings.aspectRatio}
 				title="Change the shape of active cards"
-				{tabindex}
+				{taborder}
 			/>
 		</section>
 		<section class="control">
@@ -67,7 +67,7 @@
 				label={`Visible layers: ${visibleLabel}`}
 				bind:value={$settings.childOpacity}
 				title="How many levels to show below the active card"
-				{tabindex}
+				{taborder}
 			/>
 		</section>
 		<!-- <section class="control">
