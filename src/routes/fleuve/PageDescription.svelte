@@ -5,7 +5,7 @@
 	import { marked } from 'marked';
 	import Pencil from './pencil.svg?component';
 	import { settings } from './settings.store';
-	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
+	import { focusAddCard, focusPageId } from './focusHelpers';
 	import {
 		activatePage,
 		reorderPage,
@@ -21,8 +21,6 @@
 	export let previousSiblingId: PageId | undefined = undefined;
 	export let nextSiblingId: PageId | undefined = undefined;
 	export let firstChildId: PageId | undefined = undefined;
-	export let addSiblingConnection: string | undefined = undefined;
-	export let addChildConnection: string | undefined = undefined;
 
 	let editing = false;
 	let editor: HTMLElement;
@@ -82,7 +80,7 @@
 					});
 				});
 			} else {
-				focusPageId(firstChildId) || focusSelector(addChildConnection) || activatePage(page.id);
+				focusPageId(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
 			}
 		}
 
@@ -106,7 +104,7 @@
 					focusPageId(page.id);
 				});
 			} else {
-				focusPageId(nextSiblingId) || focusSelector(addSiblingConnection);
+				focusPageId(nextSiblingId) || focusAddCard(parentId);
 			}
 		}
 

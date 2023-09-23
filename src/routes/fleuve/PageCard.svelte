@@ -23,8 +23,6 @@
 	export let taborder = 0;
 
 	$: firstChildId = page.connections[0];
-	$: addSiblingConnection = `#add-connection-${parentId}`;
-	$: addChildConnection = `#add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
@@ -188,16 +186,7 @@
 >
 	<div class="page-card-content">
 		<PageTitle {page} {taborder} />
-		<PageDescription
-			{page}
-			{taborder}
-			{parentId}
-			{previousSiblingId}
-			{nextSiblingId}
-			{firstChildId}
-			{addSiblingConnection}
-			{addChildConnection}
-		/>
+		<PageDescription {page} {taborder} {parentId} {previousSiblingId} {nextSiblingId} {firstChildId} />
 	</div>
 	<!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>

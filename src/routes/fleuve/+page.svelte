@@ -26,10 +26,11 @@
 	let root: Page;
 
 	function activateFirstPage() {
-		const focusedActivePage = '.page-card.focus.active [tabindex]';
-		const focusedPage = '.page-card.focus [tabindex]';
-		const firstPage = '.page-card [tabindex]';
-		focusSelector(focusedActivePage || focusedPage || firstPage);
+		const focusedActivePage = '.page-card.focus.active';
+		const focusedPage = '.page-card.focus';
+		const firstPage = '.page-card';
+		const card = focusSelector(focusedActivePage) || focusSelector(focusedPage) || focusSelector(firstPage);
+		card?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
 	}
 
 	function onFocusOut(event: FocusEvent) {
