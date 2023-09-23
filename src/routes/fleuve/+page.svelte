@@ -21,19 +21,32 @@
 	import { pageStore, addRootPage } from './pages.store';
 	import { onMount } from 'svelte';
 	import { focusSelector } from './focusHelpers';
+	import getKeySummary from './getKeySummary';
 
 	let root: Page;
 
 	function activateFirstPage() {
-		const focusedActivePage = '.page-card.focus.active [tabindex]';
-		const focusedPage = '.page-card.focus [tabindex]';
-		const firstPage = '.page-card [tabindex]';
-		focusSelector(focusedActivePage || focusedPage || firstPage);
+		const focusedActivePage = '.page-card.focus.active';
+		const focusedPage = '.page-card.focus';
+		const firstPage = '.page-card';
+		const card = focusSelector(focusedActivePage) || focusSelector(focusedPage) || focusSelector(firstPage);
+		card?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
 	}
 
 	function onFocusOut(event: FocusEvent) {
 		var target = event.target as HTMLElement;
 		document.lastActiveElement = target;
+	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		const summary = getKeySummary(event);
+		if (!summary) return;
+
+		console.log(summary);
+		if (summary === 'Cmd K') {
+			const settingsButton = document.getElementById('settings-button');
+			settingsButton?.click();
+		}
 	}
 
 	onMount(() => {
@@ -52,9 +65,11 @@
 			activateFirstPage();
 		});
 
-		document.addEventListener('focusout', onFocusOut);
+		document.body.addEventListener('keydown', onKeyDown);
+		document.body.addEventListener('focusout', onFocusOut);
 		return () => {
-			document.removeEventListener('focusout', onFocusOut);
+			document.body.removeEventListener('keydown', onKeyDown);
+			document.body.removeEventListener('focusout', onFocusOut);
 		};
 	});
 </script>
@@ -76,7 +91,7 @@
 
 		<div class="pages">
 			{#if root}
-				<PageView pageId="root" tabindex={1} />
+				<PageView pageId="root" taborder={0} />
 			{/if}
 		</div>
 	</main>

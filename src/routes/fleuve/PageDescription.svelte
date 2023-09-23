@@ -5,7 +5,7 @@
 	import { marked } from 'marked';
 	import Pencil from './pencil.svg?component';
 	import { settings } from './settings.store';
-	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
+	import { focusAddCard, focusPageId } from './focusHelpers';
 	import {
 		activatePage,
 		reorderPage,
@@ -16,13 +16,11 @@
 	} from './pages.store';
 
 	export let page: Page;
-	export let tabindex: number;
+	export let taborder: number;
 	export let parentId: PageId;
 	export let previousSiblingId: PageId | undefined = undefined;
 	export let nextSiblingId: PageId | undefined = undefined;
 	export let firstChildId: PageId | undefined = undefined;
-	export let addSiblingConnection: string | undefined = undefined;
-	export let addChildConnection: string | undefined = undefined;
 
 	let editing = false;
 	let editor: HTMLElement;
@@ -55,6 +53,10 @@
 			startEditing();
 		}
 
+		if (event.key === 'Enter') {
+			event.stopPropagation();
+		}
+
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
 			if (event.shiftKey) {
@@ -78,7 +80,7 @@
 					});
 				});
 			} else {
-				focusPageId(firstChildId) || focusSelector(addChildConnection) || activatePage(page.id);
+				focusPageId(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
 			}
 		}
 
@@ -102,7 +104,7 @@
 					focusPageId(page.id);
 				});
 			} else {
-				focusPageId(nextSiblingId) || focusSelector(addSiblingConnection);
+				focusPageId(nextSiblingId) || focusAddCard(parentId);
 			}
 		}
 
@@ -127,6 +129,10 @@
 	}
 
 	function onKeyDownEditor(event: KeyboardEvent) {
+		if (event.key !== 'Tab') {
+			event.stopPropagation();
+		}
+
 		if (['Escape'].includes(event.key)) {
 			event.stopPropagation();
 			event.preventDefault();
@@ -144,9 +150,10 @@
 		<button
 			type="button"
 			class="edit-button"
+			id={`edit-description-${page.id}`}
 			on:click={onClickEdit}
 			on:keydown={onKeyDownEditButton}
-			tabindex={active && focus ? tabindex : -1}
+			tabindex={active && focus ? taborder : -1}
 			title={page.description ? 'Edit description' : 'Add description'}
 		>
 			<Pencil />
@@ -154,20 +161,22 @@
 	{/if}
 
 	<div class="scrollable">
-		{#if editing}
+		{#if active && focus && editing}
 			<div
 				class="editor"
 				bind:this={editor}
-				tabindex={active && focus ? tabindex : -1}
-				contenteditable={active}
 				on:keydown={onKeyDownEditor}
 				on:click={onClickEditor}
 				on:blur={onBlur}
+				contenteditable="true"
+				role="textbox"
+				aria-multiline="true"
+				tabindex={taborder}
 			>
 				{page.description || ''}
 			</div>
 		{:else}
-			<div class="content markdown" on:dblclick={onClickEdit}>
+			<div class="content markdown" on:dblclick={onClickEdit} role="document">
 				{@html marked.parse(page.description || '')}
 			</div>
 		{/if}

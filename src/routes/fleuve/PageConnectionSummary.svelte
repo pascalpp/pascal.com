@@ -2,7 +2,7 @@
 	import { pageStore, type Page, getAllChildPages, activatePage } from './pages.store';
 
 	export let page: Page;
-	export let tabindex: number;
+	export let taborder: number;
 
 	let childCount = 0;
 
@@ -16,7 +16,7 @@
 </script>
 
 {#if childCount > 0}
-	<button type="button" class="connection-summary" class:active={page.active} on:click={onClick} {tabindex}>
+	<button type="button" class="connection-summary" class:active={page.active} on:click={onClick} tabindex={taborder}>
 		<div class="count-card">
 			+{childCount} more
 		</div>

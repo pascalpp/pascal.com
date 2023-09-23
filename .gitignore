@@ -12,4 +12,8 @@ vite.config.ts.timestamp-*
 /srcx
 *.log
 test*.sh
+test-results
 *.sitemap
+/test-results/
+/playwright-report/
+/playwright/.cache/

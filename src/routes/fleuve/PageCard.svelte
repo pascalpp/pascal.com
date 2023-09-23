@@ -2,7 +2,7 @@
 	import PageDescription from './PageDescription.svelte';
 	import PageTitle from './PageTitle.svelte';
 	import type { Page, PageId } from './pages.store';
-	import { focusNextElement, focusPageId, focusSelector } from './focusHelpers';
+	import { focusAddCard, focusNextElement, focusPageId } from './focusHelpers';
 	import {
 		activatePage,
 		removePage,
@@ -20,11 +20,9 @@
 	export let parentId: PageId;
 	export let previousSiblingId: PageId | undefined = undefined;
 	export let nextSiblingId: PageId | undefined = undefined;
-	export let tabindex = 1;
+	export let taborder = 0;
 
 	$: firstChildId = page.connections[0];
-	$: addSiblingConnection = `#add-connection-${parentId}`;
-	$: addChildConnection = `#add-connection-${page.id}`;
 
 	let card: HTMLDivElement;
 
@@ -32,18 +30,15 @@
 	const deleteConfirmation = 'Are you sure you want to remove this card and all of its connections?';
 	const deleteTutorialConfimation = 'You’re about to delete this tutorial. You can restore it in the settings menu.';
 
-	function onClick() {
+	function onClick(event: MouseEvent) {
+		event.preventDefault();
 		activatePage(page.id);
-		const firstTabbable = card.querySelector('[tabindex]') as HTMLElement;
-		firstTabbable?.focus();
 	}
 
 	function onFocusIn() {
-		// console.log('onFocusIn');
 		setPageFocus(page.id);
 	}
 	function onFocusOut() {
-		// console.log('onFocusOut');
 		unsetPageFocus(page.id);
 	}
 
@@ -81,7 +76,7 @@
 					});
 				});
 			} else {
-				focusPageId(firstChildId) || focusSelector(addChildConnection) || activatePage(page.id);
+				focusPageId(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
 			}
 		}
 
@@ -105,7 +100,7 @@
 					focusPageId(page.id);
 				});
 			} else {
-				focusPageId(nextSiblingId) || focusSelector(addSiblingConnection);
+				focusPageId(nextSiblingId) || focusAddCard(parentId);
 			}
 		}
 
@@ -180,24 +175,18 @@
 	class:active={page.active}
 	class:focus={page.focus}
 	on:click={onClick}
+	on:keydown={onKeyDown}
 	on:focusin={onFocusIn}
 	on:focusout={onFocusOut}
 	on:transitionend={onTransitionEnd}
 	bind:this={card}
+	role="button"
+	tabindex={taborder}
+	id={`page-${page.id}`}
 >
-	<button type="button" class="focus-target" {tabindex} on:keydown={onKeyDown} data-page-id={page.id} />
 	<div class="page-card-content">
-		<PageTitle {page} {tabindex} />
-		<PageDescription
-			{page}
-			{tabindex}
-			{parentId}
-			{previousSiblingId}
-			{nextSiblingId}
-			{firstChildId}
-			{addSiblingConnection}
-			{addChildConnection}
-		/>
+		<PageTitle {page} {taborder} />
+		<PageDescription {page} {taborder} {parentId} {previousSiblingId} {nextSiblingId} {firstChildId} />
 	</div>
 	<!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>

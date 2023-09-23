@@ -1,14 +1,16 @@
 <script lang="ts">
-	import { pageStore, loadTutorial } from './pages.store';
+	import { focusPageId } from './focusHelpers';
+	import { pageStore, loadTutorial, activatePage } from './pages.store';
 	import { onMount } from 'svelte';
 
 	let isShowingTutorial = false;
 
 	function onClickTutorial() {
 		const tutorialStartPageId = loadTutorial();
+		if (!tutorialStartPageId) return;
 		requestAnimationFrame(() => {
-			const tutorialStartPage = document.querySelector(`[data-page-id="${tutorialStartPageId}"]`) as HTMLElement;
-			tutorialStartPage?.click();
+			activatePage(tutorialStartPageId);
+			focusPageId(tutorialStartPageId);
 		});
 	}
 

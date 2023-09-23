@@ -9,7 +9,7 @@
 	export let parentId: PageId | undefined = undefined;
 	export let previousSiblingId: PageId | undefined = undefined;
 	export let nextSiblingId: PageId | undefined = undefined;
-	export let tabindex = 1;
+	export let taborder = 0;
 
 	let page: Page;
 
@@ -22,9 +22,9 @@
 	{#if page}
 		<div class="page" class:active={page.active} data-flow-alignment={$settings.flowAlignment}>
 			{#if parentId}
-				<PageCard {page} {tabindex} {parentId} {previousSiblingId} {nextSiblingId} />
+				<PageCard {page} {taborder} {parentId} {previousSiblingId} {nextSiblingId} />
 			{/if}
-			<PageConnections {page} {tabindex} {parentId} />
+			<PageConnections {page} {taborder} {parentId} />
 		</div>
 	{/if}
 {/key}

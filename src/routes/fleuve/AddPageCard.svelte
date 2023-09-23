@@ -4,7 +4,7 @@
 	import { focusPageId } from './focusHelpers';
 
 	export let page: Page;
-	export let tabindex: number;
+	export let taborder: number;
 	export let parentId: PageId | undefined = undefined;
 	export let siblingId: PageId | undefined = undefined;
 
@@ -70,26 +70,29 @@
 	}
 </script>
 
-<div class="add-connection">
-	<h1
-		id={`add-connection-${page.id}`}
-		{tabindex}
-		contenteditable="true"
-		class:show={page.active}
-		on:focus={onFocus}
-		on:blur={onBlur}
-		on:keydown={onKeyDown}
-		on:keyup={onKeyUp}
-	/>
+<div class="add-card">
+	<h1>
+		<span
+			id={`add-card-${page.id}`}
+			contenteditable="true"
+			role="textbox"
+			tabindex={taborder}
+			class:show={page.active}
+			on:focus={onFocus}
+			on:blur={onBlur}
+			on:keydown={onKeyDown}
+			on:keyup={onKeyUp}
+		/>
+	</h1>
 </div>
 
 <style lang="less">
-	.add-connection {
+	.add-card {
 		&:first-child {
 			padding-top: 3px;
 		}
 
-		h1 {
+		h1 span {
 			display: block;
 			background-color: white;
 			box-sizing: border-box;
