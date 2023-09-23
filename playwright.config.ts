@@ -31,10 +31,17 @@ export default defineConfig({
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		// baseURL: 'http://127.0.0.1:3000',
+		// baseURL: 'http://127.0.0.1:4173',
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: 'on-first-retry',
+
+		launchOptions: process.env.CI
+			? undefined
+			: {
+					slowMo: 250,
+					timeout: 300000,
+			  },
 	},
 
 	/* Configure projects for major browsers */
@@ -63,12 +70,12 @@ export default defineConfig({
 			},
 		},
 
-		{
-			name: 'iphone',
-			use: {
-				...devices['iPhone 12'],
-			},
-		},
+		// {
+		// 	name: 'iphone',
+		// 	use: {
+		// 		...devices['iPhone 12'],
+		// 	},
+		// },
 
 		/* Test against mobile viewports. */
 		// {
