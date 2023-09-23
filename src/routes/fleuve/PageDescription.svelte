@@ -172,6 +172,7 @@
 				role="textbox"
 				aria-multiline="true"
 				tabindex={taborder}
+				data-testid="Description Editor"
 			>
 				{page.description || ''}
 			</div>
