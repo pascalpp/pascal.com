@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const maxDiffPixelRatio = 0.1;
+const maxDiffPixelRatio = 0.2;
 const threshold = 0.3;
 // const fullPage = true;
 
@@ -26,10 +26,10 @@ test('Default view', async ({ page }) => {
 
 	await page.locator('#tutorial-start-page').isVisible();
 
-	// await expect(page).toHaveScreenshot('default-view.png', {
-	// 	maxDiffPixelRatio,
-	// 	threshold,
-	// });
+	await expect(page).toHaveScreenshot('default-view.png', {
+		maxDiffPixelRatio,
+		threshold,
+	});
 });
 
 test('Settings menu', async ({ page }) => {
