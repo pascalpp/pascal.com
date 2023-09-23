@@ -40,9 +40,30 @@
 
 <div class="flow-alignment">
 	<label for="flow-alignment">Flow alignment</label>
-	<button type="button" on:keydown={onKeydown} on:click={onClick} bind:this={button} id="flow-alignment">
-		<span data-value="top" class:active={$settings.flowAlignment === 'top'} bind:this={topButton}>Top</span>
-		<span data-value="center" class:active={$settings.flowAlignment === 'center'} bind:this={centerButton}>Center</span>
+	<button
+		type="button"
+		aria-label="Flow alignment"
+		on:keydown={onKeydown}
+		on:click={onClick}
+		bind:this={button}
+		id="flow-alignment"
+	>
+		<span
+			aria-label="Flow alignment: top"
+			data-value="top"
+			class:active={$settings.flowAlignment === 'top'}
+			bind:this={topButton}
+		>
+			Top
+		</span>
+		<span
+			aria-label="Flow alignment: center"
+			data-value="center"
+			class:active={$settings.flowAlignment === 'center'}
+			bind:this={centerButton}
+		>
+			Center
+		</span>
 	</button>
 </div>
 
