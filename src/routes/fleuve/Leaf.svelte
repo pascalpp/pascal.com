@@ -1,15 +1,26 @@
 <script lang="ts">
   export let id: string;
+
+  const debug = true;
 </script>
 
 {#key id}
-  <div class="leaf">
+  <div class="leaf" class:debug>
     <slot />
   </div>
 {/key}
 
 <style lang="less">
   .leaf {
-    box-shadow: 0 0 0 1px fade(red, 50%);
+    display: block;
+    &.debug {
+      &:focus-within {
+        outline: 1px solid red;
+        outline-offset: 8px;
+      }
+      &:has(.leaf:focus-within) {
+        outline: 1px solid fade(red, 50%);
+      }
+    }
   }
 </style>
