@@ -4,6 +4,7 @@
   import AddPageCard from './AddPageCard.svelte';
   import PageConnectionSummary from './PageConnectionSummary.svelte';
   import { settings } from './settings.store';
+  import Leaf from './Leaf.svelte';
 
   export let page: Page;
   export let parentId: PageId | undefined = undefined;
@@ -23,19 +24,25 @@
 >
   {#if page.active || opacity > 0}
     {#each connections as connectionId, index (connectionId)}
-      <PageView
-        pageId={connectionId}
-        {taborder}
-        parentId={page.id}
-        previousSiblingId={connections[index - 1]}
-        nextSiblingId={connections[index + 1]}
-      />
+      <Leaf id={`leaf-page-${page.id}`}>
+        <PageView
+          pageId={connectionId}
+          {taborder}
+          parentId={page.id}
+          previousSiblingId={connections[index - 1]}
+          nextSiblingId={connections[index + 1]}
+        />
+      </Leaf>
     {/each}
     {#if page.active}
-      <AddPageCard {page} {taborder} parentId={page.id} siblingId={connections[connections.length - 1]} />
+      <Leaf id={`leaf-addcard-${page.id}`}>
+        <AddPageCard {page} {taborder} parentId={page.id} siblingId={connections[connections.length - 1]} />
+      </Leaf>
     {/if}
-  {:else}
-    <PageConnectionSummary {page} {taborder} />
+  {:else if connections.length}
+    <Leaf id={`leaf-more-${page.id}`}>
+      <PageConnectionSummary {page} {taborder} />
+    </Leaf>
   {/if}
 </div>
 
