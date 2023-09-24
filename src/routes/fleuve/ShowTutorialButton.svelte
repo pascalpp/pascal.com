@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { focusCardId } from './focusHelpers';
+  import { focusCard } from './focusHelpers';
   import { pageStore, loadTutorial, activatePage } from './pages.store';
   import { onMount } from 'svelte';
 
@@ -10,7 +10,7 @@
     if (!tutorialStartPageId) return;
     requestAnimationFrame(() => {
       activatePage(tutorialStartPageId);
-      focusCardId(tutorialStartPageId);
+      focusCard(tutorialStartPageId);
     });
   }
 

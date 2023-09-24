@@ -5,7 +5,7 @@
   import { marked } from 'marked';
   import Pencil from './pencil.svg?component';
   import { settings } from './settings.store';
-  import { focusAddCard, focusCardId } from './focusHelpers';
+  import { focusAddCard, focusCard } from './focusHelpers';
   import {
     activatePage,
     reorderPage,
@@ -66,7 +66,7 @@
           activatePage(page.id);
         }
         requestAnimationFrame(() => {
-          focusCardId(page.id);
+          focusCard(page.id);
         });
       } else if (event.altKey) {
         const newParent = addParentAbovePage(page.id);
@@ -76,11 +76,11 @@
             activatePage(page.id);
           }
           requestAnimationFrame(() => {
-            focusCardId(page.id);
+            focusCard(page.id);
           });
         });
       } else {
-        focusCardId(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
+        focusCard(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
       }
     }
 
@@ -89,10 +89,10 @@
       if (event.shiftKey) {
         reorderPage(page.id, 'up');
         requestAnimationFrame(() => {
-          focusCardId(page.id);
+          focusCard(page.id);
         });
       } else {
-        focusCardId(previousSiblingId);
+        focusCard(previousSiblingId);
       }
     }
 
@@ -101,10 +101,10 @@
       if (event.shiftKey) {
         reorderPage(page.id, 'down');
         requestAnimationFrame(() => {
-          focusCardId(page.id);
+          focusCard(page.id);
         });
       } else {
-        focusCardId(nextSiblingId) || focusAddCard(parentId);
+        focusCard(nextSiblingId) || focusAddCard(parentId);
       }
     }
 
@@ -113,17 +113,17 @@
       if (event.shiftKey) {
         movePageUp(page.id);
         requestAnimationFrame(() => {
-          const el = focusCardId(page.id);
+          const el = focusCard(page.id);
           if (active) el?.click();
         });
       } else if (event.altKey) {
         replaceEmptyParent(page.id);
         requestAnimationFrame(() => {
-          const el = focusCardId(page.id);
+          const el = focusCard(page.id);
           if (active) el?.click();
         });
       } else {
-        focusCardId(parentId);
+        focusCard(parentId);
       }
     }
   }
@@ -136,7 +136,7 @@
     if (['Escape'].includes(event.key)) {
       event.stopPropagation();
       event.preventDefault();
-      focusCardId(page.id);
+      focusCard(page.id);
     }
   }
 

@@ -28,7 +28,7 @@ function getFocusableElements(): HTMLElement[] {
   );
 }
 
-export function focusCardId(pageId?: PageId): HTMLElement | undefined {
+export function focusCard(pageId?: PageId): HTMLElement | undefined {
   if (!pageId) return;
   const element = document.getElementById(`card-${pageId}`);
   if (!element) return;
