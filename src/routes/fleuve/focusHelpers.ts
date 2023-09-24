@@ -33,7 +33,7 @@ export function focusCardId(pageId?: PageId): HTMLElement | undefined {
   const element = document.getElementById(`card-${pageId}`);
   if (!element) return;
   focusElement(element);
-  // element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+  element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   return element;
 }
 
