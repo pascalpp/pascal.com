@@ -31,7 +31,6 @@
 
 <style lang="less">
   .page {
-    box-shadow: 0 0 0 1px fade(red, 50%);
     display: flex;
     flex-direction: row;
     position: relative;
