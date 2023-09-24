@@ -3,7 +3,7 @@
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';
-  import { focusAddCard, focusNextElement, focusCard as focusCard } from './focusHelpers';
+  import { focusAddCard, focusNextElement, focusCard, focusLastTopCard, focusFirstAncestor } from './focusHelpers';
   import {
     activatePage,
     removePage,
@@ -52,6 +52,15 @@
         const editButton = card?.querySelector('.description .edit-button') as HTMLButtonElement;
         editButton?.click();
       }
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      focusFirstAncestor(card);
+    }
+    if (event.key === 'End') {
+      event.preventDefault();
+      focusLastTopCard(card);
     }
 
     if (event.key === 'ArrowRight') {

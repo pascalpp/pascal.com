@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { Page, PageId } from './pages.store';
   import { addConnection, setPageFocus } from './pages.store';
-  import { focusCard } from './focusHelpers';
+  import { focusCard, focusFirstAncestor } from './focusHelpers';
 
   export let page: Page;
   export let taborder: number;
   export let parentId: PageId | undefined = undefined;
   export let siblingId: PageId | undefined = undefined;
+
+  let node: HTMLElement;
 
   function onFocus(event: FocusEvent) {
     const target = event.target as HTMLHeadingElement;
@@ -25,6 +27,11 @@
     // event.stopPropagation();
     const target = event.target as HTMLElement;
     const title = target.innerText.trim();
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      focusFirstAncestor(node);
+    }
 
     if (event.key === 'Escape' && !title) {
       event.preventDefault();
@@ -70,7 +77,7 @@
   }
 </script>
 
-<div class="add-card">
+<div class="add-card" bind:this={node}>
   <h1>
     <span
       id={`add-card-${page.id}`}
