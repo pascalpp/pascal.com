@@ -1,81 +1,81 @@
 .changelog-panel {
-	h1 {
-		font-size: 20px;
-		padding: 8px 12px;
-		border-bottom: 1px solid #ddd;
-		margin-bottom: 8px;
-		margin-top: 24px;
-	}
+  h1 {
+    font-size: 20px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+    margin-top: 24px;
+  }
 
-	h1:first-child {
-		margin-top: 0px;
-	}
+  h1:first-child {
+    margin-top: 0px;
+  }
 
-	h3 {
-		padding: 0px 12px;
-		margin: 0;
-	}
+  h3 {
+    padding: 0px 12px;
+    margin: 0;
+  }
 
-	ul {
-		margin: 0;
-		margin-top: 0.5em;
-		margin-bottom: 1em;
-		padding: 0px 12px;
-	}
-	li {
-		margin-left: 24px;
-		margin-top: 2px;
-	}
+  ul {
+    margin: 0;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 0px 12px;
+  }
+  li {
+    margin-left: 24px;
+    margin-top: 2px;
+  }
 
-	p {
-		padding: 0px 12px;
-	}
+  p {
+    padding: 0px 12px;
+  }
 
-	summary {
-		padding: 0 12px;
-		font-weight: bold;
-		cursor: pointer;
-	}
-	summary + * {
-		margin-top: 1em;
-	}
+  summary {
+    padding: 0 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  summary + * {
+    margin-top: 1em;
+  }
 
-	ul.contains-task-list {
-		list-style-type: none;
-		li {
-			margin-left: 24px;
-			position: relative;
-			input[type='checkbox'] {
-				position: absolute;
-				left: -23px;
-				appearance: none;
-				border: 1px solid currentColor;
-				width: 11px;
-				height: 11px;
-				border-radius: 2px;
-				transform: translateY(1px);
+  ul.contains-task-list {
+    list-style-type: none;
+    li {
+      margin-left: 24px;
+      position: relative;
+      input[type='checkbox'] {
+        position: absolute;
+        left: -23px;
+        appearance: none;
+        border: 1px solid currentColor;
+        width: 11px;
+        height: 11px;
+        border-radius: 2px;
+        transform: translateY(1px);
 
-				&:checked {
-					&::before,
-					&::after {
-						position: absolute;
-						content: '';
-						left: 50%;
-						top: 50%;
-						transform: translate(-50%, -50%) rotate(-45deg);
-						width: 8px;
-						height: 1px;
-						background-color: currentColor;
-					}
-					&::after {
-						transform: translate(-50%, -50%) rotate(45deg);
-					}
-				}
-			}
+        &:checked {
+          &::before,
+          &::after {
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 8px;
+            height: 1px;
+            background-color: currentColor;
+          }
+          &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+        }
+      }
 
-			+ li {
-				margin-top: 6px;
-			}
-		}
-	}
+      + li {
+        margin-top: 6px;
+      }
+    }
+  }
 }

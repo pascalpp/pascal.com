@@ -1,138 +1,138 @@
 [
-	{
-		"id": "root",
-		"title": "Root Card",
-		"description": "",
-		"connections": ["tutorial-start-page"],
-		"active": true,
-		"focus": false
-	},
-	{
-		"id": "tutorial-start-page",
-		"title": "Fleuve",
-		"description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Take a quick tutorial\n\n- Press ➡️ ➡️ to activate the next card.",
-		"active": true,
-		"focus": true,
-		"connections": [
-			"b280f8f8-f320-4752-bf82-17437f8cc476",
-			"33300122-07f3-4057-b7fb-d6cb58fc4052",
-			"67588553-5255-44db-a38c-fbb56ed8e589",
-			"77f43da1-4f27-4c5b-b522-750daacabf86",
-			"3d3c2738-4566-4a11-a75a-806d837eefe7",
-			"7542953c-9d90-4241-aebe-426fbc37d75d",
-			"cd1df0b8-06ba-4a30-a26d-39f7a2afd076"
-		]
-	},
-	{
-		"id": "b280f8f8-f320-4752-bf82-17437f8cc476",
-		"title": "This is a card",
-		"connections": [],
-		"active": false,
-		"focus": false,
-		"description": "## Nice!\n\n- Now press ⬇️ to select the card below.\n- Press Space or Enter to activate it."
-	},
-	{
-		"id": "33300122-07f3-4057-b7fb-d6cb58fc4052",
-		"title": "A sibling card",
-		"connections": [],
-		"active": false,
-		"focus": false,
-		"description": "## Well done!\n\nNow activate the card below to learn about editing cards."
-	},
-	{
-		"id": "67588553-5255-44db-a38c-fbb56ed8e589",
-		"title": "Editing cards",
-		"connections": ["d7c0c4dc-ddca-4a21-a0d2-6c0562af2543"],
-		"active": false,
-		"focus": false,
-		"description": "- Press Tab to edit the title.\n- Press D to edit the description.\n- Press Tab when you're done.\n\nGo ➡️ to learn about Markdown formatting, or ⬇️ to continue."
-	},
-	{
-		"id": "3d3c2738-4566-4a11-a75a-806d837eefe7",
-		"title": "Deleting cards",
-		"connections": ["a213d547-cf44-4f17-b004-b6a5ea48737d"],
-		"active": false,
-		"focus": false,
-		"description": "## Delete me! It’s okay, I don’t mind.\n\n- Press delete to remove a card.\n- You’ll be asked to confirm before the card is removed."
-	},
-	{
-		"id": "77f43da1-4f27-4c5b-b522-750daacabf86",
-		"title": "Infinite levels",
-		"connections": ["881783c4-7061-4637-82e4-9c775e89b761"],
-		"active": false,
-		"focus": false,
-		"description": "## Drill, drill drill\n\n- Press ➡️ to drill down through the hierarchy.\n- Press ⬅️ to drill back up."
-	},
-	{
-		"id": "881783c4-7061-4637-82e4-9c775e89b761",
-		"title": "Next level",
-		"connections": ["a9f768c9-41d8-4726-894a-81c014501d20"],
-		"active": false,
-		"focus": false,
-		"description": "Keep going… ➡️"
-	},
-	{
-		"id": "a9f768c9-41d8-4726-894a-81c014501d20",
-		"title": "Another level",
-		"connections": ["c5dfc82a-c443-4d67-967f-0032387be582"],
-		"active": false,
-		"focus": false,
-		"description": "A little more… ➡️"
-	},
-	{
-		"id": "c5dfc82a-c443-4d67-967f-0032387be582",
-		"title": "Deeper still",
-		"connections": [],
-		"active": false,
-		"focus": false,
-		"description": "Okay, that's far enough. Go back! ⬅️"
-	},
-	{
-		"id": "7542953c-9d90-4241-aebe-426fbc37d75d",
-		"title": "Reorder cards",
-		"connections": ["a0054768-5f78-4704-ab12-a489176c00de", "9ff1ddc0-31ed-4664-a4b9-9bd7256eddef"],
-		"active": false,
-		"focus": false,
-		"description": "## Up, down, left, right\n\n- Press Shift ⬆️ to move a card up.\n- Press Shift ⬇️ to move it down.\n- Press Shift ⬅️ to move a card left.\n- Press Shift ➡️ to move it right."
-	},
-	{
-		"id": "a0054768-5f78-4704-ab12-a489176c00de",
-		"title": "Rearrange me",
-		"description": "I'm just here for practice. Press Shift with the arrow keys and watch me move.",
-		"connections": [],
-		"active": false,
-		"focus": false
-	},
-	{
-		"id": "a213d547-cf44-4f17-b004-b6a5ea48737d",
-		"title": "I’ll be deleted too!",
-		"description": "I don't mind either.",
-		"connections": [],
-		"active": false,
-		"focus": false
-	},
-	{
-		"id": "cd1df0b8-06ba-4a30-a26d-39f7a2afd076",
-		"title": "Add more cards",
-		"description": "- Press ➡️ and enter a title to connect a card to this one.\n- Press ⬇️ to add a card connected to the same card as this one.\n\n_That's it! When you’re ready, press ⬅️ and delete this tutorial flow._",
-		"connections": [],
-		"active": false,
-		"focus": false
-	},
-	{
-		"id": "d7c0c4dc-ddca-4a21-a0d2-6c0562af2543",
-		"title": "Markdown styles",
-		"description": "_You can use markdown in card descriptions. Double-click to edit._\n\n# Header 1\nFor the important stuff.\n\n## Header 2\nSlightly less important.\n\n### Header 3\nBold sans, same size as regular text.\n\n#### Header 4\nSans, same size as regular text.\n\n##### Header 5\nSmall caps bold.\n\n###### Header 6\nSmall caps regular.\n\n## Bulleted lists\n- Dash space makes a list item.\n- Add multiple items\n- Here's another item\n  - With a nested list\n  - Ooh, neat!\n\n## Ordered lists\n1. Numbered items get numbered\n2. This is the second item.\n3. And this is the third.",
-		"connections": [],
-		"focus": false,
-		"active": false
-	},
-	{
-		"id": "9ff1ddc0-31ed-4664-a4b9-9bd7256eddef",
-		"title": "Insert cards",
-		"description": "Press Option/Alt ➡️ to move a card to the right, inserting a new card to the left.\n\nPress Option/Alt ⬅️ to move a card left, replacing its parent. _The parent card will be replaced only if it's empty._",
-		"connections": [],
-		"focus": false,
-		"active": false
-	}
+  {
+    "id": "root",
+    "title": "Root Card",
+    "description": "",
+    "connections": ["tutorial-start-page"],
+    "active": true,
+    "focus": false
+  },
+  {
+    "id": "tutorial-start-page",
+    "title": "Fleuve",
+    "description": "_French: a river_\n\n- Create flows by connecting cards.\n\n## Take a quick tutorial\n\n- Press ➡️ ➡️ to activate the next card.",
+    "active": true,
+    "focus": true,
+    "connections": [
+      "b280f8f8-f320-4752-bf82-17437f8cc476",
+      "33300122-07f3-4057-b7fb-d6cb58fc4052",
+      "67588553-5255-44db-a38c-fbb56ed8e589",
+      "77f43da1-4f27-4c5b-b522-750daacabf86",
+      "3d3c2738-4566-4a11-a75a-806d837eefe7",
+      "7542953c-9d90-4241-aebe-426fbc37d75d",
+      "cd1df0b8-06ba-4a30-a26d-39f7a2afd076"
+    ]
+  },
+  {
+    "id": "b280f8f8-f320-4752-bf82-17437f8cc476",
+    "title": "This is a card",
+    "connections": [],
+    "active": false,
+    "focus": false,
+    "description": "## Nice!\n\n- Now press ⬇️ to select the card below.\n- Press Space or Enter to activate it."
+  },
+  {
+    "id": "33300122-07f3-4057-b7fb-d6cb58fc4052",
+    "title": "A sibling card",
+    "connections": [],
+    "active": false,
+    "focus": false,
+    "description": "## Well done!\n\nNow activate the card below to learn about editing cards."
+  },
+  {
+    "id": "67588553-5255-44db-a38c-fbb56ed8e589",
+    "title": "Editing cards",
+    "connections": ["d7c0c4dc-ddca-4a21-a0d2-6c0562af2543"],
+    "active": false,
+    "focus": false,
+    "description": "- Press Tab to edit the title.\n- Press D to edit the description.\n- Press Tab when you're done.\n\nGo ➡️ to learn about Markdown formatting, or ⬇️ to continue."
+  },
+  {
+    "id": "3d3c2738-4566-4a11-a75a-806d837eefe7",
+    "title": "Deleting cards",
+    "connections": ["a213d547-cf44-4f17-b004-b6a5ea48737d"],
+    "active": false,
+    "focus": false,
+    "description": "## Delete me! It’s okay, I don’t mind.\n\n- Press delete to remove a card.\n- You’ll be asked to confirm before the card is removed."
+  },
+  {
+    "id": "77f43da1-4f27-4c5b-b522-750daacabf86",
+    "title": "Infinite levels",
+    "connections": ["881783c4-7061-4637-82e4-9c775e89b761"],
+    "active": false,
+    "focus": false,
+    "description": "## Drill, drill drill\n\n- Press ➡️ to drill down through the hierarchy.\n- Press ⬅️ to drill back up."
+  },
+  {
+    "id": "881783c4-7061-4637-82e4-9c775e89b761",
+    "title": "Next level",
+    "connections": ["a9f768c9-41d8-4726-894a-81c014501d20"],
+    "active": false,
+    "focus": false,
+    "description": "Keep going… ➡️"
+  },
+  {
+    "id": "a9f768c9-41d8-4726-894a-81c014501d20",
+    "title": "Another level",
+    "connections": ["c5dfc82a-c443-4d67-967f-0032387be582"],
+    "active": false,
+    "focus": false,
+    "description": "A little more… ➡️"
+  },
+  {
+    "id": "c5dfc82a-c443-4d67-967f-0032387be582",
+    "title": "Deeper still",
+    "connections": [],
+    "active": false,
+    "focus": false,
+    "description": "Okay, that's far enough. Go back! ⬅️"
+  },
+  {
+    "id": "7542953c-9d90-4241-aebe-426fbc37d75d",
+    "title": "Reorder cards",
+    "connections": ["a0054768-5f78-4704-ab12-a489176c00de", "9ff1ddc0-31ed-4664-a4b9-9bd7256eddef"],
+    "active": false,
+    "focus": false,
+    "description": "## Up, down, left, right\n\n- Press Shift ⬆️ to move a card up.\n- Press Shift ⬇️ to move it down.\n- Press Shift ⬅️ to move a card left.\n- Press Shift ➡️ to move it right."
+  },
+  {
+    "id": "a0054768-5f78-4704-ab12-a489176c00de",
+    "title": "Rearrange me",
+    "description": "I'm just here for practice. Press Shift with the arrow keys and watch me move.",
+    "connections": [],
+    "active": false,
+    "focus": false
+  },
+  {
+    "id": "a213d547-cf44-4f17-b004-b6a5ea48737d",
+    "title": "I’ll be deleted too!",
+    "description": "I don't mind either.",
+    "connections": [],
+    "active": false,
+    "focus": false
+  },
+  {
+    "id": "cd1df0b8-06ba-4a30-a26d-39f7a2afd076",
+    "title": "Add more cards",
+    "description": "- Press ➡️ and enter a title to connect a card to this one.\n- Press ⬇️ to add a card connected to the same card as this one.\n\n_That's it! When you’re ready, press ⬅️ and delete this tutorial flow._",
+    "connections": [],
+    "active": false,
+    "focus": false
+  },
+  {
+    "id": "d7c0c4dc-ddca-4a21-a0d2-6c0562af2543",
+    "title": "Markdown styles",
+    "description": "_You can use markdown in card descriptions. Double-click to edit._\n\n# Header 1\nFor the important stuff.\n\n## Header 2\nSlightly less important.\n\n### Header 3\nBold sans, same size as regular text.\n\n#### Header 4\nSans, same size as regular text.\n\n##### Header 5\nSmall caps bold.\n\n###### Header 6\nSmall caps regular.\n\n## Bulleted lists\n- Dash space makes a list item.\n- Add multiple items\n- Here's another item\n  - With a nested list\n  - Ooh, neat!\n\n## Ordered lists\n1. Numbered items get numbered\n2. This is the second item.\n3. And this is the third.",
+    "connections": [],
+    "focus": false,
+    "active": false
+  },
+  {
+    "id": "9ff1ddc0-31ed-4664-a4b9-9bd7256eddef",
+    "title": "Insert cards",
+    "description": "Press Option/Alt ➡️ to move a card to the right, inserting a new card to the left.\n\nPress Option/Alt ⬅️ to move a card left, replacing its parent. _The parent card will be replaced only if it's empty._",
+    "connections": [],
+    "focus": false,
+    "active": false
+  }
 ]
