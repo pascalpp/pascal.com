@@ -20,9 +20,10 @@ export function focusPreviousElement(
   return previousElement;
 }
 
-function getFocusableElements(): HTMLElement[] {
+export function getFocusableElements(container: Document | Element | null = document): HTMLElement[] {
+  if (!container) return [];
   return Array.from(
-    document.querySelectorAll(
+    container.querySelectorAll(
       'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])'
     )
   );
@@ -65,4 +66,22 @@ export function scrollToElementIfNeeded(element: HTMLElement | undefined | null)
     element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   }
   return element;
+}
+
+export function focusLastTopCard(element: HTMLElement) {
+  const leaf = element.closest('.leaf') as HTMLElement;
+  const topCards = Array.from(leaf.querySelectorAll('.leaf:first-child'));
+  const lastTopCard = topCards.pop();
+  const focusable = lastTopCard?.querySelector('[tabindex]') as HTMLElement;
+  focusElement(focusable);
+}
+
+export function focusFirstAncestor(element: HTMLElement) {
+  const parentLeaf = element.parentElement?.closest('.leaf') as HTMLElement;
+  if (!parentLeaf) {
+    const focusable = element.querySelector('[tabindex]') as HTMLElement;
+    focusElement(focusable);
+  } else {
+    focusFirstAncestor(parentLeaf);
+  }
 }
