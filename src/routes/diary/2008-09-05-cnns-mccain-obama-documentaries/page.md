@@ -10,5 +10,3 @@ status: draft
 I wonder how they decided what order to show them in? Maybe McCain has to be in bed by 8:30.
 
 [Posted by email](http://posterous.com) from [pascalpp's posterous](http://pascalpp.posterous.com/cnns-mccain-and-obama-document)
-
-

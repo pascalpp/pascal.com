@@ -105,31 +105,31 @@ Let's try it out.
 
 ```jsx
 function ContactCard({ contact, editContact, deleteContact }) {
-	return (
-		<li className="contact card">
-			{contact.photo && (
-				<div className="contact-photo">
-					<img src={contact.photo} alt={contact.name} />
-				</div>
-			)}
-			{contact.phone && <div className="contact-phone">{contact.phone}</div>}
-			{contact.email && <div className="contact-email">{contact.email}</div>}
-			{contact.source && (
-				<div className="contact-source">
-					<span className="contact-source-label">Contact source:</span>
-					<span className="contact-source-logo">
-						{contact.source === 'facebook' && <FacebookLogo />}
-						{contact.source === 'google' && <GoogleLogo />}
-						{contact.source === 'quickbooks' && <QuickbooksLogo />}
-					</span>
-				</div>
-			)}
-			<div className="actions">
-				<button onClick={() => editContact(contact.id)}>Edit</button>
-				<button onClick={() => deleteContact(contact.id)}>Delete</button>
-			</div>
-		</li>
-	);
+  return (
+    <li className="contact card">
+      {contact.photo && (
+        <div className="contact-photo">
+          <img src={contact.photo} alt={contact.name} />
+        </div>
+      )}
+      {contact.phone && <div className="contact-phone">{contact.phone}</div>}
+      {contact.email && <div className="contact-email">{contact.email}</div>}
+      {contact.source && (
+        <div className="contact-source">
+          <span className="contact-source-label">Contact source:</span>
+          <span className="contact-source-logo">
+            {contact.source === 'facebook' && <FacebookLogo />}
+            {contact.source === 'google' && <GoogleLogo />}
+            {contact.source === 'quickbooks' && <QuickbooksLogo />}
+          </span>
+        </div>
+      )}
+      <div className="actions">
+        <button onClick={() => editContact(contact.id)}>Edit</button>
+        <button onClick={() => deleteContact(contact.id)}>Delete</button>
+      </div>
+    </li>
+  );
 }
 ```
 
@@ -325,16 +325,16 @@ There's also an additional layer of abstraction between a component and the tag 
 ```jsx
 // some_page.jsx
 export default function SomePage() {
-	return (
-		<div>
-			<h1>Some Page</h1>
-			<Widget />
-		</div>
-	);
+  return (
+    <div>
+      <h1>Some Page</h1>
+      <Widget />
+    </div>
+  );
 }
 
 function Widget() {
-	return <div>Widget</div>;
+  return <div>Widget</div>;
 }
 ```
 
@@ -347,13 +347,13 @@ Here's the same thing in Angular:
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'widget',
-	standalone: true,
-	templateUrl: './widget.component.html',
-	styleUrls: ['./widget.component.css'],
+  selector: 'widget',
+  standalone: true,
+  templateUrl: './widget.component.html',
+  styleUrls: ['./widget.component.css'],
 })
 export class WidgetComponent {
-	// component class logic here, omitted for this example
+  // component class logic here, omitted for this example
 }
 ```
 
@@ -368,11 +368,11 @@ import { Component } from '@angular/core';
 import { WidgetComponent } from './widget.component';
 
 @Component({
-	selector: 'some-page',
-	standalone: true,
-	imports: [WidgetComponent],
-	templateUrl: './some-page.component.html',
-	styleUrls: ['./some-page.component.css'],
+  selector: 'some-page',
+  standalone: true,
+  imports: [WidgetComponent],
+  templateUrl: './some-page.component.html',
+  styleUrls: ['./some-page.component.css'],
 })
 export class SomePageComponent {}
 ```

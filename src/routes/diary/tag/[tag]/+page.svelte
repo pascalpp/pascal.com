@@ -1,20 +1,20 @@
 <script lang="ts">
-	import PostList from '../../PostList.svelte';
+  import PostList from '../../PostList.svelte';
 
-	export let data;
-	$: ({ posts, tag } = data);
+  export let data;
+  $: ({ posts, tag } = data);
 </script>
 
 <article>
-	<PostList {posts} {tag} />
+  <PostList {posts} {tag} />
 </article>
 
 <style lang="less">
-	article {
-		font-size: 20px;
-		font-weight: 200;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+  article {
+    font-size: 20px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 </style>

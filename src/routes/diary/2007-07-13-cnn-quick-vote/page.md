@@ -14,5 +14,3 @@ This feature asks a simple question of CNN.com readers, usually with Yes or No r
 So I've decided to mirror CNN.com's Quick Vote feature here on my blog, with an important third option: "I don't care". Let's begin. Answer honestly!
 
 \[poll=2\]
-
-

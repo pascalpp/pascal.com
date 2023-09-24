@@ -32,5 +32,3 @@ One concern is being able to use this device with the new Mac Pro should I decid
 It should arrive some time this week, so I'll update this article with my review of the device after I've spent some time with it.
 
 If you have experience with any of the above devices, or if you have a Thunderbolt device you'd recommend to others, please let me know in the comments below.
-
-

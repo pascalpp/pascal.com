@@ -10,5 +10,3 @@ Here's the poster we made for our upcoming show. We had a coloring party and mad
 ![](http://posterous.com/getfile/files.posterous.com/pascalpp/hMIpCzQjwPG1EeLQ1X0GkT3l276ZnSwMepNcHr7pwPRrn7xnMM3sgQkb9oUY/mercury-poster-anim.gif)
 
 [Posted by email](http://posterous.com) from [pascalpp's posterous](http://pascalpp.posterous.com/animated-poster)
-
-

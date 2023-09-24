@@ -6,5 +6,3 @@ status: draft
 ---
 
 Good to see some McCain fans standing up for what is right.
-
-

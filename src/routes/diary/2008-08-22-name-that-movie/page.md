@@ -10,5 +10,3 @@ status: draft
 [Posted by email](http://posterous.com) from [pascalpp's posterous](http://pascalpp.posterous.com/name-that-movie)
 
 And how delicious is that, exactly?
-
-
