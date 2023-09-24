@@ -8,5 +8,3 @@ status: draft
 What is this, 1987?
 
 ![Stupid Excel](http://www.pascal.com/diary/wp-content/uploads/2008/02/stupid-excel.gif)
-
-

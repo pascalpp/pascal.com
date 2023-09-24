@@ -14,5 +14,3 @@ I wonder if this might stem from the pervasive sense of exceptionalism that Amer
 Perhaps investors are a victim of this exceptionalist thinking as well. I don't have a source for this either, but it seems to be accepted fact that the very wealthy do better under Republican administrations than under Democratic ones, when it comes to tax policy and billion-dollar military contracts and such. But the charts above refute the idea that all investors do better under Republican rule. Perhaps the bulk of investors give their campaign dollars to Republicans in hopes that they, too, can win the lottery.
 
 (Via [Daring Fireball](http://daringfireball.net/linked/2008/10/16/bulls-bears))
-
-

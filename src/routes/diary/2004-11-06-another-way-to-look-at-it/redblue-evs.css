@@ -1,40 +1,40 @@
 div.Bush,
 div.Kerry,
 div.stateheader {
-	font-family: Sans-Serif;
-	font-size: 11px;
-	line-height: 12px;
-	color: #fff;
-	position: relative;
-	width: 500px;
-	background-color: #ccc;
-	margin-bottom: 1px;
+  font-family: Sans-Serif;
+  font-size: 11px;
+  line-height: 12px;
+  color: #fff;
+  position: relative;
+  width: 500px;
+  background-color: #ccc;
+  margin-bottom: 1px;
 }
 
 .noinfo div.Bush,
 .noinfo div.Kerry,
 .noinfo div.stateheader {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 div.stateheader {
-	background-color: #999;
-	font-weight: bold;
-	height: 23px;
+  background-color: #999;
+  font-weight: bold;
+  height: 23px;
 }
 
 div.fill {
-	position: absolute;
-	width: 500px;
-	left: 0px;
-	top: 0px;
+  position: absolute;
+  width: 500px;
+  left: 0px;
+  top: 0px;
 }
 
 .pad {
-	display: block;
-	padding: 1px;
-	padding-left: 5px;
-	padding-right: 5px;
+  display: block;
+  padding: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div.winner,
@@ -42,61 +42,61 @@ div.loser {
 }
 
 div.winner {
-	float: left;
-	text-align: right;
+  float: left;
+  text-align: right;
 }
 div.loser {
-	float: right;
+  float: right;
 }
 
 .noinfo .Kerry .winner {
-	float: right;
+  float: right;
 }
 .noinfo .Kerry .loser {
-	float: left;
+  float: left;
 }
 
 div.stateinfo {
-	position: absolute;
-	width: 500px;
-	left: 0px;
-	top: 0px;
+  position: absolute;
+  width: 500px;
+  left: 0px;
+  top: 0px;
 }
 
 div.statename {
-	float: left;
-	padding-left: 5px;
-	font-weight: bold;
+  float: left;
+  padding-left: 5px;
+  font-weight: bold;
 }
 
 div.ev {
-	float: right;
-	padding: 1px;
-	padding-right: 5px;
-	font-weight: bold;
+  float: right;
+  padding: 1px;
+  padding-right: 5px;
+  font-weight: bold;
 }
 
 div.Bush div.winner {
-	background-color: #c00;
+  background-color: #c00;
 }
 div.Bush div.loser {
-	background-color: #00f;
-	color: #fff;
+  background-color: #00f;
+  color: #fff;
 }
 div.Kerry div.winner {
-	background-color: #00f;
-	color: #fff;
+  background-color: #00f;
+  color: #fff;
 }
 div.Kerry div.loser {
-	background-color: #c00;
+  background-color: #c00;
 }
 div.Kerry div.statename {
-	color: #fff;
+  color: #fff;
 }
 div.Bush div.ev {
-	color: #fff;
+  color: #fff;
 }
 
 div.noinfo {
-	line-height: 1px;
+  line-height: 1px;
 }

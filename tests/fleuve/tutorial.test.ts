@@ -52,8 +52,8 @@ test('Tutorial flow', async ({ page }) => {
   const titleEditor = editingCard.getByTestId('Title').getByRole('textbox');
   await page.keyboard.press('Tab');
   await expect(titleEditor).toBeFocused();
-  await titleEditor.pressSequentially('A new title');
-  await titleEditor.press('Enter');
+  await page.keyboard.type('A new title');
+  await page.keyboard.press('Enter');
   const updatedEditngCard = page.getByTestId('A new title');
   await expect(updatedEditngCard).toBeFocused(); // await for test id to change
 

@@ -7,8 +7,6 @@ status: draft
 
 [![Closed Caption Growl Style](http://www.pascal.com/software/closedcaption/closedcaption.gif)](http://www.pascal.com/software/closedcaption/)
 
-[Closed Caption: A Growl style for your HD TV](http://www.pascal.com/software/closedcaption/) 
+[Closed Caption: A Growl style for your HD TV](http://www.pascal.com/software/closedcaption/)
 
 Might be useful if you have a Boxee Mac attached to your TV.
-
-

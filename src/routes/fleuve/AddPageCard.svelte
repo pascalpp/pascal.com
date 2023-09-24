@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Page, PageId } from './pages.store';
   import { addConnection, setPageFocus } from './pages.store';
-  import { focusCardId } from './focusHelpers';
+  import { focusCard } from './focusHelpers';
 
   export let page: Page;
   export let taborder: number;
@@ -29,19 +29,19 @@
     if (event.key === 'Escape' && !title) {
       event.preventDefault();
       target.innerText = '';
-      focusCardId(siblingId || parentId);
+      focusCard(siblingId || parentId);
     }
 
     if (event.key === 'ArrowLeft' && !title) {
       event.preventDefault();
       target.innerText = '';
-      focusCardId(parentId);
+      focusCard(parentId);
     }
 
     if (event.key === 'ArrowUp' && !title) {
       event.preventDefault();
       target.innerText = '';
-      focusCardId(siblingId);
+      focusCard(siblingId);
     }
 
     if (event.key === 'Enter') {
@@ -51,7 +51,7 @@
         target.innerText = '';
         target.blur();
         requestAnimationFrame(() => {
-          const el = focusCardId(newPage.id);
+          const el = focusCard(newPage.id);
           el?.click();
         });
       }

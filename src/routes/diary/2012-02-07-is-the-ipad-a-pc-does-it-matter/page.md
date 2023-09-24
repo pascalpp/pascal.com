@@ -10,5 +10,3 @@ A lot of people, particularly those concerned with sales figures and market shar
 But what's more interesting to me is the question of whether regular people will ever use the term 'PC' to refer to an iPad. To me, it seems more likely that the term 'PC' will fall out of fashion, and that soon people will simply refer to their primary computers as 'tablets', or possibly just 'iPads'. Even if their tablet isn't actually an iPad.
 
 Apple has created the new Kleenex.
-
-

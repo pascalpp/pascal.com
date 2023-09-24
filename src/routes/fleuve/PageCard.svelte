@@ -3,7 +3,7 @@
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';
-  import { focusAddCard, focusNextElement, focusCardId as focusCard } from './focusHelpers';
+  import { focusAddCard, focusNextElement, focusCard as focusCard } from './focusHelpers';
   import {
     activatePage,
     removePage,

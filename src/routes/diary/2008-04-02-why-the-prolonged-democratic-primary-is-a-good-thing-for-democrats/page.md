@@ -16,5 +16,3 @@ For another, our candidates are getting more air time, which is important in win
 And third, perhaps most importantly, citizens from all the states are seeing that their vote matters for the first time in a long time. Usually the nomination is settled and done with by the time the New Hampshire primary rolls around, or soon after. This time, every state is having a chance to weigh in. As a result, new voters are registering as Democrats in record numbers across the nation. This is terrific for building the power of the party in the run-up to the general election, and for maintaining a healthy party once Obama wins in November.
 
 Yes, that's right, he will!
-
-

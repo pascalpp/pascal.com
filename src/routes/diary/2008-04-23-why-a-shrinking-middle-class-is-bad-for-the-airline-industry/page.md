@@ -14,5 +14,3 @@ The airline industry has two primary customers: the business traveler and the le
 The impact of a shrinking middle-class on business travel is more indirect, but significant nonetheless. As middle-income folks lose their purchasing power, demand for the products and services most businesses provide decreases. As a result, the businesses spend less on business travel and other expenditures. An oversimplified example, I know, but you get the idea.
 
 If the middle class continues to shrink, more airlines will have to close up shop. Eventually the only people flying may be the uber-rich in their private jets.
-
-

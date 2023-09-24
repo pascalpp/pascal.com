@@ -5,6 +5,4 @@ wordpress_id: 217
 status: draft
 ---
 
-[![](http://posterous.com/getfile/files.posterous.com/pascalpp/JdtBzFlrzJrEugbbAktxEeFGrzphogxGunDJtiHCmbcJibvyDisECfsrHlbn/upload.jpg.scaled500.jpg)](http://posterous.com/getfile/files.posterous.com/pascalpp/JdtBzFlrzJrEugbbAktxEeFGrzphogxGunDJtiHCmbcJibvyDisECfsrHlbn/upload.jpg.scaled1000.jpg) 
-
-
+[![](http://posterous.com/getfile/files.posterous.com/pascalpp/JdtBzFlrzJrEugbbAktxEeFGrzphogxGunDJtiHCmbcJibvyDisECfsrHlbn/upload.jpg.scaled500.jpg)](http://posterous.com/getfile/files.posterous.com/pascalpp/JdtBzFlrzJrEugbbAktxEeFGrzphogxGunDJtiHCmbcJibvyDisECfsrHlbn/upload.jpg.scaled1000.jpg)

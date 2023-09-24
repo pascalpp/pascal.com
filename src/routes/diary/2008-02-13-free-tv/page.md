@@ -6,5 +6,3 @@ status: draft
 ---
 
 <http://newyork.craigslist.org/brk/ele/573328796.html>
-
-

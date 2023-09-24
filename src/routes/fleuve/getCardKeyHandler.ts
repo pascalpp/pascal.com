@@ -1,7 +1,7 @@
 // wip
 
 import type { PageId } from './pages.store';
-import { focusNextElement, focusCardId, focusSelector } from './focusHelpers';
+import { focusNextElement, focusCard, focusSelector } from './focusHelpers';
 import {
   activatePage,
   removePage,
@@ -57,7 +57,7 @@ export default function getCardKeyHandler({
           activatePage(pageId);
         }
         requestAnimationFrame(() => {
-          focusCardId(pageId);
+          focusCard(pageId);
         });
       } else if (event.altKey) {
         const newParent = addParentAbovePage(pageId);
@@ -67,11 +67,11 @@ export default function getCardKeyHandler({
             activatePage(pageId);
           }
           requestAnimationFrame(() => {
-            focusCardId(pageId);
+            focusCard(pageId);
           });
         });
       } else {
-        focusCardId(firstChildId) || focusSelector(addChildConnection) || activatePage(pageId);
+        focusCard(firstChildId) || focusSelector(addChildConnection) || activatePage(pageId);
       }
     }
 
@@ -80,10 +80,10 @@ export default function getCardKeyHandler({
       if (event.shiftKey) {
         reorderPage(pageId, 'up');
         requestAnimationFrame(() => {
-          focusCardId(pageId);
+          focusCard(pageId);
         });
       } else {
-        focusCardId(previousSiblingId);
+        focusCard(previousSiblingId);
       }
     }
 
@@ -92,10 +92,10 @@ export default function getCardKeyHandler({
       if (event.shiftKey) {
         reorderPage(pageId, 'down');
         requestAnimationFrame(() => {
-          focusCardId(pageId);
+          focusCard(pageId);
         });
       } else {
-        focusCardId(nextSiblingId) || focusSelector(addSiblingConnection);
+        focusCard(nextSiblingId) || focusSelector(addSiblingConnection);
       }
     }
 
@@ -104,17 +104,17 @@ export default function getCardKeyHandler({
       if (event.shiftKey) {
         movePageUp(pageId);
         requestAnimationFrame(() => {
-          const el = focusCardId(pageId);
+          const el = focusCard(pageId);
           if (active) el?.click();
         });
       } else if (event.altKey) {
         replaceEmptyParent(pageId);
         requestAnimationFrame(() => {
-          const el = focusCardId(pageId);
+          const el = focusCard(pageId);
           if (active) el?.click();
         });
       } else {
-        focusCardId(parentId);
+        focusCard(parentId);
       }
     }
 
@@ -142,7 +142,7 @@ export default function getCardKeyHandler({
         event.preventDefault();
         deactivatePage(pageId);
       } else {
-        focusCardId(parentId);
+        focusCard(parentId);
       }
     }
 
@@ -153,7 +153,7 @@ export default function getCardKeyHandler({
       const confirmed = confirm(message);
       if (confirmed) {
         removePage(pageId);
-        focusCardId(nextSiblingId) || focusCardId(previousSiblingId) || focusNextElement();
+        focusCard(nextSiblingId) || focusCard(previousSiblingId) || focusNextElement();
       }
     }
   };
