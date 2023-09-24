@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { focusCard } from './focusHelpers';
   import { pageStore, type Page, getAllChildPages, activatePage } from './pages.store';
 
   export let page: Page;
@@ -12,6 +13,7 @@
 
   function onClick() {
     activatePage(page.id);
+    focusCard(page.id);
   }
 </script>
 
