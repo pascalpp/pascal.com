@@ -24,7 +24,7 @@
 >
   {#if page.active || opacity > 0}
     {#each connections as connectionId, index (connectionId)}
-      <Leaf id={`leaf-page-${page.id}`}>
+      <Leaf id={`leaf-page-${page.id}`} parentId={page.id}>
         <PageView
           pageId={connectionId}
           {taborder}
@@ -35,12 +35,12 @@
       </Leaf>
     {/each}
     {#if page.active}
-      <Leaf id={`leaf-addcard-${page.id}`}>
+      <Leaf id={`leaf-addcard-${page.id}`} parentId={page.id}>
         <AddPageCard {page} {taborder} parentId={page.id} siblingId={connections[connections.length - 1]} />
       </Leaf>
     {/if}
   {:else if connections.length}
-    <Leaf id={`leaf-more-${page.id}`}>
+    <Leaf id={`leaf-more-${page.id}`} parentId={page.id}>
       <PageConnectionSummary {page} {taborder} />
     </Leaf>
   {/if}
@@ -52,9 +52,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1em;
+    position: relative;
+    gap: 16px;
     &.root {
-      gap: 5em;
+      gap: 120px;
     }
 
     opacity: var(--child-opacity, 0.5);
@@ -99,6 +100,7 @@
           border-bottom: 1px solid black;
           top: @top-offset;
           right: 100%;
+          z-index: 2;
         }
         &[data-flow-alignment='center']::before {
           top: 50%;
@@ -151,8 +153,8 @@
           border-bottom: 1px solid black;
           border-bottom-left-radius: 4px;
           top: unset;
-          height: @top-offset;
-          bottom: calc(100% - @top-offset);
+          height: @top-offset + 16px;
+          bottom: calc(100% - @top-offset - 16px);
           right: 100%;
           z-index: 2;
         }
