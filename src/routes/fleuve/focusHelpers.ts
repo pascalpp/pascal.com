@@ -33,7 +33,6 @@ export function focusCard(pageId?: PageId): HTMLElement | undefined {
   const element = document.getElementById(`card-${pageId}`);
   if (!element) return;
   focusElement(element);
-  element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   return element;
 }
 
@@ -42,7 +41,6 @@ export function focusAddCard(pageId?: PageId): HTMLElement | undefined {
   const element = document.getElementById(`add-card-${pageId}`);
   if (!element) return;
   focusElement(element);
-  element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   return element;
 }
 
@@ -55,5 +53,16 @@ export function focusSelector(selector?: string): HTMLElement | undefined {
 export function focusElement(element: HTMLElement | undefined | null): HTMLElement | undefined {
   if (!element) return;
   element.focus();
+  scrollToElementIfNeeded(element);
+  return element;
+}
+
+export function scrollToElementIfNeeded(element: HTMLElement | undefined | null): HTMLElement | undefined {
+  if (!element) return;
+  const rect = element.getBoundingClientRect();
+  const values = [rect.top < 0, rect.bottom > window.innerHeight, rect.left < 0, rect.right > window.innerWidth];
+  if (values.some((value) => value)) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+  }
   return element;
 }
