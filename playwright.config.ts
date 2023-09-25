@@ -9,7 +9,7 @@ const desktopOptions = {
   viewport: { width: 1200, height: 800 },
 };
 
-const slowMo = Number(process.env.slow) || 250;
+const slowMo = Number(process.env.slow) || 150;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
