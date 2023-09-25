@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';
@@ -172,7 +171,6 @@
 </script>
 
 <div
-  transition:slide
   class="page-card"
   class:active={page.active}
   class:focus={page.focus}
