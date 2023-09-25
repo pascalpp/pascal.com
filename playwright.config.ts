@@ -61,11 +61,11 @@ export default defineConfig({
     },
 
     // {
-    // 	name: 'firefox',
-    // 	use: {
-    // 		...devices['Desktop Firefox'],
-    // 		...desktopOptions,
-    // 	},
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     ...desktopOptions,
+    //   },
     // },
 
     {
