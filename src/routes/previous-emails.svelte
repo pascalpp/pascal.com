@@ -1,4 +1,7 @@
-<!--!
+<!--
+
+
+< !--!
  From: Kevin &lt;kxxxxxxl@gmail.com&gt;
  Subject: Pascal. com
  Date: September 2, 2013 10:43:15am
@@ -12,9 +15,9 @@
  Kevin
 
  (sent from my mobile device)
- -->
+ -- >
 
-<!--!
+< !--!
  From: jj <bbooctaxxxxx@hotmail.com>
  Subject: QQ
  Date: February 7, 2012 5:11:59pm
@@ -40,9 +43,9 @@
  end;
 
  when I type 18 it lists the procedures in 20
- -->
+ -- >
 
-<!--
+< !--
 From:    mouli_xxxxx@yahoo.co.in
 Subject: Please help me how to create a program medical bill or student database and web desigining
 Date:    September 8, 2008 12:39:53pm EDT
@@ -53,9 +56,9 @@ Date:    September 8, 2008 12:39:53pm EDT
  . even the simpliest one. thanks!
 
  -MOULI
--->
+-- >
 
-<!--
+< !--
 From: 	  mpxloguez@yahoo.com.ph
 Subject: 	Need Help!
 Date: 	September 30, 2006 3:35:07am EDT
@@ -63,9 +66,9 @@ Date: 	September 30, 2006 3:35:07am EDT
 	hi!
  Please help me how to create a program payroll. even the simpliest one. thanks!
              beth
- -->
+ -- >
 
-<!--
+< !--
 Date: Sat, 18 Mar 2006 08:07:08 -0800 (PST)<br />
 From: aashakkirrudeen@yahoo.com<br />
 Subject: i need support<br />
@@ -74,17 +77,17 @@ hi<br />
  young in pascal assembling language,i've been able to do some rew things but the i go the more i either have syntax error.<br />
  i need your support for proper understanding.<br />
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;thanks. ADEMOLA S<br />
- -->
+ -- >
 
-<!--
+< !--
 From: wizards_priestx1987@yahoo.com<br />
 Date: August 23, 2005 11:53:39pm EDT<br />
 Subject: asking!<br />
 <br />
 Diff. kinds of key in turbo pascal? Where can i find theturbo pascal? How can i get that to use in my pc?<br />
- -->
+ -- >
 
-<!--
+< !--
 From: Vdxias@aol.com<br />
 Date: Thu, 13 May 2004 14:06:14 EDT<br />
 Subject: freeruler<br />
@@ -92,9 +95,9 @@ Subject: freeruler<br />
 What you mean the freeruler doesn't work on my stupid windows pc.<br />
 <br />
 You can stick the freeruler up your ass..........................<br />
- -->
+ -- >
 
-<!--
+< !--
 From: "webmaster" &lt;seven.seas@nxfty.com&gt;<br />
 Date: Wed Jul 23, 2003  9:02:47 am America/New_York<br />
 Subject: I'd like to purchase  PASCAL.COM<br />
@@ -120,18 +123,18 @@ if we can get it forUS$4,000 with escrow.<br />
 Thank you,<br />
 <br />
 Akiyosi<br />
- -->
+ -- >
 
-<!--
+< !--
 From: reguig mohammed &lt;reguig_mohammed20022001@yahoo.fr&gt;<BR>
 Date: Thu, 8 Aug 2002 11:38:22 +0200 (CEST)<BR>
 <BR>
 give me the picture and;<BR>
 <BR>
 your country and your JOB<BR>
- -->
+ -- >
 
-<!--
+< !--
 From: "sleepwalkers society" &lt;contact@sleepwalkers.org&gt;<BR>
 Subject: about pascal.com...<BR>
 Date: Wed, 5 Jun 2002 16:07:42 +0200<BR>
@@ -147,24 +150,24 @@ This suggestion will benefit both us and you I believe.<BR>
 /best regards SyntaxError<BR>
 \One of the masters of sleepwalkers society.<BR>
 ( www.sleepwalkers.org )<BR>
- -->
+ -- >
 
-<!--
+< !--
 From: "ITV Productions" &lt;studio6@appletelevision.fsnet.co.uk&gt;<BR>
 Subject: web address<BR>
 Date: Mon, 3 Jun 2002 19:08:17 +0100<BR>
 Organization: Granada TV<BR>
 <BR>
 Hi, I notice that your domain name expiers in a few months, do you plan to re-register that name or may I please use it?<BR>
--->
+-- >
 
-<!--
+< !--
 From: "ylenia" &lt;yle_m@hotmail.com&gt;<BR>
 Subject: look for a new name dear pascal....<BR>
 Date: Sat, 25 May 2002 14:30:08 -0400<BR>
 <BR>
 fucking ridiculous sometimes i ask to myself if people like you don't have anything else to do but putting to his/her (nag and really boring one!) popular names into the web that don't have any relations with anythign get outta here asshole<BR>
--->
+-- >
 
 <table border={0} cellpadding="0" cellspacing="0">
 	<tbody>
@@ -272,7 +275,7 @@ fucking ridiculous sometimes i ask to myself if people like you don't have anyth
 						</td>
 
 						<td align="right" valign="top"
-							><!--begin link table-->
+							>< !--begin link table-- >
 							<table border={0} cellpadding="0" cellspacing="0">
 								<tr>
 									<td align="right" valign="middle">
@@ -827,3 +830,5 @@ If you are willing to sell, what is the current ask price ?
 		text-decoration: underline;
 	}
 </style>
+
+-->
