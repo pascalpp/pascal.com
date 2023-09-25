@@ -1,13 +1,34 @@
 <script lang="ts">
+  import { flip } from 'svelte/animate';
+  import { quintOut } from 'svelte/easing';
   import type { Page, PageId } from './pages.store';
   import PageView from './PageView.svelte';
   import AddPageCard from './AddPageCard.svelte';
   import PageConnectionSummary from './PageConnectionSummary.svelte';
   import { settings } from './settings.store';
+  import { crossfade } from 'svelte/transition';
 
   export let page: Page;
   export let parentId: PageId | undefined = undefined;
   export let taborder: number;
+
+  const [send, receive] = crossfade({
+    duration: 0,
+    easing: quintOut,
+    fallback(node, params) {
+      const style = getComputedStyle(node);
+      const transform = style.transform === 'none' ? '' : style.transform;
+
+      return {
+        duration: 0,
+        easing: quintOut,
+        css: (t) => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`,
+      };
+    },
+  });
 
   $: connections = page.connections;
   $: opacity = $settings.childOpacity;
@@ -23,13 +44,15 @@
 >
   {#if page.active || opacity > 0}
     {#each connections as connectionId, index (connectionId)}
-      <PageView
-        pageId={connectionId}
-        {taborder}
-        parentId={page.id}
-        previousSiblingId={connections[index - 1]}
-        nextSiblingId={connections[index + 1]}
-      />
+      <div in:receive={{ key: connectionId }} out:send={{ key: connectionId }} animate:flip>
+        <PageView
+          pageId={connectionId}
+          {taborder}
+          parentId={page.id}
+          previousSiblingId={connections[index - 1]}
+          nextSiblingId={connections[index + 1]}
+        />
+      </div>
     {/each}
     {#if page.active}
       <AddPageCard {page} {taborder} parentId={page.id} siblingId={connections[connections.length - 1]} />
