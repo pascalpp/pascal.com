@@ -6,10 +6,10 @@ import { defineConfig, devices } from '@playwright/test';
  */
 // require('dotenv').config();
 const desktopOptions = {
-  viewport: { width: 1024, height: 800 },
+  viewport: { width: 1200, height: 800 },
 };
 
-const slowMo = Number(process.env.SLOW) || 0;
+const slowMo = Number(process.env.slow) || 0;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
