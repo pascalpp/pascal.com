@@ -49,13 +49,28 @@
     bind:this={button}
     id="animation-speed"
   >
-    <span data-value={slowSpeed} class:active={$settings.cardAnimationSpeed === slowSpeed} bind:this={slowButton}>
+    <span
+      data-value={slowSpeed}
+      aria-label="Animation: off"
+      class:active={$settings.cardAnimationSpeed === slowSpeed}
+      bind:this={slowButton}
+    >
       Slow
     </span>
-    <span data-value={fastSpeed} class:active={$settings.cardAnimationSpeed === fastSpeed} bind:this={fastButton}>
+    <span
+      data-value={fastSpeed}
+      aria-label="Animation: fast"
+      class:active={$settings.cardAnimationSpeed === fastSpeed}
+      bind:this={fastButton}
+    >
       Fast
     </span>
-    <span data-value={offSpeed} class:active={$settings.cardAnimationSpeed === offSpeed} bind:this={offButton}>
+    <span
+      data-value={offSpeed}
+      aria-label="Animation: slow"
+      class:active={$settings.cardAnimationSpeed === offSpeed}
+      bind:this={offButton}
+    >
       Off
     </span>
   </button>
