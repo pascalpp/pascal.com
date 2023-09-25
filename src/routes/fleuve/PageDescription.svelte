@@ -5,126 +5,29 @@
   import { marked } from 'marked';
   import Pencil from './pencil.svg?component';
   import { settings } from './settings.store';
-  import { focusAddCard, focusCard } from './focusHelpers';
-  import {
-    activatePage,
-    reorderPage,
-    movePageUp,
-    movePageDown,
-    addParentAbovePage,
-    replaceEmptyParent,
-  } from './pages.store';
+  import { focusCard } from './focusHelpers';
 
   export let page: Page;
   export let taborder: number;
-  export let parentId: PageId;
-  export let previousSiblingId: PageId | undefined = undefined;
-  export let nextSiblingId: PageId | undefined = undefined;
-  export let firstChildId: PageId | undefined = undefined;
+  export let editing = false;
 
-  let editing = false;
   let editor: HTMLElement;
 
   $: active = page.active && $settings.showDescription;
   $: focus = page.focus && $settings.showDescription;
-
-  function startEditing() {
-    editing = true;
+  $: if (editing && editor) {
     requestAnimationFrame(() => {
-      editor?.focus();
+      editor.focus();
     });
   }
 
-  function onClickEdit(event: MouseEvent) {
-    event.stopPropagation();
-    startEditing();
-  }
-
-  function onBlur(event: FocusEvent) {
-    const target = event.target as HTMLElement;
-    const description = target.innerText.trim();
-    if (!description) target.innerText = description;
-    updatePage({ ...page, description });
-    editing = false;
+  function onClickEdit() {
+    editing = true;
   }
 
   function onKeyDownEditButton(event: KeyboardEvent) {
-    if (['d', 'e'].includes(event.key.toLowerCase())) {
-      startEditing();
-    }
-
-    if (event.key === 'Enter') {
+    if (['Enter', ' ', 'Escape'].includes(event.key)) {
       event.stopPropagation();
-    }
-
-    if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        const newParent = movePageDown(page.id);
-        if (active) {
-          activatePage(newParent.id);
-          activatePage(page.id);
-        }
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else if (event.altKey) {
-        const newParent = addParentAbovePage(page.id);
-        requestAnimationFrame(() => {
-          activatePage(newParent.id);
-          if (active) {
-            activatePage(page.id);
-          }
-          requestAnimationFrame(() => {
-            focusCard(page.id);
-          });
-        });
-      } else {
-        focusCard(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
-      }
-    }
-
-    if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        reorderPage(page.id, 'up');
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else {
-        focusCard(previousSiblingId);
-      }
-    }
-
-    if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        reorderPage(page.id, 'down');
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else {
-        focusCard(nextSiblingId) || focusAddCard(parentId);
-      }
-    }
-
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        movePageUp(page.id);
-        requestAnimationFrame(() => {
-          const el = focusCard(page.id);
-          if (active) el?.click();
-        });
-      } else if (event.altKey) {
-        replaceEmptyParent(page.id);
-        requestAnimationFrame(() => {
-          const el = focusCard(page.id);
-          if (active) el?.click();
-        });
-      } else {
-        focusCard(parentId);
-      }
     }
   }
 
@@ -143,6 +46,14 @@
   function onClickEditor(event: MouseEvent) {
     event.stopPropagation();
   }
+
+  function onBlur(event: FocusEvent) {
+    const target = event.target as HTMLElement;
+    const description = target.innerText.trim();
+    if (!description) target.innerText = description;
+    updatePage({ ...page, description });
+    editing = false;
+  }
 </script>
 
 <div class="description" class:active class:focus class:editing data-testid="Description">
@@ -150,7 +61,6 @@
     <button
       type="button"
       class="edit-button"
-      id={`edit-description-${page.id}`}
       on:click={onClickEdit}
       on:keydown={onKeyDownEditButton}
       tabindex={active && focus ? taborder : -1}
@@ -220,12 +130,10 @@
       mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 20px);
     }
     &.editing .scrollable {
-      &:focus-within {
-        outline-style: auto;
-        outline-width: 2px;
-        outline-color: blue;
-        outline-offset: -4px;
-      }
+      outline-style: auto;
+      outline-width: 2px;
+      outline-color: blue;
+      outline-offset: -4px;
     }
 
     .editor,

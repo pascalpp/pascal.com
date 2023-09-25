@@ -9,7 +9,7 @@ const desktopOptions = {
   viewport: { width: 1200, height: 800 },
 };
 
-const slowMo = Number(process.env.slow) || 250;
+const slowMo = Number(process.env.slow) || 150;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -60,13 +60,18 @@ export default defineConfig({
       },
     },
 
-    // {
-    // 	name: 'firefox',
-    // 	use: {
-    // 		...devices['Desktop Firefox'],
-    // 		...desktopOptions,
-    // 	},
-    // },
+    // local cert issues with firefox.
+    // might try this instead of minica
+    // https://github.com/FiloSottile/mkcert
+    process.env.PRODUCTION
+      ? {
+          name: 'firefox',
+          use: {
+            ...devices['Desktop Firefox'],
+            ...desktopOptions,
+          },
+        }
+      : {},
 
     {
       name: 'safari',

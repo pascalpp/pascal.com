@@ -2,19 +2,23 @@
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';
-  import { focusAddCard, focusNextElement, focusCard } from './focusHelpers';
+  import { focusNextElement, focusCard, focusAddCard } from './focusHelpers';
   import {
     activatePage,
+    setPageFocus,
+    unsetPageFocus,
     removePage,
     reorderPage,
     movePageUp,
     movePageDown,
     addParentAbovePage,
     replaceEmptyParent,
-    setPageFocus,
-    unsetPageFocus,
     deactivatePage,
   } from './pages.store';
+
+  const tutorialId = 'tutorial-start-page';
+  const deleteConfirmation = 'Are you sure you want to remove this card and all of its connections?';
+  const deleteTutorialConfimation = 'You’re about to delete this tutorial. You can restore it in the settings menu.';
 
   export let page: Page;
   export let parentId: PageId;
@@ -22,13 +26,7 @@
   export let nextSiblingId: PageId | undefined = undefined;
   export let taborder = 0;
 
-  $: firstChildId = page.connections[0];
-
-  let card: HTMLDivElement;
-
-  const tutorialId = 'tutorial-start-page';
-  const deleteConfirmation = 'Are you sure you want to remove this card and all of its connections?';
-  const deleteTutorialConfimation = 'You’re about to delete this tutorial. You can restore it in the settings menu.';
+  let editingDescription = false;
 
   function onClick(event: MouseEvent) {
     event.preventDefault();
@@ -44,13 +42,11 @@
 
   function onKeyDown(event: KeyboardEvent) {
     const target = event.target as HTMLElement;
-    const active = page.active;
+    const active = page.active && page.focus;
 
     if (['d', 'e'].includes(event.key.toLowerCase())) {
-      if (page.active) {
-        const editButton = card?.querySelector('.description .edit-button') as HTMLButtonElement;
-        editButton?.click();
-      }
+      event.preventDefault();
+      editingDescription = true;
     }
 
     if (event.key === 'ArrowRight') {
@@ -76,7 +72,7 @@
           });
         });
       } else {
-        focusCard(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
+        focusCard(page.connections[0]) || focusAddCard(page.id) || activatePage(page.id);
       }
     }
 
@@ -143,7 +139,9 @@
     }
 
     if (event.key === 'Escape') {
-      if (active) {
+      if (editingDescription) {
+        editingDescription = false;
+      } else if (active) {
         event.preventDefault();
         deactivatePage(page.id);
       } else {
@@ -179,7 +177,6 @@
   on:focusin={onFocusIn}
   on:focusout={onFocusOut}
   on:transitionend={onTransitionEnd}
-  bind:this={card}
   role="button"
   tabindex={taborder}
   id={`card-${page.id}`}
@@ -187,7 +184,7 @@
 >
   <div class="page-card-content">
     <PageTitle {page} {taborder} />
-    <PageDescription {page} {taborder} {parentId} {previousSiblingId} {nextSiblingId} {firstChildId} />
+    <PageDescription {page} {taborder} bind:editing={editingDescription} />
   </div>
   <!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>
