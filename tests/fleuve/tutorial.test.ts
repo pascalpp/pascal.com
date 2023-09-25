@@ -121,6 +121,7 @@ test('Tutorial flow', async ({ page }) => {
   await expect(rearrangeCard).toHaveClass(/active/);
   await expect(rearrangeCard).toBeFocused();
   await page.keyboard.press('Shift+ArrowLeft');
+  await page.keyboard.press('Shift+ArrowUp');
   await expect(insertCard).not.toHaveClass(/active/);
   await expect(rearrangeCard).toHaveClass(/active/);
   await expect(rearrangeCard).toBeFocused();
@@ -139,7 +140,6 @@ test('Tutorial flow', async ({ page }) => {
   // await expect(page).toHaveScreenshot('reorder-4.png', { scale: 'device' });
 
   // insert cards
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   await page.keyboard.press('ArrowDown');
   await expect(insertCard).toBeFocused();
   await page.keyboard.press('Enter');
