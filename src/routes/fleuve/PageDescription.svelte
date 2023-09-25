@@ -5,22 +5,10 @@
   import { marked } from 'marked';
   import Pencil from './pencil.svg?component';
   import { settings } from './settings.store';
-  import { focusAddCard, focusCard } from './focusHelpers';
-  import {
-    activatePage,
-    reorderPage,
-    movePageUp,
-    movePageDown,
-    addParentAbovePage,
-    replaceEmptyParent,
-  } from './pages.store';
+  import { focusCard } from './focusHelpers';
 
   export let page: Page;
   export let taborder: number;
-  export let parentId: PageId;
-  export let previousSiblingId: PageId | undefined = undefined;
-  export let nextSiblingId: PageId | undefined = undefined;
-  export let firstChildId: PageId | undefined = undefined;
 
   let editing = false;
   let editor: HTMLElement;
@@ -36,7 +24,6 @@
   }
 
   function onClickEdit(event: MouseEvent) {
-    event.stopPropagation();
     startEditing();
   }
 
@@ -49,82 +36,8 @@
   }
 
   function onKeyDownEditButton(event: KeyboardEvent) {
-    if (['d', 'e'].includes(event.key.toLowerCase())) {
-      startEditing();
-    }
-
-    if (event.key === 'Enter') {
+    if (['Enter', ' ', 'Escape'].includes(event.key)) {
       event.stopPropagation();
-    }
-
-    if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        const newParent = movePageDown(page.id);
-        if (active) {
-          activatePage(newParent.id);
-          activatePage(page.id);
-        }
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else if (event.altKey) {
-        const newParent = addParentAbovePage(page.id);
-        requestAnimationFrame(() => {
-          activatePage(newParent.id);
-          if (active) {
-            activatePage(page.id);
-          }
-          requestAnimationFrame(() => {
-            focusCard(page.id);
-          });
-        });
-      } else {
-        focusCard(firstChildId) || focusAddCard(page.id) || activatePage(page.id);
-      }
-    }
-
-    if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        reorderPage(page.id, 'up');
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else {
-        focusCard(previousSiblingId);
-      }
-    }
-
-    if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        reorderPage(page.id, 'down');
-        requestAnimationFrame(() => {
-          focusCard(page.id);
-        });
-      } else {
-        focusCard(nextSiblingId) || focusAddCard(parentId);
-      }
-    }
-
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault();
-      if (event.shiftKey) {
-        movePageUp(page.id);
-        requestAnimationFrame(() => {
-          const el = focusCard(page.id);
-          if (active) el?.click();
-        });
-      } else if (event.altKey) {
-        replaceEmptyParent(page.id);
-        requestAnimationFrame(() => {
-          const el = focusCard(page.id);
-          if (active) el?.click();
-        });
-      } else {
-        focusCard(parentId);
-      }
     }
   }
 

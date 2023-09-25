@@ -1,7 +1,7 @@
 // wip
 
 import type { PageId } from './pages.store';
-import { focusNextElement, focusCard, focusSelector } from './focusHelpers';
+import { focusNextElement, focusCard, focusAddCard } from './focusHelpers';
 import {
   activatePage,
   removePage,
@@ -15,11 +15,11 @@ import {
 
 export interface CardKeyHandlerOptions {
   pageId: PageId;
-  active: boolean;
-  parentId: PageId;
-  previousSiblingId: PageId;
-  nextSiblingId: PageId;
-  firstChildId: PageId;
+  active: boolean | undefined;
+  parentId: PageId | undefined;
+  previousSiblingId: PageId | undefined;
+  nextSiblingId: PageId | undefined;
+  firstChildId: PageId | undefined;
 }
 
 const tutorialId = 'tutorial-start-page';
@@ -35,8 +35,6 @@ export default function getCardKeyHandler({
   firstChildId,
 }: CardKeyHandlerOptions) {
   const editDesscription = `#edit-description-${pageId}`;
-  const addSiblingConnection = `#add-connection-${parentId}`;
-  const addChildConnection = `#add-connection-${pageId}`;
 
   return function onKeyDown(event: KeyboardEvent) {
     const target = event.target as HTMLElement;
@@ -71,7 +69,7 @@ export default function getCardKeyHandler({
           });
         });
       } else {
-        focusCard(firstChildId) || focusSelector(addChildConnection) || activatePage(pageId);
+        focusCard(firstChildId) || focusAddCard(pageId) || activatePage(pageId);
       }
     }
 
@@ -95,7 +93,7 @@ export default function getCardKeyHandler({
           focusCard(pageId);
         });
       } else {
-        focusCard(nextSiblingId) || focusSelector(addSiblingConnection);
+        focusCard(nextSiblingId) || focusAddCard(parentId);
       }
     }
 
