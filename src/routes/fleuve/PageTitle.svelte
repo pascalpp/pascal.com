@@ -84,7 +84,6 @@
     transition: font-size var(--card-animation-speed) ease-in-out;
     pointer-events: none;
     flex-shrink: 0;
-    padding: 4px;
     &.fill {
       flex-grow: 1;
     }
@@ -104,13 +103,12 @@
       padding: 0;
       margin: 0;
       text-align: left;
-      padding: 4px 12px;
+      padding: 8px 16px;
+      border-bottom: 1px solid transparent;
 
       &:focus {
-        outline-style: auto;
-        outline-width: 2px;
-        outline-color: blue;
-        outline-offset: -3px;
+        box-shadow: inset 0 0 10px fade(black, 10%);
+        border-bottom: 1px solid black;
       }
       font-size: inherit;
       outline: none;
