@@ -60,6 +60,9 @@ export default defineConfig({
       },
     },
 
+    // local cert issues with firefox.
+    // might try this instead of minica
+    // https://github.com/FiloSottile/mkcert
     // {
     //   name: 'firefox',
     //   use: {
