@@ -9,30 +9,20 @@
 
   export let page: Page;
   export let taborder: number;
+  export let editing = false;
 
-  let editing = false;
   let editor: HTMLElement;
 
   $: active = page.active && $settings.showDescription;
   $: focus = page.focus && $settings.showDescription;
-
-  function startEditing() {
-    editing = true;
+  $: if (editing && editor) {
     requestAnimationFrame(() => {
-      editor?.focus();
+      editor.focus();
     });
   }
 
-  function onClickEdit(event: MouseEvent) {
-    startEditing();
-  }
-
-  function onBlur(event: FocusEvent) {
-    const target = event.target as HTMLElement;
-    const description = target.innerText.trim();
-    if (!description) target.innerText = description;
-    updatePage({ ...page, description });
-    editing = false;
+  function onClickEdit() {
+    editing = true;
   }
 
   function onKeyDownEditButton(event: KeyboardEvent) {
@@ -56,6 +46,14 @@
   function onClickEditor(event: MouseEvent) {
     event.stopPropagation();
   }
+
+  function onBlur(event: FocusEvent) {
+    const target = event.target as HTMLElement;
+    const description = target.innerText.trim();
+    if (!description) target.innerText = description;
+    updatePage({ ...page, description });
+    editing = false;
+  }
 </script>
 
 <div class="description" class:active class:focus class:editing data-testid="Description">
@@ -63,7 +61,6 @@
     <button
       type="button"
       class="edit-button"
-      id={`edit-description-${page.id}`}
       on:click={onClickEdit}
       on:keydown={onKeyDownEditButton}
       tabindex={active && focus ? taborder : -1}
@@ -133,12 +130,10 @@
       mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 20px);
     }
     &.editing .scrollable {
-      &:focus-within {
-        outline-style: auto;
-        outline-width: 2px;
-        outline-color: blue;
-        outline-offset: -4px;
-      }
+      outline-style: auto;
+      outline-width: 2px;
+      outline-color: blue;
+      outline-offset: -4px;
     }
 
     .editor,

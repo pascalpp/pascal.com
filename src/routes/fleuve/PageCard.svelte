@@ -2,9 +2,23 @@
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';
-  import { focusCard } from './focusHelpers';
-  import { activatePage, setPageFocus, unsetPageFocus } from './pages.store';
-  import getCardKeyHandler from './getCardKeyHandler';
+  import { focusNextElement, focusCard, focusAddCard } from './focusHelpers';
+  import {
+    activatePage,
+    setPageFocus,
+    unsetPageFocus,
+    removePage,
+    reorderPage,
+    movePageUp,
+    movePageDown,
+    addParentAbovePage,
+    replaceEmptyParent,
+    deactivatePage,
+  } from './pages.store';
+
+  const tutorialId = 'tutorial-start-page';
+  const deleteConfirmation = 'Are you sure you want to remove this card and all of its connections?';
+  const deleteTutorialConfimation = 'You’re about to delete this tutorial. You can restore it in the settings menu.';
 
   export let page: Page;
   export let parentId: PageId;
@@ -12,17 +26,7 @@
   export let nextSiblingId: PageId | undefined = undefined;
   export let taborder = 0;
 
-  $: firstChildId = page.connections[0];
-  $: cardKeyHandler = getCardKeyHandler({
-    pageId: page.id,
-    active: page.active,
-    parentId,
-    previousSiblingId,
-    nextSiblingId,
-    firstChildId,
-  });
-
-  const editDescription = `#edit-description-${page.id}`;
+  let editingDescription = false;
 
   function onClick(event: MouseEvent) {
     event.preventDefault();
@@ -37,15 +41,124 @@
   }
 
   function onKeyDown(event: KeyboardEvent) {
+    const target = event.target as HTMLElement;
+    const active = page.active && page.focus;
+
     if (['d', 'e'].includes(event.key.toLowerCase())) {
       event.preventDefault();
-      if (page.active) {
-        const editButton = document.querySelector(editDescription) as HTMLButtonElement;
-        editButton?.click();
+      editingDescription = true;
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        const newParent = movePageDown(page.id);
+        if (active) {
+          activatePage(newParent.id);
+          activatePage(page.id);
+        }
+        requestAnimationFrame(() => {
+          focusCard(page.id);
+        });
+      } else if (event.altKey) {
+        const newParent = addParentAbovePage(page.id);
+        requestAnimationFrame(() => {
+          activatePage(newParent.id);
+          if (active) {
+            activatePage(page.id);
+          }
+          requestAnimationFrame(() => {
+            focusCard(page.id);
+          });
+        });
+      } else {
+        focusCard(page.connections[0]) || focusAddCard(page.id) || activatePage(page.id);
       }
     }
 
-    cardKeyHandler(event);
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        reorderPage(page.id, 'up');
+        requestAnimationFrame(() => {
+          focusCard(page.id);
+        });
+      } else {
+        focusCard(previousSiblingId);
+      }
+    }
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        reorderPage(page.id, 'down');
+        requestAnimationFrame(() => {
+          focusCard(page.id);
+        });
+      } else {
+        focusCard(nextSiblingId) || focusAddCard(parentId);
+      }
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        movePageUp(page.id);
+        requestAnimationFrame(() => {
+          const el = focusCard(page.id);
+          if (active) el?.click();
+        });
+      } else if (event.altKey) {
+        replaceEmptyParent(page.id);
+        requestAnimationFrame(() => {
+          const el = focusCard(page.id);
+          if (active) el?.click();
+        });
+      } else {
+        focusCard(parentId);
+      }
+    }
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (active) {
+        deactivatePage(page.id);
+      } else {
+        target.click();
+      }
+    }
+
+    // Space key
+    if (event.key === ' ') {
+      event.preventDefault();
+      if (active) {
+        deactivatePage(page.id);
+      } else {
+        target.click();
+      }
+    }
+
+    if (event.key === 'Escape') {
+      if (editingDescription) {
+        editingDescription = false;
+      } else if (active) {
+        event.preventDefault();
+        deactivatePage(page.id);
+      } else {
+        focusCard(parentId);
+      }
+    }
+
+    if (['Backspace', 'Delete'].includes(event.key)) {
+      event.preventDefault();
+      const isTutorial = page.id === tutorialId;
+      const message = isTutorial ? deleteTutorialConfimation : deleteConfirmation;
+      const confirmed = confirm(message);
+      if (confirmed) {
+        removePage(page.id);
+        focusCard(nextSiblingId) || focusCard(previousSiblingId) || focusNextElement();
+      }
+    }
   }
 
   function onTransitionEnd(event: TransitionEvent) {
@@ -71,7 +184,7 @@
 >
   <div class="page-card-content">
     <PageTitle {page} {taborder} />
-    <PageDescription {page} {taborder} />
+    <PageDescription {page} {taborder} bind:editing={editingDescription} />
   </div>
   <!-- <button class="focus-bottom-target" tabindex={page.active && page.focus ? tabindex : -1} on:keydown={onKeyDown} /> -->
 </div>
