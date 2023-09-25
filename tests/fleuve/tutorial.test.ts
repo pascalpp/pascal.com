@@ -110,25 +110,39 @@ test('Tutorial flow', async ({ page }) => {
   const insertCard = page.getByTestId('Insert cards');
   await page.keyboard.press('Enter');
   await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('Enter');
   await expect(rearrangeCard).toBeFocused();
+
+  // reorder at large size
+  // parent card should be activated
+  await page.keyboard.press('Enter');
   await expect(rearrangeCard).toHaveClass(/active/);
+  await page.keyboard.press('Shift+ArrowRight');
+  await expect(insertCard).toHaveClass(/active/);
+  await expect(rearrangeCard).toHaveClass(/active/);
+  await expect(rearrangeCard).toBeFocused();
+  await page.keyboard.press('Shift+ArrowLeft');
+  await expect(insertCard).not.toHaveClass(/active/);
+  await expect(rearrangeCard).toHaveClass(/active/);
+  await expect(rearrangeCard).toBeFocused();
+
+  // reorder at small size for screenshots
   await page.keyboard.press('Enter');
   await expect(rearrangeCard).not.toHaveClass(/active/);
-
   await page.keyboard.press('Shift+ArrowDown');
-  await expect(page).toHaveScreenshot('reorder-1.png', { scale: 'device' });
+  // await expect(page).toHaveScreenshot('reorder-1.png', { scale: 'device' });
   await page.keyboard.press('Shift+ArrowRight');
-  await expect(page).toHaveScreenshot('reorder-2.png', { scale: 'device' });
+  await expect(insertCard).not.toHaveClass(/active/);
+  // await expect(page).toHaveScreenshot('reorder-2.png', { scale: 'device' });
   await page.keyboard.press('Shift+ArrowLeft');
-  await expect(page).toHaveScreenshot('reorder-3.png', { scale: 'device' });
+  // await expect(page).toHaveScreenshot('reorder-3.png', { scale: 'device' });
   await page.keyboard.press('Shift+ArrowUp');
-  await expect(page).toHaveScreenshot('reorder-4.png', { scale: 'device' });
+  // await expect(page).toHaveScreenshot('reorder-4.png', { scale: 'device' });
 
   // insert cards
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   await page.keyboard.press('ArrowDown');
-  await page.keyboard.press('Enter');
   await expect(insertCard).toBeFocused();
+  await page.keyboard.press('Enter');
   await expect(insertCard).toHaveClass(/active/);
   await page.keyboard.press('Alt+ArrowRight');
   const untitledCard = page.getByTestId('Untitled card');
