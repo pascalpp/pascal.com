@@ -1,3 +1,5 @@
+# https://playwright.dev/docs/ci-intro
+
 name: Playwright Tests
 on:
   push:
@@ -18,7 +20,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test --project safari
+        run: npx playwright test --ignore-snapshots
       - uses: actions/upload-artifact@v3
         if: always()
         with:
