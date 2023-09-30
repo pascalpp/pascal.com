@@ -1,3 +1,7 @@
+// https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog#add-an-rss-feed
+// https://www.davidwparker.com/posts/how-to-make-an-rss-feed-in-sveltekit
+// https://scottspence.com/posts/make-an-rss-feed-with-sveltekit
+
 import pretty from 'pretty';
 import { fetchAllPosts } from '../../api/posts/util';
 import type { PostSummary } from '../../api/posts/util';
