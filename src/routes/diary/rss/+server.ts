@@ -37,7 +37,7 @@ function render(posts: PostSummary[]) {
 <title>${title}</title>
 <description>${description}</description>
 <link>${baseURL}</link>
-<atom:link href="${baseURL}/rss.xml" rel="self" type="application/rss+xml"/>
+<atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
 ${posts
   .map(
     (post) => `<item>
