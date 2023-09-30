@@ -14,6 +14,7 @@
   export let medium = false;
   export let large = false;
   export let wide = false;
+  export let bold = false;
   export let nowrap = true;
   export let active = false;
 
@@ -22,7 +23,7 @@
   export let external = !!href && httpRegex.test(href);
   export let target = external ? '_blank' : undefined;
   export let rel = external ? 'noopener noreferrer' : undefined;
-  export let value: string | undefined = undefined;
+  export let value: string | number | undefined = undefined;
   export let accesskey: string | undefined = undefined;
 
   const roundrect = primary || secondary;
@@ -40,7 +41,7 @@
 
 <svelte:element
   this={tag}
-  sveltekit:prefetch
+  data-sveltekit-preload-data={href ? true : 'off'}
   {href}
   {rel}
   {target}
@@ -62,7 +63,9 @@
   class:wide
   class:nowrap
   class:active
+  class:bold
   disabled={loading || disabled || null}
+  role={href ? 'link' : 'button'}
   on:click
 >
   <span class="button-content">
@@ -125,6 +128,10 @@
       white-space: nowrap;
     }
 
+    &.bold {
+      font-weight: bold;
+    }
+
     // link-styled buttons
     &.link {
       color: steelblue;
@@ -160,9 +167,8 @@
     // button-styled buttons
     &.roundrect {
       @shadow-distance: 1px;
-      font-weight: bold;
       padding: 0.5em 1.5em;
-      border-radius: 0.5em;
+      border-radius: 4px;
       box-sizing: border-box;
       color: var(--text-color);
       background-color: var(--background-color);
