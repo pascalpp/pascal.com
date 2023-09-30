@@ -136,26 +136,26 @@ latest: 0.2.3
 - [ ] Use transform: scale on whole flow instead of page height?
 - [x] Remove extra spikes on connection wiring?
 - [ ] Thicker wires for active connections?
-- [ ] Svelte transitions?
 - [x] scroll mask at bottom of description
 - [x] fix scrollbar inset on description field (should hug the edge of the card)
 - [ ] Delete to remove a page; option-delete to remove a page and its children?
 - [ ] Hotkey cheat sheet
-- [ ] Address a11y issues
 - [x] Make alignment a setting: top-aligned or center-aligned
+- [ ] more styles for markdown so can do prototype UIs with buttons, cards, etc.
+- [ ] Svelte transitions?
 
 <details>
 	<summary>Feedback from a guy I know.</summary>
 
 - [x] Triangular bullets communicate possible accordion element. I had to click to make sure.
 - [x] Firefox bug: Child cards show as some attached to the parent card, while others float detached. (:has bug)
-- [ ] When I saw "When you're ready, delete this card and create a new flow below." I thought "I'm ready to start, but I don't know how to delete yet!" Only after I started carding through did I realize that that instruction was intended to be followed after all the others.
+- [x] When I saw "When you're ready, delete this card and create a new flow below." I thought "I'm ready to start, but I don't know how to delete yet!" Only after I started carding through did I realize that that instruction was intended to be followed after all the others.
 - [ ] Often when editing I want to undo so I hit Esc rather than Enter. I'm used to that behavior. But Esc and Enter both save.
 - [ ] Related: It is pretty neat that Cmd-Z does undo even after you've left the text field and returned to it!
 - [ ] But it is sad I can't undo a card/branch deletion.
-- [ ] I would expect to be able to Tab an unexpanded card, but that has no effect
+- [-] I would expect to be able to Tab an unexpanded card, but that has no effect
 - [x] "Are you sure you want to remove this page and all of its connections?" shouldn't that be "card"?
-- [ ] Backspace works, but not Delete (Firefox?)
+- [x] Backspace works, but not Delete (Firefox?)
 - [x] Overall I think the keyboard shortcuts are pretty intuitive.
 
 </details>

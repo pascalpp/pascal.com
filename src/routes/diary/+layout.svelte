@@ -40,7 +40,9 @@
   </main>
 
   <footer>
-    <div class="structure">pascal’s diary · copyright about now</div>
+    <div class="structure">
+      pascal’s diary · copyright about now · <a href="/diary/rss" data-sveltekit-reload>rss</a>
+    </div>
   </footer>
 </div>
 
@@ -56,6 +58,11 @@
     font-weight: 200;
     // animation: zoom-fade 1.5s ease-out 0ms forwards;
     // transform-origin: top left;
+  }
+
+  a {
+    text-decoration: none;
+    color: @blue;
   }
 
   main {
@@ -116,10 +123,6 @@
       }
     }
 
-    a {
-      text-decoration: none;
-      color: @blue;
-    }
     h1 {
       font-weight: 500;
       font-size: 24px;
