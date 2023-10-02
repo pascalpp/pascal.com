@@ -11,13 +11,9 @@
   }
 
   const labeledToggleOptions = [
-    { value: 'bad', label: 'Bad' },
-    { value: 'good', label: 'Good' },
+    { value: 'false', label: 'Bad' },
+    { value: 'true', label: 'Good' },
   ];
-  let labeledToggleValue = 'bad';
-  function toggleLabeledToggleValue() {
-    labeledToggleValue = labeledToggleValue === 'bad' ? 'good' : 'bad';
-  }
 </script>
 
 <svelte:head>
@@ -33,13 +29,13 @@
   </section>
 
   <section>
-    <p>Labeled toggle switch</p>
+    <p>With labels</p>
     <ToggleSwitch
       name="toggle-with-labels"
       label="Toggle with labels"
-      value={labeledToggleValue}
+      value={basicValue}
       options={labeledToggleOptions}
-      on:click={toggleLabeledToggleValue}
+      on:click={toggleBasicValue}
     />
   </section>
 
