@@ -2,7 +2,7 @@
 title: Why the prolonged Democratic Primary is a good thing, for Democrats
 date: 2008-04-02T17:02:26.000Z
 wordpress_id: 195
-status: draft
+status: published
 ---
 
 I would certainly agree that there is no good reason the primary process should be this long. But the problem lies in how early the primary process starts, not how long it is taking to resolve itself. We've been watching the potential Democratic candidates jockeying for position for over a year now, and that's obviously too long. But I think that is largely an indicator of how eager everyone is, including the traditional corporate media, to see this lame fucking President replaced. And that eagerness is a good thing.

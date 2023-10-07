@@ -2,8 +2,8 @@
 title: Another iPhone wishlist
 date: 2007-07-07T14:33:49.000Z
 wordpress_id: 166
-status: draft
 tags: [iphone]
+status: published
 ---
 
 So yeah I got an iPhone. It's awesome, I don't think I'll ever bother carrying a laptop again.

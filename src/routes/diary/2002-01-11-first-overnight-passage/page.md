@@ -33,40 +33,40 @@ We’ll be tied up here for a couple weeks, doing some work on the aft deck, reb
 
 Here’s some more pictures from the last week or so:
 
-<p class="polaroid"><img src="./nick-dingy-clouds.jpg" /></p>
+![img](./nick-dingy-clouds.jpg){ .polaroid }
 Nick hops out of the dingy in front of an ominous sky.
 
-<p class="polaroid"><img src="./prettysky-01.jpg" /></p>
+![img](./prettysky-01.jpg){ .polaroid }
 
-<p class="polaroid"><img src="./prettysky-02.jpg" /></p>
+![img](./prettysky-02.jpg){ .polaroid }
 A couple of pretty sky pictures.
 
-<p class="polaroid"><img src="./val-intherigging.jpg" /></p>
+![img](./val-intherigging.jpg){ .polaroid }
 Valerie went up the mast to sew a leather chafe patch on to one of the spreaders.
 
-<p class="polaroid"><img src="./viewfromuphere.jpg" /></p>
+![img](./viewfromuphere.jpg){ .polaroid }
 We hauled the camera up to her so she could get a few shots from up above. Scary.
 
-<p class="polaroid"><img src="./thejig.jpg" /></p>
+![img](./thejig.jpg){ .polaroid }
 Here’s the jig I set up to route some insets into this board I was using to make a frame against which the jerry cans of spare diesel could be lashed. I also treated myself to a coke that day.
 
-<p class="polaroid"><img src="./diesel-board.jpg" /></p>
+![img](./diesel-board.jpg){ .polaroid }
 Here’s the finished product, mounted on the stanchions on the starboard aft deck.
 
-<p class="polaroid"><img src="./dingy-ripples.jpg" /></p>
+![img](./dingy-ripples.jpg){ .polaroid }
 On our last night in Vero Beach, we took a dingy ride to shore at sunset and the water looked like oil. And the sky was pretty cool too.
 
-<p class="polaroid"><img src="./certificateofachievement.jpg" /></p>
+![img](./certificateofachievement.jpg){ .polaroid }
 Then we went out to a fancy restaurant where Willow received a Certificate of Achievement from the Tristan Jones Foundation.
 
-<p class="polaroid"><img src="./val-tallship.jpg" /></p>
+![img](./val-tallship.jpg){ .polaroid }
 Valerie plays on the bow as we follow a tallship out to sea.
 
-<p class="polaroid"><img src="./nick-tallship.jpg" /></p>
+![img](./nick-tallship.jpg){ .polaroid }
 Nick looks over the charts with the tallship in the background.
 
-<p class="polaroid"><img src="./nick-sunset.jpg" /></p>
+![img](./nick-sunset.jpg){ .polaroid }
 Nick silhouetted against the sunset.
 
-<p class="polaroid"><img src="./sunset-lifelines.jpg" /></p>
+![img](./sunset-lifelines.jpg){ .polaroid }
 The sunset through the lifelines. Mmm mmm nummy.

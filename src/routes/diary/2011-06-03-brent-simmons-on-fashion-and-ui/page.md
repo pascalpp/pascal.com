@@ -2,7 +2,7 @@
 title: Brent Simmons on fashion and UI
 date: 2011-06-03T23:31:32.000Z
 wordpress_id: 281
-status: draft
+status: published
 ---
 
 During [this excellent interview](http://daringfireball.net/2011/06/netnewswire%5Fblack%5Fpixel) about the sale of NetNewsWire to Black Pixel, Brent Simmons shares this interesting insight:

@@ -11,14 +11,14 @@ I AM THE SERENEST!
 
 Actually, I think I was high. Except I don’t remember smoking anything.
 
-<p class="polaroid"><img src="./manhattan-bridge-1.jpg" /></p>
+![img](./manhattan-bridge-1.jpg){ .polaroid }
 Here’s the ped path on the Manhattan Bridge. Cellphones take ugly pictures.
 
-<p class="polaroid"><img src="./manhattan-bridge-2.jpg" /></p>
+![img](./manhattan-bridge-2.jpg){ .polaroid }
 The bridge looks prettier on the Manhattan end. Cellphones take ugly pictures.
 
-<p class="polaroid"><img src="./brooklyn-bridge.jpg" /></p>
+![img](./brooklyn-bridge.jpg){ .polaroid }
 I saw this three times today. Sorry, I’m still high. And cellphones still take ugly pictures.
 
-<p class="polaroid"><img src="./nipple-bleed.jpg" /></p>
+![img](./nipple-bleed.jpg){ .polaroid }
 Today I got my first nipple bleed. Bitchen. Gonna have to tape them suckers down next time.

@@ -2,7 +2,7 @@
 title: The Republican Lottery
 date: 2008-10-16T16:25:46.000Z
 wordpress_id: 209
-status: draft
+status: published
 ---
 
 Tommy McCall at The New York Times has posted [this set of charts](http://www.nytimes.com/interactive/2008/10/14/opinion/20081014%5FOPCHART.html) show the return one would see from a $10,000 investment in the S&P index under each political party over the last 80 years. Under 40 years worth of Democratic administration, your return would be $300,671\. Under roughly the same during of Republican administration, your return would be only $51,211\. (And if you include Herbert Hoover's term, the Republican return drops to just $11,733.) All very interesting.

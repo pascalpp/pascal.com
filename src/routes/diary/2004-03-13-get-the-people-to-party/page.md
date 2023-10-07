@@ -5,47 +5,47 @@ original: 000144.php
 tags: [nyc, party]
 ---
 
-<p class="polaroid"><img src="./getthepeople.jpg" /></p>
+![img](./getthepeople.jpg){ .polaroid }
 So we had a pretty rockin party on Friday night. Here’s the pics. Click the ones with the blue borders to see more.
 
-<p class="polaroid"><img src="./alison-marshall-pascal.jpg" /></p>
+![img](./alison-marshall-pascal.jpg){ .polaroid }
 Alison, Marshall, and Me.
 
-<p class="polaroid"><img src="./beergut.jpg" /></p>
+![img](./beergut.jpg){ .polaroid }
 Megan’s Beer Gut.
 
-<p class="polaroid"><img src="./beerportraitshorizontal-0.jpg" /></p>
+![img](./beerportraitshorizontal-0.jpg){ .polaroid }
 Some plastic cup beer portraits. Click it.
 
-<p class="polaroid"><img src="./kyletutu-0.jpg" /></p>
+![img](./kyletutu-0.jpg){ .polaroid }
 Kyle showing off his party tutu. Click it.
 
-<p class="polaroid"><img src="./allintheframe-0.jpg" /></p>
+![img](./allintheframe-0.jpg){ .polaroid }
 We all got in the frame! It was awesome. Click it.
 
-<p class="polaroid"><img src="./feet-0.jpg" /></p>
+![img](./feet-0.jpg){ .polaroid }
 Feet portraits. Click it.
 
-<p class="polaroid"><img src="./beerportraitsvertical-0.jpg" /></p>
+![img](./beerportraitsvertical-0.jpg){ .polaroid }
 More beer portraits. Click it.
 
-<p class="polaroid"><img src="./b-face.jpg" /></p>
+![img](./b-face.jpg){ .polaroid }
 B Face.
 
-<p class="polaroid"><img src="./b-lauren.jpg" /></p>
+![img](./b-lauren.jpg){ .polaroid }
 B and Lauren.
 
-<p class="polaroid"><img src="./lauren-rachel-hug.jpg" /></p>
+![img](./lauren-rachel-hug.jpg){ .polaroid }
 Lauren and Jerome.
 
-<p class="polaroid"><img src="./rachel-alison-nika.jpg" /></p>
+![img](./rachel-alison-nika.jpg){ .polaroid }
 Karol’s Aniellas: Rachel, Alison, and Dominika. Badass. (Pardon my Polish.)
 
-<p class="polaroid"><img src="./lauren-rachel-stoked.jpg" /></p>
+![img](./lauren-rachel-stoked.jpg){ .polaroid }
 Lauren and Jerome, again. They were both drunker than each other at this point, I think.
 
-<p class="polaroid"><img src="./99bottles-0.jpg" /></p>
+![img](./99bottles-0.jpg){ .polaroid }
 When everyone left I noticed that they all seemed to have left their beer bottles behind. Click it.
 
-<p class="polaroid"><img src="./diner-0.jpg" /></p>
+![img](./diner-0.jpg){ .polaroid }
 Then we went to the diner. Matt and Liz each ordered a hand sandwich. Lauren picked her nose. I fell asleep on Kyle’s shoulder. And then Lauren and Liz threw up. Click it.

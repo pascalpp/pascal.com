@@ -6,4 +6,4 @@ original: 000134.php
 
 Here’s some funny old pics of my brother Ryan I been meaning to post. Click it.
 
-<p class="polaroid"><img src="./ryan-0.jpg" /></p>
+![img](./ryan-0.jpg){ .polaroid }

@@ -7,19 +7,19 @@ tags: [mp3, running, nyc]
 
 Here’s some more ugly cellphone pictures.
 
-<p class="polaroid"><img src="./3milerun.jpg" /></p>
+![img](./3milerun.jpg){ .polaroid }
 Today I ran 3 miles.
 
-<p class="polaroid"><img src="./newshoes-0.jpg" /></p>
+![img](./newshoes-0.jpg){ .polaroid }
 In my new shoes. That I bought off eBay. For $30. Click to see the side view. I think they might be a little too small. But the run was okay. We’ll see when I run 6 tomorrow.
 
-<p class="polaroid"><img src="./pascal-alison.jpg" /></p>
+![img](./pascal-alison.jpg){ .polaroid }
 The other night I had an awesome dinner at Angelica Kitchen with my friend Alison and her neighbor Rachel who are both (slowly) coming down off this weird fast. That’s Alison on the left. Rachel is sitting where you are now.
 
-<p class="polaroid"><img src="./jerome.jpg" /></p>
+![img](./jerome.jpg){ .polaroid }
 Way before that, I had dinner at some late night Chinese restaurant with my friend Jerome. She make funny face. Click into camera, go face.
 
-<p class="polaroid"><img src="./annaoxygen.jpg" /></p>
+![img](./annaoxygen.jpg){ .polaroid }
 Way even super way before that, like when there was still snow, this person Anna Oxygen came to visit and stayed with me and Kyle. She wears funny glasses sometimes. And she plays awesome dancy aerobics music, and she does aerobics in her show. I like to listen to Anna Oxygen when I’m running.
 
 Here listen:

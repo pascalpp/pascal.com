@@ -11,4 +11,4 @@ Look Ma! A snow globe! Right out my window!
 
 And look Ma! Drapes!
 
-<p class="polaroid"><img src="./drapes.jpg" /></p>
+![img](./drapes.jpg){ .polaroid }

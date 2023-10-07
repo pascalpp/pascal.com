@@ -7,17 +7,17 @@ tags: [nyc]
 
 A few days before I got my haircut my friend Margaret came to town with her boyfriend Paolo. We went to an Argentinian steakhouse on purpose and then a burlesque show by accident. It was fun.
 
-<p class="polaroid"><img src="./marg-paolo.jpg" /></p>
+![img](./marg-paolo.jpg){ .polaroid }
 Margaret and Paolo.
 
-<p class="polaroid"><img src="./paolo-pascal.jpg" /></p>
+![img](./paolo-pascal.jpg){ .polaroid }
 Paolo and me.
 
-<p class="polaroid"><img src="./pascal-marg.jpg" /></p>
+![img](./pascal-marg.jpg){ .polaroid }
 Me and Margaret.
 
-<p class="polaroid"><img src="./bubblechair.jpg" /></p>
+![img](./bubblechair.jpg){ .polaroid }
 Marg and Paolo in some bubble chair thingy.
 
-<p class="polaroid"><img src="./pascal.jpg" /></p>
+![img](./pascal.jpg){ .polaroid }
 Me, from the bubble chair.

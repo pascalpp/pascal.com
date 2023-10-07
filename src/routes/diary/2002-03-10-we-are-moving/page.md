@@ -9,33 +9,33 @@ At long last we are no longer in Fort Lauderdale!
 
 After fixing the headstay fitting, we said our goodbyes to the kind folks at Summerfield and made our way down the river. I think perhaps they were just a little glad to see us go. Certainly, we were happy to be leaving.
 
-<p class="polaroid"><img src="./abouttoleave.jpg" /></p>
+![img](./abouttoleave.jpg){ .polaroid }
 
 Here’s Willow and her crew just before leaving Summerfield.
 
-<p class="polaroid"><img src="./byebye-summerfield.jpg" /></p>
+![img](./byebye-summerfield.jpg){ .polaroid }
 
 Goodbye! (And good riddance?)
 
 After a short trip down the New River, we anchored overnight in Lake Sylvia, and got ready for an early trip down to Miami the following day.
 
-<p class="polaroid"><img src="./sails-up.jpg" /></p>
+![img](./sails-up.jpg){ .polaroid }
 
 Once we got out of the harbor in Fort Lauderdale, we raised the sails and started south. It was good to see Willow with her canvas up again.
 
-<p class="polaroid"><img src="./nick-relaxing.jpg" /></p>
+![img](./nick-relaxing.jpg){ .polaroid }
 
 Here’s Nick relaxing in the cockpit as the autopilot takes us southward.
 
-<p class="polaroid"><img src="./val-relaxing.jpg" /></p>
+![img](./val-relaxing.jpg){ .polaroid }
 
 Here’s Val doing a bit of the same.
 
-<p class="polaroid"><img src="./visiting-bird.jpg" /></p>
+![img](./visiting-bird.jpg){ .polaroid }
 
 Along the way we received a brief visit from a little bird who seemed to be taking a short break.
 
-<p class="polaroid"><img src="./hello-miami.jpg" /></p>
+![img](./hello-miami.jpg){ .polaroid }
 
 Before long we reached Miami, and were glad of it. The people of Miami were kind enough to erect these tall buildings along the waterfront in honor of our arrival.
 

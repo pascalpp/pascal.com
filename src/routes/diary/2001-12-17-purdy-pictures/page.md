@@ -7,26 +7,26 @@ tags: [willow, sailing]
 
 I think today we’ll just look at some pictures.
 
-<p class="polaroid"><img src="./sunrise-fortgeorge.jpg" /></p>
+![img](./sunrise-fortgeorge.jpg){ .polaroid }
 
 Just before sunrise on the Fort George River where we anchored last night.
 
-<p class="polaroid"><img src="./birdsmigrating.jpg" /></p>
+![img](./birdsmigrating.jpg){ .polaroid }
 
 Some kind of birds migrating south. Of course they may have been lining up to spell ‘Willow’, but we didn’t have time to stick around and find out.
 
-<p class="polaroid"><img src="./valerie-stern.jpg" /></p>
+![img](./valerie-stern.jpg){ .polaroid }
 
 Valerie handling lines on the stern as we prepare to leave Fort George River.
 
-<p class="polaroid"><img src="./clouds.jpg" /></p>
+![img](./clouds.jpg){ .polaroid }
 
 Pretty clouds.
 
-<p class="polaroid"><img src="./drawbridge.jpg" /></p>
+![img](./drawbridge.jpg){ .polaroid }
 
 Passing through one of the many drawbridges on the ICW.
 
-<p class="polaroid"><img src="./scrubbing-topsides.jpg" /></p>
+![img](./scrubbing-topsides.jpg){ .polaroid }
 
 Nick holds me out of the drink while i give the topsides a scrub.

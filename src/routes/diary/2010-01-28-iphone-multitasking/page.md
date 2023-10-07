@@ -11,7 +11,7 @@ status: published
 
 _\[ I'd like to preface this by saying that multitasking is not the same as allowing apps to run in the background. This is really a UI for better app-switching (cf. [this tweet from @camh](https://twitter.com/camh/statuses/8874382135)) — whether the non-frontmost apps are still actually running is a separate discussion. They could just as easily be 'sleeping,' as apps do today when you press the home button. \]_
 
-![A preview of the multitasking idea](./preview.png)
+![A preview of the multitasking idea](./preview.png){ .bordered .padded}
 
 It seems to me that from a UI perspective, the problem of multitasking in iPhone OS has already been solved. Both Safari and the Springboard (Home) app have the ability to slide from window to window, or screen to screen. A similar solution could be used to switch between running applications. Let's call it 'App Switching Mode.'
 

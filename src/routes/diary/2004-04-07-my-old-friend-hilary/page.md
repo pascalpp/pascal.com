@@ -7,16 +7,16 @@ tags: [tour]
 
 We had the night off last night, so we left Chicago and drove a couple hours to West Lafayette, Indiana where my friend Hilary lives with his wife Ann and their son Haley and daughter Linnea. Haley is 5 and Linnea is 3, and they’re both really beautiful and sweet.
 
-<p class="polaroid"><img src="./hilary-ann.jpg" /></p>
+![img](./hilary-ann.jpg){ .polaroid }
 Hilary and Ann.
 
-<p class="polaroid"><img src="./haley.jpg" /></p>
+![img](./haley.jpg){ .polaroid }
 Haley re-enacting A Christmas Story.
 
-<p class="polaroid"><img src="./linnea.jpg" /></p>
+![img](./linnea.jpg){ .polaroid }
 Linnea at breakfast.
 
-<p class="polaroid"><img src="./darren-hilary.jpg" /></p>
+![img](./darren-hilary.jpg){ .polaroid }
 Darren and Hilary.
 
 Hilary and Ann live in a beautiful house right near the Purdue campus, and they both work at the University of Purdue. Ann is a research scientist and is also teaching her first class this semester, and Hilary is the lead web designer and developer for the University’s website.

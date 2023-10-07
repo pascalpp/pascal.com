@@ -7,6 +7,6 @@ tags: [caption contest]
 
 Please submit your best caption for the following:
 
-<p class="polaroid"><img src="./vest.jpg" /></p>
+![img](./vest.jpg){ .polaroid }
 
 Now play nice!

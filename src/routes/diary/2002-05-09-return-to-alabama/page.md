@@ -7,31 +7,31 @@ tags: [mp3, alabama]
 
 At long last, here’s some of the photos I’ve taken since departing Willow.
 
-<p class="polaroid"><img src="./family.jpg" /></p>
+![img](./family.jpg){ .polaroid }
 Here’s my family, Erin, Ryan, Me, Lauren, and me dear mammy, as well as Erin’s dog Charlie and Mom’s dog Prancer.
 
-<p class="polaroid"><img src="./erin-charlie.jpg" /></p>
+![img](./erin-charlie.jpg){ .polaroid }
 Erin and Charlie. Charlie is a girl. So is Erin.
 
-<p class="polaroid"><img src="./lauren-prancer.jpg" /></p>
+![img](./lauren-prancer.jpg){ .polaroid }
 Lauren and Prancer. Prancer is a boy. So is Lauren. No wait, she’s a girl.
 
-<p class="polaroid"><img src="./dogs.jpg" /></p>
+![img](./dogs.jpg){ .polaroid }
 Me and Charlie and Prancer and Peedee. Peedee is my brother’s dog. Peedee is a girl.
 
-<p class="polaroid"><img src="./peedee-passed-out.jpg" /></p>
+![img](./peedee-passed-out.jpg){ .polaroid }
 Me and Peedee went out on the town, but she didn’t last long. A few drinks and she passed out in my sweatshirt.
 
-<p class="polaroid"><img src="./neworleans-ryan.jpg" /></p>
+![img](./neworleans-ryan.jpg){ .polaroid }
 The following weekend I went to New Orleans with my nutty brother Ryan…
 
-<p class="polaroid"><img src="./neworleans-sarah.jpg" /></p>
+![img](./neworleans-sarah.jpg){ .polaroid }
 …and his nutty girlfriend Sarah…
 
-<p class="polaroid"><img src="./neworleans-jazz.jpg" /></p>
+![img](./neworleans-jazz.jpg){ .polaroid }
 We roamed around during the French Quarter Festival and listened to some awesome music. This is Doreen’s Jazz Band on Jackson Square…
 
-<p class="polaroid"><img src="./kitchensyncopators.jpg" /></p>
+![img](./kitchensyncopators.jpg){ .polaroid }
 …and this is the Kitchen Syncopators on one of the side streets in the quarter.
 
 Have a listen:
@@ -48,51 +48,51 @@ Have a listen:
 
 Later that night we hit the town and knocked a few back.
 
-<p class="polaroid"><img src="./doinashot.jpg" /></p>
+![img](./doinashot.jpg){ .polaroid }
 My brother was kind enough to buy me a drink, but he was also mean enough to stick it in this girl’s pants.
 
 The rest of my trip to New Orleans is a bit of a blur and for some reason there aren’t any pictures.
 
-<p class="polaroid"><img src="./bigdog.jpg" /></p>
+![img](./bigdog.jpg){ .polaroid }
 About a week later I went to Birmingham to visit some friends for a while. I saw this woman whose pet dog was so big that it had a pet dog of its own.
 
-<p class="polaroid"><img src="./petercatch.jpg" /></p>
+![img](./petercatch.jpg){ .polaroid }
 I went to a friend’s blacksmith shop and played catch with my friend Peter.
 
-<p class="polaroid"><img src="./weldinggear.jpg" /></p>
+![img](./weldinggear.jpg){ .polaroid }
 Then I tried on some of the gear lying around.
 
-<p class="polaroid"><img src="./aviators.jpg" /></p>
+![img](./aviators.jpg){ .polaroid }
 Bad fuckin ass.
 
-<p class="polaroid"><img src="./nursinghome-wheelchairs.jpg" /></p>
+![img](./nursinghome-wheelchairs.jpg){ .polaroid }
 A few days later we went to this creepy abandoned nursing home that my friends discovered. This is a closet full of old wheelchairs.
 
-<p class="polaroid"><img src="./nursinghome-lonechair.jpg" /></p>
+![img](./nursinghome-lonechair.jpg){ .polaroid }
 This is the first wheelchair ever built, I think.
 
-<p class="polaroid"><img src="./nursinghome-reeltoreel.jpg" /></p>
+![img](./nursinghome-reeltoreel.jpg){ .polaroid }
 There was an old reel-to-reel player with handwritten instructions.
 
-<p class="polaroid"><img src="./ultravan.jpg" /></p>
+![img](./ultravan.jpg){ .polaroid }
 This is Peter and his girlfriend Mary standing next to an Ultravan that’s parked in their neighborhood. Later I met the guy who owns it, I guess there were only like 450 ever made and only 50 currently running. He and his wife traveled the states for 3 years in this one.
 
-<p class="polaroid"><img src="./paul-video.jpg" /></p>
+![img](./paul-video.jpg){ .polaroid }
 Here’s my friend Paul working on one of many video projects. He’s an iMovie maestro.
 
-<p class="polaroid"><img src="./mepaulpaul.jpg" /></p>
+![img](./mepaulpaul.jpg){ .polaroid }
 Later me and Paul and his boyfriend Paul went out for Indian food. Mmm nummy.
 
-<p class="polaroid"><img src="./paulmonk.jpg" /></p>
+![img](./paulmonk.jpg){ .polaroid }
 This is Paul playing with his cat Monk. Sometimes they play rough.
 
-<p class="polaroid"><img src="./scaryfaces-0.jpg" /></p>
+![img](./scaryfaces-0.jpg){ .polaroid }
 Then we made some scary faces. Click the picture to see more scaries. Note I gave myself another dang haircut.
 
-<p class="polaroid"><img src="./rufus.jpg" /></p>
+![img](./rufus.jpg){ .polaroid }
 Finally, Lauren and I went to Birmingham to see Rufus Wainwright in concert. He was awesome.
 
-<p class="polaroid"><img src="./rufusautograph.jpg" /></p>
+![img](./rufusautograph.jpg){ .polaroid }
 After the show, we waited by the bus like good little groupies and Rufus signed my sister’s chest.
 
 Aight, that’s all for now. Here, listen to some Rufus.

@@ -5,7 +5,7 @@ original: 000094.php
 tags: [willow, sailing]
 ---
 
-<p class="polaroid"><img src="./salty.jpg" /></p>
+![img](./salty.jpg){ .polaroid }
 
 So yeah, the beard is comin in pretty good I’d say. Yeah, I didn’t know I was growing a beard either. It just sort of happened.
 
@@ -15,45 +15,45 @@ Then of course Nick came up to relieve me at the helm and all that went away.
 
 Some more pictures, some rambling thoughts:
 
-<p class="polaroid"><img src="./sailsup.jpg" /></p>
+![img](./sailsup.jpg){ .polaroid }
 
 Here’s Willow with her sails up, at last we really got to sail her a bit. She doesn’t need much wind to get a nice move on.
 
-<p class="polaroid"><img src="./almostadolphin.jpg" /></p>
+![img](./almostadolphin.jpg){ .polaroid }
 
 The dolphins have been toying with me for days now. They surround us daily, idly arching their backs through the surface of the water, poking their fins into the sunlight. For the most part they keep their distance, but occasionally they play in our bow wave or in our wake. But everytime I fumble for the camera to get a picture of them, they rapidly disappear. I swear there was a dolphin in this picture right before I took it.
 
-<p class="polaroid"><img src="./boatgenitals.jpg" /></p>
+![img](./boatgenitals.jpg){ .polaroid }
 
 Apparently if you spend too much time at sea, you can come down with some pretty gnarly illnesses. Here’s me after I came down with a bad case of boat genitals.
 
-<p class="polaroid"><img src="./moreprettyclouds.jpg" /></p>
+![img](./moreprettyclouds.jpg){ .polaroid }
 
 I have been fascinated with the clouds lately, I can’t stop taking pictures of them.
 
-<p class="polaroid"><img src="./stillmoreprettyclouds.jpg" /></p>
+![img](./stillmoreprettyclouds.jpg){ .polaroid }
 
 More pretty clouds.
 
-<p class="polaroid"><img src="./swingbridge.jpg" /></p>
+![img](./swingbridge.jpg){ .polaroid }
 
 Most of the bridges on the ICW are bascule (draw) bridges, with sections that are raised and lowered to allow boats to pass. But a few of them, like this one, are swing bridges, with whole sections of roadway that swivel on a point, making way for passing boats. This is really amazing to watch. And of course, still more pretty clouds.
 
 Tonight we took up a mooring in Vero Beach, Florida, where we ran into Colin and Colleen on Mandalay. They are some friends that Nick and Valerie met over the summer on their trip north to the Chesapeake. We had a nice little stroll through town tonight and we went out for pizza along the beachfront.
 
-<p class="polaroid"><img src="./colin-colleen.jpg" /></p>
+![img](./colin-colleen.jpg){ .polaroid }
 Colin and Colleen
 
-<p class="polaroid"><img src="./colleen-valerie.jpg" /></p>
+![img](./colleen-valerie.jpg){ .polaroid }
 Colleen and Valerie
 
-<p class="polaroid"><img src="./valerie-nick.jpg" /></p>
+![img](./valerie-nick.jpg){ .polaroid }
 Valerie and Nick
 
-<p class="polaroid"><img src="./nick-pascal.jpg" /></p>
+![img](./nick-pascal.jpg){ .polaroid }
 Nick and Pascal
 
-<p class="polaroid"><img src="./pascal-colin.jpg" /></p>
+![img](./pascal-colin.jpg){ .polaroid }
 Pascal and Colin
 
 It looks like we’ll be having a little Christmas potluck with Colin and Colleen. Look for another entry sometime shortly after Christmas.

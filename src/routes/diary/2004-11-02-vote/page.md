@@ -5,4 +5,4 @@ original: 000228.php
 tags: [politics]
 ---
 
-<p class="polaroid"><img src="./vote-shirt-large.jpg" /></p>
+![img](./vote-shirt-large.jpg){ .polaroid }

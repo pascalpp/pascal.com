@@ -9,35 +9,35 @@ Well, we’ve been anchored here in Miami for about a week now. Not much has hap
 
 Here’s some random photos from the past few days.
 
-<p class="polaroid"><img src="./nick-willow-val.jpg" /></p>
+![img](./nick-willow-val.jpg){ .polaroid }
 
 Here’s Nick, Val, and Willow, as we head to shore for one of our daily outings.
 
-<p class="polaroid"><img src="./classic-car.jpg" /></p>
+![img](./classic-car.jpg){ .polaroid }
 
 I was told there were a lot of classic cars and palm trees in South Beach. These were the only ones I could find.
 
-<p class="polaroid"><img src="./beach-feet.jpg" /></p>
+![img](./beach-feet.jpg){ .polaroid }
 
 I walked all the way to the beach just to take a picture of my feet. And it cost me 7 bucks to lie on this cot.
 
-<p class="polaroid"><img src="./bettcher-ass.jpg" /></p>
+![img](./bettcher-ass.jpg){ .polaroid }
 
 Bettcher Ass.
 
-<p class="polaroid"><img src="./skater.jpg" /></p>
+![img](./skater.jpg){ .polaroid }
 
 I spent a half-hour taking pictures of these skater kids and somehow this was the best shot I came away with. Pathetic, huh? Well, I guess it’s not that bad.
 
-<p class="polaroid"><img src="./buzzard.jpg" /></p>
+![img](./buzzard.jpg){ .polaroid }
 
 Every once in a while we get buzzed by this guy who flies around in this single-seater pontoon plane. I call him the Buzzard.
 
-<p class="polaroid"><img src="./do-not-remove.jpg" /></p>
+![img](./do-not-remove.jpg){ .polaroid }
 
 I walked by this same sign a few days after taking this picture. Sure enough, someone had removed it.
 
-<p class="polaroid"><img src="./new-haircut.jpg" /></p>
+![img](./new-haircut.jpg){ .polaroid }
 
 It’s a bit hot here, so I gave myself another haircut, this time on the aft deck, tossing the clippings into the bay. Some guy came over and touched my lip as this picture was being taken.
 

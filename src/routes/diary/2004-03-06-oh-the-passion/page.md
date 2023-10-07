@@ -9,7 +9,7 @@ Tonight I went to see the Passion of the Christ by myself.
 
 (Opinion follows. Quit reading now.)
 
-<p class="polaroid"><img src="./passionposter.jpg" /></p>
+![img](./passionposter.jpg){ .polaroid }
 
 Meh.
 
