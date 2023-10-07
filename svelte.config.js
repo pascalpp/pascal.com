@@ -4,6 +4,8 @@ import autoprefixer from 'autoprefixer';
 import sveltePreprocess from 'svelte-preprocess';
 import { importAssets } from 'svelte-preprocess-import-assets';
 import { mdsvex } from 'mdsvex';
+import remarkAttr from 'remark-attr';
+
 // import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,6 +15,7 @@ const config = {
   preprocess: [
     mdsvex({
       extensions: ['.md'],
+      remarkPlugins: [remarkAttr],
     }),
     sveltePreprocess({
       postcss: {
