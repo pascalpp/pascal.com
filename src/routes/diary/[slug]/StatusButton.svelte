@@ -1,10 +1,10 @@
 <script lang="ts">
   import { dev } from '$app/environment';
-  import Tag from '../Tag.svelte';
-  import Button from '$lib/components/Button.svelte';
+  import type { PostSummary } from '../../api/posts/util';
 
-  export let status: 'draft' | 'published';
-  export let slug: string;
+  export let post: PostSummary;
+  $: ({ slug, metadata } = post);
+  $: ({ status = 'published' } = metadata);
 
   async function toggleStatus() {
     const response = await fetch(`/api/posts/${slug}/status`, {
@@ -20,6 +20,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-accesskey -->
 {#if dev}
-  <Button accesskey="s" label="Edit tags" on:click={toggleStatus}><Tag tag={status} link={false} /></Button>
+  <button accesskey="s" on:click={toggleStatus}>Status: {status}</button>
 {/if}

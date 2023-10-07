@@ -1,10 +1,10 @@
 <script lang="ts">
   import { dev } from '$app/environment';
-  import Tag from '../Tag.svelte';
-  import Button from '$lib/components/Button.svelte';
+  import type { PostSummary } from '../../api/posts/util';
 
-  export let tags: string[] = [];
-  export let slug: string;
+  export let post: PostSummary;
+  $: ({ slug, metadata } = post);
+  $: ({ tags } = metadata);
 
   async function showTagPrompt() {
     const promptTags = prompt('Edit tags', tags?.join(', '));
@@ -33,6 +33,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-accesskey -->
 {#if dev}
-  <Button accesskey="e" label="Edit tags" on:click={showTagPrompt}><Tag tag="edit tags" link={false} /></Button>
+  <button accesskey="t" on:click={showTagPrompt}>Edit tags</button>
 {/if}
