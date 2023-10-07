@@ -3,6 +3,7 @@ title: Word clouds from the second presidential debate
 date: 2008-10-08T16:29:53.000Z
 wordpress_id: 208
 status: draft
+tags: [posterous]
 ---
 
 Barack Obama:
