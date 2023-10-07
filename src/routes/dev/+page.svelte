@@ -48,8 +48,16 @@
     </p>
   </div>
 
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="column">
-    <button aria-label="Business Card" class="business-card not-print align-end" on:focusin={bump} on:click={bump}>
+    <div
+      role="button"
+      tabindex="0"
+      aria-label="Business Card"
+      class="business-card not-print align-end"
+      on:focusin={bump}
+      on:click={bump}
+    >
       <div class="card">
         <div class="card-content">
           <div class="brackets">&lt;&gt;</div>
@@ -64,22 +72,38 @@
           </div>
         </div>
       </div>
-    </button>
+    </div>
 
-    <button aria-label="My Portrait" class="portrait-card not-print align-start" on:focusin={bump} on:click={bump}>
+    <div
+      role="button"
+      tabindex="0"
+      aria-label="My Portrait"
+      class="portrait-card not-print align-start"
+      on:focusin={bump}
+      on:click={bump}
+    >
       <div class="card">
         <div class="portrait" />
       </div>
-    </button>
+    </div>
 
     <div class="print-column">
-      <button aria-label="About me" class="capabilities-page align-end" on:focusin={bump} on:click={bump}>
+      <div
+        role="button"
+        tabindex="0"
+        aria-label="About me"
+        class="capabilities-page align-end"
+        on:focusin={bump}
+        on:click={bump}
+      >
         <div class="card text-card">
           <Capabilities />
         </div>
-      </button>
+      </div>
 
-      <button
+      <div
+        role="button"
+        tabindex="0"
         aria-label="Recent experience"
         class="recent-experience-page align-start"
         on:focusin={bump}
@@ -88,27 +112,34 @@
         <div class="card text-card">
           <RecentExperience />
         </div>
-      </button>
+      </div>
     </div>
 
     <div class="print-column">
-      <button aria-label="Past experience" class="past-experience-page align-end" on:focusin={bump} on:click={bump}>
+      <div
+        role="button"
+        tabindex="0"
+        aria-label="Past experience"
+        class="past-experience-page align-end"
+        on:focusin={bump}
+        on:click={bump}
+      >
         <div class="card text-card">
           <PastExperience />
         </div>
-      </button>
+      </div>
 
-      <button aria-label="Hire me" class="seeking-page" on:focusin={bump} on:click={bump}>
+      <div role="button" tabindex="0" aria-label="Hire me" class="seeking-page" on:focusin={bump} on:click={bump}>
         <div class="card text-card">
           <Seeking />
         </div>
-      </button>
+      </div>
     </div>
 
     <div class="tool-cards not-print">
       <div class="print-card">
         <div class="card tool-card">
-          <button aria-label="Print this resume" on:click={print}>🖨️ Print this resume</button>
+          <div role="button" tabindex="0" aria-label="Print this resume" on:click={print}>🖨️ Print this resume</div>
         </div>
       </div>
 
@@ -227,7 +258,7 @@
       }
     }
 
-    button {
+    [role='button'] {
       outline: none;
       &:focus-within {
         .card {
@@ -380,7 +411,7 @@
         cursor: pointer;
         text-decoration: none;
       }
-      button {
+      [role='button'] {
         cursor: pointer;
       }
 
@@ -416,6 +447,10 @@
 
   // print rules
   @media print {
+    [role='button'] {
+      display: contents;
+    }
+
     .not-print {
       display: none;
     }
@@ -439,10 +474,6 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 5em;
-    }
-
-    button {
-      display: contents;
     }
 
     :global(a) {
