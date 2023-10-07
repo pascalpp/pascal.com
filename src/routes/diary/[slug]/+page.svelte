@@ -30,6 +30,7 @@
   <title>Pascal’s Diary · {title}</title>
 </svelte:head>
 
+<!-- svelte-ignore a11y-accesskey -->
 <header>
   <nav class="post-navigation top">
     {#if prev}
@@ -44,7 +45,7 @@
     {/if}
   </nav>
 
-  <h1>
+  <h1 class={status}>
     {title}
   </h1>
   <div class="subheader">
@@ -83,6 +84,18 @@
       line-height: 1.1;
       font-size: 36px;
       font-weight: 500;
+
+      &.draft {
+        color: darkred;
+        &::before {
+          content: '[draft]';
+          display: block;
+          font-family: @sans-font;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          font-size: 12px;
+        }
+      }
     }
 
     .subheader {
