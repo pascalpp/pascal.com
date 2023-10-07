@@ -50,25 +50,19 @@ a:not([class]) {
 }
 
 // Make images easier to work with
-img,
-picture,
-video,
-canvas,
-svg {
+:is(img, picture, video, canvas, svg) {
   max-width: 100%;
   display: block;
 }
 
 // Inherit fonts for inputs and buttons
-input,
-button,
-textarea,
-select {
+:is(input, textarea, select) {
   font: inherit;
 }
 
 // Remove default styling of buttons
 :where(button.unstyled) {
+  font: inherit;
   color: unset;
   background-color: unset;
   border: unset;
