@@ -1,5 +1,6 @@
 <script>
   import TagList from './TagList.svelte';
+  import { dev } from '$app/environment';
 
   export let data;
 
@@ -24,6 +25,21 @@
     const date = new Date(d);
     return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
   }
+
+  async function editPost() {
+    if (!dev) return;
+
+    const response = await fetch(`/api/posts/${slug}/edit`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json; charset=utf-8',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Invalid response');
+    }
+  }
 </script>
 
 <svelte:head>
@@ -47,6 +63,9 @@
 
   <h1 class={status}>
     {title}
+    {#if dev}
+      <button class="edit-button" type="button" on:click={editPost}>Edit post</button>
+    {/if}
   </h1>
   <div class="subheader">
     <p class="date">
@@ -115,6 +134,14 @@
     @media @not-mobile {
       min-height: 70vh;
     }
+  }
+
+  .edit-button {
+    font-family: @sans-font;
+    font-weight: normal;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 1em;
   }
 
   .post-navigation {
