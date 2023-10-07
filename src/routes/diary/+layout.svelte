@@ -1,9 +1,37 @@
-<script>
+<script lang="ts">
   import './diary.less';
+  import { dev } from '$app/environment';
+  import { goto } from '$app/navigation';
 
   export let data;
   $: ({ pathname } = data);
   $: isIndex = /^\/diary\/?$/.test(pathname);
+
+  async function onClickNewPost(event: MouseEvent) {
+    event.preventDefault();
+
+    const title = prompt('Enter post title', '');
+    if (typeof title === 'string' && title.length > 0) {
+      await newPost(title);
+    }
+  }
+
+  async function newPost(title: string) {
+    const response = await fetch(`/api/posts/new`, {
+      method: 'POST',
+      body: JSON.stringify({ title }),
+      headers: {
+        'content-type': 'application/json; charset=utf-8',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Invalid response');
+    }
+
+    const json = await response.json();
+    goto(`/diary/${json.slug}`);
+  }
 </script>
 
 <svelte:head>
@@ -28,6 +56,13 @@
             <a href="/diary">Pascal’s Diary</a>
           {/if}
         </h1>
+
+        {#if dev}
+          <p>
+            <button class="new-post-button" type="button" on:click={onClickNewPost}>New post</button>
+          </p>
+        {/if}
+
         <a href="/">⬅ Home</a>
       </div>
     </nav>
@@ -63,6 +98,11 @@
   a {
     text-decoration: none;
     color: @blue;
+  }
+
+  .new-post-button {
+    font-family: @sans-font;
+    font-size: 12px;
   }
 
   main {
