@@ -19,9 +19,11 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<main>
+<div class="switcher">
   <div class="stage">
-    <button class="slide-button" class:switching type="button" on:click={slideLeft}>Swipe Left</button>
+    <button class="slide-button" class:switching type="button" on:click={slideLeft} disabled={currentApp <= 0}>
+      Swipe Left
+    </button>
     <div class="window">
       <div class="apps-small">
         <div class="apps-small-row" style="transform: translateX(-{191 * currentApp}px)">
@@ -103,21 +105,25 @@
       </div>
       <div class="iphone" />
     </div>
-    <button class="slide-button" class:switching type="button" on:click={slideRight}>Swipe Right</button>
+    <button class="slide-button" class:switching type="button" on:click={slideRight} disabled={currentApp >= maxApp}>
+      Swipe Right
+    </button>
   </div>
-  <p class="exit-note" class:switching>Click app to leave switcher</p>
-  <p>
-    <button class="start-button" class:switching type="button" on:click={startSwitching}>Activate switcher</button>
-  </p>
-</main>
+  <div class="under-stage">
+    <p class="exit-note" class:switching>Click app to leave switcher</p>
+    <p>
+      <button class="start-button" class:switching type="button" on:click={startSwitching}>Activate switcher</button>
+    </p>
+  </div>
+</div>
 
 <style lang="less">
-  main {
-    padding: 5vw;
+  .switcher {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    font-family: @sans-font;
+    font-size: 16px;
   }
 
   .stage {
@@ -126,6 +132,14 @@
     align-items: center;
     user-select: none;
     gap: 20px;
+  }
+
+  .under-stage {
+    height: 30px;
+  }
+
+  p {
+    margin: 0;
   }
 
   .window {
