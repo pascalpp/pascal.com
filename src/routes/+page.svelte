@@ -44,15 +44,13 @@
         <div class="bubble-divider large" />
         <div class="bubble small bold">have a look around:</div>
         <div class="bubble-divider medium" />
+        <a href="./diary" class="bubble small">don’t read my diary</a>
+        <div class="bubble-divider small" />
         <a href="./dev" class="bubble small">gimme a job</a>
         <div class="bubble-divider small" />
-        <a href="./diary" class="bubble small">read my diary</a>
+        <a data-sveltekit-reload href="./freeruler" class="bubble small">download a free ruler for your mac</a>
         <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
-        <div class="bubble-divider small" />
-        <a data-sveltekit-reload href="./software/index.html" class="bubble small">
-          download some mac software I wrote
-        </a>
         <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./index.old.html" class="bubble small">look at the old version of this page</a>
         <div class="bubble-divider large" />
