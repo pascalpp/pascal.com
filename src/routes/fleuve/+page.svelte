@@ -109,4 +109,14 @@
       padding-bottom: 20vw;
     }
   }
+
+  :global(button) {
+    color: unset;
+    background-color: unset;
+    border: unset;
+    appearance: unset;
+    text-align: unset;
+    margin: unset;
+    padding: unset;
+  }
 </style>
