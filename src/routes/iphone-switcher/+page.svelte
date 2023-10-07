@@ -105,9 +105,9 @@
     </div>
     <button class="slide-button" class:switching type="button" on:click={slideRight}>Swipe Right</button>
   </div>
-  <p class="exit-note" class:switching>(Click app to enlarge and leave switcher)</p>
+  <p class="exit-note" class:switching>Click app to leave switcher</p>
   <p>
-    <button class="start-button" class:switching type="button" on:click={startSwitching}>Click to switch apps</button>
+    <button class="start-button" class:switching type="button" on:click={startSwitching}>Activate switcher</button>
   </p>
 </main>
 
@@ -123,6 +123,7 @@
   .stage {
     display: flex;
     flex-direction: row;
+    align-items: center;
     user-select: none;
     gap: 20px;
   }
