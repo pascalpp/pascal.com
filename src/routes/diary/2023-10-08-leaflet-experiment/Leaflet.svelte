@@ -11,8 +11,7 @@
   onMount(async () => {
     leaflet = await import('leaflet');
 
-    const { latitude, longitude } = getLastAllowedLocation();
-    map = leaflet.map(mapElement).setView([latitude, longitude], 13);
+    map = leaflet.map(mapElement);
 
     leaflet
       .tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -21,8 +20,8 @@
       })
       .addTo(map);
 
-    const marker = leaflet.marker([latitude, longitude]).addTo(map);
-    markers.push(marker);
+    const { latitude, longitude } = getLastAllowedLocation();
+    showCoordinates({ latitude, longitude });
   });
 
   function showMyLocation() {
@@ -34,6 +33,10 @@
   function onLocationGranted(loc: GeolocationPosition) {
     const { latitude, longitude } = loc.coords;
     localStorage.setItem('lastAllowedLocation', JSON.stringify({ latitude, longitude }));
+    showCoordinates({ latitude, longitude });
+  }
+
+  function showCoordinates({ latitude, longitude }: { latitude: number; longitude: number }) {
     markers.forEach((marker) => map.removeLayer(marker));
     map.setView([latitude, longitude], 13);
     const marker = leaflet.marker([latitude, longitude]).addTo(map);
