@@ -19,7 +19,7 @@ Just me tinkering around with [Leaflet](https://leafletjs.com/examples/quick-sta
 npm install leaflet @types/leaflet
 ```
 
-## Initial Setup
+## Initial setup
 
 ```svelte
 <script lang="ts">
