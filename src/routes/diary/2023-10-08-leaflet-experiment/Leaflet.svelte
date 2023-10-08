@@ -31,8 +31,8 @@
       })
       .addTo(map);
 
-    const { latitude, longitude } = getLastAllowedLocation();
-    showCoordinates({ latitude, longitude });
+    const { latitude, longitude } = getInitialLocation();
+    showCoordinates(latitude, longitude);
   });
 
   function showMyLocation() {
@@ -44,17 +44,17 @@
   function onLocationGranted(loc: GeolocationPosition) {
     const { latitude, longitude } = loc.coords;
     localStorage.setItem('lastAllowedLocation', JSON.stringify({ latitude, longitude }));
-    showCoordinates({ latitude, longitude });
+    showCoordinates(latitude, longitude);
   }
 
-  function showCoordinates({ latitude, longitude }: { latitude: number; longitude: number }) {
+  function showCoordinates(latitude: number, longitude: number) {
     markers.forEach((marker) => map.removeLayer(marker));
     map.setView([latitude, longitude], 13);
     const marker = leaflet.marker([latitude, longitude]).addTo(map);
     markers.push(marker);
   }
 
-  function getLastAllowedLocation() {
+  function getInitialLocation() {
     const lastAllowedLocation = localStorage.getItem('lastAllowedLocation');
     if (lastAllowedLocation) {
       return JSON.parse(lastAllowedLocation);
