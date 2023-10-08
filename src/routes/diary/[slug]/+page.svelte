@@ -54,7 +54,7 @@
     <p class="date">
       {formatDate(date)}
     </p>
-    <TagList {status} {tags} {slug} />
+    <TagList {tags} />
   </div>
   {#if dev}
     <PostEditButtons {post} />
