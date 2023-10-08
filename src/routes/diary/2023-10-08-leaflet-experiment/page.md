@@ -102,7 +102,7 @@ function onLocationGranted(loc: GeolocationPosition) {
 
 ## Save the user's location for subsequent visits
 
-Asking the user's location on every visit can be annoying. We can save the user's location in local storage and use that to set the map's view if it exists.
+Asking the user's location on every visit can be annoying. We can save the user's coordinates in local storage and use that to set the map's view if it exists.
 
 ```typescript
 function onLocationGranted(loc: GeolocationPosition) {
