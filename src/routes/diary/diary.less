@@ -10,17 +10,14 @@ footer {
 article {
   font-weight: 200;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
 
-  > * {
-    margin: 0;
+  :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table, hr, figure, header, footer) {
+    margin: 0.5em 0;
   }
-
   :is(h1, h2, h3, h4, h5, h6, strong, b) {
     font-weight: 500;
   }
+
   :is(em, i) {
     font-style: italic;
   }
@@ -167,6 +164,7 @@ article {
     padding-right: 3em;
     font-size: 14px;
     line-height: 1.6;
+    margin-bottom: 2em;
   }
 
   blockquote {
