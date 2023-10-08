@@ -1,9 +1,13 @@
 <script lang="ts">
-  import PostList from './PostList.svelte';
+  import { page } from '$app/stores';
 </script>
 
 <article>
-  <h2>Post not found.</h2>
+  <h2>Post not found, or an error occurred.</h2>
+
+  <details open>
+    {$page.error?.message}
+  </details>
 </article>
 
 <style lang="less">
