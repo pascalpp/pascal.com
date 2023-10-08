@@ -2,6 +2,9 @@
   import 'leaflet/dist/leaflet.css';
   import { onMount } from 'svelte';
   import type Leaflet from 'leaflet';
+  import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+  import iconUrl from 'leaflet/dist/images/marker-icon.png';
+  import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 
   let leaflet: typeof Leaflet;
   let mapElement: HTMLDivElement;
@@ -10,6 +13,13 @@
 
   onMount(async () => {
     leaflet = await import('leaflet');
+
+    delete leaflet.Icon.Default.prototype._getIconUrl;
+    leaflet.Icon.Default.mergeOptions({
+      iconRetinaUrl,
+      iconUrl,
+      shadowUrl,
+    });
 
     map = leaflet.map(mapElement);
 
