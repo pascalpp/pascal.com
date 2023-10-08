@@ -14,6 +14,7 @@
   onMount(async () => {
     leaflet = await import('leaflet');
 
+    // @ts-ignore
     delete leaflet.Icon.Default.prototype._getIconUrl;
     leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl,
