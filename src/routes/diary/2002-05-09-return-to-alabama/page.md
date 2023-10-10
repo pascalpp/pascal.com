@@ -48,8 +48,13 @@ Have a listen:
 
 Later that night we hit the town and knocked a few back.
 
+<details>
+<summary>Embarrassing</summary>
+
 ![img](./doinashot.jpg){ .polaroid }
 My brother was kind enough to buy me a drink, but he was also mean enough to stick it in this girl’s pants.
+
+</details>
 
 The rest of my trip to New Orleans is a bit of a blur and for some reason there aren’t any pictures.
 
