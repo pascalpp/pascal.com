@@ -63,7 +63,7 @@
           </p>
         {/if}
 
-        <a href="/">⬅ Home</a>
+        <a href="/">← Home</a>
       </div>
     </nav>
   </div>
