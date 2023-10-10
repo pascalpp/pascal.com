@@ -3,9 +3,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
 
-  console.log($page);
-
-  let isIndex = /^\/diary\/?$/.test($page.url.pathname);
+  $: isIndex = /^\/diary\/?$/.test($page.url.pathname);
 
   async function onClickNewPost(event: MouseEvent) {
     event.preventDefault();
@@ -80,6 +78,7 @@
       background-color: rgb(255 255 255);
       padding: 1em;
       border-radius: 4px;
+      color: rgb(0 0 0 / 0.7);
 
       @media @not-mobile {
         padding-top: 1em;
@@ -104,7 +103,6 @@
     h1 {
       font-weight: 500;
       font-size: 24px;
-      color: black;
     }
 
     a[href='/'] {

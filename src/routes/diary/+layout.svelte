@@ -14,7 +14,7 @@
   </style>
 </svelte:head>
 
-<div class="blog">
+<div class="diary">
   <div class="structure">
     <NavHeader />
   </div>
@@ -33,7 +33,7 @@
 </div>
 
 <style lang="less">
-  .blog {
+  .diary {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -44,19 +44,8 @@
     font-weight: 200;
   }
 
-  a {
-    text-decoration: none;
-    color: @blue;
-  }
-
   main {
     flex-grow: 1;
-  }
-
-  :global(a) {
-    color: steelblue;
-    text-underline-offset: 0.15em;
-    text-decoration-thickness: 1px;
   }
 
   .structure {
@@ -75,6 +64,9 @@
     text-align: center;
     padding-top: 8vh;
     padding-bottom: 2vh;
-    color: rgb(0 0 0 / 0.3);
+    color: rgb(0 0 0 / 0.6);
+    a {
+      text-decoration: none;
+    }
   }
 </style>
