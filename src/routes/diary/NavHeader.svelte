@@ -1,0 +1,114 @@
+<script lang="ts">
+  import { dev } from '$app/environment';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
+
+  console.log($page);
+
+  let isIndex = /^\/diary\/?$/.test($page.url.pathname);
+
+  async function onClickNewPost(event: MouseEvent) {
+    event.preventDefault();
+
+    const title = prompt('Enter post title', '');
+    if (typeof title === 'string' && title.length > 0) {
+      await newPost(title);
+    }
+  }
+
+  async function newPost(title: string) {
+    const response = await fetch(`/api/posts/new`, {
+      method: 'POST',
+      body: JSON.stringify({ title }),
+      headers: {
+        'content-type': 'application/json; charset=utf-8',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Invalid response');
+    }
+
+    const json = await response.json();
+    goto(`/diary/${json.slug}`);
+  }
+</script>
+
+<nav>
+  <div class="card">
+    <h1>
+      {#if isIndex}
+        <span class="title">Pascal’s Diary</span>
+      {:else}
+        <a href="/diary">Pascal’s Diary</a>
+      {/if}
+    </h1>
+
+    {#if dev}
+      <p>
+        <button class="new-post-button" type="button" on:click={onClickNewPost}>New post</button>
+      </p>
+    {/if}
+
+    <a href="/">← Home</a>
+  </div>
+</nav>
+
+<style lang="less">
+  a {
+    text-decoration: none;
+    color: @blue;
+  }
+
+  .new-post-button {
+    font-family: @sans-font;
+    font-size: 12px;
+  }
+
+  nav {
+    --deg: -2deg;
+    .rotated-shadow;
+    margin: 0 auto;
+    @media @not-mobile {
+      width: max-content;
+      position: fixed;
+      left: -1.75vw;
+      top: 5vh;
+    }
+
+    .card {
+      background-color: rgb(255 255 255);
+      padding: 1em;
+      border-radius: 4px;
+
+      @media @not-mobile {
+        padding-top: 1em;
+        padding-left: 3vw;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @media @mobile {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 3em;
+        padding-top: 3em;
+        padding-left: 2em;
+        margin-left: -2em;
+        margin-top: -2em;
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 24px;
+      color: black;
+    }
+
+    a[href='/'] {
+      font-family: @sans-font;
+    }
+  }
+</style>
