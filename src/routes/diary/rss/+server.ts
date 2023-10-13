@@ -35,25 +35,26 @@ const title = 'Pascal’s Diary';
 const description = 'Diary of a guy who does some things';
 
 function render(posts: PostSummary[]) {
-  return pretty(`<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<title>${title}</title>
-<description>${description}</description>
-<link>${baseURL}</link>
-<atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
-${posts
-  .map(
-    (post) => `<item>
-<guid isPermaLink="true">${baseURL}/${post.slug}</guid>
-<title>${post.metadata.title}</title>
-<link>${baseURL}/${post.slug}</link>
-<description>Tags: ${post.metadata.tags?.join(', ') ?? 'none'}</description>
-<pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
-</item>`
-  )
-  .join('')}
-</channel>
-</rss>
-`);
+  return pretty(
+    `<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+        <title>${title}</title>
+        <description>${description}</description>
+        <link>${baseURL}</link>
+        <atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
+        ${posts.map(renderPost).join('')}
+      </channel>
+    </rss>`
+  );
+}
+
+function renderPost(post: PostSummary) {
+  return `<item>
+    <guid isPermaLink="true">${baseURL}/${post.slug}</guid>
+    <title>${post.metadata.title}</title>
+    <link>${baseURL}/${post.slug}</link>
+    <description>Tags: ${post.metadata.tags?.join(', ') ?? 'none'}</description>
+    <pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
+    </item>`;
 }
