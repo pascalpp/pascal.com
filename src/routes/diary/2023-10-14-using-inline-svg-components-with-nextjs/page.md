@@ -2,7 +2,7 @@
 title: Using inline SVG components with NextJS
 date: 2023-10-14T01:29:10.797Z
 tags: [react, nextjs, svg]
-status: draft
+status: published
 ---
 
 Today I decided to try out [NextJS](https://nextjs.org) for the first time. One of the first things I like to test out when trying a new framework is how it handles SVGs and other assets.
@@ -20,19 +20,47 @@ Out of the box, NextJS allows importing SVGs, but as far as I can tell those imp
 
 They have [instructions for modifying your NextJS config](https://react-svgr.com/docs/next/) but those didn't work for me; the NextJS app kept complaining that there was no loader configured. But cribbing from there I was able to figure out this solution, and I thought it might help someone else who's stumbling down this same path.
 
-## Add a rule to your NextJS webpack config
+## Modify the NextJS webpack config
 
 ```javascript
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-      resourceQuery: /component/, // *.svg?component
-    });
+    // grab the default rule for handling all images
+    const imageLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
+
+    config.module.rules = [
+      // keep all rules except the default image loader rule
+      ...config.module.rules.filter((rule) => rule !== imageLoaderRule),
+
+      // re-add the default image loader rule, but exclude svg
+      {
+        ...imageLoaderRule,
+        exclude: /\.svg$/i,
+      },
+
+      // add a new rule for svg files, excluding svg files that are imported as React components
+      {
+        ...imageLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: {
+          ...imageLoaderRule.resourceQuery,
+          not: [
+            ...imageLoaderRule.resourceQuery.not,
+            /component/, // *.svg?component
+          ],
+        },
+      },
+
+      // add a new rule for svg files that are imported as React components
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: '@svgr/webpack',
+        resourceQuery: /component/, // *.svg?component
+      },
+    ];
 
     return config;
   },
@@ -41,17 +69,27 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-With this rule, importing an SVG as a component is opt-in, using `?component` as a query string on the path, leaving the existing NextJS SVG rules alone.
+With this config, importing an SVG as a component is opt-in, using `?component` as a query string on the path, so you can still use regular SVG imports with the NextJS Image component if you want.
 
 ## Usage
 
 ```jsx
-import SomeIcon from './some-icon.svg?component'
+import PngImage from './some.png';
+import JpegImage from './some.jpg';
+import GifImage from './some.gif';
+import SvgImage from './some.svg';
+import SvgComponent from './some.svg?component';
 
-export default App() {
+export default function App() {
   return (
-    <SomeIcon/>
-  )
+    <main>
+      <Image src={PngImage} alt="PNG Image" />
+      <Image src={JpegImage} alt="JPEG Image" />
+      <Image src={GifImage} alt="GIF Image" />
+      <Image src={SvgImage} alt="SVG Image" />
+      <SvgComponent />
+    </main>
+  );
 }
 ```
 
