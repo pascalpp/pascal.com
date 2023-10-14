@@ -1,8 +1,8 @@
 ---
 title: Using inline SVG components with NextJS
 date: 2023-10-14T01:29:10.797Z
-status: published
 tags: [react, nextjs, svg]
+status: draft
 ---
 
 Today I decided to try out [NextJS](https://nextjs.org) for the first time. One of the first things I like to test out when trying a new framework is how it handles SVGs and other assets.
