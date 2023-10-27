@@ -5,12 +5,6 @@ tags: [svelte, javascript, dialog]
 status: published
 ---
 
-<style>
-  h1 {
-    margin-top: 0;
-  }
-</style>
-
 <script lang="ts">
   import Dialog from './Dialog.svelte';
   import StyledDialog from './StyledDialog.svelte';
@@ -305,3 +299,9 @@ Much of the information and ideas in this post came from these two YouTube video
 - [Animate from display: none](https://www.youtube.com/watch?v=4prVdA7_6u0)
 
 And be sure to check out the [MDN docs for HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).
+
+<style>
+  h1 {
+    margin-top: 0;
+  }
+</style>
