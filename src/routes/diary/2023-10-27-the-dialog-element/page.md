@@ -5,15 +5,15 @@ tags: [svelte, javascript, dialog]
 status: published
 ---
 
-<script lang="ts">
+<script>
   import Dialog from './Dialog.svelte';
   import StyledDialog from './StyledDialog.svelte';
 
-  let basicModal: HTMLDialogElement;
-  let nestedModal: HTMLDialogElement;
-  let nestedModalChild: HTMLDialogElement;
-  let styledModal: HTMLDialogElement;
-  let styledLongModal: HTMLDialogElement;
+  let basicModal;
+  let nestedModal;
+  let nestedModalChild;
+  let styledModal;
+  let styledLongModal;
 </script>
 
 First let's make a barebones Svelte component which renders a dialog element with a slot. We'll export a `modal` property which refers to that dialog element.
