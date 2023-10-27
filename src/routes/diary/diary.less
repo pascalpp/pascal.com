@@ -34,7 +34,7 @@ article {
     font-size: 28px;
   }
   h3 {
-    font-size: 20px;
+    font-size: 24px;
   }
   :is(h1, h2, h3, h4, h5, h6) {
     line-height: 1.2;
@@ -43,8 +43,12 @@ article {
     }
   }
 
-  > :not(pre) {
+  > * {
     width: min(90vw, 650px);
+  }
+  pre,
+  dialog {
+    width: auto;
   }
 
   img.bordered {
