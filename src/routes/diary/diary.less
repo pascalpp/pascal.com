@@ -190,6 +190,22 @@ article {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 2em;
+    position: relative;
+
+    .copy-button {
+      margin: 1rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: none;
+    }
+
+    &:hover,
+    &:active {
+      .copy-button {
+        display: block;
+      }
+    }
   }
 
   blockquote {

@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
   import { dev } from '$app/environment';
   import TagList from './TagList.svelte';
   import PostEditButtons from './PostEditButtons.svelte';
+  import AddClipboardButtons from './AddClipboardButtons.svelte';
+  import { page } from '$app/stores';
 
   export let data;
 
@@ -22,8 +24,8 @@
     hour12: true,
   });
 
-  function formatDate(d) {
-    const date = new Date(d);
+  function formatDate(timestamp: string | number) {
+    const date = new Date(timestamp);
     return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
   }
 </script>
@@ -31,6 +33,10 @@
 <svelte:head>
   <title>Pascal’s Diary · {title}</title>
 </svelte:head>
+
+{#key $page.params.slug}
+  <AddClipboardButtons />
+{/key}
 
 <!-- svelte-ignore a11y-accesskey -->
 <header>
