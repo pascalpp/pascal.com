@@ -5,15 +5,18 @@ tags: [svelte, javascript, dialog]
 status: published
 ---
 
-<script>
+<script lang="ts">
   import Dialog from './Dialog.svelte';
   import StyledDialog from './StyledDialog.svelte';
+  import styledDialogText from './StyledDialog.svelte?raw';
 
-  let basicModal;
-  let nestedModal;
-  let nestedModalChild;
-  let styledModal;
-  let styledLongModal;
+  let basicModal: HTMLDialogElement;
+  let nestedModal: HTMLDialogElement;
+  let nestedModalChild: HTMLDialogElement;
+  let styledModal: HTMLDialogElement;
+  let styledLongModal: HTMLDialogElement;
+  let styledUntitledModal: HTMLDialogElement;
+  let closeUntitledModal: () => void;
 </script>
 
 First let's make a barebones Svelte component which renders a dialog element with a slot. We'll export a `modal` property which refers to that dialog element.
@@ -43,21 +46,21 @@ Then in our page we can import that component and use it to render a dialog with
 
 <Dialog bind:modal>
   <h1>Hi there!</h1>
-  <button on:click={() => modal.close()}>Close</button>
+  <button class="btn" on:click={() => modal.close()}>Close</button>
 </Dialog>
 
-<button on:click={() => modal.showModal()}>Open the modal</button>
+<button class="btn" on:click={() => modal.showModal()}>Open the modal</button>
 ```
 
 <Dialog bind:modal={basicModal}>
   <h1>Hi there!</h1>
-  <button on:click={() => basicModal.close()}>Close</button>
+  <button class="btn" on:click={() => basicModal.close()}>Close</button>
 </Dialog>
 
 ### Try it out!
 
 <p>
-  <button on:click={() => basicModal.showModal()}>Open the modal</button>
+  <button class="btn" on:click={() => basicModal.showModal()}>Open the modal</button>
 </p>
 
 ## What you get for free
@@ -65,8 +68,8 @@ Then in our page we can import that component and use it to render a dialog with
 The native dialog element does a lot for us out of the box (or in it, I suppose).
 
 - The dialog has some basic styling: a white background, a black border, and a backdrop which darkens the rest of the page.
-- The dialog is automatically positioned in the center of the viewport, with a slight inset from the left and right edges of the viewport.
-- If the content of the dialog is longer than the viewport, it will scroll internally, again with a slight inset from the top and bottom of the viewport.
+- The dialog is automatically positioned in the center of the viewport.
+- If the content of the dialog is longer than the viewport, it will scroll internally, with a slight inset from the top and bottom of the viewport.
 - It traps focus while it is open, allowing you to tab through elements in the dialog. You can tab out of the dialog to focus other elements of the browser window, but other content in your page will not be focusable until the dialog is closed.
 - Pressing the escape key automatically closes the dialog.
 - You can even open a dialog from within another dialog, and the browser will keep track of which dialog is currently open. Pressing escape will only close one dialog at a time.
@@ -76,8 +79,8 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
   <h1>Hi there!</h1>
   <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
   <p>
-    <button on:click={() => nestedModal.close()}>Close</button>
-    <button on:click={() => nestedModalChild.showModal()}>Open another modal</button>
+    <button class="btn" on:click={() => nestedModal.close()}>Close</button>
+    <button class="btn" on:click={() => nestedModalChild.showModal()}>Open another modal</button>
   </p>
   <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
   <p>Enim proident ad lorem. Ad lorem ullamco anim, ea et. Anim, ea et lorem anim. Lorem, anim anim adipiscing aute. Adipiscing aute est ex mollit cupidatat.</p>
@@ -100,12 +103,12 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
     <h1>Another modal</h1>
     <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
     <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
-    <button on:click={() => nestedModalChild.close()}>Close</button>
+    <button class="btn" on:click={() => nestedModalChild.close()}>Close</button>
   </Dialog>
 </Dialog>
 
 <p>
-  <button on:click={() => nestedModal.showModal()}>Open a long scrolling modal that has another modal inside it</button>
+  <button class="btn" on:click={() => nestedModal.showModal()}>Open a long scrolling modal with a nested modal</button>
 </p>
 
 ## Taking it up a notch
@@ -141,9 +144,14 @@ Here's a version of the Dialog component with these features added.
   <p>Quis ullamco culpa ad cillum commodo est. Culpa ad cillum commodo est ullamco ex culpa. Cillum commodo est ullamco ex culpa, pariatur. Ullamco ex culpa pariatur id sunt, ut sit. Pariatur id sunt ut sit culpa pariatur mollit. Sunt ut sit, culpa.</p>
 </StyledDialog>
 
+<StyledDialog bind:modal={styledUntitledModal}>
+  <p>This modal has no title. But we can access its custom close method to create our own <button class="btn" on:click={styledUntitledModal.close}>close button</button>.</p>
+</StyledDialog>
+
 <p>
-  <button on:click={() => styledModal.showModal()}>Open a styled modal</button>
-  <button on:click={() => styledLongModal.showModal()}>Open a long styled modal</button>
+  <button class="btn" on:click={styledModal.open}>Open a styled modal</button>
+  <button class="btn" on:click={styledLongModal.open}>Open a long styled modal</button>
+  <button class="btn" on:click={styledUntitledModal.open}>Open an untitled modal</button>
 </p>
 
 <details>
@@ -155,35 +163,57 @@ Here's a version of the Dialog component with these features added.
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let modal: HTMLDialogElement;
-  export let title: string;
+  export let title: string | undefined = undefined;
+  export let dialog: HTMLDialogElement;
 
+  // Create a custom open function that calls the dialog element's showModal method.
+  function open() {
+    dialog.showModal();
+  }
+
+  // Create a custom close function that sets a closing attribute on the dialog
+  // element. This attribute is used to trigger the closing animation. So we add
+  // a listener for animationend which calls the afterClosing method below. By
+  // passing once: true, we don't have to remove this event listener.
   function close() {
-    modal.addEventListener('animationend', afterClosing, { once: true });
-    modal.setAttribute('closing', '');
+    dialog.addEventListener('animationend', afterClosing, { once: true });
+    dialog.setAttribute('closing', '');
   }
 
+  // Now that the closing animation is complete, we can remove the closing
+  // attribute and call the dialog's close method.
   function afterClosing() {
-    modal.removeEventListener('animationend', afterClosing);
-    modal.removeAttribute('closing');
-    modal.close();
+    dialog.removeAttribute('closing');
+    dialog.close();
   }
 
+  // When the user presses the escape key, the browser calls the dialog's close
+  // method directly, bypassing our nice closing animation. So we can listen for
+  // the 'cancel' event, prevent its default behavior, and call our custom close
+  // method instead.
   function onCancel(event: Event) {
     event.preventDefault();
     close();
   }
 
   onMount(() => {
-    modal.addEventListener('cancel', onCancel);
+    dialog.addEventListener('cancel', onCancel);
 
     return () => {
-      modal.removeEventListener('cancel', onCancel);
+      dialog.removeEventListener('cancel', onCancel);
     };
   });
+
+  // Instead of just exporting the dialog element, we can export an object with
+  // our open/close methods, as well as the dialog element.
+  export const modal = {
+    open,
+    close,
+    dialog,
+  };
 </script>
 
-<dialog bind:this={modal}>
+<dialog bind:this={dialog}>
   {#if title}
     <div class="modal-title">
       <h2>{title}</h2>
@@ -191,11 +221,13 @@ Here's a version of the Dialog component with these features added.
     </div>
   {/if}
   <div class="modal-content">
-    <slot {close} />
+    <slot />
   </div>
 </dialog>
 
 <style lang="less">
+  // just using less for nesting syntax
+
   dialog {
     overscroll-behavior: contain;
     border: 1px solid rgba(0 0 0 / 0.3);
@@ -221,36 +253,41 @@ Here's a version of the Dialog component with these features added.
         animation: fade-out 0.2s ease-out;
       }
     }
-  }
 
-  .modal-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(0 0 0 / 0.1);
-    font-size: 24px;
-    position: sticky;
-    top: 0;
-    background-color: white;
+    .modal-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(0 0 0 / 0.1);
+      font-size: 24px;
+      position: sticky;
+      top: 0;
+      background-color: white;
 
-    h2 {
-      margin: 0;
+      h2 {
+        margin: 0;
+      }
+
+      .close-button {
+        appearance: none;
+        border: none;
+        background: none;
+        border: none;
+        box-shadow: none;
+        font-size: 1.25rem;
+        border-radius: 4px;
+        padding: 0;
+        width: 2em;
+        text-align: center;
+        aspect-ratio: 1;
+      }
     }
 
-    .close-button {
-      appearance: none;
-      border: none;
-      background: none;
-      font-size: 1.25rem;
-      border-radius: 4px;
-      aspect-ratio: 1;
+    .modal-content {
+      padding: 1rem;
     }
-  }
-
-  .modal-content {
-    padding: 1rem;
   }
 
   @keyframes fade-in {
@@ -293,7 +330,7 @@ Here's a version of the Dialog component with these features added.
 
 </details>
 
-Much of the information and ideas in this post came from these two YouTube videos by CSS Guru Kevin Powell:
+Much of the information and ideas in this post came from these two YouTube videos by CSS guru Kevin Powell:
 
 - [Dialog: the easiest way to make a popup modal](https://www.youtube.com/watch?v=TAB_v6yBXIE)
 - [Animate from display: none](https://www.youtube.com/watch?v=4prVdA7_6u0)
