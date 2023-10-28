@@ -43,12 +43,29 @@ article {
     }
   }
 
-  > * {
-    width: min(90vw, 650px);
+  > :is(h1, h2, h3, h4, h5, h6, ul, p, blockquote) {
+    max-width: min(90vw, 650px);
   }
-  pre,
-  dialog {
-    width: auto;
+
+  .btn {
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+    appearance: none;
+    background-color: white;
+    border: 1px solid hsla(0 0% 0% / 0.3);
+    box-shadow: 1px 2px 0 0px hsla(0 0% 0% / 0.2);
+
+    &:hover {
+      border-color: hsla(0 0% 0% / 0.5);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(1px, 2px);
+    }
+
+    + .btn {
+      margin-left: 1em;
+    }
   }
 
   img.bordered {
@@ -166,8 +183,7 @@ article {
   }
 
   pre[class*='language-'] {
-    width: fit-content;
-    max-width: 100%;
+    max-width: fit-content;
     border-radius: 4px;
     border: 1px solid rgb(255 255 255 / 0.3);
     padding-right: 3em;
