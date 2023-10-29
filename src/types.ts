@@ -10,3 +10,9 @@ declare module '*.svg?component' {
 
   export default class Comp extends SvelteComponent {}
 }
+
+declare module 'svelte-json-tree' {
+  import type { SvelteComponent } from 'svelte';
+
+  export default class Comp extends SvelteComponent {}
+}

@@ -23,8 +23,8 @@
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/adapter-vercel": "^3.0.3",
     "@sveltejs/kit": "^1.20.4",
-    "@types/node": "^20.6.3",
     "@types/leaflet": "^1.9.6",
+    "@types/node": "^20.6.3",
     "@types/pretty": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
@@ -60,6 +60,7 @@
     "pretty": "^2.0.0",
     "remark-attr": "^0.11.1",
     "svelte-icons": "^2.1.0",
+    "svelte-json-tree": "^2.2.0",
     "uuid": "^9.0.1"
   }
 }
