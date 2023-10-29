@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import { onMount } from 'svelte';
 
   export let names: string[];
@@ -22,7 +23,7 @@
     scrollToElementIfNeeded(active);
   }
 
-  $: name && scrollToActiveItem();
+  $: browser && name && scrollToActiveItem();
 </script>
 
 <li class="divider">{letter}</li>

@@ -2,7 +2,7 @@
   import './pokedex.less';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
-  import LetterSection from './LetterSection.svelte';
+  import PokemonList from './PokemonList.svelte';
   import { goto } from '$app/navigation';
 
   export let data: LayoutData;
@@ -32,11 +32,8 @@
 </script>
 
 <main>
-  <ul class="index">
-    {#each letters as letter}
-      <LetterSection {letter} {names} {name} />
-    {/each}
-  </ul>
+  <PokemonList {names} {name} />
+
   <div class="content">
     {#key data.pokemon?.name}
       <nav>
@@ -66,21 +63,6 @@
     display: flex;
     max-height: 100vh;
     align-items: stretch;
-  }
-
-  .index {
-    padding: 1rem 2rem;
-    padding-top: 0rem;
-    padding-right: 1rem;
-    margin-top: 1rem;
-    max-height: 100vh;
-    overflow: scroll;
-    text-transform: capitalize;
-    line-height: 1.8;
-    flex-shrink: 0;
-    font-size: 18px;
-    font-weight: 300;
-    list-style: none;
   }
 
   .content {
