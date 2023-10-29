@@ -1,6 +1,5 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-  import { onMount } from 'svelte';
 
   export let names: string[];
   export let letter: string;
@@ -19,8 +18,12 @@
   }
 
   function scrollToActiveItem() {
-    const active = document.querySelector('li.active') as HTMLElement;
-    scrollToElementIfNeeded(active);
+    if (window.innerWidth > 768) {
+      requestAnimationFrame(() => {
+        const active = document.querySelector('li.active') as HTMLElement;
+        scrollToElementIfNeeded(active);
+      });
+    }
   }
 
   $: browser && name && scrollToActiveItem();
