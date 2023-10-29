@@ -16,7 +16,7 @@
 
 <style lang="less">
   .divider {
-    background-color: var(--card-background-color);
+    background-color: white;
     padding: 0 1rem;
     margin-left: -1rem;
     border-radius: 1rem;

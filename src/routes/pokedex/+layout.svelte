@@ -1,4 +1,5 @@
 <script lang="ts">
+  import './pokedex.less';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
   import LetterSection from './LetterSection.svelte';
@@ -27,10 +28,6 @@
     return () => document.removeEventListener('keydown', onKeypress);
   });
 </script>
-
-<svelte:head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-</svelte:head>
 
 <main>
   <div class="results">
@@ -92,8 +89,14 @@
 
     nav {
       ul {
+        list-style: none;
         width: 100%;
+        display: flex;
         justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        margin-bottom: 1rem;
       }
       a {
         text-transform: capitalize;
