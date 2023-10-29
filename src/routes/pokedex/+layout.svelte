@@ -8,12 +8,18 @@
   export let data: LayoutData;
 
   const names = data.names;
-  const letters: string[] = Array.from(new Set(names.map((name: string) => name[0].toUpperCase())));
 
   $: name = data.pokemon?.name;
   $: currentIndex = names.indexOf(name);
   $: nextName = names[currentIndex + 1];
   $: previousName = names[currentIndex - 1];
+
+  function showRandomPokemon(event: MouseEvent) {
+    event.preventDefault();
+    const randomIndex = Math.floor(Math.random() * names.length);
+    const randomName = names[randomIndex] || names[names.length - 1];
+    goto(`/pokedex/${randomName}`);
+  }
 
   function onKeypress(event: KeyboardEvent) {
     if (event.key === 'ArrowRight' && nextName) {
@@ -36,15 +42,15 @@
     {#key data.pokemon?.name}
       <nav>
         <ul>
-          <li>
+          <li class="random">
+            <a href="/pokedex/" on:click={showRandomPokemon}>Random</a>
+          </li>
+          <li class="previous">
             {#if previousName}
               <a href="/pokedex/{previousName}">{previousName.replace('-', ' ')}</a>
             {/if}
           </li>
-          <li>
-            <a href="/pokedex/">Random</a>
-          </li>
-          <li>
+          <li class="next">
             {#if nextName}
               <a href="/pokedex/{nextName}">{nextName.replace('-', ' ')}</a>
             {/if}
@@ -113,32 +119,39 @@
         padding: 0;
         font-size: 18px;
         margin-bottom: 1rem;
+        gap: 1rem;
         @media @mobile {
           flex-direction: column;
           align-items: stretch;
+          gap: 0;
         }
       }
       a {
         text-transform: capitalize;
       }
       li {
-        width: 33%;
+        white-space: nowrap;
         text-align: center;
         @media @mobile {
           width: 100%;
         }
       }
-      li:first-child {
+      li.previous {
+        flex: 1;
         text-align: left;
         a:before {
           content: '← ';
         }
       }
-      li:last-child {
+      li.next {
+        flex: 1;
         text-align: right;
         a:after {
           content: ' →';
         }
+      }
+      li.random {
+        margin-right: 2rem;
       }
     }
   }

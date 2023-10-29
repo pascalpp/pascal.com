@@ -1,6 +1,5 @@
 <script lang="ts">
   import LetterSection from './PokemonListSection.svelte';
-  import Rolodex from './Rolodex.svelte';
 
   export let names: string[];
   export let name: string;

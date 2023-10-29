@@ -41,6 +41,12 @@
 
 <style lang="less">
   .divider {
+    // dark divider idea, for when have a filter field
+    // background-color: #333;
+    // color: white;
+    // border-radius: 4px;
+    // font-size: 12px;
+
     background-color: white;
     padding: 0 1rem;
     margin-left: -1rem;
