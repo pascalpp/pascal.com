@@ -7,8 +7,6 @@
 
   $: filteredNames = search ? names.filter((name: string) => name.includes(search)) : names;
   $: letters = Array.from(new Set(filteredNames.map((name: string) => name[0].toUpperCase())));
-
-  $: console.log(search, filteredNames.length);
 </script>
 
 <div class="pokemon-list">
