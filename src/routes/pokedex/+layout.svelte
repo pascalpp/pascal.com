@@ -32,8 +32,6 @@
 </script>
 
 <main>
-  <PokemonList {names} {name} />
-
   <div class="content">
     {#key data.pokemon?.name}
       <nav>
@@ -56,13 +54,46 @@
       <slot />
     {/key}
   </div>
+  <div class="list">
+    <PokemonList {names} {name} />
+  </div>
 </main>
 
 <style lang="less">
   main {
     display: flex;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     align-items: stretch;
+    overflow: hidden;
+    position: absolute;
+
+    .content {
+      order: 1;
+    }
+    .list {
+      order: 0;
+    }
+
+    @media @mobile {
+      flex-direction: column;
+      overflow: visible;
+      position: unset;
+      height: auto;
+      padding: 1rem;
+      .content {
+        display: contents;
+      }
+      .list {
+        display: contents;
+      }
+    }
+  }
+
+  .list {
+    overflow-y: scroll;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .content {
@@ -82,6 +113,10 @@
         padding: 0;
         font-size: 18px;
         margin-bottom: 1rem;
+        @media @mobile {
+          flex-direction: column;
+          align-items: stretch;
+        }
       }
       a {
         text-transform: capitalize;
@@ -89,6 +124,9 @@
       li {
         width: 33%;
         text-align: center;
+        @media @mobile {
+          width: 100%;
+        }
       }
       li:first-child {
         text-align: left;

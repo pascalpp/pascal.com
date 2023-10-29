@@ -26,7 +26,7 @@
   $: browser && name && scrollToActiveItem();
 </script>
 
-<li class="divider">{letter}</li>
+<li class="divider" id={letter.toUpperCase()}>{letter}</li>
 {#each items as item}
   {@const active = item === name}
   <li class="name" class:active>
@@ -45,7 +45,7 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     text-transform: capitalize;
     position: sticky;
-    top: 0;
+    top: 1rem;
     margin-bottom: 0.5rem;
   }
 

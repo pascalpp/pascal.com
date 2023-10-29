@@ -25,6 +25,9 @@
     margin: 0;
     position: sticky;
     top: 0;
+    @media @mobile {
+      text-align: center;
+    }
   }
 
   img {
