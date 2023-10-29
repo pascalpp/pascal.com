@@ -1,5 +1,7 @@
 import type { LayoutLoad } from './$types';
 
+export const prerender = false;
+
 export type Result = {
   name: string;
   url: string;
