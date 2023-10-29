@@ -10,8 +10,8 @@
   const names = data.names;
   const letters: string[] = Array.from(new Set(names.map((name: string) => name[0].toUpperCase())));
 
-  $: currentName = data.pokemon?.name;
-  $: currentIndex = names.indexOf(currentName);
+  $: name = data.pokemon?.name;
+  $: currentIndex = names.indexOf(name);
   $: nextName = names[currentIndex + 1];
   $: previousName = names[currentIndex - 1];
 
@@ -32,11 +32,11 @@
 </script>
 
 <main>
-  <div class="results">
+  <ul class="index">
     {#each letters as letter}
-      <LetterSection {letter} {names} />
+      <LetterSection {letter} {names} {name} />
     {/each}
-  </div>
+  </ul>
   <div class="content">
     {#key data.pokemon?.name}
       <nav>
@@ -68,7 +68,7 @@
     align-items: stretch;
   }
 
-  .results {
+  .index {
     padding: 1rem 2rem;
     padding-top: 0rem;
     padding-right: 1rem;
@@ -80,6 +80,7 @@
     flex-shrink: 0;
     font-size: 18px;
     font-weight: 300;
+    list-style: none;
   }
 
   .content {
