@@ -20,6 +20,8 @@
       goto(`/pokedex/${nextName}`);
     } else if (event.key === 'ArrowLeft' && previousName) {
       goto(`/pokedex/${previousName}`);
+    } else if (event.key === 'r') {
+      goto('/pokedex');
     }
   }
 
