@@ -94,6 +94,9 @@
       .content {
         display: contents;
       }
+      .sidenav {
+        display: contents;
+      }
       .list {
         display: contents;
       }

@@ -12,12 +12,15 @@
 </script>
 
 <div class="pokemon-list">
-  <ul class="index">
-    {#each letters as letter}
-      <PokemonListSection {letter} names={filteredNames} {name} />
-    {/each}
-  </ul>
-  <!-- <Rolodex {letters} /> -->
+  {#if letters.length > 0}
+    <ul class="index">
+      {#each letters as letter}
+        <PokemonListSection {letter} names={filteredNames} {name} />
+      {/each}
+    </ul>
+  {:else}
+    <p class="no-matches"><em>No matching Pokémon!</em></p>
+  {/if}
 </div>
 
 <style lang="less">
@@ -35,5 +38,12 @@
     font-size: 18px;
     font-weight: 300;
     list-style: none;
+  }
+
+  .no-matches {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
   }
 </style>
