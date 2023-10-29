@@ -1,16 +1,20 @@
 <script lang="ts">
-  import LetterSection from './PokemonListSection.svelte';
+  import PokemonListSection from './PokemonListSection.svelte';
 
   export let names: string[];
   export let name: string;
+  export let search: string;
 
-  const letters: string[] = Array.from(new Set(names.map((name: string) => name[0].toUpperCase())));
+  $: filteredNames = search ? names.filter((name: string) => name.includes(search)) : names;
+  $: letters = Array.from(new Set(filteredNames.map((name: string) => name[0].toUpperCase())));
+
+  $: console.log(search, filteredNames.length);
 </script>
 
 <div class="pokemon-list">
   <ul class="index">
     {#each letters as letter}
-      <LetterSection {letter} {names} {name} />
+      <PokemonListSection {letter} names={filteredNames} {name} />
     {/each}
   </ul>
   <!-- <Rolodex {letters} /> -->
@@ -22,10 +26,9 @@
   }
 
   .index {
-    padding: 1rem;
-    padding-top: 0rem;
+    margin: 0;
+    padding: 0 1.5rem;
     padding-right: 0rem;
-    margin-top: 1rem;
     text-transform: capitalize;
     line-height: 1.8;
     flex-shrink: 0;

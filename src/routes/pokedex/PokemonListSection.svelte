@@ -5,7 +5,7 @@
   export let letter: string;
   export let name: string;
 
-  const items = names.filter((name: string) => name[0].toUpperCase() === letter.toUpperCase());
+  $: items = names.filter((name: string) => name[0].toUpperCase() === letter.toUpperCase());
 
   function scrollToElementIfNeeded(element: HTMLElement | undefined | null): HTMLElement | undefined {
     if (!element) return;
@@ -41,22 +41,25 @@
 
 <style lang="less">
   .divider {
-    // dark divider idea, for when have a filter field
-    // background-color: #333;
-    // color: white;
-    // border-radius: 4px;
-    // font-size: 12px;
+    background-color: #dfdfdf;
+    color: #666;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
 
-    background-color: white;
     margin-left: -1.5rem;
-    padding-left: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-transform: capitalize;
     position: sticky;
-    top: 1rem;
-    margin-bottom: 0.5rem;
+    top: 0;
     z-index: 1;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   li.active {

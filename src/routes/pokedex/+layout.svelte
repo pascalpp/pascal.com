@@ -4,8 +4,11 @@
   import type { LayoutData } from './$types';
   import PokemonList from './PokemonList.svelte';
   import { goto } from '$app/navigation';
+  import Search from './Search.svelte';
 
   export let data: LayoutData;
+
+  let search = '';
 
   const names = data.names;
 
@@ -26,8 +29,6 @@
       goto(`/pokedex/${nextName}`);
     } else if (event.key === 'ArrowLeft' && previousName) {
       goto(`/pokedex/${previousName}`);
-    } else if (event.key === 'r') {
-      goto('/pokedex');
     }
   }
 
@@ -60,8 +61,11 @@
       <slot />
     {/key}
   </div>
-  <div class="list">
-    <PokemonList {names} {name} />
+  <div class="sidenav">
+    <Search bind:value={search} />
+    <div class="list">
+      <PokemonList {names} {name} {search} />
+    </div>
   </div>
 </main>
 
@@ -96,10 +100,15 @@
     }
   }
 
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+  }
+
   .list {
+    margin: 0;
+    padding: 0 1rem;
     overflow-y: scroll;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .content {
