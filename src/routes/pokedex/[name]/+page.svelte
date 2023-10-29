@@ -29,19 +29,30 @@
   <h1>{name}</h1>
 
   {#if images.length > 0}
-    <div class="images">
-      {#each images as image}
-        <div class="image">
-          <img src={image} alt={name} />
-        </div>
-      {/each}
+    <div class="preferred-image">
+      <img src={images[0]} alt={name} />
     </div>
+    {#if images.length > 1}
+      <details>
+        <summary>More images</summary>
+        <div class="images">
+          {#each images.slice(1) as image}
+            <div class="image">
+              <img src={image} alt={name} />
+            </div>
+          {/each}
+        </div>
+      </details>
+    {/if}
   {:else}
     <h3>No images available</h3>
   {/if}
 
   <div class="data">
-    <JSONTree value={data.pokemon} defaultExpandedLevel={0} />
+    <details>
+      <summary>Raw data</summary>
+      <JSONTree value={data.pokemon} defaultExpandedLevel={1} />
+    </details>
   </div>
 </div>
 
@@ -71,18 +82,15 @@
 
     .image {
       width: 200px;
-      &:first-child {
-        width: 100%;
-      }
     }
+  }
 
-    img {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      aspect-ratio: 1;
-      display: block;
-    }
+  img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    display: block;
   }
 
   .data {
