@@ -1,6 +1,7 @@
 import type { LayoutLoad } from './$types';
 
 export const prerender = false;
+export const trailingSlash = 'never';
 
 export type Result = {
   name: string;
