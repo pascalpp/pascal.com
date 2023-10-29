@@ -41,7 +41,7 @@
   {/if}
 
   <div class="data">
-    <JSONTree value={data.pokemon} defaultExpandedLevel={1} />
+    <JSONTree value={data.pokemon} defaultExpandedLevel={0} />
   </div>
 </div>
 
@@ -86,7 +86,7 @@
   }
 
   .data {
-    margin-top: 1rem;
+    margin: 2rem 0;
     --json-tree-font-size: 16px;
   }
 </style>
