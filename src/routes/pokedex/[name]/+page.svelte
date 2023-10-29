@@ -11,7 +11,10 @@
 
   <img src={data.pokemon.sprites.other['official-artwork'].front_default} alt={name} />
 
-  <pre>{JSON.stringify(data.pokemon, null, 2)}</pre>
+  <details>
+    <summary>Raw data</summary>
+    <pre>{JSON.stringify(data.pokemon, null, 2)}</pre>
+  </details>
 </div>
 
 <style lang="less">
