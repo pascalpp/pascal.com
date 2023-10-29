@@ -5,7 +5,7 @@
   export let name: string;
   export let search: string;
 
-  $: filteredNames = search ? names.filter((name: string) => name.includes(search)) : names;
+  $: filteredNames = search ? names.filter((name: string) => name.toLowerCase().includes(search.toLowerCase())) : names;
   $: letters = Array.from(new Set(filteredNames.map((name: string) => name[0].toUpperCase())));
 </script>
 
