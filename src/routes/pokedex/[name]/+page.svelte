@@ -41,7 +41,7 @@
   {/if}
 
   <div class="data">
-    <JSONTree value={data.pokemon} />
+    <JSONTree value={data.pokemon} defaultExpandedLevel={1} />
   </div>
 </div>
 
