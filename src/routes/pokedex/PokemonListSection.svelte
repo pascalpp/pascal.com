@@ -48,24 +48,26 @@
     // font-size: 12px;
 
     background-color: white;
-    padding: 0 1rem;
-    margin-left: -1rem;
+    margin-left: -1.5rem;
+    padding-left: 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     text-transform: capitalize;
     position: sticky;
     top: 1rem;
     margin-bottom: 0.5rem;
+    z-index: 1;
   }
 
   li.active {
     font-weight: 600;
     position: relative;
     &:before {
-      content: '→ ';
+      content: '→';
       color: @blue;
       position: absolute;
       right: 100%;
+      margin-right: 0.25rem;
     }
   }
 </style>
