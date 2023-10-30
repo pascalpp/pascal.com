@@ -25,6 +25,12 @@
   $: images = Array.from(new Set([preferredImage, ...findImages(data.pokemon)])).filter(Boolean);
 </script>
 
+<svelte:head>
+  {#if images[0]}
+    <meta property="og:image" content={images[0]} />
+  {/if}
+</svelte:head>
+
 <div>
   <h1>{name}</h1>
 

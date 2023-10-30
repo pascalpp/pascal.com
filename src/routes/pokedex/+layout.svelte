@@ -38,6 +38,15 @@
   });
 </script>
 
+<svelte:head>
+  <title>Pokémon Viewer</title>
+  <meta name="description" content="View pictures of all your favorite Pokémon" />
+  <meta property="og:title" content="Pokémon Viewer" />
+  <meta property="og:description" content="View pictures of all your favorite Pokémon" />
+  <meta property="og:url" content="https://www.pascal.com/pokedex" />
+  <meta property="og:site_name" content="Pokémon Viewer" />
+</svelte:head>
+
 <main>
   <div class="content">
     {#key data.pokemon?.name}
