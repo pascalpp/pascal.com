@@ -106,6 +106,10 @@
   .sidenav {
     display: flex;
     flex-direction: column;
+    width: 320px;
+    @media @mobile {
+      width: auto;
+    }
   }
 
   .list {
