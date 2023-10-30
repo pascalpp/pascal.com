@@ -1,32 +1,9 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
-
   export let names: string[];
   export let letter: string;
   export let name: string;
 
   $: items = names.filter((name: string) => name[0].toUpperCase() === letter.toUpperCase());
-
-  function scrollToElementIfNeeded(element: HTMLElement | undefined | null): HTMLElement | undefined {
-    if (!element) return;
-    const rect = element.getBoundingClientRect();
-    const values = [rect.top < 50, rect.bottom > window.innerHeight, rect.left < 0, rect.right > window.innerWidth];
-    if (values.some((value) => value)) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    return element;
-  }
-
-  function scrollToActiveItem() {
-    if (window.innerWidth > 768) {
-      requestAnimationFrame(() => {
-        const active = document.querySelector('li.active') as HTMLElement;
-        scrollToElementIfNeeded(active);
-      });
-    }
-  }
-
-  $: browser && name && scrollToActiveItem();
 </script>
 
 <li class="divider" id={letter.toUpperCase()}>{letter}</li>
