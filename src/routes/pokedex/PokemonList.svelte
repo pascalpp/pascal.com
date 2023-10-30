@@ -12,7 +12,12 @@
   function scrollToElementIfNeeded(element: HTMLElement | undefined | null): HTMLElement | undefined {
     if (!element) return;
     const rect = element.getBoundingClientRect();
-    const values = [rect.top < 50, rect.bottom > window.innerHeight, rect.left < 0, rect.right > window.innerWidth];
+    const values = [
+      rect.top < 100,
+      rect.bottom > window.innerHeight - 50,
+      rect.left < 0,
+      rect.right > window.innerWidth,
+    ];
     if (values.some((value) => value)) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
