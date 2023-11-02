@@ -45,11 +45,6 @@
   <meta property="og:description" content="View pictures of all your favorite Pokémon" />
   <meta property="og:url" content="https://www.pascal.com/pokedex" />
   <meta property="og:site_name" content="Pokémon Viewer" />
-  <script
-    src="https://cdn.apigateway.co/webchat-client..demo/sdk.js"
-    data-widget-id="44221536-5e15-11ee-ac6a-963d583fcadc"
-    defer
-  ></script>
 </svelte:head>
 
 <main>
