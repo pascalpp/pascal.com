@@ -41,7 +41,7 @@
 
 <svelte:element
   this={tag}
-  data-sveltekit-preload-data={href ? true : 'off'}
+  data-sveltekit-preload-data={href ? 'hover' : 'off'}
   {href}
   {rel}
   {target}
