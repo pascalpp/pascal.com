@@ -9,7 +9,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let title: string | undefined = undefined;
+  export let title = '';
   let dialog: HTMLDialogElement;
 
   // Create a custom open function that calls the dialog element's showModal method.
@@ -52,12 +52,10 @@
 </script>
 
 <dialog bind:this={dialog}>
-  {#if title}
-    <div class="modal-title">
-      <h2>{title}</h2>
-      <button class="close-button" on:click={close}>&#x2717;</button>
-    </div>
-  {/if}
+  <div class="modal-title">
+    <h2>{title}</h2>
+    <button class="close-button" on:click={close}>&#x2717;</button>
+  </div>
   <div class="modal-content">
     <slot />
   </div>
@@ -71,8 +69,8 @@
     border: 1px solid rgba(0 0 0 / 0.3);
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
-    max-width: min(95vw, 600px);
     padding: 0;
+    margin: auto;
 
     &::backdrop {
       background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
@@ -99,13 +97,14 @@
       align-items: center;
       padding: 0.75rem 1rem;
       border-bottom: 1px solid rgba(0 0 0 / 0.1);
-      font-size: 24px;
+      font-size: 18px;
       position: sticky;
       top: 0;
       background-color: white;
 
       h2 {
         margin: 0;
+        font-weight: 500;
       }
 
       .close-button {
@@ -117,7 +116,7 @@
         font-size: 1.25rem;
         border-radius: 4px;
         padding: 0;
-        width: 2em;
+        width: 1.5em;
         text-align: center;
         aspect-ratio: 1;
       }
