@@ -8,7 +8,8 @@
 <div class="playground">
   <nav>
     <Navlink href="/" label="Home" />
-    <Navlink {path} href="/playground/modals" label="Modals" />
+    <!-- <Navlink {path} href="/playground/modals" label="Modals" /> -->
+    <Navlink {path} href="/playground/dialogs" label="Dialogs" />
     <Navlink {path} href="/playground/buttons" label="Buttons" />
     <Navlink {path} href="/playground/layers" label="Layers" />
     <Navlink {path} href="/playground/toast" label="Toast" />
