@@ -81,6 +81,6 @@
 
 <Button link on:click={openSlideshow} label="View slides" />
 
-<Dialog bind:open={openSlideshow} title="Broadly">
+<Dialog bind:open={openSlideshow} title="Broadly" padded={false}>
   <Slideshow {slides} />
 </Dialog>

@@ -10,6 +10,7 @@
   import { onMount } from 'svelte';
 
   export let title = '';
+  export let padded = true;
   let dialog: HTMLDialogElement;
 
   // Create a custom open function that calls the dialog element's showModal method.
@@ -56,7 +57,7 @@
     <h2>{title}</h2>
     <button class="close-button" on:click={close}>&#x2717;</button>
   </div>
-  <div class="modal-content">
+  <div class="modal-content" class:padded>
     <slot />
   </div>
 </dialog>
@@ -122,7 +123,7 @@
       }
     }
 
-    .modal-content {
+    .modal-content.padded {
       padding: 1rem;
     }
   }

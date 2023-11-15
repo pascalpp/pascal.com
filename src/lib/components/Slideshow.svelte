@@ -62,7 +62,7 @@
   </ul>
 </div>
 
-<Dialog bind:open={openZoom}>
+<Dialog bind:open={openZoom} padded={false}>
   <img src={zoomSrc} alt={zoomAlt} />
 </Dialog>
 
@@ -79,7 +79,7 @@
     flex-direction: row;
     gap: 2rem;
     padding: 2rem;
-    padding-top: 0;
+    margin: 0;
     scroll-snap-type: x mandatory;
   }
   .slide {
