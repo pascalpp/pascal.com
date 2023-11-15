@@ -91,9 +91,9 @@
     img {
       width: 100%;
       height: auto;
-      border: 1px solid rgba(0 0 0 / 0.3);
-      box-shadow: 0 2px 4px rgba(0 0 0 / 0.1);
-      border-radius: 3px;
+      border: 1px solid rgba(0 0 0 / 0.2);
+      box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
+      border-radius: 8px;
     }
   }
 </style>

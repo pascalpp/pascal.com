@@ -72,6 +72,8 @@
     box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
     padding: 0;
     margin: auto;
+    background-color: var(--dialog-background-color, white);
+    color: var(--dialog-color, black);
 
     &::backdrop {
       background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
@@ -97,11 +99,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(0 0 0 / 0.1);
+      border-bottom: 1px solid color-mix(in srgb, var(--dialog-color, black) 20%, transparent);
       font-size: 18px;
       position: sticky;
       top: 0;
-      background-color: white;
+      background-color: var(--dialog-background-color, white);
 
       h2 {
         margin: 0;
@@ -120,6 +122,9 @@
         width: 1.5em;
         text-align: center;
         aspect-ratio: 1;
+        color: inherit;
+        font-family: inherit;
+        outline: none;
       }
     }
 

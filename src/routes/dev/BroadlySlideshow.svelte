@@ -79,8 +79,18 @@
   let openSlideshow = () => {};
 </script>
 
-<Button link on:click={openSlideshow} label="View slides" />
+<div class="scope">
+  <Button link on:click={openSlideshow} label="View slides" />
 
-<Dialog bind:open={openSlideshow} title="Broadly" padded={false}>
-  <Slideshow {slides} />
-</Dialog>
+  <Dialog bind:open={openSlideshow} title="Broadly" padded={false}>
+    <Slideshow {slides} />
+  </Dialog>
+</div>
+
+<style lang="less">
+  .scope {
+    display: contents;
+    --dialog-background-color: hsl(220, 30%, 50%);
+    --dialog-color: white;
+  }
+</style>

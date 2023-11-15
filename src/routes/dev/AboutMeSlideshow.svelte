@@ -191,8 +191,19 @@
   let openSlideshow = () => {};
 </script>
 
-<Button link on:click={openSlideshow} label="View slides" />
+<div class="scope">
+  <Button link on:click={openSlideshow} label="View slides" />
 
-<Dialog bind:open={openSlideshow} title="about.me" padded={false}>
-  <Slideshow {slides} />
-</Dialog>
+  <Dialog bind:open={openSlideshow} title="about.me" padded={false}>
+    <Slideshow {slides} />
+  </Dialog>
+</div>
+
+<style lang="less">
+  .scope {
+    display: contents;
+    background-color: darksalmon; // just here for the color picker
+    --dialog-background-color: darksalmon;
+    --dialog-color: white;
+  }
+</style>
