@@ -1,6 +1,10 @@
+<script>
+  import AboutMeSlideshow from './AboutMeSlideshow.svelte';
+</script>
+
 # Past experience
 
-## [**about.me**](https://about.me) · 2010 to 2019
+## [**about.me**](https://about.me) · 2010 to 2019 · <AboutMeSlideshow/>
 
 Developed a platform for users to create a personal profile page, allowing them to share their interests, skills, and accomplishments with others. Acquired by Broadly in February 2019.
 

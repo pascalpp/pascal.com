@@ -1,6 +1,10 @@
+<script>
+  import BroadlySlideshow from './BroadlySlideshow.svelte';
+</script>
+
 # Recent experience
 
-## [**Broadly**](https://broadly.com/) · February 2019 to present
+## [**Broadly**](https://broadly.com/) · February 2019 to present · <BroadlySlideshow/>
 
 - Developed a suite of desktop and mobile applications to help small businesses manage their customers, garner positive reviews, and generate new business.
 - Implemented a design system of modular React components to enable myself and my team to quickly deliver new features.

@@ -41,182 +41,152 @@
     {
       src: img1,
       alt: '01-home',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img2,
       alt: '02-features-1',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img3,
       alt: '02-features-2',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img4,
       alt: '02-features-3',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img5,
       alt: '02-features-4',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img6,
       alt: '02-features-5',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img7,
       alt: '02-features-6',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img8,
       alt: '02-features-7',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img9,
       alt: '02-features-8',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img10,
       alt: '02-features-9',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img11,
       alt: '02-features-10',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img12,
       alt: '02-features-11',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img13,
       alt: '02-features-12',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img14,
       alt: '02-features-13',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img15,
       alt: '02-features-pricing',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img16,
       alt: '02-login',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img17,
       alt: '03-get-started',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img18,
       alt: '04-edit-panel',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img19,
       alt: '05-bio',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img20,
       alt: '06-spotlight',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img21,
       alt: '07-portfolio',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img22,
       alt: '08-design-color-small',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img23,
       alt: '09-design-color-medium',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img24,
       alt: '10-design-color-large',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img25,
       alt: '11-interests',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img26,
       alt: '12-social-links',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img27,
       alt: '13-domain',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img28,
       alt: '14-dns-settings',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img29,
       alt: '15-account',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
     {
       src: img30,
       alt: '16-mobile',
-      description:
-        'Dolor reprehenderit officia non adipiscing aute adipiscing labore. Officia non, adipiscing aute adipiscing labore officia labore. Aute adipiscing labore officia labore dolore amet sint. Labore officia labore dolore amet sint mollit. Labore dolore, amet sint mollit.',
+      description: '',
     },
   ];
 
@@ -235,29 +205,12 @@
 <Column gap="3em">
   <h1>{title}</h1>
 
-  <Slideshow {slides} />
-  <section>
-    <Button primary on:click={dialog1.open} label="Open dialog" />
+  <p><Button primary on:click={dialog1.open} label="Open dialog" /></p>
 
-    <Dialog bind:open={dialog1.open} title="A dialog">
-      <p>
-        Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem
-        eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur
-        mollit reprehenderit excepteur ullamco proident in voluptate.
-      </p>
-      <p>
-        Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim
-        elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt
-        tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.
-      </p>
-    </Dialog>
-
-    <!-- <Slideshow {slides} /> -->
-  </section></Column
->
+  <Dialog bind:open={dialog1.open} title="about.me">
+    <Slideshow {slides} />
+  </Dialog>
+</Column>
 
 <style lang="less">
-  section {
-    max-width: 600px;
-  }
 </style>
