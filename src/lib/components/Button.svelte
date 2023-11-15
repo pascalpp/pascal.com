@@ -135,7 +135,6 @@
     // link-styled buttons
     &.link {
       color: steelblue;
-      vertical-align: text-bottom;
       display: inline;
 
       // &.has-icon {
