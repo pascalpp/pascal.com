@@ -76,13 +76,13 @@
     { src: img34, alt: 'scratchpad-spinner', description: 'Design system examples' },
   ];
 
-  let openSlideshow = () => {};
+  let dialog: Dialog;
 </script>
 
 <div class="scope">
-  <Button link on:click={openSlideshow} label="View slides" />
+  <Button link on:click={dialog.open} label="View slides" />
 
-  <Dialog bind:open={openSlideshow} title="Broadly" padded={false}>
+  <Dialog bind:this={dialog} title="Broadly" padded={false}>
     <Slideshow {slides} />
   </Dialog>
 </div>

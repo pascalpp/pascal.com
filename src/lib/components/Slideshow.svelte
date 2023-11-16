@@ -14,8 +14,6 @@
   let zoomSrc: string | undefined = undefined;
   let zoomAlt: string | undefined = undefined;
 
-  let openZoom = () => {};
-
   function scrollIntoView(element: HTMLElement) {
     element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   }
@@ -30,7 +28,7 @@
     const img = element.querySelector('img');
     zoomSrc = img?.src;
     zoomAlt = img?.alt;
-    openZoom();
+    zoomDialog.open();
   }
 
   function useScrollIntoView(element: HTMLElement) {
@@ -49,6 +47,8 @@
       },
     };
   }
+
+  let zoomDialog: Dialog;
 </script>
 
 <div class="slideshow">
@@ -61,7 +61,7 @@
     {/each}
   </ul>
 
-  <Dialog bind:open={openZoom} padded={false}>
+  <Dialog bind:this={zoomDialog} padded={false}>
     <img src={zoomSrc} alt={zoomAlt} class="zoom-image" />
   </Dialog>
 </div>
@@ -85,7 +85,7 @@
   }
   .slide {
     flex-shrink: 0;
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 20 / 17;
     scroll-snap-align: center;
     user-select: none;
 
@@ -100,7 +100,8 @@
   }
 
   .zoom-image {
-    max-width: 95vw;
+    max-width: min(95vw, 1600px);
     max-height: 95vh;
+    height: auto;
   }
 </style>

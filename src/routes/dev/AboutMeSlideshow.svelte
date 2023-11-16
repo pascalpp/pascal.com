@@ -188,13 +188,13 @@
     },
   ];
 
-  let openSlideshow = () => {};
+  let dialog: Dialog;
 </script>
 
 <div class="scope">
-  <Button link on:click={openSlideshow} label="View slides" />
+  <Button link on:click={dialog.open} label="View slides" />
 
-  <Dialog bind:open={openSlideshow} title="about.me" padded={false}>
+  <Dialog bind:this={dialog} title="about.me" padded={false}>
     <Slideshow {slides} />
   </Dialog>
 </div>
