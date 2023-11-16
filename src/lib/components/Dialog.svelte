@@ -67,8 +67,6 @@
 </dialog>
 
 <style lang="less">
-  // just using less for nesting syntax
-
   dialog {
     overscroll-behavior: contain;
     border-radius: 0.5rem;
