@@ -202,8 +202,7 @@
 <style lang="less">
   .scope {
     display: contents;
-    background-color: darksalmon; // just here for the color picker
-    --dialog-background-color: darksalmon;
+    --dialog-background-color: hsl(173, 50%, 40%);
     --dialog-color: white;
   }
 </style>
