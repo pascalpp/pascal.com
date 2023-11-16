@@ -4,8 +4,8 @@
   import Slideshow from '$lib/components/Slideshow.svelte';
   import type { Slide } from '$lib/components/Slideshow.svelte';
 
-  import img1 from './broadly/01-inbox-1.png';
-  import img2 from './broadly/01-inbox-2.png';
+  // import img1 from './broadly/01-inbox-1.png';
+  // import img2 from './broadly/01-inbox-2.png';
   import img3 from './broadly/01-inbox-3.png';
   import img4 from './broadly/02-get-started.png';
   import img5 from './broadly/03-dashboard.png';
@@ -40,40 +40,40 @@
   import img34 from './broadly/scratchpad-spinner.png';
 
   const slides: Slide[] = [
-    { src: img1, alt: '01-inbox-1', description: '' },
-    { src: img2, alt: '01-inbox-2', description: '' },
-    { src: img3, alt: '01-inbox-3', description: '' },
-    { src: img4, alt: '02-get-started', description: '' },
-    { src: img5, alt: '03-dashboard', description: '' },
-    { src: img6, alt: '04-contacts', description: '' },
-    { src: img7, alt: '05-quote', description: '' },
-    { src: img8, alt: '06-settings-profiles', description: '' },
-    { src: img9, alt: '06-settings-profiles-google', description: '' },
-    { src: img10, alt: '07-settings-messaging', description: '' },
-    { src: img11, alt: '08-settings-review-requests', description: '' },
-    { src: img12, alt: '09-settings-saved-replies', description: '' },
-    { src: img13, alt: '10-settings-calls', description: '' },
-    { src: img14, alt: '11-settings-webchat-1', description: '' },
-    { src: img15, alt: '11-settings-webchat-2', description: '' },
-    { src: img16, alt: '12-settings-appointments', description: '' },
-    { src: img17, alt: '13-settings-service-reminders', description: '' },
-    { src: img18, alt: '14-settings-payments', description: '' },
-    { src: img19, alt: '15-settings-data-sources-1', description: '' },
-    { src: img20, alt: '15-settings-data-sources-2', description: '' },
-    { src: img21, alt: '16-reports-locations', description: '' },
-    { src: img22, alt: '16-reports-locations-filter', description: '' },
-    { src: img23, alt: '16-reports-locations-modal', description: '' },
-    { src: img24, alt: '17-reports-team', description: '' },
-    { src: img25, alt: 'scratchpad-alerts', description: '' },
-    { src: img26, alt: 'scratchpad-badges', description: '' },
-    { src: img27, alt: 'scratchpad-buttons', description: '' },
-    { src: img28, alt: 'scratchpad-cards', description: '' },
-    { src: img29, alt: 'scratchpad-dropdowns', description: '' },
-    { src: img30, alt: 'scratchpad-forms', description: '' },
-    { src: img31, alt: 'scratchpad-forms-select-toggle', description: '' },
-    { src: img32, alt: 'scratchpad-layout-row', description: '' },
-    { src: img33, alt: 'scratchpad-progress-bar', description: '' },
-    { src: img34, alt: 'scratchpad-spinner', description: '' },
+    // { src: img1, alt: '01-inbox-1', description: 'Inbox' },
+    // { src: img2, alt: '01-inbox-2', description: 'inbox-2' },
+    { src: img4, alt: '02-get-started', description: 'Get Started' },
+    { src: img5, alt: '03-dashboard', description: 'Dashboard' },
+    { src: img3, alt: '01-inbox-3', description: 'Inbox' },
+    { src: img6, alt: '04-contacts', description: 'Contacts' },
+    { src: img7, alt: '05-quote', description: 'Creating a quote' },
+    { src: img8, alt: '06-settings-profiles', description: 'Settings: Online profiles pane' },
+    { src: img9, alt: '06-settings-profiles-google', description: 'Settings: Google profile' },
+    { src: img10, alt: '07-settings-messaging', description: 'Settings: Messaging' },
+    { src: img11, alt: '08-settings-review-requests', description: 'Settings: Review requests' },
+    { src: img12, alt: '09-settings-saved-replies', description: 'Settings: Saved replies' },
+    { src: img13, alt: '10-settings-calls', description: 'Settings: Calls' },
+    { src: img14, alt: '11-settings-webchat-1', description: 'Settings: Webchat' },
+    { src: img15, alt: '11-settings-webchat-2', description: 'Settings: Webchat' },
+    { src: img16, alt: '12-settings-appointments', description: 'Settings: Appointments' },
+    { src: img17, alt: '13-settings-service-reminders', description: 'Settings: Service reminders' },
+    { src: img18, alt: '14-settings-payments', description: 'Settings: Payments' },
+    { src: img19, alt: '15-settings-data-sources-1', description: 'Settings: Data sources' },
+    { src: img20, alt: '15-settings-data-sources-2', description: 'Settings: Add data source' },
+    { src: img21, alt: '16-reports-locations', description: 'Reports: Locations' },
+    { src: img22, alt: '16-reports-locations-filter', description: 'Reports: Locations filter' },
+    { src: img23, alt: '16-reports-locations-modal', description: 'Reports: Customers added modal' },
+    { src: img24, alt: '17-reports-team', description: 'Reports: Team' },
+    { src: img25, alt: 'scratchpad-alerts', description: 'Design system examples' },
+    { src: img26, alt: 'scratchpad-badges', description: 'Design system examples' },
+    { src: img27, alt: 'scratchpad-buttons', description: 'Design system examples' },
+    { src: img28, alt: 'scratchpad-cards', description: 'Design system examples' },
+    { src: img29, alt: 'scratchpad-dropdowns', description: 'Design system examples' },
+    { src: img30, alt: 'scratchpad-forms', description: 'Design system examples' },
+    { src: img31, alt: 'scratchpad-forms-select-toggle', description: 'Design system examples' },
+    { src: img32, alt: 'scratchpad-layout-row', description: 'Design system examples' },
+    { src: img33, alt: 'scratchpad-progress-bar', description: 'Design system examples' },
+    { src: img34, alt: 'scratchpad-spinner', description: 'Design system examples' },
   ];
 
   let openSlideshow = () => {};
