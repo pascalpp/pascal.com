@@ -53,10 +53,14 @@
 </script>
 
 <dialog bind:this={dialog}>
-  <div class="modal-title">
-    <h2>{title}</h2>
+  {#if title}
+    <div class="modal-title">
+      <h2>{title}</h2>
+      <button class="close-button" on:click={close}>&#x2717;</button>
+    </div>
+  {:else}
     <button class="close-button" on:click={close}>&#x2717;</button>
-  </div>
+  {/if}
   <div class="modal-content" class:padded>
     <slot />
   </div>
@@ -67,9 +71,9 @@
 
   dialog {
     overscroll-behavior: contain;
-    border: 1px solid rgba(0 0 0 / 0.3);
     border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
+    border: none;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--dialog-color, black) 20%, transparent), 0 4px 10px rgba(0 0 0 / 0.3);
     padding: 0;
     margin: auto;
     background-color: var(--dialog-background-color, white);
@@ -93,13 +97,36 @@
       }
     }
 
+    .close-button {
+      appearance: none;
+      border: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      font-size: 1.25rem;
+      border-radius: 4px;
+      padding: 0;
+      width: 1.5em;
+      text-align: center;
+      aspect-ratio: 1;
+      color: inherit;
+      font-family: inherit;
+      outline: none;
+      background-color: var(--dialog-background-color, white);
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      cursor: pointer;
+      border: 1px solid color-mix(in srgb, var(--dialog-color, black) 30%, transparent);
+    }
+
     .modal-title {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       padding: 0.75rem 1rem;
-      border-bottom: 1px solid color-mix(in srgb, var(--dialog-color, black) 20%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--dialog-color, black) 15%, transparent);
       font-size: 18px;
       position: sticky;
       top: 0;
@@ -111,20 +138,8 @@
       }
 
       .close-button {
-        appearance: none;
         border: none;
-        background: none;
-        border: none;
-        box-shadow: none;
-        font-size: 1.25rem;
-        border-radius: 4px;
-        padding: 0;
-        width: 1.5em;
-        text-align: center;
-        aspect-ratio: 1;
-        color: inherit;
-        font-family: inherit;
-        outline: none;
+        position: static;
       }
     }
 
