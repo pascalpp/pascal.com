@@ -204,5 +204,6 @@
     display: contents;
     --dialog-background-color: hsl(173, 50%, 40%);
     --dialog-color: white;
+    --slide-aspect-ratio: 1600 / 1288;
   }
 </style>

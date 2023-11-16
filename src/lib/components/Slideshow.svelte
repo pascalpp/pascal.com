@@ -93,6 +93,7 @@
       max-width: min(70vw, 1000px);
       max-height: 70vh;
       height: auto;
+      aspect-ratio: var(--slide-aspect-ratio);
       border: 1px solid rgba(0 0 0 / 0.2);
       box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
       border-radius: 8px;
@@ -103,5 +104,6 @@
     max-width: min(95vw, 1600px);
     max-height: 95vh;
     height: auto;
+    aspect-ratio: var(--slide-aspect-ratio);
   }
 </style>
