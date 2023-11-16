@@ -44,9 +44,9 @@
         <div class="bubble-divider large" />
         <div class="bubble small bold">have a look around:</div>
         <div class="bubble-divider medium" />
-        <a href="./diary" class="bubble small">don’t read my diary</a>
+        <a href="./diary" class="bubble small">read my diary</a>
         <div class="bubble-divider small" />
-        <a href="./dev" class="bubble small">gimme a job</a>
+        <a href="./dev" class="bubble small">peruse my resume</a>
         <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./freeruler" class="bubble small">download a free ruler for your mac</a>
         <div class="bubble-divider small" />
