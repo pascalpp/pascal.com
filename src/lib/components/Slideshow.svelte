@@ -85,13 +85,13 @@
   }
   .slide {
     flex-shrink: 0;
-    width: 60%;
-    max-width: 1000px;
+    aspect-ratio: 5 / 4;
     scroll-snap-align: center;
     user-select: none;
 
     img {
-      width: 100%;
+      max-width: min(70vw, 1000px);
+      max-height: 70vh;
       height: auto;
       border: 1px solid rgba(0 0 0 / 0.2);
       box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
