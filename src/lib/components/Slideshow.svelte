@@ -60,16 +60,17 @@
       </li>
     {/each}
   </ul>
-</div>
 
-<Dialog bind:open={openZoom} padded={false}>
-  <img src={zoomSrc} alt={zoomAlt} />
-</Dialog>
+  <Dialog bind:open={openZoom} padded={false}>
+    <img src={zoomSrc} alt={zoomAlt} class="zoom-image" />
+  </Dialog>
+</div>
 
 <style lang="less">
   .slideshow {
     width: 100%;
-    height: 100%;
+    --dialog-background-color: white;
+    --dialog-color: black;
   }
   .slides {
     overflow: hidden;
@@ -85,6 +86,7 @@
   .slide {
     flex-shrink: 0;
     width: 60%;
+    max-width: 1000px;
     scroll-snap-align: center;
     user-select: none;
 
@@ -95,5 +97,10 @@
       box-shadow: 0 4px 10px rgba(0 0 0 / 0.3);
       border-radius: 8px;
     }
+  }
+
+  .zoom-image {
+    max-width: 95vw;
+    max-height: 95vh;
   }
 </style>
