@@ -20,7 +20,7 @@
 
   <div class="controls">
     <Column>
-      <Slider bind:value={spokes} min={1} max={20} step={1} id="spokes" label="Number of spokes: {spokes}" />
+      <Slider bind:value={spokes} min={1} max={20} step={1} id="spokes" label="Spokes: {spokes}" />
       <Slider bind:value={circlespeed} min={1} max={20} id="circlespeed" label="Wheel Speed: {circlespeed}s" />
       <Slider bind:value={dotspeed} min={1} max={10} id="dotspeed" label="Dot Speed: {dotspeed}s" />
     </Column>
