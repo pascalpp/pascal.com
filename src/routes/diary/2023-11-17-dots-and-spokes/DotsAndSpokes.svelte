@@ -1,31 +1,18 @@
 <script lang="ts">
-  import Column from '$lib/components/Column.svelte';
-  import Slider from '$lib/components/Slider.svelte';
-
   export let spokes = 8;
   export let dotspeed = 4;
   export let circlespeed = 10;
 </script>
 
-<Column center --circlespeed={circlespeed + 's'} --dotspeed={dotspeed + 's'}>
-  {#key spokes}
-    <div class="circle">
-      {#each new Array(spokes) as spoke, i}
-        <div class="spoke" style="transform: rotate({(180 / spokes) * i}deg)">
-          <div class="dot" style="animation-delay: {(i * 2) / spokes}s" />
-        </div>
-      {/each}
-    </div>
-  {/key}
-
-  <div class="controls">
-    <Column>
-      <Slider bind:value={spokes} min={1} max={20} step={1} id="spokes" label="Spokes: {spokes}" />
-      <Slider bind:value={circlespeed} min={1} max={20} id="circlespeed" label="Wheel Speed: {circlespeed}s" />
-      <Slider bind:value={dotspeed} min={1} max={10} id="dotspeed" label="Dot Speed: {dotspeed}s" />
-    </Column>
+{#key spokes}
+  <div class="circle" style="--circlespeed: {circlespeed + 's'}; --dotspeed: {dotspeed + 's'}">
+    {#each new Array(spokes) as spoke, i}
+      <div class="spoke" style="transform: rotate({(180 / spokes) * i}deg)">
+        <div class="dot" style="animation-delay: {(i * 2) / spokes}s" />
+      </div>
+    {/each}
   </div>
-</Column>
+{/key}
 
 <style lang="less">
   .circle {
@@ -56,12 +43,6 @@
     border-radius: 50%;
     animation: spokedot var(--dotspeed, 14s) infinite ease-in-out;
     box-shadow: 0 0 0 2px black;
-  }
-
-  .controls {
-    width: 200px;
-    font-family: @sans-font;
-    font-size: 14px;
   }
 
   @keyframes spokedot {

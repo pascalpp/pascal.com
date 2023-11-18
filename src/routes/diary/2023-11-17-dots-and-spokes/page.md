@@ -5,6 +5,8 @@ status: published
 ---
 
 <script lang="ts">
+  import Column from '$lib/components/Column.svelte';
+  import Slider from '$lib/components/Slider.svelte';
   import DotsAndSpokes from './DotsAndSpokes.svelte';
 
   let spokes = 8;
@@ -29,6 +31,12 @@ status: published
     dotspeed = 1;
   }
 
+  function example4() {
+    spokes = 200;
+    circlespeed = 20;
+    dotspeed = 1;
+  }
+
   function defaultExample() {
     spokes = 8;
     circlespeed = 10;
@@ -36,10 +44,46 @@ status: published
   }
 </script>
 
-Decided to migrate [this old codepen I did](https://codepen.io/pascalpp/pen/VLJjQx) to a blog post in order to feel like I got something productive done today. It's a little hypnotic. Try dragging the sliders around, or try <button class="link" on:click={example1}>this one</button> or <button class="link" on:click={example2}>this one</button> or <button class="link" on:click={example3}>this one</button> or <button class="link" on:click={defaultExample}>the default</button>.
+<style lang="less">
+  .container {
+    margin: 2rem 0;
+    width: fit-content;
+  }
+
+  .controls {
+    font-family: @sans-font;
+    font-size: 14px;
+    width: 250px;
+  }
+
+  .note {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+</style>
+
+Decided to migrate [this old codepen I did](https://codepen.io/pascalpp/pen/VLJjQx) to a blog post in order to feel like I got something productive done today. It's a little hypnotic. Try dragging the sliders around, or
+try <button class="link" on:click={example1}>this one</button>
+or <button class="link" on:click={example2}>this one</button>
+or <button class="link" on:click={example3}>this one</button>
+or <button class="link" on:click={example4}>this one</button>
+or <button class="link" on:click={defaultExample}>the default</button>.
 
 <div class="container">
+    <Column center>
   <DotsAndSpokes bind:spokes bind:dotspeed bind:circlespeed/>
+
+  <div class="controls">
+    <Column>
+      <Slider bind:value={spokes} min={1} max={200} step={1} id="spokes" label="Spokes: {spokes}" />
+      <Slider bind:value={circlespeed} min={1} max={20} id="circlespeed" label="Wheel Speed: {circlespeed}s" />
+      <Slider bind:value={dotspeed} min={1} max={10} id="dotspeed" label="Dot Speed: {dotspeed}s" />
+    </Column>
+    {#if spokes > 100 && dotspeed > 2}
+      <p class="note">With a lot of spokes, try a lower dot speed.</p>
+    {/if}
+  </div>
+    </Column>
 </div>
 
 <details>
@@ -49,33 +93,20 @@ Decided to migrate [this old codepen I did](https://codepen.io/pascalpp/pen/VLJj
 
 ```svelte
 <script lang="ts">
-  import Column from '$lib/components/Column.svelte';
-  import Slider from '$lib/components/Slider.svelte';
-
-  let spokes = 8;
-  let dotspeed = 4;
-  let circlespeed = 10;
+  export let spokes = 8;
+  export let dotspeed = 4;
+  export let circlespeed = 10;
 </script>
 
-<Column center --circlespeed={circlespeed + 's'} --dotspeed={dotspeed + 's'}>
-  {#key spokes}
-    <div class="circle">
-      {#each new Array(spokes) as spoke, i}
-        <div class="spoke" style="transform: rotate({(180 / spokes) * i}deg)">
-          <div class="dot" style="animation-delay: {(i * 2) / spokes}s" />
-        </div>
-      {/each}
-    </div>
-  {/key}
-
-  <div class="controls">
-    <Column>
-      <Slider bind:value={spokes} min={1} max={20} step={1} id="spokes" label="Spokes: {spokes}" />
-      <Slider bind:value={circlespeed} min={1} max={20} id="circlespeed" label="Wheel Speed: {circlespeed}s" />
-      <Slider bind:value={dotspeed} min={1} max={10} id="dotspeed" label="Dot Speed: {dotspeed}s" />
-    </Column>
+{#key spokes}
+  <div class="circle" style="--circlespeed: {circlespeed + 's'}; --dotspeed: {dotspeed + 's'}">
+    {#each new Array(spokes) as spoke, i}
+      <div class="spoke" style="transform: rotate({(180 / spokes) * i}deg)">
+        <div class="dot" style="animation-delay: {(i * 2) / spokes}s" />
+      </div>
+    {/each}
   </div>
-</Column>
+{/key}
 
 <style lang="less">
   .circle {
@@ -106,12 +137,6 @@ Decided to migrate [this old codepen I did](https://codepen.io/pascalpp/pen/VLJj
     border-radius: 50%;
     animation: spokedot var(--dotspeed, 14s) infinite ease-in-out;
     box-shadow: 0 0 0 2px black;
-  }
-
-  .controls {
-    width: 200px;
-    font-family: @sans-font;
-    font-size: 14px;
   }
 
   @keyframes spokedot {
@@ -150,10 +175,3 @@ Decided to migrate [this old codepen I did](https://codepen.io/pascalpp/pen/VLJj
 ```
 
 </details>
-
-<style lang="less">
-  .container {
-    margin: 2rem 0;
-    width: fit-content;
-  }
-</style>
