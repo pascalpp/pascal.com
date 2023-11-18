@@ -2,6 +2,7 @@
 title: Dots and Spokes
 date: 2023-11-18T01:51:36.166Z
 status: published
+tags: [css, svelte]
 ---
 
 <script lang="ts">
