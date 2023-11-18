@@ -32,10 +32,11 @@
     left: 50%;
     top: 0;
   }
+
   .circle .spoke .dot {
     position: absolute;
     display: block;
-    background-color: blue;
+    background-color: grey;
     content: '';
     left: -10px;
     width: 20px;
