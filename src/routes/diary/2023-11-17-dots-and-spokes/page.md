@@ -1,6 +1,6 @@
 ---
 title: Dots and Spokes
-date: 2023-11-17T20:51:36.166Z
+date: 2023-11-17T20:51:36.166-0500
 status: published
 ---
 
