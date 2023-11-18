@@ -35,7 +35,7 @@
   .circle .spoke .dot {
     position: absolute;
     display: block;
-    background-color: #000;
+    background-color: blue;
     content: '';
     left: -10px;
     width: 20px;
