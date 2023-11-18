@@ -15,6 +15,14 @@ status: published
     position: relative;
   }
 
+  .opacity {
+    opacity: 0.9;
+  }
+
+  .filter {
+    filter: blur(1px);
+  }
+
   .overflow-hidden {
     overflow-x: hidden;
   }
@@ -22,6 +30,7 @@ status: published
   section {
     max-width: min(90vw, 600px);
   }
+
 </style>
 
 This post is just a few experiments with sticky positioning. For the straight dope, visit [CSS Tricks](https://css-tricks.com/video-screencasts/205-sticky-positioning-how-it-works-what-can-break-it-and-dumb-tricks/#aa-what-can-break-it).
@@ -44,7 +53,7 @@ Culpa reprehenderit labore in irure. Labore in irure sunt laborum. Irure sunt la
 
 <h3 class="sticky">This is sticky inside a relative parent</h3>
 
-The above element is sticky, inside a relative parent. As you scroll up, you'll see that a relative parent doesn't affect sticky positioning.
+The above element is sticky, inside a relative parent. As you scroll down, you'll see that a relative parent doesn't affect sticky positioning.
 
 Excepteur eu sunt sunt sed, consectetur non. Sunt sed consectetur, non. Non aliquip qui est irure cupidatat id. Qui est irure, cupidatat id mollit occaecat consequat. Cupidatat id mollit occaecat, consequat aute. Occaecat consequat aute incididunt. Aute incididunt culpa elit est, dolore. Elit est dolore, ad ea ullamco in nostrud. Lorem, nulla velit excepteur. Excepteur id culpa commodo ex incididunt consequat. Culpa commodo ex, incididunt consequat irure sunt. Incididunt consequat irure sunt commodo eiusmod.
 
@@ -52,13 +61,49 @@ Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qu
 
 </section>
 
+<section class="opacity">
+
+<h3 class="sticky">This is sticky inside opacity: 0.9</h3>
+
+The above element is sticky, inside a parent with a custom opacity. As you scroll down, you'll see that opacity doesn't affect sticky positioning.
+
+Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qui. Ad ad qui aliqua incididunt cillum dolor proident. Qui aliqua incididunt cillum dolor proident in proident. Incididunt cillum, dolor proident in. Proident in proident nisi. Proident, nisi nostrud laborum officia deserunt. Laborum officia deserunt qui quis reprehenderit aute nulla. Deserunt qui quis reprehenderit aute. Quis reprehenderit aute nulla sint consequat.
+
+Consectetur enim est anim proident. Est anim proident lorem, nostrud. Lorem nostrud occaecat mollit ullamco aliquip occaecat. Occaecat mollit ullamco aliquip occaecat irure. Ullamco aliquip occaecat, irure consectetur. Irure consectetur sit tempor eu. Sit tempor, eu ut duis. Ut duis reprehenderit ipsum fugiat incididunt.
+
+Qui est irure, cupidatat id mollit occaecat consequat. Cupidatat id mollit occaecat, consequat aute. Occaecat consequat aute incididunt. Aute incididunt culpa elit est, dolore. Elit est dolore, ad ea ullamco in nostrud. Lorem, nulla velit excepteur. Excepteur id culpa commodo ex incididunt consequat. Culpa commodo ex, incididunt consequat irure sunt. Incididunt consequat irure sunt commodo eiusmod.
+
+Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qui. Ad ad qui aliqua incididunt cillum dolor proident. Qui aliqua incididunt cillum dolor proident in proident. Incididunt cillum, dolor proident in. Proident in proident nisi. Proident, nisi nostrud laborum officia deserunt. Laborum officia deserunt qui quis reprehenderit aute nulla. Deserunt qui quis reprehenderit aute. Quis reprehenderit aute nulla sint consequat.
+
+Consectetur enim est anim proident. Est anim proident lorem, nostrud. Lorem nostrud occaecat mollit ullamco aliquip occaecat. Occaecat mollit ullamco aliquip occaecat irure. Ullamco aliquip occaecat, irure consectetur. Irure consectetur sit tempor eu. Sit tempor, eu ut duis. Ut duis reprehenderit ipsum fugiat incididunt.
+
+</section>
+
+<section class="filter">
+
+<h3 class="sticky">This is sticky inside a parent with a filter</h3>
+
+The above element is sticky, inside a parent with filter: blur(1px). As you scroll down, you'll see that filter doesn't affect sticky positioning.
+
+Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qui. Ad ad qui aliqua incididunt cillum dolor proident. Qui aliqua incididunt cillum dolor proident in proident. Incididunt cillum, dolor proident in. Proident in proident nisi. Proident, nisi nostrud laborum officia deserunt. Laborum officia deserunt qui quis reprehenderit aute nulla. Deserunt qui quis reprehenderit aute. Quis reprehenderit aute nulla sint consequat.
+
+Consectetur enim est anim proident. Est anim proident lorem, nostrud. Lorem nostrud occaecat mollit ullamco aliquip occaecat. Occaecat mollit ullamco aliquip occaecat irure. Ullamco aliquip occaecat, irure consectetur. Irure consectetur sit tempor eu. Sit tempor, eu ut duis. Ut duis reprehenderit ipsum fugiat incididunt.
+
+Qui est irure, cupidatat id mollit occaecat consequat. Cupidatat id mollit occaecat, consequat aute. Occaecat consequat aute incididunt. Aute incididunt culpa elit est, dolore. Elit est dolore, ad ea ullamco in nostrud. Lorem, nulla velit excepteur. Excepteur id culpa commodo ex incididunt consequat. Culpa commodo ex, incididunt consequat irure sunt. Incididunt consequat irure sunt commodo eiusmod.
+
+Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qui. Ad ad qui aliqua incididunt cillum dolor proident. Qui aliqua incididunt cillum dolor proident in proident. Incididunt cillum, dolor proident in. Proident in proident nisi. Proident, nisi nostrud laborum officia deserunt. Laborum officia deserunt qui quis reprehenderit aute nulla. Deserunt qui quis reprehenderit aute. Quis reprehenderit aute nulla sint consequat.
+
+Consectetur enim est anim proident. Est anim proident lorem, nostrud. Lorem nostrud occaecat mollit ullamco aliquip occaecat. Occaecat mollit ullamco aliquip occaecat irure. Ullamco aliquip occaecat, irure consectetur. Irure consectetur sit tempor eu. Sit tempor, eu ut duis. Ut duis reprehenderit ipsum fugiat incididunt.
+
+</section>
+
 <section class="overflow-hidden">
 
 <h3 class="sticky">This is sticky inside overflow-x: hidden</h3>
 
-The above element is sticky, inside an overflow hidden parent. This paragraph is long so we can have some scrolling content. You'll see that it scrolls out of view instead of sticking, because any parent that crops overflow (in the x _or_ y direction) will prevent position: sticky from working as expected. Excepteur eu sunt sunt sed, consectetur non. Sunt sed consectetur, non. Non aliquip qui est irure cupidatat id.
+The above element is sticky, inside an overflow hidden parent. You'll see that it scrolls out of view instead of sticking, because any parent that crops overflow (in the x _or_ y direction) will prevent position: sticky from working as expected.
 
-Qui est irure, cupidatat id mollit occaecat consequat. Cupidatat id mollit occaecat, consequat aute. Occaecat consequat aute incididunt. Aute incididunt culpa elit est, dolore. Elit est dolore, ad ea ullamco in nostrud. Lorem, nulla velit excepteur. Excepteur id culpa commodo ex incididunt consequat. Culpa commodo ex, incididunt consequat irure sunt. Incididunt consequat irure sunt commodo eiusmod.
+Excepteur eu sunt sunt sed, consectetur non. Sunt sed consectetur, non. Non aliquip qui est irure cupidatat id. Qui est irure, cupidatat id mollit occaecat consequat. Cupidatat id mollit occaecat, consequat aute. Occaecat consequat aute incididunt. Aute incididunt culpa elit est, dolore. Elit est dolore, ad ea ullamco in nostrud. Lorem, nulla velit excepteur. Excepteur id culpa commodo ex incididunt consequat. Culpa commodo ex, incididunt consequat irure sunt. Incididunt consequat irure sunt commodo eiusmod.
 
 Irure sunt commodo eiusmod, irure incididunt. Consequat ex consectetur ad, ad qui. Ad ad qui aliqua incididunt cillum dolor proident. Qui aliqua incididunt cillum dolor proident in proident. Incididunt cillum, dolor proident in. Proident in proident nisi. Proident, nisi nostrud laborum officia deserunt. Laborum officia deserunt qui quis reprehenderit aute nulla. Deserunt qui quis reprehenderit aute. Quis reprehenderit aute nulla sint consequat.
 
