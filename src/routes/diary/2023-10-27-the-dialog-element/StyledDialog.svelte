@@ -2,27 +2,27 @@
   import { onMount } from 'svelte';
 
   export let title: string | undefined = undefined;
-  export let dialog: HTMLDialogElement;
+  export let element: HTMLDialogElement;
 
-  // Create a custom open function that calls the dialog element's showModal method.
-  function open() {
-    dialog.showModal();
+  // Export a custom open function that calls the dialog element's showModal method.
+  export function open() {
+    element.showModal();
   }
 
-  // Create a custom close function that sets a closing attribute on the dialog
+  // Export a custom close function that sets a closing attribute on the dialog
   // element. This attribute is used to trigger the closing animation. So we add
   // a listener for animationend which calls the afterClosing method below. By
   // passing once: true, we don't have to remove this event listener.
-  function close() {
-    dialog.addEventListener('animationend', afterClosing, { once: true });
-    dialog.setAttribute('closing', '');
+  export function close() {
+    element.addEventListener('animationend', afterClosing, { once: true });
+    element.setAttribute('closing', '');
   }
 
-  // Now that the closing animation is complete, we can remove the closing
-  // attribute and call the dialog's close method.
+  // When the closing animation completes, we can remove the closing attribute
+  // and call the dialog's native close method.
   function afterClosing() {
-    dialog.removeAttribute('closing');
-    dialog.close();
+    element.removeAttribute('closing');
+    element.close();
   }
 
   // When the user presses the escape key, the browser calls the dialog's close
@@ -34,24 +34,17 @@
     close();
   }
 
+  // When the component mounts, add our event listener, and remove it on dismount.
   onMount(() => {
-    dialog.addEventListener('cancel', onCancel);
+    element.addEventListener('cancel', onCancel);
 
     return () => {
-      dialog.removeEventListener('cancel', onCancel);
+      element.removeEventListener('cancel', onCancel);
     };
   });
-
-  // Instead of just exporting the dialog element, we can export an object with
-  // our open/close methods, as well as the dialog element.
-  export const modal = {
-    open,
-    close,
-    dialog,
-  };
 </script>
 
-<dialog bind:this={dialog}>
+<dialog bind:this={element}>
   {#if title}
     <div class="modal-title">
       <h2>{title}</h2>
@@ -74,22 +67,25 @@
     max-width: min(95vw, 600px);
     padding: 0;
 
-    &::backdrop {
-      background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
-      backdrop-filter: blur(4px);
-    }
-
+    // animate when the dialog opens
     &:is([open]) {
       animation: fade-in 0.2s ease-out, slide-in 0.2s ease-out;
       &::backdrop {
         animation: fade-in 0.2s ease-out;
       }
     }
+    // animate when the dialog is closing
     &:is([closing]) {
       animation: fade-out 0.2s ease-out, slide-out 0.2s ease-out;
       &::backdrop {
         animation: fade-out 0.2s ease-out;
       }
+    }
+
+    // add a gradient and blur filter to the backdrop pseudo-element
+    &::backdrop {
+      background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
+      backdrop-filter: blur(4px);
     }
 
     .modal-title {

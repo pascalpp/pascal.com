@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let modal: HTMLDialogElement;
+  export let dialog: HTMLDialogElement;
 </script>
 
-<dialog bind:this={modal}>
+<dialog bind:this={dialog}>
   <slot />
 </dialog>

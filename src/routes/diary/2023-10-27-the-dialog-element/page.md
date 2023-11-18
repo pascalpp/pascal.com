@@ -1,5 +1,5 @@
 ---
-title: Building a Svelte modal component using the dialog element
+title: Building a Svelte modal dialog component using the dialog element
 date: 2023-10-27T03:01:01.164Z
 tags: [svelte, javascript, dialog]
 status: published
@@ -10,57 +10,63 @@ status: published
   import StyledDialog from './StyledDialog.svelte';
   import styledDialogText from './StyledDialog.svelte?raw';
 
-  let basicModal: HTMLDialogElement;
-  let nestedModal: HTMLDialogElement;
-  let nestedModalChild: HTMLDialogElement;
-  let styledModal: HTMLDialogElement;
-  let styledLongModal: HTMLDialogElement;
-  let styledUntitledModal: HTMLDialogElement;
+  let basicDialog: HTMLDialogElement;
+  let nestedDialog: HTMLDialogElement;
+  let nestedDialogChild: HTMLDialogElement;
+  let styledDialog: StyledDialog;
+  let styledDialogLong: StyledDialog;
+  let styledDialogUntitled: StyledDialog;
   let closeUntitledModal: () => void;
 </script>
 
-First let's make a barebones Svelte component which renders a dialog element with a slot. We'll export a `modal` property which refers to that dialog element.
+First let's make a barebones Svelte component which renders a dialog element with a slot. We'll export a `dialog` property which refers to that dialog element.
 
-`Dialog.svelte`
+<details open>
+  <summary><code>Dialog.svelte</code></summary>
 
 ```svelte
 <script lang="ts">
-  export let modal: HTMLDialogElement;
+  export let dialog: HTMLDialogElement;
 </script>
 
-<dialog bind:this={modal}>
+<dialog bind:this={dialog}>
   <slot />
 </dialog>
 ```
 
-Then in our page we can import that component and use it to render a dialog with some content. We'll bind that `modal` property to a variable in our page so we can open and close the modal.
+</details>
 
-`page.svelte`
+Then in our page we can import that component and use it to render a dialog with some content. We'll bind that `dialog` property to a variable in our page so we can open and close the dialog.
+
+<details open>
+  <summary><code>page.svelte</code></summary>
 
 ```svelte
 <script lang="ts">
   import Dialog from './Dialog.svelte';
 
-  let modal: HTMLDialogElement;
+  let dialog: HTMLDialogElement;
 </script>
 
-<Dialog bind:modal>
+<Dialog bind:dialog>
   <h1>Hi there!</h1>
-  <button class="btn" on:click={() => modal.close()}>Close</button>
+  <button class="btn" on:click={() => dialog.close()}>Close</button>
 </Dialog>
 
-<button class="btn" on:click={() => modal.showModal()}>Open the modal</button>
+<button class="btn" on:click={() => dialog.showModal()}>Open the modal</button>
 ```
 
-<Dialog bind:modal={basicModal}>
+</details>
+
+<Dialog bind:dialog={basicDialog}>
   <h1>Hi there!</h1>
-  <button class="btn" on:click={() => basicModal.close()}>Close</button>
+  <button class="btn" on:click={() => basicDialog.close()}>Close</button>
 </Dialog>
 
 ### Try it out!
 
 <p>
-  <button class="btn" on:click={() => basicModal.showModal()}>Open the modal</button>
+  <button class="btn" on:click={() => basicDialog.showModal()}>Open the modal</button>
 </p>
 
 ## What you get for free
@@ -75,12 +81,12 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
 - You can even open a dialog from within another dialog, and the browser will keep track of which dialog is currently open. Pressing escape will only close one dialog at a time.
 - Probably some other built-in niceties that I haven't noticed yet.
 
-<Dialog bind:modal={nestedModal}>
+<Dialog bind:dialog={nestedDialog}>
   <h1>Hi there!</h1>
   <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
   <p>
-    <button class="btn" on:click={() => nestedModal.close()}>Close</button>
-    <button class="btn" on:click={() => nestedModalChild.showModal()}>Open another modal</button>
+    <button class="btn" on:click={() => nestedDialog.close()}>Close</button>
+    <button class="btn" on:click={() => nestedDialogChild.showModal()}>Open another modal</button>
   </p>
   <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
   <p>Enim proident ad lorem. Ad lorem ullamco anim, ea et. Anim, ea et lorem anim. Lorem, anim anim adipiscing aute. Adipiscing aute est ex mollit cupidatat.</p>
@@ -99,16 +105,16 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
   <p>Quis cupidatat aliquip non nostrud laboris. Aliquip non, nostrud laboris commodo velit aliqua duis. Laboris commodo velit aliqua duis consequat dolor. Velit aliqua duis consequat dolor est. Duis consequat, dolor est. Est id in, culpa nulla eu esse sit.</p>
   <p>Amet sed ipsum ut officia, fugiat cillum eu. Ut officia fugiat cillum eu reprehenderit excepteur sit. Fugiat cillum eu reprehenderit excepteur, sit ea. Reprehenderit excepteur sit ea in tempor exercitation sed. Sit, ea in tempor exercitation sed id. Tempor, exercitation sed id amet proident commodo minim. Id amet proident commodo, minim reprehenderit. Commodo minim reprehenderit sed adipiscing reprehenderit proident laborum. Reprehenderit sed adipiscing reprehenderit proident.</p>
 
-  <Dialog bind:modal={nestedModalChild}>
+  <Dialog bind:dialog={nestedDialogChild}>
     <h1>Another modal</h1>
     <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
     <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
-    <button class="btn" on:click={() => nestedModalChild.close()}>Close</button>
+    <button class="btn" on:click={() => nestedDialogChild.close()}>Close</button>
   </Dialog>
 </Dialog>
 
 <p>
-  <button class="btn" on:click={() => nestedModal.showModal()}>Open a long scrolling modal with a nested modal</button>
+  <button class="btn" on:click={() => nestedDialog.showModal()}>Open a long scrolling modal with a nested modal</button>
 </p>
 
 ## Taking it up a notch
@@ -123,68 +129,37 @@ Some ideas to try:
 - Animate the modal opening and closing
 - Prevent scrolling the page content while the modal is open
 
-Here's a version of the Dialog component with these features added.
+Here's a version of the Dialog component with some of these features added.
 
-<StyledDialog bind:modal={styledModal} let:close title="A styled modal">
-  <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
-  <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
-</StyledDialog>
-
-<StyledDialog bind:modal={styledLongModal} let:close title="A long styled modal">
-  <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
-  <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
-  <p>Elit ipsum pariatur sit, nostrud occaecat ipsum. Sit nostrud occaecat ipsum cillum. Occaecat ipsum cillum ut ex amet, aliqua duis. Ut ex amet, aliqua. Aliqua duis, excepteur excepteur veniam. Excepteur veniam excepteur deserunt in eu.</p>
-  <p>Ipsum, ad qui nulla. Nulla do sit, duis. Duis voluptate fugiat aliquip minim nostrud, ad. Aliquip minim nostrud ad quis. Nostrud ad quis, dolore proident. Dolore, proident cupidatat commodo et sit sit id. Commodo et sit sit id cupidatat. Sit sit id cupidatat laboris deserunt. Id cupidatat laboris deserunt incididunt dolore, deserunt est. Deserunt incididunt dolore, deserunt est cillum tempor.</p>
-  <p>Minim amet occaecat duis, elit. Duis elit et anim labore amet sed. Et, anim labore amet sed amet. Amet sed amet veniam occaecat, sunt sit veniam. Veniam occaecat sunt sit veniam, ut tempor. Sit veniam, ut tempor. Tempor sed, ipsum cillum ea.</p>
-  <p>Anim cillum elit incididunt proident ut nostrud nisi. Elit incididunt proident ut nostrud nisi aute commodo. Proident ut nostrud, nisi aute commodo enim. Nisi, aute commodo enim. Enim laboris tempor officia. Tempor officia ad mollit. Ad mollit occaecat id. Occaecat id eu, nulla ullamco irure in adipiscing.</p>
-  <p>Est anim sint, et. Et fugiat, aliqua excepteur sunt et sint exercitation. Excepteur sunt et sint. Et, sint exercitation eu culpa. Eu culpa tempor, veniam. Veniam eu, laboris laborum. Laborum enim adipiscing laboris commodo amet pariatur.</p>
-  <p>Proident voluptate veniam irure duis deserunt. Veniam irure duis deserunt. Duis deserunt ad veniam reprehenderit deserunt commodo eiusmod. Ad veniam reprehenderit deserunt. Reprehenderit deserunt commodo eiusmod proident labore. Commodo eiusmod proident labore sit sed. Proident labore sit sed esse nisi. Sit sed, esse nisi nisi.</p>
-  <p>Commodo deserunt magna ea in veniam et, commodo. Ea in veniam et commodo, est ut. Et commodo est ut nisi labore veniam ad. Est ut nisi labore veniam ad adipiscing. Nisi labore veniam ad adipiscing lorem cillum. Veniam, ad adipiscing lorem cillum nostrud sed.</p>
-  <p>Nisi qui culpa velit dolore eiusmod quis fugiat. Culpa velit dolore eiusmod quis, fugiat elit ut. Eiusmod quis fugiat elit ut aliquip excepteur commodo. Fugiat elit ut, aliquip. Aliquip excepteur commodo consectetur do. Commodo consectetur, do ullamco ut. Ullamco ut ex, sed eu. Sed eu aute tempor velit sunt. Aute tempor velit sunt est ut aute ut. Velit sunt, est ut aute ut.</p>
-  <p>Quis ullamco culpa ad cillum commodo est. Culpa ad cillum commodo est ullamco ex culpa. Cillum commodo est ullamco ex culpa, pariatur. Ullamco ex culpa pariatur id sunt, ut sit. Pariatur id sunt ut sit culpa pariatur mollit. Sunt ut sit, culpa.</p>
-</StyledDialog>
-
-<StyledDialog bind:modal={styledUntitledModal}>
-  <p>This modal has no title. But we can access its custom close method to create our own <button class="btn" on:click={styledUntitledModal.close}>close button</button>.</p>
-</StyledDialog>
-
-<p>
-  <button class="btn" on:click={styledModal.open}>Open a styled modal</button>
-  <button class="btn" on:click={styledLongModal.open}>Open a long styled modal</button>
-  <button class="btn" on:click={styledUntitledModal.open}>Open an untitled modal</button>
-</p>
-
-<details>
-  <summary>The code</summary>
-
-`StyledDialog.svelte`
+<details open>
+  <summary><code>StyledDialog.svelte</code></summary>
 
 ```svelte
 <script lang="ts">
   import { onMount } from 'svelte';
 
   export let title: string | undefined = undefined;
-  export let dialog: HTMLDialogElement;
+  export let element: HTMLDialogElement;
 
-  // Create a custom open function that calls the dialog element's showModal method.
-  function open() {
-    dialog.showModal();
+  // Export a custom open function that calls the dialog element's showModal method.
+  export function open() {
+    element.showModal();
   }
 
-  // Create a custom close function that sets a closing attribute on the dialog
+  // Export a custom close function that sets a closing attribute on the dialog
   // element. This attribute is used to trigger the closing animation. So we add
   // a listener for animationend which calls the afterClosing method below. By
   // passing once: true, we don't have to remove this event listener.
-  function close() {
-    dialog.addEventListener('animationend', afterClosing, { once: true });
-    dialog.setAttribute('closing', '');
+  export function close() {
+    element.addEventListener('animationend', afterClosing, { once: true });
+    element.setAttribute('closing', '');
   }
 
-  // Now that the closing animation is complete, we can remove the closing
-  // attribute and call the dialog's close method.
+  // When the closing animation completes, we can remove the closing attribute
+  // and call the dialog's native close method.
   function afterClosing() {
-    dialog.removeAttribute('closing');
-    dialog.close();
+    element.removeAttribute('closing');
+    element.close();
   }
 
   // When the user presses the escape key, the browser calls the dialog's close
@@ -196,24 +171,17 @@ Here's a version of the Dialog component with these features added.
     close();
   }
 
+  // When the component mounts, add our event listener, and remove it on dismount.
   onMount(() => {
-    dialog.addEventListener('cancel', onCancel);
+    element.addEventListener('cancel', onCancel);
 
     return () => {
-      dialog.removeEventListener('cancel', onCancel);
+      element.removeEventListener('cancel', onCancel);
     };
   });
-
-  // Instead of just exporting the dialog element, we can export an object with
-  // our open/close methods, as well as the dialog element.
-  export const modal = {
-    open,
-    close,
-    dialog,
-  };
 </script>
 
-<dialog bind:this={dialog}>
+<dialog bind:this={element}>
   {#if title}
     <div class="modal-title">
       <h2>{title}</h2>
@@ -236,22 +204,25 @@ Here's a version of the Dialog component with these features added.
     max-width: min(95vw, 600px);
     padding: 0;
 
-    &::backdrop {
-      background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
-      backdrop-filter: blur(4px);
-    }
-
+    // animate when the dialog opens
     &:is([open]) {
       animation: fade-in 0.2s ease-out, slide-in 0.2s ease-out;
       &::backdrop {
         animation: fade-in 0.2s ease-out;
       }
     }
+    // animate when the dialog is closing
     &:is([closing]) {
       animation: fade-out 0.2s ease-out, slide-out 0.2s ease-out;
       &::backdrop {
         animation: fade-out 0.2s ease-out;
       }
+    }
+
+    // add a gradient and blur filter to the backdrop pseudo-element
+    &::backdrop {
+      background-image: linear-gradient(45deg, hsla(0 50% 50% / 0.5), hsla(200 50% 50%/ 0.5));
+      backdrop-filter: blur(4px);
     }
 
     .modal-title {
@@ -330,12 +301,71 @@ Here's a version of the Dialog component with these features added.
 
 </details>
 
+### Using the styled dialog component in a page
+
+<details open>
+  <summary><code>page.svelte</code></summary>
+
+```svelte
+<script lang="ts">
+  import StyledDialog from './StyledDialog.svelte';
+
+  // Our local dialog variable is now an instance of the custom
+  // component instead of an HTMLDialogElement
+  let dialog: StyledDialog;
+</script>
+
+<!-- Using bind:this to bind the component instance to our local dialog variable -->
+<StyledDialog bind:this={dialog} title="Hi there!">
+  <p>Nulla amet anim laboris enim aute. Anim laboris...</p>
+</StyledDialog>
+
+<!-- Now we can call the exported open method on the dialog instance -->
+<button class="btn" on:click={() => dialog.open()}>Open the dialog</button>
+```
+
+</details>
+
+### Try it out
+
+<StyledDialog bind:this={styledDialog} title="Hi there!">
+  <p>
+    Nulla amet anim laboris enim aute. Anim laboris enim aute mollit. Ipsum enim et esse, ut. Esse ut id minim. Id minim, dolore aute. Aute minim magna, mollit ut. Mollit ut commodo, excepteur non nulla culpa. Nostrud aliqua elit non est est id. Elit non est est id consequat irure sint. Est est id consequat irure sint aliqua do. Id consequat irure sint, aliqua do sint magna. Sint aliqua do, sint magna sit consectetur ex. Sint magna sit consectetur ex, amet sunt veniam. Consectetur ex amet sunt veniam.
+  </p>
+</StyledDialog>
+
+<StyledDialog bind:this={styledDialogLong} let:close title="A long styled modal">
+  <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
+  <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
+  <p>Elit ipsum pariatur sit, nostrud occaecat ipsum. Sit nostrud occaecat ipsum cillum. Occaecat ipsum cillum ut ex amet, aliqua duis. Ut ex amet, aliqua. Aliqua duis, excepteur excepteur veniam. Excepteur veniam excepteur deserunt in eu.</p>
+  <p>Ipsum, ad qui nulla. Nulla do sit, duis. Duis voluptate fugiat aliquip minim nostrud, ad. Aliquip minim nostrud ad quis. Nostrud ad quis, dolore proident. Dolore, proident cupidatat commodo et sit sit id. Commodo et sit sit id cupidatat. Sit sit id cupidatat laboris deserunt. Id cupidatat laboris deserunt incididunt dolore, deserunt est. Deserunt incididunt dolore, deserunt est cillum tempor.</p>
+  <p>Minim amet occaecat duis, elit. Duis elit et anim labore amet sed. Et, anim labore amet sed amet. Amet sed amet veniam occaecat, sunt sit veniam. Veniam occaecat sunt sit veniam, ut tempor. Sit veniam, ut tempor. Tempor sed, ipsum cillum ea.</p>
+  <p>Anim cillum elit incididunt proident ut nostrud nisi. Elit incididunt proident ut nostrud nisi aute commodo. Proident ut nostrud, nisi aute commodo enim. Nisi, aute commodo enim. Enim laboris tempor officia. Tempor officia ad mollit. Ad mollit occaecat id. Occaecat id eu, nulla ullamco irure in adipiscing.</p>
+  <p>Est anim sint, et. Et fugiat, aliqua excepteur sunt et sint exercitation. Excepteur sunt et sint. Et, sint exercitation eu culpa. Eu culpa tempor, veniam. Veniam eu, laboris laborum. Laborum enim adipiscing laboris commodo amet pariatur.</p>
+  <p>Proident voluptate veniam irure duis deserunt. Veniam irure duis deserunt. Duis deserunt ad veniam reprehenderit deserunt commodo eiusmod. Ad veniam reprehenderit deserunt. Reprehenderit deserunt commodo eiusmod proident labore. Commodo eiusmod proident labore sit sed. Proident labore sit sed esse nisi. Sit sed, esse nisi nisi.</p>
+  <p>Commodo deserunt magna ea in veniam et, commodo. Ea in veniam et commodo, est ut. Et commodo est ut nisi labore veniam ad. Est ut nisi labore veniam ad adipiscing. Nisi labore veniam ad adipiscing lorem cillum. Veniam, ad adipiscing lorem cillum nostrud sed.</p>
+  <p>Nisi qui culpa velit dolore eiusmod quis fugiat. Culpa velit dolore eiusmod quis, fugiat elit ut. Eiusmod quis fugiat elit ut aliquip excepteur commodo. Fugiat elit ut, aliquip. Aliquip excepteur commodo consectetur do. Commodo consectetur, do ullamco ut. Ullamco ut ex, sed eu. Sed eu aute tempor velit sunt. Aute tempor velit sunt est ut aute ut. Velit sunt, est ut aute ut.</p>
+  <p>Quis ullamco culpa ad cillum commodo est. Culpa ad cillum commodo est ullamco ex culpa. Cillum commodo est ullamco ex culpa, pariatur. Ullamco ex culpa pariatur id sunt, ut sit. Pariatur id sunt ut sit culpa pariatur mollit. Sunt ut sit, culpa.</p>
+</StyledDialog>
+
+<StyledDialog bind:this={styledDialogUntitled}>
+  <p>This modal has no title. But we can access its custom close method to create our own <button class="btn" on:click={styledDialogUntitled.close}>close button</button>.</p>
+</StyledDialog>
+
+<p>
+  <button class="btn" on:click={styledDialog.open}>Open a styled modal</button>
+  <button class="btn" on:click={styledDialogLong.open}>Open a long styled modal</button>
+  <button class="btn" on:click={styledDialogUntitled.open}>Open an untitled modal</button>
+</p>
+
 Much of the information and ideas in this post came from these two YouTube videos by CSS guru Kevin Powell:
 
 - [Dialog: the easiest way to make a popup modal](https://www.youtube.com/watch?v=TAB_v6yBXIE)
 - [Animate from display: none](https://www.youtube.com/watch?v=4prVdA7_6u0)
 
 And be sure to check out the [MDN docs for HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).
+
+_Addendum: this post was updated on November 18th, 2023 to use `bind:this` so that we can access the exported open/close methods on the component instance._
 
 <style>
   h1 {
