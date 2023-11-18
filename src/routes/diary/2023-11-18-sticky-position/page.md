@@ -2,6 +2,7 @@
 title: Sticky position
 date: 2023-11-18T18:16:36.321Z
 status: published
+tags: [css]
 ---
 
 <style>
