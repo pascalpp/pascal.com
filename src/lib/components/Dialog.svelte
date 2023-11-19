@@ -1,13 +1,18 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { getContext, onMount } from 'svelte';
+  import type { Writable } from 'svelte/store';
+  import type { Layer } from './Layer.svelte';
 
   export let title = '';
   export let padded = true;
   let dialog: HTMLDialogElement;
 
+  const layer: Writable<Layer> = getContext('layer');
+
   // Create a custom open function that calls the dialog element's showModal method.
   export function open() {
     dialog.showModal();
+    $layer?.crop();
   }
 
   // Create a custom close function that sets a closing attribute on the dialog
@@ -24,6 +29,7 @@
   function afterClosing() {
     dialog.removeAttribute('closing');
     dialog.close();
+    $layer?.uncrop();
   }
 
   // When the user presses the escape key, the browser calls the dialog's close
