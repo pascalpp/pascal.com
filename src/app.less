@@ -3,7 +3,13 @@
 @import './reset.less';
 
 :root {
-  font-family: @sans-font;
+  --sans-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  --serif-font: Georgia, 'Times New Roman', Times, serif;
+  --mono-font: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
+  --blue: steelblue;
+
+  font-family: var(--sans-font);
   font-size: 16px;
   line-height: 1.42;
   font-weight: normal;
@@ -15,7 +21,7 @@
   text-rendering: optimizeLegibility;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
+:where(:is(h1, h2, h3, h4, h5, h6)) {
   font-size: inherit;
   font-weight: 600;
   margin: 0;
