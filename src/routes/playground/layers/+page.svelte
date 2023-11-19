@@ -1,13 +1,12 @@
 <script lang="ts">
-  import type { Writable } from 'svelte/store';
   import type { Layer } from '$lib/components/Layer.svelte';
   import { getContext } from 'svelte';
   import Button from '$lib/components/Button.svelte';
   import Column from '$lib/components/Column.svelte';
   import Row from '$lib/components/Row.svelte';
 
-  const layer: Writable<Layer> = getContext('layer');
-  $: ({ cropped, crop, uncrop } = $layer);
+  const layer: Layer = getContext('layer');
+  const { cropped } = layer;
 
   const title = 'Layers';
 </script>
@@ -58,12 +57,12 @@
 
     <p>
       <Row>
-        <Button primary label="Crop layer" on:click={crop} disabled={cropped} />
-        <Button secondary label="Uncrop layer" on:click={uncrop} disabled={!cropped} />
+        <Button primary label="Crop layer" on:click={layer.crop} disabled={$cropped} />
+        <Button secondary label="Uncrop layer" on:click={layer.uncrop} disabled={!$cropped} />
       </Row>
     </p>
 
-    {#if cropped}
+    {#if $cropped}
       <p>The layer is now cropped. Try scrolling up and down.</p>
     {/if}
 
