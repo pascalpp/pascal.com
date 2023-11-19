@@ -71,7 +71,7 @@ or <button class="link" on:click={example4}>this one</button>
 or <button class="link" on:click={defaultExample}>the default</button>.
 
 <figure class="container">
-    <Column center>
+<Column center>
   <DotsAndSpokes bind:spokes bind:dotspeed bind:circlespeed/>
 
   <div class="controls">
@@ -84,7 +84,8 @@ or <button class="link" on:click={defaultExample}>the default</button>.
       <p class="note">With a lot of spokes, try a lower dot speed.</p>
     {/if}
   </div>
-    </Column>
+
+</Column>
 </figure>
 
 <details>
