@@ -70,7 +70,7 @@ or <button class="link" on:click={example3}>this one</button>
 or <button class="link" on:click={example4}>this one</button>
 or <button class="link" on:click={defaultExample}>the default</button>.
 
-<div class="container">
+<figure class="container">
     <Column center>
   <DotsAndSpokes bind:spokes bind:dotspeed bind:circlespeed/>
 
@@ -85,7 +85,7 @@ or <button class="link" on:click={defaultExample}>the default</button>.
     {/if}
   </div>
     </Column>
-</div>
+</figure>
 
 <details>
   <summary>The code</summary>
