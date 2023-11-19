@@ -43,7 +43,6 @@ test('Resume - slides', async ({ page }) => {
   });
 
   await page.keyboard.press('Escape');
-  await page.waitForTimeout(1000);
 
   // about.me
   const pastSection = page.getByLabel('Past experience');
@@ -58,7 +57,6 @@ test('Resume - slides', async ({ page }) => {
   await aboutmeSlidesLink.focus();
   await aboutmeSlidesLink.click();
 
-  await page.waitForTimeout(250);
   await page.waitForLoadState('networkidle');
   expect(page.locator('dialog[open]')).toBeVisible();
 
@@ -70,5 +68,4 @@ test('Resume - slides', async ({ page }) => {
   });
 
   await page.keyboard.press('Escape');
-  await page.waitForTimeout(1000);
 });
