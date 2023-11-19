@@ -192,7 +192,7 @@
 </script>
 
 <div class="scope">
-  <Button link on:click={dialog.open} label="View slides" />
+  <Button link on:click={() => dialog.open()} label="View about.me slides">View slides</Button>
 
   <Dialog bind:this={dialog} title="about.me" padded={false}>
     <Slideshow {slides} />

@@ -80,7 +80,7 @@
 </script>
 
 <div class="scope">
-  <Button link on:click={dialog.open} label="View slides" />
+  <Button link on:click={() => dialog.open()} label="View Broadly slides">View slides</Button>
 
   <Dialog bind:this={dialog} title="Broadly" padded={false}>
     <Slideshow {slides} />
