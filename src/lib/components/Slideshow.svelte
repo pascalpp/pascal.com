@@ -53,16 +53,17 @@
 
 <div class="slideshow">
   <ul class="slides">
-    {#each slides as { src, alt, description }}
+    {#each slides as { src, alt, description }, index (src)}
+      {@const loading = index === 0 ? undefined : 'lazy'}
       <li class="slide" use:useScrollIntoView>
-        <img {src} {alt} loading="lazy" />
+        <img {src} {alt} {loading} />
         <p>{description}</p>
       </li>
     {/each}
   </ul>
 
   <Dialog bind:this={zoomDialog} padded={false}>
-    <img src={zoomSrc} alt={zoomAlt} class="zoom-image" />
+    <img src={zoomSrc} alt={zoomAlt} class="zoom-image" loading="lazy" />
   </Dialog>
 </div>
 
