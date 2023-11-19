@@ -5,6 +5,13 @@ status: published
 tags: [css]
 ---
 
+<!--
+Notes:
+https://stackoverflow.com/questions/25308823/targeting-positionsticky-elements-that-are-currently-in-a-stuck-state
+https://codepen.io/TomAnthony/pen/qBqgErK
+https://codepen.io/TomAnthony/pen/mdOvJYw
+ -->
+
 <style>
   section {
     max-width: min(90vw, 600px);
