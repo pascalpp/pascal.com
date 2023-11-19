@@ -69,7 +69,7 @@
 <style lang="less">
   header {
     font-size: 16px;
-    font-family: @sans-font;
+    font-family: var(--sans-font);
     font-weight: normal;
     display: flex;
     flex-direction: row;
@@ -128,7 +128,7 @@
 
       .date {
         color: black;
-        font-family: @sans-font;
+        font-family: var(--sans-font);
         opacity: 0.5;
         font-size: 12px;
         padding-left: 2em;

@@ -163,14 +163,11 @@
 </main>
 
 <style lang="less">
-  @blueish: #4f7192;
-
   main {
     font-family: Georgia, 'Times New Roman', Times, serif;
 
     :global(:is(h1, h2, h3, h4, h5, h6)) {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-        'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: var(--sans-font);
     }
 
     :global(h1) {
@@ -256,7 +253,7 @@
             background-color: black;
             color: white;
             border-radius: 4px;
-            font-family: @sans-font;
+            font-family: var(--sans-font);
             font-size: 13px;
             white-space: nowrap;
             z-index: 1;
@@ -340,7 +337,7 @@
 
       .card {
         padding: 1em 6em 1em 2.5em;
-        font-family: @mono-font;
+        font-family: var(--mono-font);
       }
 
       .brackets {

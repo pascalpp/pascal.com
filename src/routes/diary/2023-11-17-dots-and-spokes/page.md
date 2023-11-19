@@ -52,7 +52,7 @@ tags: [css, svelte]
   }
 
   .controls {
-    font-family: @sans-font;
+    font-family: var(--sans-font);
     font-size: 14px;
     width: 250px;
   }

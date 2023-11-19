@@ -56,10 +56,13 @@
 <style lang="less">
   .toggle-switch {
     @transition-time: 200ms;
+    appearance: unset;
+    background-color: unset;
+    border: unset;
 
     --color: #aaa;
     &.active {
-      --color: @blue;
+      --color: var(--blue);
     }
 
     display: inline-flex;
@@ -75,7 +78,7 @@
     overflow: hidden;
 
     &:focus-within {
-      outline-color: fade(@blue, 60%);
+      outline-color: color-mix(in srgb, var(--blue) 60%, transparent 60%);
       outline-style: auto;
       outline-width: 1px;
       outline-offset: calc(0.1em + 3px);
@@ -129,7 +132,7 @@
 
     &.active {
       .toggle-option.active {
-        color: darken(@blue, 5%);
+        color: color-mix(in srgb, var(--blue) 95%, black);
       }
     }
 

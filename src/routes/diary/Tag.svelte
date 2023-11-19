@@ -13,7 +13,7 @@
 
 <style lang="less">
   .tag {
-    font-family: @mono-font;
+    font-family: var(--mono-font);
     font-weight: normal;
     display: inline-block;
     padding: 0.25em 0.75em;

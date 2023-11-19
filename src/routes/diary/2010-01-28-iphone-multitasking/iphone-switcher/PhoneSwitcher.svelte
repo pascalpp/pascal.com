@@ -122,7 +122,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: @sans-font;
+    font-family: var(--sans-font);
     font-size: 16px;
   }
 

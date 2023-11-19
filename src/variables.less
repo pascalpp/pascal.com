@@ -1,11 +1,9 @@
-@blue: steelblue;
-
 @weight-light: 300;
 @weight-normal: 400;
 @weight-semibold: 500;
 @weight-bold: 600;
 
-@button-primary-fill: @blue;
+@button-primary-fill: var(--blue);
 @button-secondary-fill: white;
 @button-danger-fill: hsla(0, 65%, 60%, 1);
 @button-success-fill: hsla(155, 80%, 35%, 1);
@@ -17,35 +15,31 @@
 @desktop: ~'(min-width: @{desktop-threshold})';
 @not-desktop: ~'(max-width: @{desktop-threshold})';
 
-@sans-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-	'Helvetica Neue', sans-serif;
-@mono-font: Andale Mono, Andale, Monaco, Lucida Console, Courier, Sans-Serif;
-
 .rotated-shadow {
-	position: relative;
-	isolation: isolate;
-	transform: rotate(var(--deg, 0deg)) translateY(var(--offsetY, 0));
+  position: relative;
+  isolation: isolate;
+  transform: rotate(var(--deg, 0deg)) translateY(var(--offsetY, 0));
 
-	&::before {
-		display: block;
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		height: 100%;
-		background-color: black;
-		box-shadow: 0 1em var(--shadow-size, 50px) rgba(0, 0, 0, 0.5);
-		transform: translateX(0.1em) translateY(var(--shadow-offset, 0.5em)) rotate(calc(var(--deg, 0deg) / 2));
-		filter: blur(5px);
-		z-index: -1;
-		opacity: 0.2;
-	}
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-color: black;
+    box-shadow: 0 1em var(--shadow-size, 50px) rgba(0, 0, 0, 0.5);
+    transform: translateX(0.1em) translateY(var(--shadow-offset, 0.5em)) rotate(calc(var(--deg, 0deg) / 2));
+    filter: blur(5px);
+    z-index: -1;
+    opacity: 0.2;
+  }
 }
 
 .line-clamp(@lines: 1) {
-	-webkit-line-clamp: @lines !important;
-	-webkit-box-orient: vertical !important;
-	overflow: hidden !important;
-	display: -webkit-box !important;
+  -webkit-line-clamp: @lines !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
 }

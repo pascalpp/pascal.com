@@ -101,7 +101,7 @@
         &::before {
           content: '[draft]';
           display: block;
-          font-family: @sans-font;
+          font-family: var(--sans-font);
           text-transform: uppercase;
           letter-spacing: 3px;
           font-size: 12px;
@@ -110,7 +110,7 @@
     }
 
     .subheader {
-      font-family: @sans-font;
+      font-family: var(--sans-font);
       border-bottom: 1px solid rgb(0 0 0 / 0.1);
       margin: 0.5em 0;
       margin-left: -0.75em;

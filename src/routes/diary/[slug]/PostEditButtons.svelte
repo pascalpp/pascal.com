@@ -22,7 +22,7 @@
   }
 
   :global(button) {
-    font-family: @sans-font;
+    font-family: var(--sans-font);
     font-weight: normal;
     font-size: 12px;
     vertical-align: middle;

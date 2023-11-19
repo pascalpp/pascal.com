@@ -55,11 +55,11 @@
 <style lang="less">
   a {
     text-decoration: none;
-    color: @blue;
+    color: var(--blue);
   }
 
   .new-post-button {
-    font-family: @sans-font;
+    font-family: var(--sans-font);
     font-size: 12px;
   }
 
@@ -106,7 +106,7 @@
     }
 
     a[href='/'] {
-      font-family: @sans-font;
+      font-family: var(--sans-font);
     }
   }
 </style>

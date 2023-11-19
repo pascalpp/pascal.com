@@ -44,7 +44,7 @@
     position: relative;
     &:before {
       content: '→';
-      color: @blue;
+      color: var(--blue);
       position: absolute;
       right: 100%;
       margin-right: 0.25rem;
