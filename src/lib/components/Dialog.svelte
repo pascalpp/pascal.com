@@ -1,11 +1,3 @@
-<script context="module" lang="ts">
-  export type DialogApi = {
-    open: () => void;
-    close: () => void;
-    element?: HTMLDialogElement;
-  };
-</script>
-
 <script lang="ts">
   import { onMount } from 'svelte';
 

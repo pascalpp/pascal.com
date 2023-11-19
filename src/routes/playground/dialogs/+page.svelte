@@ -2,7 +2,6 @@
   import Dialog from '$lib/components/Dialog.svelte';
   import Button from '$lib/components/Button.svelte';
   import Column from '$lib/components/Column.svelte';
-  import type { DialogApi } from '$lib/components/Dialog.svelte';
   import Slideshow from '$lib/components/Slideshow.svelte';
   import type { Slide } from '$lib/components/Slideshow.svelte';
 
@@ -192,10 +191,7 @@
 
   const title = 'Dialogs';
 
-  let dialog1: DialogApi = {
-    open: () => {},
-    close: () => {},
-  };
+  let dialog1: Dialog;
 </script>
 
 <svelte:head>
@@ -207,7 +203,7 @@
 
   <p><Button primary on:click={dialog1.open} label="Open dialog" /></p>
 
-  <Dialog bind:open={dialog1.open} title="about.me">
+  <Dialog bind:this={dialog1} title="about.me">
     <Slideshow {slides} />
   </Dialog>
 </Column>
