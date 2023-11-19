@@ -269,12 +269,12 @@
       outline: none;
       &:focus-within {
         .card {
-          outline: 2px solid color-mix(in srgb, blue 25%, transparent);
+          outline: 1px solid color-mix(in srgb, black 25%, transparent);
         }
       }
       &:focus {
         .card {
-          outline: 2px solid color-mix(in srgb, blue 50%, transparent);
+          outline: 1px solid color-mix(in srgb, black 50%, transparent);
         }
       }
     }
