@@ -1,4 +1,6 @@
+// combination of
 // https://github.com/TomTilly/css-reset/blob/main/src/reset.css
+// https://andy-bell.co.uk/a-more-modern-css-reset/
 
 // Box sizing rules
 *,
@@ -7,69 +9,53 @@
   box-sizing: border-box;
 }
 
+// Prevent font size inflation
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+// Allow percentage-based heights in the application
+:where(:is(html, body)) {
+  height: 100%;
+}
+
 // Remove default margin
-:where(body),
-:where(h1),
-:where(h2),
-:where(h3),
-:where(h4),
-:where(h5),
-:where(p),
-:where(figure),
-:where(blockquote),
-:where(dl),
-:where(dd) {
+:where(:is(body, h1, h2, h3, h4, h5, p, figure, blockquote, dl, dd)) {
   margin: 0;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(:is(p, h1, h2, h3, h4, h5, h6)) {
   overflow-wrap: break-word;
 }
 
 // Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
-ul[role='list'],
-ol[role='list'] {
+:where(:is(ul[role='list'], ol[role='list'])) {
   list-style: none;
 }
 
-// Allow percentage-based heights in the application
-html,
-body {
-  height: 100%;
-}
-
-// A elements that don't have a class get default styles
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 // Make images easier to work with
-:is(img, picture, video, canvas, svg) {
+// Make images easier to work with
+:where(:is(img, picture, video, canvas, svg)) {
   max-width: 100%;
   display: block;
 }
 
 // Inherit fonts for inputs and buttons
-:is(input, textarea, select) {
+:where(:is(input, button, textarea, select)) {
   font: inherit;
+  color: inherit;
 }
 
-// Remove default styling of buttons
-:where(button.unstyled) {
-  font: inherit;
-  color: unset;
-  background-color: unset;
-  border: unset;
-  appearance: unset;
-  text-align: unset;
-  margin: unset;
-  padding: unset;
+// Make sure textareas without a rows attribute are not tiny
+:where(textarea:not([rows])) {
+  min-height: 10em;
+}
+
+// Anything that has been anchored to should have extra scroll margin
+:target {
+  scroll-margin-block: 5ex;
 }
 
 // Remove all animations, transitions and smooth scroll for people that prefer not to see them
