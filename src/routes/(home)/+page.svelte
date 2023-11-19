@@ -91,20 +91,20 @@
 <a rel="me" href="https://moth.social/@pascal" style="display: none;">Mastodon</a>
 
 <style lang="less">
-  @bgcolor: #336633;
-  @textcolor: #000;
-  @bubblecolor: #ffffcc;
-
   main {
+    --bgcolor: #336633;
+    --textcolor: #000;
+    --bubblecolor: #ffffcc;
+
     font-family: 'Lucida Grande', Geneva, Helvetica, Arial, Sans-Serif;
     padding: 16px;
     padding-top: 5vh;
     padding-bottom: 15vh;
     font-size: 14px;
-    color: @bubblecolor;
+    color: var(--bubblecolor);
 
     a {
-      color: @bubblecolor;
+      color: var(--bubblecolor);
     }
   }
 
@@ -135,7 +135,7 @@
         .circles {
           width: 5em;
           height: 2em;
-          background-color: @bubblecolor;
+          background-color: var(--bubblecolor);
           border-radius: 1em;
           position: absolute;
           &::before,
@@ -144,7 +144,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: @bubblecolor;
+            background-color: var(--bubblecolor);
             // background-color: red;
             border-radius: 1em;
           }
@@ -172,8 +172,8 @@
           border-radius: 1em;
           max-width: 270px;
           min-height: 6em;
-          background-color: @bubblecolor;
-          color: @textcolor;
+          background-color: var(--bubblecolor);
+          color: var(--textcolor);
           padding: 0 1em;
           text-align: center;
           display: flex;
@@ -195,7 +195,7 @@
         width: 1.75em;
         margin-right: 0.5em;
         aspect-ratio: 1 / 1;
-        background-color: @bubblecolor;
+        background-color: var(--bubblecolor);
         border-radius: 50%;
         position: relative;
 
@@ -204,7 +204,7 @@
           content: '';
           position: absolute;
           aspect-ratio: 1 / 1;
-          background-color: @bubblecolor;
+          background-color: var(--bubblecolor);
           border-radius: 50%;
         }
 
@@ -240,10 +240,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    color: @textcolor;
+    color: var(--textcolor);
 
     a {
-      color: @textcolor;
+      color: var(--textcolor);
       text-decoration: none;
       &:hover,
       &:active {
@@ -254,11 +254,12 @@
 
   .bubble {
     display: block;
-    background-color: @bubblecolor;
+    background-color: var(--bubblecolor);
     padding: 0.75em 1.5em;
     border-radius: 2em;
     text-align: right;
     margin-right: 5em;
+    z-index: 1;
 
     @media @mobile {
       margin-right: 1.25em;
@@ -275,7 +276,7 @@
     }
 
     select {
-      color: @textcolor;
+      color: var(--textcolor);
       appearance: none;
       background-color: transparent;
       border: none;
@@ -286,13 +287,15 @@
   }
 
   .bubble-divider {
-    background-color: @bubblecolor;
+    background-color: var(--bubblecolor);
     position: relative;
     transform: translateX(50%);
     margin-right: 8em;
+    z-index: 0;
     @media @mobile {
       margin-right: 5em;
     }
+    margin-block: -0.1px;
 
     &::before,
     &::after {
@@ -301,7 +304,8 @@
       top: 0;
       height: 100%;
       aspect-ratio: 1 / 1;
-      background-color: @bgcolor;
+      background-color: var(--bgcolor);
+      // background-color: red;
       border-radius: 50%;
     }
     &::before {
