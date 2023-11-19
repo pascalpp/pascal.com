@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
+  import { type Writable } from 'svelte/store';
+
   export interface Layer {
-    cropped: boolean;
+    cropped: Writable<boolean>;
     crop: () => void;
     uncrop: () => void;
   }
@@ -11,27 +13,30 @@
   import { writable } from 'svelte/store';
 
   let top = 0;
-  let cropped = false;
+  let cropped = writable(false);
 
   export function crop() {
-    if (cropped) return;
+    if ($cropped) return;
     top = window.scrollY;
-    cropped = true;
+    $cropped = true;
   }
 
   export function uncrop() {
-    if (!cropped) return;
-    cropped = false;
+    if (!$cropped) return;
+    $cropped = false;
     requestAnimationFrame(() => window.scrollTo({ top }));
   }
 
-  const layer = writable({ cropped, crop, uncrop });
-  setContext('layer', layer);
+  const layer: Layer = {
+    cropped,
+    crop,
+    uncrop,
+  };
 
-  $: layer.update((previous) => ({ ...previous, cropped }));
+  setContext('layer', layer);
 </script>
 
-<div class="layer" class:cropped>
+<div class="layer" class:cropped={$cropped}>
   <div class="layer-content" style="top: -{top}px">
     <slot {cropped} {crop} {uncrop} />
   </div>
