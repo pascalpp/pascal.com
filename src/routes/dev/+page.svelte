@@ -1,7 +1,7 @@
 <script lang="ts">
   import Capabilities from './capabilities.md';
-  import RecentExperience from './recent_experience.md';
-  import PastExperience from './past_experience.md';
+  import RecentExperience from './recent-experience.md';
+  import PastExperience from './past-experience.md';
   import Seeking from './seeking.md';
 
   let zIndex = 100;
@@ -166,6 +166,13 @@
   @blueish: #4f7192;
 
   main {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    :global(:is(h1, h2, h3, h4, h5, h6)) {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
     :global(h1) {
       font-size: 1.3em;
     }
