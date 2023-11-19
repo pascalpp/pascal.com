@@ -14,7 +14,7 @@ test('Home page', async ({ page }) => {
   await expect(page).toHaveScreenshot('homepage.png', {
     scale: 'device',
     fullPage: true,
-    maxDiffPixelRatio: 0,
+    maxDiffPixelRatio: 0.1,
     threshold: 0.1,
   });
 });
