@@ -48,7 +48,7 @@
         <div class="bubble-divider small" />
         <a href="./dev" class="bubble small">peruse my resume</a>
         <div class="bubble-divider small" />
-        <a data-sveltekit-reload href="./freeruler" class="bubble small">download a free ruler for your mac</a>
+        <a href="./freeruler" class="bubble small">download a free ruler for your mac</a>
         <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
         <div class="bubble-divider small" />
