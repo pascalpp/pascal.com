@@ -7,6 +7,6 @@ tags: [caption contest, gwb]
 
 Woohoo! Another caption contest!
 
-![img](./bushmonkey.jpg){ .polaroid }
+![img](./bushmonkey.jpg){ .polaroid loading=lazy }
 
 Enter your best caption for this image in the comments below. And try to come up with something besides ‘Curious George’…

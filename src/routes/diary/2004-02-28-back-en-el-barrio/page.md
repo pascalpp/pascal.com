@@ -9,22 +9,22 @@ Obviously I don’t speak Spanish. Anyway I’ve at long last updated my diary. 
 
 Here’s some dorkass pictures I took recently.
 
-![img](./loveboat-top.jpg){ .polaroid }
+![img](./loveboat-top.jpg){ .polaroid loading=lazy }
 
 Here’s the badass lofty bed I made with some major help from my friend B. It’s super-solid AND it glows in the dork. I mean dark.
 
-![img](./loveboat-storage.jpg){ .polaroid }
+![img](./loveboat-storage.jpg){ .polaroid loading=lazy }
 
 Check out all that storage! Now to get me some dead bodies…
 
-![img](./tunadinner.jpg){ .polaroid }
+![img](./tunadinner.jpg){ .polaroid loading=lazy }
 
 Here’s the dinner I made last night. It’s kinda hard to tell, but that’s sesame seared tuna steak. And asparagus. And some store-bought garlic bread that wasn’t up to par. But the rest was so nummy.
 
-![img](./lilstar-charles.jpg){ .polaroid }
+![img](./lilstar-charles.jpg){ .polaroid loading=lazy }
 
 Here’s my friend Charlie who came over to have tuna steaks with me. That’s her dog Lil Star. Ain’t they cute?
 
-![img](./peter-pascal.jpg){ .polaroid }
+![img](./peter-pascal.jpg){ .polaroid loading=lazy }
 
 Later on my friend Peter showed up and we got some dance on. And some beers on.

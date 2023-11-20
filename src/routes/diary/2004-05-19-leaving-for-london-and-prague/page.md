@@ -13,6 +13,6 @@ Apparently they have a live tracking thing where you can track the runners in pr
 
 Oh yeah, here’s the tee shirts I made for me and Matia.
 
-![img](./teamzmrzlina.jpg){ .polaroid }
+![img](./teamzmrzlina.jpg){ .polaroid loading=lazy }
 
 Go, Team Ice Cream!

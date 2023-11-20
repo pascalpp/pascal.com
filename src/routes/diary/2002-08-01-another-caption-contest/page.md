@@ -7,6 +7,6 @@ tags: [caption contest]
 
 Please submit your best caption for the following:
 
-![img](./vest.jpg){ .polaroid }
+![img](./vest.jpg){ .polaroid loading=lazy }
 
 Now play nice!

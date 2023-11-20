@@ -9,6 +9,6 @@ So if I didn’t tell you already, I been training to run a marathon in Prague i
 
 People told me when I started this that nasty things would start happening to my feet. Sure enough.
 
-![img](./monster-blisters.jpg){ .polaroid }
+![img](./monster-blisters.jpg){ .polaroid loading=lazy }
 
 Ew!

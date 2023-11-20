@@ -5,7 +5,7 @@ original: 000138.php
 tags: [running]
 ---
 
-![img](./9milerun.jpg){ .polaroid }
+![img](./9milerun.jpg){ .polaroid loading=lazy }
 Today I ran 9 miles on a stupid treadmill and here’s the proof.
 
 [This entry was actually written on Monday, March 8, 2004. You know, posterity and all that.]

@@ -8,8 +8,8 @@ Found these funny old pics of my brother when he had a big huge bard. Beard.
 
 Click it.
 
-![img](./ryanbeard-0.jpg){ .polaroid }
+![img](./ryanbeard-0.jpg){ .polaroid loading=lazy }
 
 Here’s one with his lil dog Peedee. He bites Peedee. Peedee bites back. Click it.
 
-![img](./ryanpeedee-0.jpg){ .polaroid }
+![img](./ryanpeedee-0.jpg){ .polaroid loading=lazy }

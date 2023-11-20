@@ -11,4 +11,4 @@ Look Ma! A snow globe! Right out my window!
 
 And look Ma! Drapes!
 
-![img](./drapes.jpg){ .polaroid }
+![img](./drapes.jpg){ .polaroid loading=lazy }

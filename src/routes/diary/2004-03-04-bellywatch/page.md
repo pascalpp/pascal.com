@@ -9,4 +9,4 @@ In the interest of getting those ugly blisters off the front page of my diary, I
 
 Funny thing is, as I was zooming in on this picture, I noticed that it started to resemble my uncle Philip. Click on the image and you’ll see what I mean.
 
-![img](./belly-0.jpg){ .polaroid }
+![img](./belly-0.jpg){ .polaroid loading=lazy }

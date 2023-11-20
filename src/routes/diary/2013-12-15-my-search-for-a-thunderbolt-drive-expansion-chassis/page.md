@@ -19,23 +19,23 @@ So now that I have a Thunderbolt-capable machine, I've been exploring the availa
 
 While a fast RAID is great for video projects, that's not the problem I'm trying to solve right now. The ARC-8050 is a bit pricey, and sounds like it's a bit tricky to configure. I'm also not impressed with the very un-Mac-like software it ships with. And since I'm considering moving to a new Mac Pro in the near future, I'm going to keep my eyes on this company and see if they release a Thunderbolt 2 version with better software.
 
-![drobo](./drobo.jpg){ .polaroid }
+![drobo](./drobo.jpg){ .polaroid loading=lazy }
 
 **Drobo 5D** \- around $700 empty The [Drobo 5D](http://www.drobo.com/products/professionals/drobo-5d/) allows you to insert up to 5 drives and it stripes your data across all the drives for speed and redundancy. This is similar to RAID 5, but the Drobo requires basically no configuration, and lets you use drives of any size. The 5D is the first Drobo to support Thunderbolt. It also has a slot for an SSD card that accelerates transfer speeds. Here again, [Larry Jordan has an excellent review](http://www.larryjordan.biz/product-review-drobo-5d/).
 
 I already own the original 4-bay Firewire Drobo, but it is painfully slow and unusable for day-to-day work, so I've retired it to service as a media storage device attached directly to my Airport wifi base station. It sounds like the 5D is considerably faster, even fast enough for multicam video editing. But again, right now, I'm really looking for a JBOD solution, so I'm going to pass on the new Drobo for now.
 
-![multidock](./multidock.jpg){ .polaroid }
+![multidock](./multidock.jpg){ .polaroid loading=lazy }
 
 **Blackmagic MultiDock** \- around $600 empty I find the [Blackmagic MultiDock](http://www.blackmagicdesign.com/products/blackmagicmultidock) very interesting. It offers four 2.5-inch bays in a 1U rackmount enclosure. It's designed to be used with really fast SSD drives, primarily for video editors. While I do have an audio rack next to my desk for rackmount devices like this, I'm just a video hobbyist and I don't have a stack of SSDs looking for a home. If BlackMagic or someone else made a version of this device that had 3.5-inch bays, I'd definitely be interested. And as SSDs get cheaper, I'll definitely give this another look.
 
-![lacie](./lacie.jpg){ .polaroid }
+![lacie](./lacie.jpg){ .polaroid loading=lazy }
 
 **LaCie 5big** \- around $1100 with 10TB The [LaCie 5big](http://www.lacie.com/us/products/product.htm?id=10607) is a 5-bay Thunderbolt device that ships pre-filled with five 2TB drives for $1100 (or you can get a 20TB version for $2100). However, it doesn't support RAID 5, which I'd like to have as an option in the future. It does support JBOD, which is what I'm looking for right now, but they don't make an empty version, so I'd be forced to buy drives that I don't need. So this device is a pass for me.
 
 At long last, here's what I actually ended up buying:
 
-![owc](./owc.jpg){ .polaroid }
+![owc](./owc.jpg){ .polaroid loading=lazy }
 
 **OWC Mercury Elite Pro Qx2** \- around $280 empty The [OWC Mercury Elite Pro Qx2](http://eshop.macsales.com/item/OWC/M3QX2KIT0GB/) is a four-bay enclosure that supports RAID 0, 1, 5, and 10, or JBOD. However, this device is NOT a thunderbolt device. What?! Well, in doing all this research, I came to the realization that to really take advantage of the speed of Thunderbolt, you have to use RAID. Regular drives just aren't fast enough to saturate the channel. But I'm not doing 4K multicam editing, so I'm not concerned about achieving thunderbolt level speeds, and I don't want to set up a RAID device at this point. I just want a way to have these existing drives all attached to my MacBook without buying an enclosure and power supply for each one. This device does exactly that. The connectivity is Firewire 800 and USB 3\. It has an internal power supply, so there's no power brick to deal with. And it has a nice big fan, so it should be pretty quiet. (Small fans have to spin faster and are thus usually noisier.) And it's considerably cheaper than all the Thunderbolt options I found.
 

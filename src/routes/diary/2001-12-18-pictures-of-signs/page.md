@@ -7,34 +7,34 @@ tags: [willow, sailing]
 
 Today we took a walk through St. Augustine to Florida Route 1.
 
-![img](./nick-val-walking.jpg){ .polaroid }
+![img](./nick-val-walking.jpg){ .polaroid loading=lazy }
 
 We walked about a mile and a half to get to West Marine and buy some boat stuff. Here’s some of the signs we saw along the way.
 
-![img](./fran-tams.jpg){ .polaroid }
+![img](./fran-tams.jpg){ .polaroid loading=lazy }
 
 You would think this place would have real good food and be real popular with the locals, but it was completely empty. i guess maybe Fran and Tam were at home, cooking.
 
-![img](./arnett.jpg){ .polaroid }
+![img](./arnett.jpg){ .polaroid loading=lazy }
 
 Ooh, sparkly. i’m a sucker for signs with those shimmery mirror things. One thing though, if you do the math, it’s been 69 years. I guess they blew their ad budget on all them sparklies and can’t afford to swap the 8 for a 9.
 
-![img](./poh-pohs.jpg){ .polaroid }
+![img](./poh-pohs.jpg){ .polaroid loading=lazy }
 
 This sign says poh-poh. I like saying poh-poh.
 
-![img](./sweetpeaches.jpg){ .polaroid }
+![img](./sweetpeaches.jpg){ .polaroid loading=lazy }
 
 Mmm, suh-weeet peaches. Funny thing, though. There wasn’t a fruit stand anywhere near this sign. I think maybe it was just promoting the general idea of sweet peaches, watermelon, and canteloupe.
 
-![img](./deadend.jpg){ .polaroid }
+![img](./deadend.jpg){ .polaroid loading=lazy }
 
 This sign is not very friendly.
 
-![img](./redlight.jpg){ .polaroid }
+![img](./redlight.jpg){ .polaroid loading=lazy }
 
 I wonder what happens if the red light goes on and nobody calls?
 
-![img](./yardsale.jpg){ .polaroid }
+![img](./yardsale.jpg){ .polaroid loading=lazy }
 
 This sign wasn’t pointing at a yard sale. It was kind of pointing at the water. I wonder if it was a trick to try and get little old ladies who like yard sales to fall in.

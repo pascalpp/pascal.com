@@ -9,23 +9,23 @@ tags: [willow, sailing]
 
 So it’s New Year’s Eve here in Vero Beach, and I’ve got a bad case of the sniffles. Here’s some more pictures.
 
-![img](./reflection.jpg){ .polaroid }
+![img](./reflection.jpg){ .polaroid loading=lazy }
 
 Most mornings here are incredibly calm and the water becomes a huge looking glass. Wait, mirror. The water becomes a huge mirror.
 
-![img](./afthatch.jpg){ .polaroid }
+![img](./afthatch.jpg){ .polaroid loading=lazy }
 
 Here Nick is doing some final touch-up on the base of the aft hatch which we just rebedded.
 
-![img](./combing.jpg){ .polaroid }
+![img](./combing.jpg){ .polaroid loading=lazy }
 
 Valerie is sanding the coaming which she and Nick built earlier this year in preparation for another coat of epoxy primer.
 
-![img](./tapanddie.jpg){ .polaroid }
+![img](./tapanddie.jpg){ .polaroid loading=lazy }
 
 Nick is adding some more threads to a 5-inch bolt with his spiffy new tap and die set.
 
-![img](./newthreads.jpg){ .polaroid }
+![img](./newthreads.jpg){ .polaroid loading=lazy }
 
 Here’s the newly-threaded bolt compared with the original. Man, check out them new threads!
 

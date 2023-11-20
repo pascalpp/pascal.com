@@ -21,22 +21,22 @@ My next project is to build a frame for strapping the three spare diesel jerry c
 
 More pictures:
 
-![img](./rummage.jpg){ .polaroid }
+![img](./rummage.jpg){ .polaroid loading=lazy }
 
 Nick and Valerie rummaging through light fixtures at this huge marine surplus warehouse called Marine Connection. Check out the huge blue light special. Only $295.00!
 
-![img](./mudmask.jpg){ .polaroid }
+![img](./mudmask.jpg){ .polaroid loading=lazy }
 
 Valerie was the victim of a toilet geyser. No, actually this is one of those mud mask type things that is good for your face. Valerie is such a hippie.
 
-![img](./nickseyes.jpg){ .polaroid }
+![img](./nickseyes.jpg){ .polaroid loading=lazy }
 
 The world through Nick’s eyes.
 
-![img](./tender.jpg){ .polaroid }
+![img](./tender.jpg){ .polaroid loading=lazy }
 
 Our little tender, parked on the beach while we went to lunch.
 
-![img](./pascalface.jpg){ .polaroid }
+![img](./pascalface.jpg){ .polaroid loading=lazy }
 
 Hey there, Lauren. Thanks for giving me your hat. I love you. And you, too.

@@ -4,6 +4,6 @@ date: 2005-02-16T21:08:00.000Z
 original: 000246.php
 ---
 
-![img](./face-comber.jpg){ .polaroid }
+![img](./face-comber.jpg){ .polaroid loading=lazy }
 
 Today I am obsessively combing my face.

@@ -7,6 +7,6 @@ tags: [politics]
 
 Who’s fighting this war?
 
-![img](./fatalities-map.jpg){ .polaroid }
+![img](./fatalities-map.jpg){ .polaroid loading=lazy }
 
 This was created by superimposing <a href="http://icasualties.org/oif/US_CITY.aspx">this map</a> on top of <a href="http://www.usatoday.com/news/politicselections/vote2004/countymap.htm">this map</a>.

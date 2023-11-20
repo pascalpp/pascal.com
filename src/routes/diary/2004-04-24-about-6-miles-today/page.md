@@ -13,6 +13,6 @@ Tonight I’m goin to see <a href="http://www.rosepolenzani.com">Rose Polenzani<
 
 Oh a few days ago I shaved off all my hair in a fit. Spring cleaning or something. Soon I’ll look like a newborn bird. Here’s a pic.
 
-![img](./baldy.jpg){ .polaroid }
+![img](./baldy.jpg){ .polaroid loading=lazy }
 
 Okay I have to go back out in the sunshine.

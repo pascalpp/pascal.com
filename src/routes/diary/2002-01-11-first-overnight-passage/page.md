@@ -33,40 +33,40 @@ We’ll be tied up here for a couple weeks, doing some work on the aft deck, reb
 
 Here’s some more pictures from the last week or so:
 
-![img](./nick-dingy-clouds.jpg){ .polaroid }
+![img](./nick-dingy-clouds.jpg){ .polaroid loading=lazy }
 Nick hops out of the dingy in front of an ominous sky.
 
-![img](./prettysky-01.jpg){ .polaroid }
+![img](./prettysky-01.jpg){ .polaroid loading=lazy }
 
-![img](./prettysky-02.jpg){ .polaroid }
+![img](./prettysky-02.jpg){ .polaroid loading=lazy }
 A couple of pretty sky pictures.
 
-![img](./val-intherigging.jpg){ .polaroid }
+![img](./val-intherigging.jpg){ .polaroid loading=lazy }
 Valerie went up the mast to sew a leather chafe patch on to one of the spreaders.
 
-![img](./viewfromuphere.jpg){ .polaroid }
+![img](./viewfromuphere.jpg){ .polaroid loading=lazy }
 We hauled the camera up to her so she could get a few shots from up above. Scary.
 
-![img](./thejig.jpg){ .polaroid }
+![img](./thejig.jpg){ .polaroid loading=lazy }
 Here’s the jig I set up to route some insets into this board I was using to make a frame against which the jerry cans of spare diesel could be lashed. I also treated myself to a coke that day.
 
-![img](./diesel-board.jpg){ .polaroid }
+![img](./diesel-board.jpg){ .polaroid loading=lazy }
 Here’s the finished product, mounted on the stanchions on the starboard aft deck.
 
-![img](./dingy-ripples.jpg){ .polaroid }
+![img](./dingy-ripples.jpg){ .polaroid loading=lazy }
 On our last night in Vero Beach, we took a dingy ride to shore at sunset and the water looked like oil. And the sky was pretty cool too.
 
-![img](./certificateofachievement.jpg){ .polaroid }
+![img](./certificateofachievement.jpg){ .polaroid loading=lazy }
 Then we went out to a fancy restaurant where Willow received a Certificate of Achievement from the Tristan Jones Foundation.
 
-![img](./val-tallship.jpg){ .polaroid }
+![img](./val-tallship.jpg){ .polaroid loading=lazy }
 Valerie plays on the bow as we follow a tallship out to sea.
 
-![img](./nick-tallship.jpg){ .polaroid }
+![img](./nick-tallship.jpg){ .polaroid loading=lazy }
 Nick looks over the charts with the tallship in the background.
 
-![img](./nick-sunset.jpg){ .polaroid }
+![img](./nick-sunset.jpg){ .polaroid loading=lazy }
 Nick silhouetted against the sunset.
 
-![img](./sunset-lifelines.jpg){ .polaroid }
+![img](./sunset-lifelines.jpg){ .polaroid loading=lazy }
 The sunset through the lifelines. Mmm mmm nummy.

@@ -5,4 +5,4 @@ original: 000228.php
 tags: [politics]
 ---
 
-![img](./vote-shirt-large.jpg){ .polaroid }
+![img](./vote-shirt-large.jpg){ .polaroid loading=lazy }

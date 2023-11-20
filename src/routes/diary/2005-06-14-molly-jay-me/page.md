@@ -7,4 +7,4 @@ tags: [nyc]
 
 From the photo booth at the Lakeside Lounge:
 
-![img](./molly-jay-lakeside.jpg){ .polaroid }
+![img](./molly-jay-lakeside.jpg){ .polaroid loading=lazy }

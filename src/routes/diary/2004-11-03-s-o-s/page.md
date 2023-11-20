@@ -5,4 +5,4 @@ original: 000230.php
 tags: [politics]
 ---
 
-![img](./distress.gif){ .polaroid }
+![img](./distress.gif){ .polaroid loading=lazy }

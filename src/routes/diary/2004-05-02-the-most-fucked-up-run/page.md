@@ -21,6 +21,6 @@ I figure it was somewhere around 13 or 14 miles, including the 4.5 at the gym. I
 
 Here’s a rough map of the run:
 
-![img](./wburg-map.gif){ .polaroid }
+![img](./wburg-map.gif){ .polaroid loading=lazy }
 
 I know it’s stupid to eat all that crap in the middle of a long run, but I knew I had to keep taking breaks or I would never have made it. I figure when I get to Prague I’ll just stop at all the different cafes along the marathon route. I wonder how long the race officials will wait for me at the finish line?

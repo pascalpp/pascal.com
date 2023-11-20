@@ -19,7 +19,7 @@ At this point, we were drifting dangerously close to a large red metal buoy, whi
 
 Here’s a silly diagram to help you understand our little predicament:
 
-![img](./anchor-diagram.gif){ .polaroid }
+![img](./anchor-diagram.gif){ .polaroid loading=lazy }
 
 Finally the line appears, and it’s still trapped on the wrong side of the boat, caught on the outer edge of the rudder which sits right behind the prop. We’re all real nervous and strained and pretty frantic at this point, but Nick makes the decision to put the boat in gear and motor away from the buoy which is getting closer and closer. It’s the right decision, as the rudder keeps the line clear of the prop and we were able to maneuver into a better location and bring up the anchor.
 

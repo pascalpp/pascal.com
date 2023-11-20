@@ -107,6 +107,6 @@ declare module '*.svg?component' {
 
 Doing that gets you nice autocomplete for passing SVG props to your SVG components:
 
-![SVG Autocomplete](./svg-autocomplete.png){ .polaroid }
+![SVG Autocomplete](./svg-autocomplete.png){ .polaroid loading=lazy }
 
 "You, now · Uncommitted." Haha.

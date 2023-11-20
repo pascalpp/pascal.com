@@ -7,6 +7,6 @@ tags: [politics]
 
 Today we should take a moment to honor our veterans.
 
-![img](./arlington.jpg){ .polaroid }
+![img](./arlington.jpg){ .polaroid loading=lazy }
 
 Some veterans and their families have also erected a memorial for those soldiers who have died in Iraq at <a href="http://www.veteransforpeace.org/Arlington_west_121003.htm">Arlington West</a>.

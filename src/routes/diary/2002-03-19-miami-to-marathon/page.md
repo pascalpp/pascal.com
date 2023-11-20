@@ -17,39 +17,39 @@ The next day we sailed south to Marathon, where we met our buddy Rich (the retir
 
 Here’s some pics from the trip down to Marathon.
 
-![img](./nick-helm-valsfeet.jpg){ .polaroid }
+![img](./nick-helm-valsfeet.jpg){ .polaroid loading=lazy }
 
 Not long after I started writing this diary, it became clear that my primary function as diary-writer was to make Nick and Val look like rock stars. So here’s Nick, looking like a rock star. Just doing my job.
 
-![img](./pretty-sails.jpg){ .polaroid }
+![img](./pretty-sails.jpg){ .polaroid loading=lazy }
 
 Pretty sails. Sails make boat go.
 
-![img](./nick-helm-val-stern.jpg){ .polaroid }
+![img](./nick-helm-val-stern.jpg){ .polaroid loading=lazy }
 
 Even rock stars wear life vests at sea. Life vests are cool.
 
-![img](./nick-val-shower.jpg){ .polaroid }
+![img](./nick-val-shower.jpg){ .polaroid loading=lazy }
 
 Once we got the anchor set near Rodriguez Key we all went for a swim and then we showered on deck. Ah, refreshing!
 
-![img](./nick-helm.jpg){ .polaroid }
+![img](./nick-helm.jpg){ .polaroid loading=lazy }
 
 I think I just have to take a few more pictures like this and then I will have satisfied the requirements set forth by the Rock Star clause in my contract.
 
-![img](./winch-water.jpg){ .polaroid }
+![img](./winch-water.jpg){ .polaroid loading=lazy }
 
 Out that way, there’s a whole lotta nothing for a long long time.
 
-![img](./pascal-helm.jpg){ .polaroid }
+![img](./pascal-helm.jpg){ .polaroid loading=lazy }
 
 Here’s me at the helm on the way down to Marathon. Mostly I make use of my time at the helm by cleaning my ears and other orifices.
 
-![img](./willow-feet.jpg){ .polaroid }
+![img](./willow-feet.jpg){ .polaroid loading=lazy }
 
 When I wasn’t at the helm, I would practice levitating up on the foredeck.
 
-![img](./escort.jpg){ .polaroid }
+![img](./escort.jpg){ .polaroid loading=lazy }
 
 As we pulled into Marathon, we received a friendly escort from the local Coast Guard, Marine Mammal Division.
 

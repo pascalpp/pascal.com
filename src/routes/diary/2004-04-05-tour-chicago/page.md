@@ -7,7 +7,7 @@ tags: [tour, chicago]
 
 Last night we played at Nevin’s Live in Evanston, in North Chicago. My friend Laura&nbsp;B took 13 trains and two buses to come see the show, which was real nice of her. So I got her a present.
 
-![img](./laurabee.jpg){ .polaroid }
+![img](./laurabee.jpg){ .polaroid loading=lazy }
 Aw.
 
 I also got a surprise visit from Julia Jay who put up the Hellriders in her apartment on last year’s tour.

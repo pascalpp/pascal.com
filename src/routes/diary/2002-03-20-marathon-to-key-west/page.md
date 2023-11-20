@@ -9,31 +9,31 @@ The sail from Marathon to Key West was also great, with steady winds on the beam
 
 Here’s pictures of the sail down to Key West.
 
-![img](./nick-helm-val-stern-again.jpg){ .polaroid }
+![img](./nick-helm-val-stern-again.jpg){ .polaroid loading=lazy }
 
 Nick at the helm and Val riding the stern.
 
-![img](./boom-water.jpg){ .polaroid }
+![img](./boom-water.jpg){ .polaroid loading=lazy }
 
 The swell rolled under us at a leisurely pace, lifting us up and setting us down, occasionally splashing us with a bit of spray.
 
-![img](./nick-helm-fromstern.jpg){ .polaroid }
+![img](./nick-helm-fromstern.jpg){ .polaroid loading=lazy }
 
 Here’s one of those rare moments where Nick is not watching where he’s going.
 
-![img](./pascal-stern.jpg){ .polaroid }
+![img](./pascal-stern.jpg){ .polaroid loading=lazy }
 
 Me on the stern, riding the swell.
 
-![img](./val-passedout.jpg){ .polaroid }
+![img](./val-passedout.jpg){ .polaroid loading=lazy }
 
 As the afternoon wore on, we all got a bit tired. Here’s Val passed out in the cockpit.
 
-![img](./gps-position.jpg){ .polaroid }
+![img](./gps-position.jpg){ .polaroid loading=lazy }
 
 We reached Key West at around 3:30 in the afternoon and anchored near Fleming Island. Here’s our position. The red line shows our path into the harbor.
 
-![img](./eat-it-raw.jpg){ .polaroid }
+![img](./eat-it-raw.jpg){ .polaroid loading=lazy }
 
 Once we tidied up the boat a bit, we had another quick shower on deck and hailed the water taxi to take us ashore for dinner. It’s Spring Break here in Key West, so the mood on shore was festive and light and collegiate. Nick quickly showed he could party with the best of em.
 

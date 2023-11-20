@@ -9,26 +9,26 @@ My sister Lauren got to town last nite. I guess now she calls herself Bama. She 
 
 We went to a party at the <a href="http://www.zagodesign.com">Zago</a> office, my friends’ design firm. Here’s some pics.
 
-![img](./lauren-liz.jpg){ .polaroid }
+![img](./lauren-liz.jpg){ .polaroid loading=lazy }
 Lauren and Liz.
 
-![img](./lauren-pascal.jpg){ .polaroid }
+![img](./lauren-pascal.jpg){ .polaroid loading=lazy }
 Me and Lauren.
 
-![img](./levi-lauren.jpg){ .polaroid }
+![img](./levi-lauren.jpg){ .polaroid loading=lazy }
 Levi and Lauren.
 
-![img](./levi-three.jpg){ .polaroid }
+![img](./levi-three.jpg){ .polaroid loading=lazy }
 Levi has three fingers. At least.
 
-![img](./lucio-kevin.jpg){ .polaroid }
+![img](./lucio-kevin.jpg){ .polaroid loading=lazy }
 Lucio and Kevin.
 
-![img](./lauren-eileen.jpg){ .polaroid }
+![img](./lauren-eileen.jpg){ .polaroid loading=lazy }
 Lauren and Eileen, Kevin’s girlfriend.
 
-![img](./mauro-manuel.jpg){ .polaroid }
+![img](./mauro-manuel.jpg){ .polaroid loading=lazy }
 Someone and Mauro and Someone and Manuel.
 
-![img](./pascalbird-0.jpg){ .polaroid }
+![img](./pascalbird-0.jpg){ .polaroid loading=lazy }
 Several pics of me and the bird. Click it.

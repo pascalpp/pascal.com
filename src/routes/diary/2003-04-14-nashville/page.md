@@ -11,7 +11,7 @@ I got there early, before the bar was even open, and went around back to find Ni
 
 I hung out in the bar and read Michael Moore’s new book while the bands set up and did their sound check. Then I noticed that one of the people in Postal Service was Jenny, who’s the lead singer from Rilo Kiley, whom I saw open for Rainer Maria in Orlando and Tallahasse last year. Me and Lauren hung out with Jenny and the rest of the band after that show and had a grand old time. (The next time Rilo Kiley played Florida Lauren got up on stage and sang with Jenny.) So I reintroduced myself and gave her a copy of my record, too.
 
-![img](./jenny-me.jpg){ .polaroid }
+![img](./jenny-me.jpg){ .polaroid loading=lazy }
 
 …
 
@@ -21,23 +21,23 @@ I’m sitting in Kinko’s right now writing this and there’s a guy next to me
 
 Okay he beat me to a pulp but I’m all better now.
 
-![img](./emily-anthony.jpg){ .polaroid }
+![img](./emily-anthony.jpg){ .polaroid loading=lazy }
 
 Before the show started my friend Emily and her boyfriend Anthony showed up with three corn dogs for me. We went out to their car and I made short work of them. I once held the Adjacency title for most corn dogs consumed in a sitting, although I didn’t hold it long. The title, I mean.
 
-![img](./corndog1.jpg){ .polaroid }
+![img](./corndog1.jpg){ .polaroid loading=lazy }
 
-![img](./corndog2.jpg){ .polaroid }
+![img](./corndog2.jpg){ .polaroid loading=lazy }
 They were chicken corn dogs, actually, so I didn’t feel too ill.
 
-![img](./cex.jpg){ .polaroid }
+![img](./cex.jpg){ .polaroid loading=lazy }
 Then the show started and Cex came out with his blueberry iBook and his eyes duct taped over. He was really awesome. Emo rap, I’d call it. Real good stuff.
 
 Then the Mountain Goats played and that was real good too. Not mind-blowing, but it was good.
 
-![img](./postalservice.jpg){ .polaroid }
+![img](./postalservice.jpg){ .polaroid loading=lazy }
 
-![img](./jenny.jpg){ .polaroid }
+![img](./jenny.jpg){ .polaroid loading=lazy }
 Then Postal Service played and they were really good. The Dentl guy was running a powerbook cranking out beats and all kinds of other noise, and the Death Cab guy played guitar and sang and played keyboards and sometimes he played drums along with the beats and those parts were extra kickin. Jenny sang and played keyboards and guitar.
 
 The night was really great for me because I had been feeling really socially inept for like 2 or 3 months prior. But that night I had lots of silly and serious conversations with total strangers and even flirted at length with a couple of girls, which is no small feat for me. I also shmoozed with a couple of DJs from Vanderbilt’s college radio station, and I might get the chance to do an on-air thing there to promote the show in Nashville later this month.

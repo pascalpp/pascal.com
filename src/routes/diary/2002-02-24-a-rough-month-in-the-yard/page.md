@@ -19,36 +19,36 @@ Well I won’t lie to you. The month that has passed since I last wrote in my di
 
 We’ve tried to cut the edge off the dreariness somewhat by taking days off, heading into town for movies (many movies) or by kicking back at the end of the day and watching Friends and having a beer and a good meal. Those are the moments that make the hard stuff a little easier, and now that we can finally see light at the end of the tunnel and the workload finally begins to lighten a bit, the good times are not so few and far between. So I’ve taken some pictures of some of the good moments over the past month, and left out the shitty ones. Hope you enjoy.
 
-![img](./pascal-rigging.jpg){ .polaroid }
+![img](./pascal-rigging.jpg){ .polaroid loading=lazy }
 
 I finally got to go up in the rigging! Here I am up in the bosun’s chair, attaching a sleeve for the man overboard pole to the backstay. Whee!
 
-![img](./anthony-rigging.jpg){ .polaroid }
+![img](./anthony-rigging.jpg){ .polaroid loading=lazy }
 
 Right next door, our friend Anthony was even higher up, having a look at his masthead. Jeeper McCreepers.
 
-![img](./vee-berth.jpg){ .polaroid }
+![img](./vee-berth.jpg){ .polaroid loading=lazy }
 
 Not too long after we got to Fort Lauderdale, we made the happy discovery that there is a wireless internet service provider with an antenna (their only one in all of Fort Lauderdale) right here in the boat yard! Unfortunately there were a couple big boats and buildings between us and the antenna so reception wasn’t so great. We discovered that reception was best in the vee berth at the forward end of the boat (where I sleep), so we crowded in there for a while and surfed the web.
 
 A week or so later, the folks in the yard asked us to move our boat to another slip, which just happened to be much nearer the antenna with no obstructions. We happily complied.
 
-![img](./new-chain.jpg){ .polaroid }
+![img](./new-chain.jpg){ .polaroid loading=lazy }
 
 We went and bought about 300 feet of new chain for Willow. I laid it all out on the foredeck so i could mark it every 20 feet.
 
-![img](./chain-carpet.jpg){ .polaroid }
+![img](./chain-carpet.jpg){ .polaroid loading=lazy }
 
 Here’s a chain’s-eye-view.
 
-![img](./chain-chicks.jpg){ .polaroid }
+![img](./chain-chicks.jpg){ .polaroid loading=lazy }
 
 The place where we got the chain was this rigging and wire shop here in Fort Lauderdale. They had lots of posters and calendars with chicks on them. You know, the ones who can’t seem to find a tee shirt that doesn’t reveal the underside of their boobies. Chain chicks, I guess. They also had some nice wood paneling.
 
-![img](./laundry.jpg){ .polaroid }
+![img](./laundry.jpg){ .polaroid loading=lazy }
 
 One day we went to the laundry and I saw this empty laundry basket, all lonesome.
 
-![img](./cold-beers.jpg){ .polaroid }
+![img](./cold-beers.jpg){ .polaroid loading=lazy }
 
 Here’s some of them cold beers I was telling you about. Mmm, makes me wanna drop the sanding block and grab a bottle opener!
