@@ -86,7 +86,7 @@
   }
 
   ul {
-    margin-top: 2em;
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

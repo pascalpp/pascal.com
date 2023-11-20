@@ -53,7 +53,7 @@ tags: [css, svelte]
     gap: 2rem;
     align-items: center;
     background-color: color-mix(in srgb, var(--blue) 20%, white);
-    padding: 2rem;
+    padding: 2rem 1rem;
     border: 1px solid #000;
     border-radius: 8px;
     margin-block: 1rem;

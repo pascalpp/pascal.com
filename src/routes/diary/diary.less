@@ -67,11 +67,12 @@
 
   .content-grid {
     --padding-inline: 1rem;
-    --content-max-width: 60ch;
+    --content-max-width: 72ch;
     --breakout-width: 2rem;
 
     display: grid;
-    gap: 0.75rem;
+    row-gap: 0.75rem;
+    column-gap: 0;
     grid-template-columns:
       [full-width-start]
       minmax(var(--padding-inline), 200px)
@@ -84,6 +85,8 @@
       [breakout-end]
       minmax(var(--padding-inline), 1fr)
       [full-width-end];
+    align-items: start;
+    padding-top: 2rem;
 
     * {
       grid-column: content;

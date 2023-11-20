@@ -28,7 +28,6 @@
     align-items: flex-start;
 
     &.top {
-      margin-top: 2rem;
       margin-bottom: 0.5rem;
       min-height: 80px;
 
