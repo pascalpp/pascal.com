@@ -31,6 +31,12 @@ Amet eu velit proident. Velit proident id aute quis. Id, aute quis tempor. Tempo
 
 <p class="breakout-right"><strong>Breakout right.</strong> Adipiscing id sunt fugiat elit excepteur. Sunt fugiat elit excepteur amet excepteur nostrud minim. Elit, excepteur amet excepteur. Excepteur nostrud minim, veniam minim aliqua cupidatat. </p>
 
+<section class="bleed-right">
+
+**Bleed right.** Qui incididunt enim voluptate dolor, adipiscing cupidatat officia. Voluptate dolor, adipiscing cupidatat officia. Cupidatat officia, eu ullamco ipsum. Ullamco ipsum eiusmod commodo fugiat sint velit. Eiusmod commodo fugiat sint velit id fugiat. Fugiat sint velit id fugiat fugiat mollit.
+
+</section>
+
 Non deserunt ipsum est tempor. Ipsum est, tempor dolor quis duis. Dolor quis duis aliquip aliqua deserunt nisi dolore. Duis aliquip aliqua deserunt nisi dolore. Aliqua deserunt nisi dolore. Nisi dolore et, sunt eu voluptate quis officia. Sunt eu, voluptate quis officia. Quis officia excepteur ea laborum non. Excepteur ea laborum non.
 
 Ad minim sed pariatur, pariatur minim. Pariatur pariatur minim mollit eu amet consequat, qui. Mollit eu amet consequat qui cupidatat exercitation ut. Amet consequat qui cupidatat exercitation ut non. Qui cupidatat exercitation, ut non laboris.
@@ -66,7 +72,7 @@ Mollit minim esse consequat fugiat esse, pariatur ullamco. Consequat fugiat esse
 Reprehenderit culpa anim consequat occaecat deserunt deserunt non. Anim consequat occaecat deserunt, deserunt non ipsum officia. Deserunt deserunt non ipsum officia. Non ipsum, officia do nisi. Do nisi sunt, amet consectetur. Amet consectetur aliquip exercitation dolore. Aliquip exercitation dolore id non do. Dolore id non do eu commodo.
 
 <style>
-  .breakout, .breakout-left, .breakout-right {
+  .breakout, .breakout-left, .breakout-right, .bleed-right {
     background-color: hsl(0 0% 90%);
     border: 1px solid hsl(0 0% 80%);
     border-radius: 2px;
@@ -74,9 +80,14 @@ Reprehenderit culpa anim consequat occaecat deserunt deserunt non. Anim consequa
     padding-inline: 1rem;
     margin-block: 0.5rem;
   }
+
   .feature {
     background-color: hsl(200 25% 87%);
     padding-block: 1rem;
     margin-block: 0.5rem;
+  }
+
+  .bleed-right {
+    margin-inline-end: 1rem;
   }
 </style>
