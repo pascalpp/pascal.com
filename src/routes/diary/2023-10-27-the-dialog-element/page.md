@@ -50,23 +50,23 @@ Then in our page we can import that component and use it to render a dialog with
 
 <Dialog bind:dialog>
   <h1>Hi there!</h1>
-  <button class="btn" on:click={() => dialog.close()}>Close</button>
+  <button on:click={() => dialog.close()}>Close</button>
 </Dialog>
 
-<button class="btn" on:click={() => dialog.showModal()}>Open the modal</button>
+<button on:click={() => dialog.showModal()}>Open the modal</button>
 ```
 
 </details>
 
 <Dialog bind:dialog={basicDialog}>
   <h1>Hi there!</h1>
-  <button class="btn" on:click={() => basicDialog.close()}>Close</button>
+  <button on:click={() => basicDialog.close()}>Close</button>
 </Dialog>
 
 ### Try it out!
 
 <p>
-  <button class="btn" on:click={() => basicDialog.showModal()}>Open the modal</button>
+  <button on:click={() => basicDialog.showModal()}>Open the modal</button>
 </p>
 
 ## What you get for free
@@ -85,8 +85,8 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
   <h1>Hi there!</h1>
   <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
   <p>
-    <button class="btn" on:click={() => nestedDialog.close()}>Close</button>
-    <button class="btn" on:click={() => nestedDialogChild.showModal()}>Open another modal</button>
+    <button on:click={() => nestedDialog.close()}>Close</button>
+    <button on:click={() => nestedDialogChild.showModal()}>Open another modal</button>
   </p>
   <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
   <p>Enim proident ad lorem. Ad lorem ullamco anim, ea et. Anim, ea et lorem anim. Lorem, anim anim adipiscing aute. Adipiscing aute est ex mollit cupidatat.</p>
@@ -109,12 +109,12 @@ The native dialog element does a lot for us out of the box (or in it, I suppose)
     <h1>Another modal</h1>
     <p>Cillum nostrud sint esse. Sint esse occaecat mollit incididunt. Occaecat mollit incididunt deserunt lorem eiusmod excepteur. Incididunt deserunt lorem eiusmod excepteur mollit. Lorem eiusmod excepteur mollit. Excepteur mollit reprehenderit excepteur ullamco proident in voluptate.</p>
     <p>Elit ullamco irure adipiscing, do velit. Adipiscing do velit qui elit minim elit minim. Velit qui, elit minim elit minim. Minim, elit minim incididunt et adipiscing. Incididunt, et adipiscing aliqua. Aliqua, incididunt tempor id deserunt. Id deserunt proident ea eu incididunt mollit quis. Proident ea, eu incididunt mollit.</p>
-    <button class="btn" on:click={() => nestedDialogChild.close()}>Close</button>
+    <button on:click={() => nestedDialogChild.close()}>Close</button>
   </Dialog>
 </Dialog>
 
 <p>
-  <button class="btn" on:click={() => nestedDialog.showModal()}>Open a long scrolling modal with a nested modal</button>
+  <button on:click={() => nestedDialog.showModal()}>Open a long scrolling modal with a nested modal</button>
 </p>
 
 ## Taking it up a notch
@@ -321,7 +321,7 @@ Here's a version of the Dialog component with some of these features added.
 </StyledDialog>
 
 <!-- Now we can call the exported open method on the dialog instance -->
-<button class="btn" on:click={() => dialog.open()}>Open the dialog</button>
+<button on:click={() => dialog.open()}>Open the dialog</button>
 ```
 
 </details>
@@ -349,13 +349,13 @@ Here's a version of the Dialog component with some of these features added.
 </StyledDialog>
 
 <StyledDialog bind:this={styledDialogUntitled}>
-  <p>This modal has no title. But we can access its custom close method to create our own <button class="btn" on:click={styledDialogUntitled.close}>close button</button>.</p>
+  <p>This modal has no title. But we can access its custom close method to create our own <button on:click={styledDialogUntitled.close}>close button</button>.</p>
 </StyledDialog>
 
 <p>
-  <button class="btn" on:click={styledDialog.open}>Open a styled modal</button>
-  <button class="btn" on:click={styledDialogLong.open}>Open a long styled modal</button>
-  <button class="btn" on:click={styledDialogUntitled.open}>Open an untitled modal</button>
+  <button on:click={styledDialog.open}>Open a styled modal</button>
+  <button on:click={styledDialogLong.open}>Open a long styled modal</button>
+  <button on:click={styledDialogUntitled.open}>Open an untitled modal</button>
 </p>
 
 Much of the information and ideas in this post came from these two YouTube videos by CSS guru Kevin Powell:
