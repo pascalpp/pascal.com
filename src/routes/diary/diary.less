@@ -5,11 +5,12 @@
 .diary {
   a {
     color: var(--blue);
+    text-decoration: underline;
     text-underline-offset: 0.15em;
     text-decoration-thickness: 1px;
   }
 
-  button {
+  button:not(.link) {
     font-family: var(--sans-font);
     font-weight: normal;
     font-size: 13px;
@@ -34,9 +35,25 @@
       transform: translate(1px, 1px);
     }
 
-    + button {
+    + button:not(.link) {
       margin-left: 0.5em;
     }
+  }
+
+  button.link {
+    appearance: unset;
+    border: unset;
+    background-color: unset;
+    color: var(--blue);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0 0.1em;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
   }
 
   header,
@@ -74,7 +91,7 @@
       }
     }
 
-    > :is(h1, h2, h3, h4, h5, h6, ul, p, blockquote) {
+    > :is(h1, h2, h3, h4, h5, h6, ul, p, blockquote, figure) {
       max-width: min(90vw, 650px);
     }
 
@@ -223,6 +240,12 @@
       border-left: 3px solid rgb(0 0 0 / 0.3);
       padding-left: 1em;
       margin-left: 0;
+    }
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

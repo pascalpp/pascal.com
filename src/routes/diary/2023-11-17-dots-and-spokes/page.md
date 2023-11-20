@@ -47,14 +47,21 @@ tags: [css, svelte]
 
 <style lang="less">
   .container {
-    margin: 2rem 0;
     width: fit-content;
+    margin-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
   }
 
   .controls {
     font-family: var(--sans-font);
     font-size: 14px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .note {
@@ -70,22 +77,19 @@ or <button class="link" on:click={example3}>this one</button>
 or <button class="link" on:click={example4}>this one</button>
 or <button class="link" on:click={defaultExample}>the default</button>.
 
-<figure class="container">
-<Column center>
+<figure>
+<section class="container">
   <DotsAndSpokes bind:spokes bind:dotspeed bind:circlespeed/>
 
   <div class="controls">
-    <Column>
       <Slider bind:value={spokes} min={1} max={200} step={1} id="spokes" label="Spokes: {spokes}" />
       <Slider bind:value={circlespeed} min={1} max={20} id="circlespeed" label="Wheel Speed: {circlespeed}s" />
       <Slider bind:value={dotspeed} min={1} max={10} id="dotspeed" label="Dot Speed: {dotspeed}s" />
-    </Column>
     {#if spokes > 100 && dotspeed > 2}
       <p class="note">With a lot of spokes, try a lower dot speed.</p>
     {/if}
   </div>
-
-</Column>
+</section>
 </figure>
 
 <details>
