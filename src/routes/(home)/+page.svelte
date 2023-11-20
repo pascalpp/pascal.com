@@ -293,7 +293,7 @@
     margin-inline-end: 8em;
     z-index: 0;
     @media @mobile {
-      margin-block: -0.5px;
+      margin-block: -0.25px;
       margin-inline-end: 5em;
     }
 
