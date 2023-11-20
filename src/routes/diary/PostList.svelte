@@ -55,7 +55,7 @@
   <ButtonBar tiny options={sortOptions} selected={sortOrder} on:click={onClickSortOrder} />
 </header>
 
-<ul>
+<ul class="bleed-right">
   {#each sorted as post}
     <li>
       <a href="/diary/{post.slug}">
@@ -88,21 +88,26 @@
   ul {
     margin-top: 2em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.5em;
+    padding-right: 2rem;
+    @media @mobile {
+      flex-direction: column;
+      grid-column: full-width;
+    }
   }
 
   li {
     width: max-content;
-    max-width: 95w;
     &:nth-child(odd) {
       --deg: 1deg;
-      margin-left: -1em;
+      margin-left: -0.5rem;
     }
     &:nth-child(even) {
       --deg: -1deg;
-      margin-left: 1em;
+      margin-left: 0.5em;
     }
 
     --shadow-offset: 0.1em;
@@ -110,7 +115,7 @@
     .rotated-shadow;
 
     a {
-      max-width: min(85vw, 500px);
+      max-width: 90vw;
       padding: 0.5em 1em;
       background-color: white;
       border-radius: 2px;
