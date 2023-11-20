@@ -4,10 +4,26 @@
   import FeaturedEmail from '$lib/components/FeaturedEmail.svelte';
   import Handstand from './images/handstand.svg?component';
   import Email, { metadata } from './emails/2017-09-14.md';
+  import { randomGreeting } from './greetings';
+  import type { PageData } from './$types';
+
+  export let data: PageData;
 
   function selectExperiment(event: Event) {
     const target = event.target as HTMLSelectElement;
     document.location = target.value;
+  }
+
+  let greeting = data.greeting;
+  console.log('greeting', greeting);
+
+  function changeGreeting() {
+    const newGreeting = randomGreeting();
+    if (newGreeting === greeting) {
+      changeGreeting();
+    } else {
+      greeting = newGreeting;
+    }
   }
 </script>
 
@@ -25,13 +41,13 @@
     <Column right>
       <div class="thinking-handstand">
         <div class="thinking">
-          <div class="thought-bubble">
+          <button class="thought-bubble" on:click={changeGreeting}>
             <div class="circles left" />
             <div class="thought">
-              <p class="clamp-3">Hi there!</p>
+              <p class="clamp-3">{greeting}</p>
             </div>
             <div class="circles right" />
-          </div>
+          </button>
           <div class="dots" />
         </div>
         <div class="handstand">
@@ -125,6 +141,7 @@
       margin-bottom: 170px;
 
       .thought-bubble {
+        user-select: none;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -170,8 +187,8 @@
 
         .thought {
           border-radius: 1em;
-          max-width: 270px;
-          min-height: 6em;
+          max-width: 300px;
+          min-height: 84px;
           background-color: var(--bubblecolor);
           color: var(--textcolor);
           padding: 0 1em;
@@ -181,6 +198,7 @@
           overflow: hidden;
           z-index: 1;
           @media @mobile {
+            font-size: 12px;
             max-width: 120px;
           }
 
