@@ -9,7 +9,7 @@
   export let data;
 
   $: ({ post, next, prev } = data);
-  $: ({ title, date, content, slug, metadata } = post);
+  $: ({ title, date, content, metadata } = post);
   $: ({ tags, status = 'published' } = metadata);
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
