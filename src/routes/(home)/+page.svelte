@@ -15,7 +15,6 @@
   }
 
   let greeting = data.greeting;
-  console.log('greeting', greeting);
 
   function changeGreeting() {
     const newGreeting = randomGreeting();
@@ -41,7 +40,7 @@
     <Column right>
       <div class="thinking-handstand">
         <div class="thinking">
-          <button class="thought-bubble" on:click={changeGreeting}>
+          <button class="unstyled thought-bubble" on:click={changeGreeting}>
             <div class="circles left" />
             <div class="thought">
               <p class="clamp-3">{greeting}</p>
