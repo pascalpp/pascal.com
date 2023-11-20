@@ -23,7 +23,7 @@
     color: black;
     border-radius: 4px;
     border: 1px solid rgba(0 0 0 / 0.3);
-    box-shadow: 1px 1px 0 0px hsla(0 0% 0% / 0.1);
+    box-shadow: 0px 1px 0 0px hsla(0 0% 0% / 0.2);
     &:hover {
       border-color: hsla(0 0% 0% / 0.5);
     }
@@ -32,11 +32,16 @@
     }
     &:active {
       box-shadow: none;
-      transform: translate(1px, 1px);
+      transform: translate(0px, 1px);
     }
 
     + button:not(.link) {
       margin-left: 0.5em;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
 
@@ -64,6 +69,7 @@
   article {
     font-weight: 200;
     font-size: 20px;
+    min-height: 50vh;
 
     :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table, hr, figure, header, footer) {
       margin: 0.75em 0;
