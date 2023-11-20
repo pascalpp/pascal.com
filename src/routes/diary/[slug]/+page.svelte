@@ -39,7 +39,7 @@
   <AddClipboardButtons />
 {/key}
 
-<header class="content-grid">
+<header class="full-width">
   <div class="post-header">
     <PostNavigation {next} {prev} top />
 
@@ -58,11 +58,11 @@
   </div>
 </header>
 
-<article class="content-grid">
+<article class="full-width">
   <svelte:component this={content} />
 </article>
 
-<footer class="content-grid">
+<footer class="full-width">
   <PostNavigation {next} {prev} bottom />
 </footer>
 

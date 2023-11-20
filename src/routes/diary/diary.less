@@ -65,24 +65,46 @@
     cursor: pointer;
   }
 
-  header,
-  footer {
-    width: min(90vw, 650px);
-  }
-
   .content-grid {
-    display: grid;
-    grid-template-columns: [full-width-start] 200px [breakout-start] 2rem [content-start] 600px [content-end] 2rem [breakout-end] auto [full-width-end];
-    gap: 0.75rem;
+    --padding-inline: 1rem;
+    --content-max-width: 60ch;
+    --breakout-width: 2rem;
 
-    > * {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns:
+      [full-width-start]
+      minmax(var(--padding-inline), 200px)
+      [breakout-start]
+      minmax(0, var(--breakout-width))
+      [content-start]
+      min(calc(100% - (var(--padding-inline) * 2)), var(--content-max-width))
+      [content-end]
+      minmax(0, var(--breakout-width))
+      [breakout-end]
+      minmax(var(--padding-inline), 1fr)
+      [full-width-end];
+
+    * {
       grid-column: content;
     }
     .breakout {
       grid-column: breakout;
     }
+    .breakout-left {
+      grid-column-start: breakout-start;
+    }
+    .breakout-right {
+      grid-column-end: breakout-end;
+    }
     .full-width {
       grid-column: full-width;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: subgrid;
+    }
+    .bleed-right {
+      grid-column-end: full-width-end;
     }
 
     section {
@@ -94,11 +116,6 @@
     details:has(pre) {
       grid-column-end: full-width-end;
     }
-  }
-
-  // apply content-grid rules inside of .full-width
-  .content-grid .full-width {
-    .content-grid;
   }
 
   article {

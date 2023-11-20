@@ -19,12 +19,14 @@
 <div class="diary">
   <NavHeader />
 
-  <main>
+  <main class="content-grid">
     <slot />
   </main>
 
-  <footer>
-    pascal’s diary · copyright about now · <a href="/diary/rss" data-sveltekit-reload>rss</a>
+  <footer class="content-grid">
+    <p>
+      pascal’s diary · copyright about now · <a href="/diary/rss" data-sveltekit-reload>rss</a>
+    </p>
   </footer>
 </div>
 

@@ -53,20 +53,21 @@
 </nav>
 
 <style lang="less">
-  a {
-    text-decoration: none;
-    color: var(--blue);
-  }
-
   nav {
     --deg: -2deg;
     .rotated-shadow;
-    margin: 0 auto;
-    @media @not-mobile {
-      width: max-content;
+    white-space: nowrap;
+    @media @desktop {
       position: fixed;
       left: -1rem;
       top: 4rem;
+    }
+    @media @not-desktop {
+      margin-top: -2rem;
+      margin-left: -2rem;
+      margin-bottom: 1rem;
+      margin-right: 1.5rem;
+      width: min(min-content, 50vw);
     }
 
     .card {
@@ -75,7 +76,7 @@
       border-radius: 4px;
       color: rgb(0 0 0 / 0.7);
 
-      @media @not-mobile {
+      @media @desktop {
         padding: 1rem;
         padding-left: 2rem;
         min-height: 150px;
@@ -83,21 +84,26 @@
         flex-direction: column;
         justify-content: space-between;
       }
-      @media @mobile {
+      @media @not-desktop {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        gap: 3em;
+        align-items: center;
+        gap: 1rem;
         padding-top: 3em;
-        padding-left: 2em;
-        margin-left: -2em;
-        margin-top: -2em;
+        padding-left: 3em;
+        padding-bottom: 0;
       }
     }
 
     h1 {
       font-weight: 500;
       font-size: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--blue);
     }
 
     a[href='/'] {

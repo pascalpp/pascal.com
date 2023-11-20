@@ -28,7 +28,8 @@
     align-items: flex-start;
 
     &.top {
-      margin-block: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
       min-height: 80px;
 
       .next {
