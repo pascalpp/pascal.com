@@ -18,10 +18,11 @@
   .circle {
     width: 300px;
     height: 300px;
-    border: 10px solid;
+    border: 10px solid black;
     border-radius: 50%;
     animation: fullrotation var(--circlespeed, 10s) infinite linear;
     position: relative;
+    background-color: white;
   }
 
   .circle .spoke {
