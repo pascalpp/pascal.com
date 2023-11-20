@@ -290,12 +290,12 @@
     background-color: var(--bubblecolor);
     position: relative;
     transform: translateX(50%);
-    margin-right: 8em;
+    margin-inline-end: 8em;
     z-index: 0;
     @media @mobile {
-      margin-right: 5em;
+      margin-block: -0.5px;
+      margin-inline-end: 5em;
     }
-    margin-block: -0.1px;
 
     &::before,
     &::after {
