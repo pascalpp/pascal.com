@@ -55,6 +55,10 @@ const config = {
       strict: false,
     }),
   },
+
+  vitePlugin: {
+    inspector: true,
+  },
 };
 
 export default config;
