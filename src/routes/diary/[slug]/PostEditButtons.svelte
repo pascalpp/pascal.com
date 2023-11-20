@@ -20,11 +20,4 @@
     flex-direction: row;
     gap: 0.5em;
   }
-
-  :global(button) {
-    font-family: var(--sans-font);
-    font-weight: normal;
-    font-size: 12px;
-    vertical-align: middle;
-  }
 </style>

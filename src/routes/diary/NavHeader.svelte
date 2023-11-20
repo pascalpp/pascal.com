@@ -44,7 +44,7 @@
 
     {#if dev}
       <p>
-        <button class="new-post-button" type="button" on:click={onClickNewPost}>New post</button>
+        <button type="button" on:click={onClickNewPost}>New post</button>
       </p>
     {/if}
 
@@ -56,11 +56,6 @@
   a {
     text-decoration: none;
     color: var(--blue);
-  }
-
-  .new-post-button {
-    font-family: var(--sans-font);
-    font-size: 12px;
   }
 
   nav {
