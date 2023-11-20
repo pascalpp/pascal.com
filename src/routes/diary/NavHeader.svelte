@@ -53,21 +53,25 @@
 </nav>
 
 <style lang="less">
+  @fixed-threshold: 1200px;
+  @fixed: ~'(min-width: @{fixed-threshold})';
+  @not-fixed: ~'(max-width: @{fixed-threshold})';
+
   nav {
     --deg: -2deg;
     .rotated-shadow;
     white-space: nowrap;
-    @media @desktop {
+    @media @fixed {
       position: fixed;
       left: -1rem;
       top: 4rem;
     }
-    @media @not-desktop {
+    @media @not-fixed {
       margin-top: -2rem;
       margin-left: -2rem;
       margin-bottom: 1rem;
       margin-right: 1.5rem;
-      width: min(min-content, 50vw);
+      width: min-content;
     }
 
     .card {
@@ -76,7 +80,7 @@
       border-radius: 4px;
       color: rgb(0 0 0 / 0.7);
 
-      @media @desktop {
+      @media @fixed {
         padding: 1rem;
         padding-left: 2rem;
         min-height: 150px;
@@ -84,7 +88,7 @@
         flex-direction: column;
         justify-content: space-between;
       }
-      @media @not-desktop {
+      @media @not-fixed {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
