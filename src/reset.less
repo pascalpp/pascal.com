@@ -48,6 +48,15 @@ html {
   color: inherit;
 }
 
+// Remove button appearance from any button with a class
+:where(button[class]) {
+  border: unset;
+  appearance: unset;
+  background-color: unset;
+  margin: unset;
+  padding: unset;
+}
+
 // Make sure textareas without a rows attribute are not tiny
 :where(textarea:not([rows])) {
   min-height: 10em;
