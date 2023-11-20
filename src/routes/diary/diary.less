@@ -3,6 +3,10 @@
 @import (reference) '../../variables.less';
 
 .diary {
+  font-family: 'Crimson Pro', serif;
+  font-display: block;
+  font-weight: 200;
+
   a {
     color: var(--blue);
     text-decoration: underline;
@@ -66,15 +70,41 @@
     width: min(90vw, 650px);
   }
 
+  .content-grid,
+  .content-grid .full-width {
+    display: grid;
+    grid-template-columns: [full-width-start] 175px [breakout-start] 2rem [content-start] 600px [content-end] 2rem [breakout-end] auto [full-width-end];
+    gap: 0.75rem;
+
+    > * {
+      grid-column: content;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .breakout {
+      grid-column: breakout;
+    }
+    .full-width {
+      grid-column: full-width;
+    }
+
+    details:has(pre) {
+      grid-column-end: full-width-end;
+    }
+  }
+
   article {
     font-weight: 200;
     font-size: 20px;
     min-height: 50vh;
 
-    :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table, hr, figure, header, footer) {
-      margin: 0.75em 0;
+    :where(:is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table, hr, header, footer)) {
+      margin: 0;
     }
-    :is(h1, h2, h3, h4, h5, h6, strong, b) {
+    :where(:is(h1, h2, h3, h4, h5, h6, strong, b)) {
       font-weight: 500;
     }
 
@@ -93,13 +123,13 @@
     :is(h1, h2, h3, h4, h5, h6) {
       line-height: 1.2;
       &:not(:first-child) {
-        margin-top: 1em;
+        margin-top: 0.5em;
       }
     }
 
-    > :is(h1, h2, h3, h4, h5, h6, ul, p, blockquote, figure) {
-      max-width: min(90vw, 650px);
-    }
+    // > :is(h1, h2, h3, h4, h5, h6, ul, p, blockquote, figure) {
+    //   max-width: min(90vw, 650px);
+    // }
 
     img.bordered {
       border: 1px solid rgb(0 0 0 / 0.2);
@@ -223,11 +253,12 @@
       padding-right: 3em;
       font-size: 14px;
       line-height: 1.6;
-      margin-bottom: 2em;
       position: relative;
+      margin-top: 0.5em;
+      grid-column-end: full-width-end;
 
       .copy-button {
-        margin: 1rem;
+        margin: 0.75rem;
         position: absolute;
         right: 0;
         top: 0;
@@ -242,13 +273,13 @@
       }
     }
 
-    blockquote {
+    :where(blockquote) {
       border-left: 3px solid rgb(0 0 0 / 0.3);
       padding-left: 1em;
       margin-left: 0;
     }
 
-    figure {
+    :where(figure) {
       display: flex;
       flex-direction: column;
       align-items: center;

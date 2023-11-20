@@ -39,8 +39,7 @@
   <AddClipboardButtons />
 {/key}
 
-<!-- svelte-ignore a11y-accesskey -->
-<header>
+<header class="content-grid">
   <div class="post-header">
     <PostNavigation {next} {prev} top />
 
@@ -59,11 +58,11 @@
   </div>
 </header>
 
-<article>
+<article class="content-grid">
   <svelte:component this={content} />
 </article>
 
-<footer>
+<footer class="content-grid">
   <PostNavigation {next} {prev} bottom />
 </footer>
 
@@ -104,10 +103,5 @@
 
   article {
     flex-grow: 1;
-    @media @not-mobile {
-      min-height: 70vh;
-    }
-  }
-    }
   }
 </style>

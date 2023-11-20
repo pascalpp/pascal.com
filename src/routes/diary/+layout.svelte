@@ -17,20 +17,14 @@
 </svelte:head>
 
 <div class="diary">
-  <div class="structure">
-    <NavHeader />
-  </div>
+  <NavHeader />
 
   <main>
-    <div class="structure">
-      <slot />
-    </div>
+    <slot />
   </main>
 
   <footer>
-    <div class="structure">
-      pascal’s diary · copyright about now · <a href="/diary/rss" data-sveltekit-reload>rss</a>
-    </div>
+    pascal’s diary · copyright about now · <a href="/diary/rss" data-sveltekit-reload>rss</a>
   </footer>
 </div>
 
@@ -40,26 +34,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch;
-    font-family: 'Crimson Pro', serif;
-    font-display: block;
-    font-weight: 200;
   }
 
   main {
     flex-grow: 1;
-  }
-
-  .structure {
-    padding: 1em;
-    width: min(95vw, 850px);
-    @media @not-mobile {
-      padding-left: 250px;
-    }
-  }
-
-  main .structure {
-    width: 95vw;
   }
 
   footer {
