@@ -70,19 +70,13 @@
     width: min(90vw, 650px);
   }
 
-  .content-grid,
-  .content-grid .full-width {
+  .content-grid {
     display: grid;
-    grid-template-columns: [full-width-start] 175px [breakout-start] 2rem [content-start] 600px [content-end] 2rem [breakout-end] auto [full-width-end];
+    grid-template-columns: [full-width-start] 200px [breakout-start] 2rem [content-start] 600px [content-end] 2rem [breakout-end] auto [full-width-end];
     gap: 0.75rem;
 
     > * {
       grid-column: content;
-    }
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
     }
     .breakout {
       grid-column: breakout;
@@ -91,9 +85,20 @@
       grid-column: full-width;
     }
 
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     details:has(pre) {
       grid-column-end: full-width-end;
     }
+  }
+
+  // apply content-grid rules inside of .full-width
+  .content-grid .full-width {
+    .content-grid;
   }
 
   article {
