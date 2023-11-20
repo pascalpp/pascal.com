@@ -65,8 +65,8 @@
     @media @not-mobile {
       width: max-content;
       position: fixed;
-      left: -1.75vw;
-      top: 5vh;
+      left: -1rem;
+      top: 4rem;
     }
 
     .card {
@@ -76,8 +76,8 @@
       color: rgb(0 0 0 / 0.7);
 
       @media @not-mobile {
-        padding-top: 1em;
-        padding-left: 3vw;
+        padding: 1rem;
+        padding-left: 2rem;
         min-height: 150px;
         display: flex;
         flex-direction: column;
