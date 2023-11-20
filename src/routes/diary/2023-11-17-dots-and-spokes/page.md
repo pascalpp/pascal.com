@@ -46,13 +46,18 @@ tags: [css, svelte]
 </script>
 
 <style lang="less">
-  .container {
+  figure {
     width: fit-content;
-    margin-block: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    background-color: color-mix(in srgb, var(--blue) 20%, white);
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin-block: 1rem;
+    margin-inline: auto;
   }
 
   .controls {
@@ -78,7 +83,6 @@ or <button class="link" on:click={example4}>this one</button>
 or <button class="link" on:click={defaultExample}>the default</button>.
 
 <figure>
-<section class="container">
   <DotsAndSpokes bind:spokes bind:dotspeed bind:circlespeed/>
 
   <div class="controls">
@@ -89,7 +93,7 @@ or <button class="link" on:click={defaultExample}>the default</button>.
       <p class="note">With a lot of spokes, try a lower dot speed.</p>
     {/if}
   </div>
-</section>
+
 </figure>
 
 <details>
