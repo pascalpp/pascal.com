@@ -43,18 +43,20 @@ html {
 }
 
 // Inherit fonts for inputs and buttons
-:where(:is(input, button, textarea, select)) {
+:where(:is(input, textarea, select)) {
   font: inherit;
   color: inherit;
 }
 
-// Remove button appearance from any button with a class
-:where(button[class]) {
+// Remove button appearance from any button with unstyled class
+:where(button.unstyled) {
   border: unset;
   appearance: unset;
   background-color: unset;
   margin: unset;
   padding: unset;
+  font: inherit;
+  color: inherit;
 }
 
 // Make sure textareas without a rows attribute are not tiny
