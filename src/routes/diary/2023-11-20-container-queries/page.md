@@ -15,13 +15,6 @@ tags: [css]
     container-type: inline-size;
   }
 
-  .box {
-    background-color: purple;
-    color: white;
-    padding: 1rem;
-    min-height: 100px;
-  }
-
   .inset {
     max-width: 40ch;
     margin-left: 4rem;
