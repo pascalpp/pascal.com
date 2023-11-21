@@ -69,6 +69,3 @@
     </Row>
   </section>
 </Column>
-
-<style lang="less">
-</style>
