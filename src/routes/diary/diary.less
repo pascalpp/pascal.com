@@ -2,7 +2,7 @@
 @import './one_dark_theme.less';
 @import (reference) '../../variables.less';
 
-.diary {
+:where(.diary) {
   font-family: 'Crimson Pro', serif;
   font-display: block;
   font-weight: 200;
@@ -87,9 +87,11 @@
       minmax(var(--margin-inline), auto)
       [full-width-end];
     align-items: start;
-    padding-top: 2rem;
 
-    * {
+    > *,
+    > header > *,
+    > article > *,
+    > footer > * {
       grid-column: content;
     }
     .breakout {
@@ -142,10 +144,15 @@
     }
   }
 
+  .full-width {
+    .content-grid;
+  }
+
   article {
     font-weight: 200;
     font-size: 20px;
     min-height: 50vh;
+
     flex-shrink: 0;
     align-content: flex-start;
 
