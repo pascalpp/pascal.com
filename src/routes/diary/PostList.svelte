@@ -44,15 +44,18 @@
 </script>
 
 <header>
-  <span>
+  <span class="title">
     {#if tag}
-      Posts tagged with &nbsp;<Tag {tag} />
+      <span class="label">Posts tagged with</span>
+      <Tag {tag} />
     {:else}
-      All Posts
+      <span class="label">All Posts</span>
     {/if}
   </span>
 
-  <ButtonBar tiny options={sortOptions} selected={sortOrder} on:click={onClickSortOrder} />
+  <div class="buttons">
+    <ButtonBar options={sortOptions} selected={sortOrder} on:click={onClickSortOrder} />
+  </div>
 </header>
 
 <ul class="bleed-right">
@@ -68,14 +71,27 @@
 
 <style lang="less">
   header {
-    font-size: 16px;
-    font-family: var(--sans-font);
+    font-size: 14px;
     font-weight: normal;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     gap: 2em;
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .label {
+      font-size: 24px;
+    }
+
+    .buttons {
+      font-family: var(--sans-font);
+    }
   }
 
   ul,
