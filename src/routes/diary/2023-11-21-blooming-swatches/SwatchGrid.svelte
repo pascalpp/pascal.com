@@ -2,11 +2,13 @@
   import Swatch from './Swatch.svelte';
 
   export let swatches = new Array(100).fill(null);
+
+  let showLetters = false;
 </script>
 
 <div class="swatch-grid">
   {#each swatches as _}
-    <Swatch />
+    <Swatch {showLetters} />
   {/each}
 </div>
 

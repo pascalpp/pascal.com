@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import randomHexColor from './randomColor';
+
+  export let showLetters = false;
 
   let color = randomHexColor();
   let hovercolor = randomHexColor();
@@ -22,15 +23,16 @@
     animating = false;
   }
 
-  function intervalColor() {
+  function changeColor() {
     if (animating) return;
     color = randomHexColor();
   }
 
-  let intervalTime = Math.random() * 4000;
+  let interval = Math.ceil(Math.random() * 26);
+  const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
   onMount(() => {
-    const interval = setInterval(intervalColor, intervalTime);
-    return () => clearInterval(interval);
+    const timer = setInterval(changeColor, interval * 200);
+    return () => clearInterval(timer);
   });
 </script>
 
@@ -43,7 +45,11 @@
   class:animating
   role="button"
   tabindex="0"
-/>
+>
+  {#if showLetters}
+    {alphabet[interval - 1]}
+  {/if}
+</div>
 
 <style lang="less">
   .swatch {
@@ -56,6 +62,15 @@
       pointer-events: none;
       animation: bloom 2s ease-out forwards;
     }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px rgba(0 0 0 / 1), 0px 0px 1px rgba(0 0 0 / 1);
+    font-family: var(--font-sans);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   @keyframes bloom {
