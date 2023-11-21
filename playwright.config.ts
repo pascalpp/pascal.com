@@ -6,7 +6,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 // require('dotenv').config();
 const desktopOptions = {
-  viewport: { width: 1200, height: 800 },
+  viewport: { width: 1280, height: 1000 },
 };
 
 const slowMo = Number(process.env.slow) || 250;
