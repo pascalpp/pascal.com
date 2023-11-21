@@ -5,6 +5,8 @@ import sveltePreprocess from 'svelte-preprocess';
 import { importAssets } from 'svelte-preprocess-import-assets';
 import { mdsvex } from 'mdsvex';
 import remarkAttr from 'remark-attr';
+import postcssJitProps from 'postcss-jit-props';
+import OpenProps from 'open-props';
 
 // import adapter from '@sveltejs/adapter-static';
 
@@ -19,7 +21,7 @@ const config = {
     }),
     sveltePreprocess({
       postcss: {
-        plugins: [autoprefixer],
+        plugins: [autoprefixer, postcssJitProps(OpenProps)],
       },
       less: {
         prependData: '@import (reference) "src/variables.less";',
