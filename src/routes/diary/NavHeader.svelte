@@ -70,7 +70,7 @@
     @media @not-fixed {
       margin-top: -2rem;
       margin-left: -2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       margin-right: 1.5rem;
       width: min-content;
     }
@@ -82,7 +82,6 @@
       color: rgb(0 0 0 / 0.7);
 
       @media @fixed {
-        padding: 1rem;
         padding-left: 2rem;
         min-height: 150px;
         display: flex;
@@ -97,7 +96,8 @@
         gap: 1rem;
         padding-top: 3em;
         padding-left: 3em;
-        padding-bottom: 0;
+        padding-bottom: 0.25em;
+        margin-top: -2em;
       }
     }
 
