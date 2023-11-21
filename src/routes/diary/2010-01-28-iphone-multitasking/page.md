@@ -25,7 +25,11 @@ Here's a quick demo I put together with the helpful magic of [jQuery](http://www
 
 <PhoneSwitcher/>
 
-Since it's a pain to imitate multitouch gestures in Javascript, I just created buttons as stand-ins. Click 'Activate switcher' to see the demo, then click 'Swipe Left' or 'Swipe Right' to move from screen to screen. Then tap an app to bring it forward. (I only tested this demo in Safari and Firefox, so I make no guarantees that it will work in other browsers.)
+<aside>
+
+Since it's a pain to imitate multitouch gestures in Javascript, I just created buttons as stand-ins. Click 'Activate switcher' to see the demo, then click 'Swipe Left' or 'Swipe Right' to move from screen to screen. Then tap an app to bring it forward.
+
+</aside>
 
 Clicking the 'x' on an app would close that app, just as pressing the home button does currently. Switching to the Home app would allow you to launch any other app, which would then show up as another screen in the app switcher. If you launch an app that's already running, it would just switch to that app rather than spawn a new process, similar to Spaces on Mac OS X. In fact this whole concept is similar to Spaces, except that there is only one app per space, and only one space per app.
 
