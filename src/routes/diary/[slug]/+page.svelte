@@ -68,7 +68,6 @@
 
 <style lang="less">
   header {
-    padding-top: 2rem;
     margin-bottom: 1em;
 
     h1 {

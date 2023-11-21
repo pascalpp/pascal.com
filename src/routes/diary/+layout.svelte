@@ -32,6 +32,7 @@
 
 <style lang="less">
   .diary {
+    padding-top: 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
