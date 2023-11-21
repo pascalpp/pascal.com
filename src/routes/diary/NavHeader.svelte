@@ -65,6 +65,7 @@
       position: fixed;
       left: -1rem;
       top: 4rem;
+      z-index: 100;
     }
     @media @not-fixed {
       margin-top: -2rem;
