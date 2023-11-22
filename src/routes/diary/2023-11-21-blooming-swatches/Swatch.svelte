@@ -9,7 +9,7 @@
   let endcolor = randomHexColor();
   let animating = false;
 
-  function startAnimating(event: MouseEvent | KeyboardEvent) {
+  function startAnimating(event: MouseEvent | TouchEvent | KeyboardEvent) {
     if (animating) return;
     const target = event.target as HTMLElement;
     target.addEventListener('animationend', stopAnimating, { once: true });
@@ -41,6 +41,9 @@
   style="--color: {color}; --hovercolor: {hovercolor}; --endcolor: {endcolor};"
   on:mouseenter={startAnimating}
   on:click={startAnimating}
+  on:touchstart={startAnimating}
+  on:touchmove={startAnimating}
+  on:touchend={startAnimating}
   on:keypress={startAnimating}
   class:animating
   role="button"
@@ -53,6 +56,7 @@
 
 <style lang="less">
   .swatch {
+    touch-action: none;
     background-color: var(--color);
     transition: background-color 2s ease-out;
     border: 1px solid rgba(0 0 0 / 0.2);
