@@ -19,8 +19,7 @@ test('Resume', async ({ page }) => {
   });
 });
 
-test('Resume - slides', async ({ page }) => {
-  // broadly
+test('Resume - Broadly slides', async ({ page }) => {
   const recentSection = page.getByLabel('Recent experience');
   expect(recentSection).toBeVisible();
   await recentSection.hover();
@@ -43,8 +42,9 @@ test('Resume - slides', async ({ page }) => {
   });
 
   await page.keyboard.press('Escape');
+});
 
-  // about.me
+test('Resume - about.me slides', async ({ page }) => {
   const pastSection = page.getByLabel('Past experience');
   expect(pastSection).toBeVisible();
   await pastSection.hover();
