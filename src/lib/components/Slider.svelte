@@ -29,6 +29,7 @@
 
     input {
       width: 100%;
+      background-color: transparent;
 
       &::-webkit-slider-thumb {
         outline: 1px solid black;
