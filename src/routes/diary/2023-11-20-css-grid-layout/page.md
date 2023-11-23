@@ -41,7 +41,7 @@ Non deserunt ipsum est tempor. Ipsum est, tempor dolor quis duis. Dolor quis dui
 
 Ad minim sed pariatur, pariatur minim. Pariatur pariatur minim mollit eu amet consequat, qui. Mollit eu amet consequat qui cupidatat exercitation ut. Amet consequat qui cupidatat exercitation ut non. Qui cupidatat exercitation, ut non laboris.
 
-<aside>
+<aside style="--aside-span: 3">
 
 ### Aside
 
