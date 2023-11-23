@@ -55,7 +55,7 @@
   tabindex="0"
 >
   {#if showNote}
-    {key}
+    <span class="note">{key}</span>
   {/if}
 </div>
 
@@ -80,6 +80,12 @@
     color: white;
     font-weight: bold;
     text-transform: uppercase;
+
+    .note {
+      @media @mobile {
+        display: none;
+      }
+    }
   }
 
   @keyframes bloom {

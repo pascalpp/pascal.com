@@ -53,10 +53,14 @@
     flex-direction: row;
     align-items: flex-start;
     gap: 2rem;
+    @media @mobile {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .swatch-grid {
-    width: min(90vw, 620px);
+    width: 620px;
     touch-action: none;
     margin-block: 1rem;
     display: grid;
@@ -64,6 +68,10 @@
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: 1fr;
     user-select: none;
+
+    @media @mobile {
+      width: calc(100% - 2rem);
+    }
   }
 
   .controls {
