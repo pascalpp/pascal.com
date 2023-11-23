@@ -11,4 +11,8 @@ tags: [css]
 
 Had a little CSS dream that told me to make this. Need to hook this up to [tone.js](https://tonejs.github.io)!
 
-<SwatchGrid />
+_Update: I did it. Make sure your volume isn't too loud, and tap or drag over the swatches._
+
+<div class="bleed-right">
+  <SwatchGrid />
+</div>

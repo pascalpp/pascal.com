@@ -1,12 +1,16 @@
 <script lang="ts">
+  import * as Tone from 'tone';
   import { onMount } from 'svelte';
-  import randomHexColor from './randomColor';
+  import { randomHexColor, randomNote } from './helpers';
 
-  export let showLetters = false;
+  export let showNote = false;
+  export let synth: Tone.PolySynth;
+  export let audioEnabled = false;
 
   let color = randomHexColor();
   let hovercolor = randomHexColor();
   let endcolor = randomHexColor();
+  let key = randomNote();
   let animating = false;
 
   function startAnimating(event: MouseEvent | TouchEvent | KeyboardEvent) {
@@ -14,6 +18,7 @@
     const target = event.target as HTMLElement;
     target.addEventListener('animationend', stopAnimating, { once: true });
     animating = true;
+    if (audioEnabled) synth.triggerAttackRelease(key, '4n');
   }
 
   function stopAnimating() {
@@ -29,7 +34,7 @@
   }
 
   let interval = Math.ceil(Math.random() * 26);
-  const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
+
   onMount(() => {
     const timer = setInterval(changeColor, interval * 200);
     return () => clearInterval(timer);
@@ -49,8 +54,8 @@
   role="button"
   tabindex="0"
 >
-  {#if showLetters}
-    {alphabet[interval - 1]}
+  {#if showNote}
+    {key}
   {/if}
 </div>
 
@@ -83,7 +88,7 @@
       scale: 1;
       opacity: 1;
     }
-    50% {
+    90% {
       background-color: var(--hovercolor);
       scale: 3;
       opacity: 0.1;
