@@ -59,7 +59,9 @@ const config = {
   },
 
   vitePlugin: {
-    inspector: true,
+    inspector: {
+      toggleKeyCombo: 'control-shift',
+    },
   },
 };
 
