@@ -2,7 +2,7 @@
 title: Blooming swatches
 date: 2023-11-21T13:58:25.766Z
 status: published
-tags: [css]
+tags: [css, tone.js, svelte]
 ---
 
 <script lang="ts">
