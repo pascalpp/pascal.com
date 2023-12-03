@@ -1,404 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>Slides</title>
+    <title>Slides</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/white.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="./lib/css/zenburn.css" />
 
-		<style>
+    <style>
+      body {
+        background-image: url(./images/popcorn-background.jpg);
+        background-size: cover;
+      }
 
-			body {
-				background-image: url(./images/popcorn-background.jpg);
-				background-size: cover;
-			}
+      .slides section {
+        transition: opacity 500ms ease-in-out;
+        opacity: 0 !important;
+      }
+      .slides section.present {
+        opacity: 1 !important;
+      }
 
-			.slides section {
-				transition: opacity 500ms ease-in-out;
-				opacity: 0 !important;
-			}
-			.slides section.present {
-				opacity: 1 !important;
-			}
+      .reveal {
+        transition: background-color 500ms ease-in-out;
+        text-align: left;
+      }
+      .reveal img {
+        opacity: 0;
+      }
 
-			.reveal {
-				transition: background-color 500ms ease-in-out;
-				text-align: left;
-			}
-			.reveal img {
-				opacity: 0;
-			}
+      .text-and-image .reveal {
+        background-color: white;
+        color: #222;
+      }
+      .text .reveal {
+        background-color: #333;
+        color: white;
+      }
 
-			.text-and-image .reveal {
-				background-color: white;
-				color: #222;
-			}
-			.text .reveal {
-				background-color: #333;
-				color: white;
-			}
+      .me .reveal {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .me .slides h2 {
+        padding-left: 45%;
+        text-shadow: 5px 5px 2px black;
+      }
+      .me .slides ul {
+        padding-left: 45%;
+        text-shadow: 1px 1px 10px black;
+      }
 
-			.me .reveal {
-				background-color: rgba(0, 0, 0, 0.2);
-			}
-			.me .slides h2 {
-				padding-left: 45%;
-				text-shadow: 5px 5px 2px black;
-			}
-			.me .slides ul {
-				padding-left: 45%;
-				text-shadow: 1px 1px 10px black;
-			}
+      .big-popcorn .reveal {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .reveal h1 {
+        margin-top: 15vh;
+        font-size: 3em;
+        color: white;
+        text-shadow: 5px 5px 2px black;
+        text-align: center;
+      }
+      .reveal h4 {
+        margin-bottom: 0;
+        background-color: white;
+        color: #333;
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.3em 0.6em 0.3em 0.4em;
+        text-transform: uppercase;
+        font-size: 0.5em;
+      }
+      .methods .reveal {
+        background-color: rgb(209, 112, 0);
+      }
+      .step-one .reveal {
+        background-color: #363;
+      }
+      .step-one .reveal h4 {
+        color: #363;
+      }
+      .step-two .reveal {
+        background-color: #336;
+      }
+      .step-two .reveal h4 {
+        color: #336;
+      }
+      .step-three .reveal {
+        background-color: #933;
+      }
+      .step-three .reveal h4 {
+        color: #933;
+      }
+      .requirements .reveal {
+      }
+      .text-and-image section {
+        text-align: left;
+      }
+      .text-and-image img {
+        float: right;
+        opacity: 1;
+        width: 45%;
+      }
+      .text-and-image ul {
+        width: 50%;
+      }
+      .xtext-and-image ul {
+        float: left;
+        opacity: 1;
+        width: 45%;
+      }
+      .fragment.current-visible:not(.current-fragment) {
+        display: none;
+      }
+      .no-olive-oil {
+        float: right;
+        background-image: url(./images/olive-oil.jpg);
+        width: 45%;
+        height: 600px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-align: center;
+      }
+      .no-olive-oil .prohibited {
+        float: none;
+        width: 80%;
+        margin-top: 60px;
+      }
+    </style>
 
-			.big-popcorn .reveal {
-				background-color: rgba(0, 0, 0, 0.2);
-			}
-			.reveal h1 {
-				margin-top: 15vh;
-				font-size: 3em;
-				color: white;
-				text-shadow: 5px 5px 2px black;
-				text-align: center;
-			}
-			.reveal h4 {
-				margin-bottom: 0;
-				background-color: white;
-				color: #333;
-				display: inline-block;
-				text-decoration: none;
-				padding: 0.3em 0.6em 0.3em 0.4em;
-				text-transform: uppercase;
-				font-size: 0.5em;
-			}
-			.methods .reveal {
-				background-color: rgb(209, 112, 0);
-			}
-			.step-one .reveal {
-				background-color: #363;
-			}
-			.step-one .reveal h4 {
-				color: #363;
-			}
-			.step-two .reveal {
-				background-color: #336;
-			}
-			.step-two .reveal h4 {
-				color: #336;
-			}
-			.step-three .reveal {
-				background-color: #933;
-			}
-			.step-three .reveal h4 {
-				color: #933;
-			}
-			.requirements .reveal {
-			}
-			.text-and-image section {
-				text-align: left;
-			}
-			.text-and-image img {
-				float: right;
-				opacity: 1;
-				width: 45%;
-			}
-			.text-and-image ul {
-				width: 50%;
-			}
-			.xtext-and-image ul {
-				float: left;
-				opacity: 1;
-				width: 45%;
-			}
-			.fragment.current-visible:not(.current-fragment) {
-				display: none;
-			}
-			.no-olive-oil {
-				float: right;
-				background-image: url(./images/olive-oil.jpg);
-				width: 45%;
-				height: 600px;
-				background-size: contain;
-				background-repeat: no-repeat;
-				text-align: center;
-			}
-			.no-olive-oil .prohibited {
-				float: none;
-				width: 80%;
-				margin-top: 60px;
-			}
-		</style>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-state="text me" data-background-image="./images/pascal.png" data-background-position="center top">
+          <h2 class="fragment">Things I’m Passionate About</h2>
+          <ul>
+            <li class="fragment">Music.</li>
+            <li class="fragment">Web Development.</li>
+            <li class="fragment">Other Stuff.</li>
+            <li class="fragment">
+              <h3 style="display: inline">Good Popcorn!</h3>
+            </li>
+          </ul>
+        </section>
+        <section data-state="big-popcorn">
+          <h1>How to make good popcorn</h1>
+        </section>
+        <section data-state="text methods">
+          <h2>Methods</h2>
+          <ul>
+            <li class="fragment">In the microwave. <span class="fragment">Yuck.</span></li>
+            <li class="fragment">In an air-popper. <span class="fragment">Meh.</span></li>
+            <li class="fragment">Go to the theater. <span class="fragment">Expensive.</span></li>
+            <li class="fragment">
+              On the stove.
+              <h3 class="fragment" style="display: inline">Yes!</h3>
+            </li>
+          </ul>
+        </section>
+        <section
+          data-state="text-and-image requirements"
+          data-background-color="#ffc"
+          data-background-image="./images/checklist.png"
+          data-background-size="70%"
+          data-background-position="bottom right"
+          data-background-repeat="no-repeat"
+        >
+          <h2>Requirements</h2>
+          <ul>
+            <li class="fragment">a pot</li>
+            <li class="fragment">a stove</li>
+            <li class="fragment">some oil</li>
+            <li class="fragment">some popcorn</li>
+          </ul>
+        </section>
+        <section data-state="text-and-image">
+          <h2>The Right Pot</h2>
+          <img src="./images/heavy-bottom-pot.jpg" />
+          <ul>
+            <li class="fragment">Heavy-bottom</li>
+            <li class="fragment">Round top handle</li>
+            <li class="fragment">Good side handles</li>
+            <li class="fragment">Clear lid optional</li>
+            <li class="fragment">A wok can also work</li>
+          </ul>
+        </section>
+        <section data-state="text-and-image">
+          <h2>Your stove</h2>
+          <img src="./images/gas-stove.jpg" style="width: 40%" />
+          <ul>
+            <li class="fragment">Gas works great</li>
+            <li class="fragment">Electric should work</li>
+            <li class="fragment">Don’t buy a new stove</li>
+          </ul>
+        </section>
+        <section data-state="text-and-image">
+          <h2>The Right Oil</h2>
+          <div class="fragment current-visible">
+            <ul>
+              <li>High smoke point</li>
+            </ul>
+          </div>
+          <div class="fragment current-visible">
+            <ul>
+              <li>High smoke point</li>
+              <li>Most oils are fine</li>
+            </ul>
+          </div>
+          <div class="fragment current-visible">
+            <img src="./images/canola-oil.jpg" />
+            <ul>
+              <li>High smoke point</li>
+              <li>Most oils are fine</li>
+            </ul>
+          </div>
+          <div class="fragment current-visible">
+            <img src="./images/coconut-oil.jpg" />
+            <ul>
+              <li>High smoke point</li>
+              <li>Most oils are fine</li>
+            </ul>
+          </div>
+          <div class="fragment current-visible">
+            <div class="no-olive-oil">
+              <img src="./images/prohibited.png" class="prohibited" />
+            </div>
+            <ul>
+              <li>High smoke point</li>
+              <li>Most oils are fine</li>
+              <li>Except olive oil</li>
+            </ul>
+          </div>
+        </section>
+        <section data-state="text-and-image">
+          <img src="./images/arrowhead-popcorn.jpg" />
+          <h2>Popcorn</h2>
+          <ul>
+            <li class="fragment">Lots of varieties</li>
+            <li class="fragment">Standard yellow seems to be the fluffiest</li>
+            <li class="fragment">Use whatever you have on hand</li>
+          </ul>
+        </section>
+        <section data-state="text step-one">
+          <h4>Step One</h4>
+          <h2>Party of Five</h2>
+          <ul>
+            <li class="fragment">Place pot on large burner, on high.</li>
+            <li class="fragment">Cover bottom of pot with oil.</li>
+            <li class="fragment">Drop 5 kernels in, cover, and shake.</li>
+            <li class="fragment">Wait for five pops.</li>
+          </ul>
+        </section>
+        <section data-state="text step-two">
+          <h4>Step Two</h4>
+          <h2>Stranger Things</h2>
+          <ul>
+            <li class="fragment">Remove pot from heat.</li>
+            <li class="fragment">Cover bottom of pot with popcorn.</li>
+            <li class="fragment">Replace lid and give it a shake.</li>
+            <li class="fragment">Count to 30. Really. Slowly.</li>
+            <li class="fragment">Ready a large bowl next to the stove.</li>
+          </ul>
+        </section>
+        <section data-state="text step-three">
+          <h4>Step Three</h4>
+          <h2>The Big Bang Theory</h2>
+          <ul>
+            <li class="fragment">Return pot to heat.</li>
+            <li class="fragment">Shake vigorously until popping starts.</li>
+            <li class="fragment">Keep shaking until popping slows.</li>
+            <li class="fragment">Remove from heat and pour into bowl.</li>
+            <li class="fragment">Season to taste, toss with hands.</li>
+          </ul>
+        </section>
+        <section data-state="big-popcorn">
+          <h1>Enjoy!</h1>
+        </section>
+      </div>
+    </div>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-state="text me" data-background-image="./images/pascal.png" data-background-position="center top">
-					<h2 class="fragment">Things I’m Passionate About</h2>
-					<ul>
-						<li class="fragment">
-							Music.
-						</li>
-						<li class="fragment">
-							Web Development.
-						</li>
-						<li class="fragment">
-							Other Stuff.
-						</li>
-						<li class="fragment">
-							<h3 style="display: inline;">Good Popcorn!</h3>
-						</li>
-					</ul>
-				</section>
-				<section data-state="big-popcorn">
-					<h1>
-						How to make good popcorn
-					</h1>
-				</section>
-				<section data-state="text methods">
-					<h2>Methods</h2>
-					<ul>
-						<li class="fragment">
-							In the microwave. <span class="fragment">Yuck.</span>
-						</li>
-						<li class="fragment">
-							In an air-popper. <span class="fragment">Meh.</span>
-						</li>
-						<li class="fragment">
-							Go to the theater. <span class="fragment">Expensive.</span>
-						</li>
-						<li class="fragment">
-							On the stove. <h3 class="fragment" style="display: inline;">Yes!</h3>
-						</li>
-					</ul>
-				</section>
-				<section data-state="text-and-image requirements" data-background-color="#ffc" data-background-image="./images/checklist.png" data-background-size="70%" data-background-position="bottom right" data-background-repeat="no-repeat">
-					<h2>Requirements</h2>
-					<ul>
-						<li class="fragment">
-							a pot
-						</li>
-						<li class="fragment">
-							a stove
-						</li>
-						<li class="fragment">
-							some oil
-						</li>
-						<li class="fragment">
-							some popcorn
-						</li>
-					</ul>
-				</section>
-				<section data-state="text-and-image">
-					<h2>The Right Pot</h2>
-					<img src="./images/heavy-bottom-pot.jpg">
-					<ul>
-						<li class="fragment">
-							Heavy-bottom
-						</li>
-						<li class="fragment">
-							Round top handle
-						</li>
-						<li class="fragment">
-							Good side handles
-						</li>
-						<li class="fragment">
-							Clear lid optional
-						</li>
-						<li class="fragment">
-							A wok can also work
-						</li>
-					</ul>
-				</section>
-				<section data-state="text-and-image">
-					<h2>Your stove</h2>
-					<img src="./images/gas-stove.jpg" style="width: 40%;">
-					<ul>
-						<li class="fragment">
-							Gas works great
-						</li>
-						<li class="fragment">
-							Electric should work
-						</li>
-						<li class="fragment">
-							Don’t buy a new stove
-						</li>
-					</ul>
-				</section>
-				<section data-state="text-and-image">
-					<h2>The Right Oil</h2>
-					<div class="fragment current-visible">
-						<ul>
-							<li>
-								High smoke point
-							</li>
-						</ul>
-					</div>
-					<div class="fragment current-visible">
-						<ul>
-							<li>
-								High smoke point
-							</li>
-							<li>
-								Most oils are fine
-							</li>
-						</ul>
-					</div>
-					<div class="fragment current-visible">
-						<img src="./images/canola-oil.jpg">
-						<ul>
-							<li>
-								High smoke point
-							</li>
-							<li>
-								Most oils are fine
-							</li>
-						</ul>
-					</div>
-					<div class="fragment current-visible">
-						<img src="./images/coconut-oil.jpg">
-						<ul>
-							<li>
-								High smoke point
-							</li>
-							<li>
-								Most oils are fine
-							</li>
-						</ul>
-					</div>
-					<div class="fragment current-visible">
-						<div class="no-olive-oil">
-							<img src="./images/prohibited.png" class="prohibited">
-						</div>
-						<ul>
-							<li>
-								High smoke point
-							</li>
-							<li>
-								Most oils are fine
-							</li>
-							<li>
-								Except olive oil
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section data-state="text-and-image">
-					<img src="./images/arrowhead-popcorn.jpg">
-					<h2>Popcorn</h2>
-					<ul>
-						<li class="fragment">
-							Lots of varieties
-						</li>
-						<li class="fragment">
-							Standard yellow seems to be the fluffiest
-						</li>
-						<li class="fragment">
-							Use whatever you have on hand
-						</li>
-					</ul>
+    <script src="./lib/js/head.js"></script>
+    <script src="./js/reveal.js"></script>
 
-				</section>
-				<section data-state="text step-one">
-					<h4>Step One</h4>
-					<h2>Party of Five</h2>
-					<ul>
-						<li class="fragment">
-							Place pot on large burner, on high.
-						</li>
-						<li class="fragment">
-							Cover bottom of pot with oil.
-						</li>
-						<li class="fragment">
-							Drop 5 kernels in, cover, and shake.
-						</li>
-						<li class="fragment">
-							Wait for five pops.
-						</li>
-					</ul>
-				</section>
-				<section data-state="text step-two">
-					<h4>Step Two</h4>
-					<h2>Stranger Things</h2>
-					<ul>
-						<li class="fragment">
-							Remove pot from heat.
-						</li>
-						<li class="fragment">
-							Cover bottom of pot with popcorn.
-						</li>
-						<li class="fragment">
-							Replace lid and give it a shake.
-						</li>
-						<li class="fragment">
-							Count to 30. Really. Slowly.
-						</li>
-						<li class="fragment">
-							Ready a large bowl next to the stove.
-						</li>
-					</ul>
-				</section>
-				<section data-state="text step-three">
-					<h4>Step Three</h4>
-					<h2>The Big Bang Theory</h2>
-					<ul>
-						<li class="fragment">
-							Return pot to heat.
-						</li>
-						<li class="fragment">
-							Shake vigorously until popping starts.
-						</li>
-						<li class="fragment">
-							Keep shaking until popping slows.
-						</li>
-						<li class="fragment">
-							Remove from heat and pour into bowl.
-						</li>
-						<li class="fragment">
-							Season to taste, toss with hands.
-						</li>
-					</ul>
-				</section>
-				<section data-state="big-popcorn">
-					<h1>
-						Enjoy!
-					</h1>
-				</section>
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				],
-				history: true,
-				center: false,
-				controls: false,
-				overview: false,
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+        ],
+        history: true,
+        center: false,
+        controls: false,
+        overview: false,
+      });
+    </script>
+  </body>
 </html>
