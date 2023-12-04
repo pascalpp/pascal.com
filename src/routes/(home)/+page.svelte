@@ -67,6 +67,8 @@
         <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./movies/index.html" class="bubble small">watch some movies I made</a>
         <div class="bubble-divider small" />
+        <a data-sveltekit-reload href="./misc/popcorn/index.html" class="bubble small">make better popcorn</a>
+        <div class="bubble-divider small" />
         <a data-sveltekit-reload href="./index.old.html" class="bubble small">look at the old version of this page</a>
         <div class="bubble-divider large" />
         <div class="bubble small bold">get outta here:</div>
