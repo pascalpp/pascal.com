@@ -54,7 +54,7 @@
   role="button"
   tabindex="0"
 >
-  {#if showNote}
+  {#if showNote && audioEnabled}
     <span class="note">{key}</span>
   {/if}
 </div>
