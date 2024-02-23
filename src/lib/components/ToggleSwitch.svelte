@@ -14,6 +14,7 @@
     { value: 'true', label: '' },
   ];
 
+  export let id: string;
   export let name: string;
   export let options: ToggleOption[] = defaultOptions;
   export let value: ToggleOptionValue = options[0].value;
@@ -42,6 +43,7 @@
   class:active
   class:checked
   type="button"
+  {id}
   {name}
   {value}
   {disabled}
@@ -59,6 +61,8 @@
     appearance: unset;
     background-color: unset;
     border: unset;
+    font-size: inherit;
+    transform: none;
 
     --color: #aaa;
     &.active {
@@ -109,10 +113,13 @@
       overflow: hidden;
       transition: color @transition-time ease-in-out;
       box-sizing: border-box;
-      padding: 0.3em 1em;
+      padding: 0.5em 1em;
+      &:empty {
+        padding: 0.66em;
+      }
       color: fade(white, 50%);
       border: none;
-      min-height: 1.9em;
+      min-height: 1em;
       border-radius: 1.5em;
       text-overflow: initial;
       position: relative;
