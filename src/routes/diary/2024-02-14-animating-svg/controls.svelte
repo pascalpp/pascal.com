@@ -5,7 +5,7 @@
   import Column from '$lib/components/Column.svelte';
   import ButtonBar from '$lib/components/ButtonBar.svelte';
 
-  let selected = 'dotted';
+  let selected = 'still';
   let options = [
     { value: 'still', label: 'Still' },
     { value: 'dotted', label: 'Dashed' },
