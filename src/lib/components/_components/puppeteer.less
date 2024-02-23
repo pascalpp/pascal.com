@@ -1,0 +1,25 @@
+html.puppeteer {
+  *,
+  *:before,
+  *:after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    transition-delay: 1ms !important;
+    animation-delay: 1ms !important;
+  }
+  .dropdown .dropdown-overlay,
+  .dropdown .dropdown-content {
+    transition: none !important;
+  }
+  .modal,
+  .modal .modal-content {
+    transition: none !important;
+    transition-delay: 0 !important;
+  }
+  .spoke-spinner svg {
+    animation: none !important;
+  }
+  * {
+    caret-color: transparent !important;
+  }
+}

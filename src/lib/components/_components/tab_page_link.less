@@ -1,0 +1,97 @@
+@import (reference) "../styles/variables";
+
+.tab-page-link {
+  // all padding/margins below are relative to this font-size
+  font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1em 0;
+  border-bottom: 1px solid fade(black, 10%);
+
+  &.active {
+    background-color: fade(@blue, 2%);
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 3px;
+      height: calc(100% - 11px);
+      border-radius: 2px;
+      background-color: fade(@blue, 100%);
+    }
+  }
+
+  .icon {
+    width: 1.9em;
+    margin-left: 1em;
+    margin-top: 0.25em;
+    margin-right: 0.75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    svg {
+      margin: 0 -100%;
+      // ^ allow icons to be scaled up without affecting layout
+      // e.g. TripAdvisor icon is 150% wide
+      width: 100%;
+      height: auto;
+      color: @black;
+    }
+  }
+
+  .text-rows {
+    flex: 1;
+    margin-left: 1.25em;
+    justify-content: center;
+    gap: 0.2em;
+    overflow: hidden;
+    padding-bottom: 0.2em;
+  }
+
+  .title {
+    color: @black;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .badge {
+    transform: translateY(-1px);
+  }
+
+  .subtitle {
+    color: @black;
+    font-size: 0.8em;
+  }
+
+  .icon + .text-rows {
+    margin-left: 0em;
+    padding-bottom: 0;
+  }
+
+  .icon-right {
+    width: 1.25em;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @black;
+    opacity: 0.3;
+    margin-left: 0.25em;
+    margin-right: 0.75em;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

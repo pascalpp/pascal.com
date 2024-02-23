@@ -1,0 +1,97 @@
+@import (reference) "../styles/variables";
+
+.setting {
+  width: 100%;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+
+  .setting-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    .setting-title {
+      font-size: 1.15em;
+    }
+    .setting-subtitle {
+      color: fade(black, 70%);
+    }
+  }
+
+  .setting-input {
+    display: block;
+    margin-top: 4px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .editable-textarea {
+    margin-top: 8px;
+  }
+
+  .size-small &:not(.ignore-size) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    .setting-text {
+      display: contents;
+    }
+    .setting-title {
+      order: 1;
+      width: 100%;
+    }
+    .setting-input {
+      order: 2;
+      margin-top: 0px;
+    }
+    .setting-subtitle {
+      order: 3;
+      width: 100%;
+    }
+
+    // put Edit button at bottom of Setting.Textarea when narrow
+    &.setting-textarea {
+      .setting-subtitle {
+        order: 2;
+      }
+      .setting-input {
+        order: 3;
+      }
+    }
+  }
+}
+
+.card.setting-card {
+  padding: 24px;
+  font-size: 14px;
+
+  .setting-column {
+    gap: 24px;
+  }
+
+  hr.setting-divider {
+    margin: 0 -8px;
+    height: 0;
+    border: none;
+    border-top: 1px solid fade(black, 10%);
+  }
+}
+
+.size-small .setting-card {
+  .setting-column {
+    gap: 20px;
+  }
+  .setting + .setting {
+    border-top: 1px solid fade(black, 10%);
+    margin: 0 -8px;
+    padding: 0 8px;
+    padding-top: 20px;
+  }
+}

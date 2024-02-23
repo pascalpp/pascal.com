@@ -1,0 +1,112 @@
+@new-color: #de8918;
+@sent-color: #de8918;
+@partial-color: #de8918;
+@paid-color: #12a165;
+@accepted-color: #12a165;
+@declined-color: #db5757;
+@expired-color: #ffc02b;
+@converted-color: #555555;
+@refunded-color: #db5757;
+@void-color: #aaa;
+
+.payment-status-badge {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.33em;
+
+  .status-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &.new .status-icon {
+    color: @new-color;
+  }
+  &.sent .status-icon {
+    color: @sent-color;
+  }
+  &.partial .status-icon {
+    color: @partial-color;
+  }
+  &.paid .status-icon {
+    color: @paid-color;
+  }
+  &.accepted .status-icon {
+    color: @accepted-color;
+  }
+  &.declined .status-icon {
+    color: @declined-color;
+  }
+  &.expired .status-icon {
+    color: @expired-color;
+  }
+  &.converted .status-icon {
+    color: @converted-color;
+  }
+  &.refunded .status-icon {
+    color: @refunded-color;
+  }
+  &.void .status-icon {
+    color: @void-color;
+  }
+
+  .status-label {
+    font-weight: 400;
+  }
+
+  &.pill {
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    box-sizing: border-box;
+    height: 2em;
+    vertical-align: text-bottom;
+    background-color: white;
+    border: 1px solid fade(black, 15%);
+
+    .status-icon {
+      margin-left: -0.1em;
+    }
+    .status-icon:first-child:last-child {
+      margin: 0 -0.5em;
+    }
+
+    &.new {
+      background-color: fade(@new-color, 5%);
+    }
+    &.sent {
+      background-color: fade(@sent-color, 5%);
+    }
+    &.partial {
+      background-color: fade(@partial-color, 5%);
+    }
+    &.paid {
+      background-color: fade(@paid-color, 10%);
+    }
+    &.accepted {
+      background-color: fade(@accepted-color, 10%);
+    }
+    &.declined {
+      background-color: fade(@declined-color, 10%);
+    }
+    &.expired {
+      background-color: fade(@expired-color, 10%);
+    }
+    &.converted {
+      background-color: fade(@converted-color, 3%);
+    }
+    &.refunded {
+      background-color: fade(@refunded-color, 10%);
+    }
+    &.void {
+      background-color: white;
+    }
+  }
+}

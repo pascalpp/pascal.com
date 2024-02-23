@@ -1,0 +1,36 @@
+@import "../styles/variables";
+
+.shimmer {
+  display: inline-block;
+  width: 5%;
+  height: 1em;
+  margin-bottom: 0.25em; // simulate hanging punctuation, shift upward
+  vertical-align: middle;
+  animation: shimmer-grow-right 0.5s forwards
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .shimmer-text {
+    display: block;
+    background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    height: 1em;
+    width: 100%;
+    border-radius: 1rem;
+    animation: shimmer-text 2s infinite linear;
+  }
+}
+
+@keyframes shimmer-grow-right {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer-text {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

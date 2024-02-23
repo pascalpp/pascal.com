@@ -1,0 +1,33 @@
+@import (reference) "../styles/variables";
+
+.radio-button {
+  color: black;
+  cursor: pointer;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .radio-input {
+    svg {
+      color: @blue;
+      width: 28px;
+      height: auto;
+      stroke-width: 2.5px;
+      opacity: 0;
+    }
+  }
+
+  &.checked {
+    .radio-input {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

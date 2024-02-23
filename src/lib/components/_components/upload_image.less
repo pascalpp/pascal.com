@@ -1,0 +1,45 @@
+@import (reference) "../styles/variables";
+
+.drop-zone.upload-image {
+  border-radius: 10px;
+  border: 1px dotted @gray400;
+  padding: 24px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &.active {
+    border: 1px solid @blue;
+    background-color: @broadly-blue-page-color;
+  }
+
+  .file-info {
+    margin-top: 16px;
+    gap: 0px;
+
+    .file-icon-and-name {
+      gap: 8px;
+      svg {
+        stroke-width: 1;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .file-metadata {
+      opacity: 0.7;
+      font-size: 0.9em;
+    }
+  }
+
+  .instructions {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+
+  .allowed-extensions {
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
+  }
+}

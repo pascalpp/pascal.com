@@ -1,0 +1,82 @@
+@import "../styles/variables";
+
+.badge {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 0.667em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 1em;
+  line-height: 1.5em;
+  height: 1.7em;
+  vertical-align: text-bottom;
+  background-color: white;
+  border: 1px solid fade(black, 20%);
+  color: fade(black, 70%);
+  margin-left: 0.75em;
+  white-space: nowrap;
+
+  &.standalone {
+    margin-left: 0;
+  }
+
+  &.small {
+    font-size: 12px;
+  }
+
+  &.notification-badge {
+    font-size: 12px;
+    line-height: 18px;
+    height: 20px;
+    background-color: @button-danger-fill;
+    color: white;
+  }
+
+  &.success {
+    background-color: @button-success-fill;
+    color: white;
+  }
+
+  &.warning {
+    background-color: tint(@yellow, 60%);
+    color: black;
+  }
+
+  &.error {
+    background-color: @button-danger-fill;
+    color: white;
+  }
+
+  &[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+    &::before {
+      display: none;
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      transform: translateY(-10px);
+      padding: 10px 15px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      letter-spacing: normal;
+      text-transform: none;
+      font-size: 13px;
+      text-align: left;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      &::before {
+        z-index: 1;
+        display: block;
+      }
+    }
+  }
+}
+
+button.badge {
+  width: auto;
+}

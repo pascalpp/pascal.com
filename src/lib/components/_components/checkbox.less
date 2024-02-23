@@ -1,0 +1,93 @@
+@import (reference) "../styles/variables";
+
+.checkbox {
+  // just using the outer node to scope the styles
+  display: contents;
+  position: relative;
+
+  &.top {
+    .button-content {
+      align-items: flex-start;
+    }
+  }
+
+  label {
+    color: black;
+    cursor: pointer;
+    padding-right: 0.5em;
+    position: relative;
+
+    &.tiny {
+      font-size: 10px;
+    }
+    &.small {
+      font-size: 12px;
+    }
+    &.medium {
+      font-size: 16px;
+    }
+    &.large {
+      font-size: 18px;
+    }
+    .button-content {
+      user-select: none;
+    }
+
+    .icon-left {
+      flex-shrink: 0;
+      border: 1px solid fade(black, 40%);
+      background-color: #fafafa;
+      width: 1.25em;
+      height: 1.25em;
+      margin-right: 0.75em;
+      border-radius: 4px;
+      position: relative;
+      box-shadow: 0px 1px 0px fade(black, 10%);
+      transition: background-color 100ms ease-in-out;
+      position: relative;
+    }
+
+    svg {
+      color: white;
+      opacity: 0;
+      transition: opacity 100ms ease-in-out;
+      stroke-width: 3px;
+      width: 90%;
+      height: 90%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -47.5%);
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus + label {
+      outline-color: fade(@blue, 60%);
+      outline-style: auto;
+      outline-width: 1px;
+      outline-offset: 3px;
+    }
+
+    &:disabled + label {
+      opacity: 0.3;
+      pointer-events: none;
+      .icon-left {
+        box-shadow: none;
+      }
+    }
+
+    &:checked + label {
+      .icon-left {
+        background-color: @blue;
+      }
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+}

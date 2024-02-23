@@ -1,0 +1,119 @@
+@import (reference) "../styles/variables";
+
+.modal.basic.alert-modal {
+  @small-modal-viewport: ~"(max-width: 370px)"; // smaller than iPhone 8
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media @small-modal-viewport {
+    align-items: stretch;
+  }
+
+  .modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 20vh;
+    @media @small-modal-viewport {
+      align-items: stretch;
+    }
+  }
+
+  .modal-content {
+    width: auto;
+    padding: 20px;
+    padding-top: 30px;
+    font-size: 16px;
+    border: 1px solid fade(@blue, 30%);
+    border-top: 10px solid @blue;
+    box-sizing: border-box;
+    text-align: center;
+    @media @small-modal-viewport {
+      width: 100%;
+    }
+  }
+
+  .alert-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+  }
+
+  .alert-message {
+    overflow: hidden;
+    // Setting min/max-width here allows the message size to control the width
+    // of the modal. Constraining the width of the message instead of the whole
+    // modal allows dialog buttons to make the modal wider if needed, while
+    // keeping the message at a readable width even when the buttons are wider.
+    min-width: 220px;
+    max-width: 320px;
+    margin-bottom: 0.5em;
+    user-select: text;
+
+    .truncate {
+      max-width: 90%;
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+  }
+
+  .button.roundrect .button-label {
+    white-space: nowrap;
+  }
+
+  .button-row {
+    width: 100%;
+    @media @small-modal-viewport {
+      // stack buttons on smaller viewports, with primary button on top
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+  }
+
+  &.error {
+    @color: hsla(0, 65%, 60%, 1);
+    .modal-content {
+      border-color: fade(@color, 30%);
+      border-top-color: @color;
+    }
+    .alert-icon {
+      color: @color;
+      margin-bottom: -10px;
+      svg {
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
+
+  &.success {
+    @color: @button-success-fill;
+    .modal-content {
+      border-color: fade(@color, 30%);
+      border-top-color: @color;
+    }
+    .alert-icon {
+      background-color: @color;
+      border-radius: 50%;
+      color: white;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 65%;
+        height: auto;
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  .close-alert-button {
+    margin-top: 10px;
+  }
+}

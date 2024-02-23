@@ -1,0 +1,135 @@
+@import (reference) "../styles/variables.less";
+
+.modal {
+  @transition-time: 150ms;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overscroll-behavior: contain;
+  overflow: auto;
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity @transition-time ease-in-out;
+
+  .modal-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: fade(white, 80%);
+    backdrop-filter: blur(2px);
+  }
+
+  .modal-content {
+    outline: none;
+    transform: translateY(-50vh);
+    transition: transform @transition-time ease-in-out;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid fade(black, 20%);
+    box-shadow: 0px 5px 10px fade(black, 10%);
+    z-index: 1;
+    box-sizing: border-box;
+  }
+
+  // delay the modal content when entering
+  // so the overlay fades in first, then the modal slides in
+  &.enter {
+    transition-delay: 0ms;
+    .modal-content {
+      transition-delay: @transition-time / 2;
+    }
+  }
+  // delay the overlay fadeout when exiting
+  // so the modal slides out first, then the overlay fades out
+  &.exit {
+    transition-delay: @transition-time / 2;
+    .modal-content {
+      transition-delay: 0ms;
+    }
+  }
+
+  &.entered {
+    opacity: 1;
+    .modal-content {
+      transform: translateY(0);
+    }
+  }
+
+  .modal-close-button {
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    opacity: 0.7;
+    border: 1px solid fade(black, 10%);
+    border-radius: 4px;
+    .button-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+    }
+
+    svg {
+      width: 22px;
+      opacity: 0.7;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .modal-title {
+    font-size: 22px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  &.basic {
+    .modal-content {
+      padding: 20px;
+      padding-top: 50px;
+      > :first-child {
+        margin-top: 0;
+      }
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.titlebar {
+      .modal-close-button {
+        border: none;
+        transform: translateY(-1px);
+      }
+
+      .modal-title {
+        margin: -20px;
+        margin-top: -50px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-align: center;
+        padding: 15px 50px;
+        border-bottom: 1px solid fade(black, 10%);
+        text-transform: uppercase;
+      }
+    }
+  }
+}

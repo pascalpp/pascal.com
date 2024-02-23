@@ -1,0 +1,55 @@
+@import (reference) "../styles/variables";
+
+.error-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  .error-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    .error-star {
+      width: 120px;
+    }
+
+    .error-title {
+      margin: 0;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      font-size: 32px;
+      @media @mobile {
+        font-size: 22px;
+      }
+    }
+    .error-subtitle {
+      max-width: 500px;
+      margin: 0;
+      font-weight: normal;
+      font-size: 20px;
+      @media @mobile {
+        font-size: 16px;
+      }
+    }
+
+    .error-actions {
+      font-size: 16px;
+      margin-top: 50px;
+      max-width: 500px;
+      width: 100%;
+      gap: 1.5em;
+    }
+  }
+}

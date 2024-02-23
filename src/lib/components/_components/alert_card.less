@@ -1,0 +1,94 @@
+@import (reference) "../styles/variables";
+
+.card.alert-card {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid fade(black, 10%);
+  border-radius: 8px;
+  font-size: 14px;
+
+  .alert-icon {
+    color: currentColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 24px;
+      height: auto;
+      stroke-width: 1.5px;
+    }
+  }
+
+  .alert-content {
+    padding: 0.1em 0;
+    gap: 0.75em;
+  }
+
+  // color variations
+  // warning cards use the same blue as info cards
+
+  &.alert-type-info {
+    background-color: tint(@blue, 92%);
+    .alert-icon {
+      color: @blue;
+      opacity: 1;
+      line:last-child {
+        stroke-width: 2px;
+      }
+    }
+  }
+  &.alert-type-tip {
+    background-color: fade(black, 2%);
+    .alert-icon {
+      color: fade(black, 50%);
+      line:last-child {
+        stroke-width: 2px;
+      }
+    }
+  }
+  &.alert-type-warning {
+    background-color: tint(orange, 90%);
+    .alert-icon {
+      color: shade(orange, 30%);
+      line:last-child {
+        stroke-width: 2px;
+      }
+    }
+  }
+  &.alert-type-error {
+    background-color: tint(@button-danger-fill, 93%);
+    .alert-icon {
+      color: @button-danger-fill;
+      opacity: 1;
+      line:last-child {
+        stroke-width: 2px;
+      }
+    }
+  }
+  &.alert-type-success {
+    background-color: tint(@button-success-fill, 92%);
+
+    .alert-icon {
+      width: 12px;
+      height: 12px;
+      padding: 4px;
+      border-radius: 50%;
+      color: shade(@button-success-fill, 30%);
+      border: 1.5px solid currentColor;
+      svg {
+        stroke-width: 3px;
+      }
+    }
+  }
+  &.alert-type-important {
+    background-color: black;
+    color: white;
+
+    .alert-icon {
+      line:last-child {
+        stroke-width: 2px;
+      }
+    }
+  }
+}

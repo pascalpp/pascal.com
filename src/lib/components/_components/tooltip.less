@@ -1,0 +1,82 @@
+@import (reference) "../styles/variables";
+
+.broadly-tooltip {
+  @blue-background: tint(@blue, 95%);
+  @blue-text: darken(@blue, 20%);
+  @shadow-color: fade(black, 20%);
+  @blue-border-color: fade(@blue, 50%);
+
+  position: relative;
+  display: inline-block;
+
+  .tooltip-content {
+    transition: opacity 200ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .tooltip-bubble {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    outline: none;
+    display: block;
+    transform: translateY(-10px);
+    color: @blue-text;
+    box-shadow: 0px 2px 10px @shadow-color;
+    background-color: @blue-background;
+    border: 1px solid @blue-border-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-top: 16px;
+    text-align: left;
+  }
+
+  .tooltip-triangle {
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: -30px;
+    right: -30px;
+    height: 30px;
+    line-height: 10px;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      display: inline-block;
+      z-index: 1;
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: @blue-background;
+      border: 1px solid @blue-border-color;
+      box-shadow: 0px 2px 10px @shadow-color;
+      box-sizing: border-box;
+      transform: translateX(-50%) translateY(-8px) rotate(45deg);
+    }
+  }
+
+  .tooltip-transition.entered {
+    .tooltip-content,
+    .tooltip-triangle {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

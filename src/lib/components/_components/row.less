@@ -1,0 +1,56 @@
+@import (reference) "../styles/variables";
+
+.layout-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+
+  &.fill {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  &.spread {
+    justify-content: space-between;
+  }
+
+  &.top {
+    align-items: flex-start;
+  }
+  &.bottom {
+    align-items: flex-end;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  // columns insides rows should grow to fill the available space
+  .layout-column {
+    flex: 1;
+  }
+
+  // block elements directly inside rows
+  // no top/bottom margin needed
+  > p,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  // eventually can do this with margin-trim: block
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim
+}

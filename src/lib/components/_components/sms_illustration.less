@@ -1,0 +1,25 @@
+@import (reference) "../styles/variables";
+
+.sms-illustration {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 2.5px;
+  color: @blue;
+  border: 1.5px solid tint(@blue, 10%);
+  border-top-width: 6px;
+  border-bottom-width: 8px;
+  margin-top: -8px;
+  border-radius: 4px;
+
+  svg {
+    stroke-width: 1.5;
+    width: 16px;
+    height: 16px;
+  }
+  svg:last-child {
+    transform: rotateY(180deg);
+    margin-left: 6px;
+    margin-top: -3px;
+    fill: fade(@blue, 20%);
+  }
+}

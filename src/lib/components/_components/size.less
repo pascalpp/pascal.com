@@ -1,0 +1,33 @@
+@import (reference) "../styles/variables";
+
+.size {
+  &.size-small {
+    .size-medium,
+    .size-large {
+      display: none;
+    }
+  }
+  &.size-medium {
+    .size-small,
+    .size-large {
+      display: none;
+    }
+  }
+  &.size-large {
+    .size-small,
+    .size-medium {
+      display: none;
+    }
+  }
+
+  .size-debug {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9999;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid fade(black, 10%);
+    border-radius: 3px;
+  }
+}

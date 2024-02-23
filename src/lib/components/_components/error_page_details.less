@@ -1,0 +1,42 @@
+@import (reference) "../styles/variables";
+
+.error-page-details {
+  font-size: 14px;
+
+  .alert-card {
+    @media @not-mobile {
+      min-width: 400px;
+    }
+  }
+
+  .error-message {
+    max-width: 500px;
+  }
+
+  > details > summary {
+    opacity: 0.7;
+    user-select: none;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+  }
+
+  details[open] {
+    summary {
+      margin-bottom: 5px;
+    }
+  }
+
+  .alert-content {
+    overflow: hidden;
+    user-select: text;
+    text-align: left;
+
+    details {
+      font-family: monospace;
+      width: 100%;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+  }
+}

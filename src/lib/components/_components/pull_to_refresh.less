@@ -1,0 +1,88 @@
+// F7
+
+/* === PTR === */
+.ptr-preloader .preloader {
+  position: absolute;
+  left: 50%;
+}
+.ptr-preloader {
+  position: relative;
+  height: 44px;
+  margin-top: -44px;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.ptr-preloader .preloader {
+  width: 27px;
+  height: 27px;
+  margin-left: -13px;
+  margin-top: -13px;
+  visibility: hidden;
+  top: 50%;
+}
+.ptr-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: no-repeat center;
+  z-index: 1;
+  transform: rotate(0deg);
+  transition-duration: 300ms;
+  transition-property: transform;
+  width: 13px;
+  height: 20px;
+  margin-left: -6px;
+  margin-top: -10px;
+  background-image: url("./pull_to_refresh_arrow.svg");
+  background-size: 13px 20px;
+}
+.ptr-content:not(.ptr-refreshing) .ptr-preloader .preloader {
+  animation: none;
+}
+.ptr-transitioning,
+.ptr-refreshing {
+  transition-duration: 300ms;
+  transition-property: transform;
+}
+.ptr-refreshing {
+  transform: translate3d(0, 44px, 0);
+}
+.ptr-refreshing .ptr-arrow {
+  visibility: hidden;
+}
+.ptr-refreshing .ptr-preloader .preloader {
+  visibility: visible;
+}
+.ptr-pull-up .ptr-arrow {
+  transform: rotate(180deg);
+}
+
+// end F7
+
+.ptr-content {
+  .ptr-arrow {
+    left: 20px;
+  }
+
+  .ptr-preloader:after {
+    margin-left: 44px;
+    line-height: 44px;
+    content: "Pull Down to Refresh";
+    white-space: nowrap;
+  }
+
+  &.ptr-pull-up {
+    .ptr-preloader:after {
+      content: "Release to Refresh";
+    }
+  }
+
+  &.ptr-refreshing.prevent-transform {
+    transform: none !important;
+  }
+
+  &.ptr-refreshing .ptr-preloader:after {
+    display: none;
+  }
+}

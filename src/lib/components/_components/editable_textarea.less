@@ -1,0 +1,24 @@
+@import (reference) "../styles/variables";
+
+.editable-textarea {
+  textarea {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    &::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    &:not([readonly]) {
+      border-color: #eee;
+      &:focus {
+        border-color: @blue;
+      }
+    }
+  }
+}

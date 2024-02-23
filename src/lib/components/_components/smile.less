@@ -1,0 +1,33 @@
+@import (reference) "../styles/variables";
+
+.smile {
+  background-color: #f2f9fa;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  text-align: center;
+
+  .smile-top {
+    flex: 1;
+    padding: 40px 20px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    // swoop
+    background: #fff;
+    clip-path: ellipse(calc(400px + 40vw) 100% at 50% 0%);
+  }
+
+  .smile-bottom {
+    // below swoop
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

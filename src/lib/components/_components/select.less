@@ -1,0 +1,32 @@
+@import (reference) "../styles/variables";
+
+select.select.button {
+  // reset
+  margin: 0;
+  box-sizing: border-box;
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  height: auto;
+  width: auto;
+  display: inline-block;
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  // arrow
+  --arrow-size: 1.5em;
+  --arrow-inset: 0.5em;
+  padding-right: 3em;
+  background-image: url("./select_triangle_black.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - var(--arrow-inset)) 50%;
+  background-size: var(--arrow-size) var(--arrow-size);
+
+  &.primary {
+    background-image: url("./select_triangle_white.svg");
+  }
+}

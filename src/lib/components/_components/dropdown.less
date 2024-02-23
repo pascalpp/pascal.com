@@ -1,0 +1,218 @@
+@import (reference) "../styles/variables";
+
+@transition-time: 150ms;
+
+.dropdown {
+  --dropdown-item-hover-background-color: fade(black, 3%);
+  --dropdown-max-height: calc(100vh - 40px);
+
+  .dropdown-transition {
+    height: 100%;
+  }
+
+  .dropdown-overlay {
+    position: fixed;
+    width: 200vw;
+    height: 200vh;
+    left: -100vw;
+    top: -100vh;
+    background-color: fade(white, 70%);
+    transition: all @transition-time ease-in-out;
+    display: none;
+  }
+
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-header {
+    cursor: pointer;
+    // TODO https://css-tricks.com/making-disabled-buttons-more-inclusive/
+    &[disabled] {
+      color: inherit;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .dropdown-arrow {
+      flex-shrink: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.25em;
+      height: 1em;
+      margin-left: 1em;
+      position: relative;
+      vertical-align: middle;
+      opacity: 0.5;
+
+      svg {
+        width: 100%;
+        height: auto;
+        transform: rotate(0deg);
+        transition: transform 200ms ease-in-out;
+      }
+    }
+  }
+
+  .dropdown-content {
+    position: absolute;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid fade(black, 20%);
+    box-shadow: 2px 2px 4px fade(black, 10%);
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: all @transition-time ease-in-out;
+    display: none;
+
+    &:empty {
+      font-style: italic;
+      font-size: 14px;
+      &::before {
+        opacity: 0.7;
+        padding: 8px 15px;
+        display: block;
+        content: "Nothing to display";
+        white-space: nowrap;
+      }
+    }
+
+    .scroll-marker {
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      height: 0px;
+      box-shadow: 0 0 35px 45px white;
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-top-color: fade(black, 30%);
+      }
+    }
+
+    .dropdown-item {
+      padding: 8px 15px;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        outline: none;
+        background-color: var(--dropdown-item-hover-background-color);
+      }
+      &[disabled] {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      &.button {
+        .button-content {
+          justify-content: flex-start;
+        }
+        .icon-left {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  &:not(.right) {
+    .dropdown-content {
+      left: 0;
+    }
+  }
+  &.right {
+    .dropdown-content {
+      right: 0;
+    }
+  }
+  &:not(.bottom) {
+    .dropdown-content {
+      top: 100%;
+    }
+  }
+  &.bottom {
+    .dropdown-content {
+      bottom: 100%;
+    }
+  }
+
+  &.padded {
+    .dropdown-content {
+      padding: 10px 15px;
+    }
+  }
+
+  > .exited {
+    .dropdown-overlay {
+      display: none;
+    }
+    .dropdown-content {
+      display: none;
+    }
+  }
+
+  > .enter,
+  > .exit {
+    .dropdown-container {
+      z-index: 2;
+    }
+    .dropdown-overlay {
+      display: block;
+      opacity: 0;
+      z-index: 2;
+    }
+    .dropdown-content {
+      display: block;
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+
+  > .entered {
+    .dropdown-container {
+      z-index: 2;
+    }
+    .dropdown-overlay {
+      display: block;
+      opacity: 1;
+      z-index: 2;
+    }
+    .dropdown-header {
+      &.roundrect {
+        &:focus-visible {
+          outline: none;
+        }
+        box-shadow: none;
+        transform: translateY(1px);
+      }
+    }
+    .dropdown-content {
+      display: block;
+      opacity: 1;
+      max-height: var(--dropdown-max-height);
+    }
+    .dropdown-arrow {
+      svg {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@import (reference) "../styles/variables";
+
+.dropdown.select-dropdown {
+  .dropdown-header {
+    min-width: var(--min-width);
+    padding-left: 1.25em;
+    padding-right: 1.5em;
+
+    .button-label {
+      white-space: nowrap;
+      flex: 1;
+      text-align: left;
+    }
+    .icon-left {
+      transform: translateX(-0.5em);
+      opacity: 0.7;
+    }
+    .icon-right {
+      transform: translateX(1em);
+      width: 1.5em;
+      opacity: 0.6;
+      svg {
+        transform: translateY(0px) rotateX(0);
+      }
+    }
+  }
+
+  .dropdown-content {
+    margin: 0;
+    min-width: calc(100% + 20px);
+  }
+  &:not(.bottom) {
+    &:not(.right) {
+      .dropdown-content {
+        border-top-left-radius: 0;
+      }
+    }
+    &.right {
+      .dropdown-content {
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  .dropdown-option {
+    width: 100%;
+    padding: 0.5em 2.25em;
+    position: relative;
+    white-space: nowrap;
+
+    .icon-left {
+      position: absolute;
+      left: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.25em;
+      height: 0.75em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: @blue;
+      svg,
+      img {
+        width: 100%;
+        height: auto;
+        transform: translateY(1px);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      outline: none;
+      background-color: fade(@blue, 5%);
+    }
+
+    &.blinking {
+      background-color: white;
+      animation-name: blink-selection;
+      animation-duration: 200ms;
+      animation-iteration-count: 1;
+      animation-timing-function: steps(1, end);
+    }
+
+    &[disabled] {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    @keyframes blink-selection {
+      0% {
+        background-color: fade(@blue, 15%);
+      }
+      50% {
+        background-color: white;
+      }
+      100% {
+        background-color: fade(@blue, 15%);
+      }
+    }
+  }
+
+  > .entered {
+    .dropdown-header {
+      outline: none;
+      box-shadow: none;
+      transform: translateY(1px);
+      opacity: 0.7;
+    }
+  }
+  &:not(.bottom) {
+    > .entered {
+      .dropdown-header {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  .deselect-all-button {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: fade(black, 70%);
+    &[disabled] {
+      pointer-events: none;
+      color: fade(black, 20%);
+    }
+  }
+}

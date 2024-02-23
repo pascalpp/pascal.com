@@ -1,0 +1,55 @@
+.modal.notification-modal {
+  padding: 12px;
+  pointer-events: none;
+
+  html.device-iphone-x & {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .modal-content {
+    pointer-events: all;
+    font-size: 16px;
+    margin-top: 0px;
+    padding: 0px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .modal-close-button {
+    top: 0px;
+    right: 0px;
+    left: auto;
+    border: none;
+    z-index: 1;
+    .button-label {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .notification-content {
+    padding: 16px;
+    padding-right: 48px;
+    width: 100%;
+  }
+
+  .notification-column {
+    gap: 8px;
+  }
+
+  .notification-title {
+    font-weight: bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .notification-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

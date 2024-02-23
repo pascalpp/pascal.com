@@ -1,0 +1,62 @@
+@import (reference) "../styles/variables";
+@import (reference) "../styles/globals";
+
+form.underline-form {
+  @error-color: darken(@red, 30%);
+
+  margin: 0;
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    label.input-label {
+      .small-gray-header;
+      padding-left: 4px;
+    }
+  }
+
+  select.select {
+    margin-top: 10px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px 4px;
+    margin: 0;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 0px;
+    &:read-write {
+      margin-bottom: 0px;
+      border-bottom-color: fade(black, 10%);
+      &:focus {
+        border-bottom-color: @blue;
+      }
+    }
+  }
+
+  ul.form-error-list {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
+    color: @error-color;
+    user-select: auto;
+
+    li {
+      margin: 0;
+      padding: 0;
+      list-style-type: disc;
+      margin-left: 24px;
+      + li {
+        margin-top: 8px;
+      }
+
+      &:only-child {
+        list-style-type: none;
+        margin-left: 8px;
+      }
+    }
+  }
+}

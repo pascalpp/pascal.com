@@ -1,0 +1,32 @@
+@import (reference) "../styles/variables";
+
+.drop-zone.upload-file {
+  border-radius: 10px;
+  border: 1px dotted @gray400;
+  padding: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: @white;
+
+  &.active {
+    border: 1px solid @blue;
+    background-color: @broadly-blue-page-color;
+  }
+
+  .upload-cloud-icon {
+    color: #999;
+    width: 80px;
+  }
+
+  .instructions {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+
+  .allowed-extensions {
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
+  }
+}

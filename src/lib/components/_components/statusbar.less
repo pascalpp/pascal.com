@@ -1,0 +1,21 @@
+@import (reference) "../styles/variables";
+
+.statusbar {
+  width: 100%;
+  flex-shrink: 0;
+
+  // render after app-layout in the DOM, but appear above it
+  order: 0;
+
+  @media @mobile {
+    html.device-iphone-x & {
+      display: none;
+    }
+    html.device-ios:not(.device-iphone-x) & {
+      height: 20px;
+    }
+    html.device-android & {
+      height: 0px;
+    }
+  }
+}

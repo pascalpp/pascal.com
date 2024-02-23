@@ -1,0 +1,31 @@
+@import (reference) "../styles/variables";
+
+.user-avatar {
+  color: @black;
+  border: 1px solid @black;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  line-height: 18px;
+  padding: 6px;
+
+  position: relative;
+  .badge.notification-badge {
+    position: absolute;
+    right: -7px;
+    top: -6px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

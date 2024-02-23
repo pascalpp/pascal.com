@@ -1,0 +1,38 @@
+@import (reference) "../styles/variables";
+
+.max-review-requests-warning {
+  background-color: #fff9e6;
+  padding: 20px;
+
+  &.is-below-navbar {
+    border-bottom: 1px solid #ededed;
+  }
+
+  .warning-message {
+    font-weight: 600;
+    color: #5c4c15;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 290px;
+
+    svg {
+      color: #5c4c15;
+      margin-right: 15px;
+      min-width: 30px;
+    }
+  }
+
+  @media @not-mobile {
+    &:not(.is-below-navbar) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 20px;
+
+      .warning-message {
+        padding-right: 10px;
+      }
+    }
+  }
+}

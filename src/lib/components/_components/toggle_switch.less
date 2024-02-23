@@ -1,0 +1,89 @@
+@import (reference) "../styles/variables";
+
+.button.toggle-switch {
+  @transition-time: 200ms;
+
+  --color: #aaa;
+  &.active {
+    --color: @blue;
+  }
+
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background-color: var(--color);
+  box-shadow: 0 0 0 1.5px var(--color);
+  color: white;
+  border-radius: 1.5em;
+  padding: 1px;
+  position: relative;
+  overflow: hidden;
+
+  &:focus-within {
+    outline-color: fade(@blue, 60%);
+    outline-style: auto;
+    outline-width: 1px;
+    outline-offset: 3px;
+  }
+
+  &::before {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    display: block;
+    background-color: white;
+    border-radius: 1.5em;
+    z-index: 0;
+    // using 3D fixes a little visual glitch I was seeing in testing -p
+    transform: translate3d(0, 0, 0);
+    transition: transform @transition-time ease-in-out;
+  }
+  &.checked::before {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .toggle-option {
+    pointer-events: none;
+    display: block;
+    width: 50%;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    transition: color @transition-time ease-in-out;
+    box-sizing: border-box;
+    padding: 0.3em 1em;
+    color: fade(white, 50%);
+    font-weight: bold;
+    border: none;
+    min-height: 1.9em;
+    border-radius: 1.5em;
+    text-overflow: initial;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    &.active {
+      font-weight: bold;
+      color: #999;
+    }
+  }
+
+  &.active {
+    .toggle-option.active {
+      color: darken(@blue, 5%);
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}

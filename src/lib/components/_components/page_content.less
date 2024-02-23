@@ -1,0 +1,48 @@
+@import (reference) "../styles/variables.less";
+
+.page-content-size {
+  height: 100%;
+}
+
+// using this x classname until i've finished migrating all pages to use this
+// component and removed F7 page-content styles
+.page-contentx {
+  box-sizing: border-box;
+  height: 100%;
+
+  &.unpadded {
+    padding: 0px;
+  }
+
+  &.padded {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &.centered {
+    padding-left: 20px;
+    padding-right: 20px;
+    .page-content-width;
+
+    .page-content-size-small & {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  // page-content below a navbar
+  .navbar ~ &,
+  .navbar ~ * & {
+    padding-top: @navHeight;
+  }
+
+  &.white {
+    background-color: @white;
+  }
+  &.grey {
+    background-color: @broadly-gray-page-color;
+  }
+  &.blue {
+    background-color: @broadly-blue-page-color;
+  }
+}

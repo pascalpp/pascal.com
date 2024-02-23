@@ -1,0 +1,19 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <line id="spoke" x1="60" x2="60" y1="7" y2="27" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+  </defs>
+  <g>
+    <use xlink:href="#spoke" opacity=".10"/>
+    <use xlink:href="#spoke" opacity=".10" transform="rotate(30 60,60)"/>
+    <use xlink:href="#spoke" opacity=".10" transform="rotate(60 60,60)"/>
+    <use xlink:href="#spoke" opacity=".10" transform="rotate(90 60,60)"/>
+    <use xlink:href="#spoke" opacity=".10" transform="rotate(120 60,60)"/>
+    <use xlink:href="#spoke" opacity=".10" transform="rotate(150 60,60)"/>
+    <use xlink:href="#spoke" opacity=".20" transform="rotate(180 60,60)"/>
+    <use xlink:href="#spoke" opacity=".30" transform="rotate(210 60,60)"/>
+    <use xlink:href="#spoke" opacity=".40" transform="rotate(240 60,60)"/>
+    <use xlink:href="#spoke" opacity=".50" transform="rotate(270 60,60)"/>
+    <use xlink:href="#spoke" opacity=".60" transform="rotate(300 60,60)"/>
+    <use xlink:href="#spoke" opacity=".70" transform="rotate(330 60,60)"/>
+  </g>
+</svg>

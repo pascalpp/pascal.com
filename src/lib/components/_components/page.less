@@ -1,0 +1,194 @@
+@import (reference) "../styles/variables";
+
+.page {
+  @previous-page-translate: -20%;
+
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  background-color: @broadly-gray-page-color;
+
+  &,
+  &::before,
+  &::after {
+    animation-duration: @page-transition-time;
+    animation-fill-mode: forwards;
+  }
+
+  .page-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    .page-content-width;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+
+    html.device-iphone-x & {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  &.page-previous {
+    display: none;
+    pointer-events: none;
+    transform: translate3d(@previous-page-translate, 0, 0);
+  }
+  &.page-next {
+    pointer-events: none;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .router-transition-css-backward &,
+  .router-transition-css-forward & {
+    &.page-previous {
+      display: block;
+    }
+    &.page-current {
+      pointer-events: none;
+    }
+  }
+  .router-transition-css-forward & {
+    &.page-next {
+      animation-name: page-next-to-current;
+    }
+    &.page-current {
+      animation-name: page-current-to-previous;
+    }
+
+    // shadow overlay on current page as it slides left
+    &.page-current:not(.empty-page)::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: fade(black, 10%);
+      width: 100%;
+      bottom: 0;
+      content: "";
+      opacity: 0;
+      z-index: 10000;
+      animation-name: fade-in;
+    }
+
+    // shadow on left side of next page as it slides into view
+    &.page-next::before {
+      position: absolute;
+      top: 0;
+      width: 44px;
+      bottom: 0;
+      z-index: -1;
+      display: block;
+      content: "";
+      opacity: 1;
+      right: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.01) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+      );
+    }
+
+    // don't animate from empty page to empty page
+    &.page-current.empty-page + .page-next.empty-page {
+      animation-duration: 0ms;
+    }
+  }
+
+  .router-transition-css-backward & {
+    &.page-previous {
+      animation-name: page-previous-to-current;
+    }
+    &.page-previous::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: fade(black, 10%);
+      width: 100%;
+      bottom: 0;
+      content: "";
+      opacity: 0;
+      z-index: 10000;
+      animation-name: fade-out;
+    }
+    &.page-current {
+      animation-name: page-current-to-next;
+    }
+    &.page-current::before {
+      position: absolute;
+      top: 0;
+      width: 44px;
+      bottom: 0;
+      z-index: -1;
+      display: block;
+      content: "";
+      opacity: 0;
+      right: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.01) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+      );
+      animation-name: fade-out;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes page-previous-to-current {
+    from {
+      transform: translate3d(@previous-page-translate, 0, 0);
+    }
+    to {
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  @keyframes page-current-to-previous {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(@previous-page-translate, 0, 0);
+    }
+  }
+  @keyframes page-next-to-current {
+    from {
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  @keyframes page-current-to-next {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+}
