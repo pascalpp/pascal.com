@@ -1,17 +1,18 @@
 ---
 title: Animating SVG
-date: 2024-02-14T14:45:26.818Z
-status: draft
+date: 2024-02-23T14:45:26.818Z
+status: published
+tags: [svg, css, animation]
 ---
 
 <script lang="ts">
-  import Messages from './message-bubbles.svelte';
+  import Controls from './controls.svelte';
 </script>
 
-Learning a bit about animating SVG with CSS. A designer provided the below GIF and the SVG artwork. I've recreated the animation, taking a few liberties here and there. The resulting SVG is only about 2kb with a trivial amount of CSS.
+Here's a little experiment with SVG animation. You can use the `stroke-dasharray` and `stroke-dashoffset` properties in CSS to achieve various effects with SVG paths, including animation.
 
-The SVG animation only plays once so reload to see it again.
+Here's an SVG with four paths, each made of 12 strokes emanating from a center point. Two of them have `stroke-width: 3` and the other two have `stroke-width: 1`. All of them have rounded ends with `stroke-linecap: round`.
 
-<img src="./flow.gif"/>
+<Controls/>
 
-<Messages/>
+Switch to dotted mode and change the size, distance, and offset of the dots. And then switch to animated mode to see the fireworks, by animating the `stroke-dashoffset` property.
