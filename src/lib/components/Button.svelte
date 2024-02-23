@@ -17,6 +17,7 @@
   export let bold = false;
   export let nowrap = true;
   export let active = false;
+  export let rounded = false;
 
   export let href: string | undefined = undefined;
   export let tag = href ? 'a' : 'button';
@@ -64,6 +65,7 @@
   class:nowrap
   class:active
   class:bold
+  class:rounded={roundrect && rounded}
   disabled={loading || disabled || null}
   role={href ? 'link' : 'button'}
   on:click
@@ -174,6 +176,10 @@
       border: 1px solid var(--border-color);
       box-shadow: 0px @shadow-distance 0 var(--shadow-color);
       transform: translateY(0);
+
+      &.rounded {
+        border-radius: 1.5em;
+      }
 
       &[disabled] {
         opacity: 0.3;
