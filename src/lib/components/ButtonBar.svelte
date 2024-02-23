@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
-  interface ButtonBarOption {
+  type ButtonBarOption = {
     value: string;
     label: string;
-  }
+  };
 </script>
 
 <script lang="ts">
@@ -16,6 +16,7 @@
   export let large = false;
   export let wide = false;
   export let disabled = false;
+  export let rounded = false;
 </script>
 
 <div class="button-bar">
@@ -32,6 +33,7 @@
           {wide}
           {value}
           {disabled}
+          {rounded}
           active={value === selected}
           on:click
         />
