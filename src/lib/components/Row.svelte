@@ -1,4 +1,7 @@
 <script lang="ts">
+  let className = '';
+  export { className as class };
+
   export let center = false;
   export let right = false;
   export let spread = false;
@@ -11,8 +14,8 @@
   export let gap = '1em';
 </script>
 
-<section
-  class="row"
+<div
+  class="row {className}"
   class:center
   class:right
   class:spread
@@ -25,7 +28,7 @@
   style="gap: {gap}"
 >
   <slot />
-</section>
+</div>
 
 <style lang="less">
   .row {
