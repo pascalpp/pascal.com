@@ -9,10 +9,16 @@ tags: [svg, css, animation]
   import Controls from './controls.svelte';
 </script>
 
-Here's a little experiment with SVG animation. You can use the `stroke-dasharray` and `stroke-dashoffset` properties in CSS to achieve various effects with SVG paths, including animation.
+Here's a little experiment with SVG animation, using the `stroke-dasharray` and `stroke-dashoffset` properties in CSS to create fireworks.
 
-Here's an SVG with four paths, each made of 12 strokes emanating from a center point. Two of them have `stroke-width: 3` and the other two have `stroke-width: 1`. All of them have rounded ends with `stroke-linecap: round`.
+This SVG has four paths, each made of 12 strokes emanating from a center point.
 
 <Controls/>
 
-Switch to dotted mode and change the size, distance, and offset of the dots. And then switch to animated mode to see the fireworks, by animating the `stroke-dashoffset` property.
+Switch to dashed mode and change the size, distance, and offset of the dashes. And then switch to animated mode to see the fireworks, by animating the `stroke-dashoffset` property.
+
+<aside style="--aside-span: 1">
+
+This particular animation looks better when using a negative offset, so I'm inverting the offset value. I think this has something to do with _path direction_, but that's a topic for another day.
+
+</aside>

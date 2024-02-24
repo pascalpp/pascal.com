@@ -27,38 +27,36 @@
   $: offset = 0 - dotOffset;
 </script>
 
-<Fireworks {dotted} {animate} {offset} {dots} />
+<Column>
+  <Fireworks {dotted} {animate} {offset} {dots} />
 
-<div class="controls">
-  <Column center gap="2rem">
-    <ButtonBar {options} {selected} small rounded on:click={onClick} />
-    {#if dotted || animate}
-      <Row>
-        <Slider id="dot-size" min={0} max={10} step={1} bind:value={dotSize} label="Dash size: {dotSize}" />
-        <Slider
-          id="dot-distance"
-          min={0}
-          max={50}
-          step={1}
-          bind:value={dotDistance}
-          label="Dash distance: {dotDistance}"
-        />
-        <Slider id="dot-offset" min={0} max={1000} step={1} bind:value={dotOffset} label="Offset: {offset}" />
-      </Row>
-      {#if !animate}
-        <Row>
-          <pre>
+  <div class="controls">
+    <Column center gap="2rem">
+      <ButtonBar {options} {selected} small rounded on:click={onClick} />
+      {#if dotted || animate}
+        <div class="sliders">
+          <Slider id="dot-size" min={0} max={10} step={1} bind:value={dotSize} label="Dash size: {dotSize}" />
+          <Slider id="dot-distance" min={0} max={50} step={1} bind:value={dotDistance} label="Spacing: {dotDistance}" />
+          <Slider id="dot-offset" min={0} max={100} step={1} bind:value={dotOffset} label="Offset: {offset}" />
+        </div>
+        {#if !animate}
+          <Row>
+            <pre>
 {`svg {
   path {
     stroke-dasharray: ${dots};
     stroke-dashoffset: ${offset};
   }
 }`}
-      </pre>
-        </Row>
-      {/if}
-      {#if animate}
-        <Row>
+              </pre>
+          </Row>
+        {/if}
+        {#if animate}
+          {#if dotOffset === 0}
+            <p>
+              <em>The animation won't do much with a 0 offset. Try increasing the offset amount.</em>
+            </p>
+          {/if}
           <pre>
 {`
 svg {
@@ -81,16 +79,31 @@ svg {
   }
 }
 `}
-      </pre>
-        </Row>
+              </pre>
+        {/if}
       {/if}
-    {/if}
-  </Column>
-</div>
+    </Column>
+  </div>
+</Column>
 
 <style lang="less">
+  .example {
+    container-type: inline-size;
+  }
+
   .controls {
     font-family: var(--font-sans);
     font-size: 14px;
+  }
+
+  .sliders {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  @container (inline-size <= 40ch) {
+    .sliders {
+      flex-direction: column;
+    }
   }
 </style>
