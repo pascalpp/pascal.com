@@ -87,13 +87,10 @@ svg {
 </Column>
 
 <style lang="less">
-  .example {
-    container-type: inline-size;
-  }
-
   .controls {
     font-family: var(--font-sans);
     font-size: 14px;
+    container-type: inline-size;
   }
 
   .sliders {
