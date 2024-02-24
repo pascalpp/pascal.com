@@ -15,7 +15,7 @@ This SVG has four paths, each made of 12 strokes emanating from a center point.
 
 <Controls/>
 
-Switch to dashed mode and change the size, distance, and offset of the dashes. And then switch to animated mode to see the fireworks, by animating the `stroke-dashoffset` property.
+Switch to dashed mode and change the size, distance, and offset of the dashes. And then switch to animated mode to see the fireworks created by animating the `stroke-dashoffset` property.
 
 <aside style="--aside-span: 1">
 
