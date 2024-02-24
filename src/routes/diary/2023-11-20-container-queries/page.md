@@ -3,6 +3,7 @@ title: Container queries
 date: 2023-11-20T17:53:31.546Z
 status: published
 tags: [css]
+summary: A little playground to experiment with container queries.
 ---
 
 <script lang="ts">

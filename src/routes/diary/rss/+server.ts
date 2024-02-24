@@ -50,11 +50,14 @@ function render(posts: PostSummary[]) {
 }
 
 function renderPost(post: PostSummary) {
+  const tags = post.metadata.tags?.map((tag) => `<category>${tag}</category>`).join('') ?? '';
+  const tagDescription = `Tags: ${post.metadata.tags?.join(', ') ?? 'none'}`;
+  const summary = post.metadata.summary ?? tagDescription;
   return `<item>
     <guid isPermaLink="true">${baseURL}/${post.slug}</guid>
     <title>${post.metadata.title}</title>
-    <link>${baseURL}/${post.slug}</link>
-    <description>Tags: ${post.metadata.tags?.join(', ') ?? 'none'}</description>
+    <link>${baseURL}/${post.slug}</link>${tags}
+    <description>${summary}</description>
     <pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
     </item>`;
 }

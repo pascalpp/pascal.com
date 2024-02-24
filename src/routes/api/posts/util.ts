@@ -4,8 +4,9 @@ import type { SvelteComponent } from 'svelte';
 export type PostMetadata = {
   title: string;
   date: string;
-  status: string;
+  status: 'published' | 'draft';
   tags?: string[];
+  summary?: string;
 };
 
 export type PostSummary = {

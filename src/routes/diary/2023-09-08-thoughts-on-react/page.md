@@ -2,6 +2,8 @@
 title: Some thoughts on React
 date: 2023-09-09T02:17:38.290Z
 tags: [javascript, react, svelte, angular]
+status: published
+summary: Although I love Svelte, there are some things I miss about React.
 ---
 
 _Feel free to ignore this post. It's just for me, probably._

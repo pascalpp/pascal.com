@@ -3,6 +3,7 @@ title: CSS Grid Layout
 date: 2023-11-20T02:17:37.807Z
 status: published
 tags: [css]
+summary: Testing out some CSS grid layout ideas, inspired by a video by Kevin Powell.
 ---
 
 Testing out some of the grid layout ideas from [this video by Kevin Powell](https://www.youtube.com/watch?v=c13gpBrnGEw).

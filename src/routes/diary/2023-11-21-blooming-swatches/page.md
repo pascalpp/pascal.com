@@ -3,6 +3,7 @@ title: Blooming swatches
 date: 2023-11-21T13:58:25.766Z
 status: published
 tags: [css, tone.js, svelte]
+summary: A CSS experiment with a grid of swatches that bloom when you tap or drag over them, with sound.
 ---
 
 <script lang="ts">

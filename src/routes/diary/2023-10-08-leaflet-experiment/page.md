@@ -3,6 +3,7 @@ title: Experimenting with Leaflet
 date: 2023-10-08T00:41:12.985Z
 status: published
 tags: [javascript, svelte]
+summary: Playing around with Leaflet, a popular open-source JavaScript library for mobile-friendly interactive maps.
 ---
 
 <script>
