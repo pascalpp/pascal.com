@@ -5,12 +5,6 @@ declare module '*.md' {
   export const metadata: Record<string, string>;
 }
 
-declare module '*.svg?component' {
-  import type { SvelteComponent } from 'svelte';
-
-  export default class Comp extends SvelteComponent {}
-}
-
 declare module 'svelte-json-tree' {
   import type { SvelteComponent } from 'svelte';
 
