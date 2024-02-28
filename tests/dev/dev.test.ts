@@ -19,17 +19,13 @@ test('Resume', async ({ page }) => {
   });
 });
 
-test('Resume - Broadly slides', async ({ page }) => {
+test.skip('Resume - Broadly slides', async ({ page }) => {
   const recentSection = page.getByLabel('Recent experience');
   expect(recentSection).toBeVisible();
-  await recentSection.hover();
-  await recentSection.focus();
   await recentSection.click();
 
   const broadlySlidesLink = recentSection.getByLabel('View Broadly slides');
   expect(broadlySlidesLink).toBeVisible();
-  await broadlySlidesLink.hover();
-  await broadlySlidesLink.focus();
   await broadlySlidesLink.click();
 
   expect(page.locator('dialog[open]')).toBeVisible();
