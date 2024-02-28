@@ -49,14 +49,14 @@
   });
 </script>
 
-<dialog bind:this={dialog}>
+<dialog bind:this={dialog} aria-label={title || 'Modal dialog'}>
   {#if title}
     <div class="modal-title">
       <h2>{title}</h2>
-      <button class="close-button" on:click={close}>&#x2717;</button>
+      <button class="close-button" on:click={close} aria-label="Close">&#x2717;</button>
     </div>
   {:else}
-    <button class="close-button" on:click={close}>&#x2717;</button>
+    <button class="close-button" on:click={close} aria-label="Close">&#x2717;</button>
   {/if}
   <div class="modal-content" class:padded>
     <slot />
