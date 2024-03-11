@@ -1,11 +1,11 @@
 <script lang="ts">
   import Column from '$lib/components/Column.svelte';
-  import Row from '$lib/components/Row.svelte';
   import FeaturedEmail from '$lib/components/FeaturedEmail.svelte';
-  import Handstand from './images/handstand.svg?component';
+  import Row from '$lib/components/Row.svelte';
+  import type { PageData } from './$types';
   import Email, { metadata } from './emails/2017-09-14.md';
   import { randomGreeting } from './greetings';
-  import type { PageData } from './$types';
+  import Handstand from './images/handstand.svg?component';
 
   export let data: PageData;
 
