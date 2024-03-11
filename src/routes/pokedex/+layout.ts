@@ -7,36 +7,35 @@ export type Result = {
   url: string;
 };
 
-let names: string[];
+let pokemonNames: string[];
 
-const pokemon = new Map();
+const pokemonData = new Map();
 
 export const load: LayoutLoad = async ({ fetch, params }) => {
   const fetchPokemonNames = async () => {
-    if (!names) {
+    if (!pokemonNames) {
       console.log('fetching pokemon names');
       const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1292');
       const data = await response.json();
       const results = data.results.sort(sortByName);
-      names = results.map((result: Result) => result.name);
+      pokemonNames = results.map((result: Result) => result.name);
     }
-    return names;
+    return pokemonNames;
   };
 
   const fetchPokemon = async () => {
     if (!params.name) return;
-    if (pokemon.has(params.name)) return pokemon.get(params.name);
+    if (pokemonData.has(params.name)) return pokemonData.get(params.name);
     console.log(`fetching ${params.name}`);
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.name}`);
     const data = await response.json();
-    pokemon.set(params.name, data);
+    pokemonData.set(params.name, data);
     return data;
   };
 
-  return {
-    names: await fetchPokemonNames(),
-    pokemon: await fetchPokemon(),
-  };
+  const [names, pokemon] = await Promise.all([fetchPokemonNames(), fetchPokemon()]);
+
+  return { names, pokemon };
 };
 
 function sortByName(a: Result, b: Result) {
