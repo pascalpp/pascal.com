@@ -34,8 +34,8 @@ export const load: LayoutLoad = async ({ fetch, params }) => {
   };
 
   return {
-    names: fetchPokemonNames(),
-    pokemon: fetchPokemon(),
+    names: await fetchPokemonNames(),
+    pokemon: await fetchPokemon(),
   };
 };
 
