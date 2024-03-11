@@ -1,10 +1,12 @@
 import { dev } from '$app/environment';
 import type { SvelteComponent } from 'svelte';
 
+export type PostStatus = 'draft' | 'published';
+
 export type PostMetadata = {
   title: string;
   date: string;
-  status: 'published' | 'draft';
+  status: PostStatus;
   tags?: string[];
   summary?: string;
 };
