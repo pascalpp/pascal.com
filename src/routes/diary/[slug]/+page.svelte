@@ -72,7 +72,7 @@
 
     h1 {
       margin: 0;
-      line-height: 1.3;
+      line-height: 1.2;
       font-size: 30px;
       font-weight: 500;
       text-wrap: balance;
