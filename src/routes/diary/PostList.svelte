@@ -27,20 +27,27 @@
     return 0;
   });
 
-  const dateFormatter = new Intl.DateTimeFormat('en', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  $: grouped = groupBy(sorted, (post) => {
+    const date = new Date(post.metadata.date);
+    return date.getFullYear().toString();
   });
 
-  function formatDate(timestamp: string) {
-    try {
-      const date = new Date(timestamp);
-      return dateFormatter.format(date);
-    } catch (e) {
-      console.log(timestamp);
-      return timestamp;
-    }
+  type Group<T> = {
+    key: string;
+    items: T[];
+  };
+
+  function groupBy<T>(items: T[], callback: (item: T) => string): Group<T>[] {
+    return items.reduce((groups, item) => {
+      const key = callback(item);
+      const group = groups.find((group) => group.key === key);
+      if (group) {
+        group.items.push(item);
+      } else {
+        groups.push({ key, items: [item] });
+      }
+      return groups;
+    }, [] as Group<T>[]);
   }
 </script>
 
@@ -60,9 +67,14 @@
 </header>
 
 <ul class="post-list">
-  {#each sorted as post}
-    {#key post.slug}
-      <PostListItem {post} />
+  {#each grouped as group}
+    {#key group.key}
+      <li class="date-divider">
+        <span class="date-text">{group.key}</span>
+      </li>
+      {#each group.items as post}
+        <PostListItem {post} />
+      {/each}
     {/key}
   {/each}
 </ul>
@@ -99,10 +111,10 @@
   }
 
   .post-list {
+    font-size: 18px;
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -110,6 +122,38 @@
     @media @mobile {
       flex-direction: column;
       grid-column: full-width;
+    }
+  }
+
+  .date-divider {
+    align-self: center;
+    color: fade(black, 30%);
+    width: 220px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 1em;
+    flex-shrink: 0;
+
+    .date-text {
+      display: inline-block;
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        height: 0px;
+        border-bottom: 1px solid fade(black, 10%);
+        top: 50%;
+        width: 220px;
+      }
+      &:before {
+        right: 100%;
+        margin-right: 8px;
+      }
+      &:after {
+        left: 100%;
+        margin-left: 8px;
+      }
     }
   }
 </style>

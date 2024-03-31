@@ -39,22 +39,22 @@
     margin: 0;
     padding: 0;
     width: max-content;
-    &:nth-child(even) {
+    &:nth-child(odd) {
       margin: auto;
     }
-    &:nth-child(3n + 1) {
+    &:nth-child(3n + 2) {
       --deg: -1.5deg;
     }
-    &:nth-child(3n + 2) {
+    &:nth-child(3n + 3) {
       --deg: 0deg;
     }
-    &:nth-child(3n + 3) {
+    &:nth-child(3n + 4) {
       --deg: 1.5deg;
     }
-    &:nth-child(4n + 1) {
+    &:nth-child(4n + 2) {
       margin-left: -1em;
     }
-    &:nth-child(4n + 4) {
+    &:nth-child(4n + 5) {
       margin-right: -1em;
     }
 
@@ -82,7 +82,7 @@
       }
 
       .summary {
-        font-size: 14px;
+        font-size: 0.8em;
         font-family: var(--sans-font);
         color: rgba(0 0 0 / 0.75);
         text-wrap: pretty;
@@ -91,7 +91,7 @@
       .date {
         color: rgba(0 0 0 / 0.75);
         font-family: var(--sans-font);
-        font-size: 12px;
+        font-size: 0.7em;
       }
     }
   }
