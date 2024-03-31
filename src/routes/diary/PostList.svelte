@@ -119,7 +119,6 @@
     padding-inline: 2rem;
     max-width: 65ch;
     @media @mobile {
-      padding-inline: 1rem;
       flex-direction: column;
       grid-column: full-width;
     }
@@ -128,7 +127,7 @@
   .post {
     width: max-content;
     &:nth-child(even) {
-      margin-left: auto;
+      margin: auto;
     }
     &:nth-child(3n + 1) {
       --deg: -1.5deg;
