@@ -19,6 +19,6 @@
     padding: 0.25em 0.75em;
     border-radius: 1em;
     background-color: white;
-    border: 1px solid steelblue;
+    border: 1px solid color-mix(in srgb, currentColor 50%, transparent);
   }
 </style>
