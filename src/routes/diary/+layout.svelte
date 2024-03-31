@@ -46,7 +46,7 @@
   footer {
     text-align: center;
     padding-top: 8vh;
-    padding-bottom: 2vh;
+    padding-bottom: 4vh;
     color: rgb(0 0 0 / 0.6);
     a {
       text-decoration: none;
