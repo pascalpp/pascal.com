@@ -117,6 +117,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5em;
     padding-inline: 2rem;
     @media @mobile {

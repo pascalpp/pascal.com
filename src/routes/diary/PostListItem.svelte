@@ -54,6 +54,7 @@
     margin: 0;
     padding: 0;
     width: max-content;
+    max-width: min(45ch, 90vw);
 
     &:nth-child(3n + 2) {
       --deg: -1.5deg;
@@ -66,14 +67,11 @@
     }
 
     @media @not-mobile {
-      &:nth-of-type(even) {
-        margin-inline: auto;
-      }
       &:nth-child(4n + 2) {
-        margin-left: -2em;
+        margin-left: -10ch;
       }
       &:nth-child(4n + 4) {
-        margin-right: -5em;
+        margin-right: -10ch;
       }
     }
     @media @mobile {
@@ -85,7 +83,6 @@
     .rotated-shadow;
 
     a {
-      max-width: min(50ch, 90vw);
       padding: 0.75em 1em;
       background-color: white;
       border-radius: 2px;
