@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { PostSummary } from '../api/posts/util';
+  import Tag from './Tag.svelte';
 
   export let post: PostSummary;
 
   let { metadata } = post;
-  let { title, summary, date } = metadata;
+  let { title, summary, date, tags } = metadata;
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
     year: 'numeric',
@@ -29,6 +30,13 @@
     <span class="title">{title}</span>
     {#if summary}
       <span class="summary">{summary}</span>
+    {/if}
+    {#if tags?.length}
+      <span class="tags">
+        {#each tags as tag}
+          <Tag {tag} link={false} />
+        {/each}
+      </span>
     {/if}
   </a>
 </li>
@@ -73,6 +81,12 @@
       gap: 0.25em;
       line-height: 1.4;
 
+      .date {
+        color: rgba(0 0 0 / 0.75);
+        font-family: var(--sans-font);
+        font-size: 0.7em;
+      }
+
       .title {
         text-wrap: balance;
         &::after {
@@ -88,10 +102,13 @@
         text-wrap: pretty;
       }
 
-      .date {
-        color: rgba(0 0 0 / 0.75);
-        font-family: var(--sans-font);
-        font-size: 0.7em;
+      .tags {
+        font-size: 0.6em;
+        color: rgba(0 0 0 / 0.6);
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        margin-top: 0.5em;
       }
     }
   }

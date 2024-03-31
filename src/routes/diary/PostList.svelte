@@ -55,7 +55,7 @@
   <span class="title">
     {#if tag}
       <span class="label">Posts tagged with</span>
-      <Tag {tag} />
+      <Tag {tag} link={false} />
     {:else}
       <span class="label">All Posts</span>
     {/if}
