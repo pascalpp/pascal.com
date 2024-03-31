@@ -1,11 +1,12 @@
 ---
 title: Troubleshooting an AppKit bug on Sonoma
 date: 2024-03-30T15:21:08.455Z
-summary: Trying to figure out why NSWorkspace.shared.desktopImageOptions no longer returns fillColor, the current desktop fill color. This used to work in macOS Monterey and Ventura, but no longer works in macOS Sonoma.
+summary: Trying to figure out why NSWorkspace.shared.setDesktopImageURL no longer honors the fillColor option to set the desktop fill color. This used to work in macOS Monterey and Ventura, but no longer works in macOS Sonoma.
 status: published
+tags: [swift, appkit]
 ---
 
-In the macOS AppKit framework, there's an API for setting the current desktop image, scaling method, and fill color. The method is [`NSWorkspace.shared.setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl). This method accepts a file URL, a screen reference, and an options dicitionary, including `fillColor`.
+In the macOS AppKit framework, there's an `NSWorkspace.shared` API method for setting the current desktop image, scaling method, and fill color. The method is called [`setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl), and it accepts a file URL, a screen reference, and an options dicitionary, including `fillColor`.
 
 ![Wallpaper settings in macOS](./wallpaper.webp){ .polaroid loading=lazy style="--deg: 0" width=600 }
 
@@ -42,7 +43,7 @@ for screen in screens {
 
 </details>
 
-We can verify that it works using a related API method, [`NSWorkspace.shared.desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
+We can verify that it works using a related API method, [`desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
 
 More sample code:
 
@@ -98,7 +99,7 @@ Similarly, when calling `setDesktopImageURL`, Sonoma seems to ignore the `fillCo
 
 ### Keyboard Maestro
 
-I also tested this in the popular macro utility [Keyboard Maestro](https://www.keyboardmaestro.com), which has a `Set Desktop Image` action that allows you to set the desktop image, scaling method, and fill color, likely using the same `NSWorkspace.shared.setDesktopImageURL` API method. Keyboard Maestro is able to set the fill color in Monterey, but not in Sonoma.
+I also tested this in the popular macro utility [Keyboard Maestro](https://www.keyboardmaestro.com), which has a `Set Desktop Image` action that allows you to set the desktop image, scaling method, and fill color, likely using the same `setDesktopImageURL` API method. Keyboard Maestro is able to set the fill color in Monterey, but not in Sonoma.
 
 ![Keyboard Maestro](./keyboard-maestro.webp){ .bordered loading=lazy }
 
