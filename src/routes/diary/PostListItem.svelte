@@ -4,8 +4,10 @@
 
   export let post: PostSummary;
 
-  let { metadata } = post;
-  let { title, summary, date, tags } = metadata;
+  const { metadata } = post;
+  const { title, summary, date, tags, status } = metadata;
+
+  const draft = status === 'draft';
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
     year: 'numeric',
@@ -24,9 +26,14 @@
   }
 </script>
 
-<li class="post">
+<li class="post" class:draft>
   <a href="/diary/{post.slug}">
-    <span class="date">{formatDate(date)}</span>
+    <span class="post-header">
+      <span class="date">{formatDate(date)}</span>
+      {#if draft}
+        <span class="draft-marker">Draft</span>
+      {/if}
+    </span>
     <span class="title">{title}</span>
     {#if summary}
       <span class="summary">{summary}</span>
@@ -87,36 +94,49 @@
       flex-direction: column;
       gap: 0.25em;
       line-height: 1.4;
+    }
 
-      .date {
-        color: rgba(0 0 0 / 0.75);
+    .post-header {
+      color: rgba(0 0 0 / 0.75);
+      font-family: var(--sans-font);
+      font-size: 0.7em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .draft-marker {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9em;
+      }
+    }
+
+    .title {
+      text-wrap: balance;
+      &::after {
+        content: ' →';
         font-family: var(--sans-font);
-        font-size: 0.7em;
       }
+    }
 
-      .title {
-        text-wrap: balance;
-        &::after {
-          content: ' →';
-          font-family: var(--sans-font);
-        }
-      }
+    .summary {
+      font-size: 0.8em;
+      font-family: var(--sans-font);
+      color: rgba(0 0 0 / 0.75);
+      text-wrap: pretty;
+    }
 
-      .summary {
-        font-size: 0.8em;
-        font-family: var(--sans-font);
-        color: rgba(0 0 0 / 0.75);
-        text-wrap: pretty;
-      }
+    .tags {
+      font-size: 0.6em;
+      color: rgba(0 0 0 / 0.6);
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+      margin-top: 0.5em;
+    }
 
-      .tags {
-        font-size: 0.6em;
-        color: rgba(0 0 0 / 0.6);
-        display: flex;
-        flex-direction: row;
-        gap: 0.5em;
-        margin-top: 0.5em;
-      }
+    &.draft {
+      opacity: 0.6;
     }
   }
 </style>
