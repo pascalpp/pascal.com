@@ -3,7 +3,7 @@
 </script>
 
 <div class="box">
-  <h1>{title}</h1>
+  <h2>{title}</h2>
   <p class="content40">0ch ↔ 40ch</p>
   <p class="content40-80">40ch ↔ 80ch</p>
   <p class="content80-100">80ch ↔ 100ch</p>

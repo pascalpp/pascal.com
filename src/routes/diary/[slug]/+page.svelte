@@ -1,10 +1,10 @@
 <script lang="ts">
   import { dev } from '$app/environment';
-  import TagList from './TagList.svelte';
-  import PostEditButtons from './PostEditButtons.svelte';
-  import AddClipboardButtons from './AddClipboardButtons.svelte';
   import { page } from '$app/stores';
+  import AddClipboardButtons from './AddClipboardButtons.svelte';
+  import PostEditButtons from './PostEditButtons.svelte';
   import PostNavigation from './PostNavigation.svelte';
+  import TagList from './TagList.svelte';
 
   export let data;
 
@@ -72,9 +72,10 @@
 
     h1 {
       margin: 0;
-      line-height: 1.1;
-      font-size: 36px;
+      line-height: 1.3;
+      font-size: 30px;
       font-weight: 500;
+      text-wrap: balance;
 
       &.draft {
         color: darkred;

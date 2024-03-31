@@ -38,7 +38,6 @@
     }
 
     &.bottom {
-      font-size: 20px;
       gap: 1em;
       margin-top: 4em;
     }
