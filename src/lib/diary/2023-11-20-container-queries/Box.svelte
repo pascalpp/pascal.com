@@ -17,7 +17,7 @@
     padding: 1rem;
     min-height: 100px;
 
-    h1 {
+    h2 {
       line-height: 1;
       margin-bottom: 0.1em;
     }

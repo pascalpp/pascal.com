@@ -25,7 +25,7 @@ export type Post = {
 type PostResolver = () => Promise<{ metadata: PostMetadata }>;
 
 export async function fetchAllPosts(): Promise<PostSummary[]> {
-  const files = import.meta.glob('/src/routes/diary/**/page.md');
+  const files = import.meta.glob('/src/lib/diary/**/page.md');
   const iterableFiles = Object.entries(files) as [string, PostResolver][];
 
   const posts = await Promise.all(
@@ -48,7 +48,7 @@ export async function fetchAllPosts(): Promise<PostSummary[]> {
 }
 
 export async function fetchPost(slug: string): Promise<Post> {
-  const post = (await import(`../../diary/${slug}/page.md`)) as Post;
+  const post = (await import(`../../../lib/diary/${slug}/page.md`)) as Post;
   return post;
 }
 

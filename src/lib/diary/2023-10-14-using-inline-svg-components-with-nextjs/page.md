@@ -10,7 +10,7 @@ Today I decided to try out [NextJS](https://nextjs.org) for the first time. One 
 <details>
   <summary>A little rant</summary>
 
-_In so many apps I've worked on, images and other assets are treated as second-class citizens, relegated to some root-level assets directory where they may or may not get used, just sitting there collecting dust. I much prefer to treat assets as first-class dependencies and colocate them next to the components that use them. This allows the file structure of the app to express these relationships more clearly, so it's obvious what images are being used by which parts your application or website. This is especially useful if you're jumping among different projects, where you might not work on a given project for months at a time and then have to come back and refamiliarize yourself._
+_In so many apps I've worked on, images and other assets are treated as second-class citizens, relegated to some root-level assets directory where they may or may not get used, just sitting there collecting dust. I much prefer to treat assets as first-class dependencies and colocate them next to the components that use them. This allows the file structure of the app to express these relationships more clearly, so it's obvious what images are being used by which parts of your application or website. This is especially useful if you're jumping among different projects, where you might not work on a given project for months at a time and then have to come back and refamiliarize yourself._
 
 </details>
 

@@ -1,6 +1,5 @@
-// src/routes/diary/+page.js
-import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch, params }) => {
   const { tag } = params;
