@@ -11,12 +11,12 @@
 <nav class="post-navigation" class:top class:bottom>
   {#if prev}
     <div class="prev">
-      <a accesskey="[" href="/diary/{prev.slug}">← {prev.metadata.title}</a>
+      <a accesskey="[" href="/diary/{prev.slug}"><span class="title">{prev.metadata.title}</span></a>
     </div>
   {/if}
   {#if next}
     <div class="next">
-      <a accesskey="]" href="/diary/{next.slug}">{next.metadata.title} →</a>
+      <a accesskey="]" href="/diary/{next.slug}"><span class="title">{next.metadata.title}</span></a>
     </div>
   {/if}
 </nav>
@@ -47,12 +47,26 @@
     .prev {
       --deg: 1deg;
       .rotated-shadow;
+
+      a {
+        &::before {
+          content: '← ';
+          font-family: var(--sans-font);
+        }
+      }
     }
 
     .next {
       --deg: -1deg;
       .rotated-shadow;
       align-self: flex-end;
+
+      a {
+        &::after {
+          content: ' →';
+          font-family: var(--sans-font);
+        }
+      }
     }
 
     @media @not-mobile {
@@ -69,14 +83,31 @@
       gap: 2em;
 
       &.top {
-        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: auto;
+        margin-top: -0.5em;
+        margin-bottom: 1.5rem;
+        line-height: 1;
+
+        .prev {
+          align-self: center;
+        }
+        .next {
+          align-self: center;
+        }
+        .title {
+          display: none;
+        }
       }
 
-      .prev {
-        margin-right: 1em;
-      }
-      .next {
-        margin-left: 1em;
+      &.bottom {
+        .prev {
+          margin-right: 1em;
+        }
+        .next {
+          margin-left: 1em;
+        }
       }
     }
 
