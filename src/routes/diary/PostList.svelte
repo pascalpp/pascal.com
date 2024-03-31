@@ -128,8 +128,8 @@
 
   .date-divider {
     align-self: center;
-    color: fade(black, 30%);
-    width: 220px;
+    color: rgba(0 0 0 / 0.4);
+    width: 20ch;
     overflow: hidden;
     text-align: center;
     margin-top: 1em;

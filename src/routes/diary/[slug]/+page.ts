@@ -8,7 +8,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
   const posts = (await response.json()) as PostSummary[];
 
   const { slug } = params;
-  const post = await import(`../${slug}/page.md`);
+  const post = await import(`../../../lib/diary/${slug}/page.md`);
   const { metadata } = post;
   const { title, date } = metadata;
   const content = post.default;
