@@ -97,11 +97,15 @@ fillColor: nil <-- bad
 
 Similarly, when calling `setDesktopImageURL`, Sonoma seems to ignore the `fillColor` option, and always sets the fill color to some default blue (even if I have previously set it to some other color manually.)
 
+---
+
 ### Keyboard Maestro
 
 I also tested this in the popular macro utility [Keyboard Maestro](https://www.keyboardmaestro.com), which has a `Set Desktop Image` action that allows you to set the desktop image, scaling method, and fill color, likely using the same `setDesktopImageURL` API method. Keyboard Maestro is able to set the fill color in Monterey, but not in Sonoma.
 
 ![Keyboard Maestro](./keyboard-maestro.webp){ .bordered loading=lazy }
+
+---
 
 ### So…
 
