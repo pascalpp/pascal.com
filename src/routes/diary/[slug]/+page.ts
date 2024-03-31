@@ -1,5 +1,3 @@
-// src/routes/diary/[slug]/+page.js
-
 import type { PostSummary } from '../../api/posts/util';
 import type { PageLoad } from './$types';
 
