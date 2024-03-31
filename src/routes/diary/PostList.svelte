@@ -1,7 +1,7 @@
 <script lang="ts">
   import ButtonBar from '$lib/components/ButtonBar.svelte';
-  import Tag from './Tag.svelte';
   import type { PostSummary } from '../api/posts/util';
+  import Tag from './Tag.svelte';
 
   export let posts: PostSummary[] = [];
   export let tag = '';
@@ -58,12 +58,17 @@
   </div>
 </header>
 
-<ul class="bleed-right">
+<ul>
   {#each sorted as post}
-    <li>
+    {@const { metadata } = post}
+    {@const { title, summary, date } = metadata}
+    <li class="post">
       <a href="/diary/{post.slug}">
-        <span class="title">{post.metadata.title}</span>
-        <span class="date">{formatDate(post.metadata.date)}</span>
+        <span class="date">{formatDate(date)}</span>
+        <span class="title">{title}</span>
+        {#if summary}
+          <span class="summary">{summary}</span>
+        {/if}
       </a>
     </li>
   {/each}
@@ -77,6 +82,11 @@
     flex-direction: row;
     align-items: center;
     gap: 2em;
+
+    @media @mobile {
+      flex-direction: column;
+      gap: 1em;
+    }
 
     .title {
       display: flex;
@@ -104,26 +114,36 @@
   ul {
     margin-top: 2rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
     gap: 1.5em;
-    padding-right: 2rem;
+    padding-inline: 2rem;
+    max-width: 65ch;
     @media @mobile {
+      padding-inline: 1rem;
       flex-direction: column;
       grid-column: full-width;
     }
   }
 
-  li {
+  .post {
     width: max-content;
-    &:nth-child(odd) {
-      --deg: 1deg;
-      margin-left: -0.5rem;
-    }
     &:nth-child(even) {
-      --deg: -1deg;
-      margin-left: 0.5em;
+      margin-left: auto;
+    }
+    &:nth-child(3n + 1) {
+      --deg: -1.5deg;
+    }
+    &:nth-child(3n + 2) {
+      --deg: 0deg;
+    }
+    &:nth-child(3n + 3) {
+      --deg: 1.5deg;
+    }
+    &:nth-child(4n + 1) {
+      margin-left: -1em;
+    }
+    &:nth-child(4n + 4) {
+      margin-right: -1em;
     }
 
     --shadow-offset: 0.1em;
@@ -131,28 +151,35 @@
     .rotated-shadow;
 
     a {
-      max-width: 90vw;
-      padding: 0.5em 1em;
+      max-width: min(50ch, 90vw);
+      padding: 0.75em 1em;
       background-color: white;
       border-radius: 2px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       gap: 0.25em;
-      line-height: 1.2;
+      line-height: 1.4;
 
       .title {
+        text-wrap: balance;
         &::after {
           content: ' →';
+          font-family: var(--sans-font);
         }
       }
 
-      .date {
-        color: black;
+      .summary {
+        font-size: 14px;
         font-family: var(--sans-font);
-        opacity: 0.5;
+        color: rgba(0 0 0 / 0.75);
+        text-wrap: pretty;
+      }
+
+      .date {
+        color: rgba(0 0 0 / 0.75);
+        font-family: var(--sans-font);
         font-size: 12px;
-        padding-left: 2em;
       }
     }
   }
