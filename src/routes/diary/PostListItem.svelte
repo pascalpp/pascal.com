@@ -103,6 +103,8 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 2em;
 
       .draft-marker {
         text-transform: uppercase;
