@@ -120,6 +120,7 @@
     gap: 1.5em;
     padding-inline: 2rem;
     @media @mobile {
+      padding-inline: 0;
       flex-direction: column;
       grid-column: full-width;
     }

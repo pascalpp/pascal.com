@@ -47,9 +47,7 @@
     margin: 0;
     padding: 0;
     width: max-content;
-    &:nth-child(odd) {
-      margin: auto;
-    }
+
     &:nth-child(3n + 2) {
       --deg: -1.5deg;
     }
@@ -59,11 +57,20 @@
     &:nth-child(3n + 4) {
       --deg: 1.5deg;
     }
-    &:nth-child(4n + 2) {
-      margin-left: -1em;
+
+    @media @not-mobile {
+      &:nth-child(odd) {
+        margin-inline: auto;
+      }
+      &:nth-child(4n + 2) {
+        margin-left: -1em;
+      }
+      &:nth-child(4n + 5) {
+        margin-right: -1em;
+      }
     }
-    &:nth-child(4n + 5) {
-      margin-right: -1em;
+    @media @mobile {
+      margin-inline: auto;
     }
 
     --shadow-offset: 0.1em;
