@@ -15,15 +15,15 @@ Here's some sample code:
   <summary><code>SetDesktopImageURL.swift</code></summary>
 
 ```swift
-import Foundation
 import AppKit
+import Foundation
 
 let workspace = NSWorkspace.shared
 let screens = NSScreen.screens
 
 let image = NSURL.fileURL(withPath: "/path/to/some/wallpaper.png")
 
-// A nice blue green. This will show through any transparent areas of this image
+// A nice blue green. This will show through any transparent areas of the desktop image
 let color = NSColor(calibratedRed: 64/255, green: 116/255, blue: 112/255, alpha: 1.0)
 
 // NSImageScaling options https://developer.apple.com/documentation/appkit/nsimagescaling
@@ -42,7 +42,7 @@ for screen in screens {
 
 </details>
 
-We can verify the result using a related API method, [`NSWorkspace.shared.desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
+We can verify that it works using a related API method, [`NSWorkspace.shared.desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
 
 More sample code:
 
@@ -67,7 +67,7 @@ This code works as expected in macOS Monterey (version 12.x) and macOS Ventura (
 
 #### Monterey
 
-```
+```console
 macOS version: 12.4.0
 imageScaling: Optional(3)
 allowClipping: Optional(0)
@@ -76,7 +76,7 @@ fillColor: Optional(NSCalibratedRGBColorSpace ...) <-- good
 
 #### Ventura
 
-```
+```console
 macOS version: 13.6.0
 imageScaling: Optional(3)
 allowClipping: Optional(0)
@@ -87,7 +87,7 @@ But in Sonoma (version 14.x), the `fillColor` key is missing from the returned d
 
 #### Sonoma
 
-```
+```console
 macOS version: 14.4.1
 imageScaling: Optional(3)
 allowClipping: Optional(0)
@@ -96,9 +96,25 @@ fillColor: nil <-- bad
 
 Similarly, when calling `setDesktopImageURL`, Sonoma seems to ignore the `fillColor` option, and always sets the fill color to some default blue (even if I have previously set it to some other color manually.)
 
+### Keyboard Maestro
+
+I also tested this in the popular macro utility [Keyboard Maestro](https://www.keyboardmaestro.com), which has a `Set Desktop Image` action that allows you to set the desktop image, scaling method, and fill color, likely using the same `NSWorkspace.shared.setDesktopImageURL` API method. Keyboard Maestro is able to set the fill color in Monterey, but not in Sonoma.
+
+![Keyboard Maestro](./keyboard-maestro.webp){ .bordered loading=lazy }
+
+### So…
+
+…at this point I'm pretty sure this is a regression in macOS Sonoma.
+
 ### Next steps
 
-So at this point I'm pretty sure this is a regression in macOS Sonoma. If you have any experience with this API and know of a workaround, [I'd love to hear it!](mailto:pascal+fillcolor@pascal.com) If you'd like to try out the above on your Mac and report your results to me, I've created a [minimal sample project](https://github.com/pascalpp/current-desktop-color) on Github. I'm working up the nerve to file a bug report with Apple, but I haven't done that before and from what I've heard I'm not particularly hopeful that it will get me anywhere. But I'll try anyway.
+- If you have any experience with this API and know of a workaround, [I'd love to hear it!](mailto:pascal+fillcolor@pascal.com)
+
+- If you have Xcode installed, you can try out a [minimal sample project](https://github.com/pascalpp/current-desktop-color) on Github. Clone the repo and type `swift run`. It will output the current desktop image settings in your console.
+
+- I'm working up the nerve to file a bug report with Apple, but I haven't done that before and from what I've heard I'm not particularly hopeful that it will get me anywhere. But I'll try anyway.
+
+---
 
 ### A cool thing I found along the way…
 
@@ -107,3 +123,9 @@ I discovered this amazing macOS virtualization tool, [Tart](https://tart.run/qui
 ![macOS Ventura running in Tart](./tart-ventura.webp)
 
 It allows you to run different versions of macOS (and Linux) in virtual containers on your Mac. I used it to test the above code on Ventura, as I didn't have a machine with that version running. [The setup is dead-easy](https://tart.run/quick-start/) (if you already have `homebrew` installed). It does take a while to download an OS image, but once that's done the container starts up incredibly quickly, and feels just as responsive as my actual Mac. Definitely worth a look if you do any macOS development.
+
+<style>
+  li + li {
+    margin-top: 0.5em;
+  }
+</style>
