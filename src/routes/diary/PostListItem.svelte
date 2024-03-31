@@ -66,14 +66,14 @@
     }
 
     @media @not-mobile {
-      &:nth-child(odd) {
+      &:nth-of-type(even) {
         margin-inline: auto;
       }
       &:nth-child(4n + 2) {
-        margin-left: -1em;
+        margin-left: -2em;
       }
-      &:nth-child(4n + 5) {
-        margin-right: -1em;
+      &:nth-child(4n + 4) {
+        margin-right: -5em;
       }
     }
     @media @mobile {
