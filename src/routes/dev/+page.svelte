@@ -383,10 +383,10 @@
     .not-for-hire {
       z-index: 5;
       @media @desktop {
-        transform: translate(50px, 20px);
+        transform: translate(55px, 30px);
         margin-bottom: -70px;
         align-self: flex-start;
-        --deg: -1deg;
+        --deg: 1.5deg;
         --offset: 25px;
       }
       @media @not-desktop {
