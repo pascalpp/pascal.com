@@ -6,7 +6,7 @@ status: published
 tags: [swift, appkit]
 ---
 
-In the macOS AppKit framework, there's an `NSWorkspace.shared` API method for setting the current desktop image, scaling method, and fill color. The method is called [`setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl), and it accepts a file URL, a screen reference, and an options dicitionary, including `fillColor`.
+In the macOS AppKit framework, there's an `NSWorkspace` API method for setting the current desktop image, scaling method, and fill color. The method is called [`setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl), and it accepts a file URL, a screen reference, and an options dicitionary, including `fillColor`.
 
 ![Wallpaper settings in macOS](./wallpaper.webp){ .polaroid loading=lazy style="--deg: 0" width=600 }
 
