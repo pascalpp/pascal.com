@@ -1,16 +1,13 @@
-<script>
-  import BroadlySlideshow from './BroadlySlideshow.svelte';
-</script>
-
 # Recent experience
 
-## [**Broadly**](https://broadly.com/) · February 2019 to present · <BroadlySlideshow/>
+## [**Coast**](https://www.coastapp.com) · April 2024 to present
 
-- Developed a suite of desktop and mobile applications to help small businesses manage their customers, garner positive reviews, and generate new business.
-- Implemented a design system of modular React components to enable myself and my team to quickly deliver new features.
-- Developed a server-rendered invoicing application in SvelteKit, allowing end customers to quickly pay an invoice without having to download a large javascript bundle.
-- Helped design the user experience for new features, wire-framing various user workflows, building prototypes, and writing copy.
-- Conducted unit and integration testing to ensure code quality and prevent functional and visual regressions.
-- Provided mentorship and pair programming opportunities for junior developers, helping to develop their skills and guide them to more efficient workflows.
+- Just joined Coast. Excited to be working with this team!
 
-Broadly was acquired by [Vendasta](https://www.vendasta.com) in April 2023.
+## [**Vendasta**](https://www.vendasta.com) · April 2023 to March 2023
+
+- Joined the Vendasta team after the acquisition of Broadly, my previous employer.
+- Continued to develop and maintain the Broadly suite of applications, now under the Vendasta umbrella.
+- Ramped up on a new-to-me tech stack (Angular) in order to contribute to Vendasta's core product.
+- Assisted several teams to fine-tune the user interface for various Vendasta products and features: an embedded AI webchat, and in-app inbox messaging system, an embedded review stream carousel, and more.
+- Provided mentorship and pair programming opportunities for junior developers, helping to develop their skills in Javascript, CSS, and user interface design.

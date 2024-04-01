@@ -1,7 +1,8 @@
 <script lang="ts">
   import Capabilities from './capabilities.md';
-  import RecentExperience from './recent-experience.md';
+  import MorePastExperience from './more-past-experience.md';
   import PastExperience from './past-experience.md';
+  import RecentExperience from './recent-experience.md';
   import Seeking from './seeking.md';
 
   let zIndex = 100;
@@ -41,11 +42,6 @@
       <p>81 Third Place · Brooklyn, NY, 11231</p>
       <p>917-399-7566 · pascal@pascal.com</p>
     </div>
-    <p class="links">
-      View this resume online: https://pascal.com/dev
-      <br />
-      LinkedIn: https://www.linkedin.com/in/pascalpp
-    </p>
   </div>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -84,6 +80,14 @@
     >
       <div class="card">
         <div class="portrait" />
+      </div>
+    </div>
+
+    <div class="not-for-hire" role="button" tabindex="0" aria-label="Not for hire" on:focusin={bump} on:click={bump}>
+      <div class="not-for-hire-card not-print">
+        <div class="card">
+          <p>I’m not presently looking for work,<br />but keep me on file!</p>
+        </div>
       </div>
     </div>
 
@@ -126,6 +130,19 @@
       >
         <div class="card text-card">
           <PastExperience />
+        </div>
+      </div>
+
+      <div
+        role="button"
+        tabindex="0"
+        aria-label="More past experience"
+        class="more-past-experience-page"
+        on:focusin={bump}
+        on:click={bump}
+      >
+        <div class="card text-card">
+          <MorePastExperience />
         </div>
       </div>
 
@@ -322,7 +339,7 @@
     }
 
     .business-card {
-      z-index: 6;
+      z-index: 7;
       font-size: 16px;
       @media @desktop {
         margin-bottom: -8em;
@@ -348,7 +365,7 @@
     }
 
     .portrait-card {
-      z-index: 5;
+      z-index: 6;
       width: min(600px, 80vw);
       --deg: -3deg;
       --offset: 25px;
@@ -360,6 +377,31 @@
         background-color: #723253;
         background-image: url(./pascal-portrait.jpg);
         background-size: cover;
+      }
+    }
+
+    .not-for-hire {
+      z-index: 5;
+      @media @desktop {
+        transform: translate(50px, 20px);
+        margin-bottom: -70px;
+        align-self: flex-start;
+        --deg: -1deg;
+        --offset: 25px;
+      }
+      @media @not-desktop {
+        transform: translate(40px, 0px);
+        margin-top: -0.75em;
+        margin-bottom: 0.75em;
+        --deg: -5deg;
+        --offset: 25px;
+      }
+      .not-for-hire-card {
+        .rotated-shadow;
+
+        p {
+          margin: 0;
+        }
       }
     }
 
@@ -390,6 +432,16 @@
       }
     }
 
+    .more-past-experience-page {
+      z-index: 1;
+      --deg: -2deg;
+      --offset: 20px;
+      .rotated-shadow;
+      @media @desktop {
+        margin-right: 3em;
+      }
+    }
+
     .seeking-page {
       z-index: 1;
       --link-hint: 'email me';
@@ -403,6 +455,8 @@
         margin-top: 20px;
         margin-right: 200px;
       }
+      // hide for now
+      display: none;
     }
 
     .tool-cards {
@@ -422,6 +476,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      // hide for now
+      display: none;
     }
 
     .print-card {
@@ -527,6 +584,7 @@
       }
     }
     .seeking-page {
+      display: none;
       .card > :global(:last-child) {
         display: none;
       }
