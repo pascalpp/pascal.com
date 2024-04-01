@@ -13,7 +13,7 @@
     <h3>Features</h3>
     <ul>
       <li>Horizontal and vertical rulers.</li>
-      <li>Pixel units.</li>
+      <li>Measure in pixels, inches, or millimeters.</li>
       <li>Float rulers above other applications (press F to toggle).</li>
       <li>Move windows independently or as a group (press G to toggle).</li>
       <li>Show or hide the shadow behind rulers (press S to toggle).</li>
