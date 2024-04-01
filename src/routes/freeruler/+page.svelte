@@ -68,6 +68,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    min-height: 100vh;
 
     @media @desktop {
       margin-inline: auto;
