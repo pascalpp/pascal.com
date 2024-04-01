@@ -26,7 +26,7 @@
       See the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
     </p>
     <p>
-      Should be compatible with macOS Sonoma, Ventura, Catalina, Mojave, and maybe a few older releases. <a
+      Compatible with macOS Sonoma, Ventura, Catalina, Mojave, and maybe a few older releases. <a
         href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
       >
         Your feedback is welcome!
