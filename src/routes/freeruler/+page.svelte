@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Free Ruler for Mac OS X</title>
+  <title>Free Ruler for macOS</title>
 </svelte:head>
 
 <main>
@@ -8,7 +8,7 @@
   <article>
     <header>
       <h1>Free Ruler 2.0</h1>
-      <p>A ruler application for Mac OS</p>
+      <p>A ruler application for macOS</p>
     </header>
     <h3>Features</h3>
     <ul>
@@ -26,7 +26,7 @@
       See the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
     </p>
     <p>
-      Should be compatible with Mac OS Ventura, Catalina, Mojave, and maybe a few older releases. <a
+      Should be compatible with macOS Sonoma, Ventura, Catalina, Mojave, and maybe a few older releases. <a
         href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
       >
         Your feedback is welcome!
@@ -53,7 +53,7 @@
       Or you can <a href="https://www.paypal.me/pascalpp" rel="nofollow">make a donation</a>.
     </p>
     <p>
-      Made with love by <a href="/">some guy</a>.
+      Made with love by <a href="/">this guy</a>.
     </p>
   </article>
 </main>
@@ -62,12 +62,19 @@
   main {
     background-color: #4f8683;
     padding: 2vw;
+    gap: 2em;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 2em;
-    padding-bottom: 100px;
+
+    @media @desktop {
+      margin-inline: auto;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+    }
   }
 
   a {
