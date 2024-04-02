@@ -1,3 +1,9 @@
+<script lang="ts">
+  import Row from '$lib/components/Row.svelte';
+  import GithubMark from './github-mark.svg?component';
+  import MacAppStore from './mac-app-store.svg?component';
+</script>
+
 <svelte:head>
   <title>Free Ruler for macOS</title>
 </svelte:head>
@@ -22,15 +28,25 @@
     </ul>
 
     <h3>Download</h3>
-    <p>
-      See the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
-    </p>
+
+    <Row>
+      <a href="https://apps.apple.com/us/app/free-ruler/id1483172210?mt=12"><MacAppStore /></a>
+      <a href="https://github.com/pascalpp/FreeRuler/releases" class="github">
+        <GithubMark />
+        Download from GitHub
+      </a>
+    </Row>
+
     <p>
       Compatible with macOS Sonoma, Ventura, Catalina, Mojave, and maybe a few older releases. <a
         href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
       >
         Your feedback is welcome!
       </a>
+    </p>
+
+    <p>
+      For older versions, see the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
     </p>
 
     <h3>Todo</h3>
@@ -122,6 +138,22 @@
 
     h3 {
       margin-top: 1.5em;
+    }
+
+    .github {
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 0.5em;
+      border-radius: 6px;
+      color: black;
+      text-decoration: none;
+      border: 1px solid rgb(0 0 0 / 50%);
+      :global(svg) {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 </style>
