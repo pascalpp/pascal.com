@@ -57,7 +57,6 @@
       <a href="https://github.com/pascalpp/FreeRuler/issues/new">open a new issue</a>.
     </p>
     <h3>Contributing</h3>
-    <p>As this is my first Swift application, any help is appreciated!</p>
     <p>
       If you have experience with Mac app development in Swift, please look at the <a
         href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22+sort%3Aupdated-desc"
