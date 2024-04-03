@@ -19,15 +19,9 @@
     day: 'numeric',
   });
 
-  const timeFormatter = new Intl.DateTimeFormat('en', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  });
-
   function formatDate(timestamp: string | number) {
     const date = new Date(timestamp);
-    return dateFormatter.format(date) + ' · ' + timeFormatter.format(date).replace(' ', '').toLowerCase();
+    return dateFormatter.format(date);
   }
 </script>
 
