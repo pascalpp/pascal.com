@@ -9,8 +9,8 @@
   export let data;
 
   $: ({ post, next, prev } = data);
-  $: ({ title, date, content, metadata } = post);
-  $: ({ tags, status = 'published' } = metadata);
+  $: ({ title, content, metadata } = post);
+  $: ({ tags, status = 'published', date, updated } = metadata);
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
     weekday: 'long',
@@ -18,11 +18,6 @@
     month: 'long',
     day: 'numeric',
   });
-
-  function formatDate(timestamp: string | number) {
-    const date = new Date(timestamp);
-    return dateFormatter.format(date);
-  }
 </script>
 
 <svelte:head>
@@ -42,7 +37,10 @@
     </h1>
     <div class="subheader">
       <p class="date">
-        {formatDate(date)}
+        <span>{dateFormatter.format(new Date(date))}</span>
+        {#if updated}
+          <span> · Updated {dateFormatter.format(new Date(updated))}</span>
+        {/if}
       </p>
       <TagList {tags} />
     </div>
