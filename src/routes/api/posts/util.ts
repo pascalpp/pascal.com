@@ -7,11 +7,11 @@ export type PostStatus = 'draft' | 'published';
 
 export type PostMetadata = {
   title: string;
-  date: Date;
+  date: string;
   status?: PostStatus;
   tags?: string[];
   summary?: string;
-  updated?: Date;
+  updated?: string;
 };
 
 export type PostFrontMatter = {
@@ -103,14 +103,14 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
 
   const metadata: PostMetadata = {
     title: record.title,
-    date: new Date(record.date),
+    date: record.date,
     status: record.status as PostStatus,
     tags: record.tags
       ?.substring(1, record.tags?.length - 1)
       .split(',')
       .map((tag) => tag.trim()),
     summary: record.summary,
-    updated: record.updated ? new Date(record.updated) : undefined,
+    updated: record.updated,
   };
 
   return metadata;

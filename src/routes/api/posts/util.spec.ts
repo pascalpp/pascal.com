@@ -62,7 +62,7 @@ describe('parseFrontMatterLines', () => {
 
     const expected = {
       title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-      date: new Date('2004-04-20T03:51:00.000Z'),
+      date: '2004-04-20T03:51:00.000Z',
       status: undefined,
       tags: ['nyc', 'running'],
       summary: undefined,
@@ -72,7 +72,7 @@ describe('parseFrontMatterLines', () => {
     const actual = parseFrontMatterLines(input);
 
     expect(actual.title).toBe(expected.title);
-    expect(actual.date.toISOString()).toBe(expected.date.toISOString());
+    expect(actual.date).toBe(expected.date);
     expect(actual.status).toBe(expected.status);
     expect(actual.tags).toStrictEqual(expected.tags);
     expect(actual.summary).toBe(expected.summary);
