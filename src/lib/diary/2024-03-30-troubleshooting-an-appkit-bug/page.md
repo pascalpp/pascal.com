@@ -4,6 +4,7 @@ date: 2024-03-30T15:21:08.455Z
 summary: Trying to figure out why NSWorkspace.shared.setDesktopImageURL no longer honors the fillColor option to set the desktop fill color. This used to work in macOS Monterey and Ventura, but no longer works in macOS Sonoma.
 status: published
 tags: [swift, appkit]
+updated: 2024-04-03T05:13:59.389Z
 ---
 
 In the macOS AppKit framework, there's an `NSWorkspace` API method for setting the current desktop image, scaling method, and fill color. The method is called [`setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl), and it accepts a file URL, a screen reference, and an options dicitionary, including `fillColor`.
@@ -22,17 +23,19 @@ import Foundation
 let workspace = NSWorkspace.shared
 let screens = NSScreen.screens
 
-let image = NSURL.fileURL(withPath: "/path/to/some/wallpaper.png")
+// transparent Apache logo, part of the base macOS installation
+let path = "/Library/WebServer/share/httpd/manual/images/feather.png"
+let image = NSURL.fileURL(withPath: path)
 
 // A nice blue green. This will show through any transparent areas of the desktop image
 let color = NSColor(calibratedRed: 64/255, green: 116/255, blue: 112/255, alpha: 1.0)
 
 // NSImageScaling options https://developer.apple.com/documentation/appkit/nsimagescaling
-let fit = NSImageScaling.scaleProportionallyUpOrDown.rawValue
+let center = NSImageScaling.scaleNone.rawValue
 
 let options: [NSWorkspace.DesktopImageOptionKey: Any] = [
   .allowClipping: false,
-  .imageScaling: fit,
+  .imageScaling: center,
   .fillColor: color,
 ]
 
@@ -43,7 +46,7 @@ for screen in screens {
 
 </details>
 
-We can verify that it works using a related API method, [`desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
+We can read the values we've just set using a related API method, [`desktopImageOptions`](https://developer.apple.com/documentation/appkit/nsworkspace/1530855-desktopimageoptions). This method returns a dictionary of the current desktop image options for the given screen.
 
 More sample code:
 
@@ -115,9 +118,9 @@ I also tested this in the popular macro utility [Keyboard Maestro](https://www.k
 
 - If you have any experience with this API and know of a workaround, [I'd love to hear it!](mailto:pascal+fillcolor@pascal.com)
 
-- If you have Xcode installed, you can try out a [minimal sample project](https://github.com/pascalpp/current-desktop-color) on Github. Clone the repo and type `swift run`. It will output the current desktop image settings in your console.
+- If you have Xcode installed, you can try out a [minimal sample project](https://github.com/pascalpp/current-desktop-color) on Github. Clone the repo and type `swift run`. It will output the current desktop image settings in your console. Or you can copy the code above and save it to a file, and run it with `swift filename.swift`.
 
-- I'm working up the nerve to file a bug report with Apple, but I haven't done that before and from what I've heard I'm not particularly hopeful that it will get me anywhere. But I'll try anyway.
+- I need to file a bug report with Apple, but I haven't done that before and from what I've heard I'm not particularly hopeful that it will get me anywhere. But I'll try anyway.
 
 ---
 
