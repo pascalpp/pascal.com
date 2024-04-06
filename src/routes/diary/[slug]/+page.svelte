@@ -36,12 +36,12 @@
       {title}
     </h1>
     <div class="subheader">
-      <p class="date">
-        <span>{dateFormatter.format(new Date(date))}</span>
-        {#if updated}
-          <span> · Updated {dateFormatter.format(new Date(updated))}</span>
-        {/if}
+      <p class="published-date">
+        {dateFormatter.format(new Date(date))}
       </p>
+      {#if updated}
+        <p class="updated-date">Updated {dateFormatter.format(new Date(updated))}</p>
+      {/if}
       <TagList {tags} />
     </div>
     {#if dev}
@@ -91,6 +91,13 @@
       padding-right: 3em;
       padding-top: 0;
       width: max-content;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1em;
+
+      p {
+        margin: 0;
+      }
     }
   }
 
