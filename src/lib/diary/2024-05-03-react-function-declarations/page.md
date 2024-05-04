@@ -150,7 +150,7 @@ function ComponentName(props: Props) {
 
 </details>
 
-I find having the component declared using `function` makes it much easier to distinguish between the component and its contents, versus the somewhat confusing 'stack of consts' in the arrow function version.
+I find having the component declared using `function` makes it much easier to distinguish between the component and its contents, versus the somewhat confusing 'stack of consts' in the arrow function version, which at first glance looks like an indentation error.
 
 ## These days, `this` isn’t a problem
 

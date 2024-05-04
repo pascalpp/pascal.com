@@ -33,13 +33,11 @@
       grid-column-start: 1;
       grid-row-start: 1;
       transition: opacity 0.2s ease-in-out;
+      opacity: 0;
     }
 
     > :global(:first-child) {
       opacity: 1;
-    }
-    > :global(:last-child) {
-      opacity: 0;
     }
 
     :global([data-active='true']) {
