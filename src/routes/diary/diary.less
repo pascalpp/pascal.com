@@ -299,15 +299,14 @@
       font-size: 16px;
     }
 
-    p,
-    summary,
-    li {
+    :is(p, summary, li, h1, h2, h3) {
       code {
         background-color: rgb(255 255 255 / 0.3);
         border: 1px solid rgb(0 0 0 / 0.1);
         padding: 0.25em 0.35em;
         margin-inline: 0.1em;
         border-radius: 2px;
+        font-size: 0.7em;
       }
       a:has(code) {
         text-decoration: none;
