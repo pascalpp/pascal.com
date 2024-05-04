@@ -68,8 +68,8 @@
       z-index: 100;
     }
     @media @not-fixed {
-      margin-top: -2rem;
-      margin-left: -2rem;
+      margin-top: -2.5rem;
+      margin-left: -3rem;
       margin-bottom: 2rem;
       margin-right: 1.5rem;
       width: min-content;
@@ -103,7 +103,7 @@
 
     h1 {
       font-weight: 500;
-      font-size: 24px;
+      font-size: 28px;
     }
 
     a {
@@ -113,6 +113,7 @@
 
     a[href='/'] {
       font-family: var(--sans-font);
+      font-size: 16px;
     }
   }
 </style>

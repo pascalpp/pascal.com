@@ -54,7 +54,7 @@
     margin: 0;
     padding: 0;
     width: max-content;
-    max-width: min(45ch, 90vw);
+    max-width: min(55ch, 90vw);
 
     &:nth-child(3n + 2) {
       --deg: -1.5deg;
@@ -112,6 +112,7 @@
 
     .title {
       text-wrap: balance;
+      font-size: 22px;
       &::after {
         content: ' →';
         font-family: var(--sans-font);
@@ -119,14 +120,14 @@
     }
 
     .summary {
-      font-size: 0.8em;
+      font-size: 14px;
       font-family: var(--sans-font);
       color: rgba(0 0 0 / 0.75);
       text-wrap: pretty;
     }
 
     .tags {
-      font-size: 0.6em;
+      font-size: 11px;
       color: rgba(0 0 0 / 0.6);
       display: flex;
       flex-direction: row;

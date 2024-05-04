@@ -6,9 +6,8 @@
   font-family: 'Crimson Pro', serif;
   font-display: block;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
-  font-size-adjust: 0.5;
 
   a {
     color: var(--blue);
@@ -337,9 +336,24 @@
         display: none;
       }
 
+      .language-tag {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: var(--blue);
+        color: white;
+        padding: 0.25em 0.75em;
+        border-top-left-radius: 4px;
+        font-size: 0.8em;
+        display: none;
+      }
+
       &:hover,
       &:active {
         .copy-button {
+          display: block;
+        }
+        .language-tag {
           display: block;
         }
       }

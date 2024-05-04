@@ -115,7 +115,7 @@
       display: block;
       background-color: rgb(255 255 255);
       text-decoration: none;
-      padding: 0.5em 0.75em;
+      padding: 0.25em 0.75em;
     }
   }
 </style>

@@ -84,6 +84,7 @@
 
     .subheader {
       font-family: var(--sans-font);
+      font-size: 16px;
       border-bottom: 1px solid rgb(0 0 0 / 0.1);
       margin: 0.5em 0;
       margin-left: -0.75em;
