@@ -47,7 +47,7 @@ export async function fetchAllPosts(): Promise<PostSummary[]> {
   const files = import.meta.glob('/src/lib/diary/**/page.md');
   const iterableFiles = Object.entries(files) as [string, PostResolver][];
 
-  const posts = await Promise.all(
+  const posts: PostSummary[] = await Promise.all(
     iterableFiles.map(async ([path, post]) => {
       const { metadata } = await post();
       const slug = path.split('/').slice(-2)[0];
@@ -62,7 +62,7 @@ export async function fetchAllPosts(): Promise<PostSummary[]> {
   if (dev) {
     return posts;
   } else {
-    return posts.filter((post) => post.metadata.status !== 'draft');
+    return posts.filter(post => post.metadata.status !== 'draft');
   }
 }
 
@@ -73,7 +73,7 @@ export async function fetchPost(slug: string): Promise<Post> {
 
 export async function fetchAllPostsByTag(tag: string): Promise<PostSummary[]> {
   const posts = await fetchAllPosts();
-  const filteredPosts = posts.filter((post) => {
+  const filteredPosts = posts.filter(post => {
     return post.metadata.tags?.includes(tag);
   });
   return filteredPosts;
@@ -96,7 +96,7 @@ export function getFrontMatterLines(content: string): string[] {
 
 export function parseFrontMatterLines(lines: string[]): PostMetadata {
   const record = lines.reduce((acc, line) => {
-    const [key, value] = line.split(': ').map((item) => item.trim());
+    const [key, value] = line.split(': ').map(item => item.trim());
     return {
       ...acc,
       [key]: value,
@@ -110,7 +110,7 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
     tags: record.tags
       ?.substring(1, record.tags?.length - 1)
       .split(',')
-      .map((tag) => tag.trim()),
+      .map(tag => tag.trim()),
     summary: record.summary,
     updated: record.updated,
     mastodon: record.mastodon,
