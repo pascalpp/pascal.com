@@ -12,6 +12,7 @@ export type PostMetadata = {
   tags?: string[];
   summary?: string;
   updated?: string;
+  mastodon?: string;
 };
 
 export type PostFrontMatter = {
@@ -21,6 +22,7 @@ export type PostFrontMatter = {
   tags?: string;
   summary?: string;
   updated?: string;
+  mastodon?: string;
 };
 
 export type PostSummary = {
@@ -54,7 +56,7 @@ export async function fetchAllPosts(): Promise<PostSummary[]> {
         path,
         metadata: metadata as PostMetadata,
       };
-    })
+    }),
   );
 
   if (dev) {
@@ -111,6 +113,7 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
       .map((tag) => tag.trim()),
     summary: record.summary,
     updated: record.updated,
+    mastodon: record.mastodon,
   };
 
   return metadata;
