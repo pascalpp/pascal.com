@@ -26,6 +26,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-size: 18px;
+    line-height: 1.3;
 
     &.top {
       margin-bottom: 0.5rem;
@@ -73,6 +75,10 @@
       .prev {
         margin-left: -1em;
         max-width: 75%;
+        a {
+          text-indent: -1.25rem;
+          padding-left: 2rem;
+        }
       }
       .next {
         margin-right: -1em;
@@ -115,7 +121,7 @@
       display: block;
       background-color: rgb(255 255 255);
       text-decoration: none;
-      padding: 0.25em 0.75em;
+      padding: 0.5em 0.75em;
     }
   }
 </style>
