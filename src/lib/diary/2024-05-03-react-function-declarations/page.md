@@ -76,7 +76,7 @@ const LargeComponent = () => {
 }
 ```
 
-These are all doing the same thing, but with slighlty different syntax and indentation. The small one is has an implicit return of a single line of JSX. The medium one has an implicit return of slightly indented JSX. And the large one has a function closure with an explicit JSX return. Having different shapes for components often means reformatting when you need to make changes, like adding some state, for example. With function declarations, there is only one shape, with an explicit return and consistent indentation, so making changes or adding state is simpler and more predictable.
+These are all doing the same thing, but with slightly different syntax and indentation. The small one is has an implicit return of a single line of JSX. The medium one has an implicit return of slightly indented JSX. And the large one has a function closure with an explicit JSX return. Having different shapes for components often means reformatting when you need to make changes, like adding some state, for example. With function declarations, there is only one shape, with an explicit return and consistent indentation, so making changes or adding state is simpler and more predictable.
 
 ## Shorter syntax, really
 
@@ -150,7 +150,7 @@ function ComponentName(props: Props) {
 
 </details>
 
-I find having the component declared using `function` makes it much easier to distinguish between the component and its contents, versus the somehwat confusing 'stack of consts' in the arrow function version.
+I find having the component declared using `function` makes it much easier to distinguish between the component and its contents, versus the somewhat confusing 'stack of consts' in the arrow function version.
 
 ## These days, `this` isn’t a problem
 
