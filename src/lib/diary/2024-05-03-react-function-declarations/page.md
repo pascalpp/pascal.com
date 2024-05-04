@@ -152,6 +152,44 @@ function ComponentName(props: Props) {
 
 I find having the component declared using `function` makes it much easier to distinguish between the component and its contents, versus the somewhat confusing 'stack of consts' in the arrow function version, which at first glance looks like an indentation error.
 
+## Consistent export behavior
+
+To export a component, you use the `export` keyword:
+
+```typescript
+export const SomeComponent = (props: Props) => {
+  ...
+};
+```
+
+If you want to define an arrow component as the default export using the `default` keyword, you might try this:
+
+```typescript
+export default const SomeComponent = (props: Props) => {
+  ...
+};
+```
+
+But that will trigger a parsing error. Instead, you have to do it in two parts:
+
+```typescript
+const SomeComponent = (props: Props) => {
+  ...
+};
+
+export default SomeComponent;
+```
+
+With a function declaration, you can do it all together:
+
+```typescript
+export default function SomeComponent(props: Props) {
+  ...
+}
+```
+
+Granted, it's generally considered best practice to avoid default exports and only use named exports, but for those occasions where you do need a default export, the arrow function version is longer and kinda clunky. The function declaration version also keeps that default export near the top of the file, which I prefer.
+
 ## These days, `this` isn’t a problem
 
 Once upon a time, the concept of `this` was the bane of many React developers. Long story short, classes and functions have a _context_ referred to as `this`. Before functional React, when most React components were defined as classes, you often needed to call `this.someMethod()` on your component. Declaring functions inside class components was problematic, because `this` inside those functions would no longer refer to the parent class. Arrow functions eased this pain, by allowing us to create anonymous 'context-free' functions where `this` would be inherited from the parent scope.
