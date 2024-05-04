@@ -14,7 +14,8 @@
   }
 
   onMount(() => {
-    setInterval(flip, interval);
+    const timer = setInterval(flip, interval);
+    return () => clearInterval(timer);
   });
 </script>
 
