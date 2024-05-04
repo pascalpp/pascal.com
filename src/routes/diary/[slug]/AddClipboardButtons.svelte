@@ -4,6 +4,15 @@
   onMount(() => {
     const codeblocks: HTMLElement[] = Array.from(document.querySelectorAll('pre[class*="language-"]'));
     codeblocks.forEach((codeblock) => {
+      const classes = Array.from(codeblock.classList);
+      const language = classes.find((c) => c.startsWith('language-'))?.replace('language-', '') || '';
+      if (language) {
+        const languageTag = document.createElement('span');
+        languageTag.classList.add('language-tag');
+        languageTag.textContent = language;
+        codeblock.appendChild(languageTag);
+      }
+
       const copyButton = document.createElement('button');
       copyButton.classList.add('copy-button');
       copyButton.textContent = 'Copy to clipboard';
