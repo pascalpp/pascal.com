@@ -2,6 +2,7 @@
   import { dev } from '$app/environment';
   import { page } from '$app/stores';
   import AddClipboardButtons from './AddClipboardButtons.svelte';
+  import PostDiscussionLink from './PostDiscussionLink.svelte';
   import PostEditButtons from './PostEditButtons.svelte';
   import PostNavigation from './PostNavigation.svelte';
   import TagList from './TagList.svelte';
@@ -57,6 +58,7 @@
 </article>
 
 <footer class="full-width">
+  <PostDiscussionLink {metadata} />
   <PostNavigation {next} {prev} bottom />
 </footer>
 
