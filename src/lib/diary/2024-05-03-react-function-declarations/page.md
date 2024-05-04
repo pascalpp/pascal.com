@@ -4,6 +4,7 @@ date: 2024-05-03T20:18:07.422Z
 tags: [react, javascript, typescript]
 status: published
 summary: Probably too many words on why I prefer function declarations over arrow functions for React components.
+mastodon: https://moth.social/@pascal/112381597261578098
 ---
 
 <script lang="ts">
