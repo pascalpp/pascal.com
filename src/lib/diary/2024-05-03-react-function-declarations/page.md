@@ -208,7 +208,13 @@ Here's another way to think of it. Component functions _are_ verbs, and they _ar
 
 Pro-tip: use text replacements to auto-fix common misspellings of this critical keyword.
 
+<figure>
+
 ![macOS text replacements dialog](./text-replacments.png){ .polaroid width=400 style=margin-top:0 }
+
+_Won't you take me to… funciton_
+
+</figure>
 
 Sadly VSCode doesn't seem to honor those, but [we can use snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) to do the same thing. Even better, we can define a snippet for a typical React function declaration with export, destructured props, Typescript annotations, etc. Here's one to get you started:
 
