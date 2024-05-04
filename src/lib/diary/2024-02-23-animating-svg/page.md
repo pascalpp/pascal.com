@@ -4,6 +4,7 @@ date: 2024-02-23T14:45:26.818Z
 status: published
 tags: [svg, css, animation]
 summary: An experiment with SVG animation, using the `stroke-dasharray` and `stroke-dashoffset` properties in CSS to create fireworks.
+mastodon: https://moth.social/@pascal/111984030087238167
 ---
 
 <script lang="ts">

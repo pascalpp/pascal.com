@@ -4,6 +4,7 @@ date: 2023-10-27T03:01:01.164Z
 tags: [svelte, javascript, dialog]
 status: published
 summary: The dialog element is a native HTML element that provides a lot of built-in functionality for creating modal dialogs. By wrapping it in a Svelte component, we can add custom styling and other features.
+mastodon: https://moth.social/@pascal/111308626237870897
 ---
 
 <script lang="ts">
