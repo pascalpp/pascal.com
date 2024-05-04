@@ -5,6 +5,7 @@
   "trailingComma": "all",
   "svelteBracketNewLine": true,
   "htmlWhitespaceSensitivity": "css",
+  "arrowParens": "avoid",
   "printWidth": 120,
   "plugins": ["prettier-plugin-svelte"],
   "pluginSearchDirs": ["."],
