@@ -4,8 +4,6 @@
 </script>
 
 <svelte:head>
-  <title>Pascal’s Diary</title>
-
   <link rel="alternate" type="application/rss+xml" title="Pascal’s Diary" href="/diary/rss" />
 
   <style lang="less">
