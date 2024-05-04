@@ -9,7 +9,7 @@
   export let data;
 
   $: ({ post, next, prev } = data);
-  $: ({ title, content, metadata } = post);
+  $: ({ title, metadata, PostComponent } = post);
   $: ({ tags, status = 'published', date, updated } = metadata);
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
@@ -51,7 +51,9 @@
 </header>
 
 <article class="full-width">
-  <svelte:component this={content} />
+  {#key $page.params.slug}
+    <PostComponent />
+  {/key}
 </article>
 
 <footer class="full-width">

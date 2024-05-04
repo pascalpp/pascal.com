@@ -1,4 +1,4 @@
-import { type PostSummary } from '../../api/posts/util';
+import { type PostMetadata, type PostSummary } from '../../api/posts/util';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch, params }) => {
@@ -7,9 +7,9 @@ export const load: PageLoad = async ({ fetch, params }) => {
 
   const { slug } = params;
   const post = await import(`../../../lib/diary/${slug}/page.md`);
-  const { metadata } = post;
+  const metadata = post.metadata as PostMetadata;
   const { title, date } = metadata;
-  const content = post.default;
+  const PostComponent = post.default;
 
   const index = posts.findIndex((item) => item.slug === slug);
   const current = posts[index];
@@ -24,7 +24,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
       slug,
       title,
       date,
-      content,
+      PostComponent,
       metadata,
     },
   };
