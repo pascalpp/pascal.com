@@ -27,40 +27,40 @@
 
 {#key $page.params.slug}
   <AddClipboardButtons />
-{/key}
 
-<header class="full-width">
-  <div class="post-header">
-    <PostNavigation {next} {prev} top />
+  <header class="full-width">
+    <div class="post-header">
+      <PostNavigation {next} {prev} top />
 
-    <h1 class={status}>
-      {title}
-    </h1>
-    <div class="subheader">
-      <p class="published-date">
-        {dateFormatter.format(new Date(date))}
-      </p>
-      {#if updated}
-        <p class="updated-date">Updated {dateFormatter.format(new Date(updated))}</p>
+      <h1 class={status}>
+        {title}
+      </h1>
+      <div class="subheader">
+        <p class="published-date">
+          {dateFormatter.format(new Date(date))}
+        </p>
+        {#if updated}
+          <p class="updated-date">Updated {dateFormatter.format(new Date(updated))}</p>
+        {/if}
+        <TagList {tags} />
+      </div>
+      {#if dev}
+        <PostEditButtons {post} />
       {/if}
-      <TagList {tags} />
     </div>
-    {#if dev}
-      <PostEditButtons {post} />
-    {/if}
-  </div>
-</header>
+  </header>
 
-<article class="full-width">
-  {#key $page.params.slug}
-    <PostComponent />
-  {/key}
-</article>
+  <article class="full-width">
+    {#key $page.params.slug}
+      <PostComponent />
+    {/key}
+  </article>
 
-<footer class="full-width">
-  <PostDiscussionLink {metadata} />
-  <PostNavigation {next} {prev} bottom />
-</footer>
+  <footer class="full-width">
+    <PostDiscussionLink {metadata} />
+    <PostNavigation {next} {prev} bottom />
+  </footer>
+{/key}
 
 <style lang="less">
   header {
