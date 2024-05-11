@@ -67,22 +67,22 @@
           <div class="slider">
             <span>Border 1</span>
             <input type="range" bind:value={border1} />
-            <span>{border1}px</span>
+            <span><input type="text" bind:value={border1} />px</span>
           </div>
           <div class="slider">
             <span>Border 2</span>
             <input type="range" bind:value={border2} />
-            <span>{border2}px</span>
+            <span><input type="text" bind:value={border2} />px</span>
           </div>
           <div class="slider">
             <span>Border 3</span>
             <input type="range" bind:value={border3} />
-            <span>{border3}px</span>
+            <span><input type="text" bind:value={border3} />px</span>
           </div>
           <div class="slider">
             <span>Border 4</span>
             <input type="range" bind:value={border4} />
-            <span>{border4}px</span>
+            <span><input type="text" bind:value={border4} />px</span>
           </div>
         </div>
 
@@ -90,22 +90,22 @@
           <div class="slider">
             <span>Corner 1</span>
             <input type="range" bind:value={corner1} />
-            <span>{corner1}%</span>
+            <span><input type="text" bind:value={corner1} />%</span>
           </div>
           <div class="slider">
             <span>Corner 2</span>
             <input type="range" bind:value={corner2} />
-            <span>{corner2}%</span>
+            <span><input type="text" bind:value={corner2} />%</span>
           </div>
           <div class="slider">
             <span>Corner 3</span>
             <input type="range" bind:value={corner3} />
-            <span>{corner3}%</span>
+            <span><input type="text" bind:value={corner3} />%</span>
           </div>
           <div class="slider">
             <span>Corner 4</span>
             <input type="range" bind:value={corner4} />
-            <span>{corner4}%</span>
+            <span><input type="text" bind:value={corner4} />%</span>
           </div>
         </div>
 
@@ -113,32 +113,32 @@
           <div class="slider">
             <span>Size</span>
             <input type="range" bind:value={size} min={50} max={400} />
-            <span>{size}px</span>
+            <span><input type="text" bind:value={size} />px</span>
           </div>
           <div class="slider">
             <span>Rotate</span>
             <input type="range" bind:value={rotate} min={0} max={360} />
-            <span>{rotate}deg</span>
+            <span><input type="text" bind:value={rotate} />deg</span>
           </div>
           <div class="slider">
             <span>Translate</span>
             <input type="range" bind:value={translate} min={0} max={100} />
-            <span>{translate}px</span>
+            <span><input type="text" bind:value={translate} />px</span>
           </div>
           <div class="slider">
             <span>Speed</span>
             <input type="range" bind:value={speed} min={0} max={20} />
-            <span>{speed}s</span>
+            <span><input type="text" bind:value={speed} />s</span>
           </div>
           <div class="slider">
             <span>Delay</span>
             <input type="range" bind:value={delay} min={0} max={20} />
-            <span>{delay}s</span>
+            <span><input type="text" bind:value={delay} />s</span>
           </div>
           <div class="slider">
             <span>Blur</span>
             <input type="range" bind:value={blur} min={0} max={20} />
-            <span>{blur}px</span>
+            <span><input type="text" bind:value={blur} />px</span>
           </div>
         </div>
       {/if}
@@ -167,6 +167,7 @@
       margin-bottom: 1rem;
       margin-left: -1rem;
       white-space: nowrap;
+      width: min-content;
     }
   }
   @container (inline-size < 1200px) {
@@ -205,14 +206,78 @@
     font-size: 14px;
     white-space: nowrap;
     grid-column: 1 / 4;
-    gap: 0.1rem;
+    gap: 0.25em;
+    @media @mobile {
+      gap: 0.5em;
+    }
   }
 
   .slider {
     display: grid;
     grid-template-columns: subgrid;
-    gap: 1em;
+    gap: 2px;
     grid-column: 1 / 4;
+
+    input[type='range'] {
+      margin-left: 1em;
+      background-color: transparent;
+
+      &::-webkit-slider-thumb {
+        border-radius: 50%;
+        outline: 1px solid black;
+      }
+      &::-moz-range-thumb {
+        border-radius: 50%;
+        outline: 1px solid black;
+      }
+
+      &:focus-visible {
+        outline: none;
+        &::-webkit-slider-thumb {
+          outline: 2px solid black;
+        }
+        &::-moz-range-thumb {
+          outline: 2px solid black;
+        }
+      }
+
+      &::-moz-range-track {
+        background-color: gray;
+        height: 4px;
+        border-radius: 2px;
+        box-shadow: 0 0 1px black;
+      }
+    }
+
+    input[type='text'] {
+      appearance: textfield;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 3ch;
+      box-sizing: content-box;
+      display: inline-block;
+      background-color: transparent;
+      text-align: right;
+      outline: none;
+      border-radius: 3px;
+      padding-inline: 5px;
+      -moz-appearance: none;
+      &:focus-visible {
+        background-color: white;
+        box-shadow: 0 0 0 1px black;
+      }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input::-moz-outer-spin-button,
+    input::-moz-inner-spin-button {
+      -moz-appearance: none;
+      appearance: none;
+    }
   }
 
   .fuzzy-spinner {
