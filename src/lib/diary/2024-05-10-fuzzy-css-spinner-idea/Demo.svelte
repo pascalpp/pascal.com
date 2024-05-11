@@ -244,8 +244,7 @@
 </p>
 
 <CssSpinner
-  showVisibilityToggles={true}
-  showVariables={true}
+  showControls={true}
   bind:red
   bind:blue
   bind:green

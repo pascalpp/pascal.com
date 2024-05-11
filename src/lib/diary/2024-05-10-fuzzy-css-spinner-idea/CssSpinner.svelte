@@ -1,6 +1,7 @@
 <script lang="ts">
-  export let showVisibilityToggles = false;
-  export let showVariables = false;
+  let id = crypto.randomUUID();
+
+  export let showControls = false;
 
   export let red = true;
   export let blue = true;
@@ -23,8 +24,29 @@
   export let speed = 15;
   export let delay = 5;
 
-  let showControls = showVisibilityToggles || showVariables;
-  let id = crypto.randomUUID();
+  function copySettings() {
+    const name = prompt('Enter a name for this setting:');
+    const code = `
+      function ${name}() {
+        setDefaults();
+        border1 = ${border1};
+        border2 = ${border2};
+        border3 = ${border3};
+        border4 = ${border4};
+        corner1 = ${corner1};
+        corner2 = ${corner2};
+        corner3 = ${corner3};
+        corner4 = ${corner4};
+        size = ${size};
+        rotate = ${rotate};
+        translate = ${translate};
+        blur = ${blur};
+        speed = ${speed};
+        delay = ${delay};
+      }
+    `;
+    navigator.clipboard.writeText(code);
+  }
 </script>
 
 <figure>
@@ -47,101 +69,96 @@
   <details class="controls" open>
     <summary>Controls</summary>
     <div class="controls-grid">
-      {#if showVisibilityToggles}
-        <div class="toggles">
-          <span>Show</span>
-          <label class="toggle" for="red-checkbox-{id}">
-            <input id="red-checkbox-{id}" type="checkbox" bind:checked={red} /> Red
-          </label>
-          <label class="toggle" for="blue-checkbox-{id}">
-            <input id="blue-checkbox-{id}" type="checkbox" bind:checked={blue} /> Blue
-          </label>
-          <label class="toggle" for="green-checkbox-{id}">
-            <input id="green-checkbox-{id}" type="checkbox" bind:checked={green} /> Green
-          </label>
+      <div class="toggles">
+        <span>Show</span>
+        <label class="toggle" for="red-checkbox-{id}">
+          <input id="red-checkbox-{id}" type="checkbox" bind:checked={red} /> Red
+        </label>
+        <label class="toggle" for="blue-checkbox-{id}">
+          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={blue} /> Blue
+        </label>
+        <label class="toggle" for="green-checkbox-{id}">
+          <input id="green-checkbox-{id}" type="checkbox" bind:checked={green} /> Green
+        </label>
+      </div>
+      <div class="variables sliders">
+        <div class="slider">
+          <span>Border 1</span>
+          <input type="range" bind:value={border1} />
+          <span><input type="text" bind:value={border1} />px</span>
         </div>
-      {/if}
+        <div class="slider">
+          <span>Border 2</span>
+          <input type="range" bind:value={border2} />
+          <span><input type="text" bind:value={border2} />px</span>
+        </div>
+        <div class="slider">
+          <span>Border 3</span>
+          <input type="range" bind:value={border3} />
+          <span><input type="text" bind:value={border3} />px</span>
+        </div>
+        <div class="slider">
+          <span>Border 4</span>
+          <input type="range" bind:value={border4} />
+          <span><input type="text" bind:value={border4} />px</span>
+        </div>
+      </div>
 
-      {#if showVariables}
-        <div class="variables sliders">
-          <div class="slider">
-            <span>Border 1</span>
-            <input type="range" bind:value={border1} />
-            <span><input type="text" bind:value={border1} />px</span>
-          </div>
-          <div class="slider">
-            <span>Border 2</span>
-            <input type="range" bind:value={border2} />
-            <span><input type="text" bind:value={border2} />px</span>
-          </div>
-          <div class="slider">
-            <span>Border 3</span>
-            <input type="range" bind:value={border3} />
-            <span><input type="text" bind:value={border3} />px</span>
-          </div>
-          <div class="slider">
-            <span>Border 4</span>
-            <input type="range" bind:value={border4} />
-            <span><input type="text" bind:value={border4} />px</span>
-          </div>
+      <div class="variables sliders">
+        <div class="slider">
+          <span>Corner 1</span>
+          <input type="range" bind:value={corner1} />
+          <span><input type="text" bind:value={corner1} />%</span>
         </div>
+        <div class="slider">
+          <span>Corner 2</span>
+          <input type="range" bind:value={corner2} />
+          <span><input type="text" bind:value={corner2} />%</span>
+        </div>
+        <div class="slider">
+          <span>Corner 3</span>
+          <input type="range" bind:value={corner3} />
+          <span><input type="text" bind:value={corner3} />%</span>
+        </div>
+        <div class="slider">
+          <span>Corner 4</span>
+          <input type="range" bind:value={corner4} />
+          <span><input type="text" bind:value={corner4} />%</span>
+        </div>
+      </div>
 
-        <div class="variables sliders">
-          <div class="slider">
-            <span>Corner 1</span>
-            <input type="range" bind:value={corner1} />
-            <span><input type="text" bind:value={corner1} />%</span>
-          </div>
-          <div class="slider">
-            <span>Corner 2</span>
-            <input type="range" bind:value={corner2} />
-            <span><input type="text" bind:value={corner2} />%</span>
-          </div>
-          <div class="slider">
-            <span>Corner 3</span>
-            <input type="range" bind:value={corner3} />
-            <span><input type="text" bind:value={corner3} />%</span>
-          </div>
-          <div class="slider">
-            <span>Corner 4</span>
-            <input type="range" bind:value={corner4} />
-            <span><input type="text" bind:value={corner4} />%</span>
-          </div>
+      <div class="variables sliders">
+        <div class="slider">
+          <span>Size</span>
+          <input type="range" bind:value={size} min={50} max={400} />
+          <span><input type="text" bind:value={size} />px</span>
         </div>
-
-        <div class="variables sliders">
-          <div class="slider">
-            <span>Size</span>
-            <input type="range" bind:value={size} min={50} max={400} />
-            <span><input type="text" bind:value={size} />px</span>
-          </div>
-          <div class="slider">
-            <span>Rotate</span>
-            <input type="range" bind:value={rotate} min={0} max={360} />
-            <span><input type="text" bind:value={rotate} />deg</span>
-          </div>
-          <div class="slider">
-            <span>Translate</span>
-            <input type="range" bind:value={translate} min={0} max={100} />
-            <span><input type="text" bind:value={translate} />px</span>
-          </div>
-          <div class="slider">
-            <span>Speed</span>
-            <input type="range" bind:value={speed} min={0} max={20} />
-            <span><input type="text" bind:value={speed} />s</span>
-          </div>
-          <div class="slider">
-            <span>Delay</span>
-            <input type="range" bind:value={delay} min={0} max={20} />
-            <span><input type="text" bind:value={delay} />s</span>
-          </div>
-          <div class="slider">
-            <span>Blur</span>
-            <input type="range" bind:value={blur} min={0} max={20} />
-            <span><input type="text" bind:value={blur} />px</span>
-          </div>
+        <div class="slider">
+          <span>Rotate</span>
+          <input type="range" bind:value={rotate} min={0} max={360} />
+          <span><input type="text" bind:value={rotate} />deg</span>
         </div>
-      {/if}
+        <div class="slider">
+          <span>Translate</span>
+          <input type="range" bind:value={translate} min={0} max={100} />
+          <span><input type="text" bind:value={translate} />px</span>
+        </div>
+        <div class="slider">
+          <span>Speed</span>
+          <input type="range" bind:value={speed} min={0} max={20} />
+          <span><input type="text" bind:value={speed} />s</span>
+        </div>
+        <div class="slider">
+          <span>Delay</span>
+          <input type="range" bind:value={delay} min={0} max={20} />
+          <span><input type="text" bind:value={delay} />s</span>
+        </div>
+        <div class="slider">
+          <span>Blur</span>
+          <input type="range" bind:value={blur} min={0} max={20} />
+          <span><input type="text" bind:value={blur} />px</span>
+        </div>
+      </div>
     </div>
   </details>
 {/if}
