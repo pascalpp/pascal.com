@@ -32,23 +32,24 @@
       color: red;
       --min-opacity: 0.8;
       --max-opacity: 1;
+      animation-delay: -6s;
     }
     &.blue {
       color: blue;
-      --min-opacity: 0.3;
-      --max-opacity: 0.7;
+      --min-opacity: 0.5;
+      --max-opacity: 0.9;
       &::before {
         transform: rotate(120deg);
-        animation-delay: 3s;
+        animation-delay: -3s;
       }
     }
     &.green {
       color: green;
-      --min-opacity: 0.1;
-      --max-opacity: 0.7;
+      --min-opacity: 0.3;
+      --max-opacity: 0.8;
       &::before {
         transform: rotate(240deg);
-        animation-delay: 6s;
+        animation-delay: 0;
       }
     }
 
@@ -63,8 +64,9 @@
       position: relative;
       border-width: 10px 15px 10px 5px;
       border-radius: 45% 40% 50% 40%;
-      animation: borderSize 2s ease-in-out infinite;
+      animation: wobble 2s ease-in-out infinite;
       background-color: white;
+      filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent));
     }
     &::after {
       content: '';
@@ -82,15 +84,12 @@
     0% {
       transform: rotate(0deg);
     }
-    50% {
-      border-width: 5px 10px 15px 10px;
-    }
     100% {
       transform: rotate(359deg);
     }
   }
 
-  @keyframes borderSize {
+  @keyframes wobble {
     0% {
       border-width: var(--border1) var(--border2) var(--border3) var(--border4);
       opacity: var(--max-opacity);
