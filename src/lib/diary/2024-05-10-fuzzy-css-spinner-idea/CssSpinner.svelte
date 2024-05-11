@@ -1,13 +1,143 @@
 <script lang="ts">
+  export let showVisibilityToggles = false;
+  export let showVariables = false;
+
+  export let showRed = true;
+  export let showBlue = true;
+  export let showGreen = true;
+
+  export let border1 = 20;
+  export let border2 = 35;
+  export let border3 = 15;
+  export let border4 = 5;
+
+  export let corner1 = 45;
+  export let corner2 = 40;
+  export let corner3 = 50;
+  export let corner4 = 40;
+
+  let showControls = showVisibilityToggles || showVariables;
+  let id = crypto.randomUUID();
 </script>
 
-<div class="fuzzy-spinner">
-  <div class="spinner red" />
-  <div class="spinner blue" />
-  <div class="spinner green" />
-</div>
+<figure>
+  <div
+    class="fuzzy-spinner"
+    style="
+      --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
+      --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
+    "
+  >
+    <div class="spinner red" class:show={showRed} />
+    <div class="spinner blue" class:show={showBlue} />
+    <div class="spinner green" class:show={showGreen} />
+  </div>
+</figure>
+
+{#if showControls}
+  <div class="controls">
+    {#if showVisibilityToggles}
+      <div class="visibility-toggles">
+        <label class="toggle" for="red-checkbox-{id}">
+          <input id="red-checkbox-{id}" type="checkbox" bind:checked={showRed} /> Show red
+        </label>
+        <label class="toggle" for="blue-checkbox-{id}">
+          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={showBlue} /> Show blue
+        </label>
+        <label class="toggle" for="green-checkbox-{id}">
+          <input id="green-checkbox-{id}" type="checkbox" bind:checked={showGreen} /> Show green
+        </label>
+      </div>
+    {/if}
+
+    {#if showVariables}
+      <div class="variables">
+        <div class="slider">
+          Border 1
+          <input type="range" bind:value={border1} />
+          {border1}px
+        </div>
+        <div class="slider">
+          Border 2
+          <input type="range" bind:value={border2} />
+          {border2}px
+        </div>
+        <div class="slider">
+          Border 3
+          <input type="range" bind:value={border3} />
+          {border3}px
+        </div>
+        <div class="slider">
+          Border 4
+          <input type="range" bind:value={border4} />
+          {border4}px
+        </div>
+      </div>
+    {/if}
+
+    {#if showVariables}
+      <div class="variables">
+        <div class="slider">
+          Corner 1
+          <input type="range" bind:value={corner1} />
+          {corner1}%
+        </div>
+        <div class="slider">
+          Corner 2
+          <input type="range" bind:value={corner2} />
+          {corner2}%
+        </div>
+        <div class="slider">
+          Corner 3
+          <input type="range" bind:value={corner3} />
+          {corner3}%
+        </div>
+        <div class="slider">
+          Corner 4
+          <input type="range" bind:value={corner4} />
+          {corner4}%
+        </div>
+      </div>
+    {/if}
+  </div>
+{/if}
 
 <style lang="less">
+  figure {
+    grid-column: content;
+  }
+
+  .controls {
+    grid-column: content-end / full-width-end;
+    place-content: center;
+    align-self: stretch;
+    font-family: var(--sans-font);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  @container (inline-size < 1200px) {
+    .controls {
+      grid-column: content;
+      margin-left: 30%;
+    }
+  }
+
+  .toggle {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    font-size: 14px;
+    user-select: none;
+  }
+
+  .slider {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    font-size: 14px;
+  }
+
   .fuzzy-spinner {
     width: 300px;
     height: 300px;
@@ -21,26 +151,27 @@
     inset: 0;
     animation: spin 9s linear infinite;
     transition: border-width 0.5s;
-    --border1: 20px;
-    --border2: 35px;
-    --border3: 15px;
-    --border4: 5px;
     --min-scale: 0.8;
     --max-scale: 1;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+    }
 
     &.red {
       color: red;
       --min-opacity: 0.8;
       --max-opacity: 1;
-      animation-delay: -6s;
+      animation-delay: -9s;
     }
     &.blue {
       color: blue;
       --min-opacity: 0.5;
       --max-opacity: 0.9;
       &::before {
-        transform: rotate(120deg);
-        animation-delay: -3s;
+        transform: rotate(60deg);
+        animation-delay: -6s;
       }
     }
     &.green {
@@ -48,8 +179,8 @@
       --min-opacity: 0.3;
       --max-opacity: 0.8;
       &::before {
-        transform: rotate(240deg);
-        animation-delay: 0;
+        transform: rotate(120deg);
+        animation-delay: -3s;
       }
     }
 
@@ -62,8 +193,7 @@
       height: 50%;
       border: 10px solid currentColor;
       position: relative;
-      border-width: 10px 15px 10px 5px;
-      border-radius: 45% 40% 50% 40%;
+      border-radius: var(--corner1) var(--corner2) var(--corner3) var(--corner4);
       animation: wobble 2s ease-in-out infinite;
       background-color: white;
       filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent));

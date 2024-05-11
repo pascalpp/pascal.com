@@ -1,11 +1,13 @@
 ---
 title: Fuzzy CSS spinner idea
 date: 2024-05-10T23:23:16.207Z
-status: draft
+status: published
+tags: [css, animation]
+summary: Exploring an idea I had for a fuzzy multi-colored animated spinner in CSS.
 ---
 
 <script lang="ts">
-  import CssSpinner from './CssSpinner.svelte';
+  import Demo from './Demo.svelte';
 </script>
 
-<CssSpinner/>
+<Demo/>
