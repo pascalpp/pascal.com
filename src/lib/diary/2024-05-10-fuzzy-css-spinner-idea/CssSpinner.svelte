@@ -237,18 +237,7 @@
       border-radius: var(--corner1) var(--corner2) var(--corner3) var(--corner4);
       animation: wobble 2s ease-in-out infinite;
       background-color: white;
-      filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent));
-    }
-    &.blur::after {
-      content: '';
-      display: block;
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      // background-color: gold;
-      backdrop-filter: blur(var(--blur));
-      border-radius: 50%;
+      filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent)) blur(var(--blur));
     }
   }
 

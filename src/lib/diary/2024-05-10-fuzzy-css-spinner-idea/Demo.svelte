@@ -175,10 +175,10 @@
 <p>
   This is contructed from three overlapping shapes in red, blue, and green. Each one is a square with a white background
   and rounded corners, but the radius of each corner is different. Each border also ranges in thickness, creating an
-  irregular shape. Each shape has a subtle drop shadow in the same color as its border. Overlapping each shape is
-  another shape with a backdrop filter to blur the shape slightly. There is also some animation that rotates the shape,
-  changes the width of each border over time, and changes its scale and opacity. To make things even more organic, each
-  shape is rotated slightly, and the animations are staggered.
+  irregular shape. Each shape has a subtle drop shadow in the same color as its border, and a filter to blur the shape
+  slightly. There is also some animation that rotates the shape, changes the width of each border over time, and changes
+  its scale and opacity. To make things even more organic, each shape is rotated slightly, and the animations are
+  staggered.
 </p>
 
 <CssSpinner
