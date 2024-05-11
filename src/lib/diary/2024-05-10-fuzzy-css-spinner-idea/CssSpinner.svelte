@@ -199,7 +199,7 @@
     }
     &.blue {
       color: blue;
-      --min-opacity: 0.5;
+      --min-opacity: 0.3;
       --max-opacity: 0.9;
       &::before {
         transform: rotate(60deg);
@@ -209,7 +209,7 @@
     &.green {
       color: green;
       --min-opacity: 0.3;
-      --max-opacity: 0.8;
+      --max-opacity: 0.7;
       &::before {
         transform: rotate(120deg);
         animation-delay: -3s;
@@ -234,9 +234,9 @@
       content: '';
       display: block;
       position: absolute;
-      inset: -14%;
-      width: 125%;
-      height: 125%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       // background-color: gold;
       backdrop-filter: blur(3px);
       border-radius: 50%;
