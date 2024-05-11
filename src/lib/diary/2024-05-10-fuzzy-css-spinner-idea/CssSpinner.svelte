@@ -2,6 +2,8 @@
   export let showVisibilityToggles = false;
   export let showVariables = false;
 
+  export let size = 300;
+
   export let showRed = true;
   export let showBlue = true;
   export let showGreen = true;
@@ -24,6 +26,7 @@
   <div
     class="fuzzy-spinner"
     style="
+      --size: {size}px;
       --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
@@ -37,7 +40,7 @@
 {#if showControls}
   <div class="controls">
     {#if showVisibilityToggles}
-      <div class="visibility-toggles">
+      <div class="toggles">
         <label class="toggle" for="red-checkbox-{id}">
           <input id="red-checkbox-{id}" type="checkbox" bind:checked={showRed} /> Show red
         </label>
@@ -51,51 +54,61 @@
     {/if}
 
     {#if showVariables}
-      <div class="variables">
+      <div class="variables sliders">
         <div class="slider">
-          Border 1
+          <span>Border 1</span>
           <input type="range" bind:value={border1} />
-          {border1}px
+          <span>{border1}px</span>
         </div>
         <div class="slider">
-          Border 2
+          <span>Border 2</span>
           <input type="range" bind:value={border2} />
-          {border2}px
+          <span>{border2}px</span>
         </div>
         <div class="slider">
-          Border 3
+          <span>Border 3</span>
           <input type="range" bind:value={border3} />
-          {border3}px
+          <span>{border3}px</span>
         </div>
         <div class="slider">
-          Border 4
+          <span>Border 4</span>
           <input type="range" bind:value={border4} />
-          {border4}px
+          <span>{border4}px</span>
         </div>
       </div>
     {/if}
 
     {#if showVariables}
-      <div class="variables">
+      <div class="variables sliders">
         <div class="slider">
-          Corner 1
+          <span>Corner 1</span>
           <input type="range" bind:value={corner1} />
-          {corner1}%
+          <span>{corner1}%</span>
         </div>
         <div class="slider">
-          Corner 2
+          <span>Corner 2</span>
           <input type="range" bind:value={corner2} />
-          {corner2}%
+          <span>{corner2}%</span>
         </div>
         <div class="slider">
-          Corner 3
+          <span>Corner 3</span>
           <input type="range" bind:value={corner3} />
-          {corner3}%
+          <span>{corner3}%</span>
         </div>
         <div class="slider">
-          Corner 4
+          <span>Corner 4</span>
           <input type="range" bind:value={corner4} />
-          {corner4}%
+          <span>{corner4}%</span>
+        </div>
+      </div>
+    {/if}
+
+    {#if showVariables}
+      <div class="variables sliders">
+        <div class="slider">
+          <span>Size</span>
+          <input type="range" bind:value={size} min={50} max={400} />
+          <span>{size}px</span>
         </div>
       </div>
     {/if}
@@ -105,6 +118,8 @@
 <style lang="less">
   figure {
     grid-column: content;
+    place-content: center;
+    height: 400px;
   }
 
   .controls {
@@ -112,15 +127,20 @@
     place-content: center;
     align-self: stretch;
     font-family: var(--sans-font);
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
+    display: grid;
+    grid-template-columns: min-content auto 80px;
   }
   @container (inline-size < 1200px) {
     .controls {
       grid-column: content;
-      margin-left: 30%;
     }
+  }
+
+  .toggles {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 2 / 4;
   }
 
   .toggle {
@@ -129,18 +149,30 @@
     align-items: center;
     font-size: 14px;
     user-select: none;
+    grid-column: 1 / 4;
+    white-space: nowrap;
+  }
+
+  .sliders {
+    display: grid;
+    grid-template-columns: subgrid;
+    width: min-content;
+    font-size: 14px;
+    white-space: nowrap;
+    grid-column: 1 / 4;
+    gap: 0.1rem;
   }
 
   .slider {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    font-size: 14px;
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: 1em;
+    grid-column: 1 / 4;
   }
 
   .fuzzy-spinner {
-    width: 300px;
-    height: 300px;
+    width: var(--size);
+    aspect-ratio: 1;
     position: relative;
   }
 
@@ -202,9 +234,10 @@
       content: '';
       display: block;
       position: absolute;
-      inset: 0px;
-      width: 100%;
-      height: 100%;
+      inset: -14%;
+      width: 125%;
+      height: 125%;
+      // background-color: gold;
       backdrop-filter: blur(3px);
       border-radius: 50%;
     }

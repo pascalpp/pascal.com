@@ -15,6 +15,8 @@
   let corner3 = 50;
   let corner4 = 40;
 
+  let size = 300;
+
   function original() {
     showRed = true;
     showBlue = true;
@@ -27,6 +29,7 @@
     corner2 = 40;
     corner3 = 50;
     corner4 = 40;
+    size = 300;
   }
 
   function flower() {
@@ -48,9 +51,9 @@
     showBlue = true;
     showGreen = true;
     border1 = 100;
-    border2 = 50;
+    border2 = 100;
     border3 = 100;
-    border4 = 80;
+    border4 = 100;
     corner1 = 90;
     corner2 = 20;
     corner3 = 90;
@@ -126,6 +129,21 @@
     corner3 = 34;
     corner4 = 68;
   }
+
+  function daggers() {
+    showRed = true;
+    showBlue = true;
+    showGreen = true;
+    border1 = 0;
+    border2 = 100;
+    border3 = 0;
+    border4 = 100;
+    corner1 = 0;
+    corner2 = 100;
+    corner3 = 0;
+    corner4 = 0;
+    size = 50;
+  }
 </script>
 
 <p>
@@ -158,6 +176,7 @@
   {corner2}
   {corner3}
   {corner4}
+  {size}
 />
 
 <p>
@@ -166,6 +185,8 @@
   <button class="link" on:click={flower}>this</button>
   or
   <button class="link" on:click={chaosPie}>this</button> or <button class="link" on:click={bouncyFlower}>this</button>
+  or
+  <button class="link" on:click={daggers}>this</button>
   or
   <button class="link" on:click={original}>the original</button>!
 </p>
