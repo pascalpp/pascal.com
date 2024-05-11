@@ -5,19 +5,21 @@
   let showBlue = false;
   let showGreen = false;
 
-  let border1 = 20;
-  let border2 = 35;
-  let border3 = 15;
-  let border4 = 5;
+  let border1: number;
+  let border2: number;
+  let border3: number;
+  let border4: number;
 
-  let corner1 = 45;
-  let corner2 = 40;
-  let corner3 = 50;
-  let corner4 = 40;
+  let corner1: number;
+  let corner2: number;
+  let corner3: number;
+  let corner4: number;
 
-  let size = 300;
-  let offset = 60;
-  let blur = 3;
+  let size: number;
+  let offset: number;
+  let blur: number;
+  let speed: number;
+  let delay: number;
 
   function original() {
     showRed = true;
@@ -198,6 +200,8 @@
   bind:size
   bind:offset
   bind:blur
+  bind:delay
+  bind:speed
 />
 
 <p>

@@ -19,6 +19,8 @@
   export let size = 300;
   export let offset = 60;
   export let blur = 3;
+  export let speed = 10;
+  export let delay = 3;
 
   let showControls = showVisibilityToggles || showVariables;
   let id = crypto.randomUUID();
@@ -28,7 +30,7 @@
   <div
     class="fuzzy-spinner"
     style="
-      --size: {size}px; --blur: {blur}px; --offset: {offset}deg;
+      --size: {size}px; --blur: {blur}px; --offset: {offset}deg; --speed: {speed}s; --delay: {delay}s;
       --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
@@ -115,6 +117,16 @@
           <span>{offset}deg</span>
         </div>
         <div class="slider">
+          <span>Speed</span>
+          <input type="range" bind:value={speed} min={0} max={20} />
+          <span>{speed}s</span>
+        </div>
+        <div class="slider">
+          <span>Delay</span>
+          <input type="range" bind:value={delay} min={0} max={20} />
+          <span>{delay}s</span>
+        </div>
+        <div class="slider">
           <span>Blur</span>
           <input type="range" bind:value={blur} min={0} max={20} />
           <span>{blur}px</span>
@@ -190,7 +202,7 @@
     height: 100%;
     position: absolute;
     inset: 0;
-    animation: spin 9s linear infinite;
+    animation: spin var(--speed) linear infinite;
     transition: border-width 0.5s;
     --min-scale: 0.85;
     --max-scale: 1;
@@ -204,7 +216,9 @@
       color: red;
       --min-opacity: 0.8;
       --max-opacity: 1;
-      animation-delay: -9s;
+      &::before {
+        animation-delay: calc(var(--delay) * -3);
+      }
     }
     &.blue {
       color: blue;
@@ -212,7 +226,7 @@
       --max-opacity: 0.9;
       &::before {
         transform: rotate(var(--offset));
-        animation-delay: -6s;
+        animation-delay: calc(var(--delay) * -2);
       }
     }
     &.green {
@@ -221,7 +235,7 @@
       --max-opacity: 0.7;
       &::before {
         transform: rotate(calc(var(--offset) * 2));
-        animation-delay: -3s;
+        animation-delay: calc(var(--delay) * -1);
       }
     }
 
@@ -235,7 +249,7 @@
       border: 10px solid currentColor;
       position: relative;
       border-radius: var(--corner1) var(--corner2) var(--corner3) var(--corner4);
-      animation: wobble 2s ease-in-out infinite;
+      animation: wobble calc(var(--speed) / 5) ease-in-out infinite;
       background-color: white;
       filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent)) blur(var(--blur));
     }
