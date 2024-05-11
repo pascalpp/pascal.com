@@ -18,6 +18,8 @@
   export let corner3 = 50;
   export let corner4 = 40;
 
+  export let blur = 3;
+
   let showControls = showVisibilityToggles || showVariables;
   let id = crypto.randomUUID();
 </script>
@@ -26,14 +28,14 @@
   <div
     class="fuzzy-spinner"
     style="
-      --size: {size}px;
+      --size: {size}px; --blur: {blur}px;
       --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
   >
-    <div class="spinner red" class:show={showRed} />
-    <div class="spinner blue" class:show={showBlue} />
-    <div class="spinner green" class:show={showGreen} />
+    <div class="spinner red" class:show={showRed} class:blur={blur > 0} />
+    <div class="spinner blue" class:show={showBlue} class:blur={blur > 0} />
+    <div class="spinner green" class:show={showGreen} class:blur={blur > 0} />
   </div>
 </figure>
 
@@ -41,14 +43,15 @@
   <div class="controls">
     {#if showVisibilityToggles}
       <div class="toggles">
+        <span>Show</span>
         <label class="toggle" for="red-checkbox-{id}">
-          <input id="red-checkbox-{id}" type="checkbox" bind:checked={showRed} /> Show red
+          <input id="red-checkbox-{id}" type="checkbox" bind:checked={showRed} /> Red
         </label>
         <label class="toggle" for="blue-checkbox-{id}">
-          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={showBlue} /> Show blue
+          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={showBlue} /> Blue
         </label>
         <label class="toggle" for="green-checkbox-{id}">
-          <input id="green-checkbox-{id}" type="checkbox" bind:checked={showGreen} /> Show green
+          <input id="green-checkbox-{id}" type="checkbox" bind:checked={showGreen} /> Green
         </label>
       </div>
     {/if}
@@ -76,9 +79,7 @@
           <span>{border4}px</span>
         </div>
       </div>
-    {/if}
 
-    {#if showVariables}
       <div class="variables sliders">
         <div class="slider">
           <span>Corner 1</span>
@@ -101,14 +102,17 @@
           <span>{corner4}%</span>
         </div>
       </div>
-    {/if}
 
-    {#if showVariables}
       <div class="variables sliders">
         <div class="slider">
           <span>Size</span>
           <input type="range" bind:value={size} min={50} max={400} />
           <span>{size}px</span>
+        </div>
+        <div class="slider">
+          <span>Blur</span>
+          <input type="range" bind:value={blur} min={0} max={20} />
+          <span>{blur}px</span>
         </div>
       </div>
     {/if}
@@ -138,16 +142,16 @@
   }
 
   .toggles {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: 2 / 4;
+    grid-column: 1 / 4;
+    display: flex;
+    gap: 1em;
+    font-size: 14px;
   }
 
   .toggle {
     display: flex;
-    gap: 0.5em;
+    gap: 0.25em;
     align-items: center;
-    font-size: 14px;
     user-select: none;
     grid-column: 1 / 4;
     white-space: nowrap;
@@ -183,7 +187,7 @@
     inset: 0;
     animation: spin 9s linear infinite;
     transition: border-width 0.5s;
-    --min-scale: 0.8;
+    --min-scale: 0.85;
     --max-scale: 1;
     visibility: hidden;
 
@@ -230,7 +234,7 @@
       background-color: white;
       filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent));
     }
-    &::after {
+    &.blur::after {
       content: '';
       display: block;
       position: absolute;
@@ -238,7 +242,7 @@
       width: 100%;
       height: 100%;
       // background-color: gold;
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(var(--blur));
       border-radius: 50%;
     }
   }

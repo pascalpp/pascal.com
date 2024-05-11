@@ -16,6 +16,7 @@
   let corner4 = 40;
 
   let size = 300;
+  let blur = 3;
 
   function original() {
     showRed = true;
@@ -30,6 +31,7 @@
     corner3 = 50;
     corner4 = 40;
     size = 300;
+    blur = 3;
   }
 
   function flower() {
@@ -44,6 +46,8 @@
     corner2 = 85;
     corner3 = 20;
     corner4 = 75;
+    size = 300;
+    blur = 3;
   }
 
   function bouncyFlower() {
@@ -58,6 +62,8 @@
     corner2 = 20;
     corner3 = 90;
     corner4 = 20;
+    size = 300;
+    blur = 3;
   }
 
   function example2() {
@@ -72,6 +78,7 @@
     corner2 = 94;
     corner3 = 95;
     corner4 = 96;
+    blur = 3;
   }
 
   function pulsingCircle() {
@@ -100,6 +107,8 @@
     corner2 = 67;
     corner3 = 34;
     corner4 = 68;
+    size = 300;
+    blur = 3;
   }
 
   function example4() {
@@ -128,6 +137,8 @@
     corner2 = 67;
     corner3 = 34;
     corner4 = 68;
+    size = 300;
+    blur = 3;
   }
 
   function daggers() {
@@ -143,6 +154,7 @@
     corner3 = 0;
     corner4 = 0;
     size = 50;
+    blur = 0;
   }
 </script>
 
@@ -165,18 +177,19 @@
 <CssSpinner
   showVisibilityToggles={true}
   showVariables={true}
-  {showRed}
-  {showBlue}
-  {showGreen}
-  {border1}
-  {border2}
-  {border3}
-  {border4}
-  {corner1}
-  {corner2}
-  {corner3}
-  {corner4}
-  {size}
+  bind:showRed
+  bind:showBlue
+  bind:showGreen
+  bind:border1
+  bind:border2
+  bind:border3
+  bind:border4
+  bind:corner1
+  bind:corner2
+  bind:corner3
+  bind:corner4
+  bind:size
+  bind:blur
 />
 
 <p>
