@@ -17,10 +17,11 @@
   export let corner4 = 40;
 
   export let size = 300;
-  export let offset = 60;
+  export let rotate = 60;
+  export let translate = 10;
   export let blur = 3;
-  export let speed = 10;
-  export let delay = 3;
+  export let speed = 15;
+  export let delay = 5;
 
   let showControls = showVisibilityToggles || showVariables;
   let id = crypto.randomUUID();
@@ -30,7 +31,8 @@
   <div
     class="fuzzy-spinner"
     style="
-      --size: {size}px; --blur: {blur}px; --offset: {offset}deg; --speed: {speed}s; --delay: {delay}s;
+      --size: {size}px; --translate: {translate}px; --rotate: {rotate}deg;
+      --blur: {blur}px; --speed: {speed}s; --delay: {delay}s;
       --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
@@ -112,9 +114,14 @@
           <span>{size}px</span>
         </div>
         <div class="slider">
-          <span>Offset</span>
-          <input type="range" bind:value={offset} min={0} max={360} />
-          <span>{offset}deg</span>
+          <span>Rotate</span>
+          <input type="range" bind:value={rotate} min={0} max={360} />
+          <span>{rotate}deg</span>
+        </div>
+        <div class="slider">
+          <span>Translate</span>
+          <input type="range" bind:value={translate} min={0} max={100} />
+          <span>{translate}px</span>
         </div>
         <div class="slider">
           <span>Speed</span>
@@ -203,10 +210,11 @@
     position: absolute;
     inset: 0;
     animation: spin var(--speed) linear infinite;
-    transition: border-width 0.5s;
     --min-scale: 0.85;
     --max-scale: 1;
     visibility: hidden;
+    --min-opacity: 0.5;
+    --max-opacity: 0.9;
 
     &.show {
       visibility: visible;
@@ -214,28 +222,32 @@
 
     &.red {
       color: red;
-      --min-opacity: 0.8;
-      --max-opacity: 1;
+      // --min-opacity: 0.8;
+      // --max-opacity: 1;
+      animation-delay: calc(var(--delay) * -2);
       &::before {
-        animation-delay: calc(var(--delay) * -3);
+        animation-delay: calc(var(--delay) * -2);
+        rotate: calc(var(--rotate) * 1);
       }
     }
     &.blue {
       color: blue;
       --min-opacity: 0.3;
       --max-opacity: 0.9;
+      animation-delay: calc(var(--delay) * -1);
       &::before {
-        transform: rotate(var(--offset));
-        animation-delay: calc(var(--delay) * -2);
+        animation-delay: calc(var(--delay) * -1);
+        rotate: calc(var(--rotate) * 2);
       }
     }
     &.green {
       color: green;
       --min-opacity: 0.3;
       --max-opacity: 0.7;
+      animation-delay: calc(var(--delay) * 0);
       &::before {
-        transform: rotate(calc(var(--offset) * 2));
-        animation-delay: calc(var(--delay) * -1);
+        animation-delay: calc(var(--delay) * 0);
+        rotate: calc(var(--rotate) * 3);
       }
     }
 
@@ -248,26 +260,37 @@
       height: 50%;
       border: 10px solid currentColor;
       position: relative;
+      transition: border-width 0.5s;
       border-radius: var(--corner1) var(--corner2) var(--corner3) var(--corner4);
       animation: wobble calc(var(--speed) / 5) ease-in-out infinite;
       background-color: white;
-      filter: drop-shadow(0 0 20px color-mix(in srgb, currentColor 50%, transparent)) blur(var(--blur));
+      filter: blur(var(--blur));
+      box-shadow: 0 0 20px color-mix(in srgb, currentColor 50%, transparent);
     }
   }
 
   @keyframes spin {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(0deg) translateX(0);
+      opacity: var(--min-opacity);
+    }
+    25% {
+    }
+    50% {
+      transform: rotate(180deg) translateX(var(--translate));
+      opacity: var(--max-opacity);
+    }
+    75% {
     }
     100% {
-      transform: rotate(359deg);
+      transform: rotate(360deg) translateX(0);
+      opacity: var(--min-opacity);
     }
   }
 
   @keyframes wobble {
     0% {
       border-width: var(--border1) var(--border2) var(--border3) var(--border4);
-      opacity: var(--max-opacity);
       scale: var(--min-scale);
     }
     25% {
@@ -275,7 +298,6 @@
     }
     50% {
       border-width: var(--border3) var(--border4) var(--border1) var(--border2);
-      opacity: var(--min-opacity);
       scale: var(--max-scale);
     }
     75% {
@@ -283,7 +305,6 @@
     }
     100% {
       border-width: var(--border1) var(--border2) var(--border3) var(--border4);
-      opacity: var(--max-opacity);
       scale: var(--min-scale);
     }
   }

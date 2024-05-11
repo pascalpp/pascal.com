@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import CssSpinner from './CssSpinner.svelte';
 
   let showRed = true;
@@ -16,12 +17,13 @@
   let corner4: number;
 
   let size: number;
-  let offset: number;
+  let rotate: number;
+  let translate: number;
   let blur: number;
   let speed: number;
   let delay: number;
 
-  function original() {
+  function setDefaults() {
     showRed = true;
     showBlue = true;
     showGreen = true;
@@ -34,14 +36,15 @@
     corner3 = 50;
     corner4 = 40;
     size = 300;
-    offset = 60;
+    rotate = 60;
+    translate = 10;
     blur = 3;
+    speed = 15;
+    delay = 5;
   }
 
-  function flower() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+  function whiteLotus() {
+    setDefaults();
     border1 = 0;
     border2 = 0;
     border3 = 0;
@@ -50,15 +53,25 @@
     corner2 = 85;
     corner3 = 20;
     corner4 = 75;
-    size = 300;
-    offset = 60;
-    blur = 3;
   }
 
   function bouncyFlower() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    setDefaults();
+    border1 = 0;
+    border2 = 0;
+    border3 = 0;
+    border4 = 100;
+    corner1 = 90;
+    corner2 = 20;
+    corner3 = 90;
+    corner4 = 20;
+    rotate = 120;
+    translate = 0;
+    delay = 0;
+  }
+
+  function vennFootballs() {
+    setDefaults();
     border1 = 100;
     border2 = 100;
     border3 = 100;
@@ -67,9 +80,10 @@
     corner2 = 20;
     corner3 = 90;
     corner4 = 20;
-    size = 300;
-    offset = 60;
-    blur = 3;
+    rotate = 0;
+    translate = 0;
+    speed = 9;
+    delay = 3;
   }
 
   function example2() {
@@ -114,7 +128,10 @@
     corner3 = 34;
     corner4 = 68;
     size = 300;
-    offset = 60;
+    rotate = 60;
+    translate = 0;
+    speed = 9;
+    delay = 3;
     blur = 3;
   }
 
@@ -132,7 +149,7 @@
     corner4 = 84;
   }
 
-  function slivers() {
+  function discoLights() {
     showRed = true;
     showBlue = true;
     showGreen = true;
@@ -145,11 +162,11 @@
     corner3 = 34;
     corner4 = 68;
     size = 300;
-    offset = 60;
+    rotate = 60;
     blur = 3;
   }
 
-  function daggers() {
+  function throwingStar() {
     showRed = true;
     showBlue = true;
     showGreen = true;
@@ -162,9 +179,49 @@
     corner3 = 0;
     corner4 = 0;
     size = 50;
-    offset = 60;
+    rotate = 60;
+    translate = 0;
+    speed = 8;
+    delay = 16;
     blur = 0;
   }
+
+  function fuzzyDice() {
+    showRed = true;
+    showBlue = true;
+    showGreen = true;
+    border1 = 20;
+    border2 = 35;
+    border3 = 15;
+    border4 = 5;
+    corner1 = 45;
+    corner2 = 40;
+    corner3 = 50;
+    corner4 = 40;
+    size = 300;
+    rotate = 180;
+    translate = 100;
+    speed = 15;
+    delay = 5;
+    blur = 3;
+  }
+
+  function bokehBalls() {
+    setDefaults();
+    size = 50;
+  }
+
+  function ufos() {
+    setDefaults();
+    border1 = 100;
+    border2 = 100;
+    border3 = 100;
+    border4 = 100;
+    size = 50;
+    translate = 100;
+  }
+
+  onMount(ufos);
 </script>
 
 <p>
@@ -198,20 +255,32 @@
   bind:corner3
   bind:corner4
   bind:size
-  bind:offset
+  bind:rotate
+  bind:translate
   bind:blur
   bind:delay
   bind:speed
 />
 
 <p>
-  Try turning the shapes on and off, and try modifying the different variables to get different effects. Or
-  <button class="link" on:click={slivers}>try this</button> or
-  <button class="link" on:click={flower}>this</button>
+  Try turning the shapes on and off, and try modifying the different variables to get different effects. Or try
+  <button class="link" on:click={discoLights}>disco lights</button>
   or
-  <button class="link" on:click={chaosPie}>this</button> or <button class="link" on:click={bouncyFlower}>this</button>
+  <button class="link" on:click={bokehBalls}>bokeh balls</button>
   or
-  <button class="link" on:click={daggers}>this</button>
+  <button class="link" on:click={whiteLotus}>white lotus</button>
   or
-  <button class="link" on:click={original}>the original</button>!
+  <button class="link" on:click={chaosPie}>chaos pie</button>
+  or
+  <button class="link" on:click={bouncyFlower}>bouncy flower</button>
+  or
+  <button class="link" on:click={throwingStar}>throwing star</button>
+  or
+  <button class="link" on:click={fuzzyDice}>fuzzy dice</button>
+  or
+  <button class="link" on:click={vennFootballs}>venn footballs</button>
+  or
+  <button class="link" on:click={ufos}>UFOs</button>
+  or
+  <button class="link" on:click={setDefaults}>the original</button>!
 </p>
