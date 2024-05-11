@@ -16,6 +16,7 @@
   let corner4 = 40;
 
   let size = 300;
+  let offset = 60;
   let blur = 3;
 
   function original() {
@@ -31,6 +32,7 @@
     corner3 = 50;
     corner4 = 40;
     size = 300;
+    offset = 60;
     blur = 3;
   }
 
@@ -47,6 +49,7 @@
     corner3 = 20;
     corner4 = 75;
     size = 300;
+    offset = 60;
     blur = 3;
   }
 
@@ -63,6 +66,7 @@
     corner3 = 90;
     corner4 = 20;
     size = 300;
+    offset = 60;
     blur = 3;
   }
 
@@ -108,6 +112,7 @@
     corner3 = 34;
     corner4 = 68;
     size = 300;
+    offset = 60;
     blur = 3;
   }
 
@@ -138,6 +143,7 @@
     corner3 = 34;
     corner4 = 68;
     size = 300;
+    offset = 60;
     blur = 3;
   }
 
@@ -154,6 +160,7 @@
     corner3 = 0;
     corner4 = 0;
     size = 50;
+    offset = 60;
     blur = 0;
   }
 </script>
@@ -189,6 +196,7 @@
   bind:corner3
   bind:corner4
   bind:size
+  bind:offset
   bind:blur
 />
 

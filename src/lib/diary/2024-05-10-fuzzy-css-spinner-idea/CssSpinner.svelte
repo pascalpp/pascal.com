@@ -2,8 +2,6 @@
   export let showVisibilityToggles = false;
   export let showVariables = false;
 
-  export let size = 300;
-
   export let showRed = true;
   export let showBlue = true;
   export let showGreen = true;
@@ -18,6 +16,8 @@
   export let corner3 = 50;
   export let corner4 = 40;
 
+  export let size = 300;
+  export let offset = 60;
   export let blur = 3;
 
   let showControls = showVisibilityToggles || showVariables;
@@ -28,7 +28,7 @@
   <div
     class="fuzzy-spinner"
     style="
-      --size: {size}px; --blur: {blur}px;
+      --size: {size}px; --blur: {blur}px; --offset: {offset}deg;
       --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
@@ -108,6 +108,11 @@
           <span>Size</span>
           <input type="range" bind:value={size} min={50} max={400} />
           <span>{size}px</span>
+        </div>
+        <div class="slider">
+          <span>Offset</span>
+          <input type="range" bind:value={offset} min={0} max={360} />
+          <span>{offset}deg</span>
         </div>
         <div class="slider">
           <span>Blur</span>
@@ -206,7 +211,7 @@
       --min-opacity: 0.3;
       --max-opacity: 0.9;
       &::before {
-        transform: rotate(60deg);
+        transform: rotate(var(--offset));
         animation-delay: -6s;
       }
     }
@@ -215,7 +220,7 @@
       --min-opacity: 0.3;
       --max-opacity: 0.7;
       &::before {
-        transform: rotate(120deg);
+        transform: rotate(calc(var(--offset) * 2));
         animation-delay: -3s;
       }
     }
