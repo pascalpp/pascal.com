@@ -221,7 +221,7 @@
     translate = 100;
   }
 
-  onMount(ufos);
+  // onMount(ufos);
 </script>
 
 <p>
