@@ -28,6 +28,7 @@
  * --syntax-cursor-line: hsla(220, 100%, 80%, 0.04);
  */
 
+pre.shiki,
 code[class*='language-'],
 pre[class*='language-'] {
   background: hsl(220, 13%, 18%);
@@ -67,11 +68,36 @@ pre[class*='language-'] *::selection {
 }
 
 /* Code blocks */
+pre.shiki,
 pre[class*='language-'] {
-  padding: 1em;
+  padding: 0.5em 1em;
   margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.3em;
+  line-height: 1.3;
+
+  code {
+    padding: 0;
+    line-height: inherit;
+
+    counter-reset: step;
+    counter-increment: step 0;
+
+    .line {
+      &::before {
+        content: counter(step);
+        counter-increment: step;
+        width: 2em;
+        margin-right: 2em;
+        display: inline-block;
+        text-align: right;
+        color: #ffffff66;
+      }
+      &:only-child::before {
+        content: none;
+      }
+    }
+  }
 }
 
 /* Inline code */
