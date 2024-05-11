@@ -2,9 +2,9 @@
   export let showVisibilityToggles = false;
   export let showVariables = false;
 
-  export let showRed = true;
-  export let showBlue = true;
-  export let showGreen = true;
+  export let red = true;
+  export let blue = true;
+  export let green = true;
 
   export let border1 = 20;
   export let border2 = 35;
@@ -37,110 +37,113 @@
       --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
     "
   >
-    <div class="spinner red" class:show={showRed} class:blur={blur > 0} />
-    <div class="spinner blue" class:show={showBlue} class:blur={blur > 0} />
-    <div class="spinner green" class:show={showGreen} class:blur={blur > 0} />
+    <div class="spinner red" class:show={red} class:blur={blur > 0} />
+    <div class="spinner blue" class:show={blue} class:blur={blur > 0} />
+    <div class="spinner green" class:show={green} class:blur={blur > 0} />
   </div>
 </figure>
 
 {#if showControls}
-  <div class="controls">
-    {#if showVisibilityToggles}
-      <div class="toggles">
-        <span>Show</span>
-        <label class="toggle" for="red-checkbox-{id}">
-          <input id="red-checkbox-{id}" type="checkbox" bind:checked={showRed} /> Red
-        </label>
-        <label class="toggle" for="blue-checkbox-{id}">
-          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={showBlue} /> Blue
-        </label>
-        <label class="toggle" for="green-checkbox-{id}">
-          <input id="green-checkbox-{id}" type="checkbox" bind:checked={showGreen} /> Green
-        </label>
-      </div>
-    {/if}
+  <details class="controls" open>
+    <summary>Controls</summary>
+    <div class="controls-grid">
+      {#if showVisibilityToggles}
+        <div class="toggles">
+          <span>Show</span>
+          <label class="toggle" for="red-checkbox-{id}">
+            <input id="red-checkbox-{id}" type="checkbox" bind:checked={red} /> Red
+          </label>
+          <label class="toggle" for="blue-checkbox-{id}">
+            <input id="blue-checkbox-{id}" type="checkbox" bind:checked={blue} /> Blue
+          </label>
+          <label class="toggle" for="green-checkbox-{id}">
+            <input id="green-checkbox-{id}" type="checkbox" bind:checked={green} /> Green
+          </label>
+        </div>
+      {/if}
 
-    {#if showVariables}
-      <div class="variables sliders">
-        <div class="slider">
-          <span>Border 1</span>
-          <input type="range" bind:value={border1} />
-          <span>{border1}px</span>
+      {#if showVariables}
+        <div class="variables sliders">
+          <div class="slider">
+            <span>Border 1</span>
+            <input type="range" bind:value={border1} />
+            <span>{border1}px</span>
+          </div>
+          <div class="slider">
+            <span>Border 2</span>
+            <input type="range" bind:value={border2} />
+            <span>{border2}px</span>
+          </div>
+          <div class="slider">
+            <span>Border 3</span>
+            <input type="range" bind:value={border3} />
+            <span>{border3}px</span>
+          </div>
+          <div class="slider">
+            <span>Border 4</span>
+            <input type="range" bind:value={border4} />
+            <span>{border4}px</span>
+          </div>
         </div>
-        <div class="slider">
-          <span>Border 2</span>
-          <input type="range" bind:value={border2} />
-          <span>{border2}px</span>
-        </div>
-        <div class="slider">
-          <span>Border 3</span>
-          <input type="range" bind:value={border3} />
-          <span>{border3}px</span>
-        </div>
-        <div class="slider">
-          <span>Border 4</span>
-          <input type="range" bind:value={border4} />
-          <span>{border4}px</span>
-        </div>
-      </div>
 
-      <div class="variables sliders">
-        <div class="slider">
-          <span>Corner 1</span>
-          <input type="range" bind:value={corner1} />
-          <span>{corner1}%</span>
+        <div class="variables sliders">
+          <div class="slider">
+            <span>Corner 1</span>
+            <input type="range" bind:value={corner1} />
+            <span>{corner1}%</span>
+          </div>
+          <div class="slider">
+            <span>Corner 2</span>
+            <input type="range" bind:value={corner2} />
+            <span>{corner2}%</span>
+          </div>
+          <div class="slider">
+            <span>Corner 3</span>
+            <input type="range" bind:value={corner3} />
+            <span>{corner3}%</span>
+          </div>
+          <div class="slider">
+            <span>Corner 4</span>
+            <input type="range" bind:value={corner4} />
+            <span>{corner4}%</span>
+          </div>
         </div>
-        <div class="slider">
-          <span>Corner 2</span>
-          <input type="range" bind:value={corner2} />
-          <span>{corner2}%</span>
-        </div>
-        <div class="slider">
-          <span>Corner 3</span>
-          <input type="range" bind:value={corner3} />
-          <span>{corner3}%</span>
-        </div>
-        <div class="slider">
-          <span>Corner 4</span>
-          <input type="range" bind:value={corner4} />
-          <span>{corner4}%</span>
-        </div>
-      </div>
 
-      <div class="variables sliders">
-        <div class="slider">
-          <span>Size</span>
-          <input type="range" bind:value={size} min={50} max={400} />
-          <span>{size}px</span>
+        <div class="variables sliders">
+          <div class="slider">
+            <span>Size</span>
+            <input type="range" bind:value={size} min={50} max={400} />
+            <span>{size}px</span>
+          </div>
+          <div class="slider">
+            <span>Rotate</span>
+            <input type="range" bind:value={rotate} min={0} max={360} />
+            <span>{rotate}deg</span>
+          </div>
+          <div class="slider">
+            <span>Translate</span>
+            <input type="range" bind:value={translate} min={0} max={100} />
+            <span>{translate}px</span>
+          </div>
+          <div class="slider">
+            <span>Speed</span>
+            <input type="range" bind:value={speed} min={0} max={20} />
+            <span>{speed}s</span>
+          </div>
+          <div class="slider">
+            <span>Delay</span>
+            <input type="range" bind:value={delay} min={0} max={20} />
+            <span>{delay}s</span>
+          </div>
+          <div class="slider">
+            <span>Blur</span>
+            <input type="range" bind:value={blur} min={0} max={20} />
+            <span>{blur}px</span>
+          </div>
         </div>
-        <div class="slider">
-          <span>Rotate</span>
-          <input type="range" bind:value={rotate} min={0} max={360} />
-          <span>{rotate}deg</span>
-        </div>
-        <div class="slider">
-          <span>Translate</span>
-          <input type="range" bind:value={translate} min={0} max={100} />
-          <span>{translate}px</span>
-        </div>
-        <div class="slider">
-          <span>Speed</span>
-          <input type="range" bind:value={speed} min={0} max={20} />
-          <span>{speed}s</span>
-        </div>
-        <div class="slider">
-          <span>Delay</span>
-          <input type="range" bind:value={delay} min={0} max={20} />
-          <span>{delay}s</span>
-        </div>
-        <div class="slider">
-          <span>Blur</span>
-          <input type="range" bind:value={blur} min={0} max={20} />
-          <span>{blur}px</span>
-        </div>
-      </div>
-    {/if}
-  </div>
+      {/if}
+    </div>
+  </details>
 {/if}
 
 <style lang="less">
@@ -152,17 +155,31 @@
 
   .controls {
     grid-column: content-end / full-width-end;
-    place-content: center;
+    grid-row: span 2;
     align-self: stretch;
     font-family: var(--sans-font);
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: min-content auto 80px;
+    font-size: 14px;
+    padding-left: 1rem;
+    width: min-content;
+
+    summary {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      margin-left: -1rem;
+      white-space: nowrap;
+    }
   }
   @container (inline-size < 1200px) {
     .controls {
       grid-column: content;
+      justify-self: center;
     }
+  }
+
+  .controls-grid {
+    display: grid;
+    grid-template-columns: min-content auto 80px;
+    gap: 1rem;
   }
 
   .toggles {

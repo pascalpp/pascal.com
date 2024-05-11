@@ -2,9 +2,9 @@
   import { onMount } from 'svelte';
   import CssSpinner from './CssSpinner.svelte';
 
-  let showRed = true;
-  let showBlue = false;
-  let showGreen = false;
+  let red = true;
+  let blue = false;
+  let green = false;
 
   let border1: number;
   let border2: number;
@@ -24,9 +24,9 @@
   let delay: number;
 
   function setDefaults() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    red = true;
+    blue = true;
+    green = true;
     border1 = 20;
     border2 = 35;
     border3 = 15;
@@ -87,9 +87,9 @@
   }
 
   function example2() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    red = true;
+    blue = true;
+    green = true;
     border1 = 38;
     border2 = 5;
     border3 = 6;
@@ -102,9 +102,9 @@
   }
 
   function pulsingCircle() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    red = true;
+    blue = true;
+    green = true;
     border1 = 38;
     border2 = 5;
     border3 = 6;
@@ -116,9 +116,9 @@
   }
 
   function chaosPie() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    red = true;
+    blue = true;
+    green = true;
     border1 = 0;
     border2 = 80;
     border3 = 34;
@@ -136,9 +136,9 @@
   }
 
   function example4() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    red = true;
+    blue = true;
+    green = true;
     border1 = 29;
     border2 = 59;
     border3 = 24;
@@ -150,9 +150,7 @@
   }
 
   function discoLights() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    setDefaults();
     border1 = 0;
     border2 = 8;
     border3 = 34;
@@ -161,15 +159,10 @@
     corner2 = 67;
     corner3 = 34;
     corner4 = 68;
-    size = 300;
-    rotate = 60;
-    blur = 3;
   }
 
   function throwingStar() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    setDefaults();
     border1 = 0;
     border2 = 100;
     border3 = 0;
@@ -179,7 +172,6 @@
     corner3 = 0;
     corner4 = 0;
     size = 50;
-    rotate = 60;
     translate = 0;
     speed = 8;
     delay = 16;
@@ -187,9 +179,7 @@
   }
 
   function fuzzyDice() {
-    showRed = true;
-    showBlue = true;
-    showGreen = true;
+    setDefaults();
     border1 = 20;
     border2 = 35;
     border3 = 15;
@@ -198,12 +188,8 @@
     corner2 = 40;
     corner3 = 50;
     corner4 = 40;
-    size = 300;
     rotate = 180;
     translate = 100;
-    speed = 15;
-    delay = 5;
-    blur = 3;
   }
 
   function bokehBalls() {
@@ -221,7 +207,24 @@
     translate = 100;
   }
 
-  // onMount(ufos);
+  function lozenges() {
+    setDefaults();
+    border1 = 40;
+    border2 = 80;
+    border3 = 5;
+    border4 = 53;
+    size = 150;
+    translate = 100;
+  }
+
+  function angryTriangle() {
+    setDefaults();
+    rotate = 120;
+    speed = 1;
+    delay = 0;
+  }
+
+  onMount(pulsingCircle);
 </script>
 
 <p>
@@ -243,9 +246,9 @@
 <CssSpinner
   showVisibilityToggles={true}
   showVariables={true}
-  bind:showRed
-  bind:showBlue
-  bind:showGreen
+  bind:red
+  bind:blue
+  bind:green
   bind:border1
   bind:border2
   bind:border3
@@ -280,7 +283,11 @@
   or
   <button class="link" on:click={vennFootballs}>venn footballs</button>
   or
+  <button class="link" on:click={lozenges}>lozenges</button>
+  or
   <button class="link" on:click={ufos}>UFOs</button>
+  or
+  <button class="link" on:click={angryTriangle}>angry triangle</button>
   or
   <button class="link" on:click={setDefaults}>the original</button>!
 </p>
