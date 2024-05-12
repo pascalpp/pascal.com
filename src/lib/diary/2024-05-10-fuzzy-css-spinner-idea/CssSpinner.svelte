@@ -1,67 +1,90 @@
+<script lang="ts" context="module">
+  export type SpinnerConfig = {
+    red: boolean;
+    blue: boolean;
+    green: boolean;
+    border1: number;
+    border2: number;
+    border3: number;
+    border4: number;
+    corner1: number;
+    corner2: number;
+    corner3: number;
+    corner4: number;
+    size: number;
+    rotate: number;
+    translate: number;
+    blur: number;
+    speed: number;
+    delay: number;
+  };
+
+  export const defaultConfig: SpinnerConfig = {
+    red: true,
+    blue: true,
+    green: true,
+    border1: 20,
+    border2: 35,
+    border3: 15,
+    border4: 5,
+    corner1: 45,
+    corner2: 40,
+    corner3: 50,
+    corner4: 40,
+    size: 300,
+    rotate: 60,
+    translate: 10,
+    blur: 3,
+    speed: 15,
+    delay: 5,
+  };
+</script>
+
 <script lang="ts">
   let id = crypto.randomUUID();
 
   export let showControls = false;
 
-  export let red = true;
-  export let blue = true;
-  export let green = true;
+  export let config: SpinnerConfig = { ...defaultConfig };
 
-  export let border1 = 20;
-  export let border2 = 35;
-  export let border3 = 15;
-  export let border4 = 5;
-
-  export let corner1 = 45;
-  export let corner2 = 40;
-  export let corner3 = 50;
-  export let corner4 = 40;
-
-  export let size = 300;
-  export let rotate = 60;
-  export let translate = 10;
-  export let blur = 3;
-  export let speed = 15;
-  export let delay = 5;
-
-  function copySettings() {
-    const name = prompt('Enter a name for this setting:');
-    const code = `
-      function ${name}() {
-        setDefaults();
-        border1 = ${border1};
-        border2 = ${border2};
-        border3 = ${border3};
-        border4 = ${border4};
-        corner1 = ${corner1};
-        corner2 = ${corner2};
-        corner3 = ${corner3};
-        corner4 = ${corner4};
-        size = ${size};
-        rotate = ${rotate};
-        translate = ${translate};
-        blur = ${blur};
-        speed = ${speed};
-        delay = ${delay};
-      }
-    `;
-    navigator.clipboard.writeText(code);
-  }
+  // function saveSetting() {
+  //   const name = prompt('Enter a name for this setting:');
+  //   const code = `
+  //     function ${name}() {
+  //       setDefaults();
+  //       border1 = ${border1};
+  //       border2 = ${border2};
+  //       border3 = ${border3};
+  //       border4 = ${border4};
+  //       corner1 = ${corner1};
+  //       corner2 = ${corner2};
+  //       corner3 = ${corner3};
+  //       corner4 = ${corner4};
+  //       size = ${size};
+  //       rotate = ${rotate};
+  //       translate = ${translate};
+  //       blur = ${blur};
+  //       speed = ${speed};
+  //       delay = ${delay};
+  //     }
+  //   `;
+  //   navigator.clipboard.writeText(code);
+  // }
 </script>
 
 <figure>
   <div
     class="fuzzy-spinner"
     style="
-      --size: {size}px; --translate: {translate}px; --rotate: {rotate}deg;
-      --blur: {blur}px; --speed: {speed}s; --delay: {delay}s;
-      --border1: {border1}px; --border2: {border2}px; --border3: {border3}px; --border4: {border4}px;
-      --corner1: {corner1}%; --corner2: {corner2}%; --corner3: {corner3}%; --corner4: {corner4}%;
+      --size: {config.size}px; --translate: {config.translate}px; --rotate: {config.rotate}deg;
+      --blur: {config.blur}px; --speed: {config.speed}s; --delay: {config.delay}s;
+      --border1: {config.border1}px; --border2: {config.border2}px; --border3: {config.border3}px; --border4: {config.border4}px;
+      --corner1: {config.corner1}%; --corner2: {config.corner2}%; --corner3: {config.corner3}%; --corner4: {config.corner4}%;
     "
   >
-    <div class="spinner red" class:show={red} class:blur={blur > 0} />
-    <div class="spinner blue" class:show={blue} class:blur={blur > 0} />
-    <div class="spinner green" class:show={green} class:blur={blur > 0} />
+    <div class="spinner red" class:show={config.red} class:blur={config.blur > 0} />
+    <div class="spinner blue" class:show={config.blue} class:blur={config.blur > 0} />
+    <div class="spinner green" class:show={config.green} class:blur={config.blur > 0} />
   </div>
 </figure>
 
@@ -72,91 +95,91 @@
       <div class="toggles">
         <span>Show</span>
         <label class="toggle" for="red-checkbox-{id}">
-          <input id="red-checkbox-{id}" type="checkbox" bind:checked={red} /> Red
+          <input id="red-checkbox-{id}" type="checkbox" bind:checked={config.red} /> Red
         </label>
         <label class="toggle" for="blue-checkbox-{id}">
-          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={blue} /> Blue
+          <input id="blue-checkbox-{id}" type="checkbox" bind:checked={config.blue} /> Blue
         </label>
         <label class="toggle" for="green-checkbox-{id}">
-          <input id="green-checkbox-{id}" type="checkbox" bind:checked={green} /> Green
+          <input id="green-checkbox-{id}" type="checkbox" bind:checked={config.green} /> Green
         </label>
       </div>
       <div class="variables sliders">
         <div class="slider">
           <span>Border 1</span>
-          <input type="range" bind:value={border1} />
-          <span><input type="text" bind:value={border1} />px</span>
+          <input type="range" bind:value={config.border1} />
+          <span><input type="text" bind:value={config.border1} />px</span>
         </div>
         <div class="slider">
           <span>Border 2</span>
-          <input type="range" bind:value={border2} />
-          <span><input type="text" bind:value={border2} />px</span>
+          <input type="range" bind:value={config.border2} />
+          <span><input type="text" bind:value={config.border2} />px</span>
         </div>
         <div class="slider">
           <span>Border 3</span>
-          <input type="range" bind:value={border3} />
-          <span><input type="text" bind:value={border3} />px</span>
+          <input type="range" bind:value={config.border3} />
+          <span><input type="text" bind:value={config.border3} />px</span>
         </div>
         <div class="slider">
           <span>Border 4</span>
-          <input type="range" bind:value={border4} />
-          <span><input type="text" bind:value={border4} />px</span>
+          <input type="range" bind:value={config.border4} />
+          <span><input type="text" bind:value={config.border4} />px</span>
         </div>
       </div>
 
       <div class="variables sliders">
         <div class="slider">
           <span>Corner 1</span>
-          <input type="range" bind:value={corner1} />
-          <span><input type="text" bind:value={corner1} />%</span>
+          <input type="range" bind:value={config.corner1} />
+          <span><input type="text" bind:value={config.corner1} />%</span>
         </div>
         <div class="slider">
           <span>Corner 2</span>
-          <input type="range" bind:value={corner2} />
-          <span><input type="text" bind:value={corner2} />%</span>
+          <input type="range" bind:value={config.corner2} />
+          <span><input type="text" bind:value={config.corner2} />%</span>
         </div>
         <div class="slider">
           <span>Corner 3</span>
-          <input type="range" bind:value={corner3} />
-          <span><input type="text" bind:value={corner3} />%</span>
+          <input type="range" bind:value={config.corner3} />
+          <span><input type="text" bind:value={config.corner3} />%</span>
         </div>
         <div class="slider">
           <span>Corner 4</span>
-          <input type="range" bind:value={corner4} />
-          <span><input type="text" bind:value={corner4} />%</span>
+          <input type="range" bind:value={config.corner4} />
+          <span><input type="text" bind:value={config.corner4} />%</span>
         </div>
       </div>
 
       <div class="variables sliders">
         <div class="slider">
           <span>Size</span>
-          <input type="range" bind:value={size} min={50} max={400} />
-          <span><input type="text" bind:value={size} />px</span>
+          <input type="range" bind:value={config.size} min={50} max={400} />
+          <span><input type="text" bind:value={config.size} />px</span>
         </div>
         <div class="slider">
           <span>Rotate</span>
-          <input type="range" bind:value={rotate} min={0} max={360} />
-          <span><input type="text" bind:value={rotate} />deg</span>
+          <input type="range" bind:value={config.rotate} min={0} max={360} />
+          <span><input type="text" bind:value={config.rotate} />deg</span>
         </div>
         <div class="slider">
           <span>Translate</span>
-          <input type="range" bind:value={translate} min={0} max={100} />
-          <span><input type="text" bind:value={translate} />px</span>
+          <input type="range" bind:value={config.translate} min={0} max={100} />
+          <span><input type="text" bind:value={config.translate} />px</span>
         </div>
         <div class="slider">
           <span>Speed</span>
-          <input type="range" bind:value={speed} min={0} max={20} />
-          <span><input type="text" bind:value={speed} />s</span>
+          <input type="range" bind:value={config.speed} min={0} max={20} />
+          <span><input type="text" bind:value={config.speed} />s</span>
         </div>
         <div class="slider">
           <span>Delay</span>
-          <input type="range" bind:value={delay} min={0} max={20} />
-          <span><input type="text" bind:value={delay} />s</span>
+          <input type="range" bind:value={config.delay} min={0} max={20} />
+          <span><input type="text" bind:value={config.delay} />s</span>
         </div>
         <div class="slider">
           <span>Blur</span>
-          <input type="range" bind:value={blur} min={0} max={20} />
-          <span><input type="text" bind:value={blur} />px</span>
+          <input type="range" bind:value={config.blur} min={0} max={20} />
+          <span><input type="text" bind:value={config.blur} />px</span>
         </div>
       </div>
     </div>
