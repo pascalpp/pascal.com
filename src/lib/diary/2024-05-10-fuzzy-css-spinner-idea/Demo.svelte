@@ -3,12 +3,11 @@
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
 
-  const params = $page.url.searchParams;
-
-  function getConfigFromParams(): SpinnerConfig {
+  function getConfigFromParams(): SpinnerConfig | null {
+    if (!browser) return null;
     let paramsConfig: Record<string, boolean | number> = {};
     for (const key of Object.keys(defaultConfig)) {
-      const value = params.get(key);
+      const value = $page.url.searchParams.get(key);
       if (value === 'true' || value === 'false') {
         paramsConfig[key] = value === 'true';
       } else if (value !== null) {
