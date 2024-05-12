@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { dev } from '$app/environment';
   import type { SpinnerConfig } from './CssSpinner.svelte';
-  import { defaultConfig } from './CssSpinner.svelte';
 
   let id = crypto.randomUUID();
 
@@ -20,18 +18,24 @@
 <details class="controls" open>
   <summary>Controls</summary>
   <div class="controls-grid">
-    <div class="toggles">
-      <span>Show</span>
-      <label class="toggle" for="red-checkbox-{id}">
-        <input id="red-checkbox-{id}" type="checkbox" bind:checked={config.red} /> Red
-      </label>
-      <label class="toggle" for="blue-checkbox-{id}">
-        <input id="blue-checkbox-{id}" type="checkbox" bind:checked={config.blue} /> Blue
-      </label>
-      <label class="toggle" for="green-checkbox-{id}">
-        <input id="green-checkbox-{id}" type="checkbox" bind:checked={config.green} /> Green
-      </label>
+    <div class="variables sliders">
+      <div class="slider">
+        <span>Red</span>
+        <input type="range" bind:value={config.red} />
+        <span><input type="text" bind:value={config.red} />%</span>
+      </div>
+      <div class="slider">
+        <span>Blue</span>
+        <input type="range" bind:value={config.blue} />
+        <span><input type="text" bind:value={config.blue} />%</span>
+      </div>
+      <div class="slider">
+        <span>Green</span>
+        <input type="range" bind:value={config.green} />
+        <span><input type="text" bind:value={config.green} />%</span>
+      </div>
     </div>
+
     <div class="variables sliders">
       <div class="slider">
         <span>Border 1</span>
@@ -120,7 +124,7 @@
 <style lang="less">
   .controls {
     grid-column: content-end / full-width-end;
-    grid-row: span 2;
+    grid-row: span 3;
     align-self: stretch;
     font-family: var(--sans-font);
     font-size: 14px;
@@ -146,22 +150,6 @@
     display: grid;
     grid-template-columns: min-content auto 80px;
     gap: 1rem;
-  }
-
-  .toggles {
-    grid-column: 1 / 4;
-    display: flex;
-    gap: 1em;
-    font-size: 14px;
-  }
-
-  .toggle {
-    display: flex;
-    gap: 0.25em;
-    align-items: center;
-    user-select: none;
-    grid-column: 1 / 4;
-    white-space: nowrap;
   }
 
   .sliders {

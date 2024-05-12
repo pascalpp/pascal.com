@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
   export type SpinnerConfig = {
-    red: boolean;
-    blue: boolean;
-    green: boolean;
+    red: number;
+    blue: number;
+    green: number;
     border1: number;
     border2: number;
     border3: number;
@@ -20,9 +20,9 @@
   };
 
   export const defaultConfig: SpinnerConfig = {
-    red: true,
-    blue: true,
-    green: true,
+    red: 90,
+    blue: 80,
+    green: 70,
     border1: 20,
     border2: 35,
     border3: 15,
@@ -54,13 +54,14 @@
     style="
       --size: {config.size}px; --translate: {config.translate}px; --rotate: {config.rotate}deg;
       --blur: {config.blur}px; --speed: {config.speed}s; --delay: {config.delay}s;
+      --red: {config.red}; --blue: {config.blue}; --green: {config.green};
       --border1: {config.border1}px; --border2: {config.border2}px; --border3: {config.border3}px; --border4: {config.border4}px;
       --corner1: {config.corner1}%; --corner2: {config.corner2}%; --corner3: {config.corner3}%; --corner4: {config.corner4}%;
     "
   >
-    <div class="spinner red" class:show={config.red} class:blur={config.blur > 0} />
-    <div class="spinner blue" class:show={config.blue} class:blur={config.blur > 0} />
-    <div class="spinner green" class:show={config.green} class:blur={config.blur > 0} />
+    <div class="spinner red" class:blur={config.blur > 0} />
+    <div class="spinner blue" class:blur={config.blur > 0} />
+    <div class="spinner green" class:blur={config.blur > 0} />
   </div>
 </figure>
 
@@ -89,18 +90,11 @@
     animation: spin var(--speed) linear infinite;
     --min-scale: 0.85;
     --max-scale: 1;
-    visibility: hidden;
-    --min-opacity: 0.5;
-    --max-opacity: 0.9;
-
-    &.show {
-      visibility: visible;
-    }
 
     &.red {
       color: red;
-      // --min-opacity: 0.8;
-      // --max-opacity: 1;
+      --max-opacity: calc(var(--red) / 100);
+      --min-opacity: calc(var(--max-opacity) * 0.6);
       animation-delay: calc(var(--delay) * -2);
       &::before {
         animation-delay: calc(var(--delay) * -2);
@@ -109,8 +103,8 @@
     }
     &.blue {
       color: blue;
-      --min-opacity: 0.3;
-      --max-opacity: 0.9;
+      --max-opacity: calc(var(--blue) / 100);
+      --min-opacity: calc(var(--max-opacity) * 0.3);
       animation-delay: calc(var(--delay) * -1);
       &::before {
         animation-delay: calc(var(--delay) * -1);
@@ -119,8 +113,8 @@
     }
     &.green {
       color: green;
-      --min-opacity: 0.3;
-      --max-opacity: 0.7;
+      --max-opacity: calc(var(--green) / 100);
+      --min-opacity: calc(var(--max-opacity) * 0.3);
       animation-delay: calc(var(--delay) * 0);
       &::before {
         animation-delay: calc(var(--delay) * 0);
