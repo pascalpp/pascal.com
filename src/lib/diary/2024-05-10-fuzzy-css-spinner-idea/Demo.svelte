@@ -1,12 +1,26 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import CssSpinner, { defaultConfig, type SpinnerConfig } from './CssSpinner.svelte';
+  import { page } from '$app/stores';
+  import { browser } from '$app/environment';
+
+  const params = $page.url.searchParams;
+
+  function getConfigFromParams(): SpinnerConfig {
+    let paramsConfig: Record<string, boolean | number> = {};
+    for (const key of Object.keys(defaultConfig)) {
+      const value = params.get(key);
+      if (value === 'true' || value === 'false') {
+        paramsConfig[key] = value === 'true';
+      } else if (value !== null) {
+        paramsConfig[key] = Number(value);
+      }
+    }
+    return paramsConfig as SpinnerConfig;
+  }
 
   let config: SpinnerConfig = {
     ...defaultConfig,
-    red: true,
-    blue: false,
-    green: false,
+    ...getConfigFromParams(),
   };
 
   function setDefaults() {
@@ -262,6 +276,19 @@
   }
 
   // onMount(example4);
+
+  $: if (browser) updateParams(config);
+
+  let timer = 0;
+  function updateParams(c: SpinnerConfig) {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      Object.entries(c).forEach(([key, value]) => {
+        $page.url.searchParams.set(key, String(value));
+      });
+      history.replaceState(null, '', $page.url);
+    }, 1000);
+  }
 </script>
 
 <p>
@@ -269,18 +296,19 @@
   recreate something like it in CSS.
 </p>
 
-<CssSpinner />
-
-<p>
-  This is contructed from three overlapping shapes in red, blue, and green. Each one is a square with a white background
-  and rounded corners, but the radius of each corner is different. Each border also ranges in thickness, creating an
-  irregular shape. Each shape has a subtle drop shadow in the same color as its border, and a filter to blur the shape
-  slightly. There is also some animation that rotates the shape, changes the width of each border over time, and changes
-  its scale and opacity. To make things even more organic, each shape is rotated slightly, and the animations are
-  staggered.
-</p>
-
 <CssSpinner showControls={true} bind:config />
+
+<details open>
+  <summary>How it’s made</summary>
+  <p>
+    This is contructed from three overlapping shapes in red, blue, and green. Each one is a square with a white
+    background and rounded corners, but the radius of each corner is different. Each border also ranges in thickness,
+    creating an irregular shape. Each shape has a subtle drop shadow in the same color as its border, and a filter to
+    blur the shape slightly. There is also some animation that rotates the shape, changes the width of each border over
+    time, and changes its scale and opacity. To make things even more organic, each shape is rotated slightly, and the
+    animations are staggered.
+  </p>
+</details>
 
 <p>
   Try turning the shapes on and off, and try modifying the different variables to get different effects. Or try
