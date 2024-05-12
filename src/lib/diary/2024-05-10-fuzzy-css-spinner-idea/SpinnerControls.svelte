@@ -1,17 +1,26 @@
 <script lang="ts">
-  import type { SpinnerConfig } from './CssSpinner.svelte';
-
-  let id = crypto.randomUUID();
+  import { page } from '$app/stores';
+  import { defaultConfig, type SpinnerConfig } from './CssSpinner.svelte';
 
   export let config: SpinnerConfig;
 
   function copySetting(event: Event) {
-    navigator.clipboard.writeText(document.location.href);
+    Object.entries(config).forEach(([key, value]) => {
+      $page.url.searchParams.set(key, String(value));
+    });
+
+    navigator.clipboard.writeText($page.url.toString());
+    history.replaceState(null, '', $page.url.toString());
     const button = event.target as HTMLButtonElement;
     button.textContent = 'Copied!';
     setTimeout(() => {
       button.textContent = 'Copy to clipboard';
     }, 2000);
+  }
+
+  function reset() {
+    config = { ...defaultConfig };
+    history.replaceState(null, '', document.location.pathname);
   }
 </script>
 
@@ -33,6 +42,11 @@
         <span>Green</span>
         <input type="range" bind:value={config.green} />
         <span><input type="text" bind:value={config.green} />%</span>
+      </div>
+      <div class="slider">
+        <span>Yellow</span>
+        <input type="range" bind:value={config.yellow} />
+        <span><input type="text" bind:value={config.yellow} />%</span>
       </div>
     </div>
 
@@ -85,7 +99,7 @@
     <div class="variables sliders">
       <div class="slider">
         <span>Size</span>
-        <input type="range" bind:value={config.size} min={50} max={400} />
+        <input type="range" bind:value={config.size} min={0} max={500} />
         <span><input type="text" bind:value={config.size} />px</span>
       </div>
       <div class="slider">
@@ -117,6 +131,7 @@
 
     <div class="actions">
       <button on:click={copySetting}>Copy Setting</button>
+      <button on:click={reset}>Reset</button>
     </div>
   </div>
 </details>
@@ -236,6 +251,6 @@
   .actions {
     grid-column: 1 / 4;
     display: flex;
-    gap: 1em;
+    gap: 0.5rem;
   }
 </style>

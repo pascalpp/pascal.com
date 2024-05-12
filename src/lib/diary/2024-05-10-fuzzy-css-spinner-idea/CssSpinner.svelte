@@ -3,6 +3,7 @@
     red: number;
     blue: number;
     green: number;
+    yellow: number;
     border1: number;
     border2: number;
     border3: number;
@@ -23,6 +24,7 @@
     red: 90,
     blue: 80,
     green: 70,
+    yellow: 30,
     border1: 20,
     border2: 35,
     border3: 15,
@@ -32,10 +34,10 @@
     corner3: 50,
     corner4: 40,
     size: 300,
-    rotate: 60,
+    rotate: 45,
     translate: 10,
     blur: 3,
-    speed: 15,
+    speed: 20,
     delay: 5,
   };
 </script>
@@ -54,7 +56,7 @@
     style="
       --size: {config.size}px; --translate: {config.translate}px; --rotate: {config.rotate}deg;
       --blur: {config.blur}px; --speed: {config.speed}s; --delay: {config.delay}s;
-      --red: {config.red}; --blue: {config.blue}; --green: {config.green};
+      --red: {config.red}; --blue: {config.blue}; --green: {config.green}; --yellow: {config.yellow};
       --border1: {config.border1}px; --border2: {config.border2}px; --border3: {config.border3}px; --border4: {config.border4}px;
       --corner1: {config.corner1}%; --corner2: {config.corner2}%; --corner3: {config.corner3}%; --corner4: {config.corner4}%;
     "
@@ -62,6 +64,7 @@
     <div class="spinner red" class:blur={config.blur > 0} />
     <div class="spinner blue" class:blur={config.blur > 0} />
     <div class="spinner green" class:blur={config.blur > 0} />
+    <div class="spinner yellow" class:blur={config.blur > 0} />
   </div>
 </figure>
 
@@ -95,9 +98,9 @@
       color: red;
       --max-opacity: calc(var(--red) / 100);
       --min-opacity: calc(var(--max-opacity) * 0.6);
-      animation-delay: calc(var(--delay) * -2);
+      animation-delay: calc(var(--delay) * -3);
       &::before {
-        animation-delay: calc(var(--delay) * -2);
+        animation-delay: calc(var(--delay) * -3);
         rotate: calc(var(--rotate) * 1);
       }
     }
@@ -105,9 +108,9 @@
       color: blue;
       --max-opacity: calc(var(--blue) / 100);
       --min-opacity: calc(var(--max-opacity) * 0.3);
-      animation-delay: calc(var(--delay) * -1);
+      animation-delay: calc(var(--delay) * -2);
       &::before {
-        animation-delay: calc(var(--delay) * -1);
+        animation-delay: calc(var(--delay) * -2);
         rotate: calc(var(--rotate) * 2);
       }
     }
@@ -115,10 +118,20 @@
       color: green;
       --max-opacity: calc(var(--green) / 100);
       --min-opacity: calc(var(--max-opacity) * 0.3);
+      animation-delay: calc(var(--delay) * -1);
+      &::before {
+        animation-delay: calc(var(--delay) * -1);
+        rotate: calc(var(--rotate) * 3);
+      }
+    }
+    &.yellow {
+      color: gold;
+      --max-opacity: calc(var(--yellow) / 100);
+      --min-opacity: calc(var(--max-opacity) * 0.3);
       animation-delay: calc(var(--delay) * 0);
       &::before {
         animation-delay: calc(var(--delay) * 0);
-        rotate: calc(var(--rotate) * 3);
+        rotate: calc(var(--rotate) * 4);
       }
     }
 

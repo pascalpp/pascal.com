@@ -1,13 +1,12 @@
 <script lang="ts">
   import CssSpinner, { defaultConfig, type SpinnerConfig } from './CssSpinner.svelte';
   import { page } from '$app/stores';
-  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
 
-  function getConfigFromParams(): SpinnerConfig | null {
-    if (!browser) return null;
+  function getConfigFromParams(params: URLSearchParams): SpinnerConfig | null {
     let paramsConfig: Record<string, boolean | number> = {};
     for (const key of Object.keys(defaultConfig)) {
-      const value = $page.url.searchParams.get(key);
+      const value = params.get(key);
       if (value === 'true' || value === 'false') {
         paramsConfig[key] = value === 'true';
       } else if (value !== null) {
@@ -17,10 +16,17 @@
     return paramsConfig as SpinnerConfig;
   }
 
-  let config: SpinnerConfig = {
-    ...defaultConfig,
-    ...getConfigFromParams(),
-  };
+  function setConfig(querystring: string) {
+    const params = new URLSearchParams(querystring);
+    config = {
+      ...defaultConfig,
+      ...getConfigFromParams(params),
+    };
+  }
+
+  // https://pascal.localhost/diary/2024-05-10-fuzzy-css-spinner-idea?red=true&blue=true&green=true&border1=12&border2=100&border3=100&border4=100&corner1=100&corner2=100&corner3=100&corner4=100&size=0&rotate=120&translate=400&blur=2&speed=8&delay=16
+
+  let config: SpinnerConfig = { ...defaultConfig };
 
   function setDefaults() {
     config = {
@@ -28,18 +34,16 @@
     };
   }
 
+  function wanderingAtom() {
+    setConfig(
+      'red=82&blue=78&green=85&border1=0&border2=100&border3=100&border4=100&corner1=100&corner2=100&corner3=100&corner4=100&size=0&rotate=45&translate=400&blur=2&speed=10&delay=20&yellow=38',
+    );
+  }
+
   function whiteLotus() {
-    config = {
-      ...defaultConfig,
-      border1: 0,
-      border2: 0,
-      border3: 0,
-      border4: 0,
-      corner1: 15,
-      corner2: 85,
-      corner3: 20,
-      corner4: 75,
-    };
+    setConfig(
+      'red=90&blue=80&green=70&yellow=0&border1=0&border2=0&border3=0&border4=0&corner1=15&corner2=85&corner3=20&corner4=75&size=300&rotate=60&translate=0&blur=3&speed=15&delay=5',
+    );
   }
 
   function bouncyFlower() {
@@ -62,6 +66,7 @@
   function vennFootballs() {
     config = {
       ...defaultConfig,
+      yellow: 0,
       border1: 100,
       border2: 100,
       border3: 100,
@@ -72,6 +77,7 @@
       corner4: 20,
       rotate: 0,
       translate: 0,
+      size: 250,
       speed: 9,
       delay: 3,
     };
@@ -155,27 +161,15 @@
   }
 
   function throwingStar() {
-    config = {
-      ...defaultConfig,
-      border1: 0,
-      border2: 100,
-      border3: 0,
-      border4: 100,
-      corner1: 0,
-      corner2: 100,
-      corner3: 0,
-      corner4: 0,
-      size: 50,
-      translate: 0,
-      speed: 8,
-      delay: 16,
-      blur: 0,
-    };
+    setConfig(
+      'red=90&blue=80&green=70&yellow=0&border1=0&border2=100&border3=0&border4=100&corner1=0&corner2=100&corner3=0&corner4=0&size=50&rotate=60&translate=0&blur=0&speed=8&delay=16',
+    );
   }
 
   function fuzzyDice() {
     config = {
       ...defaultConfig,
+      yellow: 0,
       border1: 20,
       border2: 35,
       border3: 15,
@@ -184,8 +178,10 @@
       corner2: 40,
       corner3: 50,
       corner4: 40,
-      rotate: 180,
-      translate: 100,
+      rotate: 0,
+      translate: 150,
+      speed: 15,
+      delay: 5,
     };
   }
 
@@ -199,12 +195,13 @@
   function ufos() {
     config = {
       ...defaultConfig,
+      yellow: 90,
       border1: 100,
       border2: 100,
       border3: 100,
       border4: 100,
-      size: 50,
-      translate: 100,
+      size: 0,
+      translate: 90,
     };
   }
 
@@ -223,6 +220,7 @@
   function jellyBeans() {
     config = {
       ...defaultConfig,
+      yellow: 90,
       border1: 40,
       border2: 80,
       border3: 5,
@@ -230,8 +228,8 @@
       size: 150,
       rotate: 120,
       translate: 100,
-      speed: 3,
-      delay: 20,
+      speed: 6,
+      delay: 19,
     };
   }
 
@@ -247,6 +245,9 @@
   function turtleCarousel() {
     config = {
       ...defaultConfig,
+      blue: 90,
+      green: 90,
+      yellow: 0,
       border1: 100,
       border2: 100,
       border3: 100,
@@ -263,6 +264,12 @@
     };
   }
 
+  function appIcon() {
+    setConfig(
+      'red=90&blue=90&green=90&yellow=100&border1=80&border2=80&border3=80&border4=80&corner1=100&corner2=0&corner3=50&corner4=0&size=0&rotate=0&translate=0&blur=3&speed=12&delay=3',
+    );
+  }
+
   function chillTriangle() {
     config = {
       ...defaultConfig,
@@ -274,9 +281,17 @@
     };
   }
 
-  // onMount(example4);
+  onMount(() => {
+    const paramsConfig = getConfigFromParams($page.url.searchParams);
+    if (paramsConfig) {
+      config = {
+        ...defaultConfig,
+        ...paramsConfig,
+      };
+    }
+  });
 
-  $: if (browser) updateParams(config);
+  // $: if (browser) updateParams(config);
 
   let timer = 0;
   function updateParams(c: SpinnerConfig) {
@@ -300,8 +315,8 @@
 <details open>
   <summary>How it’s made</summary>
   <p>
-    This is contructed from three overlapping shapes in red, blue, and green. Each one is a square with a white
-    background and rounded corners, but the radius of each corner is different. Each border also ranges in thickness,
+    This is contructed from four overlapping shapes in red, blue, green, and yellow. Each one is a square with a white
+    background and rounded corners, with a different radius for each corner. Each border also ranges in thickness,
     creating an irregular shape. Each shape has a subtle drop shadow in the same color as its border, and a filter to
     blur the shape slightly. There is also some animation that rotates the shape, changes the width of each border over
     time, and changes its scale and opacity. To make things even more organic, each shape is rotated slightly, and the
@@ -325,21 +340,23 @@
   or
   <button class="link" on:click={turtleCarousel}>turtle carousel</button>
   or
+  <button class="link" on:click={appIcon}>app icon</button>
+  or
   <button class="link" on:click={fuzzyDice}>fuzzy dice</button>
   or
   <button class="link" on:click={vennFootballs}>venn footballs</button>
   or
   <button class="link" on:click={spirograph}>spirograph</button>
   or
-  <button class="link" on:click={lozenges}>lozenges</button>
-  or
   <button class="link" on:click={ufos}>UFOs</button>
   or
   <button class="link" on:click={jellyBeans}>jelly beans</button>
   or
+  <button class="link" on:click={angryTriangle}>angry triangle</button>
+  or
   <button class="link" on:click={chillTriangle}>chill triangle</button>
   or
-  <button class="link" on:click={angryTriangle}>angry triangle</button>
+  <button class="link" on:click={wanderingAtom}>wandering atom</button>
   or
   <button class="link" on:click={setDefaults}>the original</button>!
 </p>
