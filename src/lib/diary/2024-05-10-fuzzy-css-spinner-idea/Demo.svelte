@@ -310,7 +310,7 @@
 </details>
 
 <p>
-  Try turning the shapes on and off, and try modifying the different variables to get different effects. Or try
+  Try modifying the different variables to get different effects. Or try
   <button class="link" on:click={discoLights}>disco lights</button>
   or
   <button class="link" on:click={bokehBalls}>bokeh balls</button>
