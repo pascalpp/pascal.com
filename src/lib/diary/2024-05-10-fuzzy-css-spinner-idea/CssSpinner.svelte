@@ -41,35 +41,25 @@
 </script>
 
 <script lang="ts">
+  import { dev } from '$app/environment';
+
   let id = crypto.randomUUID();
 
   export let showControls = false;
 
   export let config: SpinnerConfig = { ...defaultConfig };
 
-  // function saveSetting() {
-  //   const name = prompt('Enter a name for this setting:');
-  //   const code = `
-  //     function ${name}() {
-  //       setDefaults();
-  //       border1 = ${border1};
-  //       border2 = ${border2};
-  //       border3 = ${border3};
-  //       border4 = ${border4};
-  //       corner1 = ${corner1};
-  //       corner2 = ${corner2};
-  //       corner3 = ${corner3};
-  //       corner4 = ${corner4};
-  //       size = ${size};
-  //       rotate = ${rotate};
-  //       translate = ${translate};
-  //       blur = ${blur};
-  //       speed = ${speed};
-  //       delay = ${delay};
-  //     }
-  //   `;
-  //   navigator.clipboard.writeText(code);
-  // }
+  function saveSetting(event: Event) {
+    // const name = prompt('Enter a name for this setting:');
+    const code = JSON.stringify(config);
+    navigator.clipboard.writeText(code);
+    // alert('Settings copied to clipboard!');
+    const button = event.target as HTMLButtonElement;
+    button.textContent = 'Copied!';
+    setTimeout(() => {
+      button.textContent = 'Copy to clipboard';
+    }, 2000);
+  }
 </script>
 
 <figure>
@@ -182,6 +172,12 @@
           <span><input type="text" bind:value={config.blur} />px</span>
         </div>
       </div>
+
+      {#if dev}
+        <div class="presets">
+          <button on:click={saveSetting}>Copy Setting</button>
+        </div>
+      {/if}
     </div>
   </details>
 {/if}
@@ -201,12 +197,12 @@
     font-size: 14px;
     padding-left: 1rem;
     width: min-content;
+    white-space: nowrap;
 
     summary {
       font-weight: bold;
       margin-bottom: 1rem;
       margin-left: -1rem;
-      white-space: nowrap;
       width: min-content;
     }
   }
@@ -318,6 +314,12 @@
       -moz-appearance: none;
       appearance: none;
     }
+  }
+
+  .presets {
+    grid-column: 1 / 4;
+    display: flex;
+    gap: 1em;
   }
 
   .fuzzy-spinner {

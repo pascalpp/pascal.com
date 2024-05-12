@@ -113,7 +113,7 @@
     };
   }
 
-  function example4() {
+  function spirograph() {
     config = {
       ...defaultConfig,
       border1: 29,
@@ -207,6 +207,21 @@
     };
   }
 
+  function jellyBeans() {
+    config = {
+      ...defaultConfig,
+      border1: 40,
+      border2: 80,
+      border3: 5,
+      border4: 53,
+      size: 150,
+      rotate: 120,
+      translate: 100,
+      speed: 3,
+      delay: 20,
+    };
+  }
+
   function angryTriangle() {
     config = {
       ...defaultConfig,
@@ -216,7 +231,37 @@
     };
   }
 
-  // onMount(pulsingCircle);
+  function turtleCarousel() {
+    config = {
+      ...defaultConfig,
+      border1: 100,
+      border2: 100,
+      border3: 100,
+      border4: 100,
+      corner1: 100,
+      corner2: 0,
+      corner3: 50,
+      corner4: 0,
+      size: 120,
+      rotate: 0,
+      translate: 0,
+      speed: 9,
+      delay: 3,
+    };
+  }
+
+  function chillTriangle() {
+    config = {
+      ...defaultConfig,
+      size: 300,
+      rotate: 120,
+      translate: 10,
+      speed: 20,
+      delay: 0,
+    };
+  }
+
+  // onMount(example4);
 </script>
 
 <p>
@@ -251,13 +296,21 @@
   or
   <button class="link" on:click={throwingStar}>throwing star</button>
   or
+  <button class="link" on:click={turtleCarousel}>turtle carousel</button>
+  or
   <button class="link" on:click={fuzzyDice}>fuzzy dice</button>
   or
   <button class="link" on:click={vennFootballs}>venn footballs</button>
   or
+  <button class="link" on:click={spirograph}>spirograph</button>
+  or
   <button class="link" on:click={lozenges}>lozenges</button>
   or
   <button class="link" on:click={ufos}>UFOs</button>
+  or
+  <button class="link" on:click={jellyBeans}>jelly beans</button>
+  or
+  <button class="link" on:click={chillTriangle}>chill triangle</button>
   or
   <button class="link" on:click={angryTriangle}>angry triangle</button>
   or
