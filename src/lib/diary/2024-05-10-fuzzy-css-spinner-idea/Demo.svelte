@@ -24,8 +24,6 @@
     };
   }
 
-  // https://pascal.localhost/diary/2024-05-10-fuzzy-css-spinner-idea?red=true&blue=true&green=true&border1=12&border2=100&border3=100&border4=100&corner1=100&corner2=100&corner3=100&corner4=100&size=0&rotate=120&translate=400&blur=2&speed=8&delay=16
-
   let config: SpinnerConfig = { ...defaultConfig };
 
   function setDefaults() {
@@ -290,19 +288,6 @@
       };
     }
   });
-
-  // $: if (browser) updateParams(config);
-
-  let timer = 0;
-  function updateParams(c: SpinnerConfig) {
-    window.clearTimeout(timer);
-    timer = window.setTimeout(() => {
-      Object.entries(c).forEach(([key, value]) => {
-        $page.url.searchParams.set(key, String(value));
-      });
-      history.replaceState(null, '', $page.url);
-    }, 1000);
-  }
 </script>
 
 <p>
