@@ -4,8 +4,12 @@ date: 2024-03-30T15:21:08.455Z
 summary: Trying to figure out why NSWorkspace.shared.setDesktopImageURL no longer honors the fillColor option to set the desktop fill color. This used to work in macOS Monterey and Ventura, but no longer works in macOS Sonoma.
 status: published
 tags: [swift, appkit]
-updated: 2024-04-03T05:13:59.389Z
+updated: 2024-05-23T15:49:26.725Z
 mastodon: https://moth.social/@pascal/112187636624986783
+---
+
+_Update! This bug appears to be fixed in macOS Sonoma 14.5!_
+
 ---
 
 In the macOS AppKit framework, there's an `NSWorkspace` API method for setting the current desktop image, scaling method, and fill color. The method is called [`setDesktopImageURL`](https://developer.apple.com/documentation/appkit/nsworkspace/1527228-setdesktopimageurl), and it accepts a file URL, a screen reference, and an options dictionary, including `fillColor`.
