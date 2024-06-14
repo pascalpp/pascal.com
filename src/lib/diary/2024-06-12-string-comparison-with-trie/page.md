@@ -26,7 +26,7 @@ tags: [javascript, typescript]
     tokens2 = [...todayTokens];
   }
 
-  let trieTime = 'h';
+  let trieTime = '';
 
   let tokens2 = [...emptyTokens];
   $: words2 = findWords(tokens2);
@@ -252,9 +252,9 @@ Let's try adding a few words to an empty trie object and see what it does with t
 
 <TrieOutline wordList={scrabbieDictionary} />
 
-You can see that it's breaking each word up into its constituent letters and creating a tree-like outline of each word, with each subsequent letter nested as a child inside the previous letter. Each 'leaf' in the tree is also marked with an `end` property, indicating whether there is a valid word that ends on that leaf. For example, the `t` has `end: true` because pit is a word, while the `c` has `end: false` because pitc is not a word. And of course the `r` has `end: true` because pitcher is a word.
+You can see that it's breaking each word up into its constituent letters and creating a tree-like outline of each word, with each subsequent letter nested as a child inside the previous letter. Each 'leaf' in the tree is also marked with an `end` property, indicating whether there is a valid word that ends on that leaf. For example, the `t` has `end: true` because pit is a word, while the `c` has `end: false` because pitc is not a word. And the `h` and `r` have `end: true` because pitch and pitcher are words.
 
-Once the trie is populated with words, we can call `trie.check` to see if a word exists. The `check` method (see the `Trie.ts` file above) loops through each letter in the word, navigating down the outline of registered words. If there is no leaf for a given letter, it returns false. If it finds a leaf for every letter, it then returns true if the last leaf has `end: true`, indicating that there is a valid word with those leaf characters in that order.
+Once the trie is populated with words, we can call `trie.check` to see if a word exists. The `check` method (see the `Trie.ts` file above) loops through each letter in the word, navigating down the outline of registered words. If there is no leaf for a given letter, it returns false. If it finds a leaf for every letter, it then returns true if the last leaf has `end: true`, indicating that there is a valid word with all those leaf characters in that order.
 
 It seems somewhat counter-intuitive to me that this method could be so much faster than the naive approach I originally took. But the results don't lie.
 

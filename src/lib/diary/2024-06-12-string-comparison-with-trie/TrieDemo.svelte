@@ -4,7 +4,7 @@
   export let combinations: string[];
   export let wordList: string[];
   export let words: string[] = [];
-  export let timeElapsed = 'h';
+  export let timeElapsed = '';
 
   const trie = new Trie();
   wordList.forEach(word => trie.insert(word));
