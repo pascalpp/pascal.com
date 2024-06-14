@@ -18,16 +18,44 @@ export async function POST({ request }) {
   const slugdate = date.split('T')[0];
   const slugname = slugify(title).toLowerCase();
   const slug = `${slugdate}-${slugname}`;
-  const output = ['---', `title: ${title}`, `date: ${date}`, `status: draft`, '---', '', ''].join('\n');
+  const metadata = ['---', `title: ${title}`, `date: ${date}`, `status: draft`, `summary:`, '---', '', ''].join('\n');
+
+  const content = `
+<script lang="ts">
+  import Demo from './Demo.svelte';
+</script>
+
+<Demo/>
+  `;
+
+  const output = [metadata, content].join('\n');
+
+  const demoOutput = `
+<script lang="ts">
+  export let name = 'world';
+</script>
+
+<div class="demo">
+  Hello, {name}!
+</div>
+
+<style lang="less">
+  .demo {
+    display: flex;
+  }
+</style>
+  `;
 
   const outputPath = Path.resolve(process.cwd(), `src/lib/diary/${slug}/page.md`);
+  const demoOutputPath = Path.resolve(process.cwd(), `src/lib/diary/${slug}/Demo.svelte`);
   try {
     File.mkdirSync(Path.dirname(outputPath), { recursive: true });
     File.writeFileSync(outputPath, output, 'utf8');
-    exec(`code ${outputPath}`);
+    File.writeFileSync(demoOutputPath, demoOutput, 'utf8');
+    exec(`code ${outputPath} ${demoOutputPath}`);
     return Response.json(
       { slug, path: outputPath },
-      { headers: { 'content-type': 'application/json; charset=utf-8' } }
+      { headers: { 'content-type': 'application/json; charset=utf-8' } },
     );
   } catch (error) {
     console.error(error);
