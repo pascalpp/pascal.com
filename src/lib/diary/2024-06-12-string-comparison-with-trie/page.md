@@ -175,7 +175,7 @@ This keeps the browser responsive but is incredibly slow. I let it run all the w
 
 I thought maybe I should find a shorter word list. The Scrabble dictionary contains a lot of words, many of which nobody ever uses, let's be honest. So I found an npm package called [`is-word`](https://www.npmjs.com/package/is-word) that has a few different dictionaries, one of which is a list of American English words. Filtering out all the proper nouns in that list yielded {americanEnglishDictionary.length.toLocaleString()} words. Still way too many to make a dent in the processing time.
 
-While poking around in the source of that package, I noticed it was using a `Trie` construct for checking words. I never properly studied computer science, so while I had heard of tries (trees? try's? triés?), I had never used them, or had a need to. So as a learning I cribbed from there and ported the Trie idea into typescript.
+While poking around in the source of that package, I noticed it was using a `Trie` construct for checking words. I never properly studied computer science, so while I had heard of tries (trees? try's? triés?), I had never used them, or had a need to. So as a learning exercise I cribbed from there and ported the Trie idea into typescript.
 
 <aside style="--aside-span: 12;">
 <details open>
