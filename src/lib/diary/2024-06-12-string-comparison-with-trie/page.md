@@ -130,7 +130,7 @@ const words = combinations.filter(
 
 I was hoping to show the matching words in real-time as I fill out the form, but when I ran that filter with more than just a few word parts it basically crashed my browser.
 
-So I did a bit of research into running large javacript tasks without blocking the main thread. The most common suggestion is to use a web worker, but I also stumbled across (that is, found on Stack Overflow) an `iterator` solution that breaks the job up into separate tasks (e.g. one task for each combination) and calls each one with a setTimeout.
+So I did a bit of research into running large javascript tasks without blocking the main thread. The most common suggestion is to use a web worker, but I also stumbled across (that is, found on Stack Overflow) an `iterator` solution that breaks the job up into separate tasks (e.g. one task for each combination) and calls each one with a setTimeout.
 
 {#if combinations.length !== 123520}
 
@@ -171,7 +171,7 @@ function iterate(from, to, action, complete) {
 </details>
 </aside>
 
-I let it run all the way to completion once, and it took around 4 minutes. The use of so many `setTimeout` calls probably causes the task to take much longer than the thread-blocking browser-crashing version. Regardless, this was clearly no way to provide real-time feedback on the number of found words as the form is filled out. A web worker implementation might be faster, but setting that up is a bit involved so I decided to explore other options first.
+This keeps the browser responsive but is incredibly slow. I let it run all the way to completion once, and it took around 4 minutes. The use of so many `setTimeout` calls probably causes the task to take much longer than the thread-blocking browser-crashing version. Regardless, this was clearly no way to provide real-time feedback on the number of found words as the form is filled out. A web worker implementation might be faster, but setting that up is a bit involved so I decided to explore other options first.
 
 I thought maybe I should find a shorter word list. The Scrabble dictionary contains a lot of words, many of which nobody ever uses, let's be honest. So I found an npm package called [`is-word`](https://www.npmjs.com/package/is-word) that has a few different dictionaries, one of which is a list of American English words. Filtering out all the proper nouns in that list yielded {americanEnglishDictionary.length.toLocaleString()} words. Still way too many to make a dent in the processing time.
 
@@ -265,14 +265,15 @@ Try filling out this Quartile form with random word parts and see how quickly it
 
 {#if words2 && words2.length > 0}
 
-  <details open>
-    <summary>Words: {words2.length}</summary>
-    <div class="words">
-      {#each words2 as word}
-        <div>{word}</div>
-      {/each}
-    </div>
-  </details>
+<details open>
+  <summary>Words: {words2.length}</summary>
+  <div class="words">
+    {#each words2 as word}
+      <div>{word}</div>
+    {/each}
+  </div>
+</details>
+
 {/if}
 
 {/if}
