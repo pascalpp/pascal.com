@@ -1,9 +1,9 @@
 ---
 title: Faster string comparison with a trie
-date: 2024-06-12T01:03:07.875Z
-status: draft
+date: 2024-06-13T10:03:07.875Z
 summary: An exploration of how trie structures can dramatically boost string comparisons in javascript.
 tags: [javascript, typescript]
+status: published
 ---
 
 <script lang="ts">
