@@ -257,9 +257,9 @@ You can see that it's breaking each word up into its constituent letters and cre
 
 Once the trie is populated with words, we can call `trie.check` to see if a word exists. The `check` method (see the `Trie.ts` file above) loops through each letter in the word, navigating down the outline of registered words. If there is no leaf for a given letter, it returns false. If it finds a leaf for every letter, it then returns true if the last leaf has `end: true`, indicating that there is a valid word with all those leaf characters in that order.
 
-It seems somewhat counter-intuitive to me that this method could be so much faster than the naive approach I originally took. But the results don't lie.
+It seems incredible to me that this method could be so much faster than the naive approach I originally took. Someone smarter than me might explain that this is an "n + 1" problem, or maybe "n \* n". My eyes kinda glaze over when programmers start using "n" as a word.
 
-Try filling out this Quartile form with random word parts and see how quickly it's able to find all the possible valid words. Or <button class="link" on:click={prefillParts2}>auto-fill it</button> with today's puzzle.
+But anyway, the results don't lie. Try filling out this Quartile form with random word parts and see how quickly it's able to find all the possible valid words. Or <button class="link" on:click={prefillParts2}>auto-fill it</button> with today's puzzle.
 
 <QuartileInput bind:tokens={tokens2}/>
 
@@ -275,6 +275,8 @@ Try filling out this Quartile form with random word parts and see how quickly it
 </details>
 
 {/if}
+
+Pretty nifty!
 
 {/if}
 
