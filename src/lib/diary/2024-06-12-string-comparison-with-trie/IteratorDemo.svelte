@@ -1,31 +1,9 @@
 <script lang="ts">
+  import _ from 'lodash';
+  import { iterate } from './iterate';
+
   export let combinations: string[];
   export let wordList: string[];
-
-  interface IteratorProps {
-    from: number;
-    to: number;
-    action: (n: number) => void;
-    complete: () => void;
-  }
-
-  function iterate({ from, to, action, complete }: IteratorProps) {
-    let i = from;
-    let canceled = false;
-    const runAction = () => {
-      action(i);
-      i++;
-      if (i < to && !canceled) {
-        setTimeout(runAction, 1);
-      } else {
-        complete();
-      }
-    };
-    runAction();
-    return () => {
-      canceled = true;
-    };
-  }
 
   let words: string[] = [];
   let word = '';
@@ -33,7 +11,15 @@
   let timer = 0;
   let cancelIterator: (() => void) | undefined = undefined;
 
+  let chunkSize = 1;
+  $: chunks = _.chunk(combinations, chunkSize);
+
   function startIterator() {
+    if (!chunks.length) {
+      alert('No combinations to check. Fill out the quartile form first.');
+      return;
+    }
+
     words = [];
 
     const interval = setInterval(() => {
@@ -42,31 +28,36 @@
 
     cancelIterator = iterate({
       from: 0,
-      to: combinations.length,
+      to: chunks.length,
       action: i => {
-        progress = i / combinations.length;
-        word = combinations[i];
-        if (wordList.includes(word)) {
-          words = [...words, word];
-        }
+        progress = i / chunks.length;
+        const chunk = chunks[i];
+        word = chunk[0];
+        words = [...words, ...chunk.filter(isWord)];
       },
       complete: () => {
         clearInterval(interval);
-        console.timeEnd('go');
-        console.log('Done');
         word = '';
         cancelIterator = undefined;
         progress = 0;
       },
     });
   }
+
+  function isWord(str: string) {
+    return wordList.includes(str);
+  }
 </script>
 
 <div class="interator-demo">
   <section class="progress">
     <h3>Iterator Demo</h3>
+    {#if !progress}
+      <label for="chunk-size">Chunk Size: {chunkSize}</label>
+      <input id="chunk-size" type="range" min={1} max={10000} step={1} bind:value={chunkSize} />
+    {/if}
     {#if progress}
-      <p>Checking {combinations.length} possible words…</p>
+      <p>Checking {combinations.length.toLocaleString()} possible words…</p>
     {/if}
     {#if timer || progress}
       <p>Time elapsed: {timer} seconds{progress ? '…' : '.'}</p>

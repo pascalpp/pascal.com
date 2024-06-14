@@ -130,7 +130,7 @@ const words = combinations.filter(
 
 I was hoping to show the matching words in real-time as I fill out the form, but when I ran that filter with more than just a few word parts it basically crashed my browser.
 
-So I did a bit of research into running large javascript tasks without blocking the main thread. The most common suggestion is to use a web worker, but I also stumbled across (that is, found on Stack Overflow) an `iterator` solution that breaks the job up into separate tasks (e.g. one task for each combination) and calls each one with a setTimeout.
+So I did a bit of research into running large javascript tasks without blocking the main thread. The most common suggestion is to use a web worker, but I also stumbled across (that is, found on Stack Overflow) an iterative solution that breaks the job up into separate tasks (e.g. one task for each combination) and calls each one with a setTimeout.
 
 {#if combinations.length !== 123520}
 
@@ -171,7 +171,9 @@ function iterate(from, to, action, complete) {
 </details>
 </aside>
 
-This keeps the browser responsive but is incredibly slow. I let it run all the way to completion once, and it took around 4 minutes. The use of so many `setTimeout` calls probably causes the task to take much longer than the thread-blocking browser-crashing version. Regardless, this was clearly no way to provide real-time feedback on the number of found words as the form is filled out. A web worker implementation might be faster, but setting that up is a bit involved so I decided to explore other options first.
+_You can try different chunk sizes to see how it performs. Larger chunk sizes seem to make the overall job go faster, but the UI gets kinda janky._
+
+This technique keeps the browser responsive but is incredibly slow. The use of so many `setTimeout` calls probably causes the task to take much longer than the thread-blocking browser-crashing version. Regardless, this was clearly no way to provide real-time feedback on the number of found words as the form is filled out. A web worker implementation might be faster, but setting that up is a bit involved so I decided to explore other options first.
 
 I thought maybe I should find a shorter word list. The Scrabble dictionary contains a lot of words, many of which nobody ever uses, let's be honest. So I found an npm package called [`is-word`](https://www.npmjs.com/package/is-word) that has a few different dictionaries, one of which is a list of American English words. Filtering out all the proper nouns in that list yielded {americanEnglishDictionary.length.toLocaleString()} words. Still way too many to make a dent in the processing time.
 
@@ -251,7 +253,7 @@ Wow, that was fast!
 
 Let's try adding a few words to an empty trie object and see what it does with them. Try a few simple words like `pit`, `pitch`, and `pitcher`.
 
-<TrieOutline wordList={scrabbieDictionary} />
+<TrieOutline />
 
 You can see that it's breaking each word up into its constituent letters and creating a tree-like outline of each word, with each subsequent letter nested as a child inside the previous letter. Each 'leaf' in the tree is also marked with an `end` property, indicating whether there is a valid word that ends on that leaf. For example, the `t` has `end: true` because pit is a word, while the `c` has `end: false` because pitc is not a word. And the `h` and `r` have `end: true` because pitch and pitcher are words.
 

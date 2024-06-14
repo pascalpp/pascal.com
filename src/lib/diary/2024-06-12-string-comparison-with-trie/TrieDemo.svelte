@@ -14,6 +14,10 @@
   }
 
   function checkWords() {
+    if (!combinations.length) {
+      alert('No combinations to check. Fill out the quartile form first.');
+      return;
+    }
     const start = performance.now();
     words = combinations.filter(wordExists).sort();
     const end = performance.now();

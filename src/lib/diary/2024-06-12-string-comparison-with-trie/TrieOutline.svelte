@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Trie } from './Trie';
 
-  export let trie = new Trie();
+  let trie = new Trie();
 
   let word = '';
 
