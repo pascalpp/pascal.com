@@ -10198,7 +10198,6 @@ crystallography
 crystals
 crèche
 crèches
-cs
 cub
 cubbyhole
 cubbyholes
@@ -16176,7 +16175,6 @@ eruptions
 erupts
 erythrocyte
 erythrocytes
-es
 escalate
 escalated
 escalates
@@ -17184,7 +17182,6 @@ eyewitness
 eyewitnesses
 eying
 eyrie
-fa
 fable
 fabled
 fables
@@ -21815,7 +21812,6 @@ grunting
 grunts
 gryphon
 gryphons
-gs
 guacamole
 guano
 guarantee
@@ -28002,13 +27998,11 @@ kronor
 krypton
 króna
 krónur
-ks
 kudos
 kudzu
 kudzus
 kumquat
 kumquats
-la
 lab
 label
 labeled
@@ -29758,7 +29752,6 @@ loyalties
 loyalty
 lozenge
 lozenges
-ls
 luau
 luaus
 lubber
@@ -31408,7 +31401,6 @@ mewls
 mews
 mezzanine
 mezzanines
-mi
 miaow
 miaowed
 miaowing
@@ -32845,7 +32837,6 @@ mowing
 mown
 mows
 mozzarella
-ms
 mu
 much
 mucilage
@@ -44843,7 +44834,6 @@ royally
 royals
 royalties
 royalty
-rs
 rub
 rubbed
 rubber
@@ -54006,7 +53996,6 @@ thymuses
 thyroid
 thyroids
 thyself
-ti
 tiara
 tiaras
 tibia
@@ -55539,7 +55528,6 @@ tryst
 trysted
 trysting
 trysts
-ts
 tsar
 tsarina
 tsarinas
