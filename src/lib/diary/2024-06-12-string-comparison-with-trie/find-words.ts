@@ -1,6 +1,6 @@
 import { browser } from '$app/environment';
 import americanEnglishRaw from './american-english.txt?raw';
-import scrabbieDictionaryRaw from './dictionary.txt?raw';
+import scrabbleDictionaryRaw from './dictionary.txt?raw';
 import { Trie } from './Trie';
 
 declare global {
@@ -11,7 +11,7 @@ declare global {
 }
 
 export const americanEnglishDictionary = americanEnglishRaw.toLowerCase().split('\n');
-export const scrabbieDictionary = scrabbieDictionaryRaw.toLowerCase().split('\n');
+export const scrabbleDictionary = scrabbleDictionaryRaw.toLowerCase().split('\n');
 
 const trie = new Trie();
 americanEnglishDictionary.forEach(word => trie.insert(word));
