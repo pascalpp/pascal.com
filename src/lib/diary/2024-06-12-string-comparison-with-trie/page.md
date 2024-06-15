@@ -12,7 +12,7 @@ mastodon: https://moth.social/@pascal/112613657041397228
   import TrieDemo from './TrieDemo.svelte';
   import TrieOutline from './TrieOutline.svelte';
   import QuartileInput from './QuartileInput.svelte';
-  import { findCombinations, americanEnglishDictionary, scrabbieDictionary, findWords } from './find-words';
+  import { findCombinations, americanEnglishDictionary, scrabbleDictionary, findWords } from './find-words';
 
   const emptyTokens: string[] = new Array(20).fill('');
   const todayTokens = 'el-ous-mur-rs-pa-arc-hip-ter-zz-der-rli-wa-an-ly-me-ine-colo-ame-ago-nt'.split('-');
