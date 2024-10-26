@@ -115,7 +115,7 @@ Wow, {combinations.length.toLocaleString()} possible words!
 
 Simple! Or not.
 
-First, I downloaded the `scrabble-dictionary.txt` from some Github repo. It contains {scrabbieDictionary.length.toLocaleString()} words. So I naively thought I could just loop through my combinations and filter them using the dictionary:
+First, I downloaded the `scrabble-dictionary.txt` from some Github repo. It contains {scrabbleDictionary.length.toLocaleString()} words. So I naively thought I could just loop through my combinations and filter them using the dictionary:
 
 <div>
 
@@ -142,7 +142,7 @@ The rest of this article won't really make sense until you <button class="link" 
 
 {/if}
 
-<IteratorDemo wordList={scrabbieDictionary} {combinations} />
+<IteratorDemo wordList={scrabbleDictionary} {combinations} />
 
 <aside style="--aside-span: 3;">
 <details open>
@@ -243,7 +243,7 @@ The rest of this article won't really make sense until you <button class="link" 
 
 {/if}
 
-<TrieDemo wordList={scrabbieDictionary} {combinations} bind:timeElapsed={trieTime} />
+<TrieDemo wordList={scrabbleDictionary} {combinations} bind:timeElapsed={trieTime} />
 
 {#if trieTime}
 
