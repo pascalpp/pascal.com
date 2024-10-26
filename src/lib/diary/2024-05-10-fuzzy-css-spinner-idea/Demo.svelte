@@ -268,6 +268,24 @@
     );
   }
 
+  function pacmacGhosts() {
+    setConfig(
+      'red=89&blue=80&green=82&yellow=65&border1=100&border2=100&border3=100&border4=100&corner1=100&corner2=0&corner3=0&corner4=100&size=68&rotate=91&translate=100&blur=4&speed=8&delay=2',
+    );
+  }
+
+  function minions() {
+    setConfig(
+      'red=89&blue=80&green=82&yellow=65&border1=100&border2=100&border3=100&border4=100&corner1=100&corner2=0&corner3=0&corner4=100&size=500&rotate=91&translate=100&blur=4&speed=8&delay=2',
+    );
+  }
+
+  function throbbingIris() {
+    setConfig(
+      'red=53&blue=74&green=47&yellow=41&border1=100&border2=100&border3=100&border4=100&corner1=100&corner2=100&corner3=100&corner4=100&size=500&rotate=0&translate=0&blur=12&speed=8&delay=2',
+    );
+  }
+
   function chillTriangle() {
     config = {
       ...defaultConfig,
@@ -340,6 +358,12 @@
   <button class="link" on:click={angryTriangle}>angry triangle</button>
   or
   <button class="link" on:click={chillTriangle}>chill triangle</button>
+  or
+  <button class="link" on:click={pacmacGhosts}>pac-man ghosts</button>
+  or
+  <button class="link" on:click={minions}>minions</button>
+  or
+  <button class="link" on:click={throbbingIris}>throbbing iris</button>
   or
   <button class="link" on:click={wanderingAtom}>wandering atom</button>
   or
