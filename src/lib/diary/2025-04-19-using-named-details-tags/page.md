@@ -4,6 +4,7 @@ date: 2025-04-19T18:47:24.030Z
 summary: A short post about using the `name` attribute on `details` tags to create a simple accordion with no javascript.
 tags: [html]
 status: published
+mastodon: https://mastodon.social/@pascalpp/114371634829370591
 ---
 
 The `details` tag creates an expandable/collapsible element on your page, with an always-visible summary which can be tapped or clicked to hide or show the content. You can use the `name` attribute on `details` tags to create a simple accordion with no javascript.
