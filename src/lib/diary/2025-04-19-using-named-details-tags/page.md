@@ -35,7 +35,7 @@ The `details` tag creates an expandable/collapsible element on your page, with a
 
 <details name="accordion2">
   <summary class="sans">The open attribute</summary>
-  <p>Details tags are collapsed by default. To render an expanded detials tag, add the <code>open</code> attribute.</p>
+  <p>Details tags are collapsed by default. To render an expanded details tag, add the <code>open</code> attribute.</p>
 </details>
 
 <details name="accordion2">
