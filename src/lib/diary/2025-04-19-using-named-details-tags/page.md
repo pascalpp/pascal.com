@@ -56,7 +56,8 @@ The `details` tag creates an expandable/collapsible element on your page, with a
 
 <style lang="less">
   .demo {
-    max-width: 40ch;
+    max-width: 48ch;
+    text-wrap: pretty;
   }
 
   details {
