@@ -9,7 +9,7 @@ export async function POST({ params }) {
 
   const resolvedPath = Path.resolve(process.cwd(), `src/lib/diary/${params.slug}/page.md`);
   try {
-    exec(`code ${resolvedPath}`);
+    exec(`cursor ${resolvedPath}`);
     return Response.json('OK', { headers: { 'content-type': 'application/json; charset=utf-8' } });
   } catch (error) {
     console.error(error);
