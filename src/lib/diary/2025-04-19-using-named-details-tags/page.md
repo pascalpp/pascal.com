@@ -1,12 +1,12 @@
 ---
 title: Using named details tags
 date: 2025-04-19T18:47:24.030Z
-status: draft
 summary: A short post about using the `name` attribute on `details` tags to create a simple accordion with no javascript.
 tags: [html]
+status: published
 ---
 
-You can use the `name` attribute on `details` tags to create a simple accordion with no javascript.
+The `details` tag creates an expandable/collapsible element on your page, with an always-visible summary which can be tapped or clicked to hide or show the content. You can use the `name` attribute on `details` tags to create a simple accordion with no javascript.
 
 <hr/>
 
@@ -55,6 +55,10 @@ You can use the `name` attribute on `details` tags to create a simple accordion 
 </div>
 
 <style lang="less">
+  .demo {
+    max-width: 40ch;
+  }
+
   details {
     margin-block: 0.75em;
     padding-left: 1.4rem;
@@ -65,9 +69,6 @@ You can use the `name` attribute on `details` tags to create a simple accordion 
     font-weight: 400;
     font-size: 1.2rem;
     margin-left: -1.4rem;
-  }
-
-  .demo {
-    max-width: 40ch;
+    user-select: none;
   }
 </style>
