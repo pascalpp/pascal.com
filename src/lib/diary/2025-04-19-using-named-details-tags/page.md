@@ -15,8 +15,7 @@ The `details` tag creates an expandable/collapsible element on your page, with a
 
 <details open name="accordion">
   <summary class="sans">This is a details tag</summary>
-  <p>The line above is the summary. This is the content.</p>
-  <p>Clicking the summary will hide or show the content.</p>
+  <p>The line above is the summary. This is the content. Clicking or tapping the summary will hide or show the content.</p>
 </details>
 
 <details name="accordion">
@@ -44,7 +43,7 @@ The `details` tag creates an expandable/collapsible element on your page, with a
 </details>
 
 <details name="accordion2">
-  <summary class="sans">Another details tag with the same name</summary>
+  <summary class="sans">A details tag with the same name</summary>
   <p>When a details tag is opened, other details tags with the same <code>name</code> attribute will close.</p>
 </details>
 
