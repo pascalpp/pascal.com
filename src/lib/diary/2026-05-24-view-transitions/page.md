@@ -9,6 +9,7 @@ status: published
 <script lang="ts">
   import Demo from './Demo.svelte';
   import Demo2 from './Demo2.svelte';
+  import Demo3 from './Demo3.svelte';
 </script>
 
 The [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) lets the browser animate between two visual states of the page. When you call `document.startViewTransition()`, the browser captures a snapshot of the current page, runs your update callback to change the DOM, captures a snapshot of the new state, and then cross-fades (or morphs) between them. You get smooth transitions without hand-rolling FLIP animations or measuring every element yourself.
@@ -28,7 +29,7 @@ If you are updating the DOM from a framework like Svelte or React, wait for the 
 ```javascript
 import { tick } from 'svelte';
 
-document.startViewTransition(() => {
+document.startViewTransition(async () => {
   colors = shuffle(colors);
   await tick();
 });
@@ -58,8 +59,48 @@ You can also tune timing and easing with the `::view-transition-*` pseudo-elemen
 
 ## Animating to a different set of elements
 
-When you animate to a different set of elements, elements that exist in both states will animate from their old position to their new position. New or removed elements will fade in or out. This demo shows 3-9 random color swatches on each shuffle.
+When you animate to a different set of elements, elements that exist in both states will animate from their old position to their new position. New or removed elements will fade in or out. This demo shows 3–9 random color swatches on each shuffle.
+
+_Note: each swatch must have a unique `view-transition-name`. The grid below uses the same colors as the demo above, but with a different name prefix so the two grids do not clash when both are on the page._
 
 <Demo2/>
 
-<div style="height: 50vh;"></div>
+## Customizing the transition
+
+You can also customize the animation that occurs during the view transition. The `::view-transition-group` wrapper is what animates from the old position to the new one. Inside it, `::view-transition-image-pair` holds the old and new snapshots (`::view-transition-old` and `::view-transition-new`).
+
+If you set `animation-name` on the group, it will replace the default move animation entirely—the swatches will show your new animation but will not slide to their new cells. If you put your keyframes on `::view-transition-image-pair` instead, the group pseudo-element will still handle the move animation.
+
+You'll probably want to change the duration and easing of the group transition to match the image pair animation.
+
+```css
+.square {
+  ...
+  view-transition-class: color-grid-scale;
+}
+
+@keyframes shuffle-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+}
+
+::view-transition-group(.color-grid-scale) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-image-pair(.color-grid-scale) {
+  animation: 0.5s ease-in-out shuffle-scale;
+}
+```
+
+<Demo3/>
+
+## Further reading
+
+- [View Transitions API at MDN](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)

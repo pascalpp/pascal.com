@@ -3,7 +3,7 @@
   export let transitionName: string;
   export let viewTransitionsActive = false;
 
-  const transitionClass = 'color-grid';
+  const transitionClass = 'color-grid-scale';
 
   function swatchTransitionName(color: string) {
     return `${transitionName}-${color.slice(1)}`;
@@ -34,8 +34,23 @@
     border-radius: 0.5rem;
     border: 1px solid rgba(0 0 0 / 0.3);
   }
-  :global(::view-transition-group(.color-grid)) {
-    animation-duration: 0.25s;
+
+  @keyframes shuffle-scale {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2);
+    }
+  }
+
+  :global(::view-transition-group(.color-grid-scale)) {
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
+  }
+
+  :global(::view-transition-image-pair(.color-grid-scale)) {
+    animation: 0.5s ease-in-out shuffle-scale;
   }
 </style>

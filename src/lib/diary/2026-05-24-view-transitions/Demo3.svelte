@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import ColorGrid from './ColorGrid.svelte';
+  import ColorGridScale from './ColorGridScale.svelte';
 
   const palette = [
     '#e6194b',
@@ -14,6 +14,9 @@
     '#bcf60c',
   ] as const;
 
+  const minColors = 3;
+  const maxColors = 9;
+
   let colors: string[] = [...palette];
   let viewTransitionsActive = false;
 
@@ -26,8 +29,13 @@
     return next;
   }
 
+  function randomColorSet(): string[] {
+    const count = minColors + Math.floor(Math.random() * (maxColors - minColors + 1));
+    return shuffle([...palette]).slice(0, count);
+  }
+
   async function randomize() {
-    const next = shuffle(colors);
+    const next = randomColorSet();
 
     if (!document.startViewTransition) {
       colors = next;
@@ -48,7 +56,7 @@
 
 <div class="demo">
   <button type="button" class="randomize" on:click={randomize}>Shuffle Colors</button>
-  <ColorGrid {colors} {viewTransitionsActive} transitionName="shuffle-square" />
+  <ColorGridScale {colors} {viewTransitionsActive} transitionName="shuffle-square3" />
 </div>
 
 <style lang="less">

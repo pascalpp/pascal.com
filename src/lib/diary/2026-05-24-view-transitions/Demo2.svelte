@@ -18,6 +18,7 @@
   const maxColors = 9;
 
   let colors: string[] = [...palette];
+  let viewTransitionsActive = false;
 
   function shuffle<T>(items: T[]): T[] {
     const next = [...items];
@@ -41,16 +42,21 @@
       return;
     }
 
-    document.startViewTransition(async () => {
+    viewTransitionsActive = true;
+    await tick();
+
+    await document.startViewTransition(async () => {
       colors = next;
       await tick();
-    });
+    }).finished;
+
+    viewTransitionsActive = false;
   }
 </script>
 
 <div class="demo">
   <button type="button" class="randomize" on:click={randomize}>Shuffle Colors</button>
-  <ColorGrid {colors} transitionName="shuffle-square2" />
+  <ColorGrid {colors} {viewTransitionsActive} transitionName="shuffle-square2" />
 </div>
 
 <style lang="less">
@@ -60,6 +66,7 @@
     align-items: center;
     gap: 1.5rem;
     width: min-content;
+    margin-block: 1rem;
   }
 
   .randomize {
