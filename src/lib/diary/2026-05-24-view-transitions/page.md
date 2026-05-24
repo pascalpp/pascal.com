@@ -1,13 +1,14 @@
 ---
 title: View Transitions
 date: 2026-05-24T16:09:32.097Z
-status: draft
 summary: Animating DOM updates with the View Transitions API.
 tags: [css, javascript]
+status: published
 ---
 
 <script lang="ts">
   import Demo from './Demo.svelte';
+  import Demo2 from './Demo2.svelte';
 </script>
 
 The [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) lets the browser animate between two visual states of the page. When you call `document.startViewTransition()`, the browser captures a snapshot of the current page, runs your update callback to change the DOM, captures a snapshot of the new state, and then cross-fades (or morphs) between them. You get smooth transitions without hand-rolling FLIP animations or measuring every element yourself.
@@ -54,3 +55,11 @@ You can also tune timing and easing with the `::view-transition-*` pseudo-elemen
   animation-timing-function: ease-in-out;
 }
 ```
+
+## Animating to a different set of elements
+
+When you animate to a different set of elements, elements that exist in both states will animate from their old position to their new position. New or removed elements will fade in or out. This demo shows 3-9 random color swatches on each shuffle.
+
+<Demo2/>
+
+<div style="height: 50vh;"></div>
