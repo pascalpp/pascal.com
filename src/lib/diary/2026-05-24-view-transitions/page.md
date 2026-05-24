@@ -69,9 +69,9 @@ _Note: each swatch must have a unique `view-transition-name`. The grid below use
 
 You can also customize the animation that occurs during the view transition. The `::view-transition-group` wrapper is what animates from the old position to the new one. Inside it, `::view-transition-image-pair` holds the old and new snapshots (`::view-transition-old` and `::view-transition-new`).
 
-If you set `animation-name` on the group, it will replace the default move animation entirely—the swatches will show your new animation but will not slide to their new cells. If you put your keyframes on `::view-transition-image-pair` instead, the group pseudo-element will still handle the move animation.
+If you set `animation-name` on the group, it will replace the default move animation entirely—the swatches will show your new animation but will not slide to their new cells. If you put your keyframes on `::view-transition-image-pair` instead, the group pseudo-element will still handle the move animation. You'll probably still want to change the duration and easing of the group transition to match the image pair animation.
 
-You'll probably want to change the duration and easing of the group transition to match the image pair animation.
+The demo below applies a scale and rotation animation to each swatch.
 
 ```css
 .square {
@@ -80,22 +80,24 @@ You'll probably want to change the duration and easing of the group transition t
 }
 
 @keyframes shuffle-scale {
-  0%,
-  100% {
-    transform: scale(1);
+  0% {
+    transform: scale(1) rotate(0deg);
   }
   50% {
-    transform: scale(2);
+    transform: scale(2) rotate(180deg);
   }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+::view-transition-image-pair(.color-grid-scale) {
+  animation: 0.5s ease-in-out shuffle-scale;
 }
 
 ::view-transition-group(.color-grid-scale) {
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
-}
-
-::view-transition-image-pair(.color-grid-scale) {
-  animation: 0.5s ease-in-out shuffle-scale;
 }
 ```
 

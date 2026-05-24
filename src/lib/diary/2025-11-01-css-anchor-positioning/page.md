@@ -1,7 +1,7 @@
 ---
 title: CSS Anchor Positioning
 date: 2025-11-01T14:14:09.579Z
-summary:
+summary: A basic example of CSS anchor positioning.
 status: published
 ---
 

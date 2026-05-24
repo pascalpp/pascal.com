@@ -36,21 +36,23 @@
   }
 
   @keyframes shuffle-scale {
-    0%,
-    100% {
-      transform: scale(1);
+    0% {
+      transform: scale(1) rotate(0deg);
     }
     50% {
-      transform: scale(2);
+      transform: scale(2) rotate(180deg);
     }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  :global(::view-transition-image-pair(.color-grid-scale)) {
+    animation: 0.5s ease-in-out shuffle-scale;
   }
 
   :global(::view-transition-group(.color-grid-scale)) {
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
-  }
-
-  :global(::view-transition-image-pair(.color-grid-scale)) {
-    animation: 0.5s ease-in-out shuffle-scale;
   }
 </style>
