@@ -13,18 +13,21 @@
 
   <article>
     <header>
-      <h1>Free Ruler 2.0</h1>
+      <h1>Free Ruler</h1>
       <p>A ruler application for macOS</p>
     </header>
     <h3>Features</h3>
     <ul>
       <li>Horizontal and vertical rulers.</li>
-      <li>Measure in pixels, inches, or millimeters.</li>
+      <li>Measure in pixels, millimeters, or inches (press U to cycle).</li>
       <li>Float rulers above other applications (press F to toggle).</li>
       <li>Move windows independently or as a group (press G to toggle).</li>
+      <li>Show, hide, and reopen rulers from the menu or keyboard.</li>
+      <li>Drag the end of each ruler to resize.</li>
       <li>Show or hide the shadow behind rulers (press S to toggle).</li>
       <li>Align rulers at mouse location (press O for origin).</li>
       <li>Reset ruler locations with Command-R.</li>
+      <li>Available in multiple languages.</li>
     </ul>
 
     <h3>Download</h3>
@@ -38,7 +41,7 @@
     </Row>
 
     <p>
-      Compatible with macOS Sonoma, Ventura, Catalina, Mojave, and maybe a few older releases. <a
+      Free Ruler requires macOS Sonoma or later. <a
         href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
       >
         Your feedback is welcome!
@@ -46,23 +49,16 @@
     </p>
 
     <p>
-      For older versions, see the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
+      Direct downloads from GitHub are signed, notarized, and can check for updates automatically. For older builds, see
+      the <a href="https://github.com/pascalpp/FreeRuler/releases">releases page</a>.
     </p>
 
-    <h3>Todo</h3>
+    <h3>Feedback</h3>
     <p>
-      See <a href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
-        the list of open issues
-      </a>. For feature requests,
-      <a href="https://github.com/pascalpp/FreeRuler/issues/new">open a new issue</a>.
-    </p>
-    <h3>Contributing</h3>
-    <p>
-      If you have experience with Mac app development in Swift, please look at the <a
-        href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22+sort%3Aupdated-desc"
+      Free Ruler is open source. For bugs or feature requests, see the <a
+        href="https://github.com/pascalpp/FreeRuler/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">issues list</a
       >
-        help wanted issues
-      </a>.
+      or <a href="https://github.com/pascalpp/FreeRuler/issues/new">open a new issue</a>.
     </p>
     <p>
       Or you can <a href="https://www.paypal.me/pascalpp" rel="nofollow">make a donation</a>.
@@ -124,8 +120,8 @@
     padding-bottom: 40px;
     max-width: 600px;
     background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(black, 0.2);
+    border-radius: 36px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 
     display: flex;
     flex-direction: column;
