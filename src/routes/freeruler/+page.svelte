@@ -15,7 +15,7 @@
 </svelte:head>
 
 <main>
-  <div class="icon" />
+  <div class="icon"></div>
 
   <div class="article-stage">
     <article>
