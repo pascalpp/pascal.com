@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import type { Page, PageId } from './pages.store';
   import { addConnection, setPageFocus } from './pages.store';
   import { focusCard } from './focusHelpers';

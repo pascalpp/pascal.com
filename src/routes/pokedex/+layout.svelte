@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
+  /* oxlint-disable svelte/no-navigation-without-resolve, no-undef, no-unassigned-vars, no-global-assign */
   import './pokedex.less';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';

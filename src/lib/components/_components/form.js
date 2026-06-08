@@ -123,7 +123,7 @@ function recordToFields(record = {}, fields = {}, prefix = '') {
     if (value && typeof value === 'object')
       recordToFields(value, fields, `${prefix}${name}.`);
     else
-      fields[`${prefix}${name}`] = value; // eslint-disable-line no-param-reassign
+      fields[`${prefix}${name}`] = value; // oxlint-disable-line no-param-reassign
   }
   return fields;
 }
@@ -135,10 +135,10 @@ function fieldsToRecord(fields, record = {}) {
     const nameParts  = name.split('.');
     const fieldName  = nameParts.pop();
     const insertInto = nameParts.reduce((object, part) => {
-      object[part] = object[part] || {}; // eslint-disable-line no-param-reassign
+      object[part] = object[part] || {}; // oxlint-disable-line no-param-reassign
       return object[part];
     }, record);
-    insertInto[fieldName] = value; // eslint-disable-line no-param-reassign
+    insertInto[fieldName] = value; // oxlint-disable-line no-param-reassign
   }
   return record;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
+  /* oxlint-disable svelte/require-each-key, no-undef, no-unassigned-vars */
   export let value: unknown;
   export let defaultExpandedLevel = 0;
   export let level = 0;

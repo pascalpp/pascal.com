@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import { getContext, onMount } from 'svelte';
   import type { Layer } from './Layer.svelte';
 

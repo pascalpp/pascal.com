@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
+  /* oxlint-disable svelte/no-navigation-without-resolve, no-unassigned-vars */
   import { goto } from '$app/navigation';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';

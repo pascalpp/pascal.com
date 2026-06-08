@@ -27,7 +27,7 @@ export default function ToggleSwitch({
   function onClick(event) {
     // when clicking, send the other value in the change event
     const otherOption = options.find(option => option.value !== value);
-    // eslint-disable-next-line no-param-reassign
+    // oxlint-disable-next-line no-param-reassign
     event.target.value = otherOption.value;
     onChange(event);
   }

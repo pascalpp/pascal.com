@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import Fireworks from './fireworks.svelte';
   import Row from '$lib/components/Row.svelte';
   import Slider from '$lib/components/Slider.svelte';

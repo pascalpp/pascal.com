@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-vars, svelte/no-at-html-tags */
+  /* oxlint-disable typescript/no-unused-vars, svelte/no-at-html-tags, no-undef, no-unassigned-vars, no-global-assign */
   import './markdown.less';
   import type { Page, PageId } from './pages.store';
   import { updatePage } from './pages.store';

@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import * as Tone from 'tone';
   import { onMount } from 'svelte';
   import { randomHexColor, randomNote } from './helpers';

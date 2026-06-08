@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unsafe-function-type */
+  /* oxlint-disable typescript/no-unsafe-function-type */
   import Toast from '$lib/components/Toast.svelte';
   import Button from '$lib/components/Button.svelte';
   import Column from '$lib/components/Column.svelte';

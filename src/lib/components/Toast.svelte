@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  /* oxlint-disable no-undef */
   let hideCurrentToast: (() => void) | undefined;
 
   export interface ToastOptions {
@@ -7,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import { fly } from 'svelte/transition';
   import Column from '$lib/components/Column.svelte';
   import { onDestroy } from 'svelte';

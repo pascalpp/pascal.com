@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import 'leaflet/dist/leaflet.css';
   import { onMount } from 'svelte';
   import type Leaflet from 'leaflet';

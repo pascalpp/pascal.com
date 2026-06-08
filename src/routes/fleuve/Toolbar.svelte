@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable no-useless-assignment */
+  /* oxlint-disable no-useless-assignment, no-unassigned-vars */
   import { browser } from '$app/environment';
   import { createFocusTrap } from 'focus-trap';
   import type { FocusTrap } from 'focus-trap';

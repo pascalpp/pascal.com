@@ -11,6 +11,7 @@
       if (!helper) return;
       await navigator.clipboard.writeText(helper.token);
     } catch {
+      // Best-effort quick copy; leave the select ready for another attempt.
     } finally {
       quickCopyValue = '';
     }

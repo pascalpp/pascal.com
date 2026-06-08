@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import { page } from '$app/stores';
   import type { PostMetadata } from '../../api/posts/util';
   import PostDiscussionLink from './PostDiscussionLink.svelte';
@@ -40,7 +41,7 @@
         {#key slug}
           <div class="giscus-container">
             <svelte:element
-              this="script"
+              this={'script'}
               src="https://giscus.app/client.js"
               data-repo={giscusConfig.repo}
               data-repo-id={giscusConfig.repoId}
