@@ -38,8 +38,8 @@ export default defineConfig({
     baseURL: process.env.CI
       ? undefined
       : process.env.PRODUCTION
-      ? 'https://www.pascal.com'
-      : 'https://pascal.localhost',
+        ? 'https://www.pascal.com'
+        : 'https://pascal.localhost',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',

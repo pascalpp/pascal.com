@@ -37,14 +37,14 @@ if (browser) {
   const sanitized = sanitizePages(state);
   pageStore.set(sanitized);
 
-  pageStore.subscribe((pages) => {
+  pageStore.subscribe(pages => {
     window?.localStorage.setItem(storageKey, JSON.stringify(pages));
   });
 }
 
 export function updatePage(page: Page) {
-  pageStore.update((pages) => {
-    const index = pages.findIndex((p) => p.id === page.id);
+  pageStore.update(pages => {
+    const index = pages.findIndex(p => p.id === page.id);
     pages[index] = page;
     return pages;
   });
@@ -53,7 +53,7 @@ export function updatePage(page: Page) {
 export function addPage(pageInfo: PageInfo = {}): Page {
   const id = uuidv4();
   const page = { id, ...pageDefaults, ...pageInfo };
-  pageStore.update((pages) => {
+  pageStore.update(pages => {
     pages.push(page);
     return pages;
   });
@@ -61,9 +61,9 @@ export function addPage(pageInfo: PageInfo = {}): Page {
 }
 
 export function addRootPage() {
-  pageStore.update((pages) => {
-    const rootChildren = pages.filter((page) => !pages.some((item) => item.connections.includes(page.id)));
-    const rootChildrenIds = rootChildren.map((item) => item.id);
+  pageStore.update(pages => {
+    const rootChildren = pages.filter(page => !pages.some(item => item.connections.includes(page.id)));
+    const rootChildrenIds = rootChildren.map(item => item.id);
     const rootPage = { id: 'root', title: 'Root Card', description: '', connections: rootChildrenIds };
     return [rootPage, ...pages];
   });
@@ -76,11 +76,11 @@ export function addConnection(page: Page, pageInfo: PageInfo): Page {
 }
 
 export function activatePage(pageId: PageId) {
-  pageStore.update((pages) => {
+  pageStore.update(pages => {
     const parentPages = getAllParentPages(pages, pageId);
-    const parentPageIds = parentPages.map((item) => item.id);
+    const parentPageIds = parentPages.map(item => item.id);
     const activePageIds = [pageId, ...parentPageIds];
-    return pages.map((item) => {
+    return pages.map(item => {
       item.active = activePageIds.includes(item.id);
       return item;
     });
@@ -88,14 +88,14 @@ export function activatePage(pageId: PageId) {
 }
 
 export function deactivatePage(pageId: PageId) {
-  pageStore.update((pages) => {
-    const page = pages.find((item) => item.id === pageId);
+  pageStore.update(pages => {
+    const page = pages.find(item => item.id === pageId);
     assert(page, 'Page not found');
 
     const childPages = getAllChildPages(pages, pageId);
-    const childPageIds = childPages.map((item) => item.id);
+    const childPageIds = childPages.map(item => item.id);
     const idsToDeactivate = [pageId, ...childPageIds];
-    return pages.map((item) => {
+    return pages.map(item => {
       if (idsToDeactivate.includes(item.id)) {
         item.active = false;
       }
@@ -106,8 +106,8 @@ export function deactivatePage(pageId: PageId) {
 
 // focus is mutually exclusive, so setting focus modifies all pages
 export function setPageFocus(pageId?: PageId) {
-  pageStore.update((pages) => {
-    return pages.map((item) => {
+  pageStore.update(pages => {
+    return pages.map(item => {
       item.focus = item.id === pageId;
       return item;
     });
@@ -116,8 +116,8 @@ export function setPageFocus(pageId?: PageId) {
 
 // unsetting focus only modifies the page id given
 export function unsetPageFocus(pageId?: PageId) {
-  pageStore.update((pages) => {
-    return pages.map((item) => {
+  pageStore.update(pages => {
+    return pages.map(item => {
       if (item.id === pageId) {
         item.focus = false;
       }
@@ -127,30 +127,30 @@ export function unsetPageFocus(pageId?: PageId) {
 }
 
 function getAllParentPages(pages: Page[], id: PageId): Page[] {
-  const parentPage = pages.find((item) => item.connections.includes(id));
+  const parentPage = pages.find(item => item.connections.includes(id));
   return parentPage ? [parentPage, ...getAllParentPages(pages, parentPage.id)] : [];
 }
 
 export function getAllChildPages(pages: Page[], id: PageId): Page[] {
-  const parentPage = pages.find((item) => item.id === id);
-  const childPages = parentPage?.connections.map((itemId) => pages.find((item) => item.id === itemId) as Page) ?? [];
+  const parentPage = pages.find(item => item.id === id);
+  const childPages = parentPage?.connections.map(itemId => pages.find(item => item.id === itemId) as Page) ?? [];
   return childPages.reduce((acc, item) => [...acc, ...getAllChildPages(pages, item.id)], childPages);
 }
 
 export function removePage(id: PageId) {
-  pageStore.update((pages) => {
-    const connectedPageIds = getAllChildPages(pages, id).map((item) => item.id);
+  pageStore.update(pages => {
+    const connectedPageIds = getAllChildPages(pages, id).map(item => item.id);
     const idsToRemove = [id, ...connectedPageIds];
-    return pages.filter((item) => {
-      item.connections = item.connections.filter((itemId) => !idsToRemove.includes(itemId));
+    return pages.filter(item => {
+      item.connections = item.connections.filter(itemId => !idsToRemove.includes(itemId));
       return !idsToRemove.includes(item.id);
     });
   });
 }
 
 export function reorderPage(childId: PageId, direction: 'up' | 'down') {
-  pageStore.update((pages) => {
-    const parent = pages.find((item) => item.connections.includes(childId));
+  pageStore.update(pages => {
+    const parent = pages.find(item => item.connections.includes(childId));
     assert(parent, 'Parent not found');
 
     const currentIndex = parent.connections.indexOf(childId);
@@ -164,11 +164,11 @@ export function reorderPage(childId: PageId, direction: 'up' | 'down') {
 }
 
 export function movePageUp(id: PageId) {
-  pageStore.update((pages) => {
-    const parent = pages.find((item) => item.connections.includes(id));
+  pageStore.update(pages => {
+    const parent = pages.find(item => item.connections.includes(id));
     assert(parent, 'Parent not found');
 
-    const grandparent = pages.find((item) => item.connections.includes(parent.id));
+    const grandparent = pages.find(item => item.connections.includes(parent.id));
     assert(grandparent, 'Grandparent not found');
 
     const parentIndex = grandparent.connections.indexOf(parent.id);
@@ -182,18 +182,18 @@ export function movePageUp(id: PageId) {
     ];
 
     // remove child from parent's connections
-    parent.connections = parent.connections.filter((itemId) => itemId != id);
+    parent.connections = parent.connections.filter(itemId => itemId != id);
 
     return pages;
   });
 }
 
 export function replaceEmptyParent(childId: PageId) {
-  pageStore.update((pages) => {
-    const parent = pages.find((item) => item.connections.includes(childId));
+  pageStore.update(pages => {
+    const parent = pages.find(item => item.connections.includes(childId));
     assert(parent, 'Parent not found');
 
-    const grandparent = pages.find((item) => item.connections.includes(parent.id));
+    const grandparent = pages.find(item => item.connections.includes(parent.id));
     assert(grandparent, 'Grandparent not found');
 
     const emptyParent = !parent.title && !parent.description;
@@ -210,10 +210,10 @@ export function replaceEmptyParent(childId: PageId) {
     assert(childIndex === parentIndex, 'Child not in expected position');
 
     // remove parent
-    pages = pages.filter((item) => {
+    pages = pages.filter(item => {
       return item.id !== parent.id;
     });
-    assert(!pages.some((item) => item.connections.includes(parent.id)), 'Parent still exists in pages');
+    assert(!pages.some(item => item.connections.includes(parent.id)), 'Parent still exists in pages');
 
     return pages;
   });
@@ -221,8 +221,8 @@ export function replaceEmptyParent(childId: PageId) {
 
 export function addParentAbovePage(childId: PageId): Page {
   const newParent = addPage();
-  pageStore.update((pages) => {
-    const oldParent = pages.find((item) => item.connections.includes(childId));
+  pageStore.update(pages => {
+    const oldParent = pages.find(item => item.connections.includes(childId));
     if (oldParent) {
       const index = oldParent.connections.indexOf(childId) ?? 0;
       oldParent.connections = [
@@ -232,7 +232,7 @@ export function addParentAbovePage(childId: PageId): Page {
       ];
     } else {
       // the page being moved down is the top-most page, so put the new parent first
-      pages = [newParent, ...pages.filter((item) => item.id !== newParent.id)];
+      pages = [newParent, ...pages.filter(item => item.id !== newParent.id)];
     }
     newParent.connections = [childId];
     return pages;
@@ -242,8 +242,8 @@ export function addParentAbovePage(childId: PageId): Page {
 
 export function movePageDown(childId: PageId): Page {
   let newParent;
-  pageStore.update((pages) => {
-    const parent = pages.find((item) => item.connections.includes(childId));
+  pageStore.update(pages => {
+    const parent = pages.find(item => item.connections.includes(childId));
     assert(parent, 'Parent not found');
 
     // find nearest sibling in parent connections
@@ -253,14 +253,14 @@ export function movePageDown(childId: PageId): Page {
     assert(nearestSiblingId !== childId, 'Nearest sibling is same as child');
 
     // find nearest sibling page and use as new parent
-    newParent = pages.find((item) => item.id === nearestSiblingId);
+    newParent = pages.find(item => item.id === nearestSiblingId);
     assert(newParent, 'New parent not found');
 
     // add child to new parent connections
     newParent.connections = [...newParent.connections, childId];
 
     // remove child from old parent connections
-    parent.connections = parent.connections.filter((itemId) => itemId != childId);
+    parent.connections = parent.connections.filter(itemId => itemId != childId);
 
     return pages;
   });
@@ -284,14 +284,14 @@ export function reset() {
 export function loadTutorial(): PageId | undefined {
   let tutorialStartPageId;
 
-  pageStore.update((pages) => {
+  pageStore.update(pages => {
     const tutorial = getTutorialState();
-    const tutorialRoot = tutorial.find((item) => item.id === 'root');
-    const tutorialPages = tutorial.filter((item) => item.id !== 'root');
+    const tutorialRoot = tutorial.find(item => item.id === 'root');
+    const tutorialPages = tutorial.filter(item => item.id !== 'root');
     tutorialStartPageId = tutorialRoot?.connections[0];
     if (!tutorialStartPageId) throw new Error('Error loading tutorial. Root page not found.');
 
-    const root = pages.find((item) => item.id === 'root');
+    const root = pages.find(item => item.id === 'root');
     root?.connections.unshift(tutorialStartPageId);
     return sanitizePages([...pages, ...tutorialPages]);
   });
@@ -312,16 +312,16 @@ function getStoredState(): Page[] | undefined {
 }
 
 function sanitizePages(pages: Page[]): Page[] {
-  const filtered = pages.map((page) => {
+  const filtered = pages.map(page => {
     page.title = page.title ?? '';
     page.description = page.description ?? '';
-    page.connections = Array.from(new Set(page.connections.filter((id) => pages.some((item) => item.id === id))));
+    page.connections = Array.from(new Set(page.connections.filter(id => pages.some(item => item.id === id))));
     page.active = page.active ?? false;
     return page;
   });
 
   const ids = new Set();
-  const deduped = filtered.filter((page) => {
+  const deduped = filtered.filter(page => {
     if (ids.has(page.id)) {
       return false;
     } else {

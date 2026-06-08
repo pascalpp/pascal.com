@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef */
   const httpRegex = /^((http|https):\/\/)/;
 
   export let label: string;

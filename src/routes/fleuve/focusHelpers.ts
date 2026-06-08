@@ -1,7 +1,7 @@
 import type { PageId } from './pages.store';
 
 export function focusNextElement(
-  fromElement: HTMLElement = document.activeElement as HTMLElement
+  fromElement: HTMLElement = document.activeElement as HTMLElement,
 ): HTMLElement | undefined {
   const focusable = getFocusableElements();
   const index = focusable.indexOf(fromElement);
@@ -11,7 +11,7 @@ export function focusNextElement(
 }
 
 export function focusPreviousElement(
-  fromElement: HTMLElement = document.activeElement as HTMLElement
+  fromElement: HTMLElement = document.activeElement as HTMLElement,
 ): HTMLElement | undefined {
   const focusable = getFocusableElements();
   const index = focusable.indexOf(fromElement);
@@ -23,8 +23,8 @@ export function focusPreviousElement(
 function getFocusableElements(): HTMLElement[] {
   return Array.from(
     document.querySelectorAll(
-      'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])'
-    )
+      'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])',
+    ),
   );
 }
 
@@ -61,7 +61,7 @@ export function scrollToElementIfNeeded(element: HTMLElement | undefined | null)
   if (!element) return;
   const rect = element.getBoundingClientRect();
   const values = [rect.top < 0, rect.bottom > window.innerHeight, rect.left < 0, rect.right > window.innerWidth];
-  if (values.some((value) => value)) {
+  if (values.some(value => value)) {
     element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   }
   return element;

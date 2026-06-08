@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import { settings, type AspectRatio } from './settings.store';
   import File from './file.svg?component';
 

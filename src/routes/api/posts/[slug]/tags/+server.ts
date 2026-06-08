@@ -14,7 +14,7 @@ export async function PATCH({ params, request }) {
   const file = FS.readFileSync(resolvedPath, 'utf8');
   const lines = file.split('\n');
 
-  const frontmatter = lines.slice(0, lines.lastIndexOf('---')).filter((line) => !line.startsWith('tags:'));
+  const frontmatter = lines.slice(0, lines.lastIndexOf('---')).filter(line => !line.startsWith('tags:'));
   const updatedFrontmatter = [...frontmatter, `tags: [${tags.join(', ')}]`, '---'];
   const content = lines.slice(lines.lastIndexOf('---') + 1);
   const updatedFile = [...updatedFrontmatter, ...content].join('\n');

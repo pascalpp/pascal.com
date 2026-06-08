@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import Toolbar from './Toolbar.svelte';
   import Slider from './Slider.svelte';
   import { settings } from './settings.store';

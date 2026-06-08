@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import { settings, type FlowAlignment } from './settings.store';
 
   let button: HTMLButtonElement;

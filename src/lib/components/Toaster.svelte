@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   // this component renders a Toast component and provides an API method via
   // context to show a toast message.
 

@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  /* oxlint-disable no-undef */
   export type SpinnerConfig = {
     red: number;
     blue: number;
@@ -43,6 +44,7 @@
 </script>
 
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import SpinnerControls from './SpinnerControls.svelte';
 
   export let showControls = false;

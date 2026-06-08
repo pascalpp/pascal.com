@@ -145,6 +145,6 @@ export function DeselectAllButton({ selected, setSelected, label = 'Deselect All
 
 
 function defaultOnSelect(event) {
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.log('Selected:', event.target.value);
 }

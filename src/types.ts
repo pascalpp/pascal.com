@@ -1,5 +1,6 @@
 declare module '*.md' {
-  import type { SvelteComponent } from 'svelte';
-  export default class MarkdownComponent extends SvelteComponent {}
+  import type { Component } from 'svelte';
+  const MarkdownComponent: Component;
+  export default MarkdownComponent;
   export const metadata: Record<string, string>;
 }

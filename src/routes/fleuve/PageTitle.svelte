@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import { focusPreviousElement } from './focusHelpers';
   import type { Page } from './pages.store';
   import { updatePage } from './pages.store';

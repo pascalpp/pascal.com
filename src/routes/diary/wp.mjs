@@ -7,7 +7,7 @@ import { marked } from 'marked';
 const nhm = new NodeHtmlMarkdown(
   /* options (optional) */ {},
   /* customTransformers (optional) */ undefined,
-  /* customCodeBlockTranslators (optional) */ undefined
+  /* customCodeBlockTranslators (optional) */ undefined,
 );
 
 function writePost(post) {
@@ -30,4 +30,4 @@ function writePost(post) {
   File.writeFileSync(outputPath, output);
 }
 
-posts.filter((post) => post.post_type === 'post').forEach(writePost);
+posts.filter(post => post.post_type === 'post').forEach(writePost);

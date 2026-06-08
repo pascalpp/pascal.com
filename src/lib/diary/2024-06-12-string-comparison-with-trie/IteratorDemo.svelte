@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
+  /* oxlint-disable svelte/require-each-key, no-undef, no-unassigned-vars */
   import _ from 'lodash';
   import { iterate } from './iterate';
 

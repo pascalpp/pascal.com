@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import PageCard from './PageCard.svelte';
   import PageConnections from './PageConnections.svelte';
   import type { Page, PageId } from './pages.store';
