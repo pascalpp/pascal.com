@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/no-navigation-without-resolve */
   import Column from '$lib/components/Column.svelte';
   import FeaturedEmail from '$lib/components/FeaturedEmail.svelte';
   import Row from '$lib/components/Row.svelte';
