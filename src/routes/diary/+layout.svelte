@@ -5,6 +5,10 @@
 
 <svelte:head>
   <link rel="alternate" type="application/rss+xml" title="Pascal’s Diary" href="/diary/rss" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap"
+  />
 
   <style lang="less">
     :root,
