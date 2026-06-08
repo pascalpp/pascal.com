@@ -7,8 +7,12 @@
   <link rel="alternate" type="application/rss+xml" title="Pascal’s Diary" href="/diary/rss" />
 
   <style lang="less">
+    :root,
     body {
       background-color: #f0f0f0;
+    }
+
+    body {
       overflow-x: hidden;
     }
   </style>

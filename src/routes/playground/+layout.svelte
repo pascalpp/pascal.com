@@ -5,6 +5,15 @@
   $: path = $page.url.pathname;
 </script>
 
+<svelte:head>
+  <style>
+    :root,
+    body {
+      background-color: #f3f3f3;
+    }
+  </style>
+</svelte:head>
+
 <div class="playground">
   <nav>
     <Navlink href="/" label="Home" />

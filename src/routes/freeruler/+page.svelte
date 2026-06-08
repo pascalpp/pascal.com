@@ -6,6 +6,12 @@
 
 <svelte:head>
   <title>Free Ruler for macOS</title>
+  <style>
+    :root,
+    body {
+      background-color: #4f8683;
+    }
+  </style>
 </svelte:head>
 
 <main>

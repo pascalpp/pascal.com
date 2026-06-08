@@ -29,6 +29,7 @@
 <svelte:head>
   <title>pascal.com</title>
   <style>
+    :root,
     body {
       background-color: #336633;
     }
@@ -113,6 +114,7 @@
     --textcolor: #000;
     --bubblecolor: #ffffcc;
 
+    background-color: var(--bgcolor);
     font-family: 'Lucida Grande', Geneva, Helvetica, Arial, Sans-Serif;
     padding: 16px;
     padding-top: 5vh;

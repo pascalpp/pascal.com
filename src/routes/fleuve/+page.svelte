@@ -82,6 +82,12 @@
   <meta property="og:url" content="https://www.pascal.com/fleuve" />
   <meta property="og:site_name" content="Fleuve" />
   <meta property="og:image" content="https://www.pascal.com/files/fleuve-og-preview.png" />
+  <style>
+    :root,
+    body {
+      background-color: #f3f3f3;
+    }
+  </style>
 </svelte:head>
 
 <SettingsContext>

@@ -45,6 +45,12 @@
   <meta property="og:description" content="View pictures of all your favorite Pokémon" />
   <meta property="og:url" content="https://www.pascal.com/pokedex" />
   <meta property="og:site_name" content="Pokémon Viewer" />
+  <style>
+    :root,
+    body {
+      background-color: #f3f3f3;
+    }
+  </style>
 </svelte:head>
 
 <main>

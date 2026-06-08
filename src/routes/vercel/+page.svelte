@@ -1,3 +1,12 @@
+<svelte:head>
+	<style>
+		:root,
+		body {
+			background-color: #f3f3f3;
+		}
+	</style>
+</svelte:head>
+
 <main>
 	<h1>Vercel</h1>
 </main>

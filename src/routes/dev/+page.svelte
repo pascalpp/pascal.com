@@ -26,8 +26,12 @@
   />
   <style>
     @media screen {
+      :root,
       body {
         background-color: color-mix(in srgb, #4f7192 70%, white);
+      }
+
+      body {
         overflow-x: hidden;
       }
     }
