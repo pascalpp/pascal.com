@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/require-each-key */
   import _ from 'lodash';
   import { iterate } from './iterate';
 

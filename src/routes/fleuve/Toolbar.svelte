@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable no-useless-assignment */
   import { browser } from '$app/environment';
   import { createFocusTrap } from 'focus-trap';
   import type { FocusTrap } from 'focus-trap';

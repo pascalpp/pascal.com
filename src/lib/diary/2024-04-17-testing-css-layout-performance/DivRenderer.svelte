@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/infinite-reactive-loop, svelte/no-dom-manipulating */
   import ToggleSwitch from '$lib/components/ToggleSwitch.svelte';
 
   export let iterations = 10000;

@@ -14,7 +14,7 @@
   onMount(async () => {
     leaflet = await import('leaflet');
 
-    // @ts-ignore
+    // @ts-expect-error Leaflet's default icon helper is intentionally removed before overriding marker assets.
     delete leaflet.Icon.Default.prototype._getIconUrl;
     leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl,

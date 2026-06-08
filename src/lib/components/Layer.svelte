@@ -9,6 +9,7 @@
 </script>
 
 <script lang="ts">
+  /* eslint-disable svelte/require-store-reactive-access */
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
 

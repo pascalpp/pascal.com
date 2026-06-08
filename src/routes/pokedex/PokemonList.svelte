@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable @typescript-eslint/no-unused-expressions, svelte/require-each-key */
   import { browser } from '$app/environment';
   import PokemonListSection from './PokemonListSection.svelte';
 

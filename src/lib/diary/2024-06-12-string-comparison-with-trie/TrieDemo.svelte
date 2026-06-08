@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/require-each-key */
   import { Trie } from './Trie';
 
   export let combinations: string[];
