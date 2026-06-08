@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/no-navigation-without-resolve */
   import GithubMark from './github-mark.svg?component';
   import MacAppStore from './mac-app-store.svg?component';
 </script>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable @typescript-eslint/no-unused-vars, svelte/no-navigation-without-resolve, svelte/require-each-key */
   import type { PostSummary } from '../api/posts/util';
   import Tag from './Tag.svelte';
 

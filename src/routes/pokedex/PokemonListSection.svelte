@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/no-navigation-without-resolve, svelte/require-each-key */
   export let names: string[];
   export let letter: string;
   export let name: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let value: any | undefined = undefined;
+  export let value: unknown = undefined;
 
   let output = value;
   if (typeof value === 'object') {

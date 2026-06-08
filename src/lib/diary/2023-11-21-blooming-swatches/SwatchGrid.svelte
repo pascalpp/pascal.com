@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable @typescript-eslint/no-unused-vars, svelte/require-each-key */
   import * as Tone from 'tone';
   import Swatch from './Swatch.svelte';
   import { onMount } from 'svelte';
