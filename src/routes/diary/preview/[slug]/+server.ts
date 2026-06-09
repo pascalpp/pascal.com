@@ -68,19 +68,40 @@ function renderTemplate(values: Record<string, string>): string {
   return template.replace(/{{\s*(\w+)\s*}}/g, (match, key: string) => values[key] ?? match);
 }
 
-async function fetchFontBuffers(fetch: typeof globalThis.fetch): Promise<Uint8Array[]> {
+async function fetchFontBuffer(
+  path: string,
+  origin: string,
+  fallbackFetch: typeof globalThis.fetch,
+): Promise<Uint8Array> {
+  const absoluteUrl = new URL(path, origin);
+  let response = await globalThis.fetch(absoluteUrl);
+
+  if (!response.ok) {
+    response = await fallbackFetch(path);
+  }
+
+  if (!response.ok) {
+    throw new Error(`Unable to load preview font: ${path}`);
+  }
+
+  const buffer = new Uint8Array(await response.arrayBuffer());
+  if (buffer.byteLength < 100_000) {
+    throw new Error(`Preview font response was unexpectedly small: ${path}`);
+  }
+
+  return buffer;
+}
+
+async function fetchFontBuffers(
+  origin: string,
+  fallbackFetch: typeof globalThis.fetch,
+): Promise<Uint8Array[]> {
   return Promise.all(
-    fontUrls.map(async url => {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Unable to load preview font: ${url}`);
-      }
-      return new Uint8Array(await response.arrayBuffer());
-    }),
+    fontUrls.map(fontUrl => fetchFontBuffer(fontUrl, origin, fallbackFetch)),
   );
 }
 
-export const GET: RequestHandler = async ({ fetch, params }) => {
+export const GET: RequestHandler = async ({ fetch, params, url }) => {
   try {
     const { metadata } = await fetchPost(params.slug);
 
@@ -108,7 +129,7 @@ export const GET: RequestHandler = async ({ fetch, params }) => {
       },
       font: {
         loadSystemFonts: false,
-        fontBuffers: await fetchFontBuffers(fetch),
+        fontBuffers: await fetchFontBuffers(url.origin, fetch),
         defaultFontFamily: 'Source Sans Pro',
       },
       textRendering: 1,
