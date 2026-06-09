@@ -40,7 +40,7 @@ One thing I knew was sorely needed was an icon update. The previous icon was cre
 
 ![The new Free Ruler app icon](./free-ruler-new-icon.png){ loading=lazy width=384 style="max-width: min(100%, 32rem); display: block;" }
 
-Then I had Codex create a script so I can type `yarn generate:icons` to create the full set of app icon assets for the app to consume them at build time. So tweaking the icon is super easy and repeatable. SwiftUI as Photoshop.
+Then I had Codex create a script so I can type `yarn generate:icons` to create the full set of app icon assets for the app to consume at build time. So tweaking the icon is super easy and repeatable. SwiftUI as Photoshop.
 
 Then I went a little koo-koo and applied the same technique to create updated promo images for the App Store.
 
@@ -50,7 +50,7 @@ Then I went a little koo-koo and applied the same technique to create updated pr
 
 </div>
 
-These are created with more parameterized SwiftUI previews, using real ruler views and the `AppIconRenderer`. So if I change the app icon or ruler views, the promo images will update automatically. All I have to do is run `yarn generate:screenshots` to update the images, and then upload them to the App Store.
+These are created with more parameterized SwiftUI previews, using real ruler views and the `AppIconRenderer`. So if I change the app icon or ruler views, the promo images get updated automatically. All I have to do is run `yarn generate:screenshots` to update the images, and then upload them to the App Store.
 
 ## Other features and improvements
 
