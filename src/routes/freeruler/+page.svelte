@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Row from '$lib/components/Row.svelte';
   import GithubMark from './github-mark.svg?component';
   import MacAppStore from './mac-app-store.svg?component';
 </script>
@@ -39,13 +38,13 @@
 
       <h3>Download</h3>
 
-      <Row>
+      <div class="download-buttons">
         <a href="https://apps.apple.com/us/app/free-ruler/id1483172210?mt=12"><MacAppStore /></a>
         <a href="https://github.com/pascalpp/FreeRuler/releases" class="github">
           <GithubMark />
           Download from GitHub
         </a>
-      </Row>
+      </div>
 
       <p>
         Free Ruler requires macOS Sonoma or later. <a
@@ -153,6 +152,28 @@
 
     h3 {
       margin-top: 1.5em;
+    }
+
+    .download-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1em;
+
+      @media @desktop {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      a {
+        max-width: 100%;
+      }
+
+      :global(svg) {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
     }
 
     .github {
