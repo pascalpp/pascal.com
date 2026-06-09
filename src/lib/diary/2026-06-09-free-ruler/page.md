@@ -3,7 +3,7 @@ title: An update to Free Ruler
 date: 2026-06-09T14:00:00.000Z
 summary: A new Free Ruler release, a new icon, and another attempt at the Mac App Store after a two-year pause.
 tags: [mac, appkit, free ruler]
-status: draft
+status: published
 ---
 
 <script lang="ts">
