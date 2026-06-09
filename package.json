@@ -57,8 +57,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/crimson-pro": "^5.2.8",
-    "@fontsource/inter": "^5.2.8",
     "@iconslib/svelte": "^0.2.0",
     "@resvg/resvg-js": "^2.6.2",
     "@types/uuid": "^9.0.4",

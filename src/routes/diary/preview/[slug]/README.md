@@ -63,7 +63,7 @@ In development, the PNG endpoint sends `cache-control: no-store`. Compare mode a
 
 In production, diary post pages append `?v=<imageVersion>` to their `og:image` URL. Bump `imageVersion` in `src/routes/diary/preview/_layout.ts` whenever the preview image layout changes and old generated image URLs need to be bypassed.
 
-Diary post pages are prerendered, so `svelte.config.js` sets `kit.prerender.origin` from `VERCEL_URL` when available and falls back to `https://www.pascal.com`. Without that setting, SvelteKit's request origin is `http://sveltekit-prerender`, which should never appear in published metadata.
+Diary post pages are prerendered, so `svelte.config.js` sets `kit.prerender.origin` to the Vercel preview deployment URL only when `VERCEL_ENV === 'preview'`. Production builds use `https://www.pascal.com`. Without that setting, SvelteKit's request origin is `http://sveltekit-prerender`, which should never appear in published metadata.
 
 In development, `+server.ts` logs timing for each stage to the server console:
 

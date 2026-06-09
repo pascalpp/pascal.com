@@ -10,9 +10,11 @@ import OpenProps from 'open-props';
 
 // import adapter from '@sveltejs/adapter-static';
 
-const prerenderOrigin = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : 'https://www.pascal.com';
+const productionOrigin = 'https://www.pascal.com';
+const prerenderOrigin =
+  process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : productionOrigin;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
