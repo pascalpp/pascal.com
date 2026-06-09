@@ -1,20 +1,14 @@
 import { dev } from '$app/environment';
 import { Resvg } from '@resvg/resvg-js';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
 import { fetchPost } from '../../../api/posts/util';
 import type { RequestHandler } from './$types';
 import template from './template.svg?raw';
 
 const width = 1200;
-const regularFontUrl = new URL('./fonts/source-sans-pro-regular.ttf', import.meta.url);
-const semiboldFontUrl = new URL('./fonts/source-sans-pro-semibold.ttf', import.meta.url);
-const regularFontPath = fileURLToPath(regularFontUrl);
-const semiboldFontPath = fileURLToPath(semiboldFontUrl);
-
-// Force serverless file tracing to include the font files that Resvg loads by path.
-readFileSync(regularFontUrl);
-readFileSync(semiboldFontUrl);
+const fontUrls = [
+  '/misc/slides/lib/font/source-sans-pro/source-sans-pro-regular.ttf',
+  '/misc/slides/lib/font/source-sans-pro/source-sans-pro-semibold.ttf',
+];
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
   month: 'long',
@@ -74,7 +68,19 @@ function renderTemplate(values: Record<string, string>): string {
   return template.replace(/{{\s*(\w+)\s*}}/g, (match, key: string) => values[key] ?? match);
 }
 
-export const GET: RequestHandler = async ({ params }) => {
+async function fetchFontBuffers(fetch: typeof globalThis.fetch): Promise<Uint8Array[]> {
+  return Promise.all(
+    fontUrls.map(async url => {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Unable to load preview font: ${url}`);
+      }
+      return new Uint8Array(await response.arrayBuffer());
+    }),
+  );
+}
+
+export const GET: RequestHandler = async ({ fetch, params }) => {
   try {
     const { metadata } = await fetchPost(params.slug);
 
@@ -102,11 +108,11 @@ export const GET: RequestHandler = async ({ params }) => {
       },
       font: {
         loadSystemFonts: false,
-        fontFiles: [regularFontPath, semiboldFontPath],
+        fontBuffers: await fetchFontBuffers(fetch),
         defaultFontFamily: 'Source Sans Pro',
       },
       textRendering: 1,
-    });
+    } as ConstructorParameters<typeof Resvg>[1]);
     const png = renderer.render().asPng();
 
     return new Response(new Uint8Array(png), {
