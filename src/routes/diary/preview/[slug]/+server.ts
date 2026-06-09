@@ -1,10 +1,13 @@
 import { dev } from '$app/environment';
 import { Resvg } from '@resvg/resvg-js';
+import { fileURLToPath } from 'url';
 import { fetchPost } from '../../../api/posts/util';
 import type { RequestHandler } from './$types';
 import template from './template.svg?raw';
 
 const width = 1200;
+const regularFontPath = fileURLToPath(new URL('./fonts/source-sans-pro-regular.ttf', import.meta.url));
+const semiboldFontPath = fileURLToPath(new URL('./fonts/source-sans-pro-semibold.ttf', import.meta.url));
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
   month: 'long',
@@ -91,8 +94,9 @@ export const GET: RequestHandler = async ({ params }) => {
         value: width,
       },
       font: {
-        loadSystemFonts: true,
-        sansSerifFamily: 'Avenir Next',
+        loadSystemFonts: false,
+        fontFiles: [regularFontPath, semiboldFontPath],
+        defaultFontFamily: 'Source Sans Pro',
       },
       textRendering: 1,
     });
