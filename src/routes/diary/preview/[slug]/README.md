@@ -61,6 +61,8 @@ To compare the browser-rendered Svelte component against the generated PNG at th
 
 In development, the PNG endpoint sends `cache-control: no-store`. Compare mode also appends a timestamp query string to the generated PNG URL so browser refreshes pick up layout changes immediately.
 
+In production, diary post pages append `?v=<imageVersion>` to their `og:image` URL. Bump `imageVersion` in `src/routes/diary/preview/_layout.ts` whenever the preview image layout changes and old generated image URLs need to be bypassed.
+
 In development, `+server.ts` logs timing for each stage to the server console:
 
 ```text

@@ -3,6 +3,10 @@ export const imageSize = {
   height: 630,
 };
 
+// bump this version whenever the preview image layout changes to bust the cache
+// for old preview images
+export const imageVersion = '2026-06-09-1';
+
 export type PreviewContent = {
   title: string;
   summary: string;
