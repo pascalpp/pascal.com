@@ -18,7 +18,7 @@
     "test:production": "PRODUCTION=true npm run test:headed"
   },
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.60.0",
     "@poppanator/sveltekit-svg": "^4.2.1",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/adapter-static": "^3.0.0",
