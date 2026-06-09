@@ -5,7 +5,6 @@ import type { RequestHandler } from './$types';
 import template from './template.svg?raw';
 
 const width = 1200;
-const height = 630;
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
   month: 'long',
@@ -73,13 +72,14 @@ export const GET: RequestHandler = async ({ params }) => {
       return new Response('Not found', { status: 404 });
     }
 
-    const titleLines = wrapText(metadata.title, 23, 3);
+    const titleLines = wrapText(metadata.title, 23, 2);
     const summaryLines = wrapText(metadata.summary ?? 'A post from Pascal’s Diary.', 56, 2);
     const date = dateFormatter.format(new Date(metadata.date));
 
     const svg = renderTemplate({
       title: escapeHtml(metadata.title),
       date: escapeHtml(date),
+      url: escapeHtml(`pascal.com/diary/${params.slug}`),
       titleLines: titleTspans(titleLines),
       summaryLine1: escapeHtml(summaryLines[0] ?? ''),
       summaryLine2: escapeHtml(summaryLines[1] ?? ''),
