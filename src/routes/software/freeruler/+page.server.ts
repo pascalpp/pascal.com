@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit';
 
 export function load() {
-  redirect(302, '/freeruler');
+  redirect(308, '/freeruler');
 }
