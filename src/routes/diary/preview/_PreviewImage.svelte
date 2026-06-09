@@ -110,6 +110,7 @@
     letter-spacing: -1px;
     font-family: var(--serif-font);
     margin-bottom: 24px;
+    padding-left: 2px;
   }
 
   .title {
