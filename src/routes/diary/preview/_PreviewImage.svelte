@@ -7,15 +7,13 @@
 <div class="preview-image">
   <div class="panel" />
 
-  <div class="body-band" />
-
-  <div class="date">
-    {content.date}
-  </div>
-
   <div class="post">
+    <div class="date">
+      {content.date}
+    </div>
+
     <div class="title">
-      What {content.title}
+      {content.title}
     </div>
 
     <div class="summary">
@@ -36,42 +34,53 @@
 
 <style>
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/NotoSans-Light.ttf') format('truetype');
-    font-weight: 300;
+    font-family: 'Crimson Pro';
+    src: url('/fonts/CrimsonPro-Light.woff') format('woff');
+    font-weight: 200;
     font-style: normal;
   }
 
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/NotoSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/NotoSans-Medium.ttf') format('truetype');
+    font-family: 'Crimson Pro';
+    src: url('/fonts/CrimsonPro-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/NotoSans-SemiBold.ttf') format('truetype');
+    font-family: Inter;
+    src: url('/fonts/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url('/fonts/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url('/fonts/Inter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
   }
 
   .preview-image {
+    --serif-font: 'Crimson Pro';
+    --sans-font: Inter;
+
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
     overflow: hidden;
-    background: #f1eee6;
+    background: hsl(44, 28%, 95%);
     color: #151515;
-    font-family: 'Noto Sans';
+    font-weight: 400;
+    font-family: var(--sans-font);
   }
 
   .panel {
@@ -81,71 +90,71 @@
     width: 1132px;
     height: 557px;
     display: flex;
-    background: rgba(21, 21, 21, 0.075);
     border-radius: 24px;
-  }
-
-  .body-band {
-    position: absolute;
-    left: 36px;
-    top: 136px;
-    width: 1132px;
-    height: 330px;
-    display: flex;
-    background: #f1eee6;
-  }
-
-  .date {
-    position: absolute;
-    text-transform: uppercase;
-    left: 72px;
-    top: 72px;
-    display: flex;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1;
   }
 
   .post {
     position: absolute;
     left: 70px;
-    top: 170px;
+    top: 72px;
     width: 1030px;
     display: flex;
     flex-direction: column;
   }
 
+  .date {
+    display: flex;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: -1px;
+    font-family: var(--serif-font);
+    margin-bottom: 24px;
+  }
+
   .title {
     display: flex;
-    font-size: 78px;
-    font-weight: 500;
+    font-size: 72px;
+    font-weight: 400;
     line-height: 0.98;
-    letter-spacing: 0;
+    letter-spacing: -2px;
+    font-family: var(--serif-font);
+    margin-bottom: 24px;
   }
 
   .summary {
     display: flex;
     flex-direction: column;
-    margin-top: 28px;
     margin-left: 5px;
     width: 920px;
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 1.28;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.4;
+    font-family: var(--sans-font);
   }
 
   .footer {
+    background: rgba(21, 21, 21, 0.075);
     position: absolute;
-    left: 72px;
-    top: 500px;
+    left: 36px;
+    bottom: 36px;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 20px;
+    padding-bottom: 32px;
+    width: 1132px;
     display: flex;
     flex-direction: column;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
   }
 
   .site-title {
     display: flex;
-    font-size: 36px;
-    line-height: 1;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: var(--serif-font);
   }
 
   .url {
@@ -153,7 +162,7 @@
     margin-top: 8px;
     margin-left: 2px;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1;
   }
 

@@ -11,10 +11,10 @@ The endpoint reads the post metadata for `:slug` and returns a 1200 x 630 PNG su
 The preview uses local font files from:
 
 ```text
-static/fonts/diary-preview/
+static/fonts/
 ```
 
-Those files are loaded by both the browser design page and the PNG endpoint so local layout previews can match local generated output.
+Those files are loaded by both the browser design page and the PNG endpoint so local layout previews can match local generated output. The preview currently registers the diary serif face, `Crimson Pro`, and an explicit OG-renderable sans face, `Inter`, as a close stand-in for the diary's system sans stack.
 
 ## Editing the Layout
 
@@ -83,7 +83,7 @@ The endpoint only forces `imageResponse.arrayBuffer()` in development so the `re
 2. The endpoint formats `title`, `summary`, `date`, and `url`.
 3. `_PreviewImage.svelte` is rendered on the server with `PreviewImageSsr.render(...)`.
 4. Svelte returns two strings: HTML markup and scoped CSS.
-5. The endpoint reads the same local Noto Sans font files used by the browser preview. Font reads are cached at module scope.
+5. The endpoint reads the same local font files used by the browser preview. Font reads are cached at module scope.
 6. `juice.inlineContent(...)` inlines the CSS into `style` attributes.
 7. `satori-html` converts the inlined HTML string into the React-like object shape expected by `@vercel/og`.
 8. `new ImageResponse(...)` renders the PNG with the explicit font data.

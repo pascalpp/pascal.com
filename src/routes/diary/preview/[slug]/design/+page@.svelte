@@ -10,10 +10,7 @@
 </svelte:head>
 
 <div class:compare={data.compare} class="stage">
-  <div
-    class="preview"
-    style="width: {imageSize.width}px; height: {imageSize.height}px;"
-  >
+  <div class="preview" style="width: {imageSize.width}px; height: {imageSize.height}px;">
     <PreviewImage content={data.content} />
   </div>
 
@@ -25,7 +22,7 @@
 <style>
   :global(body) {
     margin: 0;
-    background: #f1eee6;
+    background: #ccc;
   }
 
   .stage {

@@ -21,17 +21,19 @@ type SsrComponent<Props> = {
 const PreviewImageSsr = PreviewImage as unknown as SsrComponent<{ content: PreviewContent }>;
 const fontDirectory = resolve(process.cwd(), 'static/fonts');
 const fontPaths = {
-  notoSansLight: '/fonts/NotoSans-Light.ttf',
-  notoSansRegular: '/fonts/NotoSans-Regular.ttf',
-  notoSansMedium: '/fonts/NotoSans-Medium.ttf',
-  notoSansSemiBold: '/fonts/NotoSans-SemiBold.ttf',
+  crimsonProLight: '/fonts/CrimsonPro-Light.woff',
+  crimsonProMedium: '/fonts/CrimsonPro-Medium.woff',
+  interRegular: '/fonts/Inter-Regular.woff',
+  interMedium: '/fonts/Inter-Medium.woff',
+  interSemiBold: '/fonts/Inter-SemiBold.woff',
 };
 const localFontData = dev
   ? {
-      notoSansLight: readFont('NotoSans-Light.ttf'),
-      notoSansRegular: readFont('NotoSans-Regular.ttf'),
-      notoSansMedium: readFont('NotoSans-Medium.ttf'),
-      notoSansSemiBold: readFont('NotoSans-SemiBold.ttf'),
+      crimsonProLight: readFont('CrimsonPro-Light.woff'),
+      crimsonProMedium: readFont('CrimsonPro-Medium.woff'),
+      interRegular: readFont('Inter-Regular.woff'),
+      interMedium: readFont('Inter-Medium.woff'),
+      interSemiBold: readFont('Inter-SemiBold.woff'),
     }
   : undefined;
 const remoteFontData = new Map<string, Promise<ArrayBuffer>>();
@@ -76,18 +78,20 @@ async function fetchFont(fetch: typeof globalThis.fetch, path: string): Promise<
 function loadFonts(fetch: typeof globalThis.fetch): Promise<ArrayBuffer[]> {
   if (localFontData) {
     return Promise.all([
-      localFontData.notoSansLight,
-      localFontData.notoSansRegular,
-      localFontData.notoSansMedium,
-      localFontData.notoSansSemiBold,
+      localFontData.crimsonProLight,
+      localFontData.crimsonProMedium,
+      localFontData.interRegular,
+      localFontData.interMedium,
+      localFontData.interSemiBold,
     ]);
   }
 
   return Promise.all([
-    fetchFont(fetch, fontPaths.notoSansLight),
-    fetchFont(fetch, fontPaths.notoSansRegular),
-    fetchFont(fetch, fontPaths.notoSansMedium),
-    fetchFont(fetch, fontPaths.notoSansSemiBold),
+    fetchFont(fetch, fontPaths.crimsonProLight),
+    fetchFont(fetch, fontPaths.crimsonProMedium),
+    fetchFont(fetch, fontPaths.interRegular),
+    fetchFont(fetch, fontPaths.interMedium),
+    fetchFont(fetch, fontPaths.interSemiBold),
   ]);
 }
 
@@ -119,7 +123,7 @@ export const GET: RequestHandler = async ({ fetch, params }) => {
       removeStyleTags: true,
     });
     timer = mark(params.slug, 'inline css', timer);
-    const [notoSansLight, notoSansRegular, notoSansMedium, notoSansSemiBold] = await loadFonts(fetch);
+    const [crimsonProLight, crimsonProMedium, interRegular, interMedium, interSemiBold] = await loadFonts(fetch);
     timer = mark(params.slug, 'load fonts', timer);
     const headers = {
       'cache-control': dev ? 'no-store' : 'public, max-age=31536000, immutable',
@@ -131,26 +135,32 @@ export const GET: RequestHandler = async ({ fetch, params }) => {
       ...imageSize,
       fonts: [
         {
-          name: 'Noto Sans',
-          data: notoSansLight,
-          weight: 300,
+          name: 'Crimson Pro',
+          data: crimsonProLight,
+          weight: 200,
           style: 'normal',
         },
         {
-          name: 'Noto Sans',
-          data: notoSansRegular,
-          weight: 400,
-          style: 'normal',
-        },
-        {
-          name: 'Noto Sans',
-          data: notoSansMedium,
+          name: 'Crimson Pro',
+          data: crimsonProMedium,
           weight: 500,
           style: 'normal',
         },
         {
-          name: 'Noto Sans',
-          data: notoSansSemiBold,
+          name: 'Inter',
+          data: interRegular,
+          weight: 400,
+          style: 'normal',
+        },
+        {
+          name: 'Inter',
+          data: interMedium,
+          weight: 500,
+          style: 'normal',
+        },
+        {
+          name: 'Inter',
+          data: interSemiBold,
           weight: 600,
           style: 'normal',
         },
