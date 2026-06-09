@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="{{ title }}">
+  <rect width="1200" height="630" fill="#f1eee6"/>
+  <rect x="36" y="36" width="1132" height="557" fill="#151515" fill-opacity="0.075" rx="24" />
+  <g transform="translate(72, 72)">
+    <text fill="#151515" font-family="Source Sans Pro" font-size="36" font-weight="400" letter-spacing="0" dominant-baseline="hanging">
+      <tspan>{{ date }}</tspan>
+    </text>
+  </g>
+  <rect x="36" y="136" width="1132" height="330" fill="#f1eee6" />
+  <g transform="translate(70, 170)">
+    <text fill="#151515" font-family="Source Sans Pro" font-size="78" font-weight="500" letter-spacing="0" dominant-baseline="hanging">
+      {{ titleLines }}
+      <tspan x="5" dy="96" fill-opacity="0.72" font-family="Source Sans Pro" font-size="36" font-weight="500">{{ summaryLine1 }}</tspan>
+      <tspan x="5" dy="46" fill-opacity="0.72" font-family="Source Sans Pro" font-size="36" font-weight="500">{{ summaryLine2 }}</tspan>
+    </text>
+  </g>
+  <g transform="translate(72, 518)">
+    <text fill="#151515" fill-opacity="0.72">
+      <tspan font-family="Source Sans Pro" font-size="36">Pascal’s Diary</tspan>
+      <tspan x="2" dy="40" font-family="Source Sans Pro" font-size="24" font-weight="500">{{ url }}</tspan>
+    </text>
+  </g>
+  <rect x="36" y="36" width="1132" height="557" fill="none" stroke="#151515" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4" rx="24" />
+</svg>
