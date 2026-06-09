@@ -1,5 +1,8 @@
 import { dev } from '$app/environment';
 import { Resvg } from '@resvg/resvg-js';
+import { mkdir, writeFile } from 'fs/promises';
+import { tmpdir } from 'os';
+import Path from 'path';
 import { fetchPost } from '../../../api/posts/util';
 import type { RequestHandler } from './$types';
 import template from './template.svg?raw';
@@ -9,6 +12,38 @@ const fontUrls = [
   '/misc/slides/lib/font/source-sans-pro/source-sans-pro-regular.ttf',
   '/misc/slides/lib/font/source-sans-pro/source-sans-pro-semibold.ttf',
 ];
+const fontProbeFamilies = [
+  'sans-serif',
+  'serif',
+  'monospace',
+  'Arial',
+  'Helvetica',
+  'Georgia',
+  'Times New Roman',
+  'DejaVu Sans',
+  'DejaVu Serif',
+  'Liberation Sans',
+  'Liberation Serif',
+  'Noto Sans',
+  'Noto Serif',
+  'Source Sans Pro',
+];
+const fontDirectory = Path.join(tmpdir(), 'pascal-diary-preview-fonts');
+const fontPaths = [
+  Path.join(fontDirectory, 'source-sans-pro-regular.ttf'),
+  Path.join(fontDirectory, 'source-sans-pro-semibold.ttf'),
+];
+const localFontPaths = [
+  Path.resolve(
+    process.cwd(),
+    'static/misc/slides/lib/font/source-sans-pro/source-sans-pro-regular.ttf',
+  ),
+  Path.resolve(
+    process.cwd(),
+    'static/misc/slides/lib/font/source-sans-pro/source-sans-pro-semibold.ttf',
+  ),
+];
+let fontFilesPromise: Promise<string[]> | undefined;
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
   month: 'long',
@@ -68,6 +103,30 @@ function renderTemplate(values: Record<string, string>): string {
   return template.replace(/{{\s*(\w+)\s*}}/g, (match, key: string) => values[key] ?? match);
 }
 
+function renderFontProbeSvg(): string {
+  const rows = fontProbeFamilies
+    .map((family, index) => {
+      const x = index < 7 ? 72 : 620;
+      const y = 76 + (index % 7) * 74;
+      return `
+        <text x="${x}" y="${y}" fill="#151515" font-family="${escapeHtml(family)}" font-size="30">
+          ${escapeHtml(family)}: The quick brown fox jumps 123
+        </text>
+      `;
+    })
+    .join('');
+
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+      <rect width="1200" height="630" fill="#f1eee6"/>
+      <text x="72" y="42" fill="#151515" font-family="sans-serif" font-size="24" font-weight="700">
+        Vercel font probe
+      </text>
+      ${rows}
+    </svg>
+  `;
+}
+
 async function fetchFontBuffer(
   path: string,
   origin: string,
@@ -101,8 +160,44 @@ async function fetchFontBuffers(
   );
 }
 
+async function ensureFontFiles(
+  origin: string,
+  fallbackFetch: typeof globalThis.fetch,
+): Promise<string[]> {
+  fontFilesPromise ??= (async () => {
+    const fontBuffers = await fetchFontBuffers(origin, fallbackFetch);
+    await mkdir(fontDirectory, { recursive: true });
+    await Promise.all(fontBuffers.map((font, index) => writeFile(fontPaths[index], font)));
+    return fontPaths;
+  })();
+
+  return fontFilesPromise;
+}
+
 export const GET: RequestHandler = async ({ fetch, params, url }) => {
   try {
+    if (url.searchParams.get('probe') === 'fonts') {
+      const renderer = new Resvg(renderFontProbeSvg(), {
+        fitTo: {
+          mode: 'width',
+          value: width,
+        },
+        font: {
+          loadSystemFonts: true,
+        },
+        textRendering: 1,
+      });
+      const png = renderer.render().asPng();
+
+      return new Response(new Uint8Array(png), {
+        headers: {
+          'cache-control': 'no-store',
+          'content-type': 'image/png',
+          'x-content-type-options': 'nosniff',
+        },
+      });
+    }
+
     const { metadata } = await fetchPost(params.slug);
 
     if (!dev && metadata.status === 'draft') {
@@ -129,11 +224,11 @@ export const GET: RequestHandler = async ({ fetch, params, url }) => {
       },
       font: {
         loadSystemFonts: false,
-        fontBuffers: await fetchFontBuffers(url.origin, fetch),
+        fontFiles: dev ? localFontPaths : await ensureFontFiles(url.origin, fetch),
         defaultFontFamily: 'Source Sans Pro',
       },
       textRendering: 1,
-    } as ConstructorParameters<typeof Resvg>[1]);
+    });
     const png = renderer.render().asPng();
 
     return new Response(new Uint8Array(png), {
