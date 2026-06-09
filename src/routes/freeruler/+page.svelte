@@ -124,7 +124,9 @@
   }
 
   .article-stage {
-    perspective: 1000px;
+    @media @desktop {
+      perspective: 1000px;
+    }
   }
 
   article {
@@ -134,13 +136,17 @@
     background-color: white;
     border-radius: 36px;
     box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.25), inset -3px 0 10px rgba(0, 0, 0, 1);
-    transform: rotateX(4deg) rotateY(-8deg) translateY(-10px);
-    transform-style: preserve-3d;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.75em;
+
+    @media @desktop {
+      transform: rotateX(4deg) rotateY(-8deg) translateY(-10px);
+      transform-style: preserve-3d;
+    }
+
     > * {
       margin: 0;
     }
