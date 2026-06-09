@@ -35,7 +35,7 @@ function getDefaultState(): Settings {
 export const settings = writable<Settings>(getStoredState() || getDefaultState());
 
 if (browser) {
-  settings.subscribe((data) => {
+  settings.subscribe(data => {
     window?.localStorage.setItem(storageKey, JSON.stringify(data));
   });
 }

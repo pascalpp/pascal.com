@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import { pageStore, type Page, getAllChildPages, activatePage } from './pages.store';
 
   export let page: Page;

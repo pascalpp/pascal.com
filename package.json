@@ -3,22 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "build": "svelte-kit sync && vite build -l error",
-    "preview": "vite preview",
+    "dev": "vp dev",
+    "build": "svelte-kit sync && vp build -l error",
+    "preview": "vp preview",
     "test": "npm run test:integration && npm run test:unit",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
-    "format": "prettier --write .",
+    "lint": "vp fmt --check . && vp lint .",
+    "format": "vp fmt .",
     "test:integration": "playwright test",
-    "test:unit": "vitest run",
-    "test:unit:watch": "vitest",
+    "test:unit": "vp test run",
+    "test:unit:watch": "vp test",
     "test:headed": "npx playwright test --project safari --headed --fully-parallel --reporter list",
     "test:production": "PRODUCTION=true npm run test:headed"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.60.0",
     "@poppanator/sveltekit-svg": "^7.0.0",
     "@sveltejs/adapter-auto": "^7.0.1",
@@ -30,13 +29,11 @@
     "@types/lodash": "^4.17.5",
     "@types/node": "^25.9.2",
     "@types/pretty": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.60.1",
-    "@typescript-eslint/parser": "^8.60.1",
+    "@voidzero-dev/vite-plus-core": "^0.1.24",
+    "@voidzero-dev/vite-plus-test": "^0.1.24",
     "assert": "^2.1.0",
     "autoprefixer": "^10.4.14",
     "csv-parser": "^3.0.0",
-    "eslint": "^10.4.1",
-    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.19.0",
     "globals": "^17.6.0",
     "less": "^4.1.3",
@@ -45,8 +42,6 @@
     "node-html-markdown": "^1.3.0",
     "open-props": "^1.6.12",
     "postcss-jit-props": "^1.0.14",
-    "prettier": "^3.8.3",
-    "prettier-plugin-svelte": "^4.1.0",
     "slugify": "^1.6.6",
     "svelte": "^5.56.3",
     "svelte-check": "^4.6.0",
@@ -55,9 +50,7 @@
     "tslib": "^2.4.1",
     "turndown": "^7.1.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.1",
-    "vite": "^8.0.16",
-    "vitest": "^4.1.8"
+    "vite-plus": "^0.1.24"
   },
   "type": "module",
   "dependencies": {
@@ -71,5 +64,10 @@
     "svelte-icons": "^2.1.0",
     "tone": "^14.7.77",
     "uuid": "^9.0.1"
-  }
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.1.24",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@0.1.24"
+  },
+  "packageManager": "npm@11.13.0"
 }

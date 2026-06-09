@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import { onMount } from 'svelte';
 
   export let interval = 2000;

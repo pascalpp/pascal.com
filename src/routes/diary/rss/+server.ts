@@ -10,7 +10,7 @@ export const prerender = true;
 
 export const GET = async () => {
   const posts = await fetchAllPosts();
-  const publishedPosts = posts.filter((post) => post.metadata.status !== 'draft');
+  const publishedPosts = posts.filter(post => post.metadata.status !== 'draft');
   const sortedPosts = publishedPosts.sort(sortPosts);
 
   const body = render(sortedPosts);
@@ -45,12 +45,12 @@ function render(posts: PostSummary[]) {
         <atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
         ${posts.map(renderPost).join('')}
       </channel>
-    </rss>`
+    </rss>`,
   );
 }
 
 function renderPost(post: PostSummary) {
-  const tags = post.metadata.tags?.map((tag) => `<category>${tag}</category>`).join('') ?? '';
+  const tags = post.metadata.tags?.map(tag => `<category>${tag}</category>`).join('') ?? '';
   const tagDescription = `Tags: ${post.metadata.tags?.join(', ') ?? 'none'}`;
   const summary = post.metadata.summary ?? tagDescription;
   return `<item>

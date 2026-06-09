@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { describe, expect, it } from 'vitest';
+/* oxlint-disable typescript/no-unused-vars */
+import { describe, expect, it } from 'vite-plus/test';
 import { getFrontMatterLines, parseFrontMatterLines, readPost } from './util';
 
 describe('readPost', () => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
+  /* oxlint-disable svelte/no-navigation-without-resolve */
   export let tag: string;
   export let link = true;
 </script>

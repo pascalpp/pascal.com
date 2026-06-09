@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import { dev } from '$app/environment';
   import type { PostSummary } from '../../api/posts/util';
 

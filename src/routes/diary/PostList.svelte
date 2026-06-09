@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
+  /* oxlint-disable svelte/require-each-key, no-undef */
   import ButtonBar from '$lib/components/ButtonBar.svelte';
   import type { PostSummary } from '../api/posts/util';
   import PostListItem from './PostListItem.svelte';

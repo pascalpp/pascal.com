@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import { page } from '$app/stores';
   import { defaultConfig, type SpinnerConfig } from './CssSpinner.svelte';
 

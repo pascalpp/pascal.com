@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef */
   import Navlink from './Navlink.svelte';
   import { page } from '$app/stores';
 

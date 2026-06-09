@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars, no-global-assign */
   import { dev } from '$app/environment';
   import { page } from '$app/stores';
   import AddClipboardButtons from './AddClipboardButtons.svelte';

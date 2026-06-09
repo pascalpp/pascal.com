@@ -12,5 +12,3 @@ It seems that rising GOP star Mike Huckabee has his own Willie Horton, but with 
 In 1996, as governor of Arkansas, Huckabee pushed for the early release of convicted rapist Wayne Dumond. What? I thought Republicans were tough on crime -- why would he want to release this man? Well, it seems that many of the right-wing activists who got Huckabee elected in 1996 were convinced that Dumond was innocent and had only been jailed because the woman he allegedly raped was a distant cousin of former governor Bill Clinton and the daughter of a major Clinton campaign contributor. "Aha! So Slick Willie threw this guy in jail for no reason! Let’s let him out! That’ll show Clinton!"
 
 [Huckabee received letters from the women Dumond previously assaulted](http://www.huffingtonpost.com/2007/12/04/documents-expose-huckabee%5Fn%5F75362.html), warning against his release, saying he would likely commit the same crimes again. Huckabee ignored these letters and released Dumond in 1999\. Dumond then raped and murdered a woman in Missouri a year later. Mike Huckabee, well-played, sir!
-
-

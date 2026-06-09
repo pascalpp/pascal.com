@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import type { Page, PageId } from './pages.store';
   import PageView from './PageView.svelte';
   import AddPageCard from './AddPageCard.svelte';

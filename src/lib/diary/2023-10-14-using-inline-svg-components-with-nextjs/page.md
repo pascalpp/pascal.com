@@ -28,11 +28,11 @@ They have [instructions for modifying your NextJS config](https://react-svgr.com
 const nextConfig = {
   webpack(config) {
     // grab the default rule for handling all images
-    const imageLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
+    const imageLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));
 
     config.module.rules = [
       // keep all rules except the default image loader rule
-      ...config.module.rules.filter((rule) => rule !== imageLoaderRule),
+      ...config.module.rules.filter(rule => rule !== imageLoaderRule),
 
       // re-add the default image loader rule, but exclude svg
       {

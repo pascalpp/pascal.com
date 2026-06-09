@@ -1,5 +1,5 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-vars, svelte/require-each-key */
+  /* oxlint-disable typescript/no-unused-vars, svelte/require-each-key */
   export let spokes = 8;
   export let dotspeed = 4;
   export let circlespeed = 10;

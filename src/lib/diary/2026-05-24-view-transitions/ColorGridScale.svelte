@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   export let colors: string[];
   export let transitionName: string;
   export let viewTransitionsActive = false;

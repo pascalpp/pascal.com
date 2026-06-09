@@ -5,5 +5,3 @@ wordpress_id: 179
 ---
 
 [Seriously.](http://www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx?pid=004)
-
-

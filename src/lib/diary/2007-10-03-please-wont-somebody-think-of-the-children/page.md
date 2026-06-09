@@ -22,5 +22,3 @@ Yep, those same kids whom Bush denied healthcare today.
 Fuck those kids. Fuck all your kids.
 
 Fuck you.
-
-
