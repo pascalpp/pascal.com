@@ -36,13 +36,13 @@ But this weekend, I decided to pick it up again with a little (or a lot) of help
 
 ![The previous Free Ruler app icon](./free-ruler-old-icon.png){ loading=lazy width=384 style="max-width: min(100%, 32rem); display: block;" }
 
-One thing I knew was sorely needed was an icon update. The previous icon was created using a custom `AppIconLayout` in the app itself, leveraging the ruler drawing code so the rulers on the icon were faithful to the real thing. I decided to use a more modern version of that same technique, adding a parameterized SwiftUI preview so I leveraging a modified version of the ruler drawing code to create the new icon.
+One thing I knew was sorely needed was an icon update. The previous icon was created using a custom `AppIconLayout` in the app itself, leveraging the ruler drawing code so the rulers on the icon were faithful to the real thing. I decided to use a more modern version of that same technique, adding a parameterized SwiftUI preview so I could use the ruler drawing code with different settings to create the new icon.
 
 ![The new Free Ruler app icon](./free-ruler-new-icon.png){ loading=lazy width=384 style="max-width: min(100%, 32rem); display: block;" }
 
-Then I had Codex create a script to generate the full set of app icon assets so the app can consume them at build time, by typing `yarn generate:icons`. So tweaking the icon and updating the assets is super easy and repeatable. SwiftUI as Photoshop.
+Then I had Codex create a script so I can type `yarn generate:icons` to create the full set of app icon assets for the app to consume them at build time. So tweaking the icon is super easy and repeatable. SwiftUI as Photoshop.
 
-Then I went a little kookoo and applied the same technique to create updated promo images for the App Store.
+Then I went a little koo-koo and applied the same technique to create updated promo images for the App Store.
 
 <div class="bleed-right">
 
@@ -50,7 +50,7 @@ Then I went a little kookoo and applied the same technique to create updated pro
 
 </div>
 
-These are created with more parameterized SwiftUI previews, leveraging real ruler views and the `AppIconRenderer`. So if I change the app icon or ruler views, the promo images will update automatically. All I have to do is run `yarn generate:screenshots` to update the images, and then upload them to the App Store.
+These are created with more parameterized SwiftUI previews, using real ruler views and the `AppIconRenderer`. So if I change the app icon or ruler views, the promo images will update automatically. All I have to do is run `yarn generate:screenshots` to update the images, and then upload them to the App Store.
 
 ## Other features and improvements
 
@@ -66,6 +66,6 @@ These are created with more parameterized SwiftUI previews, leveraging real rule
 
 ## Finally got through App Store review
 
-I submitted the updated app to the App Store on Sunday, and got another vague rejection. Undeterred, I re-submitted today, a few hours before the WWDC keynote, and got approved in just hover an hour, with no comments. 🤷‍♂️
+I submitted the updated app to the App Store on Sunday, and got another vague rejection. Undeterred, I re-submitted today, a few hours before the WWDC keynote, and got approved in just over an hour, with no comments. 🤷‍♂️
 
 If you need a ruler for your Mac, download Free Ruler from [GitHub](https://github.com/pascalpp/FreeRuler/releases) or the [App Store](https://apps.apple.com/us/app/free-ruler/id1483172210?mt=12).
