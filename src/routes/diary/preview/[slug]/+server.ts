@@ -1,13 +1,20 @@
 import { dev } from '$app/environment';
 import { Resvg } from '@resvg/resvg-js';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { fetchPost } from '../../../api/posts/util';
 import type { RequestHandler } from './$types';
 import template from './template.svg?raw';
 
 const width = 1200;
-const regularFontPath = fileURLToPath(new URL('./fonts/source-sans-pro-regular.ttf', import.meta.url));
-const semiboldFontPath = fileURLToPath(new URL('./fonts/source-sans-pro-semibold.ttf', import.meta.url));
+const regularFontUrl = new URL('./fonts/source-sans-pro-regular.ttf', import.meta.url);
+const semiboldFontUrl = new URL('./fonts/source-sans-pro-semibold.ttf', import.meta.url);
+const regularFontPath = fileURLToPath(regularFontUrl);
+const semiboldFontPath = fileURLToPath(semiboldFontUrl);
+
+// Force serverless file tracing to include the font files that Resvg loads by path.
+readFileSync(regularFontUrl);
+readFileSync(semiboldFontUrl);
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
   month: 'long',
