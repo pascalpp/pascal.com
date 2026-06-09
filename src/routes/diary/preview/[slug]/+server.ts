@@ -1,36 +1,34 @@
 import { dev } from '$app/environment';
 import { ImageResponse } from '@vercel/og';
+import juice from 'juice';
+import { html } from 'satori-html';
 import { fetchPost } from '../../../api/posts/util';
+import PreviewImage from '../_PreviewImage.svelte';
+import { dateFormatter, imageSize, type PreviewContent } from '../_layout';
 import type { RequestHandler } from './$types';
 
-const imageSize = {
-  width: 1200,
-  height: 630,
+type SsrComponent<Props> = {
+  render(props: Props): {
+    html: string;
+    css: {
+      code: string;
+    };
+  };
 };
 
-const reactElement = Symbol.for('react.element');
+const PreviewImageSsr = PreviewImage as unknown as SsrComponent<{ content: PreviewContent }>;
 
-function el(type: string, props: Record<string, unknown>, ...children: unknown[]) {
-  return {
-    $$typeof: reactElement,
-    type,
-    key: null,
-    ref: null,
-    props: {
-      ...props,
-      children,
-    },
-  };
+async function loadFont(fetch: typeof globalThis.fetch, path: string): Promise<ArrayBuffer> {
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Unable to load font: ${path}`);
+  }
+
+  return response.arrayBuffer();
 }
 
-const dateFormatter = new Intl.DateTimeFormat('en', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric',
-  timeZone: 'UTC',
-});
-
-export const GET: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ fetch, params }) => {
   try {
     const { metadata } = await fetchPost(params.slug);
 
@@ -42,162 +40,45 @@ export const GET: RequestHandler = async ({ params }) => {
     const summary = metadata.summary ?? 'A post from Pascal’s Diary.';
     const date = dateFormatter.format(new Date(metadata.date));
     const postUrl = `pascal.com/diary/${params.slug}`;
+    const { html: markup, css } = PreviewImageSsr.render({
+      content: {
+        title,
+        summary,
+        date,
+        url: postUrl,
+      },
+    });
+    const inlinedMarkup = juice.inlineContent(markup, css.code, {
+      removeStyleTags: true,
+    });
+    const [notoSansRegular, notoSansMedium] = await Promise.all([
+      loadFont(fetch, '/fonts/NotoSans-Light.ttf'),
+      loadFont(fetch, '/fonts/NotoSans-Regular.ttf'),
+      loadFont(fetch, '/fonts/NotoSans-SemiBold.ttf'),
+    ]);
 
-    return new ImageResponse(
-      el(
-        'div',
+    return new ImageResponse(html(inlinedMarkup), {
+      ...imageSize,
+      fonts: [
         {
-          style: {
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            position: 'relative',
-            background: '#f1eee6',
-            color: '#151515',
-            fontFamily: 'Noto Sans',
-          },
+          name: 'Noto Sans',
+          data: notoSansRegular,
+          weight: 400,
+          style: 'normal',
         },
-        el('div', {
-          style: {
-            position: 'absolute',
-            left: 36,
-            top: 36,
-            width: 1132,
-            height: 557,
-            display: 'flex',
-            background: 'rgba(21, 21, 21, 0.075)',
-            borderRadius: 24,
-          },
-        }),
-        el('div', {
-          style: {
-            position: 'absolute',
-            left: 36,
-            top: 136,
-            width: 1132,
-            height: 330,
-            display: 'flex',
-            background: '#f1eee6',
-          },
-        }),
-        el(
-          'div',
-          {
-            style: {
-              position: 'absolute',
-              left: 72,
-              top: 72,
-              display: 'flex',
-              fontSize: 36,
-              fontWeight: 400,
-              lineHeight: 1,
-            },
-          },
-          date,
-        ),
-        el(
-          'div',
-          {
-            style: {
-              position: 'absolute',
-              left: 70,
-              top: 170,
-              width: 1030,
-              display: 'flex',
-              flexDirection: 'column',
-            },
-          },
-          el(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                fontSize: 78,
-                fontWeight: 500,
-                lineHeight: 0.98,
-                letterSpacing: 0,
-              },
-            },
-            title,
-          ),
-          el(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                flexDirection: 'column',
-                marginTop: 28,
-                marginLeft: 5,
-                width: 920,
-                color: 'rgba(21, 21, 21, 0.72)',
-                fontSize: 36,
-                fontWeight: 500,
-                lineHeight: 1.28,
-              },
-            },
-            summary,
-          ),
-        ),
-        el(
-          'div',
-          {
-            style: {
-              position: 'absolute',
-              left: 72,
-              top: 500,
-              display: 'flex',
-              flexDirection: 'column',
-              color: 'rgba(21, 21, 21, 0.72)',
-            },
-          },
-          el(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                fontSize: 36,
-                lineHeight: 1,
-              },
-            },
-            'Pascal’s Diary',
-          ),
-          el(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                marginTop: 8,
-                marginLeft: 2,
-                fontSize: 24,
-                fontWeight: 500,
-                lineHeight: 1,
-              },
-            },
-            postUrl,
-          ),
-        ),
-        el('div', {
-          style: {
-            position: 'absolute',
-            left: 36,
-            top: 36,
-            width: 1132,
-            height: 557,
-            display: 'flex',
-            border: '2px dashed rgba(21, 21, 21, 0.3)',
-            borderRadius: 24,
-          },
-        }),
-      ),
-      {
-        ...imageSize,
+        {
+          name: 'Noto Sans',
+          data: notoSansMedium,
+          weight: 500,
+          style: 'normal',
+        },
+        ],
         headers: {
-          'cache-control': 'public, max-age=31536000, immutable',
+          'cache-control': dev ? 'no-store' : 'public, max-age=31536000, immutable',
           'content-type': 'image/png',
           'x-content-type-options': 'nosniff',
         },
-      },
-    );
+    });
   } catch (error) {
     return new Response('Not found', { status: 404 });
   }
