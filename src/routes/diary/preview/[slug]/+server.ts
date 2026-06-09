@@ -20,12 +20,21 @@ type SsrComponent<Props> = {
 
 const PreviewImageSsr = PreviewImage as unknown as SsrComponent<{ content: PreviewContent }>;
 const fontDirectory = resolve(process.cwd(), 'static/fonts');
-const fontData = {
-  notoSansLight: readFont('NotoSans-Light.ttf'),
-  notoSansRegular: readFont('NotoSans-Regular.ttf'),
-  notoSansMedium: readFont('NotoSans-Medium.ttf'),
-  notoSansSemiBold: readFont('NotoSans-SemiBold.ttf'),
+const fontPaths = {
+  notoSansLight: '/fonts/NotoSans-Light.ttf',
+  notoSansRegular: '/fonts/NotoSans-Regular.ttf',
+  notoSansMedium: '/fonts/NotoSans-Medium.ttf',
+  notoSansSemiBold: '/fonts/NotoSans-SemiBold.ttf',
 };
+const localFontData = dev
+  ? {
+      notoSansLight: readFont('NotoSans-Light.ttf'),
+      notoSansRegular: readFont('NotoSans-Regular.ttf'),
+      notoSansMedium: readFont('NotoSans-Medium.ttf'),
+      notoSansSemiBold: readFont('NotoSans-SemiBold.ttf'),
+    }
+  : undefined;
+const remoteFontData = new Map<string, Promise<ArrayBuffer>>();
 
 function mark(slug: string, label: string, start: number): number {
   const now = performance.now();
@@ -44,7 +53,45 @@ async function readFont(filename: string): Promise<ArrayBuffer> {
   return bytes.buffer;
 }
 
-export const GET: RequestHandler = async ({ params }) => {
+async function fetchFont(fetch: typeof globalThis.fetch, path: string): Promise<ArrayBuffer> {
+  const cached = remoteFontData.get(path);
+
+  if (cached) {
+    return cached;
+  }
+
+  const font = fetch(path).then(response => {
+    if (!response.ok) {
+      throw new Error(`Unable to load font ${path}: ${response.status}`);
+    }
+
+    return response.arrayBuffer();
+  });
+
+  remoteFontData.set(path, font);
+
+  return font;
+}
+
+function loadFonts(fetch: typeof globalThis.fetch): Promise<ArrayBuffer[]> {
+  if (localFontData) {
+    return Promise.all([
+      localFontData.notoSansLight,
+      localFontData.notoSansRegular,
+      localFontData.notoSansMedium,
+      localFontData.notoSansSemiBold,
+    ]);
+  }
+
+  return Promise.all([
+    fetchFont(fetch, fontPaths.notoSansLight),
+    fetchFont(fetch, fontPaths.notoSansRegular),
+    fetchFont(fetch, fontPaths.notoSansMedium),
+    fetchFont(fetch, fontPaths.notoSansSemiBold),
+  ]);
+}
+
+export const GET: RequestHandler = async ({ fetch, params }) => {
   try {
     const totalStart = performance.now();
     let timer = totalStart;
@@ -72,12 +119,7 @@ export const GET: RequestHandler = async ({ params }) => {
       removeStyleTags: true,
     });
     timer = mark(params.slug, 'inline css', timer);
-    const [notoSansLight, notoSansRegular, notoSansMedium, notoSansSemiBold] = await Promise.all([
-      fontData.notoSansLight,
-      fontData.notoSansRegular,
-      fontData.notoSansMedium,
-      fontData.notoSansSemiBold,
-    ]);
+    const [notoSansLight, notoSansRegular, notoSansMedium, notoSansSemiBold] = await loadFonts(fetch);
     timer = mark(params.slug, 'load fonts', timer);
     const headers = {
       'cache-control': dev ? 'no-store' : 'public, max-age=31536000, immutable',
@@ -128,6 +170,8 @@ export const GET: RequestHandler = async ({ params }) => {
 
     return imageResponse;
   } catch (error) {
+    console.error(`[diary preview:${params.slug}]`, error);
+
     return new Response('Not found', { status: 404 });
   }
 };
