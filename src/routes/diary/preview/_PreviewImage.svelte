@@ -51,7 +51,14 @@
 
   @font-face {
     font-family: 'Noto Sans';
-    src: url('/fonts/NotoSans-Semibold.ttf') format('truetype');
+    src: url('/fonts/NotoSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/NotoSans-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
   }

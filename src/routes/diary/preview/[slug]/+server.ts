@@ -1,6 +1,8 @@
 import { dev } from '$app/environment';
 import { ImageResponse } from '@vercel/og';
+import { readFile } from 'fs/promises';
 import juice from 'juice';
+import { resolve } from 'path';
 import { html } from 'satori-html';
 import { fetchPost } from '../../../api/posts/util';
 import PreviewImage from '../_PreviewImage.svelte';
@@ -17,20 +19,37 @@ type SsrComponent<Props> = {
 };
 
 const PreviewImageSsr = PreviewImage as unknown as SsrComponent<{ content: PreviewContent }>;
+const fontDirectory = resolve(process.cwd(), 'static/fonts');
+const fontData = {
+  notoSansLight: readFont('NotoSans-Light.ttf'),
+  notoSansRegular: readFont('NotoSans-Regular.ttf'),
+  notoSansMedium: readFont('NotoSans-Medium.ttf'),
+  notoSansSemiBold: readFont('NotoSans-SemiBold.ttf'),
+};
 
-async function loadFont(fetch: typeof globalThis.fetch, path: string): Promise<ArrayBuffer> {
-  const response = await fetch(path);
+function mark(slug: string, label: string, start: number): number {
+  const now = performance.now();
 
-  if (!response.ok) {
-    throw new Error(`Unable to load font: ${path}`);
+  if (dev) {
+    console.log(`[diary preview:${slug}] ${label}: ${(now - start).toFixed(1)}ms`);
   }
 
-  return response.arrayBuffer();
+  return now;
 }
 
-export const GET: RequestHandler = async ({ fetch, params }) => {
+async function readFont(filename: string): Promise<ArrayBuffer> {
+  const font = await readFile(resolve(fontDirectory, filename));
+  const bytes = new Uint8Array(font);
+
+  return bytes.buffer;
+}
+
+export const GET: RequestHandler = async ({ params }) => {
   try {
+    const totalStart = performance.now();
+    let timer = totalStart;
     const { metadata } = await fetchPost(params.slug);
+    timer = mark(params.slug, 'fetch post', timer);
 
     if (!dev && metadata.status === 'draft') {
       return new Response('Not found', { status: 404 });
@@ -48,18 +67,33 @@ export const GET: RequestHandler = async ({ fetch, params }) => {
         url: postUrl,
       },
     });
+    timer = mark(params.slug, 'render svelte', timer);
     const inlinedMarkup = juice.inlineContent(markup, css.code, {
       removeStyleTags: true,
     });
-    const [notoSansRegular, notoSansMedium] = await Promise.all([
-      loadFont(fetch, '/fonts/NotoSans-Light.ttf'),
-      loadFont(fetch, '/fonts/NotoSans-Regular.ttf'),
-      loadFont(fetch, '/fonts/NotoSans-SemiBold.ttf'),
+    timer = mark(params.slug, 'inline css', timer);
+    const [notoSansLight, notoSansRegular, notoSansMedium, notoSansSemiBold] = await Promise.all([
+      fontData.notoSansLight,
+      fontData.notoSansRegular,
+      fontData.notoSansMedium,
+      fontData.notoSansSemiBold,
     ]);
+    timer = mark(params.slug, 'load fonts', timer);
+    const headers = {
+      'cache-control': dev ? 'no-store' : 'public, max-age=31536000, immutable',
+      'content-type': 'image/png',
+      'x-content-type-options': 'nosniff',
+    };
 
-    return new ImageResponse(html(inlinedMarkup), {
+    const imageResponse = new ImageResponse(html(inlinedMarkup), {
       ...imageSize,
       fonts: [
+        {
+          name: 'Noto Sans',
+          data: notoSansLight,
+          weight: 300,
+          style: 'normal',
+        },
         {
           name: 'Noto Sans',
           data: notoSansRegular,
@@ -72,13 +106,27 @@ export const GET: RequestHandler = async ({ fetch, params }) => {
           weight: 500,
           style: 'normal',
         },
-        ],
-        headers: {
-          'cache-control': dev ? 'no-store' : 'public, max-age=31536000, immutable',
-          'content-type': 'image/png',
-          'x-content-type-options': 'nosniff',
+        {
+          name: 'Noto Sans',
+          data: notoSansSemiBold,
+          weight: 600,
+          style: 'normal',
         },
+      ],
+      headers,
     });
+
+    timer = mark(params.slug, 'create image response', timer);
+
+    if (dev) {
+      const image = await imageResponse.arrayBuffer();
+      mark(params.slug, 'render png', timer);
+      mark(params.slug, 'total', totalStart);
+
+      return new Response(image, { headers });
+    }
+
+    return imageResponse;
   } catch (error) {
     return new Response('Not found', { status: 404 });
   }

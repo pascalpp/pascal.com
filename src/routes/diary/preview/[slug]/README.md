@@ -61,6 +61,20 @@ To compare the browser-rendered Svelte component against the generated PNG at th
 
 In development, the PNG endpoint sends `cache-control: no-store`. Compare mode also appends a timestamp query string to the generated PNG URL so browser refreshes pick up layout changes immediately.
 
+In development, `+server.ts` logs timing for each stage to the server console:
+
+```text
+[diary preview:slug] fetch post: 1.2ms
+[diary preview:slug] render svelte: 0.8ms
+[diary preview:slug] inline css: 3.4ms
+[diary preview:slug] load fonts: 5.6ms
+[diary preview:slug] create image response: 2.1ms
+[diary preview:slug] render png: 120.0ms
+[diary preview:slug] total: 133.1ms
+```
+
+The endpoint only forces `imageResponse.arrayBuffer()` in development so the `render png` timing includes the actual PNG rendering work.
+
 ## Server Rendering Flow
 
 `+server.ts` uses this pipeline:
@@ -69,7 +83,7 @@ In development, the PNG endpoint sends `cache-control: no-store`. Compare mode a
 2. The endpoint formats `title`, `summary`, `date`, and `url`.
 3. `_PreviewImage.svelte` is rendered on the server with `PreviewImageSsr.render(...)`.
 4. Svelte returns two strings: HTML markup and scoped CSS.
-5. The endpoint loads the same local Noto Sans font files used by the browser preview.
+5. The endpoint reads the same local Noto Sans font files used by the browser preview. Font reads are cached at module scope.
 6. `juice.inlineContent(...)` inlines the CSS into `style` attributes.
 7. `satori-html` converts the inlined HTML string into the React-like object shape expected by `@vercel/og`.
 8. `new ImageResponse(...)` renders the PNG with the explicit font data.
