@@ -37,7 +37,6 @@
 
     {#if showLiveComments}
       <section class="live-comments breakout" aria-labelledby="live-comments-heading">
-        <h3 id="live-comments-heading">Join the discussion</h3>
         {#key slug}
           <div class="giscus-container">
             <svelte:element
