@@ -5,7 +5,6 @@ summary: Trying to figure out why NSWorkspace.shared.setDesktopImageURL no longe
 status: published
 tags: [swift, appkit]
 updated: 2024-05-23T15:49:26.725Z
-mastodon: https://moth.social/@pascal/112187636624986783
 ---
 
 _Update! This bug appears to be fixed in macOS Sonoma 14.5!_

@@ -4,7 +4,6 @@ date: 2024-06-13T10:03:07.875Z
 summary: An exploration of how trie structures can dramatically boost string comparisons in javascript.
 tags: [javascript, typescript]
 status: published
-mastodon: https://moth.social/@pascal/112613657041397228
 ---
 
 <script lang="ts">
