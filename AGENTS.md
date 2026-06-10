@@ -6,7 +6,8 @@
 - Routes live under `src/routes/`.
 - Shared library code and content live under `src/lib/`.
 - Static legacy files and public assets live under `static/`.
-- Use `npm run dev -- --host 0.0.0.0 --port <port>` for local preview when the user asks for one. This exposes both a local URL and a LAN URL.
+- For local preview, visit `https://pascal.localhost/`; the dev server is autostarted when that URL is requested.
+- Use `npm run dev -- --host 0.0.0.0 --port <port>` only if the autostarted preview is unavailable and the user wants a manual server. This exposes both a local URL and a LAN URL.
 - If a server is already running on a port, leave it alone unless the user asks otherwise.
 - Use `npm run check` when appropriate, but be aware the repo may have existing unrelated type issues.
 

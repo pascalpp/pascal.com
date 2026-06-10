@@ -67,6 +67,8 @@ describe('parseFrontMatterLines', () => {
       tags: ['nyc', 'running'],
       summary: undefined,
       updated: undefined,
+      comments: undefined,
+      archivedComments: undefined,
     };
 
     const actual = parseFrontMatterLines(input);
@@ -77,5 +79,71 @@ describe('parseFrontMatterLines', () => {
     expect(actual.tags).toStrictEqual(expected.tags);
     expect(actual.summary).toBe(expected.summary);
     expect(actual.updated).toBe(expected.updated);
+    expect(actual.comments).toBe(expected.comments);
+    expect(actual.archivedComments).toBe(expected.archivedComments);
+  });
+
+  it('should return undefined comments metadata when comments frontmatter is absent', () => {
+    const input = ['title: No comments field', 'date: 2004-04-20T03:51:00.000Z'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBeUndefined();
+  });
+
+  it('should return false comments metadata when comments frontmatter is false', () => {
+    const input = ['title: Comments off', 'date: 2004-04-20T03:51:00.000Z', 'comments: false'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(false);
+  });
+
+  it('should parse false comments frontmatter case-insensitively', () => {
+    const input = ['title: Comments off', 'date: 2004-04-20T03:51:00.000Z', 'comments: FALSE'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(false);
+  });
+
+  it('should return true comments metadata when comments frontmatter is true', () => {
+    const input = ['title: Comments on', 'date: 2004-04-20T03:51:00.000Z', 'comments: true'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(true);
+  });
+
+  it('should return undefined archivedComments metadata when archivedComments frontmatter is absent', () => {
+    const input = ['title: No archived comments field', 'date: 2004-04-20T03:51:00.000Z'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.archivedComments).toBeUndefined();
+  });
+
+  it('should only enable archivedComments metadata when frontmatter is explicitly true', () => {
+    const input = ['title: Archived comments on', 'date: 2004-04-20T03:51:00.000Z', 'archivedComments: true'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.archivedComments).toBe(true);
+  });
+
+  it('should parse archivedComments frontmatter case-insensitively', () => {
+    const input = ['title: Archived comments on', 'date: 2004-04-20T03:51:00.000Z', 'archivedComments: TRUE'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.archivedComments).toBe(true);
+  });
+
+  it('should return false archivedComments metadata when frontmatter is false', () => {
+    const input = ['title: Archived comments off', 'date: 2004-04-20T03:51:00.000Z', 'archivedComments: false'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.archivedComments).toBe(false);
   });
 });

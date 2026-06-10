@@ -13,6 +13,8 @@ export type PostMetadata = {
   summary?: string;
   updated?: string;
   mastodon?: string;
+  comments?: boolean | string;
+  archivedComments?: boolean | string;
 };
 
 export type PostFrontMatter = {
@@ -23,6 +25,8 @@ export type PostFrontMatter = {
   summary?: string;
   updated?: string;
   mastodon?: string;
+  comments?: string;
+  archivedComments?: string;
 };
 
 export type PostSummary = {
@@ -114,6 +118,9 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
     summary: record.summary,
     updated: record.updated,
     mastodon: record.mastodon,
+    comments: record.comments === undefined ? undefined : record.comments.toLowerCase() !== 'false',
+    archivedComments:
+      record.archivedComments === undefined ? undefined : record.archivedComments.toLowerCase() === 'true',
   };
 
   return metadata;

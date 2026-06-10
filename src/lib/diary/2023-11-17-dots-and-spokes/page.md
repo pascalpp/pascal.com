@@ -4,7 +4,6 @@ date: 2023-11-18T01:51:36.166Z
 status: published
 tags: [css, svelte]
 summary: An experiment with CSS animation of dots and spokes.
-mastodon: https://moth.social/@pascal/111428099037523298
 ---
 
 <script lang="ts">

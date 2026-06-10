@@ -1,7 +1,7 @@
 import { type PostMetadata, type PostSummary } from '../../api/posts/util';
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = async ({ fetch, params }) => {
+export const load: PageLoad = async ({ data, fetch, params }) => {
   const response = await fetch(`/api/posts/all`);
   const posts = (await response.json()) as PostSummary[];
 
@@ -25,6 +25,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
       title,
       date,
       PostComponent,
+      archivedCommentsHtml: data.archivedCommentsHtml,
       metadata,
     },
   };
