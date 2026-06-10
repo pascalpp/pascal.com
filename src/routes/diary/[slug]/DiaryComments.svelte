@@ -14,7 +14,7 @@
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
 
-{#if archivedCommentsHtml || showLiveComments || metadata.mastodon}
+{#if commentsEnabled && (archivedCommentsHtml || showLiveComments || metadata.mastodon)}
   <section class="full-width diary-comments" aria-labelledby="comments-heading">
     <h2 id="comments-heading">Comments</h2>
 

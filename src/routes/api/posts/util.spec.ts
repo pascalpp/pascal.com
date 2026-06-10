@@ -67,6 +67,7 @@ describe('parseFrontMatterLines', () => {
       tags: ['nyc', 'running'],
       summary: undefined,
       updated: undefined,
+      comments: undefined,
     };
 
     const actual = parseFrontMatterLines(input);
@@ -77,5 +78,30 @@ describe('parseFrontMatterLines', () => {
     expect(actual.tags).toStrictEqual(expected.tags);
     expect(actual.summary).toBe(expected.summary);
     expect(actual.updated).toBe(expected.updated);
+    expect(actual.comments).toBe(expected.comments);
+  });
+
+  it('should return undefined comments metadata when comments frontmatter is absent', () => {
+    const input = ['title: No comments field', 'date: 2004-04-20T03:51:00.000Z'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBeUndefined();
+  });
+
+  it('should return false comments metadata when comments frontmatter is false', () => {
+    const input = ['title: Comments off', 'date: 2004-04-20T03:51:00.000Z', 'comments: false'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(false);
+  });
+
+  it('should return true comments metadata when comments frontmatter is true', () => {
+    const input = ['title: Comments on', 'date: 2004-04-20T03:51:00.000Z', 'comments: true'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(true);
   });
 });
