@@ -6,12 +6,30 @@ const archivedCommentFiles = import.meta.glob('/src/lib/diary/**/comments.md', {
   import: 'default',
 });
 
+const archivedCommentsHtmlBySlug = new Map<string, Promise<string>>();
+
+function loadArchivedCommentsHtml(slug: string, loader: () => Promise<string>) {
+  let archivedCommentsHtml = archivedCommentsHtmlBySlug.get(slug);
+
+  if (!archivedCommentsHtml) {
+    archivedCommentsHtml = loader()
+      .then((rawComments) => unwrapArchivedComments(rawComments))
+      .catch((error) => {
+        archivedCommentsHtmlBySlug.delete(slug);
+        throw error;
+      });
+    archivedCommentsHtmlBySlug.set(slug, archivedCommentsHtml);
+  }
+
+  return archivedCommentsHtml;
+}
+
 export const load: PageServerLoad = async ({ params }) => {
   const archivedCommentsLoader = archivedCommentFiles[`/src/lib/diary/${params.slug}/comments.md`] as
     | (() => Promise<string>)
     | undefined;
   const archivedCommentsHtml = archivedCommentsLoader
-    ? unwrapArchivedComments(await archivedCommentsLoader())
+    ? await loadArchivedCommentsHtml(params.slug, archivedCommentsLoader)
     : undefined;
 
   return {
