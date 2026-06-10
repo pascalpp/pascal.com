@@ -29,8 +29,8 @@
     {#if showLiveComments}
       <section class="live-comments breakout" aria-labelledby="live-comments-heading">
         <h3 id="live-comments-heading">Join the discussion</h3>
-        <div class="giscus-container">
-          {#key slug}
+        {#key slug}
+          <div class="giscus-container">
             <svelte:element
               this="script"
               src="https://giscus.app/client.js"
@@ -50,8 +50,8 @@
               async
               crossorigin="anonymous"
             />
-          {/key}
-        </div>
+          </div>
+        {/key}
       </section>
     {/if}
 
