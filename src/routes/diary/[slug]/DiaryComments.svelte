@@ -13,8 +13,7 @@
   }
 
   $: commentsEnabled = !isFrontmatterFalse(metadata.comments);
-  $: showArchivedComments =
-    commentsEnabled && !isFrontmatterFalse(metadata.archivedComments) && archivedCommentsHtml;
+  $: showArchivedComments = !isFrontmatterFalse(metadata.archivedComments) && archivedCommentsHtml;
   $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
@@ -73,8 +72,7 @@
     line-height: 1.5;
 
     h2,
-    h3,
-    p {
+    h3 {
       margin: 0;
     }
 
