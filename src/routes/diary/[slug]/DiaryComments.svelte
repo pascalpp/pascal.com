@@ -17,7 +17,7 @@
   }
 
   $: commentsEnabled = !isFrontmatterFalse(metadata.comments);
-  $: showArchivedComments = isFrontmatterTrue(metadata.archivedComments) && archivedCommentsHtml;
+  $: showArchivedComments = isFrontmatterTrue(metadata.archivedComments) && Boolean(archivedCommentsHtml);
   $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
