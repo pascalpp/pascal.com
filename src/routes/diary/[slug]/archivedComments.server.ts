@@ -34,6 +34,7 @@ function sanitizeArchivedComments(html: string): string {
     },
     allowedSchemes: ['http', 'https', 'mailto'],
     allowedSchemesAppliedToAttributes: ['href'],
+    allowProtocolRelative: false,
     transformTags: {
       a: sanitizeHtml.simpleTransform('a', { rel: 'nofollow noopener noreferrer' }, true),
     },

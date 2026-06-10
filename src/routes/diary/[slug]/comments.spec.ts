@@ -30,6 +30,7 @@ describe('unwrapArchivedComments', () => {
 <div class="commentbody" onclick="alert(1)">Hello</div>
 <a href="javascript:alert(1)">bad</a>
 <a href=" &#x6a;avascript:alert(1)">encoded</a>
+<a href="//example.com">protocol relative</a>
 <a href="mailto:friend@example.com">mail</a>
 -->`;
 
@@ -42,9 +43,11 @@ describe('unwrapArchivedComments', () => {
     expect(actual).not.toContain('<base');
     expect(actual).not.toContain('onclick');
     expect(actual).not.toMatch(/javascript:/i);
+    expect(actual).not.toContain('//example.com');
     expect(actual).toContain('<div class="commentbody">Hello</div>');
     expect(actual).toContain('<a rel="nofollow noopener noreferrer">bad</a>');
     expect(actual).toContain('<a rel="nofollow noopener noreferrer">encoded</a>');
+    expect(actual).toContain('<a rel="nofollow noopener noreferrer">protocol relative</a>');
     expect(actual).toContain('<a href="mailto:friend@example.com" rel="nofollow noopener noreferrer">mail</a>');
   });
 });

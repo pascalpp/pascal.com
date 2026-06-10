@@ -9,15 +9,16 @@
   export let archivedCommentsHtml: string | undefined = undefined;
 
   $: commentsEnabled = metadata.comments !== false;
+  $: showArchivedComments = commentsEnabled && metadata.archivedComments === true && archivedCommentsHtml;
   $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
 
-{#if (commentsEnabled && (archivedCommentsHtml || showLiveComments)) || metadata.mastodon}
+{#if showArchivedComments || showLiveComments || metadata.mastodon}
   <section class="full-width diary-comments" aria-labelledby="comments-heading">
     <h2 id="comments-heading">Comments</h2>
 
-    {#if commentsEnabled && archivedCommentsHtml}
+    {#if showArchivedComments}
       <section class="diary-comments-archive" aria-labelledby="archived-comments-heading">
         <h3 id="archived-comments-heading">Archived comments</h3>
         <div class="archived-comment-content">
