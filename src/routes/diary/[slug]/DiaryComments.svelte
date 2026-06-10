@@ -12,13 +12,9 @@
     return typeof value === 'string' ? value.toLowerCase() === 'false' : value === false;
   }
 
-  function isFrontmatterTrue(value: boolean | string | undefined) {
-    return typeof value === 'string' ? value.toLowerCase() === 'true' : value === true;
-  }
-
   $: commentsEnabled = !isFrontmatterFalse(metadata.comments);
   $: showArchivedComments =
-    commentsEnabled && isFrontmatterTrue(metadata.archivedComments) && archivedCommentsHtml;
+    commentsEnabled && !isFrontmatterFalse(metadata.archivedComments) && archivedCommentsHtml;
   $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
