@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { dev } from '$app/environment';
   import { page } from '$app/stores';
   import type { PostMetadata } from '../../api/posts/util';
   import PostDiscussionLink from './PostDiscussionLink.svelte';
@@ -10,7 +9,7 @@
   export let archivedCommentsHtml: string | undefined = undefined;
 
   $: commentsEnabled = metadata.comments !== false;
-  $: showLiveComments = commentsEnabled && (isGiscusConfigured || dev);
+  $: showLiveComments = commentsEnabled && isGiscusConfigured;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
 
@@ -29,9 +28,10 @@
 
     {#if showLiveComments}
       <section class="live-comments breakout" aria-labelledby="live-comments-heading">
+        <h3 id="live-comments-heading">Join the discussion</h3>
         <div class="giscus-container">
           {#key slug}
-            {#if commentsEnabled && isGiscusConfigured}
+            {#if showLiveComments}
               <svelte:element
                 this="script"
                 src="https://giscus.app/client.js"
