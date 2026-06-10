@@ -1,3 +1,5 @@
+import sanitizeHtml from 'sanitize-html';
+
 type GiscusConfig = {
   repo: string;
   repoId: string;
@@ -23,13 +25,38 @@ export function unwrapArchivedComments(rawComments: string): string {
 }
 
 function sanitizeArchivedComments(html: string): string {
-  return html
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-    .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
-    .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, '')
-    .replace(/<embed\b[^>]*>/gi, '')
-    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
-    .replace(/\s+(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi, '')
-    .replace(/\s+(href|src)\s*=\s*javascript:[^\s>]+/gi, '');
+  return sanitizeHtml(html, {
+    allowedTags: [
+      'a',
+      'b',
+      'blockquote',
+      'br',
+      'code',
+      'div',
+      'em',
+      'i',
+      'p',
+      'pre',
+      'span',
+      'strong',
+      'ul',
+      'ol',
+      'li',
+    ],
+    allowedAttributes: {
+      a: ['href', 'name', 'rel', 'target', 'title'],
+      div: ['class'],
+      span: ['class'],
+      p: ['class'],
+    },
+    allowedClasses: {
+      div: ['commentbody', 'commentdivider'],
+      span: ['commentauthorbox', 'commentdatebox', 'commentheader', 'commenttimebox'],
+    },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    allowedSchemesAppliedToAttributes: ['href'],
+    transformTags: {
+      a: sanitizeHtml.simpleTransform('a', { rel: 'nofollow noopener noreferrer' }, true),
+    },
+  });
 }
