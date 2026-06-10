@@ -24,7 +24,7 @@ function sanitizeArchivedComments(html: string): string {
       'li',
     ],
     allowedAttributes: {
-      a: ['href', 'name', 'rel', 'target', 'title'],
+      a: ['href', 'rel', 'title'],
       div: ['class'],
       span: ['class'],
     },
