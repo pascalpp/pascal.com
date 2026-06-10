@@ -11,9 +11,3 @@ export const giscusConfig: GiscusConfig = {
   category: 'Diary Comments',
   categoryId: 'DIC_kwDOKDSWSM4C-1ci',
 };
-
-export const isGiscusConfigured =
-  Boolean(giscusConfig.repo) &&
-  Boolean(giscusConfig.repoId) &&
-  Boolean(giscusConfig.category) &&
-  Boolean(giscusConfig.categoryId);

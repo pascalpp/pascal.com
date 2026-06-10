@@ -3,8 +3,8 @@ import { unwrapArchivedComments } from './archivedComments.server';
 
 describe('unwrapArchivedComments', () => {
   it('unwraps archived comments and preserves expected legacy comment markup', () => {
-    const input = `<!--
-<span class="commentheader">1 Comment</span>
+    const input = `<span class="commentheader">1 Comment</span>
+<!--
 <div class="commentdivider">
 <span class="commentauthorbox">Posted by <a href="https://example.com">Raba</a></span>
 <span class="commentdatebox">Monday, April 5, 2004</span>

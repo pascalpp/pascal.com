@@ -2,14 +2,14 @@
   import { page } from '$app/stores';
   import type { PostMetadata } from '../../api/posts/util';
   import PostDiscussionLink from './PostDiscussionLink.svelte';
-  import { giscusConfig, isGiscusConfigured } from './comments';
+  import { giscusConfig } from './comments';
 
   export let slug: string;
   export let metadata: PostMetadata;
   export let archivedCommentsHtml: string | undefined = undefined;
 
   $: commentsEnabled = metadata.comments !== false;
-  $: showLiveComments = commentsEnabled && isGiscusConfigured;
+  $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
 
@@ -31,27 +31,25 @@
         <h3 id="live-comments-heading">Join the discussion</h3>
         <div class="giscus-container">
           {#key slug}
-            {#if showLiveComments}
-              <svelte:element
-                this="script"
-                src="https://giscus.app/client.js"
-                data-repo={giscusConfig.repo}
-                data-repo-id={giscusConfig.repoId}
-                data-category={giscusConfig.category}
-                data-category-id={giscusConfig.categoryId}
-                data-mapping="specific"
-                data-term={`/diary/${slug}`}
-                data-strict="1"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme={giscusThemeUrl}
-                data-lang="en"
-                data-loading="lazy"
-                async
-                crossorigin="anonymous"
-              />
-            {/if}
+            <svelte:element
+              this="script"
+              src="https://giscus.app/client.js"
+              data-repo={giscusConfig.repo}
+              data-repo-id={giscusConfig.repoId}
+              data-category={giscusConfig.category}
+              data-category-id={giscusConfig.categoryId}
+              data-mapping="specific"
+              data-term={`/diary/${slug}`}
+              data-strict="1"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme={giscusThemeUrl}
+              data-lang="en"
+              data-loading="lazy"
+              async
+              crossorigin="anonymous"
+            />
           {/key}
         </div>
       </section>
