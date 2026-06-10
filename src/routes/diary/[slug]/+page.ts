@@ -1,5 +1,11 @@
 import { type PostMetadata, type PostSummary } from '../../api/posts/util';
+import { unwrapArchivedComments } from './comments';
 import type { PageLoad } from './$types';
+
+const archivedCommentFiles = import.meta.glob('/src/lib/diary/**/comments.md', {
+  query: '?raw',
+  import: 'default',
+});
 
 export const load: PageLoad = async ({ fetch, params }) => {
   const response = await fetch(`/api/posts/all`);
@@ -7,6 +13,12 @@ export const load: PageLoad = async ({ fetch, params }) => {
 
   const { slug } = params;
   const post = await import(`../../../lib/diary/${slug}/page.md`);
+  const archivedCommentsLoader = archivedCommentFiles[`/src/lib/diary/${slug}/comments.md`] as
+    | (() => Promise<string>)
+    | undefined;
+  const archivedCommentsHtml = archivedCommentsLoader
+    ? unwrapArchivedComments(await archivedCommentsLoader())
+    : undefined;
   const metadata = post.metadata as PostMetadata;
   const { title, date } = metadata;
   const PostComponent = post.default;
@@ -25,6 +37,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
       title,
       date,
       PostComponent,
+      archivedCommentsHtml,
       metadata,
     },
   };

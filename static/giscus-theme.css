@@ -1,0 +1,19 @@
+@import url('https://giscus.app/themes/light.css');
+
+main {
+  padding-inline: 3rem;
+}
+
+.gsc-reactions {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  width: fit-content;
+  margin-inline: 0 auto;
+
+  > * {
+    margin: 0 !important;
+  }
+}
