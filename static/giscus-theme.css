@@ -12,8 +12,8 @@ main {
   gap: 0.5rem;
   width: fit-content;
   margin-inline: 0 auto;
+}
 
-  > * {
-    margin: 0 !important;
-  }
+.gsc-reactions * {
+  margin: 0 !important;
 }
