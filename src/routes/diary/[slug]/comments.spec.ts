@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { unwrapArchivedComments } from './comments';
+import { unwrapArchivedComments } from './archivedComments.server';
 
 describe('unwrapArchivedComments', () => {
   it('unwraps archived comments and preserves expected legacy comment markup', () => {
