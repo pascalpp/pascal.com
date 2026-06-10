@@ -27,7 +27,6 @@ function sanitizeArchivedComments(html: string): string {
       a: ['href', 'name', 'rel', 'target', 'title'],
       div: ['class'],
       span: ['class'],
-      p: ['class'],
     },
     allowedClasses: {
       div: ['commentbody', 'commentdivider'],
