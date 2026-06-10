@@ -13,8 +13,8 @@ export type PostMetadata = {
   summary?: string;
   updated?: string;
   mastodon?: string;
-  comments?: boolean;
-  archivedComments?: boolean;
+  comments?: boolean | string;
+  archivedComments?: boolean | string;
 };
 
 export type PostFrontMatter = {

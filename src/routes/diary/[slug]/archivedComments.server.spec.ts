@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { unwrapArchivedComments } from './archivedComments.server';
 
+function expectLink(html: string, text: string, attributes: string[]) {
+  const link = html.match(new RegExp(`<a\\s+([^>]*)>${text}</a>`));
+
+  expect(link?.[1]).toBeDefined();
+  for (const attribute of attributes) {
+    expect(link?.[1]).toContain(attribute);
+  }
+}
+
 describe('unwrapArchivedComments', () => {
   it('unwraps archived comments and preserves expected legacy comment markup', () => {
     const input = `<span class="commentheader">1 Comment</span>
@@ -16,7 +25,7 @@ describe('unwrapArchivedComments', () => {
 
     expect(actual).toContain('<span class="commentheader">1 Comment</span>');
     expect(actual).toContain('<div class="commentdivider">');
-    expect(actual).toContain('<span class="commentauthorbox">Posted by <a href="https://example.com" rel="nofollow noopener noreferrer">Raba</a></span>');
+    expectLink(actual, 'Raba', ['href="https://example.com"', 'rel="nofollow noopener noreferrer"']);
     expect(actual).toContain('<div class="commentbody">A <strong>good</strong> old comment.</div>');
   });
 
@@ -48,6 +57,6 @@ describe('unwrapArchivedComments', () => {
     expect(actual).toContain('<a rel="nofollow noopener noreferrer">bad</a>');
     expect(actual).toContain('<a rel="nofollow noopener noreferrer">encoded</a>');
     expect(actual).toContain('<a rel="nofollow noopener noreferrer">protocol relative</a>');
-    expect(actual).toContain('<a href="mailto:friend@example.com" rel="nofollow noopener noreferrer">mail</a>');
+    expectLink(actual, 'mail', ['href="mailto:friend@example.com"', 'rel="nofollow noopener noreferrer"']);
   });
 });

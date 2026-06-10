@@ -8,8 +8,17 @@
   export let metadata: PostMetadata;
   export let archivedCommentsHtml: string | undefined = undefined;
 
-  $: commentsEnabled = metadata.comments !== false;
-  $: showArchivedComments = commentsEnabled && metadata.archivedComments === true && archivedCommentsHtml;
+  function isFrontmatterFalse(value: boolean | string | undefined) {
+    return typeof value === 'string' ? value.toLowerCase() === 'false' : value === false;
+  }
+
+  function isFrontmatterTrue(value: boolean | string | undefined) {
+    return typeof value === 'string' ? value.toLowerCase() === 'true' : value === true;
+  }
+
+  $: commentsEnabled = !isFrontmatterFalse(metadata.comments);
+  $: showArchivedComments =
+    commentsEnabled && isFrontmatterTrue(metadata.archivedComments) && archivedCommentsHtml;
   $: showLiveComments = commentsEnabled;
   $: giscusThemeUrl = `//${$page.url.host}/giscus-theme.css`;
 </script>
