@@ -10,7 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,500;1,200;1,500&display=swap"
   />
 
-  <style lang="less">
+  <style>
     :root,
     body {
       background-color: #f0f0f0;
