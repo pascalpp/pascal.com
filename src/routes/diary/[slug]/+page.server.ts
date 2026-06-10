@@ -14,8 +14,8 @@ type PostModule = {
 
 const archivedCommentsHtmlBySlug = new Map<string, Promise<string>>();
 
-function isFrontmatterFalse(value: boolean | string | undefined) {
-  return typeof value === 'string' ? value.toLowerCase() === 'false' : value === false;
+function isFrontmatterTrue(value: boolean | string | undefined) {
+  return typeof value === 'string' ? value.toLowerCase() === 'true' : value === true;
 }
 
 function loadArchivedCommentsHtml(slug: string, loader: () => Promise<string>) {
@@ -47,9 +47,9 @@ export const load: PageServerLoad = async ({ params }) => {
 
   const postLoader = postFiles[`/src/lib/diary/${params.slug}/page.md`] as (() => Promise<PostModule>) | undefined;
   const post = await postLoader?.();
-  const archivedCommentsHtml = isFrontmatterFalse(post?.metadata.archivedComments)
-    ? undefined
-    : await loadArchivedCommentsHtml(params.slug, archivedCommentsLoader);
+  const archivedCommentsHtml = isFrontmatterTrue(post?.metadata.archivedComments)
+    ? await loadArchivedCommentsHtml(params.slug, archivedCommentsLoader)
+    : undefined;
 
   return {
     archivedCommentsHtml,
