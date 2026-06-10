@@ -116,7 +116,7 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
     summary: record.summary,
     updated: record.updated,
     mastodon: record.mastodon,
-    comments: record.comments === undefined ? undefined : record.comments !== 'false',
+    comments: record.comments === undefined ? undefined : record.comments.toLowerCase() !== 'false',
   };
 
   return metadata;

@@ -54,9 +54,6 @@
             {/if}
           {/key}
         </div>
-        {#if dev && !isGiscusConfigured}
-          <p class="setup-note">Giscus needs a GitHub Discussions category ID before live comments can load.</p>
-        {/if}
       </section>
     {/if}
 
@@ -113,12 +110,6 @@
   .giscus-container {
     min-height: 160px;
   }
-
-  .setup-note {
-    color: rgb(0 0 0 / 0.58);
-    font-size: 13px;
-  }
-
   :global(.diary-comments-archive .commentheader) {
     display: none;
   }

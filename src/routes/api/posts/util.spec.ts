@@ -97,6 +97,14 @@ describe('parseFrontMatterLines', () => {
     expect(actual.comments).toBe(false);
   });
 
+  it('should parse false comments frontmatter case-insensitively', () => {
+    const input = ['title: Comments off', 'date: 2004-04-20T03:51:00.000Z', 'comments: FALSE'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.comments).toBe(false);
+  });
+
   it('should return true comments metadata when comments frontmatter is true', () => {
     const input = ['title: Comments on', 'date: 2004-04-20T03:51:00.000Z', 'comments: true'];
 
