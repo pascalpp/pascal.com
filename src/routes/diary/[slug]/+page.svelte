@@ -11,10 +11,12 @@
   export let data;
 
   $: ({ post, next, prev } = data);
-  $: ({ title, metadata, PostComponent } = post);
+  $: ({ title, metadata, PostComponent, ogImageUrl: postOgImageUrl } = post);
   $: ({ tags, status = 'published', date, updated, summary } = metadata);
   $: postUrl = `${$page.url.origin}/diary/${$page.params.slug}`;
   $: previewImageUrl = `${$page.url.origin}/diary/preview/${$page.params.slug}?v=${imageVersion}`;
+  $: ogImageUrl = postOgImageUrl ? new URL(postOgImageUrl, $page.url.origin).href : previewImageUrl;
+  $: usesGeneratedPreviewImage = !postOgImageUrl;
 
   const dateFormatter = new Intl.DateTimeFormat('en', {
     weekday: 'long',
@@ -33,9 +35,11 @@
   <meta property="og:title" content={title} />
   <meta property="og:type" content="article" />
   <meta property="og:url" content={postUrl} />
-  <meta property="og:image" content={previewImageUrl} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content={ogImageUrl} />
+  {#if usesGeneratedPreviewImage}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+  {/if}
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 

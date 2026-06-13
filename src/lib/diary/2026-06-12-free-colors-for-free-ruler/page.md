@@ -4,6 +4,7 @@ date: 2026-06-12T07:22:29.559Z
 summary: Just in time for halfway through Pride Month, Free Ruler supports custom colors.
 tags: [free ruler, mac]
 status: published
+ogimage: ./custom-colors.png
 ---
 
 ## Happy Pride Month!

@@ -146,4 +146,12 @@ describe('parseFrontMatterLines', () => {
 
     expect(actual.archivedComments).toBe(false);
   });
+
+  it('should parse ogimage frontmatter', () => {
+    const input = ['title: Post with image', 'date: 2004-04-20T03:51:00.000Z', 'ogimage: ./custom-colors.png'];
+
+    const actual = parseFrontMatterLines(input);
+
+    expect(actual.ogimage).toBe('./custom-colors.png');
+  });
 });

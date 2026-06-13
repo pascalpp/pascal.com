@@ -12,6 +12,7 @@ export type PostMetadata = {
   tags?: string[];
   summary?: string;
   updated?: string;
+  ogimage?: string;
   mastodon?: string;
   comments?: boolean | string;
   archivedComments?: boolean | string;
@@ -24,6 +25,7 @@ export type PostFrontMatter = {
   tags?: string;
   summary?: string;
   updated?: string;
+  ogimage?: string;
   mastodon?: string;
   comments?: string;
   archivedComments?: string;
@@ -117,6 +119,7 @@ export function parseFrontMatterLines(lines: string[]): PostMetadata {
       .map(tag => tag.trim()),
     summary: record.summary,
     updated: record.updated,
+    ogimage: record.ogimage,
     mastodon: record.mastodon,
     comments: record.comments === undefined ? undefined : record.comments.toLowerCase() !== 'false',
     archivedComments:
