@@ -43,10 +43,10 @@ async function render(posts: PostSummary[]) {
     `<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
       <channel>
-        <title>${title}</title>
-        <description>${description}</description>
-        <link>${baseURL}</link>
-        <atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
+        <title>${escapeXmlText(title)}</title>
+        <description>${escapeXmlText(description)}</description>
+        <link>${escapeXmlText(baseURL)}</link>
+        <atom:link href="${escapeXmlAttribute(`${baseURL}/rss`)}" rel="self" type="application/rss+xml"/>
         ${renderedPosts.join('')}
       </channel>
     </rss>`
@@ -54,7 +54,7 @@ async function render(posts: PostSummary[]) {
 }
 
 async function renderPost(post: PostSummary) {
-  const tags = post.metadata.tags?.map((tag) => `<category>${tag}</category>`).join('') ?? '';
+  const tags = post.metadata.tags?.map((tag) => `<category>${escapeXmlText(tag)}</category>`).join('') ?? '';
   const tagDescription = `Tags: ${post.metadata.tags?.join(', ') ?? 'none'}`;
   const summary = post.metadata.summary ?? tagDescription;
   const imageUrl = await resolvePostImageUrl(post.slug, post.metadata.ogimage);
@@ -64,12 +64,16 @@ async function renderPost(post: PostSummary) {
     : '';
 
   return `<item>
-    <guid isPermaLink="true">${baseURL}/${post.slug}</guid>
-    <title>${post.metadata.title}</title>
-    <link>${baseURL}/${post.slug}</link>${tags}
-    <description>${summary}</description>${mediaContent}
+    <guid isPermaLink="true">${escapeXmlText(`${baseURL}/${post.slug}`)}</guid>
+    <title>${escapeXmlText(post.metadata.title)}</title>
+    <link>${escapeXmlText(`${baseURL}/${post.slug}`)}</link>${tags}
+    <description>${escapeXmlText(summary)}</description>${mediaContent}
     <pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
     </item>`;
+}
+
+function escapeXmlText(value: string) {
+  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
 function escapeXmlAttribute(value: string) {
