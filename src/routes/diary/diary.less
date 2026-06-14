@@ -217,12 +217,6 @@
       align-items: center;
     }
 
-    :has(> .polaroid) {
-      --deg: -1.5deg;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
     .polaroid {
       padding: 0.75em;
       background-color: white;
@@ -231,7 +225,8 @@
       border: 1px solid rgb(0 0 0 / 0.2);
       translate: -0.25em -0.25em;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-      transform: translateX(0.1em) translateY(var(--shadow-offset, 0.5em)) rotate(calc(var(--deg, 0deg) / 2));
+      transform: translateX(0.1em) translateY(var(--shadow-offset, 0.5em))
+        rotate(calc(var(--deg, var(--polaroid-deg, -1.5deg)) / 2));
       margin-block: 1em;
 
       @media @mobile {
@@ -240,61 +235,25 @@
       }
     }
 
-    // :has(.polaroid):nth-of-type(odd) {
-    //   --deg: 1.5deg;
-    // }
-    // got to be a better way to do this
-    :has(.polaroid) {
-      ~ :has(.polaroid) {
-        --deg: 1.5deg;
-        ~ :has(.polaroid) {
-          --deg: -1.5deg;
-          ~ :has(.polaroid) {
-            --deg: 1.5deg;
-            ~ :has(.polaroid) {
-              --deg: -1.5deg;
-              ~ :has(.polaroid) {
-                --deg: 1.5deg;
-                ~ :has(.polaroid) {
-                  --deg: -1.5deg;
-                  ~ :has(.polaroid) {
-                    --deg: 1.5deg;
-                    ~ :has(.polaroid) {
-                      --deg: -1.5deg;
-                      ~ :has(.polaroid) {
-                        --deg: 1.5deg;
-                        ~ :has(.polaroid) {
-                          --deg: -1.5deg;
-                          ~ :has(.polaroid) {
-                            --deg: 1.5deg;
-                            ~ :has(.polaroid) {
-                              --deg: -1.5deg;
-                              ~ :has(.polaroid) {
-                                --deg: 1.5deg;
-                                ~ :has(.polaroid) {
-                                  --deg: -1.5deg;
-                                  ~ :has(.polaroid) {
-                                    --deg: 1.5deg;
-                                    ~ :has(.polaroid) {
-                                      --deg: -1.5deg;
-                                      ~ :has(.polaroid) {
-                                        --deg: 1.5deg;
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+    :has(> .polaroid) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    > .polaroid:nth-child(even of .polaroid),
+    > :has(.polaroid):nth-child(even of :has(.polaroid)),
+    :has(> .polaroid):nth-child(even of :has(> .polaroid)) {
+      --polaroid-deg: 1.5deg;
+    }
+
+    :has(> .polaroid:nth-child(2 of .polaroid)) {
+      > .polaroid:nth-child(odd of .polaroid) {
+        --polaroid-deg: -1.5deg;
+      }
+
+      > .polaroid:nth-child(even of .polaroid) {
+        --polaroid-deg: 1.5deg;
       }
     }
 
