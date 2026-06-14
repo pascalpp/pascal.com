@@ -8,6 +8,8 @@
     description: string;
     snippet: string;
     classValue?: string;
+    demoClass?: string;
+    demoStyle?: string;
   };
 
   const layoutHelpers: Helper[] = [
@@ -99,6 +101,7 @@ Content inside this band can still use diary grid helpers.
       id: 'polaroid',
       name: '.polaroid',
       token: '.polaroid',
+      demoClass: 'polaroid',
       description: 'Adds the white photo border, small rotation, and shadow used throughout older photo posts.',
       snippet: `![Description](./image.png){: .polaroid loading=lazy width=800 }`,
     },
@@ -106,6 +109,7 @@ Content inside this band can still use diary grid helpers.
       id: 'centered',
       name: '.centered',
       token: '.centered',
+      demoClass: 'centered',
       description: 'Centers the item by turning its parent into a small flex column.',
       snippet: `![Description](./image.png){: .centered loading=lazy width=600 }`,
     },
@@ -113,6 +117,7 @@ Content inside this band can still use diary grid helpers.
       id: 'bordered',
       name: '.bordered',
       token: '.bordered',
+      demoClass: 'bordered',
       description: 'Adds a subtle border to screenshots and UI images.',
       snippet: `![Description](./screenshot.png){: .bordered loading=lazy }`,
     },
@@ -120,6 +125,7 @@ Content inside this band can still use diary grid helpers.
       id: 'padded',
       name: '.padded',
       token: '.padded',
+      demoClass: 'padded bordered',
       description: 'Adds white padding behind transparent or edge-to-edge images.',
       snippet: `![Description](./image.png){: .padded loading=lazy }`,
     },
@@ -127,8 +133,18 @@ Content inside this band can still use diary grid helpers.
       id: 'polaroid-centered',
       name: '.polaroid .centered',
       token: '.polaroid .centered',
+      demoClass: 'polaroid centered',
       description: 'A common combination for a centered, framed image.',
       snippet: `![Description](./image.png){: .polaroid .centered loading=lazy width=800 }`,
+    },
+    {
+      id: 'custom-style',
+      name: 'custom style',
+      token: 'style=""',
+      demoClass: 'polaroid',
+      demoStyle: '--polaroid-deg: 5deg; --shadow-offset: 0.75em;',
+      description: 'Sets one-off CSS variables or inline styles in the Markdown image attributes.',
+      snippet: `![Description](./image.png){: .polaroid style="--polaroid-deg: 5deg; --shadow-offset: 0.75em;" loading=lazy width=800 }`,
     },
   ];
 
@@ -283,45 +299,37 @@ This aside can sit beside the next few rows of content.
       <p>These are written in Markdown image attributes and can be stacked together.</p>
     </div>
 
-    <div class="image-demo-grid bleed-right">
-      <figure class="image-demo">
-        <img class="sample-image polaroid" src={sampleImage} width="360" height="224" alt="Sample landscape" />
-        <figcaption><code>.polaroid</code></figcaption>
-      </figure>
-
-      <figure class="image-demo">
-        <img class="sample-image bordered" src={sampleImage} width="360" height="224" alt="Sample landscape" />
-        <figcaption><code>.bordered</code></figcaption>
-      </figure>
-
-      <figure class="image-demo">
-        <img class="sample-image padded bordered" src={sampleImage} width="360" height="224" alt="Sample landscape" />
-        <figcaption><code>.padded .bordered</code></figcaption>
-      </figure>
-
-      <figure class="image-demo">
-        <img class="sample-image polaroid centered" src={sampleImage} width="360" height="224" alt="Sample landscape" />
-        <figcaption><code>.polaroid .centered</code></figcaption>
-      </figure>
-    </div>
-
-    <div class="helper-list">
+    <div class="image-helper-list bleed-right">
       {#each imageHelpers as helper}
-        <section class="helper-card" aria-labelledby={`${helper.id}-title`}>
-          <div class="helper-card-header">
-            <h3 id={`${helper.id}-title`}><code>{helper.name}</code></h3>
-            <div class="copy-row">
-              <button
-                type="button"
-                class:copied={copiedKey === `${helper.id}-snippet`}
-                on:click={() => copyText(`${helper.id}-snippet`, helper.snippet)}
-              >
-                {copiedKey === `${helper.id}-snippet` ? 'Copied' : 'Copy snippet'}
-              </button>
+        <section class="image-helper-row" aria-labelledby={`${helper.id}-title`}>
+          <figure class="image-demo">
+            <img
+              class={`sample-image ${helper.demoClass ?? ''}`}
+              src={sampleImage}
+              width="360"
+              height="224"
+              alt="Sample landscape"
+              style={helper.demoStyle}
+            />
+            <figcaption><code>{helper.name}</code></figcaption>
+          </figure>
+
+          <div class="image-helper-snippet">
+            <div class="helper-card-header">
+              <h3 id={`${helper.id}-title`}><code>{helper.name}</code></h3>
+              <div class="copy-row">
+                <button
+                  type="button"
+                  class:copied={copiedKey === `${helper.id}-snippet`}
+                  on:click={() => copyText(`${helper.id}-snippet`, helper.snippet)}
+                >
+                  {copiedKey === `${helper.id}-snippet` ? 'Copied' : 'Copy snippet'}
+                </button>
+              </div>
             </div>
+            <p>{helper.description}</p>
+            <pre class="snippet"><code>{helper.snippet}</code></pre>
           </div>
-          <p>{helper.description}</p>
-          <pre class="snippet"><code>{helper.snippet}</code></pre>
         </section>
       {/each}
     </div>
@@ -410,6 +418,7 @@ This aside can sit beside the next few rows of content.
   .copy-message,
   .section-header p,
   .helper-card p,
+  .image-helper-snippet p,
   .image-demo figcaption {
     font-size: 14px;
     line-height: 1.35;
@@ -559,17 +568,41 @@ This aside can sit beside the next few rows of content.
     white-space: pre-wrap;
   }
 
-  .image-demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-    gap: 1rem;
-    align-items: start;
+  .image-helper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
     padding-right: 1rem;
+  }
+
+  .image-helper-row {
+    display: grid;
+    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 1.25rem;
+    min-width: 0;
   }
 
   .image-demo {
     min-width: 0;
+    margin: 0;
     gap: 0.35rem;
+    justify-content: center;
+  }
+
+  .image-helper-snippet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 0.9rem;
+    background-color: rgb(255 255 255 / 0.82);
+    border: 1px solid rgb(0 0 0 / 0.1);
+    border-radius: 6px;
+
+    h3 {
+      font-size: 1rem;
+    }
   }
 
   .sample-image {
@@ -603,6 +636,11 @@ This aside can sit beside the next few rows of content.
 
     .helper-card-header {
       flex-direction: column;
+    }
+
+    .image-helper-row {
+      grid-template-columns: 1fr;
+      align-items: start;
     }
 
     .copy-row {
