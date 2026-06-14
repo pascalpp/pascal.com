@@ -48,19 +48,6 @@ Extra emphasis without going edge to edge.
 </p>`,
     },
     {
-      id: 'full-width',
-      name: '.full-width',
-      token: '.full-width',
-      classValue: 'full-width',
-      description:
-        'Creates a full grid band that still provides the normal content, breakout, and bleed columns inside it.',
-      snippet: `<div class="full-width">
-
-Content inside this band can still use diary grid helpers.
-
-</div>`,
-    },
-    {
       id: 'bleed',
       name: '.bleed',
       token: '.bleed',
@@ -91,6 +78,23 @@ Content inside this band can still use diary grid helpers.
       snippet: `<div class="bleed-right">
 
 <MyWideDemo />
+
+</div>`,
+    },
+    {
+      id: 'full-width',
+      name: '.full-width',
+      token: '.full-width',
+      classValue: 'full-width',
+      description:
+        'Creates a full grid band that still provides the normal content, breakout, and bleed columns inside it.',
+      snippet: `<div class="full-width">
+
+Content inside this band can still use diary grid helpers.
+
+<aside style="grid-column: content-end / full-width-end">
+  A side note can sit in the right rail of a .full-width element.
+</aside>
 
 </div>`,
     },
@@ -148,30 +152,19 @@ Content inside this band can still use diary grid helpers.
     },
   ];
 
-  const structureHelpers: Helper[] = [
-    {
-      id: 'aside',
-      name: '<aside>',
-      token: '<aside>',
-      description: 'Creates a side note on wide screens and a bordered inset note on smaller screens.',
-      snippet: `<aside style="--aside-span: 3">
+  const asideHelper: Helper = {
+    id: 'aside',
+    name: '<aside>',
+    token: '<aside>',
+    description: 'Creates a side note on wide screens and a bordered inset note on smaller screens.',
+    snippet: `<aside style="--aside-span: 3">
 
-### Side note
-
-This aside can sit beside the next few rows of content.
+### aside content
 
 </aside>`,
-    },
-    {
-      id: 'sans',
-      name: '.sans',
-      token: '.sans',
-      description: 'Switches a small bit of diary content to the site sans-serif face.',
-      snippet: `<summary class="sans">Details label</summary>`,
-    },
-  ];
+  };
 
-  const allHelpers = [...layoutHelpers, ...imageHelpers, ...structureHelpers];
+  const allHelpers = [...layoutHelpers, ...imageHelpers];
 
   const sampleImageSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
   <defs>
@@ -193,7 +186,7 @@ This aside can sit beside the next few rows of content.
   const sampleImage = `data:image/svg+xml,${encodeURIComponent(sampleImageSvg)}`;
 
   let copiedKey = '';
-  let copyMessage = '';
+  let quickCopyValue = '';
   let resetTimer: ReturnType<typeof setTimeout> | undefined;
 
   onDestroy(() => {
@@ -206,16 +199,23 @@ This aside can sit beside the next few rows of content.
     try {
       await navigator.clipboard.writeText(text);
       copiedKey = key;
-      copyMessage = 'Copied to clipboard';
     } catch {
       copiedKey = '';
-      copyMessage = 'Copy failed';
     }
 
     resetTimer = setTimeout(() => {
       copiedKey = '';
-      copyMessage = '';
     }, 1800);
+  }
+
+  async function copyTokenFromSelect(event: Event) {
+    const select = event.currentTarget as HTMLSelectElement;
+    const helper = allHelpers.find(({ id }) => id === select.value);
+
+    if (!helper) return;
+
+    await copyText(`${helper.id}-token`, helper.token);
+    quickCopyValue = '';
   }
 </script>
 
@@ -226,69 +226,85 @@ This aside can sit beside the next few rows of content.
 
 <article class="styleguide full-width">
   <header class="guide-header">
-    <h1>Diary Style Guide</h1>
+    <div class="guide-title-row">
+      <h1>Diary Style Guide</h1>
+
+      <select
+        class="quick-copy-select"
+        aria-label="Quick copy helper token"
+        bind:value={quickCopyValue}
+        on:change={copyTokenFromSelect}
+      >
+        <option value="">Quick copy</option>
+        {#each allHelpers as helper}
+          <option value={helper.id}>{helper.name}</option>
+        {/each}
+      </select>
+    </div>
     <p>
       A pocket reference for the classes and tiny HTML patterns that make diary posts wider, framed, centered, or tucked
       into the margins.
     </p>
-    <p class="copy-message sans" aria-live="polite">{copyMessage}</p>
   </header>
 
-  <section class="guide-section quick-reference full-width" aria-labelledby="quick-reference-heading">
-    <div class="section-header">
-      <h2 id="quick-reference-heading">Quick copy</h2>
-      <p>Copy a token for Markdown attributes or a class list, then grab the full snippet from the cards below.</p>
-    </div>
-
-    <div class="token-grid bleed-right">
-      {#each allHelpers as helper}
-        <button
-          type="button"
-          class="token-button"
-          class:copied={copiedKey === `${helper.id}-token`}
-          on:click={() => copyText(`${helper.id}-token`, helper.token)}
-        >
-          <code>{helper.name}</code>
-          <span>{copiedKey === `${helper.id}-token` ? 'Copied' : 'Copy token'}</span>
-        </button>
-      {/each}
-    </div>
-  </section>
-
   <section class="guide-section layout-section full-width" aria-labelledby="layout-heading">
-    <div class="section-header">
-      <h2 id="layout-heading">Layout width helpers</h2>
-      <p>These classes work when the element is a grid item inside diary content.</p>
-    </div>
-
     <div class="layout-map full-width" aria-label="Layout helper width examples">
-      <p class="content-sample">Normal content column</p>
+      <h4>Normal content column</h4>
 
-      {#each layoutHelpers as helper}
-        <div class={`demo-band ${helper.classValue ?? ''}`}>
-          <span>{helper.name}</span>
-        </div>
-      {/each}
-    </div>
-
-    <div class="helper-list bleed-right">
-      {#each layoutHelpers as helper}
-        <section class="helper-card" aria-labelledby={`${helper.id}-title`}>
-          <div class="helper-card-header">
-            <h3 id={`${helper.id}-title`}><code>{helper.name}</code></h3>
-            <div class="copy-row">
-              <button
-                type="button"
-                class:copied={copiedKey === `${helper.id}-snippet`}
-                on:click={() => copyText(`${helper.id}-snippet`, helper.snippet)}
-              >
-                {copiedKey === `${helper.id}-snippet` ? 'Copied' : 'Copy snippet'}
-              </button>
-            </div>
+      <aside style="--aside-span: 3">
+        <div class="helper-card-header">
+          <h3 id="aside-title"><code>aside</code></h3>
+          <div class="copy-row">
+            <button
+              type="button"
+              class:copied={copiedKey === `${asideHelper.id}-snippet`}
+              on:click={() => copyText(`${asideHelper.id}-snippet`, asideHelper.snippet)}
+            >
+              {copiedKey === `${asideHelper.id}-snippet` ? 'Copied' : 'Copy snippet'}
+            </button>
           </div>
-          <p>{helper.description}</p>
-          <pre class="snippet"><code>{helper.snippet}</code></pre>
-        </section>
+        </div>
+        <p>{asideHelper.description}</p>
+        <pre class="snippet"><code>{asideHelper.snippet}</code></pre>
+      </aside>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <p>
+        Place the aside after the first element you want it to sit beside. By default it will space 3 rows of content.
+        Override by setting the <code>--aside-span</code> CSS variable.
+      </p>
+
+      {#each layoutHelpers as helper}
+        <div class={`demo-band ${helper.classValue ?? ''}`} role="group" aria-labelledby={`${helper.id}-title`}>
+          <div class="layout-helper-header">
+            <div>
+              <h3 id={`${helper.id}-title`}><code>{helper.name}</code></h3>
+              <p>{helper.description}</p>
+            </div>
+
+            <button
+              type="button"
+              class:copied={copiedKey === `${helper.id}-snippet`}
+              on:click={() => copyText(`${helper.id}-snippet`, helper.snippet)}
+            >
+              {copiedKey === `${helper.id}-snippet` ? 'Copied' : 'Copy snippet'}
+            </button>
+          </div>
+
+          {#if helper.id === 'full-width'}
+            <aside class="full-width-demo-aside">
+              Children of a .full-width element can participate in the diary grid layout as well.
+            </aside>
+          {/if}
+
+          <pre class="snippet layout-snippet"><code>{helper.snippet}</code></pre>
+        </div>
       {/each}
     </div>
   </section>
@@ -334,64 +350,11 @@ This aside can sit beside the next few rows of content.
       {/each}
     </div>
   </section>
-
-  <section class="guide-section structure-section full-width" aria-labelledby="structure-heading">
-    <div class="section-header">
-      <h2 id="structure-heading">Structural helpers</h2>
-      <p>A few post patterns are element-based instead of class-only.</p>
-    </div>
-
-    <div class="structure-demo full-width">
-      <p>
-        This paragraph is normal diary content. On wider screens, the aside can move into the right rail while this
-        paragraph keeps the standard reading measure.
-      </p>
-
-      <aside style="--aside-span: 3">
-        <h3>Aside</h3>
-        <p>Use an aside for a side note that belongs near the surrounding paragraph but should not interrupt it.</p>
-      </aside>
-
-      <details open>
-        <summary class="sans">Details label using .sans</summary>
-        <p>The sans helper is handy for UI-ish labels inside otherwise serif diary prose.</p>
-      </details>
-    </div>
-
-    <div class="helper-list">
-      {#each structureHelpers as helper}
-        <section class="helper-card" aria-labelledby={`${helper.id}-title`}>
-          <div class="helper-card-header">
-            <h3 id={`${helper.id}-title`}><code>{helper.name}</code></h3>
-            <div class="copy-row">
-              <button
-                type="button"
-                class:copied={copiedKey === `${helper.id}-token`}
-                on:click={() => copyText(`${helper.id}-token`, helper.token)}
-              >
-                {copiedKey === `${helper.id}-token` ? 'Copied' : 'Copy token'}
-              </button>
-              <button
-                type="button"
-                class:copied={copiedKey === `${helper.id}-snippet`}
-                on:click={() => copyText(`${helper.id}-snippet`, helper.snippet)}
-              >
-                {copiedKey === `${helper.id}-snippet` ? 'Copied' : 'Copy snippet'}
-              </button>
-            </div>
-          </div>
-          <p>{helper.description}</p>
-          <pre class="snippet"><code>{helper.snippet}</code></pre>
-        </section>
-      {/each}
-    </div>
-  </section>
 </article>
 
 <style lang="less">
   .styleguide {
-    padding-top: 1rem;
-    gap: 1.5rem;
+    row-gap: 1.5rem;
   }
 
   .guide-header,
@@ -399,35 +362,29 @@ This aside can sit beside the next few rows of content.
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+    margin-top: 1rem;
   }
 
   .guide-header {
-    padding-bottom: 0.5rem;
+    position: relative;
 
     h1 {
-      font-size: 4.4rem;
-      line-height: 0.95;
-    }
-
-    p:not(.eyebrow, .copy-message) {
-      max-width: 54ch;
+      font-size: 3rem;
     }
   }
 
-  .eyebrow,
-  .copy-message,
+  .guide-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
   .section-header p,
   .helper-card p,
   .image-helper-snippet p,
   .image-demo figcaption {
-    font-size: 14px;
-    line-height: 1.35;
     color: rgb(0 0 0 / 0.65);
-  }
-
-  .copy-message {
-    min-height: 1.35em;
-    color: color-mix(in srgb, var(--blue) 70%, black);
   }
 
   .guide-section {
@@ -440,23 +397,11 @@ This aside can sit beside the next few rows of content.
     }
   }
 
-  .token-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding-right: 1rem;
-  }
-
-  .token-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    min-height: 2.15rem;
-    margin: 0;
-
-    span {
-      color: rgb(0 0 0 / 0.62);
-    }
+  .quick-copy-select {
+    border-radius: 4px;
+    color: black;
+    font: menu;
+    font-size: 1rem;
   }
 
   button.copied {
@@ -472,28 +417,34 @@ This aside can sit beside the next few rows of content.
 
     grid-column: full-width;
     padding-block: 1rem;
-    border-block: 1px solid rgb(0 0 0 / 0.12);
-    background: linear-gradient(90deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0)), rgb(229 229 223 / 0.55);
   }
 
   .content-sample,
   .demo-band {
     border: 1px solid rgb(0 0 0 / 0.12);
     border-radius: 6px;
-    font-family: var(--sans-font);
-    font-size: 14px;
-    line-height: 3rem;
-    padding-left: 1rem;
+    padding-inline: 1rem;
   }
 
   .content-sample {
+    line-height: 3rem;
     background-color: rgb(255 255 255 / 0.8);
     color: rgb(0 0 0 / 0.65);
   }
 
   .demo-band {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+    padding-block: 0.9rem;
+    line-height: 1.35;
     background-color: rgb(213 231 246 / 0.82);
     color: rgb(21 54 75);
+
+    > :not(.full-width-demo-aside) {
+      grid-column: content;
+    }
 
     &.breakout-left,
     &.breakout-right {
@@ -502,6 +453,8 @@ This aside can sit beside the next few rows of content.
     }
 
     &.full-width {
+      display: grid;
+      grid-template-columns: subgrid;
       background-color: rgb(250 238 191 / 0.92);
       color: rgb(87 64 24);
     }
@@ -513,9 +466,44 @@ This aside can sit beside the next few rows of content.
       color: rgb(90 42 42);
     }
 
-    span {
-      grid-column: content;
+    p {
+      margin-top: 0.35rem;
+      line-height: 1.35;
+      opacity: 0.78;
     }
+  }
+
+  .full-width-demo-aside {
+    grid-column: content-end / full-width-end;
+    grid-row: span 2;
+    align-self: start;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    max-width: 28ch;
+    border-left: 1px solid rgb(87 64 24 / 0.28);
+    color: rgb(87 64 24 / 0.78);
+  }
+
+  .layout-helper-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-width: 0;
+
+    > div {
+      min-width: 0;
+    }
+
+    button {
+      flex: 0 0 auto;
+    }
+  }
+
+  .layout-snippet {
+    background-color: rgb(255 255 255 / 0.72);
+    border: 1px solid rgb(0 0 0 / 0.1);
+    color: rgb(0 0 0 / 0.82);
   }
 
   .helper-list {
@@ -534,10 +522,6 @@ This aside can sit beside the next few rows of content.
     background-color: rgb(255 255 255 / 0.74);
     border: 1px solid rgb(0 0 0 / 0.1);
     border-radius: 6px;
-
-    h3 {
-      font-size: 1rem;
-    }
   }
 
   .helper-card-header {
@@ -552,7 +536,6 @@ This aside can sit beside the next few rows of content.
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 0.4rem;
-    font-family: var(--sans-font);
   }
 
   .snippet {
@@ -563,7 +546,6 @@ This aside can sit beside the next few rows of content.
     background-color: rgb(30 36 41);
     color: rgb(246 247 248);
     font-family: var(--mono-font);
-    font-size: 12px;
     line-height: 1.45;
     white-space: pre-wrap;
   }
@@ -599,10 +581,6 @@ This aside can sit beside the next few rows of content.
     background-color: rgb(255 255 255 / 0.82);
     border: 1px solid rgb(0 0 0 / 0.1);
     border-radius: 6px;
-
-    h3 {
-      font-size: 1rem;
-    }
   }
 
   .sample-image {
@@ -612,17 +590,6 @@ This aside can sit beside the next few rows of content.
 
   .structure-demo {
     row-gap: 0.75rem;
-
-    details {
-      padding: 0.75rem 0.9rem;
-      background-color: rgb(255 255 255 / 0.68);
-      border: 1px solid rgb(0 0 0 / 0.1);
-      border-radius: 6px;
-    }
-
-    summary {
-      cursor: pointer;
-    }
   }
 
   @media @mobile {
@@ -630,17 +597,23 @@ This aside can sit beside the next few rows of content.
       padding-top: 0;
     }
 
-    .guide-header h1 {
-      font-size: 2.8rem;
-    }
-
     .helper-card-header {
       flex-direction: column;
+    }
+
+    .quick-copy-select {
+      max-width: 100%;
     }
 
     .image-helper-row {
       grid-template-columns: 1fr;
       align-items: start;
+    }
+
+    .full-width-demo-aside {
+      grid-column: content;
+      grid-row: auto;
+      margin-inline: 0;
     }
 
     .copy-row {
