@@ -43,8 +43,9 @@
     </h1>
 
     {#if dev}
-      <p>
-        <button type="button" on:click={onClickNewPost}>New post</button>
+      <p class="dev-actions">
+        <button type="button" on:click={onClickNewPost}>New</button>
+        <a class="button-link" href="/diary/styleguide">Style Guide</a>
       </p>
     {/if}
 
@@ -114,6 +115,39 @@
     a[href='/'] {
       font-family: var(--sans-font);
       font-size: 16px;
+    }
+
+    .dev-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+    }
+
+    .button-link {
+      font-family: var(--sans-font);
+      font-weight: normal;
+      font-size: 13px;
+      padding-block: 2px;
+      padding-inline: 8px;
+      background-color: rgba(255 255 255 / 0.9);
+      color: black;
+      border-radius: 4px;
+      border: 1px solid rgba(0 0 0 / 0.3);
+      box-shadow: 0px 1px 0 0px hsla(0 0% 0% / 0.2);
+
+      &:hover {
+        border-color: hsla(0 0% 0% / 0.5);
+      }
+
+      &:focus {
+        outline: 1px solid black;
+      }
+
+      &:active {
+        box-shadow: none;
+        transform: translate(0px, 1px);
+      }
     }
   }
 </style>
