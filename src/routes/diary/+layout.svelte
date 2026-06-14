@@ -40,6 +40,7 @@
   .diary {
     padding-top: 2rem;
     min-height: 100vh;
+    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
