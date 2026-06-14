@@ -3,6 +3,7 @@
 // https://scottspence.com/posts/make-an-rss-feed-with-sveltekit
 
 import pretty from 'pretty';
+import { resolvePostImageUrl } from '$lib/diary/postImageUrl';
 import { fetchAllPosts } from '../../api/posts/util';
 import type { PostSummary } from '../../api/posts/util';
 
@@ -13,7 +14,7 @@ export const GET = async () => {
   const publishedPosts = posts.filter((post) => post.metadata.status !== 'draft');
   const sortedPosts = publishedPosts.sort(sortPosts);
 
-  const body = render(sortedPosts);
+  const body = await render(sortedPosts);
   const options = {
     headers: {
       'Cache-Control': 'max-age=0, s-maxage=3600',
@@ -31,33 +32,51 @@ function sortPosts(a: PostSummary, b: PostSummary, multiplier = 1) {
 }
 
 const baseURL = 'https://www.pascal.com/diary';
+const siteURL = 'https://www.pascal.com';
 const title = 'Pascal’s Diary';
 const description = 'Diary of a guy who does some things';
 
-function render(posts: PostSummary[]) {
+async function render(posts: PostSummary[]) {
+  const renderedPosts = await Promise.all(posts.map(renderPost));
+
   return pretty(
     `<?xml version="1.0" encoding="UTF-8" ?>
-    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
       <channel>
         <title>${title}</title>
         <description>${description}</description>
         <link>${baseURL}</link>
         <atom:link href="${baseURL}/rss" rel="self" type="application/rss+xml"/>
-        ${posts.map(renderPost).join('')}
+        ${renderedPosts.join('')}
       </channel>
     </rss>`
   );
 }
 
-function renderPost(post: PostSummary) {
+async function renderPost(post: PostSummary) {
   const tags = post.metadata.tags?.map((tag) => `<category>${tag}</category>`).join('') ?? '';
   const tagDescription = `Tags: ${post.metadata.tags?.join(', ') ?? 'none'}`;
   const summary = post.metadata.summary ?? tagDescription;
+  const imageUrl = await resolvePostImageUrl(post.slug, post.metadata.ogimage);
+  const mediaContent = imageUrl
+    ? `
+    <media:content url="${escapeXmlAttribute(new URL(imageUrl, siteURL).href)}" medium="image" />`
+    : '';
+
   return `<item>
     <guid isPermaLink="true">${baseURL}/${post.slug}</guid>
     <title>${post.metadata.title}</title>
     <link>${baseURL}/${post.slug}</link>${tags}
-    <description>${summary}</description>
+    <description>${summary}</description>${mediaContent}
     <pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
     </item>`;
+}
+
+function escapeXmlAttribute(value: string) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
 }
