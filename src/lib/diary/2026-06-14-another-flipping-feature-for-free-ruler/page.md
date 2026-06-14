@@ -4,7 +4,7 @@ date: 2026-06-14T10:42:44.763Z
 summary: Free Ruler now let’s you flip rulers horizontally or vertically.
 tags: [free ruler, mac]
 ogimage: ./flip-rulers.png
-status: draft
+status: published
 ---
 
 I've just shipped another oft-requested feature for [Free Ruler](/freeruler/): the ability to flip rulers horizontally or vertically.
