@@ -1,4 +1,5 @@
 import { dev } from '$app/environment';
+import { json } from '@sveltejs/kit';
 import Path from 'path';
 import { openInEditor } from '../../editor.server';
 
@@ -9,9 +10,10 @@ export async function POST({ params }) {
 
   const resolvedPath = Path.resolve(process.cwd(), `src/lib/diary/${params.slug}/page.md`);
   try {
-    openInEditor([resolvedPath]);
-    return Response.json('OK', { headers: { 'content-type': 'application/json; charset=utf-8' } });
+    await openInEditor([resolvedPath]);
+    return json('OK');
   } catch (error) {
     console.error(error);
+    return json({ error: error instanceof Error ? error.message : 'Unable to open post' }, { status: 500 });
   }
 }

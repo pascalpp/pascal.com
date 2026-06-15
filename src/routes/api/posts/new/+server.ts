@@ -1,4 +1,5 @@
 import { dev } from '$app/environment';
+import { json } from '@sveltejs/kit';
 import File from 'fs';
 import Path from 'path';
 import slugify from 'slugify';
@@ -52,12 +53,10 @@ export async function POST({ request }) {
     File.mkdirSync(Path.dirname(outputPath), { recursive: true });
     File.writeFileSync(outputPath, output, 'utf8');
     File.writeFileSync(demoOutputPath, demoOutput, 'utf8');
-    openInEditor([outputPath, demoOutputPath]);
-    return Response.json(
-      { slug, path: outputPath },
-      { headers: { 'content-type': 'application/json; charset=utf-8' } },
-    );
+    await openInEditor([outputPath, demoOutputPath]);
+    return json({ slug, path: outputPath });
   } catch (error) {
     console.error(error);
+    return json({ error: error instanceof Error ? error.message : 'Unable to create post' }, { status: 500 });
   }
 }
