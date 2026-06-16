@@ -44,7 +44,7 @@ Then I had Codex create a script so I can type `yarn generate:icons` to create t
 
 Then I went a little koo-koo and applied the same technique to create updated promo images for the App Store.
 
-<div class="bleed-right">
+<div class="bleed">
 
 <AppStoreCarousel slides={appStoreSlides} />
 

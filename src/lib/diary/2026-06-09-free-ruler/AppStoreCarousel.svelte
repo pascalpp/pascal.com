@@ -31,10 +31,9 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0;
-    padding: 1rem 0.5rem;
-    padding-right: 2rem;
+    padding: 2rem;
     scroll-snap-type: x mandatory;
   }
 
@@ -42,7 +41,7 @@
     flex-shrink: 0;
     scroll-snap-align: center;
     user-select: none;
-    max-width: min(78vw, 600px);
+    max-width: min(78vw, 800px);
 
     img {
       display: block;
