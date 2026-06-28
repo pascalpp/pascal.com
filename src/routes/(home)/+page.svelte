@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable svelte/no-navigation-without-resolve, no-unassigned-vars */
   import Column from '$lib/components/Column.svelte';
   import FeaturedEmail from '$lib/components/FeaturedEmail.svelte';
   import Row from '$lib/components/Row.svelte';

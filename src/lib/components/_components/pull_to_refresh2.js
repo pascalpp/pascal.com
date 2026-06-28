@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* oxlint-disable no-console */
 import './pull_to_refresh2.less';
 
 import classnames  from 'classnames';
@@ -240,7 +240,7 @@ export function getOpacity(changeY, distance) {
 }
 
 
-// eslint-disable-next-line no-unused-vars
+// oxlint-disable-next-line no-unused-vars
 function isScrolled(...elements) {
   return elements.some(isElementScrolled);
 }

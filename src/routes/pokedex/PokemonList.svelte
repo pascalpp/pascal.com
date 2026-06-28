@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable typescript/no-unused-expressions, svelte/require-each-key, no-undef, no-unassigned-vars */
   import { browser } from '$app/environment';
   import PokemonListSection from './PokemonListSection.svelte';
 

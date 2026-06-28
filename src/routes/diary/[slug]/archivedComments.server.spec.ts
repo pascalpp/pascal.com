@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vite-plus/test';
 import { unwrapArchivedComments } from './archivedComments.server';
 
 function expectLink(html: string, text: string, attributes: string[]) {

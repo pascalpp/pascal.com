@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars */
   import { onDestroy } from 'svelte';
   import { getStyleGuideSnippet } from './styleGuideSnippets';
 

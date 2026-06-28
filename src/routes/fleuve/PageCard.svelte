@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable typescript/no-unused-expressions, no-unassigned-vars */
   import PageDescription from './PageDescription.svelte';
   import PageTitle from './PageTitle.svelte';
   import type { Page, PageId } from './pages.store';

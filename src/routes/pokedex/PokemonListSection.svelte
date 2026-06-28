@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable svelte/no-navigation-without-resolve, svelte/require-each-key, no-undef, no-unassigned-vars */
   export let names: string[];
   export let letter: string;
   export let name: string;

@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable svelte/require-each-key, no-unassigned-vars */
   import { Trie } from './Trie';
 
   export let combinations: string[];

@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable no-undef, no-unassigned-vars, no-global-assign */
   import { dev } from '$app/environment';
   import { page } from '$app/stores';
   import AddClipboardButtons from './AddClipboardButtons.svelte';
@@ -75,7 +76,7 @@
   </article>
 
   <footer class="full-width">
-    <DiaryComments slug={$page.params.slug} {metadata} archivedCommentsHtml={post.archivedCommentsHtml} />
+    <DiaryComments slug={post.slug} {metadata} archivedCommentsHtml={post.archivedCommentsHtml ?? ''} />
     <PostNavigation {next} {prev} bottom />
   </footer>
 {/key}

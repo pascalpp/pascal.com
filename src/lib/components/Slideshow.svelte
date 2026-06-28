@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   export type Slide = {
     src: string;
     alt: string;
@@ -7,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  /* oxlint-disable no-unassigned-vars */
   import Dialog from './Dialog.svelte';
 
   export let slides: Slide[] = [];

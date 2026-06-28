@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable svelte/require-each-key */
   export let tokens: string[];
 
   function updateToken(value: string, index: number) {

@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* oxlint-disable svelte/no-navigation-without-resolve, no-undef */
   import { dev } from '$app/environment';
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
