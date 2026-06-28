@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   import CssSpinner, { defaultConfig, type SpinnerConfig } from './CssSpinner.svelte';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';

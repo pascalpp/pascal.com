@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
   import GithubMark from './github-mark.svg?component';
   import MacAppStore from './mac-app-store.svg?component';
 </script>
@@ -15,7 +14,7 @@
 </svelte:head>
 
 <main>
-  <div class="icon"></div>
+  <div class="icon" />
 
   <div class="article-stage">
     <article>
@@ -135,9 +134,7 @@
     max-width: 600px;
     background-color: white;
     border-radius: 36px;
-    box-shadow:
-      -10px 10px 20px rgba(0, 0, 0, 0.25),
-      inset -3px 0 10px rgba(0, 0, 0, 1);
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.25), inset -3px 0 10px rgba(0, 0, 0, 1);
 
     display: flex;
     flex-direction: column;

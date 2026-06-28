@@ -56,17 +56,13 @@
       right: 0;
       width: 100%;
       height: 100%;
-      box-shadow:
-        inset 0 0 100px rgba(0, 0, 0, 0.2),
-        0 5px 50px rgba(0, 0, 0, 0.25);
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2), 0 5px 50px rgba(0, 0, 0, 0.25);
       transform: translateX(0.1em) translateY(1em) rotate(-2deg) scaleX(98%) scaleY(93%);
       filter: blur(1px);
     }
 
     h3 {
-      box-shadow:
-        inset 0 -60px 60px -60px rgba(0, 0, 0, 0.15),
-        0 0 30px rgba(0, 0, 0, 0.15);
+      box-shadow: inset 0 -60px 60px -60px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.15);
       margin: 0;
       padding: 1em 1.5em;
     }

@@ -52,10 +52,10 @@
   onMount(() => {
     window.pageStore = pageStore;
 
-    pageStore.subscribe(pages => {
+    pageStore.subscribe((pages) => {
       window.pages = pages;
 
-      root = pages.find(item => item.id === 'root') as Page;
+      root = pages.find((item) => item.id === 'root') as Page;
       if (!root) {
         addRootPage();
       }

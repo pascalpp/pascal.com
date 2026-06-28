@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
   let className = '';
   export { className as class };
 
@@ -15,8 +14,8 @@
     { value: 'true', label: '' },
   ];
 
+  export let id: string;
   export let name: string;
-  export let id = name;
   export let options: ToggleOption[] = defaultOptions;
   export let value: ToggleOptionValue = options[0].value;
   export let disabled = false;
@@ -27,8 +26,8 @@
 
   function getPaddedLabel(option: ToggleOption, options: ToggleOption[]): string {
     const { value, label } = option;
-    const otherOption = options.find(other => other.value !== value) as ToggleOption;
-    const difference = label.length - (otherOption?.label.length ?? 0);
+    const otherOption = options.find((other) => other.value !== value) as ToggleOption;
+    const difference = label.length - otherOption.label.length ?? 0;
     if (difference >= 0) {
       return label;
     } else {

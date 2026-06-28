@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable no-useless-assignment */
   import DivRenderer from './DivRenderer.svelte';
   import Column from '$lib/components/Column.svelte';
   import Slider from '$lib/components/Slider.svelte';

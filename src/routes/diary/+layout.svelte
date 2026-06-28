@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
   import './diary.less';
   import NavHeader from './NavHeader.svelte';
 </script>

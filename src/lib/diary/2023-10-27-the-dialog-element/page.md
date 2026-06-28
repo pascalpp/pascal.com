@@ -207,18 +207,14 @@ Here's a version of the Dialog component with some of these features added.
 
     // animate when the dialog opens
     &:is([open]) {
-      animation:
-        fade-in 0.2s ease-out,
-        slide-in 0.2s ease-out;
+      animation: fade-in 0.2s ease-out, slide-in 0.2s ease-out;
       &::backdrop {
         animation: fade-in 0.2s ease-out;
       }
     }
     // animate when the dialog is closing
     &:is([closing]) {
-      animation:
-        fade-out 0.2s ease-out,
-        slide-out 0.2s ease-out;
+      animation: fade-out 0.2s ease-out, slide-out 0.2s ease-out;
       &::backdrop {
         animation: fade-out 0.2s ease-out;
       }
