@@ -20,7 +20,6 @@
   export let rounded = false;
 
   export let href: string | undefined = undefined;
-  export let tag = href ? 'a' : 'button';
   export let external = !!href && httpRegex.test(href);
   export let target = external ? '_blank' : undefined;
   export let rel = external ? 'noopener noreferrer' : undefined;
@@ -29,53 +28,75 @@
 
   const roundrect = primary || secondary;
 
-  // TypeScript complains about the sveltekit:prefetch attribute being applied to
-  // svelte:element. This directive tells the app to prefetch the resources
-  // behind a link when the user hovers, which speeds up navigation
-  // significantly, but it's only valid on anchor tags. I'm reaching out to
-  // Svelte folks to see if there is a resolution to this. For now, ignore the
-  // TypeScript warning. (Maybe there's a way to suppress it.)
-  // https://svelte.dev/repl/bfbeb5c43f21461c9cbd0fea3cd680cb?version=3.49.0
-  // Issue is being triaged here:
-  // https://github.com/sveltejs/language-tools/issues/1576
+  $: disabledValue = loading || disabled || null;
 </script>
 
-<svelte:element
-  this={tag}
-  {href}
-  data-sveltekit-preload-data={href ? 'hover' : 'off'}
-  {rel}
-  {target}
-  {value}
-  {accesskey}
-  aria-label={label}
-  class="button"
-  class:roundrect
-  class:link
-  class:primary
-  class:secondary
-  class:danger
-  class:success
-  class:loading
-  class:tiny
-  class:small
-  class:medium
-  class:large
-  class:wide
-  class:nowrap
-  class:active
-  class:bold
-  class:rounded={roundrect && rounded}
-  disabled={loading || disabled || null}
-  role={href ? 'link' : 'button'}
-  on:click
->
-  <span class="button-content">
-    <span class="button-label">
-      <slot>{label}</slot>
+{#if href}
+  <a
+    {href}
+    data-sveltekit-preload-data="hover"
+    {rel}
+    {target}
+    {accesskey}
+    aria-label={label}
+    class="button"
+    class:roundrect
+    class:link
+    class:primary
+    class:secondary
+    class:danger
+    class:success
+    class:loading
+    class:tiny
+    class:small
+    class:medium
+    class:large
+    class:wide
+    class:nowrap
+    class:active
+    class:bold
+    class:rounded={roundrect && rounded}
+    on:click
+  >
+    <span class="button-content">
+      <span class="button-label">
+        <slot>{label}</slot>
+      </span>
     </span>
-  </span>
-</svelte:element>
+  </a>
+{:else}
+  <button
+    type="button"
+    {value}
+    {accesskey}
+    aria-label={label}
+    class="button"
+    class:roundrect
+    class:link
+    class:primary
+    class:secondary
+    class:danger
+    class:success
+    class:loading
+    class:tiny
+    class:small
+    class:medium
+    class:large
+    class:wide
+    class:nowrap
+    class:active
+    class:bold
+    class:rounded={roundrect && rounded}
+    disabled={disabledValue}
+    on:click
+  >
+    <span class="button-content">
+      <span class="button-label">
+        <slot>{label}</slot>
+      </span>
+    </span>
+  </button>
+{/if}
 
 <style lang="less">
   .button {

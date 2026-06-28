@@ -6,6 +6,7 @@
 </script>
 
 <script lang="ts">
+  /* eslint-disable svelte/require-each-key */
   import Button from '$lib/components/Button.svelte';
 
   export let options: ButtonBarOption[] | undefined = undefined;
