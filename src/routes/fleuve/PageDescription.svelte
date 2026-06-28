@@ -110,7 +110,9 @@
 
     &.active {
       @height-transition-time: calc(var(--card-animation-speed) * 2);
-      transition: opacity @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out,
+      transition:
+        opacity @height-transition-time ease-in-out,
+        max-height @height-transition-time ease-in-out,
         border-color @height-transition-time ease-in-out;
       transition-delay: @height-transition-time;
       border-top: 1px solid fade(black, 30%);

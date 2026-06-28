@@ -14,7 +14,7 @@ export async function PATCH({ params }) {
   const frontmatter = lines.slice(0, lines.lastIndexOf('---'));
   const content = lines.slice(lines.lastIndexOf('---') + 1);
 
-  const isDraft = frontmatter.some((line) => line.includes('status: draft'));
+  const isDraft = frontmatter.some(line => line.includes('status: draft'));
   const newStatus = isDraft ? 'published' : 'draft';
   const updatedFrontmatter = [...frontmatter.filter(excludeStatus), `status: ${newStatus}`, '---'];
   const updatedFile = [...updatedFrontmatter, ...content].join('\n');

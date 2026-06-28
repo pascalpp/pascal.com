@@ -19,7 +19,7 @@
       rect.left < 0,
       rect.right > window.innerWidth,
     ];
-    if (values.some((value) => value)) {
+    if (values.some(value => value)) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     return element;

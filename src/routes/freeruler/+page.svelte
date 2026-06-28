@@ -135,7 +135,9 @@
     max-width: 600px;
     background-color: white;
     border-radius: 36px;
-    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.25), inset -3px 0 10px rgba(0, 0, 0, 1);
+    box-shadow:
+      -10px 10px 20px rgba(0, 0, 0, 0.25),
+      inset -3px 0 10px rgba(0, 0, 0, 1);
 
     display: flex;
     flex-direction: column;

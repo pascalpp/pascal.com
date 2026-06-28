@@ -226,9 +226,11 @@
     min-width: var(--card-min-width);
     max-width: var(--card-max-width);
     min-height: var(--card-min-height);
-    transition: min-width @width-transition-time ease-in-out @width-transition-delay,
+    transition:
+      min-width @width-transition-time ease-in-out @width-transition-delay,
       max-width @width-transition-time ease-in-out @width-transition-delay,
-      min-height @height-transition-time ease-in-out, max-height @height-transition-time ease-in-out;
+      min-height @height-transition-time ease-in-out,
+      max-height @height-transition-time ease-in-out;
 
     &.active {
       --width: calc(var(--card-max-width) * var(--active-page-scale, 1));
@@ -237,7 +239,9 @@
       max-height: var(--height);
       min-width: var(--width);
       max-width: var(--width);
-      transition: min-width @width-transition-time ease-in-out, max-width @width-transition-time ease-in-out,
+      transition:
+        min-width @width-transition-time ease-in-out,
+        max-width @width-transition-time ease-in-out,
         min-height @height-transition-time ease-in-out @height-transition-delay,
         max-height @height-transition-time ease-in-out @height-transition-delay;
     }

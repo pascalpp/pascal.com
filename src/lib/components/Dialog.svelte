@@ -68,7 +68,9 @@
     overscroll-behavior: contain;
     border-radius: 0.5rem;
     border: none;
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--dialog-color, black) 20%, transparent), 0 4px 10px rgba(0 0 0 / 0.3);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--dialog-color, black) 20%, transparent),
+      0 4px 10px rgba(0 0 0 / 0.3);
     padding: 0;
     margin: auto;
     background-color: var(--dialog-background-color, white);
@@ -80,13 +82,17 @@
     }
 
     &:is([open]) {
-      animation: fade-in 0.2s ease-out, slide-in 0.2s ease-out;
+      animation:
+        fade-in 0.2s ease-out,
+        slide-in 0.2s ease-out;
       &::backdrop {
         animation: fade-in 0.2s ease-out;
       }
     }
     &:is([closing]) {
-      animation: fade-out 0.2s ease-out, slide-out 0.2s ease-out;
+      animation:
+        fade-out 0.2s ease-out,
+        slide-out 0.2s ease-out;
       &::backdrop {
         animation: fade-out 0.2s ease-out;
       }

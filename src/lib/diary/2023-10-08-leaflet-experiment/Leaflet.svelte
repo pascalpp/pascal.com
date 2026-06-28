@@ -48,7 +48,7 @@
   }
 
   function showCoordinates(latitude: number, longitude: number) {
-    markers.forEach((marker) => map.removeLayer(marker));
+    markers.forEach(marker => map.removeLayer(marker));
     map.setView([latitude, longitude], 13);
     const marker = leaflet.marker([latitude, longitude]).addTo(map);
     markers.push(marker);

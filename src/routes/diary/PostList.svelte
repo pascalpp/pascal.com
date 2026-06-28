@@ -28,7 +28,7 @@
     return 0;
   });
 
-  $: grouped = groupBy(sorted, (post) => {
+  $: grouped = groupBy(sorted, post => {
     const date = new Date(post.metadata.date);
     return date.getFullYear().toString();
   });
@@ -41,7 +41,7 @@
   function groupBy<T>(items: T[], callback: (item: T) => string): Group<T>[] {
     return items.reduce((groups, item) => {
       const key = callback(item);
-      const group = groups.find((group) => group.key === key);
+      const group = groups.find(group => group.key === key);
       if (group) {
         group.items.push(item);
       } else {

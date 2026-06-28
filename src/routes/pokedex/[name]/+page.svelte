@@ -15,7 +15,7 @@
       if (typeof value === 'string' && /^http.*\.png$/.test(value)) {
         images.push(value);
       } else if (Array.isArray(value)) {
-        value.forEach((v) => images.push(...findImages(v)));
+        value.forEach(v => images.push(...findImages(v)));
       } else if (value && typeof value === 'object') {
         images.push(...findImages(value));
       }

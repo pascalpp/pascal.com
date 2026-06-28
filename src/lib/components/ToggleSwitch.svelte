@@ -27,7 +27,7 @@
 
   function getPaddedLabel(option: ToggleOption, options: ToggleOption[]): string {
     const { value, label } = option;
-    const otherOption = options.find((other) => other.value !== value) as ToggleOption;
+    const otherOption = options.find(other => other.value !== value) as ToggleOption;
     const difference = label.length - (otherOption?.label.length ?? 0);
     if (difference >= 0) {
       return label;

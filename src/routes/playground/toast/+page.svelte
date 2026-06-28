@@ -26,8 +26,7 @@
       <Button primary on:click={() => showToast('This is a toast message.')} label="Show toast" />
     </p>
     <p>
-      Each new toast message replaces the previous one. Try clicking the button a bunch of times in
-      rapid succession.
+      Each new toast message replaces the previous one. Try clicking the button a bunch of times in rapid succession.
     </p>
   </section>
 
@@ -46,10 +45,7 @@
 
   <section>
     <h2>Custom content</h2>
-    <p>
-      You can render the Toast component in your layout to show custom content with a custom
-      duration.
-    </p>
+    <p>You can render the Toast component in your layout to show custom content with a custom duration.</p>
     <p>
       <Button primary on:click={() => toast.show()} label="Show a toast with custom content" />
     </p>
@@ -59,12 +55,11 @@
       <p>With multiple paragraphs!</p>
       <p>And a ten second duration!</p>
       <p>
-        Magna id mollit consequat quis magna est mollit Lorem ex mollit. Eu non consectetur aliqua
-        irure consequat excepteur veniam laborum et cupidatat. Laboris eu excepteur Lorem esse
-        adipisicing tempor non ex cupidatat. Dolor laboris incididunt esse mollit tempor sit qui
-        laboris cillum. Sit nulla nulla irure sunt do. Magna reprehenderit adipisicing est aute est
-        anim cupidatat proident ex tempor exercitation est incididunt. Nulla ipsum esse duis mollit
-        eiusmod cupidatat anim.
+        Magna id mollit consequat quis magna est mollit Lorem ex mollit. Eu non consectetur aliqua irure consequat
+        excepteur veniam laborum et cupidatat. Laboris eu excepteur Lorem esse adipisicing tempor non ex cupidatat.
+        Dolor laboris incididunt esse mollit tempor sit qui laboris cillum. Sit nulla nulla irure sunt do. Magna
+        reprehenderit adipisicing est aute est anim cupidatat proident ex tempor exercitation est incididunt. Nulla
+        ipsum esse duis mollit eiusmod cupidatat anim.
       </p>
       <p>
         <Button tiny secondary on:click={hide} label="Click here if you’re impatient" />
