@@ -15,9 +15,9 @@
   }
 
   onMount(() => {
-    pageStore.subscribe((pages) => {
-      const root = pages.find((item) => item.id === 'root');
-      isShowingTutorial = !!root?.connections.some((pageId) => pageId === 'tutorial-start-page');
+    pageStore.subscribe(pages => {
+      const root = pages.find(item => item.id === 'root');
+      isShowingTutorial = !!root?.connections.some(pageId => pageId === 'tutorial-start-page');
     });
   });
 </script>

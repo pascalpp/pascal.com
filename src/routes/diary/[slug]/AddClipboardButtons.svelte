@@ -3,9 +3,9 @@
 
   onMount(() => {
     const codeblocks: HTMLElement[] = Array.from(document.querySelectorAll('pre[class*="language-"]'));
-    codeblocks.forEach((codeblock) => {
+    codeblocks.forEach(codeblock => {
       const classes = Array.from(codeblock.classList);
-      const language = classes.find((c) => c.startsWith('language-'))?.replace('language-', '') || '';
+      const language = classes.find(c => c.startsWith('language-'))?.replace('language-', '') || '';
       if (language) {
         const languageTag = document.createElement('span');
         languageTag.classList.add('language-tag');

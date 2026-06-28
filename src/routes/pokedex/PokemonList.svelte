@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable @typescript-eslint/no-unused-expressions, svelte/require-each-key */
   import { browser } from '$app/environment';
   import PokemonListSection from './PokemonListSection.svelte';
 
@@ -18,7 +19,7 @@
       rect.left < 0,
       rect.right > window.innerWidth,
     ];
-    if (values.some((value) => value)) {
+    if (values.some(value => value)) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     return element;
