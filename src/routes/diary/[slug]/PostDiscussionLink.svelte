@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/no-navigation-without-resolve */
   import type { PostMetadata } from '../../api/posts/util';
   import { LogoMastodon } from '@iconslib/svelte/ionicons';
 

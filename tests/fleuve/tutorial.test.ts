@@ -9,7 +9,7 @@ import { test, expect } from '@playwright/test';
 // }
 
 test.beforeEach(async ({ page }) => {
-  await page.route('/_vercel/insights/script.js', (route) => {
+  await page.route('/_vercel/insights/script.js', route => {
     route.fulfill({
       body: '',
     });
@@ -105,7 +105,7 @@ test('Tutorial flow', async ({ page }) => {
   await expect(deleteCard).toHaveClass(/active/);
   await expect(deleteChildCard).toBeAttached();
   //register dialog handler before invoking the dialog
-  page.once('dialog', (dialog) => dialog.accept());
+  page.once('dialog', dialog => dialog.accept());
   await page.keyboard.press('Backspace');
   await expect(deleteCard).not.toBeAttached();
   await expect(deleteChildCard).not.toBeAttached();
@@ -188,11 +188,11 @@ test('Tutorial flow', async ({ page }) => {
   await page.keyboard.press('ArrowLeft');
   await expect(fleuveCard).toBeFocused();
   // test that canceling the dialog does not delete the card
-  page.once('dialog', (dialog) => dialog.dismiss());
+  page.once('dialog', dialog => dialog.dismiss());
   await page.keyboard.press('Backspace');
   await expect(fleuveCard).toBeAttached();
   // test that accepting the dialog deletes the card
-  page.once('dialog', (dialog) => dialog.accept());
+  page.once('dialog', dialog => dialog.accept());
   await page.keyboard.press('Backspace');
   await expect(fleuveCard).not.toBeAttached();
   await expect(page).toHaveScreenshot('deleted-tutorial.png', { scale: 'device' });

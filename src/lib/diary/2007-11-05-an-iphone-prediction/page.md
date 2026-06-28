@@ -10,5 +10,3 @@ So Leopard is out, with a new version of Mail that includes support for To Dos a
 The current state of affairs is clearly an unfinished work. I feel pretty certain that Apple will issue an iPhone update (perhaps as part of firmware 1.1.2 that is rumored to be coming soon) which will include a new To Do iPhone application to accompany the Notes application that shipped with the iPhone. The new firmware will also update the iPhone mail client so it won’t display the Apple Mail To Do folder created by Mail.app. Instead, it will use this folder (behind the scenes) to serve as a conduit for syncing To Do’s between the iPhone and Mail.app on the desktop. My hope is that they’ll also bring Notes syncing along for the ride.
 
 I’m not sure how Apple might carry this functionality over to iPhone owners who use Windows -- or those who use pre-Leopard versions of Mac OS X, for that matter. Perhaps Apple will tout To Do and Notes syncing as a Leopard-only feature.
-
-

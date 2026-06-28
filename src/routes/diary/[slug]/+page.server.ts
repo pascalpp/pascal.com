@@ -23,8 +23,8 @@ function loadArchivedCommentsHtml(slug: string, loader: () => Promise<string>) {
 
   if (!archivedCommentsHtml) {
     archivedCommentsHtml = loader()
-      .then((rawComments) => unwrapArchivedComments(rawComments))
-      .catch((error) => {
+      .then(rawComments => unwrapArchivedComments(rawComments))
+      .catch(error => {
         archivedCommentsHtmlBySlug.delete(slug);
         throw error;
       });

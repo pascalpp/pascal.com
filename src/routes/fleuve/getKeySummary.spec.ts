@@ -17,7 +17,7 @@ describe('getKeySummary', () => {
     [{ metaKey, shiftKey, altKey, ctrlKey }, undefined],
   ];
 
-  examples.forEach((example) => {
+  examples.forEach(example => {
     const [key, expected] = example;
     it(`${JSON.stringify(key)} => ${expected}`, () => {
       expect(getKeySummary(key as KeyboardEvent)).toBe(expected);

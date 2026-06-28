@@ -14,7 +14,7 @@
   onMount(async () => {
     leaflet = await import('leaflet');
 
-    // @ts-ignore
+    // @ts-expect-error Leaflet's default icon helper is intentionally removed before overriding marker assets.
     delete leaflet.Icon.Default.prototype._getIconUrl;
     leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl,
@@ -48,7 +48,7 @@
   }
 
   function showCoordinates(latitude: number, longitude: number) {
-    markers.forEach((marker) => map.removeLayer(marker));
+    markers.forEach(marker => map.removeLayer(marker));
     map.setView([latitude, longitude], 13);
     const marker = leaflet.marker([latitude, longitude]).addTo(map);
     markers.push(marker);

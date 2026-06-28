@@ -75,7 +75,7 @@
   </article>
 
   <footer class="full-width">
-    <DiaryComments slug={$page.params.slug} {metadata} archivedCommentsHtml={post.archivedCommentsHtml} />
+    <DiaryComments slug={post.slug} {metadata} archivedCommentsHtml={post.archivedCommentsHtml ?? ''} />
     <PostNavigation {next} {prev} bottom />
   </footer>
 {/key}
