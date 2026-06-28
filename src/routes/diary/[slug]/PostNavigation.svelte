@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
   import type { PostSummary } from '../../api/posts/util';
 
   export let next: PostSummary;

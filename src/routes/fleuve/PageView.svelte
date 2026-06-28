@@ -13,8 +13,8 @@
 
   let page: Page;
 
-  pageStore.subscribe(pages => {
-    page = pages.find(p => p.id === pageId) as Page;
+  pageStore.subscribe((pages) => {
+    page = pages.find((p) => p.id === pageId) as Page;
   });
 </script>
 

@@ -2,13 +2,7 @@
 node_modules
 /build
 /.svelte-kit
-/.vercel
 /package
-build/**
-package/**
-src/lib/components/_components/**
-static/**
-**/static/**
 .env
 .env.*
 !.env.example

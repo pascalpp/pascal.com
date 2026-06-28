@@ -21,7 +21,7 @@
   function elementIsInView(element: HTMLElement) {
     const rect = element.getBoundingClientRect();
     const values = [rect.top < 0, rect.bottom > window.innerHeight, rect.left < 0, rect.right > window.innerWidth];
-    return !values.some(value => value);
+    return !values.some((value) => value);
   }
 
   function zoomImage(element: HTMLElement) {

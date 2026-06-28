@@ -1,22 +1,20 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
   import type { PageData } from './$types';
-  import JSONTree from './JSONTree.svelte';
+  import JSONTree from 'svelte-json-tree';
 
   export let data: PageData;
 
   const name = data.pokemon.name.replace('-', ' ');
 
-  function findImages(obj: unknown): string[] {
+  function findImages(obj: any): string[] {
     const images: string[] = [];
-    if (!obj || typeof obj !== 'object') return images;
-
-    for (const value of Object.values(obj as Record<string, unknown>)) {
+    for (const key in obj) {
+      const value = obj[key];
       if (typeof value === 'string' && /^http.*\.png$/.test(value)) {
         images.push(value);
       } else if (Array.isArray(value)) {
-        value.forEach(v => images.push(...findImages(v)));
-      } else if (value && typeof value === 'object') {
+        value.forEach((v) => images.push(...findImages(v)));
+      } else if (typeof value === 'object') {
         images.push(...findImages(value));
       }
     }

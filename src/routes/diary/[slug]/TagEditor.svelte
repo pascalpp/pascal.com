@@ -11,7 +11,7 @@
     if (typeof promptTags === 'string') {
       const filteredTags = promptTags
         .split(',')
-        .map(tag => tag.trim())
+        .map((tag) => tag.trim())
         .filter(Boolean);
       const updatedTags = Array.from(new Set(filteredTags));
       await patchTags(updatedTags);

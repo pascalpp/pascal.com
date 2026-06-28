@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/require-each-key */
   import Tag from '../Tag.svelte';
 
   export let tags: string[] = [];

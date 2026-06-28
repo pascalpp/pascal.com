@@ -253,9 +253,7 @@
     height: 345px;
     left: 35px;
     top: 95px;
-    transition:
-      scale 0.3s ease-in-out 0.1s,
-      opacity 0.1s ease-in-out;
+    transition: scale 0.3s ease-in-out 0.1s, opacity 0.1s ease-in-out;
 
     .app-large {
       position: absolute;
@@ -267,9 +265,7 @@
     }
 
     &.switching {
-      transition:
-        scale 0.3s ease-in-out,
-        opacity 0.3s ease-in-out 0.2s;
+      transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out 0.2s;
       pointer-events: none;
       transform-origin: center;
       scale: 0.76;

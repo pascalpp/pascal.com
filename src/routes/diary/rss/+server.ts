@@ -11,7 +11,7 @@ export const prerender = true;
 
 export const GET = async () => {
   const posts = await fetchAllPosts();
-  const publishedPosts = posts.filter(post => post.metadata.status !== 'draft');
+  const publishedPosts = posts.filter((post) => post.metadata.status !== 'draft');
   const sortedPosts = publishedPosts.sort(sortPosts);
 
   const body = await render(sortedPosts);
@@ -49,12 +49,12 @@ async function render(posts: PostSummary[]) {
         <atom:link href="${escapeXmlAttribute(`${baseURL}/rss`)}" rel="self" type="application/rss+xml"/>
         ${renderedPosts.join('')}
       </channel>
-    </rss>`,
+    </rss>`
   );
 }
 
 async function renderPost(post: PostSummary) {
-  const tags = post.metadata.tags?.map(tag => `<category>${escapeXmlText(tag)}</category>`).join('') ?? '';
+  const tags = post.metadata.tags?.map((tag) => `<category>${escapeXmlText(tag)}</category>`).join('') ?? '';
   const tagDescription = `Tags: ${post.metadata.tags?.join(', ') ?? 'none'}`;
   const summary = post.metadata.summary ?? tagDescription;
   const imageUrl = await resolvePostImageUrl(post.slug, post.metadata.ogimage);

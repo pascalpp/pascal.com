@@ -16,3 +16,5 @@ And what did the White House do with this information? Did they try to follow up
 Who are the terrorists?
 
 [Full details here.](http://www.americablog.com/2007/10/bush-staff-revealed-surveillance-of-al.html)
+
+

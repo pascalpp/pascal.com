@@ -11,7 +11,6 @@
       if (!helper) return;
       await navigator.clipboard.writeText(helper.token);
     } catch {
-      // Best-effort quick copy; leave the select ready for another attempt.
     } finally {
       quickCopyValue = '';
     }
@@ -25,7 +24,7 @@
   on:change={copyTokenFromSelect}
 >
   <option value="">Quick copy</option>
-  {#each allSnippets as helper (helper.id)}
+  {#each allSnippets as helper}
     <option value={helper.id}>{helper.name}</option>
   {/each}
 </select>

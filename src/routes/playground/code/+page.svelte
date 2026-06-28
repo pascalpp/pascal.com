@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   import Code from '$lib/components/Code.svelte';
   import Button from '$lib/components/Button.svelte';
   import Column from '$lib/components/Column.svelte';

@@ -6,7 +6,7 @@
 
   let childCount = 0;
 
-  pageStore.subscribe(pages => {
+  pageStore.subscribe((pages) => {
     childCount = getAllChildPages(pages, page.id).length;
   });
 

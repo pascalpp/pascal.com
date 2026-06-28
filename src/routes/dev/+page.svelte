@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable svelte/no-navigation-without-resolve */
   import Capabilities from './capabilities.md';
   import MorePastExperience from './more-past-experience.md';
   import PastExperience from './past-experience.md';
